@@ -49,6 +49,8 @@ Grading:
 
 # Module 01
 
+[Welcome Address](../common/welcome_address.md?course=SDEV120)
+
 ## Day 1
 
 [Computer Orientation](../common/computer_orientation.html?course=SDEV120)
