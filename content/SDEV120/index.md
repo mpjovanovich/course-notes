@@ -36,20 +36,11 @@ course: SDEV120
 
 _Announcements:_
 
-Assignments:
-
-- No assignment for Module 09.
-- Coding assignments from **Module 08 (arrays)** are now assigned.
-- These are due Monday at midnight instead of Sunday.
-
-Grading:
-
-- All grading (aside from outstanding) will be in gradebook by Monday.
-- Grade category weightings are subject to change.
+...
 
 # Module 01
 
-[Welcome Address](../common/welcome_address.md?course=SDEV120)
+[Welcome Address](../common/welcome_address.html?course=SDEV120)
 
 ## Day 1
 
