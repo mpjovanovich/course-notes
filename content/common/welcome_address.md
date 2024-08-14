@@ -66,7 +66,7 @@ You're capable of more than you think.
 >
 > "Whatever you have," you said.
 >
-> Well, here's your box. Nearly everything I have is in it, and it is not full. Pain and excitement are in it, and feeling good or bad and evil thoughts and good thoughts - the Pleasure of design and some despair and the indescribable joy of creation.
+> Well, here's your box. Nearly everything I have is in it, and it is not full. Pain and excitement are in it, and feeling good or bad and evil thoughts and good thoughts - the pleasure of design and some despair and the indescribable joy of creation.
 >
 > And on top of these are all the gratitude and love I have for you.
 >
