@@ -50,7 +50,7 @@ Most of you are at a volatile transition point in your lives. There are things t
 
 There is no growth without risk. The most successful people are usually those who have failed the most.
 
-You're capable of more than you think, and whatever you have to offer is good enough.
+You're capable of more than you think.
 
 > Dear Pat,
 >
