@@ -48,28 +48,6 @@ The collective project of humanity - that of preserving our strange and precario
 
 Most of you are at a volatile transition point in your lives. There are things that you'll have to leave behind in order to explore the possibilities that lie ahead.
 
-There is no growth without risk. The most successful people are usually those who have failed the most.
+There is no growth without risk. Please don't be afraid to fail, as each failure is also a lesson. The smartest and most successful people have failed much more often than those who have never tried.
 
-You're capable of more than you think.
-
-> Dear Pat,
->
-> You came upon me carving some kind of little figure out of wood and you said, "Why don't you make something for me?"
->
-> I asked you what you wanted, and you said, "A box."
->
-> "What for?"
->
-> "To put things in."
->
-> "What kind of things?"
->
-> "Whatever you have," you said.
->
-> Well, here's your box. Nearly everything I have is in it, and it is not full. Pain and excitement are in it, and feeling good or bad and evil thoughts and good thoughts - the pleasure of design and some despair and the indescribable joy of creation.
->
-> And on top of these are all the gratitude and love I have for you.
->
-> And still the box is not full.
->
-> -JOHN [Steinbeck], (East of Eden)
+In summary: _If you start pushing your boundaries I'm certain that you'll find that you're capable of more than you think._
