@@ -6,7 +6,8 @@ title: Computer Orientation
   - [Naming Files and Folders](#naming-files-and-folders)
   - [File Extensions](#file-extensions)
   - [Directory Structure](#directory-structure)
-  - [What Should I Be Able to Do?](#what-should-i-be-able-to-do)
+  - [Tip: Ctrl / Cmd + f = Find!](#tip-ctrl--cmd--f--find)
+  - [Summary: What Should I Be Able to Do?](#summary-what-should-i-be-able-to-do)
 
 # Computer Orientation
 
@@ -85,7 +86,13 @@ favicon.png
 - Use a hierarchicial directory structure where possible.
 - Use a consistent naming convention.
 
-## What Should I Be Able to Do?
+## Tip: Ctrl / Cmd + f = Find!
+
+Ctrl / Cmd + f is the universal "find" shortcut. It works in broswers, text editors, etc.
+
+If there's something you're looking for, e.g. a homework keyword, try using this shortcut.
+
+## Summary: What Should I Be Able to Do?
 
 - Find files and folders
 - Create new files and folders
