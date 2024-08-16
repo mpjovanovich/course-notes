@@ -288,7 +288,7 @@ h1.breadcrumb a:hover {
 
 /* This should be the table of contents. If we forget a TOC it will cause stying issues, 
 so there should always be a TOC */
-body > ul:first-of-type {
+.schedule ul {
   border: 2px solid #ddd;
   margin: 0;
   font-size: 1rem;
