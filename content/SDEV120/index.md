@@ -3,6 +3,8 @@ title: Home
 course: SDEV120
 ---
 
+... placeholder for course quote or image ...
+
 - [Announcements / Agenda](#announcements--agenda)
 - [Module 01](#module-01)
   - [Day 1](#day-1)
