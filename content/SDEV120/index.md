@@ -5,21 +5,23 @@ course: SDEV120
 
 ~~fig{images/the_great_wave.jpg}
 
-- [Announcements](#announcements)
-- [Schedule](#schedule)
-  - [M01:](#m01)
-
 # Announcements
 
 None
 
-<!-- TODO: wrap in schedule div -->
-
 # Schedule
 
-[Welcome Address](../common/welcome_address.html?course=SDEV120)
+~~wrapHtml(div,schedule){
+
+- [Announcements](#announcements)
+- [Schedule](#schedule)
+  - [M01:](#m01)
+
+}
 
 ## M01:
+
+[Welcome Address](../common/welcome_address.html?course=SDEV120)
 
 [Computer Orientation](../common/computer_orientation.html?course=SDEV120)
 
