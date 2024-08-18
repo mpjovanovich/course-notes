@@ -46,7 +46,7 @@ The collective project of humanity - that of preserving our strange and precario
 
 ## Closing
 
-Most of you are at a volatile transition point in your lives. There are things that you'll have to leave behind in order to explore the possibilities that lie ahead.
+Most of you are at a volatile transition point in your lives. There are things that you'll have to leave behind in order to make the most of the possibilities that lie ahead.
 
 There is no growth without risk. Please don't be afraid to fail, as each failure is also a lesson. The smartest and most successful people have failed much more often than those who never tried.
 
