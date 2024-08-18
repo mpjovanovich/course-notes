@@ -7,7 +7,9 @@ course: SDEV120
 
 # Announcements
 
-None
+Welcome to Computing Logic.
+
+💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 
 # Schedule
 
@@ -15,15 +17,24 @@ None
 
 - [Announcements](#announcements)
 - [Schedule](#schedule)
-  - [M01:](#m01)
+  - [M00: Welcome](#m00-welcome)
+  - [M01: Boolean Logic](#m01-boolean-logic)
 
 }
 
-## M01:
+## M00: Welcome
 
-[Welcome Address](../common/welcome_address.html?course=SDEV120)
+Demos
+
+Intros and discussion
+
+Review of policy
 
 [Computer Orientation](../common/computer_orientation.html?course=SDEV120)
+
+## M01: Boolean Logic
+
+[Welcome Address](../common/welcome_address.html?course=SDEV120)
 
 <!-- [Propositional Logic - Intro and Connectives](propositional_logic_intro_connectives.html)
 
