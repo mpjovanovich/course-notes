@@ -60,7 +60,7 @@ Don't think so!
 
 Translate the following verbal statements into logical arguments, and construct truth tables for each:
 
-- If the moon is made of cheese, then I will eat it.
+- If the moon is made of green cheese, then I will eat it.
 - If I eat the moon, then I will not be hungry.
 - If an animal is a kangaroo, then it is a mammal.
 - If kangaroos are reptiles, then they lay eggs.

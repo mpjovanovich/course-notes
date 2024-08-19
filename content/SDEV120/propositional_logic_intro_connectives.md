@@ -3,7 +3,7 @@ title: Propositional Logic - Intro and Connectives
 course: SDEV120
 ---
 
-- [Propositional Logic](#propositional-logic)
+- [Boolean Logic](#boolean-logic)
   - [Propositions](#propositions)
   - [Logical Connectives](#logical-connectives)
     - [Negation (NOT)](#negation-not)
@@ -16,21 +16,16 @@ course: SDEV120
       - [Example](#example-4)
     - [Exclusive OR (XOR)](#exclusive-or-xor)
       - [Example](#example-5)
-    - [Conditional / Implication (IF)](#conditional--implication-if)
-      - [Example](#example-6)
-    - [Biconditional (IFF)](#biconditional-iff)
 
-# Propositional Logic
+# Boolean Logic
 
-**Deductive logic** is a systematic way of thinking that allows us to determine the truth value of a statement based on the truth values of other statements.
-
-**Propositional logic** is a type of deductive logic that deals with propositions.
-
-**Boolean algebra** is a type of algebra that deals with propositions, named after George Boole.
+**Boolean logic** is a type of logic that deals with propositions.
 
 ## Propositions
 
 **Propositions** are statements that are either true or false.
+
+We will later see these in coding in the form of **boolean values**.
 
 We can assign variables to propositions to make them easier to work with:
 
@@ -205,7 +200,7 @@ Express using propositions: "Ted either went to the store or the gym.".
 </div>
 </details>
 
-### Conditional / Implication (IF)
+<!-- ### Conditional / Implication (IF)
 
 | P     | Q     | P → Q |
 | :---- | :---- | ----: |
@@ -259,4 +254,4 @@ Express using propositions: "If it is raining, then Bill uses an umbrella."
 Let P = John is alive.
 Let Q = John's heart is beating.
 
-- John is alive if and only if John's heart is beating = P ↔ Q
+- John is alive if and only if John's heart is beating = P ↔ Q -->

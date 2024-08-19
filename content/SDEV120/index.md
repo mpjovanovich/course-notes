@@ -18,32 +18,50 @@ Welcome to Computing Logic.
 - [Announcements](#announcements)
 - [Schedule](#schedule)
   - [M00: Welcome](#m00-welcome)
-  - [M01: Boolean Logic](#m01-boolean-logic)
+  - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
+  - [M02: Boolean Logic](#m02-boolean-logic)
 
 }
 
 ## M00: Welcome
 
-Demos
+[Demo: The Least Helpful Chatbot Ever](https://github.com/mpjovanovich/openai_playground/blob/main/custom_chatbot.py)
 
-Intros and discussion
+Intros
 
 Review of policy
 
 [Computer Orientation](../common/computer_orientation.html?course=SDEV120)
 
-## M01: Boolean Logic
+Discussion: Computing and Society
 
 [Welcome Address](../common/welcome_address.html?course=SDEV120)
 
-<!-- [Propositional Logic - Intro and Connectives](propositional_logic_intro_connectives.html)
+## M01: Algorithms and Structured Programming
+
+[Algorithms and Structured Programming](algorithms.html)
+
+[Pseudocode](pseudocode.html)
+
+[draw.io](https://app.diagrams.net/) - Online flowcharting tool
+
+[Flowcharts](flowcharts.html)
+
+## M02: Boolean Logic
+
+Discussion: Intro to Logic
+
+[Propositional Logic - Intro and Connectives](propositional_logic_intro_connectives.html)
 
 [Propositional Logic - Order of Operations](propositional_logic_order_of_operations.html)
 
 [Solving Problems with Truth Tables](solving_problems_with_truth_tables.html)
 
-[Solving Problems with Logical Arguments](solving_problems_with_logical_arguments.html)
+<!-- REMOVED FROM COURSE [Solving Problems with Logical Arguments](solving_problems_with_logical_arguments.html) -->
 
+[Decision Trees](decision_tree.html)
+
+<!--
 [Logic Gates](logic_gates.html)
 
 [Set Theory](set_theory.html)
@@ -56,7 +74,6 @@ Review of policy
 
 [Flowcharts](flowcharts.html)
 
-[Decision Trees](decision_tree.html)
 
 [Programming Paradigms](https://docs.google.com/document/d/1qId4olrCAPER_9gGioK8CKQBE61vkn4hdj5mbQTTOcM/edit?usp=sharing)
 

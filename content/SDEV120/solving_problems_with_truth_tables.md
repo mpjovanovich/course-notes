@@ -42,16 +42,16 @@ _Example_
 
 If trying to find the truth table for ¬A ∧ B ∨ C:
 
-| A   | B   | C   |     | ¬A ∧ B ∨ C |
-| :-- | :-- | :-- | :-- | ---------: |
-| T   | T   | T   |     |            |
-| T   | T   | F   |     |            |
-| T   | F   | T   |     |            |
-| T   | F   | F   |     |            |
-| F   | T   | T   |     |            |
-| F   | T   | F   |     |            |
-| F   | F   | T   |     |            |
-| F   | F   | F   |     |            |
+| A   | B   | C   | ... bookkeeping columns ... | ¬A ∧ B ∨ C |
+| :-- | :-- | :-- | :-------------------------- | ---------: |
+| T   | T   | T   |                             |            |
+| T   | T   | F   |                             |            |
+| T   | F   | T   |                             |            |
+| T   | F   | F   |                             |            |
+| F   | T   | T   |                             |            |
+| F   | T   | F   |                             |            |
+| F   | F   | T   |                             |            |
+| F   | F   | F   |                             |            |
 
 Be sure each row starts with T and not F.
 
