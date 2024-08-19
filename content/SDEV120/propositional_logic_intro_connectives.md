@@ -3,6 +3,8 @@ title: Propositional Logic - Intro and Connectives
 course: SDEV120
 ---
 
+~~wrapHtml(div,schedule){
+
 - [Boolean Logic](#boolean-logic)
   - [Propositions](#propositions)
   - [Logical Connectives](#logical-connectives)
@@ -16,6 +18,8 @@ course: SDEV120
       - [Example](#example-4)
     - [Exclusive OR (XOR)](#exclusive-or-xor)
       - [Example](#example-5)
+
+}
 
 # Boolean Logic
 

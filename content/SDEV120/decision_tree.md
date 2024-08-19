@@ -3,6 +3,13 @@ title: Decision Trees
 course: SDEV120
 ---
 
+~~wrapHtml(div,schedule){
+
+- [Decision Trees](#decision-trees)
+  - [Walkthrough](#walkthrough)
+
+}
+
 # Decision Trees
 
 A decision tree is a flowchart-like structure in which...

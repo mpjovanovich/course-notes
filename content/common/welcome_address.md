@@ -30,11 +30,11 @@ Digital computers have driven extraordinary transition at a macro human level, a
 
 With our new power, however, comes danger.
 
-If we fail to examine the value that a given technology provides us we run the risk of using it habitually, without seeing that there is a choice to set it aside or change it. We must reflect upon the behavioral changes that a technology has in our personal lives, and the lives of those around us. We must resist the temptation to chase instant gratification and fleeting novelty, and instead focus on the long term benefits that a technology can provide.
+If we fail to examine the value that a given technology provides us we run the risk of using it habitually, without seeing that there is a choice to set it aside or change it. We must focus on the long term benefits that a technology can provide, and continually assess its value.
 
-If we fail to draw new minds into the field of computing we may be left with too few who understand it. In such a case we would be left with a handful of powerful decision makers. Whether well or ill intentioned, the actions of these individuals, corporations, or agencies, would weigh heavily on society. We must take seriously the study of computing in order to avoid an oligarchy of tech experts. Community feedback is required to keep societal values in balance.
+If we fail to draw new minds into the field of computing we may be left with a handful of powerful tech decision makers whose decisions have undue consequences. We must maintain a diverse and balanced computing community so that the failure of any one tech leader, corporation, or government does not have devastating effects.
 
-If we fail to scrutinize those who are making technological decisions, those decisions may fall into the hands of people who are overly motivated by their own fears. We would run the risk of either innovation collapse (driven by those who view technology as magic, and would confine its development) or of an assault on competing views (driven by those who are afraid of the "other", and would use technology as a weapon). We must boldly advocate for open and transparent tech policy, balancing personal incentives with social responsibility.
+If we fail to scrutinize those who are making tech decisions, we may allow decision makers to stifle innovation or suppress competing voices. We must boldly advocate for open and transparent tech policies.
 
 ## Hope for the Future
 

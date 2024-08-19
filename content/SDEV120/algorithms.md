@@ -3,6 +3,8 @@ title: Algorithms
 course: SDEV120
 ---
 
+~~wrapHtml(div,schedule){
+
 - [Algorithms](#algorithms)
   - [What is an Algorithm?](#what-is-an-algorithm)
     - [Examples](#examples)
@@ -16,11 +18,12 @@ course: SDEV120
     - [Encryption](#encryption)
     - [Compression](#compression)
     - [Pathfinding](#pathfinding)
-    - [Flocking](#flocking)
     - [Classification](#classification)
     - [Prediction](#prediction)
     - [Reinforcement Learning](#reinforcement-learning)
     - [Data Mining](#data-mining)
+
+}
 
 # Algorithms
 

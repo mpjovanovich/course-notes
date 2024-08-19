@@ -3,7 +3,11 @@ title: Solving Problems with Truth Tables
 course: SDEV120
 ---
 
+~~wrapHtml(div,schedule){
+
 - [Solving Problems with Truth Tables](#solving-problems-with-truth-tables)
+
+}
 
 # Solving Problems with Truth Tables
 

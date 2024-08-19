@@ -5,12 +5,16 @@ course: SDEV120
 
 ~~fig(60){https://imgs.xkcd.com/comics/settling_2x.png}
 
+~~wrapHtml(div,schedule){
+
 - [PseudoCode](#pseudocode)
   - [What is PseudoCode?](#what-is-pseudocode)
   - [Why use PseudoCode?](#why-use-pseudocode)
   - [How do I write PseudoCode?](#how-do-i-write-pseudocode)
   - [Examples](#examples)
   - [Different ways to get the same result?](#different-ways-to-get-the-same-result)
+
+}
 
 # PseudoCode
 

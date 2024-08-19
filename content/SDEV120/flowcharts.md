@@ -5,6 +5,8 @@ course: SDEV120
 
 ~~fig{https://imgs.xkcd.com/comics/flow_charts.png}
 
+~~wrapHtml(div,schedule){
+
 - [Flowcharts](#flowcharts)
   - [Flowchart Symbols](#flowchart-symbols)
     - [Terminator](#terminator)
@@ -13,6 +15,8 @@ course: SDEV120
     - [Decision](#decision)
     - [Input / Output](#input--output)
     - [Data Store](#data-store)
+
+}
 
 # Flowcharts
 

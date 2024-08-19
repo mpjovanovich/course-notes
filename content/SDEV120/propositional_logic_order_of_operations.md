@@ -3,6 +3,8 @@ title: Propositional Logic - Order of Operations
 course: SDEV120
 ---
 
+~~wrapHtml(div,schedule){
+
 - [Order of Operations](#order-of-operations)
   - [Arithmetic Order of Operations](#arithmetic-order-of-operations)
     - [Modulus](#modulus)
@@ -11,6 +13,8 @@ course: SDEV120
     - [Practice Problems](#practice-problems-1)
     - [Exclusive Or](#exclusive-or)
     - [De Morgan's Laws](#de-morgans-laws)
+
+}
 
 # Order of Operations
 
@@ -76,7 +80,7 @@ The **modulus** operator returns the remainder of a division operation.
 |     3      | ∧        | Conjunction   |
 |     4      | ∨        | Disjunction   |
 |     5      | →        | Implication   |
-|     6      | ↔        | Biconditional |
+|     6      | ↔       | Biconditional |
 
 ### Practice Problems
 

@@ -2,12 +2,16 @@
 title: Computer Orientation
 ---
 
+~~wrapHtml(div,schedule){
+
 - [Computer Orientation](#computer-orientation)
   - [Naming Files and Folders](#naming-files-and-folders)
   - [File Extensions](#file-extensions)
   - [Directory Structure](#directory-structure)
   - [Tip: Ctrl / Cmd + f = Find!](#tip-ctrl--cmd--f--find)
   - [Summary: What Should I Be Able to Do?](#summary-what-should-i-be-able-to-do)
+
+}
 
 # Computer Orientation
 
