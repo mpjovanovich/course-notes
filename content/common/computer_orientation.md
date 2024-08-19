@@ -35,11 +35,13 @@ The file extension allows a file to be associated with a specific program. For e
 
 You can change the file extension to whatever you want (despite warnings you may receive).
 
-<p class="demo">Demo</p>
+~~demo{
 
 - Create a new file called `test.txt`.
 - Remove the extension.
 - Open the file in a text editor.
+
+}
 
 **Good Habits:**
 
@@ -52,7 +54,7 @@ You can change the file extension to whatever you want (despite warnings you may
 - Directories are containers for storing other files.
 - They have a hierarchical structure, like a family tree.
 
-<p class="demo">Demo:</p>
+~~demo{
 
 Use tree terminiology to draw and describe the following directory structure, from [Game of Life - React](https://github.com/mpjovanovich/life_react)
 
@@ -84,6 +86,8 @@ src
 favicon.png
 ...
 ```
+
+}
 
 **Good Habits:**
 
