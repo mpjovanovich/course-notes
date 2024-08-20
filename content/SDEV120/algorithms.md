@@ -18,6 +18,8 @@ course: SDEV120
     - [Encryption](#encryption)
     - [Compression](#compression)
     - [Pathfinding](#pathfinding)
+  - [Flocking](#flocking)
+  - [Network Analysis / Search Ranking](#network-analysis--search-ranking)
     - [Classification](#classification)
     - [Prediction](#prediction)
     - [Reinforcement Learning](#reinforcement-learning)
@@ -131,9 +133,27 @@ Types of algorithms:
 
 ~~fig(60){https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif}
 
+"How do we find the optimal path between two points?"
+
+- Dijkstra's algorithm
+
+## Flocking
+
+~~fig{https://repository-images.githubusercontent.com/258305543/28971980-92d2-11ea-8a66-4d0d91c0e790}
+
 "How do we simulate flock behavior?"
 
-- Boids
+- Boids algorithm
+
+## Network Analysis / Search Ranking
+
+~~fig{https://miro.medium.com/v2/resize:fit:720/format:webp/0*311Gn2vCqFYpPfi0}
+
+~~fig{https://miro.medium.com/v2/resize:fit:1200/1*j-WoG309GW2UHI9gN3uJeg.gif}
+
+- "How do we model the spread of a virus?"
+- "How do we match text from an Internet search to relevant results?"
+- "How do we recommend content on social media?"
 
 ### Classification
 
