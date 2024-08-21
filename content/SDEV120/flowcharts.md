@@ -15,6 +15,7 @@ course: SDEV120
     - [Decision](#decision)
     - [Input / Output](#input--output)
     - [Data Store](#data-store)
+  - [Example](#example)
 
 }
 
@@ -22,9 +23,7 @@ course: SDEV120
 
 A flowchart is a visual representation of a process.
 
-Flowchart symbols are standardized, but verbage and symbols are not.
-
-![Flowchart Symbols](images/flowchart_example1.jpg)
+Flowchart symbols are standardized, test is not.
 
 ## Flowchart Symbols
 
@@ -100,3 +99,13 @@ _Output Example:_
 - Represents a data store
   - Database
   - File
+
+## Example
+
+~~demo{
+
+_Flowchart our previous algorithm(s) for find even numbers 2-10_
+
+We will do this together using [draw.io](https://draw.io).
+
+}

@@ -13,6 +13,7 @@ course: SDEV120
   - [How do I write PseudoCode?](#how-do-i-write-pseudocode)
   - [Examples](#examples)
   - [Different ways to get the same result?](#different-ways-to-get-the-same-result)
+  - [Different ways to get the same result?](#different-ways-to-get-the-same-result-1)
 
 }
 
@@ -80,22 +81,40 @@ _Eat whole bag of cookies_
 
 ```
 START
-    Open bag of cookies
+    SET eaten = 0
+    open bag of cookies
+
     WHILE there are cookies in the bag
-        Eat cookie
+        eat cookie
+        SET eaten = eaten + 1
     END WHILE
-    Be sick and regret
+
+    IF eaten > 10
+        regret
+    ELSE
+        be satisfied
+    END IF
 END
 ```
 
 ## Different ways to get the same result?
 
-Let's brainstorm:
-
-_Travel from Indianapolis to Las Angeles (by plane)_
-
-...
+~~demo{
 
 _Print even integers between 0 and 10_
 
-...
+How many ways can we come up with do this?
+
+}
+
+## Different ways to get the same result?
+
+~~demo{
+
+_Travel from Indianapolis to Las Angeles (by plane)_
+
+What parameters might we optimize for?
+
+Draw weighted graph for each parameter.
+
+}
