@@ -23,7 +23,7 @@ course: SDEV120
     - [Classification](#classification)
     - [Prediction](#prediction)
     - [Reinforcement Learning](#reinforcement-learning)
-    - [Data Mining](#data-mining)
+  - [Critical Thinking Exercise](#critical-thinking-exercise)
 
 }
 
@@ -91,9 +91,7 @@ Types of algorithms:
 
 ### Sorting
 
-~~fig(60){https://miro.medium.com/v2/resize:fit:640/format:webp/0*nh6F_qERbgD3xmV-.gif}
-
-~~fig(sorting,60){https://miro.medium.com/v2/resize:fit:640/format:webp/0*nh6F_qERbgD3xmV-.gif}
+~~fig(bubble sort){https://miro.medium.com/v2/1*-qR66X2iwdcjhaqq10y9JQ.gif}
 
 "How do we arrange a set of items in a specific order?"
 
@@ -186,22 +184,28 @@ Types of algorithms:
 - Q-learning
 - Temporal difference (TD) learning
 
-### Data Mining
-
-<figure>
-    <span>
-        <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*psbhLB_qOFm7UdeYZoLgeA.gif">
-    </span>
-</figure>
-
-"How do we find patterns in a set of data?"
-
-- Apriori algorithm
-- Principal component analysis (PCA)
-- K-means clustering
+## Critical Thinking Exercise
 
 ~~demo{
 
-https://github.com/mpjovanovich/k-means_plus_plus
+**Problem:** We need to fly from Indianapolis to Los Angeles.
+
+The following cities are possible stops:
+
+- Chicago
+- Denver
+- Dallas
+- Phoenix
+- Las Vegas
+
+Draw a graph of the possible routes between these cities.
+
+Consider:
+
+- directed vs undirected
+- bidirectional vs unidirectional
+- weighted vs unweighted
+  - What paramaters might the weights represent?
+  - Optimize for a single parameter? A combination of parameters?
 
 }

@@ -12,8 +12,7 @@ course: SDEV120
   - [Why use PseudoCode?](#why-use-pseudocode)
   - [How do I write PseudoCode?](#how-do-i-write-pseudocode)
   - [Examples](#examples)
-  - [Different ways to get the same result?](#different-ways-to-get-the-same-result)
-  - [Different ways to get the same result?](#different-ways-to-get-the-same-result-1)
+  - [Critical Thinking Exercise](#critical-thinking-exercise)
 
 }
 
@@ -97,24 +96,14 @@ START
 END
 ```
 
-## Different ways to get the same result?
+## Critical Thinking Exercise
 
 ~~demo{
 
-_Print even integers between 0 and 10_
+**Problem:** Print even integers between 0 and 10 (inclusive)
 
-How many ways can we come up with do this?
+How many algorithms can we come up with do this?
 
-}
-
-## Different ways to get the same result?
-
-~~demo{
-
-_Travel from Indianapolis to Las Angeles (by plane)_
-
-What parameters might we optimize for?
-
-Draw weighted graph for each parameter.
+PseudoCode them as we go.
 
 }
