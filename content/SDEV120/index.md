@@ -7,7 +7,8 @@ course: SDEV120
 
 # Announcements
 
-Welcome to Computing Logic.
+- Still waiting on response for books. Have (maybe) a few hard copies?
+- Bubble sort gif fixed on algorithms page.
 
 💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 
@@ -56,8 +57,6 @@ Discussion: Intro to Logic
 [Propositional Logic - Order of Operations](propositional_logic_order_of_operations.html)
 
 [Solving Problems with Truth Tables](solving_problems_with_truth_tables.html)
-
-<!-- REMOVED FROM COURSE [Solving Problems with Logical Arguments](solving_problems_with_logical_arguments.html) -->
 
 [Decision Trees](decision_tree.html)
 
