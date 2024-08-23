@@ -6,7 +6,7 @@ course: SDEV120
 - [Logic Gates](#logic-gates)
   - [Foundations](#foundations)
   - [Basic Gates](#basic-gates)
-  - [Operations with Gates](#operations-with-gates)
+  - [Combining Gates](#combining-gates)
 
 # Logic Gates
 
@@ -30,36 +30,28 @@ The truth table for each gate matches the truth table for the corresponding logi
 
 Logic.ly
 
-<figure>
-    <span>
-        <img src="images/basic_logic_gates.png" style="">
-    </span>
-    <figcaption>
-        <a href=""></a>
-    </figcaption>
-</figure>
+~~fig{images/basic_logic_gates.png}
 
-## Operations with Gates
+## Combining Gates
 
-<p class="demo">Demo:</p>
+We can combine gates to create more complex **circuits**.
 
-One bit magnitude comparator
+A **magnitude comparator** is a combinational circuit that compares two numbers and determines their relative magnitudes.
 
-<figure>
-    <span>
-        <img src="images/one_bit_magnitude_comparator.png" style="">
-    </span>
-    <figcaption>
-        <a href=""></a>
-    </figcaption>
-</figure>
+~~demo{
 
-Using A = 1, B = 1 as an example, let’s figure out the inputs to the gates that lead to each outcome:
+_One bit magnitude comparator:_
 
-**What is the logic circuit for A < B?**
+~~fig{images/one_bit_magnitude_comparator.png}
+
+Using the values A = 1, B = 1 as an example, let’s trace the logic through the circuit to figure out the output:
+
+~~summary(**What is the logic circuit for A < B?**) {
 
 - ¬A ∧ B
 - 0 ∧ 1 = False
+
+}
 
 **What is the logic circuit for A > B?**
 
@@ -73,3 +65,5 @@ Using A = 1, B = 1 as an example, let’s figure out the inputs to the gates tha
 - A ∨ (¬B ∧ ¬A) ∨ B
 - 1 ∨ (0 ∧ 0) ∨ 1
 - 1 ∨ 0 ∨ 1 = True
+
+}

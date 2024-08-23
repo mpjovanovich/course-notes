@@ -20,6 +20,7 @@ course: SDEV120
   - [M00: Welcome](#m00-welcome)
   - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
   - [M02: Boolean Logic](#m02-boolean-logic)
+  - [M03: Logic Gates and Circuits](#m03-logic-gates-and-circuits)
 
 }
 
@@ -59,19 +60,11 @@ Discussion: Intro to Logic
 
 [Decision Trees](decision_tree.html)
 
-<!--
+## M03: Logic Gates and Circuits
+
 [Logic Gates](logic_gates.html)
 
-[Set Theory](set_theory.html)
-
-[Algorithms and Structured Programming](algorithms.html)
-
-[Pseudocode](pseudocode.html)
-
-[draw.io](https://app.diagrams.net/) - Online flowcharting tool
-
-[Flowcharts](flowcharts.html)
-
+<!--
 
 [Programming Paradigms](https://docs.google.com/document/d/1qId4olrCAPER_9gGioK8CKQBE61vkn4hdj5mbQTTOcM/edit?usp=sharing)
 
