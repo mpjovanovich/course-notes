@@ -7,8 +7,7 @@ course: SDEV120
 
 # Announcements
 
-- Still waiting on response for books. Have (maybe) a few hard copies?
-- Bubble sort gif fixed on algorithms page.
+- Review midterm and final scheduling procedure
 
 💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 
