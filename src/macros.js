@@ -73,6 +73,13 @@ export function demo(content) {
 }
 demo[MACRO_IDENTIFIER] = "demo";
 
+export function exercise(content) {
+  content = '<p class="focusContentTitle">Exercise:</p>\n\n' + content;
+  content = wrapHtml(content, "div", "focusContent");
+  return content;
+}
+exercise[MACRO_IDENTIFIER] = "exercise";
+
 export function fig(content, width = "100", altText = "Figure") {
   // If the content has an anchor tag...
   const href = content.includes("<a")

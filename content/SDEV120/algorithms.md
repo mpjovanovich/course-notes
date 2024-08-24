@@ -186,7 +186,7 @@ Types of algorithms:
 
 ## Critical Thinking Exercise
 
-~~demo{
+~~exercise{
 
 **Problem:** We need to fly from Indianapolis to Los Angeles.
 

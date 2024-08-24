@@ -98,9 +98,9 @@ END
 
 ## Critical Thinking Exercise
 
-~~demo{
+~~exercise{
 
-**Problem:** Print even integers between 0 and 10 (inclusive)
+**Problem:** Print even integers between 0 and 4 (inclusive)
 
 How many algorithms can we come up with do this?
 

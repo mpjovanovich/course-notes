@@ -102,9 +102,9 @@ _Output Example:_
 
 ## Example
 
-~~demo{
+~~exercise{
 
-_Flowchart our previous algorithm(s) for find even numbers 2-10_
+_Flowchart our previous algorithm(s) for find even numbers 0-4 inclusive_
 
 We will do this together using [draw.io](https://draw.io).
 
