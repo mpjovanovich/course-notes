@@ -8,7 +8,10 @@ course: SDEV120
   - [Basic Gates](#basic-gates)
   - [Circuits](#circuits)
     - [The Clock](#the-clock)
-    - [Magnitude Comparator](#magnitude-comparator)
+    - [Comparing Values](#comparing-values)
+      - [One bit magnitude comparator:](#one-bit-magnitude-comparator)
+    - [Keeping Values in Memory](#keeping-values-in-memory)
+      - [SR (Set-Reset) Latch](#sr-set-reset-latch)
 
 # Logic Gates
 
@@ -17,10 +20,11 @@ For an excellent logic gate sandbox, see: [Logic.ly](https://logic.ly/demo).
 ## Foundations
 
 - Computers recognize only two states, based on the presence or absence of an electrical signal.
+
   - High voltage = 1 = true
   - Low voltage = 0 = false
+
 - A **logic gate** is a device that performs a logical operation on one or more binary inputs and produces a single binary output.
-- A **circut** is a collection of logic gates that work together to perform a specific task.
 
 ## Basic Gates
 
@@ -36,26 +40,37 @@ Logic.ly
 
 ## Circuits
 
-We can combine logic gates to create more complex circuits.
+We can combine logic gates to create **circuits**.
+
+These circuits can do things like:
+
+- Arithmetic (addition, subtraction, etc.)
+- Comparison (greater than, less than, equal)
+- Memory storage
+- ...
 
 ### The Clock
 
+~~fig{http://watson.latech.edu/book/circuits/images/rsflipflopholdone.png}
+
 The **clock** is a special signal that is used to synchronize the operations of a computer. For now, we just need to know:
 
-- The clock signal changes from 0 to 1 and back to 0 at regular intervals.
-- Computer circuits may change their state (0 or 1) when the clock signal changes.
+- The clock pulses electrical signals at regular intervals.
+- A high signal indicates "true", or 1.
+- A low signal indicates "false", or 0.
+- One up and down pulse (taken together) is called a **clock cycle**.
 
-### Magnitude Comparator
+### Comparing Values
 
-A **magnitude comparator** is a combinational circuit that compares two numbers and determines their relative magnitudes.
+A **magnitude comparator** is a type of combinational circuit that compares two numbers.
 
 ~~exercise{
 
-_One bit magnitude comparator:_
+#### One bit magnitude comparator:
 
 ~~fig{images/one_bit_magnitude_comparator.png}
 
-[one_bit_magnitude_comparer.logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/one_bit_magnitude_comparer.logicly)
+[One Bit Magnitude Comparator - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/one_bit_magnitude_comparer.logicly)
 
 **Problem 1:**
 
@@ -100,5 +115,40 @@ _Hint:_ Remember your truth tables and the fact that 1 = true and 0 = false.
 **Problem 2:**
 
 What is the boolean expression for the output of the circuit?
+
+}
+
+### Keeping Values in Memory
+
+A **flip-flop** is a circuit that can store a single bit of information, so that it's not lost when the clock signal changes.
+
+~~demo{
+
+#### SR (Set-Reset) Latch
+
+The **SR latch** is a simple form of flip-flop that can store one bit of information.
+
+When in the **hold** state, the outputs remain the same.
+
+They will only change when either the **set** or **reset** input is activated.
+
+_Inputs / Outputs:_
+
+- S = Set signal
+- R = Reset signal
+- Q = Output
+- Q' = Inverted output
+
+_Truth Table:_
+
+|                     | S   | R   | Q   | Q'  |
+| ------------------- | --- | --- | --- | --- |
+| **Set Condition**   | 1   | 0   | 1   | 0   |
+| **Reset Condition** | 0   | 1   | 0   | 1   |
+| **Hold Condition**  | 0   | 0   | 1   | 1   |
+
+_Circuit:_
+
+[Set Reset Latch - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/set_reset_latch.logicly)
 
 }
