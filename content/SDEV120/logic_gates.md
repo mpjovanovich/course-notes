@@ -208,7 +208,7 @@ Now that we have the basic building blocks, let's build something practical.
 
 _Scenario:_
 
-In this demo, we'll build a simple alarm system. We'll assume a motion sensor is feeding a signal into our system (S).
+In this demo, we'll build a simple alarm system. We'll assume a LiDAR motion sensor is feeding a signal into our system (S).
 
 This motion sensor will tolerate movement up to a certain threshold value (T). We'll hardcode this to zero.
 
