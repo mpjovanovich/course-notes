@@ -44,9 +44,13 @@ _One bit magnitude comparator:_
 
 ~~fig{images/one_bit_magnitude_comparator.png}
 
-Using the values A = 1, B = 1 as an example, let’s trace the logic through the circuit to figure out the output:
+Assume that A = 1, B = 1.
 
-~~summary(**What is the logic circuit for A < B?**) {
+Plug these values into the circuit and trace the logic the three possible outputs.
+
+_Hint:_ Remember your truth tables and the fact that 1 = true and 0 = false.
+
+~~summary( **Trace the steps that lead to A < B** ) {
 
 - ¬A ∧ B
 - 0 ∧ 1 = False
