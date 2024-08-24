@@ -7,11 +7,15 @@ course: SDEV120
   - [Foundations](#foundations)
   - [Basic Gates](#basic-gates)
   - [Circuits](#circuits)
-    - [The Clock](#the-clock)
     - [Comparing Values](#comparing-values)
       - [One bit magnitude comparator:](#one-bit-magnitude-comparator)
     - [Keeping Values in Memory](#keeping-values-in-memory)
       - [SR (Set-Reset) Latch](#sr-set-reset-latch)
+    - [Synchronizing Information](#synchronizing-information)
+      - [The Clock](#the-clock)
+      - [SR Flip-Flop](#sr-flip-flop)
+    - [Combining Simple Circuits](#combining-simple-circuits)
+      - [Building an Alarm System](#building-an-alarm-system)
 
 # Logic Gates
 
@@ -48,17 +52,6 @@ These circuits can do things like:
 - Comparison (greater than, less than, equal)
 - Memory storage
 - ...
-
-### The Clock
-
-~~fig{http://watson.latech.edu/book/circuits/images/rsflipflopholdone.png}
-
-The **clock** is a special signal that is used to synchronize the operations of a computer. For now, we just need to know:
-
-- The clock pulses electrical signals at regular intervals.
-- A high signal indicates "true", or 1.
-- A low signal indicates "false", or 0.
-- One up and down pulse (taken together) is called a **clock cycle**.
 
 ### Comparing Values
 
@@ -120,13 +113,9 @@ What is the boolean expression for the output of the circuit?
 
 ### Keeping Values in Memory
 
-A **flip-flop** is a circuit that can store a single bit of information, so that it's not lost when the clock signal changes.
-
-~~demo{
-
 #### SR (Set-Reset) Latch
 
-The **SR latch** is a simple form of flip-flop that can store one bit of information.
+The **SR latch** is a simple form of flip-flop that can store one bit of information as memory so that it isn't lost when the clock signal changes.
 
 When in the **hold** state, the outputs remain the same.
 
@@ -137,18 +126,94 @@ _Inputs / Outputs:_
 - S = Set signal
 - R = Reset signal
 - Q = Output
-- Q' = Inverted output
 
 _Truth Table:_
 
-|                     | S   | R   | Q   | Q'  |
-| ------------------- | --- | --- | --- | --- |
-| **Set Condition**   | 1   | 0   | 1   | 0   |
-| **Reset Condition** | 0   | 1   | 0   | 1   |
-| **Hold Condition**  | 0   | 0   | 1   | 1   |
+|                     | S   | R   | Q   |
+| ------------------- | --- | --- | --- |
+| **Set Condition**   | 1   | 0   | 1   |
+| **Reset Condition** | 0   | 1   | 0   |
+| **Hold Condition**  | 0   | 0   | 1   |
 
 _Circuit:_
 
-[Set Reset Latch - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/set_reset_latch.logicly)
+[SR Latch - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/set_reset_latch.logicly)
+
+### Synchronizing Information
+
+In digital circuits, we need to be precise about when information is updated.
+
+#### The Clock
+
+~~fig{http://watson.latech.edu/book/circuits/images/rsflipflopholdone.png}
+
+The **clock** is a special signal that is used to synchronize the operations of a computer. For now, we just need to know:
+
+- The clock pulses electrical signals at regular intervals.
+- A high signal indicates "true", or 1.
+- A low signal indicates "false", or 0.
+- One up and down pulse (taken together) is called a **clock cycle**.
+
+#### SR Flip-Flop
+
+The **SR flip-flop** extends the SR latch by adding a clock signal.
+
+This signal allows the flip-flop to store information only when the clock signal changes.
+
+_Inputs / Outputs:_
+
+- C = Clock signal
+- S = Set signal
+- R = Reset signal
+- Q = Output
+
+_Truth Table:_
+
+Same as above, except now the output can only change on a rising edge (uptick) of the clock signal.
+
+Falling edges of the clock (downticks) cut off the input signals.
+
+|                               | C   | S   | R   | Q   |
+| ----------------------------- | --- | --- | --- | --- |
+| **Set Condition**             | 1   | 1   | 0   | 1   |
+| **(Waiting) Set Condition**   | 0   | 1   | 0   | 1   |
+| **Reset Condition**           | 1   | 0   | 1   | 0   |
+| **(Waiting) Reset Condition** | 1   | 0   | 1   | 0   |
+| **Hold Condition**            | 0   | 0   | 0   | 1   |
+
+_Circuit:_
+
+[SR Flip-Flop - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/set_reset_flip_flop.logicly)
+
+### Combining Simple Circuits
+
+Now that we have the basic building blocks, let's build something practical.
+
+~~demo{
+
+#### Building an Alarm System
+
+_Scenario:_
+
+In this demo, we'll build a simple alarm system. We'll assume a motion sensor is feeding a signal into our system (S).
+
+This motion sensor will tolerate movement up to a certain threshold value (T). We'll hardcode this to zero.
+
+There is a reset button (R) that can be used to turn off the alarm.
+
+_Components:_
+
+- **One bit magnitude comparator**:
+
+  - Compare the signal coming from our motion sensor to a threshold value.
+
+- **SR flip-flop**:
+  - Synchronize incoming signals.
+  - Toggle the alarm on and off based on the sensor and the reset button signals.
+  - Retain alarm state via latch.
+
+_Circuit:_
+
+[Alarm System - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/alarm_system.logicly)
 
 }
