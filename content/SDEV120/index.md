@@ -7,7 +7,7 @@ course: SDEV120
 
 # Announcements
 
-- Review midterm and final scheduling procedure
+- Midterm and final scheduling procedure
 
 💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 

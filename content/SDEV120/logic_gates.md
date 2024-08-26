@@ -70,13 +70,13 @@ These circuits can do things like:
 
 A **magnitude comparator** is a type of combinational circuit that compares two numbers.
 
-~~exercise{
-
 #### One bit magnitude comparator:
 
 ~~fig{images/one_bit_magnitude_comparator.png}
 
 [One Bit Magnitude Comparator - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/one_bit_magnitude_comparer.logicly)
+
+_Exercise:_
 
 **Problem 1:**
 
@@ -121,8 +121,6 @@ _Hint:_ Remember your truth tables and the fact that 1 = true and 0 = false.
 **Problem 2:**
 
 What is the boolean expression for the output of the circuit?
-
-}
 
 ### Keeping Values in Memory
 
