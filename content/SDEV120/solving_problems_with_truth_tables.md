@@ -49,6 +49,11 @@ Number of rows = 2<sup>n</sup> where n is the number of variables
 
 **4) _Plug in the values for each row and solve for the last column._**
 
+We may either:
+
+- Solve each row as an individual problem
+- Use bookkeeping rows, then solve for the last column in one go
+
 ## Examples
 
 ### Basic Example
@@ -100,6 +105,14 @@ Put T in the last column.
 
 - Row 2:
   - ...
+
+_Alternatively, use bookkeeping rows:_
+
+| A   | B   | C   | ¬A  | ¬A ∧ B | ¬A ∧ B ∨ C |
+| :-- | :-- | :-- | --- | ------ | ---------- |
+| T   | T   | T   | F   | F      | T          |
+| T   | T   | F   | F   | F      | F          |
+| ... | ... | ... | ... | ...    | ...        |
 
 _Continue until all rows are filled in._
 
