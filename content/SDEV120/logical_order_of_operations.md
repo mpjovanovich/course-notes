@@ -11,8 +11,6 @@ course: SDEV120
     - [Practice Problems](#practice-problems)
   - [Logical Order of Operations](#logical-order-of-operations)
     - [Practice Problems](#practice-problems-1)
-    - [Exclusive Or](#exclusive-or)
-    - [De Morgan's Laws](#de-morgans-laws)
 
 }
 
@@ -73,14 +71,12 @@ The **modulus** operator returns the remainder of a division operation.
 
 ## Logical Order of Operations
 
-| Precedence | Operator | Description   |
-| :--------: | :------- | :------------ |
-|     1      | ()       | Parentheses   |
-|     2      | ¬        | Negation      |
-|     3      | ∧        | Conjunction   |
-|     4      | ∨        | Disjunction   |
-|     5      | →        | Implication   |
-|     6      | ↔       | Biconditional |
+| Precedence | Operator | Description |
+| :--------: | :------- | :---------- |
+|     1      | ()       | Parentheses |
+|     2      | ¬        | Negation    |
+|     3      | ∧        | Conjunction |
+|     4      | ∨        | Disjunction |
 
 ### Practice Problems
 
@@ -102,56 +98,3 @@ Plug in the values and evaluate the following expressions:
 5. ¬( x ∧ y )
 6. ¬( x ∨ y )
 ```
-
-### Exclusive Or
-
-How do we represent exclusive or if we don't have an exclusive or operator?
-
-```
-P is true AND Q is false OR P is false AND Q is true:
-
-(P ∧ ¬Q) ∨ (¬P ∧ Q)
-```
-
-### De Morgan's Laws
-
-De Morgan's Laws are a set of rules that allow us to distribute negation across conjunction and disjunction:
-
-```
-¬(P ∧ Q) ≡ ¬P ∨ ¬Q
-¬(P ∨ Q) ≡ ¬P ∧ ¬Q
-```
-
-Let's check for logical equivalence using a truth table:
-
-Rule 1:
-
-| P   | Q   | (P ∧ Q) | ¬(P ∧ Q) |
-| --- | --- | ------- | -------- |
-| T   | T   |         |          |
-| T   | F   |         |          |
-| F   | T   |         |          |
-| F   | F   |         |          |
-
-| P   | Q   | (P ∧ Q) | ¬P ∨ ¬Q |
-| --- | --- | ------- | ------- |
-| T   | T   |         |         |
-| T   | F   |         |         |
-| F   | T   |         |         |
-| F   | F   |         |         |
-
-Rule 2:
-
-| P   | Q   | (P ∨ Q) | ¬(P ∨ Q) |
-| --- | --- | ------- | -------- |
-| T   | T   |         |          |
-| T   | F   |         |          |
-| F   | T   |         |          |
-| F   | F   |         |          |
-
-| P   | Q   | (P ∨ Q) | ¬P ∧ ¬Q |
-| --- | --- | ------- | ------- |
-| T   | T   |         |         |
-| T   | F   |         |         |
-| F   | T   |         |         |
-| F   | F   |         |         |

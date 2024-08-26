@@ -52,9 +52,9 @@ Discussion: Computing and Society
 
 Discussion: Intro to Logic
 
-[Propositional Logic - Intro and Connectives](propositional_logic_intro_connectives.html)
+[Intro to Propositional Logic](intro_to_propositional_logic.html)
 
-[Propositional Logic - Order of Operations](propositional_logic_order_of_operations.html)
+[Logical Order of Operations](logical_order_of_operations.html)
 
 [Solving Problems with Truth Tables](solving_problems_with_truth_tables.html)
 

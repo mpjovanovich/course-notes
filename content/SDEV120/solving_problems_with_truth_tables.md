@@ -6,12 +6,25 @@ course: SDEV120
 ~~wrapHtml(div,schedule){
 
 - [Solving Problems with Truth Tables](#solving-problems-with-truth-tables)
+  - [The General Process](#the-general-process)
+    - [Set Up the Table](#set-up-the-table)
+    - [Solve for the Given Expression](#solve-for-the-given-expression)
+  - [Examples](#examples)
+    - [Basic Example](#basic-example)
+    - [De Morgan's Laws](#de-morgans-laws)
+    - [Exclusive Or](#exclusive-or)
 
 }
 
 # Solving Problems with Truth Tables
 
-**_Determine the number of rows needed._**
+## The General Process
+
+The general process for solving problems with truth tables is as follows:
+
+### Set Up the Table
+
+**1) _Determine the number of rows needed._**
 
 Number of rows = 2<sup>n</sup> where n is the number of variables
 
@@ -21,13 +34,28 @@ Number of rows = 2<sup>n</sup> where n is the number of variables
 - 4 variables = 2<sup>4</sup> = 16 rows
 - ...
 
-**_Follow the algorithm below until you hit the last T/F alternating column._**
+**2) _Write the header columns._**
+
+- One column for each variable
+- One column for the logical expression you are solving for
+
+**3) _Follow the algorithm below until you hit the last T/F alternating column._**
 
 - Fill first column with top half T and bottom half F. Move to the next column.
 - For each block of consecutive T or F in the previous column fill the next column with half T and half F
 - Repeat until you hit the last T / F alternating column
 
-_Example_
+### Solve for the Given Expression
+
+**4) _Plug in the values for each row and solve for the last column._**
+
+## Examples
+
+### Basic Example
+
+**Evaluate the truth table for ¬A ∧ B ∨ C:**
+
+_There are 3 variables, so we need 2<sup>3</sup> = 8 rows._
 
 | A   | B   | C   |
 | :-- | :-- | :-- |
@@ -40,47 +68,94 @@ _Example_
 | F   | F   | T   |
 | F   | F   | F   |
 
-**_Fill in the last column with the logical expression that you are trying to solve for. Leave placeholder columns in between._**
+_Now fill in the last column with the logical expression that you are trying to solve for._
 
-_Example_
+| A   | B   | C   | ¬A ∧ B ∨ C |
+| :-- | :-- | :-- | :--------- |
+| T   | T   | T   |            |
+| T   | T   | F   |            |
+| T   | F   | T   |            |
+| T   | F   | F   |            |
+| F   | T   | T   |            |
+| F   | T   | F   |            |
+| F   | F   | T   |            |
+| F   | F   | F   |            |
 
-If trying to find the truth table for ¬A ∧ B ∨ C:
+_Plug in the values for each row and solve for the last column._
 
-| A   | B   | C   | ... bookkeeping columns ... | ¬A ∧ B ∨ C |
-| :-- | :-- | :-- | :-------------------------- | ---------: |
-| T   | T   | T   |                             |            |
-| T   | T   | F   |                             |            |
-| T   | F   | T   |                             |            |
-| T   | F   | F   |                             |            |
-| F   | T   | T   |                             |            |
-| F   | T   | F   |                             |            |
-| F   | F   | T   |                             |            |
-| F   | F   | F   |                             |            |
+- Row 1:
 
-Be sure each row starts with T and not F.
+  - ¬T ∧ T ∨ T
+  - F ∧ T ∨ T
+  - F ∨ T
+  - T
 
-**_Fill in the placeholder columns with the intermediate results of the logical expression. Do this in the order that the expression is evaluated, one binary operation at a time (or unary operation in the case of "not")._**
+Put T in the last column.
 
-| A   | B   | C   | ¬A  | ¬A ∧ B | ¬A ∧ B ∨ C |
-| :-- | :-- | :-- | :-- | :----- | ---------: |
-| T   | T   | T   |     |        |            |
-| T   | T   | F   |     |        |            |
-| T   | F   | T   |     |        |            |
-| T   | F   | F   |     |        |            |
-| F   | T   | T   |     |        |            |
-| F   | T   | F   |     |        |            |
-| F   | F   | T   |     |        |            |
-| F   | F   | F   |     |        |            |
+| A   | B   | C   | ¬A ∧ B ∨ C |
+| :-- | :-- | :-- | :--------- |
+| T   | T   | T   | T          |
+| T   | T   | F   |            |
+| ... | ... | ... |            |
 
-**_Fill in the rows one at a time with the results of the logical expressions. Done this way you are always comparing one row in the table to another row in the table. The final row will be the result of the full logical expression._**
+- Row 2:
+  - ...
 
-|  A  |  B  |  C  | ¬A  | ¬A ∧ B | ¬A ∧ B ∨ C |
-| :-: | :-: | :-: | :-: | :----: | :--------: |
-|  T  |  T  |  T  |  F  |   F    |     T      |
-|  T  |  T  |  F  |  F  |   F    |     F      |
-|  T  |  F  |  T  |  F  |   F    |     T      |
-|  T  |  F  |  F  |  F  |   F    |     F      |
-|  F  |  T  |  T  |  T  |   T    |     T      |
-|  F  |  T  |  F  |  T  |   T    |     T      |
-|  F  |  F  |  T  |  T  |   F    |     T      |
-|  F  |  F  |  F  |  T  |   F    |     F      |
+_Continue until all rows are filled in._
+
+### De Morgan's Laws
+
+De Morgan's Laws are a set of rules that allow us to distribute negation across conjunction and disjunction:
+
+```
+¬(P ∧ Q) ≡ ¬P ∨ ¬Q
+¬(P ∨ Q) ≡ ¬P ∧ ¬Q
+```
+
+_Exercise:_ Let's check for logical equivalence using a truth table:
+
+Rule 1:
+
+| P   | Q   | (P ∧ Q) | ¬(P ∧ Q) |
+| --- | --- | ------- | -------- |
+| T   | T   |         |          |
+| T   | F   |         |          |
+| F   | T   |         |          |
+| F   | F   |         |          |
+
+| P   | Q   | (P ∧ Q) | ¬P ∨ ¬Q |
+| --- | --- | ------- | ------- |
+| T   | T   |         |         |
+| T   | F   |         |         |
+| F   | T   |         |         |
+| F   | F   |         |         |
+
+Rule 2:
+
+| P   | Q   | (P ∨ Q) | ¬(P ∨ Q) |
+| --- | --- | ------- | -------- |
+| T   | T   |         |          |
+| T   | F   |         |          |
+| F   | T   |         |          |
+| F   | F   |         |          |
+
+| P   | Q   | (P ∨ Q) | ¬P ∧ ¬Q |
+| --- | --- | ------- | ------- |
+| T   | T   |         |         |
+| T   | F   |         |         |
+| F   | T   |         |         |
+| F   | F   |         |         |
+
+### Exclusive Or
+
+Most programming languages don't have an exclusive or operator.
+
+How do we represent exclusive or if we don't have this?
+
+```
+P is true AND Q is false OR P is false AND Q is true:
+
+(P ∧ ¬Q) ∨ (¬P ∧ Q)
+```
+
+_Exercise:_ Let's check for logical equivalence using a truth table...

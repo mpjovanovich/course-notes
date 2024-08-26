@@ -5,7 +5,7 @@ course: SDEV120
 
 ~~wrapHtml(div,schedule){
 
-- [Boolean Logic](#boolean-logic)
+- [Propositional Logic](#propositional-logic)
   - [Propositions](#propositions)
   - [Logical Connectives](#logical-connectives)
     - [Negation (NOT)](#negation-not)
@@ -21,15 +21,13 @@ course: SDEV120
 
 }
 
-# Boolean Logic
+# Propositional Logic
 
-**Boolean logic** is a type of logic that deals with propositions.
+A **proposition** is a statement with some truth value - either true or false.
+
+They form their own branch of mathematics called **propositional logic**, but we will use them to introduce logical concepts for computing.
 
 ## Propositions
-
-**Propositions** are statements that are either true or false.
-
-We will later see these in coding in the form of **boolean values**.
 
 We can assign variables to propositions to make them easier to work with:
 
@@ -68,9 +66,7 @@ A **binary operator** is an operator that takes two operands.
 
 **Symbol**: ¬
 
-**Python**: NOT
-
-**Description**: Returns the opposite truth value of propositions.
+**Description**: Returns the opposite truth value of propositions - the **complement**.
 
 **Used When**: You hear the word "not".
 
@@ -96,8 +92,6 @@ Express using propositions: "It is not raining".
 | False | False | False |
 
 **Symbol**: ∧
-
-**Python**: AND
 
 **Description**: Evaluates to true if all propositions are true.
 
@@ -139,8 +133,6 @@ Express using propositions: "Spot is a dog".
 | False | False | False |
 
 **Symbol**: ∨
-
-**Python**: OR
 
 **Description**: Evaluates to true if any proposition is true.
 
@@ -185,8 +177,6 @@ Express using propositions: "Karen is an Ivy Tech student or a Purdue student.".
 
 **Symbol**: ⊕
 
-**Python**: doesn't exist
-
 **Description**: Evaluates to true if one and only one proposition is true.
 
 **Used When**: You hear the word "either", or it is implied in the context.
@@ -204,50 +194,7 @@ Express using propositions: "Ted either went to the store or the gym.".
 </div>
 </details>
 
-<!-- ### Conditional / Implication (IF)
-
-| P     | Q     | P → Q |
-| :---- | :---- | ----: |
-| True  | True  |  True |
-| True  | False | False |
-| False | True  |  True |
-| False | False |  True |
-
-**Symbol**: → or ⇒
-
-**Python**: `if`
-
-**Description**: Evaluates to true if a condition implies the truth of another proposition (if P is true than Q must also be true).
-
-Read as "P implies Q" or "If P, then Q".
-
-**Used When**: You hear the word "if" or "is".
-
-#### Example
-
-<details>
-<summary>
-Express using propositions: "If it is raining, then Bill uses an umbrella."
-</summary>
-<div>
-<p>Let P = It is raining.</p>
-<p>Let Q = Bill uses an umbrella.</p>
-<p>P → Q</p>
-</div>
-</details>
-
-### Biconditional (IFF)
-
-| P     | Q     | P ↔ Q |
-| :---- | :---- | ----: |
-| True  | True  |  True |
-| True  | False | False |
-| False | True  | False |
-| False | False |  True |
-
-**Symbol**: ↔ or ⇔
-
-**Python**: doesn't exist
+<!-- ### Conditional / Implication (IF) | P     | Q     | P → Q | | :---- | :---- | ----: | | True  | True  |  True | | True  | False | False | | False | True  |  True | | False | False |  True | **Symbol**: → or ⇒ **Python**: `if` **Description**: Evaluates to true if a condition implies the truth of another proposition (if P is true than Q must also be true).  Read as "P implies Q" or "If P, then Q".  **Used When**: You hear the word "if" or "is".  #### Example <details> <summary> Express using propositions: "If it is raining, then Bill uses an umbrella." </summary> <div> <p>Let P = It is raining.</p> <p>Let Q = Bill uses an umbrella.</p> <p>P → Q</p> </div> </details> ### Biconditional (IFF) | P     | Q     | P ↔ Q | | :---- | :---- | ----: | | True  | True  |  True | | True  | False | False | | False | True  | False | | False | False |  True | **Symbol**: ↔ or ⇔ **Python**: doesn't exist
 
 **Description**: Evaluates to true if both propositions always have the same truth value. This implies that both propositions are either true or false.
 
