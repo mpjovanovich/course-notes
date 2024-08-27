@@ -24,11 +24,11 @@ TODO: MACRO LIBRARY EXPLODED. "TOO MANY NESTED MACROS" ERROR.
       - [One bit magnitude comparator:](#one-bit-magnitude-comparator)
     - [Keeping Values in Memory](#keeping-values-in-memory)
       - [SR (Set-Reset) Latch](#sr-set-reset-latch)
+      - [Demo: Building an Arm and Click Camera](#demo-building-an-arm-and-click-camera)
     - [Synchronizing Information](#synchronizing-information)
       - [The Clock](#the-clock)
       - [SR Flip-Flop](#sr-flip-flop)
-    - [Combining Simple Circuits](#combining-simple-circuits)
-      - [Building an Alarm System](#building-an-alarm-system)
+      - [Demo: Building a Hold Activated Button](#demo-building-a-hold-activated-button)
 
 # Logic Gates
 
@@ -148,6 +148,32 @@ _Truth Table:_
 
 _Circuit:_
 
+#### Demo: Building an Arm and Click Camera
+
+~~demo{
+
+_Scenario:_
+
+In this demo, we'll build a system that requires the user to arm a camera before taking a picture.
+
+The camera has three buttons:
+
+- **Photo** - Takes a picture
+- **Arm** - Arms the camera
+- **Reset** - Resets the camera to unarmed
+
+_Components_
+
+- An SR latch will store the "armed" state of the camera.
+- We will combine the SR latch with the photo button via an AND gate to allow the camera to take a picture only when armed.
+- The reset button will be connected to the SR latch to clear the memory and disarm the camera.
+
+_Circuit:_
+
+[Arm and Click Camera](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/arm_click_camera.logicly)
+
+}
+
 [SR Latch - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/set_reset_latch.logicly)
 
 ### Synchronizing Information
@@ -161,8 +187,8 @@ In digital circuits, we need to be precise about when information is updated.
 The **clock** is a special signal that is used to synchronize the operations of a computer. For now, we just need to know:
 
 - The clock pulses electrical signals at regular intervals.
-- A high signal indicates "true", or 1.
-- A low signal indicates "false", or 0.
+- A high signal is called a **rising edge**. This indicates "true", or 1.
+- A low signal is called a **falling edge**. This indicates "false", or 0.
 - One up and down pulse (taken together) is called a **clock cycle**.
 
 #### SR Flip-Flop
@@ -196,35 +222,27 @@ _Circuit:_
 
 [SR Flip-Flop - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/set_reset_flip_flop.logicly)
 
-### Combining Simple Circuits
-
-Now that we have the basic building blocks, let's build something practical.
+#### Demo: Building a Hold Activated Button
 
 ~~demo{
 
-#### Building an Alarm System
-
 _Scenario:_
 
-In this demo, we'll build a simple alarm system. We'll assume a LiDAR motion sensor is feeding a signal into our system (S).
+In this demo, we'll build a system that requires the user to hold a button (S) for a full clock cycle before a light turns on.
 
-This motion sensor will tolerate movement up to a certain threshold value (T). We'll hardcode this to zero.
+We will measure the time using the system clock (C). If the button is held for one clock cycle (rise and fall edge), the light will turn on.
 
-There is a reset button (R) that can be used to turn off the alarm.
+There is a reset button (R) that can be used to turn off the light.
 
 _Components:_
 
-- **One bit magnitude comparator**:
-
-  - Compare the signal coming from our motion sensor to a threshold value.
-
-- **SR flip-flop**:
-  - Synchronize incoming signals.
-  - Toggle the alarm on and off based on the sensor and the reset button signals.
-  - Retain alarm state via latch.
+- The "on" button and a rising clock signal will set a memory bit using SR flip-flop.
+- The "on" button and a falling clock signal will set a memory bit using another SR flip-flop.
+- We will use an AND gate to combine the two signals and turn on the light.
+- We will hook up the reset button to the two SR latches to clear memory and turn off the light.
 
 _Circuit:_
 
-[Alarm System - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/alarm_system.logicly)
+[Hold Button](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/hold_button.logicly)
 
 }
