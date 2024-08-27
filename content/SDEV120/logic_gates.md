@@ -173,7 +173,7 @@ In digital circuits, we need to be precise about when information is updated.
 
 #### The Clock
 
-~~fig{http://watson.latech.edu/book/circuits/images/rsflipflopholdone.png}
+~~fig{https://www.cyberphysics.co.uk/graphics/diagrams/electronics/clockPulse.png}
 
 The **clock** is a special signal that is used to synchronize the operations of a computer. For now, we just need to know:
 
