@@ -139,6 +139,8 @@ _Truth Table:_
 
 _Circuit:_
 
+[SR Latch - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/set_reset_latch.logicly)
+
 #### Demo: Building an Arm and Click Camera
 
 ~~demo{
@@ -164,8 +166,6 @@ _Circuit:_
 [Arm and Click Camera](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/arm_click_camera.logicly)
 
 }
-
-[SR Latch - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/set_reset_latch.logicly)
 
 ### Synchronizing Information
 
