@@ -62,7 +62,7 @@ Discussion: Intro to Logic
 
 ## M03: Logic Gates and Circuits
 
-[Logic Gates](logic_gates.html)
+[Logic Gates and Circuits](logic_gates.html)
 
 <!--
 

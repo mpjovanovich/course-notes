@@ -69,13 +69,12 @@ A **magnitude comparator** is a type of combinational circuit that compares two 
 
 _Exercise:_
 
-**Problem 1:**
-
 Assume that A = 1, B = 1.
 
 For each output:
 
 a) Translate the circuit into a boolean expression.
+
 b) Plug the above values into the circuit and solve.
 
 _Hint:_ Remember your truth tables and the fact that 1 = true and 0 = false.
@@ -94,24 +93,29 @@ _Hint:_ Remember your truth tables and the fact that 1 = true and 0 = false.
 
 ~~summary( Output: A > B ) {
 
+**a)**
+
 - A ∧ ¬B
+
+**b)**
+
 - 1 ∧ 0 = False
 
 }
 
 ~~summary( Output: A = B ) {
 
-- ¬( (¬A ∧ B) ∨ (A ∧ ¬B) )
+**a)**
+
+- ¬( ¬A ∧ B ∨ A ∧ ¬B )
 - A ∨ ¬B ∧ ¬A ∨ B
-- A ∨ (¬B ∧ ¬A) ∨ B
+
+**b)**
+
 - 1 ∨ (0 ∧ 0) ∨ 1
 - 1 ∨ 0 ∨ 1 = True
 
 }
-
-**Problem 2:**
-
-What is the boolean expression for the output of the circuit?
 
 ### Keeping Values in Memory
 
@@ -127,15 +131,16 @@ _Inputs / Outputs:_
 
 - S = Set signal
 - R = Reset signal
-- Q = Output
+- Q = Current output
+- Q<sub>t-1</sub> = Previous output
 
 _Truth Table:_
 
-|                     | S   | R   | Q   |
-| ------------------- | --- | --- | --- |
-| **Set Condition**   | 1   | 0   | 1   |
-| **Reset Condition** | 0   | 1   | 0   |
-| **Hold Condition**  | 0   | 0   | 1   |
+|                     | S   | R   | Q               |
+| ------------------- | --- | --- | --------------- |
+| **Set Condition**   | 1   | 0   | 1               |
+| **Reset Condition** | 0   | 1   | 0               |
+| **Hold Condition**  | 0   | 0   | Q<sub>t-1</sub> |
 
 _Circuit:_
 
@@ -198,16 +203,6 @@ _Inputs / Outputs:_
 _Truth Table:_
 
 Same as above, except now the output can only change on a rising edge (uptick) of the clock signal.
-
-Falling edges of the clock (downticks) cut off the input signals.
-
-|                               | C   | S   | R   | Q   |
-| ----------------------------- | --- | --- | --- | --- |
-| **Set Condition**             | 1   | 1   | 0   | 1   |
-| **(Waiting) Set Condition**   | 0   | 1   | 0   | 1   |
-| **Reset Condition**           | 1   | 0   | 1   | 0   |
-| **(Waiting) Reset Condition** | 1   | 0   | 1   | 0   |
-| **Hold Condition**            | 0   | 0   | 0   | 1   |
 
 _Circuit:_
 
