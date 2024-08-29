@@ -21,6 +21,7 @@ course: SDEV120
   - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
   - [M02: Boolean Logic](#m02-boolean-logic)
   - [M03: Logic Gates and Circuits](#m03-logic-gates-and-circuits)
+  - [M04: Intro to Programming](#m04-intro-to-programming)
 
 }
 
@@ -64,13 +65,25 @@ Discussion: Intro to Logic
 
 [Logic Gates and Circuits](logic_gates.html)
 
+## M04: Intro to Programming
+
+[Coding Environments](coding_environments.html)
+
+[Input, Output, and Comments in Python](input_output_comments_python.html)
+
+[Variables and Constants](variables_and_constants.html)
+
+[Data Types](data_types.html)
+
+<!-- ... source control ... -->
+
 <!--
 
 [Programming Paradigms](https://docs.google.com/document/d/1qId4olrCAPER_9gGioK8CKQBE61vkn4hdj5mbQTTOcM/edit?usp=sharing)
 
-[Grammars and Arithmetic](grammars_arithmetic.html)
+[Evolution of Programming Languages]
 
-[Coding Environments](coding_environments.html)
+[Grammars and Arithmetic](grammars_arithmetic.html)
 
 [Data Types](data_types.html)
 

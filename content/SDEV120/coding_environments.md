@@ -3,8 +3,9 @@ title: Coding Environments
 course: SDEV120
 ---
 
+~~wrapHtml(div,schedule){
+
 - [Coding Environments](#coding-environments)
-  - [Text Editors](#text-editors)
   - [Integrated Development Environments (IDEs)](#integrated-development-environments-ides)
     - [Features](#features)
       - [Syntax Highlighting](#syntax-highlighting)
@@ -16,6 +17,8 @@ course: SDEV120
   - [Commenting Code](#commenting-code)
   - [Using Output / Print Statements](#using-output--print-statements)
   - [Using a Debugger](#using-a-debugger)
+
+}
 
 # Coding Environments
 

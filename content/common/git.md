@@ -28,8 +28,6 @@ title: Git for this Course
 
 Git is a powerful tool that you'll almost certainly come across in your career.
 
-All of the topics below are tied directly or indirectly to Git.
-
 ## What is Git?
 
 **Git** is a program that runs on a computer. It needs to be installed like any other program:
