@@ -7,7 +7,7 @@ course: SDEV120
 
 # Announcements
 
-- Midterm and final scheduling procedure
+- Truth tables assignment: clarify shorthand NOT, AND, OR, XOR
 
 💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 
