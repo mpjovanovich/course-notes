@@ -15,9 +15,9 @@ title: Cengage Programming Assignments
       - [Debugging With Breakpoints](#debugging-with-breakpoints)
         - [Stepping Through Code](#stepping-through-code)
         - [Tracking Values](#tracking-values)
-      - [Checking Your Work with Cengage](#checking-your-work-with-cengage)
-        - [Accessing the Companion Tool](#accessing-the-companion-tool)
-        - [Running Tests](#running-tests)
+  - [Checking Your Work with Cengage](#checking-your-work-with-cengage)
+    - [Accessing the Companion Tool](#accessing-the-companion-tool)
+    - [Running Tests](#running-tests)
   - [Submitting Assignments](#submitting-assignments)
 
 }
@@ -116,9 +116,9 @@ Once we move into functions:
 
 ~~fig{images/vs_code_debugger.png}
 
-#### Checking Your Work with Cengage
+## Checking Your Work with Cengage
 
-##### Accessing the Companion Tool
+### Accessing the Companion Tool
 
 Cengage provides a "Companion" tool that will check your code against a set of test cases. Click "Accept" when you're first prompted.
 
@@ -128,7 +128,7 @@ If you close the window, you can get back to it from the left-side toolbar.
 
 ~~fig{images/cengage_companion_toolbar.png}
 
-##### Running Tests
+### Running Tests
 
 _Test Format:_
 
@@ -138,7 +138,7 @@ Each test is checking for one specific requirement from the instructions. Click 
 
 When you pass or fail, you will get details - you can click the dropdown arrow to see more information.
 
-~~fig{images/cengage_fail_message.png}
+~~fig{images/fail_message.png}
 
 Looks like we failed. We're most interested in the:
 
