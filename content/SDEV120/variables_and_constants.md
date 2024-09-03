@@ -13,7 +13,7 @@ course: SDEV120
 
 }
 
-~~fig(){https://https://imgs.xkcd.com/comics/code_quality_3.png}
+~~fig(60){https://imgs.xkcd.com/comics/code_quality_3.png}
 
 # Variables
 
