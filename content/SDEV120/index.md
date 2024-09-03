@@ -75,6 +75,10 @@ Discussion: Intro to Logic
 
 [Data Types](data_types.html)
 
+GitHub - Create an account if you don't have one
+
+[Cengage Programming Assignments](cengage_programming.html)
+
 <!-- ... source control ... -->
 
 <!--
