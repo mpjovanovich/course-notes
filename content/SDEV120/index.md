@@ -7,7 +7,7 @@ course: SDEV120
 
 # Announcements
 
-- Truth tables assignment: clarify shorthand NOT, AND, OR, XOR
+- Zero on logic gates assignment for group members isn't really a zero; will update grade this week.
 
 💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 
@@ -75,7 +75,7 @@ Discussion: Intro to Logic
 
 [Data Types](data_types.html)
 
-GitHub - Create an account if you don't have one
+Break: GitHub - Create an account if you don't have one
 
 [Cengage Programming Assignments](cengage_programming.html)
 
