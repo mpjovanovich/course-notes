@@ -67,6 +67,8 @@ Discussion: Intro to Logic
 
 ## M04: Intro to Programming
 
+Review M03: Simplify best of 3 voting circuit?
+
 [Coding Environments](coding_environments.html)
 
 [Input, Output, and Comments in Python](input_output_comments_python.html)
