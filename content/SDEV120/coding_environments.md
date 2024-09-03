@@ -20,7 +20,7 @@ course: SDEV120
 
 }
 
-~~fig(60){https://imgs.xkcd.com/comics/code_quality.png}
+~~fig{https://imgs.xkcd.com/comics/code_quality.png}
 
 # Coding Environments
 

@@ -11,7 +11,7 @@ course: SDEV120
 
 }
 
-~~fig(60){https://imgs.xkcd.com/comics/code_quality_2.png}
+~~fig{https://imgs.xkcd.com/comics/code_quality_2.png}
 
 # Code Comments
 
