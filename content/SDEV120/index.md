@@ -7,7 +7,7 @@ course: SDEV120
 
 # Announcements
 
-- Zero on logic gates assignment for group members isn't really a zero; will update grade this week.
+- We are having issues with Cengage content. In the next few days you should get a link to join "GitHub Classroom" for this course. This will be used for assignments and projects. Please accept the invitation when you receive it.
 
 💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 
@@ -22,6 +22,7 @@ course: SDEV120
   - [M02: Boolean Logic](#m02-boolean-logic)
   - [M03: Logic Gates and Circuits](#m03-logic-gates-and-circuits)
   - [M04: Intro to Programming](#m04-intro-to-programming)
+  - [M05: Functional Arithmetic and Expression Parsing](#m05-functional-arithmetic-and-expression-parsing)
 
 }
 
@@ -80,6 +81,8 @@ Review M03: Simplify best of 3 voting circuit?
 Break: GitHub - Create an account if you don't have one
 
 [Cengage Programming Assignments](cengage_programming.html)
+
+## M05: Functional Arithmetic and Expression Parsing
 
 <!-- ... source control ... -->
 
