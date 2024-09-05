@@ -84,6 +84,10 @@ Break: GitHub - Create an account if you don't have one
 
 ## M05: Functional Arithmetic and Expression Parsing
 
+[Syntax and Expressions](syntax_expressions.html)
+
+[Abstract Syntax Trees](abstract_syntax_trees.html)
+
 <!-- ... source control ... -->
 
 <!--
