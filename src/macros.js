@@ -78,7 +78,7 @@ export function example(content) {
   content = wrapHtml(content, "div", "focusContent");
   return content;
 }
-exercise[MACRO_IDENTIFIER] = "exercise";
+exercise[MACRO_IDENTIFIER] = "example";
 
 export function exercise(content) {
   content = '<p class="focusContentTitle">Exercise:</p>\n\n' + content;
