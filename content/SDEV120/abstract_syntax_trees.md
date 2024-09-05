@@ -123,26 +123,6 @@ Find the syntax tree for the following expressions:
 
 }
 
-~~example{
-
-Given the function:
-
-```
-f(x) = f(x) = x * 2 + 2
-```
-
-Find the syntax tree for the following expressions:
-
-```
-1) 10 * f(4) + 3
-
-2) 10 * f(y) + 3
-
-3) f(2) * f(3)
-```
-
-}
-
 ## Function Composition
 
 **Function Composition** is the process of combining two or more functions to produce a new function.
@@ -216,16 +196,14 @@ Given the function:
 f(x, y) = x + y + 1
 ```
 
-1. Draw the syntax tree for the expression.
-
-2. Evaluate the following expressions:
+Evaluate the following expressions:
 
 ```
 1) f(3, 4)
 
 2) f(1, 1)
 
-2) f(3, f(2, 1))
+3) f(3, f(2, 1))
 ```
 
 }
@@ -249,7 +227,7 @@ Draw the syntax tree for the following expressions, evaluating them as you go:
 
 4) not True
 
-5) z and not (x and y)
+5) True and not (True and True)
 ```
 
 }
@@ -282,16 +260,10 @@ f(x, y) = x and y
 g(x, y) = x or y
 ```
 
-Evaluate the following expressions:
+Evaluate the following expression:
 
 ```
-
 1. g( f(True, False), False)
-
-2. f( f(True, False), False )
-
-3. g( f(True, False), g(True, True) )
-
 ```
 
 }
