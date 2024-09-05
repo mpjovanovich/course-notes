@@ -37,11 +37,28 @@ There are many algorithms for determining the order in which to visit nodes in a
 
 We will use a **post-order** traversal for syntax trees:
 
-Starting at the root...
+```
+Let VISIT(node) be:
 
-- Visit current the node.
-- If the current node is a leaf, evaluate and return the value.
-- If the current node has children, visit the nodes in order from left to right then apply the operator.
+BEGIN
+    IF the current node is a leaf THEN:
+        Return the value
+    ELSE:
+        IF the current node is a unary operator THEN:
+            VISIT(child)
+            Apply the operator
+            Return the value
+        ELSE:
+            VISIT(left child)
+            VISIT(right child)
+            Apply the operator
+            Return the value
+        END IF
+    END IF
+END
+
+VISIT(root)
+```
 
 ![post-order tree traversal](https://files.codingninjas.in/article_images/iterative-postorder-traversal-of-binary-tree-0-1635320121.jpg)
 
