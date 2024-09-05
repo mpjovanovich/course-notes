@@ -33,19 +33,25 @@ A **tree structure** is a data structure that represents a hierarchy of elements
 
 ### Tree Traversal
 
-There are many algorithms for determining the order in which to visit nodes in a tree:
+There are many algorithms for determining the order in which to visit nodes in a tree.
 
-<!-- TODO: gif -->
+We will use a **post-order** traversal for syntax trees:
 
-- **Pre-order**: Visit the root node first.
-- **In-order**: Visit the left child, then the root, then the right child.
-- **Post-order**: Visit the left child, then the right child, then the root.
+Starting at the root...
+
+- Visit current the node.
+- If the current node is a leaf, evaluate and return the value.
+- If the current node has children, visit the nodes in order from left to right then apply the operator.
+
+![post-order tree traversal](https://files.codingninjas.in/article_images/iterative-postorder-traversal-of-binary-tree-0-1635320121.jpg)
+
+In the graphic above, visits are shown in blue, evaluations in red.
+
+Each leaf node (A, C, E, H) would be some operand, and each internal node (B, D, F, G, I) would be some operator.
 
 ## Abstract Syntax Trees
 
 An **abstract syntax tree** is a visual representation of the syntax of a programming language for some expression.
-
-<!-- The algorith that we will use to traverse our syntax tree is the **post-order** algorithm. -->
 
 ### Basic Syntax Tree
 
