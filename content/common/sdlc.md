@@ -2,17 +2,18 @@
 title: SDLC
 ---
 
+~~wrapHtml(div,schedule){
+
 - [Software Development Life Cycle (SDLC)](#software-development-life-cycle-sdlc)
   - [Stats](#stats)
-  - [Plan Driven Development](#plan-driven-development)
-    - [Waterfall](#waterfall)
-  - [Agile Development](#agile-development)
     - [Principles](#principles)
     - [Types of Agile](#types-of-agile)
       - [Scrum](#scrum)
       - [Kanban](#kanban)
     - [DevOps / DevSecOps](#devops--devsecops)
     - [Principles](#principles-1)
+
+}
 
 # Software Development Life Cycle (SDLC)
 

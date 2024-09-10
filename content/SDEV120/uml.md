@@ -3,6 +3,8 @@ title: UML
 course: SDEV120
 ---
 
+~~wrapHtml(div,schedule){
+
 - [Unified Modeling Language (UML)](#unified-modeling-language-uml)
   - [Background](#background)
   - [What is UML?](#what-is-uml)
@@ -10,9 +12,6 @@ course: SDEV120
   - [Type of Information in UML](#type-of-information-in-uml)
   - [When to Use UML](#when-to-use-uml)
   - [Diagram Classifications](#diagram-classifications)
-    - [Structural Diagrams](#structural-diagrams)
-    - [Behavioral Diagrams](#behavioral-diagrams)
-    - [Use Case Diagram](#use-case-diagram)
       - [Description](#description)
       - [Key components](#key-components)
     - [Class Diagram](#class-diagram)
@@ -30,6 +29,8 @@ course: SDEV120
     - [Hybrids](#hybrids)
       - [Swimlane Diagram](#swimlane-diagram)
       - [Custom](#custom)
+
+}
 
 ~~fig(80){images/uml_guys.png}
 

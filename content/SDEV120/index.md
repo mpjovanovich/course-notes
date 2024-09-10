@@ -23,6 +23,7 @@ course: SDEV120
   - [M03: Logic Gates and Circuits](#m03-logic-gates-and-circuits)
   - [M04: Intro to Programming](#m04-intro-to-programming)
   - [M05: Functional Arithmetic and Expression Parsing](#m05-functional-arithmetic-and-expression-parsing)
+  - [M06: System Modeling](#m06-system-modeling)
 
 }
 
@@ -88,40 +89,8 @@ Break: GitHub - Create an account if you don't have one
 
 [Abstract Syntax Trees](abstract_syntax_trees.html)
 
-<!-- ... source control ... -->
+## M06: System Modeling
 
-<!--
+[Software Development Life Cycle](../common/sdlc.html)
 
-[Programming Paradigms](https://docs.google.com/document/d/1qId4olrCAPER_9gGioK8CKQBE61vkn4hdj5mbQTTOcM/edit?usp=sharing)
-
-[Evolution of Programming Languages]
-
-[Grammars and Arithmetic](grammars_arithmetic.html)
-
-[Data Types](data_types.html)
-
-Review Python:
-
-- [Assignment](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/assignment_operator.py)
-
-- [Dynamic Typing](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/dynamic_type_conversion.py)
-
-- [Constant vs Variable](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/variable_const_type_demo.py)
-
-Input and Output in Python
-
-[Decision](decision.html)
-
-Midterm Review
-
-[UML](uml.html)
-
-[Functions and Modularity](functions_modularity.html)
-
-[Loops](../common/loops.html?course=SDEV120)
-
-[Loops](../common/loops.html?course=SDEV120)
-
-[Numbering Systems for Computing](numbering_systems.html)
-
-[Encoding Text for Computing](encoding_text.html) -->
+[Unified Modeling Language (UML)](uml.html)
