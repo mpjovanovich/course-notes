@@ -1,3 +1,8 @@
+---
+title: Midterm Study Guide
+course: SDEV120
+---
+
 # Midterm Study Guide
 
 ## Not Covered
