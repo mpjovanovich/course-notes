@@ -7,7 +7,7 @@ course: SDEV120
 
 # Announcements
 
-- We are having issues with Cengage content. In the next few days you should get a link to join "GitHub Classroom" for this course. This will be used for assignments and projects. Please accept the invitation when you receive it.
+- If you have an accomodation arrangement and would like extra time on the midterm, please send me a message _now_ via IvyLearn.
 
 💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 
