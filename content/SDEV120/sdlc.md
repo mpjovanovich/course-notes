@@ -17,7 +17,6 @@ course: SDEV120
     - [Continuous](#continuous)
       - [Summary](#summary-2)
       - [Methodologies](#methodologies-2)
-      - [Demo](#demo)
 
 }
 
@@ -42,6 +41,8 @@ _Caution advised - good stats are hard to come by._
 ### Linear
 
 Focuses on planning and documentation.
+
+~~fig{https://symphony-software.com/wp-content/uploads/2022/02/SDLC-waterfall-model-1.png}
 
 #### Summary
 
@@ -84,6 +85,8 @@ Focuses on planning and documentation.
 ### Iterative
 
 Focuses on development in short cycles and flexibility.
+
+~~fig{https://bitbytesoft.com/wp-content/uploads/2022/01/Agile-software-Development-Life-Cycle-1-1024x356.jpg}
 
 #### Summary
 
@@ -129,6 +132,8 @@ Others:
 ### Continuous
 
 Extends on iterative development by focusing on rapid feedback loops and continuous integration and deployment.
+
+~~fig{https://browserstack.wpenginepowered.com/wp-content/uploads/2023/02/DevOps-Lifecycle.jpg}
 
 #### Summary
 
@@ -180,9 +185,7 @@ Extends on iterative development by focusing on rapid feedback loops and continu
 
 _\*Testing spans multiple domains._
 
-#### Demo
-
-<p class="demo">Demo:</p>
+~~demo{
 
 GitHub Actions - build and deploy process.
 
@@ -196,3 +199,5 @@ Let's try breaking it by putting a typo on the theme for the \_config.yml file.
 - New theme: https://github.com/pages-themes/architect
 
 ... could have avoided the break if there were tests in our CI/CD pipeline.
+
+}
