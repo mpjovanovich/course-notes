@@ -6,7 +6,7 @@ M04: Intro to Programming
 
 ## Covered
 
-Everything else:
+Everything else.
 
 ### M01
 
@@ -79,12 +79,58 @@ Everything else:
 - Operator
 - Operand
 
-#### Trees
-
-- Know the terms: node, root, leaf, parent, child
-
-#### Other
+_Other:_
 
 - What's the difference between a statement (it does something) and an expression (it returns something)?
 
-_You don't have to know anything Python specific, just general concepts given above._
+#### Trees
+
+- Know terms: node, root, leaf, parent, child
+- How does the post-order traversal algorithm work?
+  - Given some tree - In what order are nodes visited?
+
+#### Abstract Syntax Trees
+
+- What is an abstract syntax tree?
+- Given some tree, what is the expression that it represents?
+- Given some expression, how would you draw a tree?
+  - If there is a function in the tree, how do you expand it?
+
+#### Algebraic Functions
+
+Be able to evaluate:
+
+- Composed functions, e.g. f(g(x))
+- Functions with multiple arguments, e.g. f(x, y)
+- Functions with boolean logic, e.g. f(x, y, z) = x AND y OR z
+
+### M06
+
+#### SDLC
+
+- What is the software development life cycle?
+- What are three main paradigms for SDLC models, and what is meant by each?
+  - Linear
+  - Iterative
+  - Continuous
+
+#### UML
+
+- What is UML?
+- In what scenarios would UML documentation be appropriate?
+- For the five diagrams that we covered, what is the purpose of each?
+  - Class diagram
+  - Use case diagram
+  - Sequence diagram
+  - Activity diagram
+  - State diagram
+
+## Final Notes
+
+- For all above: You don't have to know anything Python specific, just general concepts.
+
+- You won't be able to leave the room during the exam, so make sure you prepare accordingly.
+
+- Bring a pen / pencil. I'll have paper for in-person. Remote students may use own blank paper.
+
+_Double check what the question is asking for._
