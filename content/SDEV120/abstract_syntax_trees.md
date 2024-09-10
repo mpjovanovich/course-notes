@@ -26,6 +26,7 @@ A **tree structure** is a data structure that represents a hierarchy of elements
 
 ### Tree Terminology
 
+- **Node**: Any single element in a tree.
 - **Root**: The top node in a tree.
 - **Parent**: A node that has children.
 - **Child**: A node that has a parent.

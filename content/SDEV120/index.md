@@ -24,6 +24,7 @@ course: SDEV120
   - [M04: Intro to Programming](#m04-intro-to-programming)
   - [M05: Functional Arithmetic and Expression Parsing](#m05-functional-arithmetic-and-expression-parsing)
   - [M06: System Modeling](#m06-system-modeling)
+  - [Midterm Study](#midterm-study)
 
 }
 
@@ -94,3 +95,7 @@ Break: GitHub - Create an account if you don't have one
 [Software Development Life Cycle](../common/sdlc.html)
 
 [Unified Modeling Language (UML)](uml.html)
+
+## Midterm Study
+
+[Midterm Study Guide](midterm_study_guide.html)

@@ -23,7 +23,7 @@ course: SDEV120
 
 A flowchart is a visual representation of a process.
 
-Flowchart symbols are standardized, test is not.
+Flowchart symbols are standardized, the way the text is written is not.
 
 ## Flowchart Symbols
 
@@ -47,11 +47,15 @@ Flowchart symbols are standardized, test is not.
 
 - Rectangle.
 - Represents a process, action, or operation.
+- Also represents assignment of a value.
 - Typically contains a verb.
 - Examples:
   - "Calculate total"
   - "Print invoice"
   - "Add new customer"
+  - "Set balance = 0"
+  - "balance = 0"
+  - "balance := 0"
 
 ### Decision
 
@@ -62,7 +66,7 @@ Flowchart symbols are standardized, test is not.
 - Branches are labeled
   - "Yes" or "No"
   - "True" or "False"
-- Examples:
+- Possible ways to express a decision:
   - "Is the customer a member?"
   - "Customer is member?"
   - "Is the balance over $1000?"
