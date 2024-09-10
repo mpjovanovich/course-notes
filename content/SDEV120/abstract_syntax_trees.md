@@ -192,11 +192,9 @@ Evaluate the following expressions:
 ```
 1) g( f(3) )
 
-2) g( f(2) + 4 )
+2) f( f(2) )
 
-3) f( f(2) )
-
-4) f( f( f(6) + 1 ) + 2 ) + 3
+3) f( f( f(6) + 1 ) + 2 ) + 3
 ```
 
 }
@@ -218,7 +216,7 @@ Evaluate the following expressions:
 ```
 1) f(3, 4)
 
-2) f(1, 1)
+2) f(1, 2)
 
 3) f(3, f(2, 1))
 ```
@@ -240,47 +238,7 @@ Draw the syntax tree for the following expressions, evaluating them as you go:
 
 2) True and (False or False)
 
-3) True and (x or y)
-
-4) not True
-
-5) True and not (True and True)
-```
-
-}
-
-Here's an example with function composition:
-
-Given the functions:
-
-```
-f(x, y) = x and y
-g(x, y) = x or y
-```
-
-Evaluate `f( g(True, False), True)` by plugging the values into the functions:
-
-```
-f( g( True, False ), True)
-= f( True or False, True)
-= f( True, True )
-= True and True
-= True
-```
-
-~~example{
-
-Given the functions:
-
-```
-f(x, y) = x and y
-g(x, y) = x or y
-```
-
-Evaluate the following expression:
-
-```
-1. g( f(True, False), False)
+3) not True
 ```
 
 }
