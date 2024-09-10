@@ -92,7 +92,7 @@ Break: GitHub - Create an account if you don't have one
 
 ## M06: System Modeling
 
-[Software Development Life Cycle](../common/sdlc.html)
+[Software Development Life Cycle](sdlc.html)
 
 [Unified Modeling Language (UML)](uml.html)
 

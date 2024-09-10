@@ -8,10 +8,10 @@ course: SDEV120
 - [Unified Modeling Language (UML)](#unified-modeling-language-uml)
   - [Background](#background)
   - [What is UML?](#what-is-uml)
-  - [Do We Really Need to Know All This?](#do-we-really-need-to-know-all-this)
-  - [Type of Information in UML](#type-of-information-in-uml)
-  - [When to Use UML](#when-to-use-uml)
-  - [Diagram Classifications](#diagram-classifications)
+    - [Do We Really Need to Know All This?](#do-we-really-need-to-know-all-this)
+    - [When to Use UML](#when-to-use-uml)
+  - [Diagram Types](#diagram-types)
+    - [Use Case Diagram](#use-case-diagram)
       - [Description](#description)
       - [Key components](#key-components)
     - [Class Diagram](#class-diagram)
@@ -58,7 +58,7 @@ _Not_ a programming language
 
 **_Hooray standards!_**
 
-## Do We Really Need to Know All This?
+### Do We Really Need to Know All This?
 
 Per [IBM: An introduction to the Unified Modeling Language](https://developer.ibm.com/articles/an-introduction-to-uml/):
 
@@ -66,28 +66,22 @@ Per [IBM: An introduction to the Unified Modeling Language](https://developer.ib
 
 Different domains use some more than others.
 
-## Type of Information in UML
-
-Shows system defined at different scopes in varying levels of detail.
-
-- Roles of people
-- Hardware components
-- Software components
-- Functionality
-- Data
-- Response to events
-- etc.
-
-## When to Use UML
+### When to Use UML
 
 - Planning new systems / functionality
 - Documenting existing systems
 - Training new team members
 - Communicating with stakeholders
+- Safety critical systems
+- Regulatory compliance
 
-## Diagram Classifications
+## Diagram Types
 
 ~~fig(70){https://drawio-app.com/wp-content/uploads/2018/10/UMLdiagrams.png}
+
+### Use Case Diagram
+
+~~fig(70){https://cdn-images.visual-paradigm.com/guide/uml/what-is-use-case-diagram/02-use-case-diagram-annotated.png}
 
 #### Description
 
