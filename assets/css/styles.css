@@ -309,3 +309,33 @@ so there should always be a TOC */
   padding: 0 20px;
   margin-top: 3rem;
 }
+
+/* TO COME WITH NEXT MACRO VERSION */
+.focus {
+  border: 2px solid;
+  padding: 10px;
+}
+
+/* Fun unicode symbols: 💡, 👀, 🔧, 🔍, 📝 */
+.focus::before {
+  color: blue;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}
+/* A more involved live demo that I will do */
+.demo::before {
+  content: "💡 Demo";
+}
+/* Normal in class lecture examples done by me. */
+.example::before {
+  content: "🔍 Example";
+}
+/* Something the student should attempt */
+.exercise::before {
+  content: "📝 Exercise";
+}
+/* Common mistake */
+.lookout::before {
+  content: "👀 Common Mistake";
+}
