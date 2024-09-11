@@ -15,11 +15,10 @@ body {
   color: #202124;
   font-size: 18px;
   margin: 0 auto;
-  max-width: 100%;
-  min-width: 950px;
+  width: 100%;
+  max-width: 1600px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  max-width: 1600px;
   line-height: 1.75em;
   padding: 4rem 6rem;
 }
@@ -338,4 +337,22 @@ so there should always be a TOC */
 /* Common mistake */
 .lookout::before {
   content: "👀 Common Mistake";
+}
+
+/* 
+* MEDIA QUERIES
+*/
+
+/* Small devices */
+@media (max-width: 600px) {
+  body {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Medium devices */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    padding: 0 1rem; /* Adjust padding for medium screens */
+  }
 }
