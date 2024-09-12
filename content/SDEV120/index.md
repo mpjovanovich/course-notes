@@ -25,6 +25,7 @@ course: SDEV120
   - [M05: Functional Arithmetic and Expression Parsing](#m05-functional-arithmetic-and-expression-parsing)
   - [M06: System Modeling](#m06-system-modeling)
   - [Midterm Study](#midterm-study)
+  - [M07: Numbering Systems](#m07-numbering-systems)
 
 }
 
@@ -99,3 +100,9 @@ Break: GitHub - Create an account if you don't have one
 ## Midterm Study
 
 [Midterm Study Guide](midterm_study_guide.html)
+
+## M07: Numbering Systems
+
+[Numbering Systems](numbering_systems.html)
+
+[Converting Between Bases](numbering_conversions.html)
