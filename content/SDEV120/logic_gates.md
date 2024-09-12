@@ -27,6 +27,8 @@ For an excellent logic gate sandbox, see: [Logic.ly](https://logic.ly/demo).
 
 ## Foundations
 
+~~fig(30){https://www.electronicshub.org/wp-content/uploads/2019/03/Analog-Circuits-and-Digital-Circuits-Digital-Signals.jpg}
+
 - Computers recognize only two states, based on the presence or absence of an electrical signal.
 
   - High voltage = 1 = true
