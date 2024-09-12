@@ -79,6 +79,22 @@ Numbers in base 2 are called **_binary_** numbers: { 0, 1 }
 
 TODO
 
+_Arithmetic Logic Unit (ALU)_
+
+The Arithmetic Logic Unit (ALU) is the part of the Central Procesing Unit (CPU) that performs arithmetic and logical operation.
+
+... half-adder, full-adder, etc ...
+
+... Bitwise operations ...
+
+... Bitmasking ...
+
+... Error detection ...
+
+... Parity ...
+
+... Encoding and Decoding ...
+
 ## Hexadecimal
 
 Numbers in base 16 are called **_hexadecimal_** numbers: { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F }
