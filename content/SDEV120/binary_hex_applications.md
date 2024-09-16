@@ -237,8 +237,9 @@ Let's toggle some options using bitwise operations in Python.
 _This is not something we'll do in this course, but it's a fun example._
 
 ```python
-# Set the flags
+# Set all options to off to start.
 # Note that we're only using the first four bits.
+# Trace the binary values as you go through the operations.
 flags = 0b00000000
 
 # Turon on NOTIFICATIONS:
@@ -251,8 +252,8 @@ flags = flags ^ 0b10000000
 
 # Check if AUTO_SAVE is on:
 # (AND)
-if flags & 0b00100000:
-    print("DARK_MODE is on.")
+# Note that 1 = True, 0 = False
+dark_mode_enabled = flags & 0b00100000
 ```
 
 }
