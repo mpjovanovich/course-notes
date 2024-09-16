@@ -1,25 +1,23 @@
 ---
-title: Numbering Systems for Computing
+title: Intro to Computer Numbering Systems
 course: SDEV120
 ---
 
 ~~wrapHtml(div,schedule){
 
-- [Numbering Systems](#numbering-systems)
+- [Intro to Computer Numbering Systems](#intro-to-computer-numbering-systems)
   - [Everyday Numbering Systems](#everyday-numbering-systems)
     - [Base 10](#base-10)
     - [Base 12 and 24](#base-12-and-24)
     - [Base 60](#base-60)
   - [Binary](#binary)
     - [Why use it?](#why-use-it)
-    - [Applications](#applications)
   - [Hexadecimal](#hexadecimal)
     - [Why use it?](#why-use-it-1)
-    - [Applications](#applications-1)
 
 }
 
-# Numbering Systems
+# Intro to Computer Numbering Systems
 
 We can use any number of symbols to represent the same numeric value.
 
@@ -75,26 +73,6 @@ Numbers in base 2 are called **_binary_** numbers: { 0, 1 }
   - **_Off = 0_**
   - **_On = 1_**
 
-### Applications
-
-TODO
-
-_Arithmetic Logic Unit (ALU)_
-
-The Arithmetic Logic Unit (ALU) is the part of the Central Procesing Unit (CPU) that performs arithmetic and logical operation.
-
-... half-adder, full-adder, etc ...
-
-... Bitwise operations ...
-
-... Bitmasking ...
-
-... Error detection ...
-
-... Parity ...
-
-... Encoding and Decoding ...
-
 ## Hexadecimal
 
 Numbers in base 16 are called **_hexadecimal_** numbers: { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F }
@@ -103,35 +81,15 @@ Numbers in base 16 are called **_hexadecimal_** numbers: { 0, 1, 2, 3, 4, 5, 6, 
 
 Hexadecimal (hex) offers a nice, compact way to represent binary numbers.
 
-<figure>
-    <span>
-        <img src="images/hex_bit_switch.png" style="">
-    </span>
-    <figcaption>
-        Four bits to hex.
-    </figcaption>
-</figure>
-
 - Break binary number into groups of 4 bits (called a **nibble**).
   - Each nibble is guaranteed to be a number from 0-15; 0-F in hex.
 - Convert each nibble to hex.
 - Concatenate the results - put them back together.
 
-<p class="demo">Demo:</p>
+~~demo{
 
-Using four bits to represent hex digits.
+Using four bits to represent hex digits: [logic.ly](https://logic.ly/demo/)
 
-- [logic.ly](https://logic.ly/demo/)
+~~fig{images/hex_bit_switch.png}
 
-<figure>
-    <span>
-        <img src="images/hex_bit_switch.png" style="">
-    </span>
-    <figcaption>
-        Four bits to hex.
-    </figcaption>
-</figure>
-
-### Applications
-
-TODO
+}

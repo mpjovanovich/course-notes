@@ -25,7 +25,7 @@ course: SDEV120
   - [M05: Functional Arithmetic and Expression Parsing](#m05-functional-arithmetic-and-expression-parsing)
   - [M06: System Modeling](#m06-system-modeling)
   - [Midterm Study](#midterm-study)
-  - [M07: Numbering Systems](#m07-numbering-systems)
+  - [M07: Data Representation and Encoding](#m07-data-representation-and-encoding)
 
 }
 
@@ -101,8 +101,16 @@ Break: GitHub - Create an account if you don't have one
 
 [Midterm Study Guide](midterm_study_guide.html)
 
-## M07: Numbering Systems
+## M07: Data Representation and Encoding
 
-[Numbering Systems](numbering_systems.html)
+[Intro to Computer Numbering Systems](intro_to_numbering_systems.html)
 
 [Converting Between Bases](numbering_conversions.html)
+
+[Applications for Binary and Hexadecimal](binary_hex_applications.html)
+
+[Metric System for Computing](metric_system.html)
+
+[Numeric Data Types](numeric_data_types.html)
+
+[Text Data Types](text_data_types.html)

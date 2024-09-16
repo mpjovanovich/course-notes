@@ -346,13 +346,13 @@ so there should always be a TOC */
 /* Small devices */
 @media (max-width: 600px) {
   body {
-    padding: 0 0.5rem;
+    padding: 0.5rem;
   }
 }
 
 /* Medium devices */
 @media (min-width: 601px) and (max-width: 1024px) {
   body {
-    padding: 0 1rem; /* Adjust padding for medium screens */
+    padding: 0.5rem 1rem;
   }
 }
