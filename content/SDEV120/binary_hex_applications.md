@@ -6,28 +6,33 @@ course: SDEV120
 ~~wrapHtml(div,schedule){
 
 - [Applications of Binary and Hexadecimal](#applications-of-binary-and-hexadecimal)
-  - [Domains](#domains)
+  - [Applications](#applications)
     - [Arithmetic Logic](#arithmetic-logic)
-  - [File Permissions](#file-permissions)
-  - [Networking](#networking)
-    - [MAC address](#mac-address)
-    - [IP addresses](#ip-addresses)
-    - [Graphics](#graphics)
-    - [Error Detection](#error-detection)
-    - [Parity](#parity)
-    - [Encoding and Decoding](#encoding-and-decoding)
+      - [Half-Adder Circuit](#half-adder-circuit)
+      - [Full-Adder Circuit](#full-adder-circuit)
+    - [File Permissions](#file-permissions)
+    - [Networking](#networking)
+      - [MAC address](#mac-address)
+      - [IP addresses](#ip-addresses)
+      - [Graphics](#graphics)
+    - [Error Detection and Correction](#error-detection-and-correction)
+      - [Parity](#parity)
+      - [Checksums, Digests, and Hashes](#checksums-digests-and-hashes)
+    - [Compression](#compression)
+      - [Huffman Coding](#huffman-coding)
+      - [Run-Length Encoding](#run-length-encoding)
   - [Operations](#operations)
     - [Bitmasking](#bitmasking)
+      - [Boolean Flags](#boolean-flags)
       - [Color Masking](#color-masking)
       - [Subnet Masking](#subnet-masking)
-      - [Boolean Flags](#boolean-flags)
     - [Bitshifting](#bitshifting)
 
 }
 
 # Applications of Binary and Hexadecimal
 
-## Domains
+## Applications
 
 ### Arithmetic Logic
 
@@ -35,13 +40,15 @@ The Arithmetic Logic Unit (ALU) is the part of the Central Procesing Unit (CPU) 
 
 We can perform arithmetic operations using binary numbers.
 
-<!-- ~demo{
+#### Half-Adder Circuit
 
-TODO: ... half-adder, full-adder ...
+<!-- TODO: think logicly already has an example -->
 
-} -->
+#### Full-Adder Circuit
 
-## File Permissions
+<!-- TODO: think logicly already has an example -->
+
+### File Permissions
 
 In UNIX, file permissions are often set using octal notation.
 
@@ -69,11 +76,11 @@ chmod 444 /mnt/c/Users/mpjov/test.txt
 
 }
 
-## Networking
+### Networking
 
 Hexadecimal is used in networking to represent:
 
-### MAC address
+#### MAC address
 
 A MAC (Media Access Control) address is a unique identifier assigned to a network interface at the physical layer.
 
@@ -82,7 +89,7 @@ A MAC (Media Access Control) address is a unique identifier assigned to a networ
 - How many bits are represented by this address?
 - Hint: how many bits does each hex digit (nibble) represent?
 
-### IP addresses
+#### IP addresses
 
 An IP (Internet Protocol) address is a unique identifier assigned to a network interface at the network layer.
 
@@ -116,7 +123,7 @@ ifconfig
 
 }
 
-### Graphics
+#### Graphics
 
 Color values are often represented in hexadecimal.
 
@@ -145,11 +152,59 @@ Try changing the color values in the following example using hexadecimal:
 
 }
 
-### Error Detection
+### Error Detection and Correction
 
-### Parity
+#### Parity
 
-### Encoding and Decoding
+Parity is a method of error detection that uses an extra bit to ensure the number of bits is even or odd.
+
+... Even parity ...
+
+... Odd parity ...
+
+#### Checksums, Digests, and Hashes
+
+- A **checksum** is calculated by adding the bytes in a message and storing the result in a separate byte. Useful for checking small amount of data.
+
+- A **digest** is a fixed-size string that represents the contents of a file. The function used to calculate the digest is called a **hash function**. Useful for checking larger amounts of data.
+
+~~example{
+
+```bash
+# We create an awesome program, and host it on our website.
+# We provide a checksum and MD5 digest for users to verify the
+# file's integrity.
+echo "Hey, I'm the file." > test.exe
+sum test.exe    # Checksum
+md5sum test.exe # MD5 digest
+
+# Bad actor changes the file and distributes it,
+# pretending it's authentic.
+echo "I've come to ruin your computer." > test2.exe
+
+# Our friend downloads the file and checks the checksum
+# to make sure it's the same as the original.
+sum test2.exe
+md5sum test2.exe
+```
+
+}
+
+<!--
+No, TMI
+### Gray Codes
+
+Gray codes are used in digital communication systems to prevent errors when transitioning between binary values. -->
+
+### Compression
+
+#### Huffman Coding
+
+... Huffman coding ...
+
+#### Run-Length Encoding
+
+... Run-length encoding ...
 
 ## Operations
 
@@ -160,6 +215,47 @@ Try changing the color values in the following example using hexadecimal:
 - **_AND_** - Turn bits off
 - **_OR_** - Turn bits on
 - **_XOR_** - Toggle bits
+
+#### Boolean Flags
+
+A **bit array** is a data structure that uses a single byte to store multiple true/false values.
+
+- Each bit represents a different boolean value.
+- More efficient than using multiple bytes.
+
+~~example{
+
+Given a bitmap with four flags that correspond to the following options:
+
+- DARK_MODE (1st flag)
+- NOTIFICATIONS (2nd flag)
+- AUTO_SAVE (3rd flag)
+- FULL_SCREEN (4th flag)
+
+Let's toggle some options using bitwise operations in Python.
+
+_This is not something we'll do in this course, but it's a fun example._
+
+```python
+# Set the flags
+# Note that we're only using the first four bits.
+flags = 0b00000000
+
+# Turon on NOTIFICATIONS:
+# (OR)
+flags = flags | 0b01000000
+
+# Toggle DARK_MODE) on or off:
+# (XOR)
+flags = flags ^ 0b10000000
+
+# Check if AUTO_SAVE is on:
+# (AND)
+if flags & 0b00100000:
+    print("DARK_MODE is on.")
+```
+
+}
 
 #### Color Masking
 
@@ -184,24 +280,16 @@ A subnet mask is used to divide an IP address into network and host portions. Th
 
 Given:
 
-IP address = `192.168.1.1`
-Subnet mask = `255.255.255.0'
+IP address = **`192.168.1.1`**
+Subnet mask = **`255.255.255.0'**
 
 Perform a bitwise AND operation to determine the network portion of the IP addresss.
 
 - At the bit level this mask is: `11111111.11111111.11111111.00000000`
 - Bitwise AND leaves only the network portion.
 
-Network portion = `192.168.1`
+Network portion = **`192.168.1`**
 
 }
-
-#### Boolean Flags
-
-Boolean flags are used to store multiple true/false values in a single byte. Each bit represents a different flag. It's more efficient than using multiple bytes.
-
-~~example{
-
-For a graphics program, we can use a single byte to store the following flags:
 
 ### Bitshifting
