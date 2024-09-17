@@ -23,6 +23,7 @@ course: SDEV120
     - [Python `if, elif, else` Statement](#python-if-elif-else-statement)
       - [Demo Programs](#demo-programs-2)
   - [Nested Decision Structures](#nested-decision-structures)
+    - [Example Algorithm](#example-algorithm-3)
     - [Pseudocode](#pseudocode-3)
     - [Flowchart](#flowchart-3)
 
@@ -61,7 +62,7 @@ END
 
 #### Flowchart
 
-...
+_Do in class. Keep for later._
 
 ### Python `if` Statement
 
@@ -87,9 +88,9 @@ if is_admin == False or user_logged_in == False:
 
 #### Demo Programs
 
-... rename and link ...
-
-Number is even (single dec. st.)
+Number is even
+Number is odd
+(We will do even or odd shortly.)
 
 ## Dual Alternative
 
@@ -131,7 +132,7 @@ END
 
 #### Flowchart
 
-...
+_Do in class._
 
 ### Python `if, else` Statement
 
@@ -144,11 +145,15 @@ else:
 
 #### Demo Programs
 
-... flowchart ...
+_Do in class: Flowchart, code._
 
-... rename and link ...
-
-Number is even/odd (dual dec. st.)
+- Number is even/odd
+- Number is positive/negative/zero
+- Build a simple calculator
+- Order processing logic; does not ship until payment received; determine ship date:
+  - Payment arrived?
+  - In stock?
+  - Rush order?
 
 ## Fallthrough Decisions
 
@@ -191,7 +196,7 @@ END
 
 #### Flowchart
 
-...
+_Do in class._
 
 ### Python `if, elif, else` Statement
 
@@ -210,7 +215,23 @@ else:
 
 ## Nested Decision Structures
 
-_Example Algorithm: Charge Customer for Item_
+We can put decision structures into the flow of execution from another decision. These are called nested decisions.
+
+_Note:_ We don’t want to duplicate decision logic if possible. Often times we can extract a decision that would otherwise be nested.
+
+- Is it cold outside?
+  - Yes
+    - Is it snowing?
+      - Yes
+        - Wear boots
+      - No
+        - Wear shoes
+  - No
+    - Wear sandals
+
+### Example Algorithm
+
+Charge Customer for Item - v4
 
 ### Pseudocode
 
@@ -238,35 +259,4 @@ END
 
 ### Flowchart
 
-...
-
-...
-
-We can put decision structures into the flow of execution from another decision. These are called nested decisions.
-
-_Note:_ We don’t want to duplicate decision logic if possible. Often times we can extract a decision that would otherwise be nested.
-
-<p class="demo">Demo:</p>
-
-Program: What to wear based on temperature.
-
-- possible outcomes:
-  - snowing, not snowing - temp <= 32
-  - raining, not raining - temp > 32
-  - cold, coat - temp < 45
-  - mild, jacket - temp < 70
-- e.g. outcome statements
-  - It is rainy and warm. You need a jacket and umbrella.
-  - It is clear and mild. You need a jacket.
-  - It is snowy and cold. You need a coat.
-- Which variables are inputs?
-  - temperature
-  - precipitation
-
-<p class="demo">Demo:</p>
-
-Write program to figure out if letter is capital
-
-- Hint: look at ASCII / Unicode - https://www.ascii-code.com/
-- Hint: Python uses ord() and int() functions
-- m02_letter_is_capital_v1.py
+_Do in class._
