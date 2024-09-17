@@ -25,7 +25,7 @@ course: SDEV120
   - [M05: Functional Arithmetic and Expression Parsing](#m05-functional-arithmetic-and-expression-parsing)
   - [M06: System Modeling](#m06-system-modeling)
   - [Midterm Study](#midterm-study)
-  - [M07: Data Representation and Encoding](#m07-data-representation-and-encoding)
+  - [M07: Selection Structures](#m07-selection-structures)
 
 }
 
@@ -101,21 +101,27 @@ Break: GitHub - Create an account if you don't have one
 
 [Midterm Study Guide](midterm_study_guide.html)
 
-## M07: Data Representation and Encoding
+## M07: Selection Structures
+
+[Selection Structures](selection.html)
+
+<!-- [Selection Structures](selection_structures.html) -->
+
+<!-- ## M07: Data Representation and Encoding -->
 
 <!-- Day 1 -->
 
-[Intro to Computer Numbering Systems](intro_to_numbering_systems.html)
+<!-- [Intro to Computer Numbering Systems](intro_to_numbering_systems.html)
 
 [Converting Between Bases](numbering_conversions.html)
 
 [Applications for Binary and Hexadecimal](binary_hex_applications.html)
 
-Coding Exercise: Converting between bases
+Coding Exercise: Converting between bases -->
 
 <!-- Day 2 -->
 
-Discussion: Defensive Programming
+<!-- Discussion: Defensive Programming
 
 [Metric System for Computing](metric_system.html)
 
@@ -123,4 +129,4 @@ Discussion: Defensive Programming
 
 [Text Data Types](text_data_types.html)
 
-Coding Exercise: Metric system table
+Coding Exercise: Metric system table -->
