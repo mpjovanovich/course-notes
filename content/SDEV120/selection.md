@@ -89,8 +89,14 @@ if is_admin == False or user_logged_in == False:
 #### Demo Programs
 
 Number is even
-Number is odd
-(We will do even or odd shortly.)
+
+- Order processing logic:
+  - Default ship date = 5 days from order date
+  - If payment not received, ship date = 14 days from order date
+  - If out of stock, ship date = 30 days from order date
+  - If rush order, ship date = 1 days from order date
+
+(We will do even or odd in a single program shortly.)
 
 ## Dual Alternative
 
@@ -148,12 +154,6 @@ else:
 _Do in class: Flowchart, code._
 
 - Number is even/odd
-- Number is positive/negative/zero
-- Build a simple calculator
-- Order processing logic; does not ship until payment received; determine ship date:
-  - Payment arrived?
-  - In stock?
-  - Rush order?
 
 ## Fallthrough Decisions
 
@@ -211,13 +211,12 @@ else:
 
 #### Demo Programs
 
-[Percent to Grade Program](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/grade_calc_if_elif_else.py)
+- [Percent to Grade Program](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/grade_calc_if_elif_else.py)
+- Simple calculator
 
 ## Nested Decision Structures
 
 We can put decision structures into the flow of execution from another decision. These are called nested decisions.
-
-_Note:_ We don’t want to duplicate decision logic if possible. Often times we can extract a decision that would otherwise be nested.
 
 - Is it cold outside?
   - Yes
