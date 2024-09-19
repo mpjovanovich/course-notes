@@ -257,3 +257,7 @@ while name != "done":
     name = input( "Enter a name or 'done' to quit: " )
     print( name )
 ```
+
+_Examples:_
+
+- Enter grades until the user enters -1. Calculate the sum and average.
