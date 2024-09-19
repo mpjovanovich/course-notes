@@ -3,6 +3,8 @@ title: Flowcharts
 course: SDEV120
 ---
 
+~~wrapHtml(div,schedule){
+
 - [Arrays](#arrays)
   - [Definitions](#definitions)
   - [Manipulating Arrays](#manipulating-arrays)
@@ -23,6 +25,8 @@ course: SDEV120
     - [Binary Search](#binary-search)
 - [Parallel Arrays](#parallel-arrays)
   - [Definition](#definition)
+
+}
 
 <figure>
     <span>

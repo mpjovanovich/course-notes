@@ -26,6 +26,7 @@ course: SDEV120
   - [M06: System Modeling](#m06-system-modeling)
   - [Midterm Study](#midterm-study)
   - [M07: Selection Structures](#m07-selection-structures)
+  - [M08: Repetition](#m08-repetition)
 
 }
 
@@ -104,6 +105,10 @@ Break: GitHub - Create an account if you don't have one
 ## M07: Selection Structures
 
 [Selection Structures](selection.html)
+
+## M08: Repetition
+
+[Loops](loops.html)
 
 <!-- [Selection Structures](selection_structures.html) -->
 
