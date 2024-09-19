@@ -11,6 +11,7 @@ course: SDEV120
   - [Off by One Errors](#off-by-one-errors)
   - [Nested Loops](#nested-loops)
   - [Sentinel Values](#sentinel-values)
+    - [Priming Read](#priming-read)
 
 # Loops
 
@@ -23,93 +24,6 @@ course: SDEV120
   - iterate over a collection of data
 - Loops can run zero to infinite times depending on the condition and inputs.
 - **Iteration** = one execution of the loop body.
-
-<!--
-```
-for some_start_value to some_end_value:
-    # loop body
-```
-
-```
-for each item in some_collection:
-    # loop body
-``` -->
-
-<!-- # Definite Loops
-
-Used when we know in advance how many times we want to iterate.
-
-## `for` Loops
-
-Used when we know exactly how many times the loop should run.
-
-- Initialize loop control variable.
-- Test loop control variable.
-- Alter loop control variable.
-- Test until the entry condition is false.
-
-Python doesn't have a traditional `for` loop; most languages do.
-
-### The range() Function
-
-```python
-## There are three "overloads" for the range function, so we can
-## Write a python loop in different ways. These are all the same:
-for i in range( 0, 10, 1 ):
-      ## do some work ten times
-for i in range( 0, 10 ):
-      ## do some work ten times
-for i in range( 10 ):
-    ## do some work ten times
-```
-
-- Range returns a list of numbers.
-- We can then iterate over the list.
-- The i is optional.
-  - ```python
-    for _ in range( 10 ):
-        ## do some work ten times
-    ```
-
-<p class="demo">Demos:</p>
-
-[Harmonic Series](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/harmonic_series_loop.py)
-
-[Print Multiples](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/print_multiples.py)
-
-### "C style" Syntax
-
-Many languages use "C style" syntax for loops, as shown below.
-
-For this reason I require that you call the range function shown above with all three arguments.
-
-```cpp
-#include <stdio.h>
-
-int main() {
-
-    /////////////////////////////////////////
-    // Prints numbers 0-9
-    /////////////////////////////////////////
-    for (int i = 0; i < 10; i++) {
-        // A print statement in C
-        printf("%d\n", i);
-    }
-
-    return 0;
-}
-```
-
-### Changing the Step
-
-- The **counter** does not have to increment / decrement by one.
-- We can change the **step size**.
-
-```python
-for i in range( 10, 101, 10 ):
-    ## do some work using the numbers 10, 20, ..., 100
-```
--->
 
 # Indefinite Loops
 
@@ -124,11 +38,28 @@ while some_condition == True:
     ## do some work
 ```
 
-<p class="demo">Demos:</p>
+_Example:_
 
-- Print multiples of x up to n
-- Harmonic series: 1 + 1/2 + 1/3 + 1/4 + 1/5 + ... + 1/n
+```python
+## Print numbers 1-4
+i = 1
+while i <= 4:
+    print( i )
+
+    ## Increment the loop control variable
+    ## If we forget this, the loop will run forever (infinite loop)
+    i += 1
+```
+
+_Do in class: flowchart for the above code._
+
+~~demo{
+
+- Print multiples of x up to n (x _ 1, x _ 2, x _ 3, ..., x _ n)
+- Harmonic series: 1/1 + 1/2 + 1/3 + 1/4 + 1/5 + ... + 1/n
 - Base numbering table: n^0, n^1, n^2, n^3, n^4, n^5...
+
+}
 
 [Calculate Exponents](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/calculate_exponents.py)
 
@@ -160,14 +91,6 @@ while i > 0:
 - [start, end)
 - When using while, also be mindful of < vs <= and > vs >=.
 
-<!--
-```python
-## Prints 0-9
-for i in range( 0, 10, 1 ):
-    print( i )
-```
--->
-
 ```python
 ## Prints 1-9, not 1-10
 i = 1
@@ -198,64 +121,42 @@ while i < 3:
 # OUTPUT: 0 0, 0 1, 1 0, 1 1, 2 0, 2 1
 ```
 
-<!-- # Controlled Loops with "break" and "continue"
+Flowchart for the above:
 
-## Break
-
-We can "short-circuit" a loop using the `break` statement.
-
-This will immediately exit the loop, much like a `return` statement exits a function.
-
-```python
-## Will only print 0-4
-i = 0
-while i < 10:
-    if i == 5:
-        break
-    print( i )
-    i += 1
-```
-
-Example scenario:
-
-- Searching for a value in a list. Once you've found the value, you don't need to keep searching. We will cover this when we do arrays.
-
-## Continue
-
-We can skip the rest of the loop body but not break out of the whole loop using the `continue` statement.
-
-```python
-## Will skip 5
-for i in range( 10 ):
-    if i == 5:
-        continue
-    print( i )
-```
--->
+~~fig{images/nested_flowchart.svg}
 
 ## Sentinel Values
 
 A **sentinel value** is a special value that signals the end of a loop.
-
-```python
-## Sentinel value using -1 to indicate the end of the loop
-
-```
-
-~~demo{
-
-[Name Sentinal](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/name_sentinal.py)
-
-}
 
 A main use case is to allow the user to enter data until they are done...
 
 ```python
 ## Sentinal value
 name = ""
-while name != "done":
-    name = input( "Enter a name or 'done' to quit: " )
+while name != "quit":
+    name = input( "Enter a name or 'quit' to exit: " )
+
+    ## A real program might do some work here, like add to a database...
+
     print( name )
+```
+
+### Priming Read
+
+Note the problem with the above code snippet... the word "quit" is printed out at the end. Let's fix it.
+
+- The first read of the sentinel value is called a **priming read**.
+- This is done before the loop starts.
+
+```python
+## Sentinal value with priming read
+name = input( "Enter a name or 'quit' to exit: " )
+while name != "quit":
+    print( name )
+
+    ## We check our loop exit condition again at the end of the loop
+    name = input( "Enter a name or 'quit' to exit: " )
 ```
 
 _Examples:_
