@@ -7,7 +7,9 @@ course: SDEV120
 
 # Announcements
 
-- If you have an accomodation arrangement and would like extra time on the midterm, please send me a message _now_ via IvyLearn.
+- If you have not signed up for your final exam time, please do so today.
+- We are one module behind on labs. Today we will cover the lab from Selection structures.
+- Don't forget that there are readings for each module.
 
 💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 
