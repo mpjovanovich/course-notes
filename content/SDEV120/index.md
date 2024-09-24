@@ -29,6 +29,9 @@ course: SDEV120
   - [Midterm Study](#midterm-study)
   - [M07: Selection Structures](#m07-selection-structures)
   - [M08: Repetition](#m08-repetition)
+  - [M09: Data Representation and Encoding](#m09-data-representation-and-encoding)
+    - [Day 1](#day-1)
+    - [Day 2](#day-2)
 
 }
 
@@ -112,9 +115,31 @@ Break: GitHub - Create an account if you don't have one
 
 [Loops](loops.html)
 
-<!-- [Selection Structures](selection_structures.html) -->
+## M09: Data Representation and Encoding
 
-<!-- ## M07: Data Representation and Encoding -->
+### Day 1
+
+[Intro to Computer Numbering Systems](intro_to_numbering_systems.html)
+
+[Converting Between Bases](numbering_conversions.html)
+
+[Applications for Binary and Hexadecimal](binary_hex_applications.html)
+
+Loops Lab
+
+### Day 2
+
+<!-- Discussion: Defensive Programming -->
+
+[Metric System for Computing](metric_system.html)
+
+[Numeric Data Types](numeric_data_types.html)
+
+[Text Data Types](text_data_types.html)
+
+Numbers and Metrics Lab
+
+<!-- Coding Exercise: Converting between bases -->
 
 <!-- Day 1 -->
 
