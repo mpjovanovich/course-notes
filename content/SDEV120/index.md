@@ -8,8 +8,8 @@ course: SDEV120
 # Announcements
 
 - If you have not signed up for your final exam time, please do so today.
-- We are one module behind on labs. Today we will cover the lab from Selection structures.
 - Don't forget that there are readings for each module.
+- Syntax tree assignment had incorrect point values. I have updated the posted assignment.
 
 💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 
