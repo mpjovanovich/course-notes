@@ -129,8 +129,6 @@ Loops Lab
 
 ### Day 2
 
-<!-- Discussion: Defensive Programming -->
-
 [Metric System for Computing](metric_system.html)
 
 [Numeric Data Types](numeric_data_types.html)
@@ -139,26 +137,6 @@ Loops Lab
 
 Numbers and Metrics Lab
 
-<!-- Coding Exercise: Converting between bases -->
+<!-- ... -->
 
-<!-- Day 1 -->
-
-<!-- [Intro to Computer Numbering Systems](intro_to_numbering_systems.html)
-
-[Converting Between Bases](numbering_conversions.html)
-
-[Applications for Binary and Hexadecimal](binary_hex_applications.html)
-
-Coding Exercise: Converting between bases -->
-
-<!-- Day 2 -->
-
-<!-- Discussion: Defensive Programming
-
-[Metric System for Computing](metric_system.html)
-
-[Numeric Data Types](numeric_data_types.html)
-
-[Text Data Types](text_data_types.html)
-
-Coding Exercise: Metric system table -->
+<!-- Discussion: Defensive Programming -->
