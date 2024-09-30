@@ -90,7 +90,9 @@ _Example_
 
 Convert GiB to bits:
 
-$$ 1.4 GiB \cdot \frac{1024 MiB}{1 GiB} \cdot \frac{1024 KiB}{1 MiB} \cdot \frac{1024 B}{1 KiB} \cdot \frac{8 b}{1 B} = 12,025,908,428 b $$
+$$
+1.4 GiB \cdot \frac{1024 MiB}{1 GiB} \cdot \frac{1024 KiB}{1 MiB} \cdot \frac{1024 B}{1 KiB} \cdot \frac{8 b}{1 B} = 12,025,908,428 b
+$$
 
 #### Going down the chart:
 
@@ -105,7 +107,9 @@ _Example_
 
 Convert bits to GiB:
 
-$$ 12,025,908,428 b \cdot \frac{1 B}{8 b} \cdot \frac{1 KiB}{1024 B} \cdot \frac{1 MiB}{1024 KiB} \cdot \frac{1 GiB}{1024 MiB} = 1.4 GiB $$
+$$
+12,025,908,428 b \cdot \frac{1 B}{8 b} \cdot \frac{1 KiB}{1024 B} \cdot \frac{1 MiB}{1024 KiB} \cdot \frac{1 GiB}{1024 MiB} = 1.4 GiB
+$$
 
 ## Decimal Applications
 
