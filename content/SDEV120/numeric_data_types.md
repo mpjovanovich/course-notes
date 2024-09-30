@@ -173,11 +173,17 @@ Some fractions in decimal notation can't be represented exactly in binary. For e
 
 When the computer does math with floating point numbers, the part of the number that can't fit in the available bits is **truncated**. This can lead to **rounding errors**.
 
+~~demo{
+
 _Case Study: Why am I seeing this weird number???_
 
 ```python
 print(0.1 + 0.2)
 ```
+
+}
+
+~~demo{
 
 _Case Study: But aren't these the same???_
 
@@ -222,3 +228,5 @@ print(f'Total: {total:.10f}')
 ```
 
 Does the output of the two programs match? Why or why not?
+
+}
