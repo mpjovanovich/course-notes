@@ -7,9 +7,10 @@ course: SDEV120
 
 # Announcements
 
-- If you have not signed up for your final exam time, please do so today.
-- Don't forget that there are readings for each module.
-- Syntax tree assignment had incorrect point values. I have updated the posted assignment.
+- Clarification: When do I need to use De Morgan's Law?
+- +4 points on midterm; should appear in "fudge points" section.
+  - Wording for answer to what is pseudocode question didn't match what was in notes.
+  - "What is UML?" question was marked as incorrect format. Should have been all answers.
 
 💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 
