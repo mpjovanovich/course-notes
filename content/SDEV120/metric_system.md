@@ -90,9 +90,89 @@ _Example_
 
 Convert GiB to bits:
 
-$$
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true" scriptlevel="0">
+    <mrow data-mjx-texclass="ORD">
+      <mtable rowspacing=".5em" columnspacing="1em" displaystyle="true">
+        <mtr>
+          <mtd>
+            <mn>1.4</mn>
+            <mi>G</mi>
+            <mi>i</mi>
+            <mi>B</mi>
+            <mo>&#x22C5;</mo>
+            <mfrac>
+              <mrow>
+                <mn>1024</mn>
+                <mi>M</mi>
+                <mi>i</mi>
+                <mi>B</mi>
+              </mrow>
+              <mrow>
+                <mn>1</mn>
+                <mi>G</mi>
+                <mi>i</mi>
+                <mi>B</mi>
+              </mrow>
+            </mfrac>
+            <mo>&#x22C5;</mo>
+            <mfrac>
+              <mrow>
+                <mn>1024</mn>
+                <mi>K</mi>
+                <mi>i</mi>
+                <mi>B</mi>
+              </mrow>
+              <mrow>
+                <mn>1</mn>
+                <mi>M</mi>
+                <mi>i</mi>
+                <mi>B</mi>
+              </mrow>
+            </mfrac>
+            <mo>&#x22C5;</mo>
+            <mfrac>
+              <mrow>
+                <mn>1024</mn>
+                <mi>B</mi>
+              </mrow>
+              <mrow>
+                <mn>1</mn>
+                <mi>K</mi>
+                <mi>i</mi>
+                <mi>B</mi>
+              </mrow>
+            </mfrac>
+            <mo>&#x22C5;</mo>
+            <mfrac>
+              <mrow>
+                <mn>8</mn>
+                <mi>b</mi>
+              </mrow>
+              <mrow>
+                <mn>1</mn>
+                <mi>B</mi>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mn>12</mn>
+            <mo>,</mo>
+            <mn>025</mn>
+            <mo>,</mo>
+            <mn>908</mn>
+            <mo>,</mo>
+            <mn>428</mn>
+            <mi>b</mi>
+          </mtd>
+        </mtr>
+      </mtable>
+    </mrow>
+  </mstyle>
+</math>
+
+<!-- $$
 1.4 GiB \cdot \frac{1024 MiB}{1 GiB} \cdot \frac{1024 KiB}{1 MiB} \cdot \frac{1024 B}{1 KiB} \cdot \frac{8 b}{1 B} = 12,025,908,428 b
-$$
+$$ -->
 
 #### Going down the chart:
 
@@ -107,9 +187,89 @@ _Example_
 
 Convert bits to GiB:
 
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true" scriptlevel="0">
+    <mrow data-mjx-texclass="ORD">
+      <mtable rowspacing=".5em" columnspacing="1em" displaystyle="true">
+        <mtr>
+          <mtd>
+            <mn>12</mn>
+            <mo>,</mo>
+            <mn>025</mn>
+            <mo>,</mo>
+            <mn>908</mn>
+            <mo>,</mo>
+            <mn>428</mn>
+            <mi>b</mi>
+            <mo>&#x22C5;</mo>
+            <mfrac>
+              <mrow>
+                <mn>1</mn>
+                <mi>B</mi>
+              </mrow>
+              <mrow>
+                <mn>8</mn>
+                <mi>b</mi>
+              </mrow>
+            </mfrac>
+            <mo>&#x22C5;</mo>
+            <mfrac>
+              <mrow>
+                <mn>1</mn>
+                <mi>K</mi>
+                <mi>i</mi>
+                <mi>B</mi>
+              </mrow>
+              <mrow>
+                <mn>1024</mn>
+                <mi>B</mi>
+              </mrow>
+            </mfrac>
+            <mo>&#x22C5;</mo>
+            <mfrac>
+              <mrow>
+                <mn>1</mn>
+                <mi>M</mi>
+                <mi>i</mi>
+                <mi>B</mi>
+              </mrow>
+              <mrow>
+                <mn>1024</mn>
+                <mi>K</mi>
+                <mi>i</mi>
+                <mi>B</mi>
+              </mrow>
+            </mfrac>
+            <mo>&#x22C5;</mo>
+            <mfrac>
+              <mrow>
+                <mn>1</mn>
+                <mi>G</mi>
+                <mi>i</mi>
+                <mi>B</mi>
+              </mrow>
+              <mrow>
+                <mn>1024</mn>
+                <mi>M</mi>
+                <mi>i</mi>
+                <mi>B</mi>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mn>1.4</mn>
+            <mi>G</mi>
+            <mi>i</mi>
+            <mi>B</mi>
+          </mtd>
+        </mtr>
+      </mtable>
+    </mrow>
+  </mstyle>
+</math>
+<!-- 
 $$
 12,025,908,428 b \cdot \frac{1 B}{8 b} \cdot \frac{1 KiB}{1024 B} \cdot \frac{1 MiB}{1024 KiB} \cdot \frac{1 GiB}{1024 MiB} = 1.4 GiB
-$$
+$$ -->
 
 ## Decimal Applications
 
