@@ -23,6 +23,39 @@ title: Overview of AI
 
 <!-- TODO: split into several pages -->
 
+These notes are a mess, as I'm currently porting them from:
+
+https://docs.google.com/document/d/1ctlNbZHVTEDOqJWp9rlHQWI1H_RKuFs8A7oxcxTqUA8/edit?usp=sharing
+
+Not all info is copied over.
+
+**See also:**
+
+- demos on git
+  - Python NNs
+  - OCR
+  - k-means clustering
+
+**Other topics to discuss:**
+
+- How to encode inputs
+- Where is AI being used
+  - Medical imaging
+  - Self-driving cars
+  - Marketing
+  - ...
+- LLMs
+  - The "old" way
+  - Attention mechanisms (QKV puts words in context and assigns weights)
+- Ethical issues
+  - How does training data affect the model?
+    - Who is labeling?
+    - How representative is the data of the population? Try making an image of "successful businessman sipping a cocktail while riding a rodeo bull"...
+  - Open vs closed source
+  - Who owns the training data? Can you train from artists' or researchers' work?
+  - Where does the data "live"?
+  - Limits to AI (case study of facial recognition used in hiring)
+
 ## Types of AI
 
 ### Expert Systems
