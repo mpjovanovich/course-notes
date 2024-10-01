@@ -15,17 +15,7 @@ title: Overview of AI
       - [Artificial Neural Networks](#artificial-neural-networks)
         - [Single layer perceptron](#single-layer-perceptron)
     - [Suppliers](#suppliers)
-    - [Substitutes](#substitutes)
-    - [Competitors](#competitors)
     - [Potential Entrants](#potential-entrants)
-    - [Buyers](#buyers)
-    - [Summarizing: SWOT Analysis](#summarizing-swot-analysis)
-  - [Mission, Vision, Core Values](#mission-vision-core-values)
-    - [Mission](#mission)
-    - [Vision](#vision)
-    - [Core Values](#core-values)
-  - [Goals and Objectives](#goals-and-objectives)
-    - [SMART Goals](#smart-goals)
   - [Staying Current on Innovation](#staying-current-on-innovation)
 
 }
@@ -87,37 +77,6 @@ Simulate human intelligence...
 
 <p class="demo">Case study:</p>
 
-**Tesla**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OhiqWTwz1uk?si=9TiZQ-dU6dTdwNnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-- ~0:50 - Market-entry strategy (2008)
-  - Didn't go for mass adoption product
-  - Went for high-end, high-margin product: Roadster
-- ~4:15 Later scaling toward mass-market
-  - Model S
-  - Model X
-  - Model 3...
-- ~2:00 - Direct distribution model
-  - Manufacturing to customer; whole process is Tesla
-  - No dealerships; online sales and Tesla physical stores (like Apple stores)
-- Fits with overall Musk bootstrapping strategy
-  - PayPal (2002) -> Tesla (2003) -> SpaceX (2002)
-
-<figure>
-    <span>
-        <img src="https://thinkmaverick.com/wp-content/uploads/2018/05/4-2.png" style="">
-    </span>
-    <figcaption>
-        <a href="https://wwwkunlastree.blogspot.com/2017/07/elon-musk-net-worth-over-time.html">Prof source note: seems opinionated; I didn't have time to audit for accuracy.</a>
-    </figcaption>
-</figure>
-
-- Could most startups work with this high vertical integration model?
-  - Takes a lot of capital...
-
-<p class="demo">Case study:</p>
-
 **nVidia and GPU Market**
 
 - Industries scrambling to create/employ AI plan
@@ -132,25 +91,6 @@ Simulate human intelligence...
 - Responses to need for massive compute power...
   - Efficient algorithms
   - Compression
-
-### Substitutes
-
-- Different product / service, but accomplishes same goal for consumer.
-- How does this affect strategy of org?
-- Examples?
-  - Uber vs. taxi
-  - Netflix vs. cable
-  - e-books vs. paper books
-  - ...
-
-### Competitors
-
-- Competitors offering a product with little differentiation.
-- Strategies to set my product apart?
-  - Price
-  - Quality
-  - Service
-  - Branding
 
 ### Potential Entrants
 
@@ -176,103 +116,11 @@ Simulate human intelligence...
   - Startups?
   - Good or bad for innovation?
 
-### Buyers
-
-- Who is my market?
-  - Niche?
-  - One size fits all (enterprise)?
-- How does this affect strategy?
-  - How much to produce?
-  - How much to charge?
-- Forecasting demand
-  - How much risk am I taking?
-  - Flexibility
-    - Can I scale up / down quickly?
-    - Can I pivot quickly?
-  - Reactive / cautious approach vs speculative approach?
-    - Advantage to being first to market?
-- How is this affected by...
-  - Novel product vs. existing product?
-  - Startup vs. established company?
-
-### Summarizing: SWOT Analysis
-
-SWOT = Strengths, Weaknesses, Opportunities, Threats
-
-<figure>
-    <span>
-        <img src="images/table_12_1.jpg" style="">
-    </span>
-    <figcaption>
-        SWOT Analysis - Starbucks
-    </figcaption>
-</figure>
-
-## Mission, Vision, Core Values
-
-### Mission
-
-- **Mission statement** = What is the ultimate goal and purpose of the organization?
-- Concise, clear, and inspiring.
-
-<figure>
-    <span>
-        <img src="https://uploads-ssl.webflow.com/5de2db6d3719a1e2f3e4454c/5de41eb55f1762023c3c02e5_10-Best-Brand-Mission-Statement-1.png" style="">
-    </span>
-    <figcaption>
-        <a href="https://www.ebaqdesign.com/blog/mission-statements">Mission Statements of Top Brands</a>
-    </figcaption>
-</figure>
-
-### Vision
-
-- **Vision statement** = What does the organization hope to achieve?
-- More to do with external goals than internal culture.
-
-<figure>
-    <span>
-        <img src="https://uploads-ssl.webflow.com/5de2db6d3719a1e2f3e4454c/5de41ea65f176270b43c026b_10-Best-Brand-Vision-Statement.png" style="">
-    </span>
-    <figcaption>
-        <a href="https://www.ebaqdesign.com/blog/vision-statements">Vision Statements of Top Brands</a>
-    </figcaption>
-</figure>
-
-### Core Values
-
-- **Core values** = What are the guiding principles of the organization?
-- More to do with internal culture than external goals.
-- Used to attract and retain employees.
-
-<figure>
-    <span>
-        <img src="images/table_12_2.jpg" style="">
-    </span>
-    <figcaption>
-        <a href=""></a>
-    </figcaption>
-</figure>
-
-## Goals and Objectives
-
-### SMART Goals
-
-**_SMART_** = Specific, Measurable, Attainable, Relevant, Time constrained
-
-- Specific
-  - Who, what, where, when, why, how?
-- Measurable
-  - What is your metric to know you've reached it?
-- Attainable
-  - Is it realistic (feasible in business lingo)?
-- Relevant
-  - Does it align with your mission, vision, and core values?
-- Time constrained
-  - Have you set a specific deadline or milestones?
-
 ## Staying Current on Innovation
 
-- MS Build convention, Satya Nadella and others, Microsoft
+Technical skills must be supplemented with knowledge of current trends and innovations.
+
+- MS Build convention, Satya Nadella and others, Microsoft... find something interesting!
 
   - [Microsoft Build 2023](https://news.microsoft.com/build-2023/)
 
@@ -281,9 +129,3 @@ SWOT = Strengths, Weaknesses, Opportunities, Threats
 - Andrej Karpathy, Tesla / OpenAI
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bZQun8Y4L2A?si=0hnLcMHB6GZwOzgT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-- Chamath Palihapitiya, Social Capital
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wgYZk9Mc804?si=7tO8iTZSJVg9WT4N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-**_Find a medium and personality that's comfortable for you - stay current!_**
