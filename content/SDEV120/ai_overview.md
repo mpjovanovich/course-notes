@@ -41,8 +41,10 @@ Not all info is copied over.
 - How to encode inputs
 - Where is AI being used
   - Medical imaging
+  - Pharmaceutical discovery
   - Self-driving cars
   - Marketing
+  - Precision agriculture
   - ...
 - LLMs
   - The "old" way
