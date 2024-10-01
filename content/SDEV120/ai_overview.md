@@ -14,8 +14,7 @@ title: Overview of AI
     - [Expert Systems](#expert-systems)
       - [Artificial Neural Networks](#artificial-neural-networks)
         - [Single layer perceptron](#single-layer-perceptron)
-    - [Suppliers](#suppliers)
-    - [Potential Entrants](#potential-entrants)
+    - [Potential Entrants to AI](#potential-entrants-to-ai)
   - [Staying Current on Innovation](#staying-current-on-innovation)
 
 }
@@ -57,23 +56,17 @@ Simulate human intelligence...
 
 ~~fig(90){https://static.packt-cdn.com/products/9781788299879/graphics/2271a103-bcc0-4ea0-acca-0eb3e3c99fbd.png}
 
-### Suppliers
+### Potential Entrants to AI
 
-- How do these elements increase or decrease bargaining power of org?
-  - Current supply
-  - Forecasted supply
-  - Availability / scarcity of materials
-  - Supplier / vendor "lock in"
-- Vertical expansion
-  - Buying up suppliers (acquisitions)
-  - Launch new company / division to supply
-  - Examples?
-    - Amazon - AWS
-      - Warehouses, Delivery, Banking, AWS
-        - Servers, Circuitry, Cabling, Cooling and power, ...
-    - Tesla
-      - Battery, Solar, AI, Electronics, etc.
-      - [Acquisitions by Tesla](https://tracxn.com/d/acquisitions/acquisitions-by-tesla/__z7iBA0j3piGy5SjdQFAYgeC06G3Q2ntcoN1vYCcRsVg)
+- **_Barriers to entry_** = factors that make it difficult for new competitors to enter the market.
+  - Capital
+    - Can't raise initial funding to start
+  - Expertise
+    - Can't afford to hire experts
+  - Monopoly
+    - Supply locked
+    - Can't compete with prices
+    - Can't compete with branding
 
 <p class="demo">Case study:</p>
 
@@ -91,18 +84,6 @@ Simulate human intelligence...
 - Responses to need for massive compute power...
   - Efficient algorithms
   - Compression
-
-### Potential Entrants
-
-- **_Barriers to entry_** = factors that make it difficult for new competitors to enter the market.
-  - Capital
-    - Can't raise initial funding to start
-  - Expertise
-    - Can't afford to hire experts
-  - Monopoly
-    - Supply locked
-    - Can't compete with prices
-    - Can't compete with branding
 
 <p class="demo">Case study:</p>
 
