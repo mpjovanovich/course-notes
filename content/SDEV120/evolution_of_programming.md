@@ -27,6 +27,12 @@ title: Evolution of Programming
 
 # Evolution of Programming Languages
 
+<figure>
+    <span>
+        <img src="images/js_kid.png" style="width: 40%;">
+    </span>
+</figure>
+
 ## First Generation
 
 - **Machine code** = binary code
