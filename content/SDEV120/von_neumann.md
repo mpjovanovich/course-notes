@@ -21,6 +21,12 @@ course: SDEV120
 
 # Von Neumann Architecture
 
+<figure>
+    <span>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiv48OWeQlyXjKhtwyeGEBddBGa6RX6XzKjHqRv8NmuAyd2zKmymHyaOhKlR47yoSf55vnmoeos-_RJ9kl0fCOSbUZKC7eSAsbfmo37chyxo8ok_i1NG-6lfJ8HUMULUzo1C5Sglg/s640/500004275-03-01.jpg" style="">
+    </span>
+</figure>
+
 ## Prior to von Neumann
 
 - Computers were built for specific tasks
@@ -133,9 +139,3 @@ _Slight correction to the video: the program counter is incremented immediately 
 _The "JUMP 1" instruction does not skip the execution cycle. It updates the program counter on its execution._
 
 }
-
----
-
-<!-- ... Moore's Law ...
-
-probably belongs on a new page -->

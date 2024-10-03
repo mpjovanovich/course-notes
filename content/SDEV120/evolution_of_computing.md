@@ -10,3 +10,14 @@ course: SDEV120
 }
 
 # Evolution of Computing
+
+...
+
+Mechanical Computing
+Vacuum Tubes
+Transistors
+Integrated Circuits
+Moore's Law
+GPU's
+Specialized Processors (e.g. TPU)
+Quantum Computing
