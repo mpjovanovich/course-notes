@@ -155,6 +155,8 @@ https://redmonk.com/kfitzpatrick/2021/03/02/redmonk-top-20-languages-over-time-j
     </span>
 </figure>
 
+---
+
 https://redmonk.com/sogrady/2021/03/01/language-rankings-1-21/
 
 <figure>
@@ -175,12 +177,32 @@ https://www.devjobsscanner.com/blog/top-8-most-demanded-programming-languages/
 
 ---
 
+<figure>
+    <span>
+        <img src="https://www.researchgate.net/profile/Christos-Chrysoulas/publication/353521212/figure/fig1/AS:11431281082208313@1662015718842/Programming-Languages-popularity-over-time-GitHub.ppm" style="width: 80%;">
+    </span>
+</figure>
+
+<figure>
+    <span>
+        <img src="https://www.researchgate.net/profile/Christos-Chrysoulas/publication/353521212/figure/fig2/AS:11431281082271996@1662015718925/Programming-Languages-popularity-over-time-StackOverflow.ppm" style="width: 80%;">
+    </span>
+</figure>
+
+https://www.researchgate.net/publication/353521212_Programming_Languages_A_Usage-based_Statistical_Analysis_and_Visualization
+
+---
+
 <p class="demo">Critical Thinking Exercise:</p>
 
 **What do the above data tell us?.**
 
-- Be mindful of timeliness.
-- Be mindful of the source and methodology; in particular, look at RedMonkQ121 Programming Language Rankings.
+- Be mindful of timeliness of source data.
+- What's actually on the axes of these graphs?
+- Why might some languages show up more on a particular graph?
+
+**When considering a language to learn:**
+
 - _Be mindful of demand for a particular language in your area (lookin' at you C#, JavaScript/TypeScript, HTML/CSS)._
 - Check job listings. Make informal inquiries. Job shadow.
 
@@ -194,7 +216,3 @@ In no particular order:
 - **Game Development**: C++, C#, Java, JavaScript, Rust
 - **Data Science**: Python, R, SQL
 - **Scripting**: Python, Bash, PowerShell
-
-<!-- ## Programming Paradigms
-
-TODO: ... procedural, object-oriented, functional, etc. ... -->
