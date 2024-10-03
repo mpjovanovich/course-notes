@@ -64,7 +64,7 @@ _Example:_
     <span>
         <img src="images/turing1.jpg" style="width: 100%;">
     </span>
-    <caption>Charles Petzold - The Annotated Turing, p81</caption>
+    <figcaption>Charles Petzold - The Annotated Turing, p81</figcaption>
 </figure>
 
 - This machine prints an alternating sequence of zeroes and ones: 01010101...

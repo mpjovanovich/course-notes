@@ -60,7 +60,7 @@ title: Evolution of Programming
     <span>
         <img src="https://cdn.mos.cms.futurecdn.net/GHDrjPSJR4PzcmjwCRkhD3.jpg" style="width: 40%;">
     </span>
-    <figcaption>Us. Professional coders.</caption>
+    <figcaption>Us. Professional coders.</figcaption>
 </figure>
 
 There are technically 4th and 5th generation languages, but the distinction is less clear. They're typically defined as less instruction-oriented and more problem-oriented.
