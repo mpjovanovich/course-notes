@@ -33,6 +33,7 @@ course: SDEV120
   - [M09: Data Representation and Encoding](#m09-data-representation-and-encoding)
     - [Day 1](#day-1)
     - [Day 2](#day-2)
+  - [M10: Programming Paradigms](#m10-programming-paradigms)
   - [Overflow Topics](#overflow-topics)
 
 }
@@ -142,6 +143,16 @@ Numbers and Metrics Lab
 <!-- ... -->
 
 <!-- Discussion: Defensive Programming -->
+
+## M10: Programming Paradigms
+
+[Turing and Computability](turing_computability.html)
+
+[Von Neumann Architecture](von_neumann.html)
+
+[Evolution of Computing](evolution_of_computing.html)
+
+[Evolution of Programming](evolution_of_programming.html)
 
 ## Overflow Topics
 
