@@ -11,6 +11,7 @@ course: SDEV120
   - [Moore's Law](#moores-law)
   - [Continued Growth?](#continued-growth)
   - [Kurzweil's Commentaries](#kurzweils-commentaries)
+  - [Alternatives to Von Neumann Architecture](#alternatives-to-von-neumann-architecture)
   - [Alternatives to Transistor Based Computing](#alternatives-to-transistor-based-computing)
 
 }
@@ -73,17 +74,35 @@ Above we look at how much we can compute with a dollar over time. The curve is m
 
 Kurzweil and others believe that as long as there is a demand for more computing power, the technology will continue to evolve to meet that demand.
 
+## Alternatives to Von Neumann Architecture
+
+**GPU's**
+
+- Originally designed for rendering graphics.
+- Optimized for processing arrays and matrices.
+- Can perform many calculations in parallel.
+- This works well for machine learning and other specialized applications.
+- Most supercomputers use GPU's.
+
+**Specialized Processors**
+
+- Other entrants are now tweaking the design of the processor to optimize for specific tasks.
+- This is mostly done to support AI / machine learning.
+- Special chips designed to do machine learning _inference_ (E.g. on your phone)
+- Special chips to do machine learning _training_ (at large scales in computing facilities)
+- Special processors for small devices
+
 ## Alternatives to Transistor Based Computing
 
 **Quantum Computing**
 
-...
+- Currently experimental, large, and expensive.
+- Quantum computers use quantum bits, or qubits, which can be in multiple states at once.
+- Not restricted to binary (0 or 1) like classical computers.
+- Used in research and specialized applications to do this kind of things that supercomputers are used for.
 
-<!-- Mechanical Computing
-Vacuum Tubes
-Transistors
-Integrated Circuits
-Moore's Law
-GPU's
-Specialized Processors (e.g. TPU)
-Quantum Computing -->
+**Organic Computing**
+
+- Currently experimental.
+- Computers made from organic materials.
+- Information is encoded in the structure of the material itself.
