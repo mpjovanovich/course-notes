@@ -7,10 +7,10 @@ course: SDEV120
 
 # Announcements
 
-- Clarification: When do I need to use De Morgan's Law?
-- +4 points on midterm; should appear in "fudge points" section.
-  - Wording for answer to what is pseudocode question didn't match what was in notes.
-  - "What is UML?" question was marked as incorrect format. Should have been all answers.
+- There is no lecture the last day of class. Remote students will take the exam as scheduled.
+- I will not be able to grade until Saturday because remote exams are open through Friday night.
+- I will post an announcement when grading is complete.
+- Final grades are due Tuesday, so please report any issues with grades by Monday at the latest.
 
 💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
 
