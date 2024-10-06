@@ -35,6 +35,7 @@ course: SDEV120
     - [Day 2](#day-2)
   - [M10: Programming Paradigms](#m10-programming-paradigms)
   - [Overflow Topics](#overflow-topics)
+  - [Final Study](#final-study)
 
 }
 
@@ -157,3 +158,7 @@ Numbers and Metrics Lab
 ## Overflow Topics
 
 [Overview of Artificial Intelligence](ai_overview.html)
+
+## Final Study
+
+[Final Study Guide](final_study_guide.html)

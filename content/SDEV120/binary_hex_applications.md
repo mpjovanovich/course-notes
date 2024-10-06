@@ -8,19 +8,13 @@ course: SDEV120
 - [Applications of Binary and Hexadecimal](#applications-of-binary-and-hexadecimal)
   - [Applications](#applications)
     - [Arithmetic Logic](#arithmetic-logic)
-      - [Half-Adder Circuit](#half-adder-circuit)
-      - [Full-Adder Circuit](#full-adder-circuit)
     - [File Permissions](#file-permissions)
     - [Networking](#networking)
       - [MAC address](#mac-address)
       - [IP addresses](#ip-addresses)
       - [Graphics](#graphics)
     - [Error Detection and Correction](#error-detection-and-correction)
-      - [Parity](#parity)
       - [Checksums, Digests, and Hashes](#checksums-digests-and-hashes)
-    - [Compression](#compression)
-      - [Huffman Coding](#huffman-coding)
-      - [Run-Length Encoding](#run-length-encoding)
   - [Operations](#operations)
     - [Bitmasking](#bitmasking)
       - [Boolean Flags](#boolean-flags)
@@ -40,11 +34,11 @@ The Arithmetic Logic Unit (ALU) is the part of the Central Procesing Unit (CPU) 
 
 We can perform arithmetic operations using binary numbers.
 
-#### Half-Adder Circuit
+<!-- #### Half-Adder Circuit -->
 
 <!-- TODO: think logicly already has an example -->
 
-#### Full-Adder Circuit
+<!-- #### Full-Adder Circuit -->
 
 <!-- TODO: think logicly already has an example -->
 
@@ -52,9 +46,17 @@ We can perform arithmetic operations using binary numbers.
 
 In UNIX, file permissions are often set using octal notation.
 
-~~fig{https://miro.medium.com/v2/0*AAZ3ClsEyE1qFtyT.jpg}
+<figure>
+    <span>
+        <img src="https://miro.medium.com/v2/0*AAZ3ClsEyE1qFtyT.jpg" style="width: 60%;">
+    </span>
+</figure>
 
-~fig{https://miro.medium.com/v2/1*Qd9k5fOi4crDc33l0VveaQ.png}
+<figure>
+    <span>
+        <img src="https://miro.medium.com/v2/1*Qd9k5fOi4crDc33l0VveaQ.png" style="width: 50%;">
+    </span>
+</figure>
 
 - First three bits = owner permissions
 - Next three bits = group permissions
@@ -154,13 +156,13 @@ Try changing the color values in the following example using hexadecimal:
 
 ### Error Detection and Correction
 
-#### Parity
+<!-- #### Parity
 
 Parity is a method of error detection that uses an extra bit to ensure the number of bits is even or odd.
 
 ... Even parity ...
 
-... Odd parity ...
+... Odd parity ... -->
 
 #### Checksums, Digests, and Hashes
 
@@ -196,7 +198,7 @@ No, TMI
 
 Gray codes are used in digital communication systems to prevent errors when transitioning between binary values. -->
 
-### Compression
+<!-- ### Compression
 
 #### Huffman Coding
 
@@ -204,7 +206,7 @@ Gray codes are used in digital communication systems to prevent errors when tran
 
 #### Run-Length Encoding
 
-... Run-length encoding ...
+... Run-length encoding ... -->
 
 ## Operations
 
@@ -212,15 +214,16 @@ Gray codes are used in digital communication systems to prevent errors when tran
 
 **Bitmasking** is the process of using a mask to turn bits on or off.
 
-- **_AND_** - Turn bits off
-- **_OR_** - Turn bits on
-- **_XOR_** - Toggle bits
+- **_AND_** - Filter bits (turn a subset of bits off)
+- **_OR_** - Turn bits on (regardless of current value)
+- **_XOR_** - Toggle bits (turn bits on if they are off, and off if they are on)
 
 #### Boolean Flags
 
 A **bit array** is a data structure that uses a single byte to store multiple true/false values.
 
-- Each bit represents a different boolean value.
+- Each bit is known as a **flag**
+- The flags represent different boolean values.
 - More efficient than using multiple bytes.
 
 ~~example{

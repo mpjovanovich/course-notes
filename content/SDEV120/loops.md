@@ -5,7 +5,7 @@ course: SDEV120
 
 - [Loops](#loops)
   - [Why Loops?](#why-loops)
-- [Indefinite Loops](#indefinite-loops)
+- [Types of loops](#types-of-loops)
   - [`while` Loops](#while-loops)
   - [Step Values](#step-values)
   - [Off by One Errors](#off-by-one-errors)
@@ -25,9 +25,13 @@ course: SDEV120
 - Loops can run zero to infinite times depending on the condition and inputs.
 - **Iteration** = one execution of the loop body.
 
-# Indefinite Loops
+# Types of loops
 
-Used when we don't know how many times the loop should run.
+**Definite Loops**: We know how many times the loop should run.
+
+**Indefinite Loops**: We don't know how many times the loop should run.
+
+Any definite loop can be written as an indefinite loop, so we will focus on indefinite loops.
 
 ## `while` Loops
 

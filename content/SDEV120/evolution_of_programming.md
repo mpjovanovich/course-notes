@@ -42,7 +42,7 @@ course: SDEV120
 
 ## Second Generation
 
-- Assembly language
+- **Assembly language**
 - Primitive instructions that reflect what the processor can do
   - See: [x86 instruction listings](https://en.wikipedia.org/wiki/X86_instruction_listings)
   - ADD = add two numbers
@@ -57,7 +57,7 @@ course: SDEV120
 
 ## Third Generation
 
-- Compiled or interpreted languages
+- **Compiled or interpreted code**
 - "Human readable" code, like Python
 - Is compiled or interpreted to machine code
 

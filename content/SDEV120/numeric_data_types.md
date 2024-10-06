@@ -16,6 +16,10 @@ course: SDEV120
     - [Walkthrough](#walkthrough)
     - [Considerations:](#considerations)
   - [Important Consequences of Numeric Data Types](#important-consequences-of-numeric-data-types)
+    - [Overflow](#overflow)
+    - [Underflow](#underflow)
+    - [Truncation](#truncation)
+    - [Rounding Errors](#rounding-errors)
 
 }
 
@@ -167,41 +171,72 @@ Imagine a series of digits, 45017568. You can think of a floating point number a
 
 ## Important Consequences of Numeric Data Types
 
-**Precision**
+### Overflow
 
-Some fractions in decimal notation can't be represented exactly in binary. For example, 0.1 can't be represented exactly in binary.
+**Overflow** is when a value exceeds the maximum representable value of a data type.
 
-When the computer does math with floating point numbers, the part of the number that can't fit in the available bits is **truncated**. This can lead to **rounding errors**.
+If I have an 8-bit unsigned integer and I try to add 1 to 255, I will get an exception, or the value will wrap around to 0.
 
-_Case Study: Why am I seeing this weird number???_
+_We can't reproduce this in Python because it will automatically handle overflow._
+
+### Underflow
+
+**Underflow** is when a value is closer to zero than the smallest representable value that a data type can hold.
+
+If I have a floating point number and end up with a result that is something like 0.000000...0001, I may lose precision.
+
+_We can't reproduce this in Python because it will automatically handle underflow._
+
+### Truncation
+
+**Truncation** occurs when a number is cut off to fit within the available bits.
+
+This can be due to:
+
+- We can accurately represent the number, but not with the amount of bits in the data type.
+- We can't accurately represent the number at all. E.g.
+  - Sqaure root of 2 can't be represented exactly (irrational numbers)
+  - 1/3 can't be represented exactly in decimal or binary (repeating decimal)
+  - \*1/10 can't be represented exactly in binary.
+
+~~example{
+
+_Binary can only represent numbers that are a sum of powers of 2!_
+
+Positions to the right of the decimal point are negative powers of 2
+
+Remember that negative exponents are fractions:
+
+- 2<sup>-1</sup> = 1/2<sup>1</sup> = 1/2
+- 2<sup>-2</sup> = 1/2<sup>2</sup> = 1/4
+- 2<sup>-3</sup> = 1/2<sup>3</sup> = 1/8
+- ...
+
+**Binary 1/2**
+
+(0.1)<sub>2</sub> = 1/2.
+
+**Binary 1/4**
+
+(0.01)<sub>2</sub> = 1/4.
+
+}
+
+_Case Study: Binary arithmetic errors_
 
 ```python
+# Print 0.3 (base 10)
 print(0.1 + 0.2)
+
+# Print 0.1 (base 10) with 50 decimal places
+print(f'{0.1:.50f}')
 ```
 
-_Case Study: But aren't these the same???_
+_Case Study: Compounding truncation errors_
 
 You are a programmer at a large corporation. You're asked to write a report calculating the tax for all purchases in the month of January. You write two versions of the code:
 
-**v1**
-
-```python
-TAX_RATE = 0.3
-total = 0
-
-# We're again pretending that "i" is the cost of some item
-for i in range(10000):
-    # Add the cost of the item to the total cost
-    total = total + i
-
-# Calculate the tax
-total = total * TAX_RATE
-
-# Print the total
-print(f'Total: {total:.10f}')
-```
-
-**v2**
+**Version 1**
 
 ```python
 TAX_RATE = 0.3
@@ -221,4 +256,76 @@ for i in range(10000):
 print(f'Total: {total:.10f}')
 ```
 
+**Version 2**
+
+```python
+TAX_RATE = 0.3
+total = 0
+
+# We're again pretending that "i" is the cost of some item
+for i in range(10000):
+    # Add the cost of the item to the total cost
+    total = total + i
+
+# Calculate the tax
+total = total * TAX_RATE
+
+# Print the total
+print(f'Total: {total:.10f}')
+```
+
+Version 1 calculates the tax for each item and adds it to the total. Version 2 adds the cost of each item to the total and then calculates the tax at the end.
+
 Does the output of the two programs match? Why or why not?
+
+### Rounding Errors
+
+When rounding is done at intermediate steps in a calculation, the final result may be off by a small amount.
+
+_Case Study: Intermediate Rounding Errors_
+
+You are a scientist working on a physics project. In your final report you will need an output rounded to two decimal places. You write two versions of the code:
+
+**Version 1**
+
+```python
+i = 0
+total = 0
+PI = 0.13159
+
+while i < 1000:
+    # Add PI to the total
+    total = total + PI
+
+    # Round to 2 decimal places
+    total = round(total, 2)
+
+    # Increment i to keep the loop going
+    i = i + 1
+
+print(total)
+```
+
+**Version 2**
+
+```python
+i = 0
+total = 0
+PI = 0.13159
+
+while i < 1000:
+    # Add PI to the total
+    total = total + PI
+
+    # Increment i to keep the loop going
+    i = i + 1
+
+# Round to 2 decimal places
+total = round(total, 2)
+
+print(total)
+```
+
+Version 1 rounds the total at each step, while Version 2 rounds the total at the end.
+
+Do the two versions of the program produce the same output? Why or why not?
