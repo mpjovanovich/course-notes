@@ -11,8 +11,7 @@ course: SDEV120
 - I will not be able to grade until Saturday because remote exams are open through Friday night.
 - I will post an announcement when grading is complete.
 - Final grades are due Tuesday, so please report any issues with grades by Monday at the latest.
-
-💻🖥️🖱️⌨️🖲️💾💽📀🔋🔌🧮🌐🗂️📂🗃️📁🗳️🛠️🔒🔓🔑🛡️📡📶📲🛰️🤖🧠🔍
+- REVIEW: How to view feedback on coding assignments
 
 # Schedule
 
