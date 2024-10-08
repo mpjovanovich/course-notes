@@ -111,7 +111,7 @@ Overflow topics
 
 - What is the difference between **signed** and **unsigned** numbers?
 - "How many values can be represented by a [?]-bit unsigned integer? Provide your answer as a power of 2."
-- Can all numbers be represented exactly in binary?
+- Can computer data types accurately represent all numbers?
 
 #### Text Data Types
 
