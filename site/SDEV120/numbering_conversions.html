@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120 - Converting Between Bases</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/highlight.css"
+    />
+  </head>
+  <body>
+    <h1 class="breadcrumb">
+      <a href="https://mpjovanovich.github.io/course-notes/SDEV120/index.html"
+        >SDEV120</a
+      >&nbsp;&gt;&nbsp;<a href="">Converting Between Bases</a>
+    </h1>
+    <div class="schedule">
+      <ul>
+        <li>
+          <a href="#converting-between-bases">Converting Between Bases</a>
+          <ul>
+            <li><a href="#positional-notation">Positional Notation</a></li>
+            <li>
+              <a href="#binary-numbers-in-computing"
+                >Binary Numbers in Computing</a
+              >
+              <ul>
+                <li><a href="#why-are-they-used">Why are they Used?</a></li>
+                <li>
+                  <a href="#convert-binary-to-decimal"
+                    >Convert: Binary to Decimal</a
+                  >
+                  <ul>
+                    <li><a href="#example-1">Example 1</a></li>
+                    <li><a href="#example-2">Example 2</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#convert-decimal-to-binary"
+                    >Convert: Decimal to Binary</a
+                  >
+                  <ul>
+                    <li><a href="#example-1-1">Example 1</a></li>
+                    <li><a href="#example-2-1">Example 2</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#binary-addition">Binary Addition</a>
+                  <ul>
+                    <li><a href="#example-1-2">Example 1</a></li>
+                    <li><a href="#example-2-2">Example 2</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <h1 id="converting-between-bases">Converting Between Bases</h1>
+    <h2 id="positional-notation">Positional Notation</h2>
+    <p>Each digit in a number represents a power of its base.</p>
+    <p>We follow an algorithm to get the result:</p>
+    <ol>
+      <li>
+        Multiply each digit by the base raised to the power of its position.
+      </li>
+      <li>Add the results.</li>
+    </ol>
+    <p><em>Note: any number raised to the power of 0 is 1.</em></p>
+    <p><strong>Example</strong></p>
+    <p>324<sub>(10)</sub> =</p>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>3</th>
+          <th></th>
+          <th>2</th>
+          <th></th>
+          <th>4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>=</td>
+          <td>3 * 10<sup>2</sup></td>
+          <td>+</td>
+          <td>2 * 10<sup>1</sup></td>
+          <td>+</td>
+          <td>4 * 10<sup>0</sup></td>
+        </tr>
+        <tr>
+          <td>=</td>
+          <td>3 * 100</td>
+          <td>+</td>
+          <td>2 * 10</td>
+          <td>+</td>
+          <td>4 * 1</td>
+        </tr>
+        <tr>
+          <td>=</td>
+          <td>300</td>
+          <td>+</td>
+          <td>20</td>
+          <td>+</td>
+          <td>4</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="binary-numbers-in-computing">Binary Numbers in Computing</h2>
+    <p>
+      Numbers in base 2 are called <strong><em>binary</em></strong> numbers: {
+      0, 1 }
+    </p>
+    <h3 id="why-are-they-used">Why are they Used?</h3>
+    <ul>
+      <li>
+        Digital signal can be in one of two states:
+        <ul>
+          <li>
+            <strong><em>Off = 0</em></strong>
+          </li>
+          <li>
+            <strong><em>On = 1</em></strong>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <h3 id="convert-binary-to-decimal">Convert: Binary to Decimal</h3>
+    <p>We simply follow the positional notation algorithm.</p>
+    <h4 id="example-1">Example 1</h4>
+    <p>Convert the binary number to decimal: (111)<sub>2</sub></p>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>1</th>
+          <th></th>
+          <th>1</th>
+          <th></th>
+          <th>1</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>=</td>
+          <td>1 * 2<sup>2</sup></td>
+          <td>+</td>
+          <td>1 * 2<sup>1</sup></td>
+          <td>+</td>
+          <td>1 * 2<sup>0</sup></td>
+        </tr>
+        <tr>
+          <td>=</td>
+          <td>1 * 4</td>
+          <td>+</td>
+          <td>1 * 2</td>
+          <td>+</td>
+          <td>1 * 1</td>
+        </tr>
+        <tr>
+          <td>=</td>
+          <td>4</td>
+          <td>+</td>
+          <td>2</td>
+          <td>+</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>= 7<sub>(10)</sub></p>
+    <h4 id="example-2">Example 2</h4>
+    <p>Convert the binary number to decimal: (1101)<sub>2</sub></p>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>1</th>
+          <th></th>
+          <th>1</th>
+          <th></th>
+          <th>0</th>
+          <th></th>
+          <th>1</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>=</td>
+          <td>1 * 2<sup>3</sup></td>
+          <td>+</td>
+          <td>1 * 2<sup>2</sup></td>
+          <td>+</td>
+          <td>0 * 2<sup>1</sup></td>
+          <td>+</td>
+          <td>1 * 2<sup>0</sup></td>
+        </tr>
+        <tr>
+          <td>=</td>
+          <td>1 * 8</td>
+          <td>+</td>
+          <td>1 * 4</td>
+          <td>+</td>
+          <td>0 * 2</td>
+          <td>+</td>
+          <td>1 * 1</td>
+        </tr>
+        <tr>
+          <td>=</td>
+          <td>8</td>
+          <td>+</td>
+          <td>4</td>
+          <td>+</td>
+          <td>0</td>
+          <td>+</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>= 13<sub>(10)</sub></p>
+    <h3 id="convert-decimal-to-binary">Convert: Decimal to Binary</h3>
+    <p>To convert a decimal number to binary, we follow an algorithm:</p>
+    <ol>
+      <li>Divide the decimal number by 2.</li>
+      <li>Record the remainder.</li>
+      <li>Repeat steps 1 and 2 until the quotient is 0.</li>
+      <li>The binary number is the remainders in reverse order.</li>
+    </ol>
+    <h4 id="example-1">Example 1</h4>
+    <p>Convert the decimal number to binary: 12<sub>(10)</sub></p>
+    <table>
+      <thead>
+        <tr>
+          <th align="center">Division</th>
+          <th align="center">Quotient</th>
+          <th align="center">Remainder</th>
+          <th align="center">Binary Digit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="center">12 / 2</td>
+          <td align="center">6</td>
+          <td align="center">0</td>
+          <td align="center">0</td>
+        </tr>
+        <tr>
+          <td align="center">6 / 2</td>
+          <td align="center">3</td>
+          <td align="center">0</td>
+          <td align="center">0</td>
+        </tr>
+        <tr>
+          <td align="center">3 / 2</td>
+          <td align="center">1</td>
+          <td align="center">1</td>
+          <td align="center">1</td>
+        </tr>
+        <tr>
+          <td align="center">1 / 2</td>
+          <td align="center">0</td>
+          <td align="center">1</td>
+          <td align="center">1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Answer:
+      <strong
+        ><em>(1100)<sub>2</sub></em></strong
+      >
+    </p>
+    <h4 id="example-2">Example 2</h4>
+    <p>Convert the decimal number to binary: 21<sub>(10)</sub></p>
+    <table>
+      <thead>
+        <tr>
+          <th align="center">Division</th>
+          <th align="center">Quotient</th>
+          <th align="center">Remainder</th>
+          <th align="center">Binary Digit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="center">21 / 2</td>
+          <td align="center">10</td>
+          <td align="center">1</td>
+          <td align="center">1</td>
+        </tr>
+        <tr>
+          <td align="center">10 / 2</td>
+          <td align="center">5</td>
+          <td align="center">0</td>
+          <td align="center">0</td>
+        </tr>
+        <tr>
+          <td align="center">5 / 2</td>
+          <td align="center">2</td>
+          <td align="center">1</td>
+          <td align="center">1</td>
+        </tr>
+        <tr>
+          <td align="center">2 / 2</td>
+          <td align="center">1</td>
+          <td align="center">0</td>
+          <td align="center">0</td>
+        </tr>
+        <tr>
+          <td align="center">1 / 2</td>
+          <td align="center">0</td>
+          <td align="center">1</td>
+          <td align="center">1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Answer:
+      <strong
+        ><em>(10101)<sub>2</sub></em></strong
+      >
+    </p>
+    <h3 id="binary-addition">Binary Addition</h3>
+    <p>
+      Same as decimal addition except - When carrying numbers into the next
+      column we represent them in binary form.
+    </p>
+    <p>
+      When adding a column you can either have (depending on remainder and row
+      values):
+    </p>
+    <ul>
+      <li>zero = 0</li>
+      <li>one = 1</li>
+      <li>two = 10</li>
+      <li>three = 11</li>
+    </ul>
+    <h4 id="example-1">Example 1</h4>
+    <p>Calculate 0111<sub>2</sub> + 1110<sub>2</sub>.</p>
+    <table>
+      <thead>
+        <tr>
+          <th align="right">1</th>
+          <th align="right">1</th>
+          <th align="right">1</th>
+          <th align="right"></th>
+          <th align="right"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="right"></td>
+          <td align="right">0</td>
+          <td align="right">1</td>
+          <td align="right">1</td>
+          <td align="right">1</td>
+        </tr>
+        <tr>
+          <td align="right">+</td>
+          <td align="right">1</td>
+          <td align="right">1</td>
+          <td align="right">1</td>
+          <td align="right">0</td>
+        </tr>
+        <tr>
+          <td align="right"><strong>1</strong></td>
+          <td align="right"><strong>0</strong></td>
+          <td align="right"><strong>1</strong></td>
+          <td align="right"><strong>0</strong></td>
+          <td align="right"><strong>1</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>
+        Does this tie out with the result we obtain if we convert to decimal
+        then add?
+      </li>
+    </ul>
+    <h4 id="example-2">Example 2</h4>
+    <p>Calculate 1011<sub>2</sub> + 1101<sub>2</sub>.</p>
+    <table>
+      <thead>
+        <tr>
+          <th align="right">1</th>
+          <th align="right">1</th>
+          <th align="right">1</th>
+          <th align="right">1</th>
+          <th align="right"></th>
+          <th align="right"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="right"></td>
+          <td align="right">1</td>
+          <td align="right">0</td>
+          <td align="right">1</td>
+          <td align="right">1</td>
+          <td align="right">1</td>
+        </tr>
+        <tr>
+          <td align="right">+</td>
+          <td align="right">1</td>
+          <td align="right">1</td>
+          <td align="right">0</td>
+          <td align="right">1</td>
+          <td align="right">0</td>
+        </tr>
+        <tr>
+          <td align="right"><strong>1</strong></td>
+          <td align="right"><strong>1</strong></td>
+          <td align="right"><strong>0</strong></td>
+          <td align="right"><strong>0</strong></td>
+          <td align="right"><strong>0</strong></td>
+          <td align="right"><strong>1</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>
+        Does this tie out with the result we obtain if we convert to decimal
+        then add?
+      </li>
+    </ul>
+    <!-- #### Examples
+
+
+##### Example 3
+
+Convert the decimal number to hex: (37)<sub>10</sub>
+
+| Division | Quotient | Remainder | Hex Digit |
+| :------: | :------: | :-------: | :-------: |
+|  37/16   |    2     |     5     |     5     |
+|   2/16   |    0     |     2     |     2     |
+
+Answer: (25)<sub>16</sub> = **0x25**
+
+#### Binary to Hex (and Reverse)
+
+Hex offers a nice, compact way to represent binary numbers.
+
+- Break binary number into groups of 4 bits (called a **nibble**).
+  - Each nibble is guaranteed to be a number from 0-15; 0-F in hex.
+- Convert each nibble to hex.
+- Concatenate the results - put them back together.
+
+<figure>
+    <span>
+        <img src="images/binary_to_hex.png" style="">
+    </span>
+    <figcaption>
+        Binary to Hex
+    </figcaption>
+</figure>
+
+<p class="demo">Demo:</p>
+
+Which hex digits can we represent with four bits?
+
+- [logic.ly](https://logic.ly/demo/)
+
+<figure>
+    <span>
+        <img src="images/hex_bit_switch.png" style="">
+    </span>
+    <figcaption>
+        Four bits to hex.
+    </figcaption>
+</figure>
+
+##### Example 1
+
+<details>
+    <summary>Convert binary to hex: (10100010)<sub>2</sub></summary>
+    <div>
+        <ul>
+            <li><span style="font-weight:bold;color: lightblue;">(1010)<sub>2</sub></span> <span style="font-weight:bold;color: orange;">(0010)<sub>2</sub></span></li>
+            <li><span style="font-weight:bold;color: lightblue;">(10)<sub>10</sub></span> <span style="font-weight:bold;color: orange;">(2)<sub>10</sub></span></li>
+            <li><span style="font-weight:bold;color: lightblue;">(A)<sub>16</sub></span> <span style="font-weight:bold;color: orange;">(2)<sub>16</sub></span></li>
+            <li><span style="font-weight:bold;">0xA2</span></li>
+        </ul>
+    </div>
+</details>
+
+##### Example 2
+
+<details>
+    <summary>Convert hex to binary: 0xF0FF</summary>
+    <div>
+        <ul>
+            <li>
+                <span style="font-weight:bold;color:lightblue;">(F)<sub>16</sub></span>&nbsp;
+                <span style="font-weight:bold;color:orange;">(0)<sub>16</sub></span>&nbsp;
+                (F)<sub>16</sub>&nbsp;
+                (F)<sub>16</sub>
+            </li>
+            <li>
+                <span style="font-weight:bold;color:lightblue;">(15)<sub>10</sub></span>&nbsp;
+                <span style="font-weight:bold;color:orange;">(0)<sub>10</sub></span>&nbsp;
+                (15)<sub>10</sub>&nbsp;
+                (15)<sub>10</sub>
+            </li>
+            <li>
+                <span style="font-weight:bold;color:lightblue;">(1111)<sub>2</sub></span>&nbsp;
+                <span style="font-weight:bold;color:orange;">(0000)<sub>2</sub></span>&nbsp;
+                (1111)<sub>2</sub>&nbsp;
+                (1111)<sub>2</sub>
+            </li>
+            <li><span style="font-weight:bold;">1111000011111111</span></li>
+        </ul>
+    </div>
+</details>
+
+## Binary Arithmetic and Encodings
+
+### Binary Addition
+
+Same as decimal addition except - When carrying numbers into the next column we represent them in binary form.
+
+When adding a column you can either have (depending on remainder and row values):
+
+- zero = 0
+- one = 1
+- two = 10
+- three = 11
+
+##### Example 1
+
+Calculate 0111<sub>2</sub> + 1110<sub>2</sub>.
+
+|     1 |     1 |     1 |       |       |
+| ----: | ----: | ----: | ----: | ----: |
+|       |     0 |     1 |     1 |     1 |
+|     + |     1 |     1 |     1 |     0 |
+| **1** | **0** | **1** | **0** | **1** |
+
+- Does this tie out if we calc in decimal?...
+
+
+### Complement Encoding
+
+<figure>
+    <span>
+        <img src="https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/binary-bin7.gif" style="">
+    </span>
+    <figcaption>
+        <a href="https://www.electronics-tutorials.ws/binary/signed-binary-numbers.html">Positive Signed Binary Number</a>
+    </figcaption>
+</figure>
+
+<figure>
+    <span>
+        <img src="https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/binary-bin8.gif" style="">
+    </span>
+    <figcaption>
+        <a href="https://www.electronics-tutorials.ws/binary/signed-binary-numbers.html">Negative Signed Binary Number</a>
+    </figcaption>
+</figure>
+
+**_Complement_** = negation
+
+**_Most significant bit (MSB)_** = digit with the greatest value.
+
+**_Big-endian_** = MSB on left
+
+**_Little-endian_** = MSB on right
+
+#### Why Use It?
+
+- Easy to implement in hardware.
+  - Binary adder
+- Easy to add and subtract.
+
+#### One's Complement Encoding
+
+- Used in early computers.
+- Positive numbers do not change.
+- Negative numbers are represented by flipping all bits.
+- Make sure to represent in correct number of bits (4, 8, 16, 32, 64, etc.)
+
+Subtraction:
+
+- Take one's complement of second number.
+- Add two numbers.
+- Discard any carry over from MSB.
+- Add 1 to result.
+
+##### Example 1
+
+Find the one's complement of 01001110.
+
+- Answer: 10110001
+
+##### Example 2
+
+Find 7<sub>10</sub> - 4<sub>10</sub> using one’s complement subtraction.
+
+- 7<sub>10</sub> = 0111<sub>2</sub>
+- 4<sub>10</sub> = 0100<sub>2</sub>
+- One’s complement of 4<sub>10</sub> = -4<sub>10</sub> = 1011<sub>2</sub>
+- 0111<sub>2</sub> + 1011<sub>2</sub> = 1 0010<sub>2</sub>
+- Ignore overflow bit: ~~1~~ 0010<sub>2</sub>
+- Add one: 0010<sub>2</sub> + 1 = 0011<sub>2</sub>
+
+##### Example 3
+
+<p class="demo">Walkthrough:</p>
+
+Find 1111<sub>2</sub> - 0110<sub>2</sub> using one’s complement subtraction.
+
+#### Two's Complement Encoding
+
+- Used in modern computers.
+- Positive numbers do not change.
+- Negative numbers are represented by flipping all bits and adding 1.
+- Make sure to represent in correct number of bits (4, 8, 16, 32, 64, etc.)
+
+Subtraction:
+
+- Take two's complement of second number.
+- Add two numbers.
+- _Don’t need the extra step at the end to add one._
+  - If there is carry over from MSB, discard it. Result is positive.
+  - If there is no carry over from MSB, take two's complement of result. Result is negative.
+
+##### Example 1
+
+Find the two's complement of 01001110.
+
+- One's complement: 10110001
+- Add 1: 10110001 + 1 = 10110010
+- Answer: 10110010
+
+##### Example 2
+
+Find 7<sub>10</sub> - 4<sub>10</sub> using two’s complement subtraction.
+
+- 7<sub>10</sub> = 0111<sub>2</sub>
+- 4<sub>10</sub> = 0100<sub>2</sub>
+- Two’s complement of 4<sub>10</sub> = -4<sub>10</sub> + 1 = 1011<sub>2</sub> + 1 = 1100<sub>2</sub>
+- 0111<sub>2</sub> + 1100<sub>2</sub> = 1 0011<sub>2</sub>
+- Ignore overflow bit: ~~1~~ 0011<sub>2</sub>
+
+##### Example 3
+
+Find 4<sub>10</sub> - 7<sub>10</sub> using two’s complement subtraction.
+
+- 4<sub>10</sub> = 0100<sub>2</sub>
+- 7<sub>10</sub> = 0111<sub>2</sub>
+- Two’s complement of 7<sub>10</sub> = -7<sub>10</sub> + 1 = 1000<sub>2</sub> + 1 = 1001<sub>2</sub>
+- 0100<sub>2</sub> + 1001<sub>2</sub> = 1101<sub>2</sub>
+- No overflow bit, so result is negative. We need to take the two's complement of the result.
+  - Two's complement of 1101<sub>2</sub> = 0010<sub>2</sub> + 1 = 0011<sub>2</sub> -->
+
+    <!-- ### Bitwise Operations -->
+
+    <!-- #### Bitmasking -->
+
+    <!-- #### Bitshifting -->
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120 - Variables and Constants</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/highlight.css"
+    />
+  </head>
+  <body>
+    <h1 class="breadcrumb">
+      <a href="https://mpjovanovich.github.io/course-notes/SDEV120/index.html"
+        >SDEV120</a
+      >&nbsp;&gt;&nbsp;<a href="">Variables and Constants</a>
+    </h1>
+    <div class="schedule">
+      <ul>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#constants">Constants</a></li>
+        <li>
+          <a href="#declaration-and-naming">Declaration and Naming</a>
+          <ul>
+            <li><a href="#naming-conventions">Naming Conventions</a></li>
+            <li><a href="#best-practices">Best Practices</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <figure>
+      <span
+        ><img
+          src="https://imgs.xkcd.com/comics/code_quality_3.png"
+          alt="Figure"
+          style="width: 100%; height: auto"
+      /></span>
+    </figure>
+    <h1 id="variables">Variables</h1>
+    <ul>
+      <li>
+        A <strong>variable</strong> is a named storage location in a
+        computer&#39;s memory.
+      </li>
+      <li>Variable name is used to reference its value.</li>
+      <li>Used to store data that can be changed.</li>
+    </ul>
+    <h1 id="constants">Constants</h1>
+    <ul>
+      <li>Same as a variable, but its value cannot / should not be changed.</li>
+      <li>Use capital letters and underscores to name by convention.</li>
+    </ul>
+    <pre><code class="language-python"><span class="hljs-comment"># Constant is declared and initialized</span>
+PI = <span class="hljs-number">3.14159</span>
+TAX_RATE = <span class="hljs-number">0.07</span>
+BILLING_CODE = <span class="hljs-string">"A123"</span>
+</code></pre>
+    <h1 id="declaration-and-naming">Declaration and Naming</h1>
+    <ul>
+      <li>
+        <strong>Declaration</strong> is the process of creating a variable.
+      </li>
+      <li>
+        <strong>Initialization</strong> is the process of assigning a value to a
+        variable.
+      </li>
+      <li>
+        <strong>Assignment</strong> is the process of changing the value of a
+        variable.
+      </li>
+    </ul>
+    <pre><code class="language-python"><span class="hljs-comment"># Variable is declared and initialized (assigned a value)</span>
+<span class="hljs-comment"># In python this will always be done in one step</span>
+x = <span class="hljs-number">5</span>
+
+<span class="hljs-comment"># Variable is reassigned a new value</span>
+x = <span class="hljs-number">10</span>
+</code></pre>
+    <h2 id="naming-conventions">Naming Conventions</h2>
+    <ul>
+      <li>
+        <strong>Camel Case</strong> - first letter of each word is capitalized
+        except the first word. Often used for variable names.
+        <ul>
+          <li><code>studentName</code></li>
+          <li><code>minimumAgeRequirement</code></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Pascal Case</strong> - first letter of each word is capitalized.
+        Often used for class and file names.
+        <ul>
+          <li><code>StudentName</code></li>
+          <li><code>MinimumAgeRequirement</code></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Snake Case</strong> - words are separated by underscores. Often
+        used for variable names.
+        <ul>
+          <li><code>student_name</code></li>
+          <li><code>minimum_age_requirement</code></li>
+        </ul>
+      </li>
+    </ul>
+    <h2 id="best-practices">Best Practices</h2>
+    <p>Always use descriptive names for variables.</p>
+    <ul>
+      <li>Must start with a letter or underscore</li>
+      <li>Can contain letters, numbers, and underscores</li>
+      <li>Cannot contain spaces or special characters</li>
+    </ul>
+    <p><em>Good:</em></p>
+    <pre><code class="language-python"><span class="hljs-comment"># Peers will thank you when they read your code.</span>
+student_name = <span class="hljs-string">"Dave Duncan"</span>
+minimum_age_requirement = <span class="hljs-number">21</span>
+software_dept_course_prefix = <span class="hljs-string">"SDEV"</span>
+</code></pre>
+    <p><em>Bad:</em></p>
+    <pre><code class="language-python"><span class="hljs-comment"># Please don't abrev...</span>
+nm = <span class="hljs-string">"Dave Duncan"</span>
+m_age = <span class="hljs-number">21</span>
+sdc = <span class="hljs-string">"SDEV"</span>
+</code></pre>
+  </body>
+</html>
