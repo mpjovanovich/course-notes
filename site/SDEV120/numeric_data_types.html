@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120 - Numeric Data Types</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/highlight.css"
+    />
+  </head>
+  <body>
+    <h1 class="breadcrumb">
+      <a href="https://mpjovanovich.github.io/course-notes/SDEV120/index.html"
+        >SDEV120</a
+      >&nbsp;&gt;&nbsp;<a href="">Numeric Data Types</a>
+    </h1>
+    <div class="schedule">
+      <ul>
+        <li>
+          <a href="#numeric-data-types">Numeric Data Types</a>
+          <ul>
+            <li>
+              <a href="#integer">Integer</a>
+              <ul>
+                <li><a href="#reference-table">Reference Table</a></li>
+                <li><a href="#programming-example">Programming Example</a></li>
+                <li><a href="#unsigned-integers">Unsigned Integers</a></li>
+                <li><a href="#signed-integers">Signed Integers</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#floating-point">Floating Point</a>
+              <ul>
+                <li>
+                  <a href="#programming-example-1">Programming Example</a>
+                </li>
+                <li><a href="#walkthrough">Walkthrough</a></li>
+                <li><a href="#considerations">Considerations:</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#important-consequences-of-numeric-data-types"
+                >Important Consequences of Numeric Data Types</a
+              >
+              <ul>
+                <li><a href="#overflow">Overflow</a></li>
+                <li><a href="#underflow">Underflow</a></li>
+                <li><a href="#truncation">Truncation</a></li>
+                <li><a href="#rounding-errors">Rounding Errors</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <figure>
+      <span
+        ><img
+          src="https://imgs.xkcd.com/comics/large_number_formats.png"
+          alt="Figure"
+          style="width: 100%; height: auto"
+      /></span>
+    </figure>
+    <h1 id="numeric-data-types">Numeric Data Types</h1>
+    <p>
+      When computers are running a program, they must
+      <strong>allocate</strong> (reserve / check out) memory to hold the data
+      that they use. Data types tell the computer how much memory to allocate
+      and how to interpret the data when they use it.
+    </p>
+    <h2 id="integer">Integer</h2>
+    <p><strong>Integers</strong> are <strong>whole numbers</strong>.</p>
+    <p>They are represented in computer memory by a fixed number of bits.</p>
+    <h3 id="reference-table">Reference Table</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th align="right">Number of Bits</th>
+          <th align="right">Range (Exponents)</th>
+          <th align="right">Range (Friendly)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>8-bit unsigned</td>
+          <td align="right">8</td>
+          <td align="right">0 to 2<sup>8</sup></td>
+          <td align="right">0 to 255</td>
+        </tr>
+        <tr>
+          <td>8-bit signed</td>
+          <td align="right">8</td>
+          <td align="right">-2<sup>7</sup> to 2<sup>7</sup>-1</td>
+          <td align="right">-128 to 127</td>
+        </tr>
+        <tr>
+          <td>16-bit unsigned</td>
+          <td align="right">16</td>
+          <td align="right">0 to 2<sup>16</sup></td>
+          <td align="right">0 to 65,535</td>
+        </tr>
+        <tr>
+          <td>16-bit signed</td>
+          <td align="right">16</td>
+          <td align="right">-2<sup>15</sup> to 2<sup>15</sup>-1</td>
+          <td align="right">-32,768 to 32,767</td>
+        </tr>
+        <tr>
+          <td>32-bit unsigned</td>
+          <td align="right">32</td>
+          <td align="right">0 to 2<sup>32</sup></td>
+          <td align="right">0 to 4,294,967,295</td>
+        </tr>
+        <tr>
+          <td>32-bit signed</td>
+          <td align="right">32</td>
+          <td align="right">-2<sup>31</sup> to 2<sup>31</sup>-1</td>
+          <td align="right">-2,147,483,648 to 2,147,483,647</td>
+        </tr>
+        <tr>
+          <td>64-bit unsigned</td>
+          <td align="right">64</td>
+          <td align="right">0 to 2<sup>64</sup></td>
+          <td align="right">0 to 18,446,744,073,709,551,615</td>
+        </tr>
+        <tr>
+          <td>64-bit signed</td>
+          <td align="right">64</td>
+          <td align="right">-2<sup>63</sup> to 2<sup>63</sup>-1</td>
+          <td align="right">
+            -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="programming-example">Programming Example</h3>
+    <p>
+      Most programming languages have fairly consistent naming conventions for
+      data types. Here is an example in C#.
+    </p>
+    <p>
+      <a href=""
+        >https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types</a
+      >
+    </p>
+    <pre><code class="language-csharp"><span class="hljs-comment">// Declare and initialize a signed 32 bit integer</span>
+<span class="hljs-keyword">int</span> age = <span class="hljs-number">42</span>;
+
+<span class="hljs-comment">// Declare and initialize a signed 64 bit integer</span>
+<span class="hljs-keyword">long</span> distance = <span class="hljs-number">1000000000000</span>;
+</code></pre>
+    <p>
+      *Reminder: Python does not require you to declare the data type of a
+      variable, but many other languages do. We will cover typed languages in
+      more detail later.
+    </p>
+    <h3 id="unsigned-integers">Unsigned Integers</h3>
+    <p><strong>Unsigned integers</strong> are positive whole numbers.</p>
+    <p>
+      We have 2<sup>n</sup> possible values, where n is the number of bits in
+      the data type.
+    </p>
+    <p>
+      An 8-bit unsigned integer can represent 2<sup>8</sup> = 256 values, 0 to
+      255.
+    </p>
+    <p><em>Quiz:</em></p>
+    <table>
+      <thead>
+        <tr>
+          <th>1</th>
+          <th>0</th>
+          <th>0</th>
+          <th>0</th>
+          <th>0</th>
+          <th>0</th>
+          <th>0</th>
+          <th>1</th>
+        </tr>
+      </thead>
+    </table>
+    <details>
+      <summary>What does the above 8 bit unsigned integer represent?</summary>
+      <div>
+        <p>128 + 1 = 129</p>
+      </div>
+    </details>
+
+    <h3 id="signed-integers">Signed Integers</h3>
+    <p><strong>Signed integers</strong> can be positive or negative.</p>
+    <p>
+      They use a <strong>sign bit</strong> to indicate the sign of the number.
+      If the sign bit is 0, the number is positive. If the sign bit is 1, the
+      number is negative.
+    </p>
+    <ul>
+      <li>We lose one possible value because we have to represent the sign.</li>
+      <li>The value range is now centered around 0.</li>
+    </ul>
+    <p><em>Quiz:</em></p>
+    <table>
+      <thead>
+        <tr>
+          <th>1</th>
+          <th>0</th>
+          <th>0</th>
+          <th>0</th>
+          <th>0</th>
+          <th>0</th>
+          <th>0</th>
+          <th>1</th>
+        </tr>
+      </thead>
+    </table>
+    <details>
+      <summary>What does the above 8 bit signed integer represent?</summary>
+      <div>
+        <p>
+          -1. The sign bit is 1, so the remaining portion (00000001) is
+          negative.
+        </p>
+      </div>
+    </details>
+
+    <h2 id="floating-point">Floating Point</h2>
+    <p>
+      <strong>Floating point</strong> numbers are numbers that may have a
+      fractional part (not whole numbers).
+    </p>
+    <p>
+      As with integers, the number of bits used to represent a floating point
+      number determines the <strong>precision</strong> of the number.
+    </p>
+    <figure>
+      <span
+        ><img
+          src="https://www.baseclass.io/newsletter/floating-point-numbers/layout.png"
+          alt="Figure"
+          style="width: 100%; height: auto"
+      /></span>
+    </figure>
+    <p>
+      They are represented in computer memory using three parts, with a fixed
+      number of bits for each part:
+    </p>
+    <ul>
+      <li><strong>Sign Bit</strong>: 0 for positive, 1 for negative</li>
+      <li>
+        <strong>Exponent</strong>: tells us where the decimal point should be
+      </li>
+      <li>
+        <strong>Mantissa</strong>: the value (that will have a decimal point
+        somewhere in it)
+      </li>
+    </ul>
+    <h3 id="programming-example">Programming Example</h3>
+    <p>
+      <a href=""
+        >https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types</a
+      >
+    </p>
+    <pre><code class="language-csharp"><span class="hljs-comment">// Declare and initialize a 32 bit floating point number</span>
+<span class="hljs-keyword">float</span> pi = <span class="hljs-number">3.14159</span>;
+
+<span class="hljs-comment">// Declare and initialize a 64 bit floating point number</span>
+<span class="hljs-keyword">double</span> super_accurate_pi = <span class="hljs-number">3.1415926535897932384626433832795028841971</span>
+</code></pre>
+    <h3 id="walkthrough">Walkthrough</h3>
+    <p>Let&#39;s pretend that we have a 16-bit floating point number:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Sign</th>
+          <th>Exponent</th>
+          <th>Mantissa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0</td>
+          <td>01000</td>
+          <td>1001100000</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Result:</p>
+    <ul>
+      <li>Sign: 0 (positive)</li>
+      <li>Exponent: 1000<sub>(2)</sub> = 8</li>
+      <li>
+        Mantissa: 1.1001100000<sub>(2)</sub>. *We implicitly add a 1 to the
+        front of the mantissa.
+      </li>
+    </ul>
+    <p>So the result is:</p>
+    <ul>
+      <li>1.1001100000<sub>(2)</sub> x 2<sup>8</sup></li>
+    </ul>
+    <p>
+      <em
+        >Note: This is a simplification, but it&#39;s fairly close to the actual
+        IEEE standard - what your computer is doing.</em
+      >
+    </p>
+    <h3 id="considerations-">Considerations:</h3>
+    <p><strong>Range</strong></p>
+    <p>
+      Looking at the range of values for floating point numbers, we can see that
+      it&#39;s constrained by where the decimal point can be placed.
+    </p>
+    <p>
+      Imagine a series of digits, 45017568. You can think of a floating point
+      number as being able to represent the following values:
+    </p>
+    <ul>
+      <li>45017568</li>
+      <li>4501756.8</li>
+      <li>450175.68</li>
+      <li>45017.568</li>
+      <li>4501.7568</li>
+      <li>450.17568</li>
+      <li>45.017568</li>
+      <li>4.5017568</li>
+      <li>0.45017568</li>
+    </ul>
+    <h2 id="important-consequences-of-numeric-data-types">
+      Important Consequences of Numeric Data Types
+    </h2>
+    <h3 id="overflow">Overflow</h3>
+    <p>
+      <strong>Overflow</strong> is when a value exceeds the maximum
+      representable value of a data type.
+    </p>
+    <p>
+      If I have an 8-bit unsigned integer and I try to add 1 to 255, I will get
+      an exception, or the value will wrap around to 0.
+    </p>
+    <p>
+      <em
+        >We can&#39;t reproduce this in Python because it will automatically
+        handle overflow.</em
+      >
+    </p>
+    <h3 id="underflow">Underflow</h3>
+    <p>
+      <strong>Underflow</strong> is when a value is closer to zero than the
+      smallest representable value that a data type can hold.
+    </p>
+    <p>
+      If I have a floating point number and end up with a result that is
+      something like 0.000000...0001, I may lose precision.
+    </p>
+    <p>
+      <em
+        >We can&#39;t reproduce this in Python because it will automatically
+        handle underflow.</em
+      >
+    </p>
+    <h3 id="truncation">Truncation</h3>
+    <p>
+      <strong>Truncation</strong> occurs when a number is cut off to fit within
+      the available bits.
+    </p>
+    <p>This can be due to:</p>
+    <ul>
+      <li>
+        We can accurately represent the number, but not with the amount of bits
+        in the data type.
+      </li>
+      <li>
+        We can&#39;t accurately represent the number at all. E.g.
+        <ul>
+          <li>
+            Sqaure root of 2 can&#39;t be represented exactly (irrational
+            numbers)
+          </li>
+          <li>
+            1/3 can&#39;t be represented exactly in decimal or binary (repeating
+            decimal)
+          </li>
+          <li>*1/10 can&#39;t be represented exactly in binary.</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="focusContent">
+      <p class="focusContentTitle">Example:</p>
+
+      <p>
+        <em
+          >Binary can only represent numbers that are a sum of powers of 2!</em
+        >
+      </p>
+      <p>
+        Positions to the right of the decimal point are negative powers of 2
+      </p>
+      <p>Remember that negative exponents are fractions:</p>
+      <ul>
+        <li>2<sup>-1</sup> = 1/2<sup>1</sup> = 1/2</li>
+        <li>2<sup>-2</sup> = 1/2<sup>2</sup> = 1/4</li>
+        <li>2<sup>-3</sup> = 1/2<sup>3</sup> = 1/8</li>
+        <li>...</li>
+      </ul>
+      <p><strong>Binary 1/2</strong></p>
+      <p>(0.1)<sub>2</sub> = 1/2.</p>
+      <p><strong>Binary 1/4</strong></p>
+      <p>(0.01)<sub>2</sub> = 1/4.</p>
+    </div>
+    <p><em>Case Study: Binary arithmetic errors</em></p>
+    <pre><code class="language-python"><span class="hljs-comment"># Print 0.3 (base 10)</span>
+print(<span class="hljs-number">0.1</span> + <span class="hljs-number">0.2</span>)
+
+<span class="hljs-comment"># Print 0.1 (base 10) with 50 decimal places</span>
+print(<span class="hljs-string">f'<span class="hljs-subst">{<span class="hljs-number">0.1</span>:<span class="hljs-number">.50</span>f}</span>'</span>)
+</code></pre>
+    <p><em>Case Study: Compounding truncation errors</em></p>
+    <p>
+      You are a programmer at a large corporation. You&#39;re asked to write a
+      report calculating the tax for all purchases in the month of January. You
+      write two versions of the code:
+    </p>
+    <p><strong>Version 1</strong></p>
+    <pre><code class="language-python">TAX_RATE = <span class="hljs-number">0.3</span>
+
+<span class="hljs-comment"># Loop and sum a bunch of numbers, multiplying by 0.1 each time:</span>
+total = <span class="hljs-number">0</span>
+
+<span class="hljs-comment"># We're pretending that "i" is the cost of some item</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10000</span>):
+    <span class="hljs-comment"># Calculate the tax for each item</span>
+    item_tax = i * TAX_RATE
+
+    <span class="hljs-comment"># Add the tax to the total</span>
+    total = total + item_tax
+
+<span class="hljs-comment"># Print the total</span>
+print(<span class="hljs-string">f'Total: <span class="hljs-subst">{total:<span class="hljs-number">.10</span>f}</span>'</span>)
+</code></pre>
+    <p><strong>Version 2</strong></p>
+    <pre><code class="language-python">TAX_RATE = <span class="hljs-number">0.3</span>
+total = <span class="hljs-number">0</span>
+
+<span class="hljs-comment"># We're again pretending that "i" is the cost of some item</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10000</span>):
+    <span class="hljs-comment"># Add the cost of the item to the total cost</span>
+    total = total + i
+
+<span class="hljs-comment"># Calculate the tax</span>
+total = total * TAX_RATE
+
+<span class="hljs-comment"># Print the total</span>
+print(<span class="hljs-string">f'Total: <span class="hljs-subst">{total:<span class="hljs-number">.10</span>f}</span>'</span>)
+</code></pre>
+    <p>
+      Version 1 calculates the tax for each item and adds it to the total.
+      Version 2 adds the cost of each item to the total and then calculates the
+      tax at the end.
+    </p>
+    <p>Does the output of the two programs match? Why or why not?</p>
+    <h3 id="rounding-errors">Rounding Errors</h3>
+    <p>
+      When rounding is done at intermediate steps in a calculation, the final
+      result may be off by a small amount.
+    </p>
+    <p><em>Case Study: Intermediate Rounding Errors</em></p>
+    <p>
+      You are a scientist working on a physics project. In your final report you
+      will need an output rounded to two decimal places. You write two versions
+      of the code:
+    </p>
+    <p><strong>Version 1</strong></p>
+    <pre><code class="language-python">i = <span class="hljs-number">0</span>
+total = <span class="hljs-number">0</span>
+PI = <span class="hljs-number">0.13159</span>
+
+<span class="hljs-keyword">while</span> i &lt; <span class="hljs-number">1000</span>:
+    <span class="hljs-comment"># Add PI to the total</span>
+    total = total + PI
+
+    <span class="hljs-comment"># Round to 2 decimal places</span>
+    total = round(total, <span class="hljs-number">2</span>)
+
+    <span class="hljs-comment"># Increment i to keep the loop going</span>
+    i = i + <span class="hljs-number">1</span>
+
+print(total)
+</code></pre>
+    <p><strong>Version 2</strong></p>
+    <pre><code class="language-python">i = <span class="hljs-number">0</span>
+total = <span class="hljs-number">0</span>
+PI = <span class="hljs-number">0.13159</span>
+
+<span class="hljs-keyword">while</span> i &lt; <span class="hljs-number">1000</span>:
+    <span class="hljs-comment"># Add PI to the total</span>
+    total = total + PI
+
+    <span class="hljs-comment"># Increment i to keep the loop going</span>
+    i = i + <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># Round to 2 decimal places</span>
+total = round(total, <span class="hljs-number">2</span>)
+
+print(total)
+</code></pre>
+    <p>
+      Version 1 rounds the total at each step, while Version 2 rounds the total
+      at the end.
+    </p>
+    <p>
+      Do the two versions of the program produce the same output? Why or why
+      not?
+    </p>
+  </body>
+</html>
