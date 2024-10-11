@@ -18,6 +18,10 @@ course: SDEV120
     - [Binary Addition](#binary-addition)
       - [Example 1](#example-1-2)
       - [Example 2](#example-2-2)
+  - [Hexadecimal Numbers in Computing](#hexadecimal-numbers-in-computing)
+    - [Convert: Hex to Binary](#convert-hex-to-binary)
+      - [Example 1](#example-1-3)
+      - [Example 2](#example-2-3)
 
 }
 
@@ -152,6 +156,64 @@ Calculate 1011<sub>2</sub> + 1101<sub>2</sub>.
 | **1** | **1** | **0** | **0** | **0** | **1** |
 
 - Does this tie out with the result we obtain if we convert to decimal then add?
+
+## Hexadecimal Numbers in Computing
+
+The most important takeaway for us:
+
+_When you see hexadecimal, know that you're looking at a binary number - even though you're not seeing the zeroes and ones._
+
+### Convert: Hex to Binary
+
+Recall:
+
+- The prefix **0x** is used to indicate a hexadecimal number.
+
+- Each hex digit represents a **nibble** (4 bits).
+
+To convert a hexadecimal number to binary, we simply take each hex digit and convert it its binary equivalent.
+
+#### Example 1
+
+Convert the hexadecimal number to binary: 0x24
+
+When we see 0x24, we're looking at a byte (8 bits):
+
+| 2   |     |     |     |     | 4   |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ?   | ?   | ?   | ?   |     | ?   | ?   | ?   | ?   |
+
+So we convert to binary...
+
+2 = 0010<sub>2</sub>
+
+4 = 0100<sub>2</sub>
+
+Then plug in the result:
+
+| 2   |     |     |     |     | 4   |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0   | 0   | 1   | 0   |     | 0   | 1   | 0   | 0   |
+
+Final result = 00100100
+
+#### Example 2
+
+Convert the hexadecimal number to binary: 0xA1
+
+Nothing different here, we just have to know that the letters represent numbers.
+
+A = 10<sub>10</sub> = 1010<sub>2</sub>
+
+1 = 1<sub>10</sub> = 0001<sub>2</sub>
+
+Plugging in:
+
+| A   |     |     |     |     | 1   |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1   | 0   | 1   | 0   |     | 0   | 0   | 0   | 1   |
+
+Final result = 10100001
 
 <!-- #### Examples
 
