@@ -40,6 +40,8 @@ _Note: any number raised to the power of 0 is 1._
 
 **Example**
 
+Let's remind ourselves how base 10 works:
+
 324<sub>(10)</sub> =
 
 |     | 3                   |     | 2                   |     | 4                   |
@@ -85,6 +87,25 @@ Convert the binary number to decimal: (1101)<sub>2</sub>
 | =   | 8                  | +   | 4                  | +   | 0                  | +   | 1                  |
 
 = 13<sub>(10)</sub>
+
+~~wrapHtml(div,focusContent){
+
+<p class="focusContentTitle">Pneumonic:</p>
+
+_1-eightsy 1-foursy 1-twosy one bottles of beer on the wall..._
+
+In decimal we speak in terms of ones, tens, hundreds, etc.; "one-thousand one-hundred ten".
+
+You can think of binary columns from right to left as onesy, twosy, foursy, eightsy, sixteensy etc.
+
+Counting up...
+
+- 0111 = 1-foursy 1-twosy one = 7
+- 1000 = 1-eightsy = 8
+- 1001 = 1-eightsy one = 9
+- 1010 = 1-eightsy two = 10
+
+}
 
 ### Convert: Decimal to Binary
 
@@ -451,3 +472,7 @@ Find 4<sub>10</sub> - 7<sub>10</sub> using two’s complement subtraction.
 <!-- #### Bitmasking -->
 
 <!-- #### Bitshifting -->
+
+```
+
+```
