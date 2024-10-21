@@ -19,7 +19,7 @@ _Download Link:_
 
 _Videos:_
 
-[How to Install and Configure Git and GitHub on Windows 11](https://www.youtube.com/watch?v=AdzKzlp66sQ)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AdzKzlp66sQ?si=SHNzNcRTeHAmbdvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - Covers the basics of working with Git and GitHub.
 - Should also work for Win 10
@@ -34,6 +34,6 @@ _Download Link:_
 
 _Videos:_
 
-[How to Install Git and Use GitHub on Mac](https://www.youtube.com/watch?v=p0Js7IF17yI)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p0Js7IF17yI?si=vnsy0KYJmjNBmpT9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - Covers the basics of working with Git and GitHub.

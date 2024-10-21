@@ -27,7 +27,7 @@ In these notes we will introduce Git as a version control system.
 ### Distributed Version Control
 
 <figure style="text-align: center;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git" style="width: 40%; height: auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git" style="width: 80%; height: auto;">
 </figure>
 
 Git is a very common version control tool that you'll almost certainly come across in your career.

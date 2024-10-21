@@ -48,6 +48,10 @@ Any new files you add will be added to the repository. Any changes you make to e
 
 # Visibility
 
+<figure style="text-align: center;">
+  <img style="width: 70%; height: auto;" src="images/repo_visibility.png" alt="Repository Visibility" />
+</figure>
+
 Repositories can be **public** or **private**.
 
 You will be asked which you want when you create the repository. You can change it later in the repository settings.

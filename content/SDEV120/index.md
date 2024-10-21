@@ -22,7 +22,9 @@ course: SDEV120
 
 # Common Resources
 
-[Common Resources (GitHub, VS Code, etc.)](../common/index.html)
+Here you will find resources for installing course software and supporting resources for course technologies and content:
+
+**[Common Resources](../common/index.html)**
 
 # M00: Orientation
 
@@ -42,7 +44,7 @@ If time:
 
 - [Installing VS Code](../common/installing_vs_code.html?course=SDEV120)
 - [Installing Python](../common/installing_python.html?course=SDEV120)
-- Discussion assignment: show that you have a working VS Code with Python installation.
+- Assignment: show that you have a working VS Code and Python installation.
 
 # M01: Algorithms and Structured Programming
 
