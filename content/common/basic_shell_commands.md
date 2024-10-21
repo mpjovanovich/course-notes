@@ -43,7 +43,9 @@ Each operating system has a default shell:
 
 ## VS Code Terminal
 
-Visual Studio Code has an integrated terminal. It will tell you what shell you are using on the Terminal tab:
+Visual Studio Code has an integrated terminal. If you've close the terminal you can always get back to it from the top bar by clicking View > Terminal.
+
+You can see what shell you are using on the Terminal tab:
 
 <figure>
   <img src="images/vs_code_terminal.png" alt="VS Code Terminal" style="width: 86%;">
