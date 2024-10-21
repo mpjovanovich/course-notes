@@ -3,15 +3,10 @@ title: Home
 course: SDEV120
 ---
 
-~~fig{images/the_great_wave.jpg}
-
 # Announcements
 
-- There is no lecture the last day of class. Remote students will take the exam as scheduled.
-- I will not be able to grade until Saturday because remote exams are open through Friday night.
-- I will post an announcement when grading is complete.
-- Final grades are due Tuesday, so please report any issues with grades by Monday at the latest.
-- REVIEW: How to view feedback on coding assignments
+- Welcome to SDEV120!
+- 💻🖥️🖱️⌨️🔌🖨️💾💿📱🔋🖲️🕹️🎮🎧️️📷📹🌐🔍🔐🔑🗝️🔒🔓🧮🧠🤖📁📂
 
 # Schedule
 
@@ -19,50 +14,45 @@ course: SDEV120
 
 - [Announcements](#announcements)
 - [Schedule](#schedule)
-  - [M00: Welcome](#m00-welcome)
-  - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
-  - [M02: Boolean Logic](#m02-boolean-logic)
-  - [M03: Logic Gates and Circuits](#m03-logic-gates-and-circuits)
-  - [M04: Intro to Programming](#m04-intro-to-programming)
-  - [M05: Functional Arithmetic and Expression Parsing](#m05-functional-arithmetic-and-expression-parsing)
-  - [M06: System Modeling](#m06-system-modeling)
-  - [Midterm Study](#midterm-study)
-  - [M07: Selection Structures](#m07-selection-structures)
-  - [M08: Repetition](#m08-repetition)
-  - [M09: Data Representation and Encoding](#m09-data-representation-and-encoding)
-    - [Day 1](#day-1)
-    - [Day 2](#day-2)
-  - [M10: Programming Paradigms](#m10-programming-paradigms)
-  - [Overflow Topics](#overflow-topics)
-  - [Final Study](#final-study)
+- [Common Resources](#common-resources)
+- [M00: Orientation](#m00-orientation)
+- [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
 
 }
 
-## M00: Welcome
+# Common Resources
+
+[Common Resources (GitHub, VS Code, etc.)](../common/index.html)
+
+# M00: Orientation
 
 [Demo: The Least Helpful Chatbot Ever](https://github.com/mpjovanovich/openai_playground/blob/main/custom_chatbot.py)
 
-Intros
+Overview of course content and structure.
 
-Review of policy
+Syllabus and policy review (policy assignment)
+
+Make sure you can access the textbook.
+
+Intros and discussion.
 
 [Computer Orientation](../common/computer_orientation.html?course=SDEV120)
 
-Discussion: Computing and Society
+If time:
 
-[Welcome Address](../common/welcome_address.html?course=SDEV120)
+- [Installing VS Code](../common/installing_vs_code.html?course=SDEV120)
+- [Installing Python](../common/installing_python.html?course=SDEV120)
+- Discussion assignment: show that you have a working VS Code with Python installation.
 
-## M01: Algorithms and Structured Programming
+# M01: Algorithms and Structured Programming
 
 [Algorithms and Structured Programming](algorithms.html)
 
 [Pseudocode](pseudocode.html)
 
-[draw.io](https://app.diagrams.net/) - Online flowcharting tool
-
 [Flowcharts](flowcharts.html)
 
-## M02: Boolean Logic
+<!-- ## M02: Boolean Logic
 
 Discussion: Intro to Logic
 
@@ -72,13 +62,13 @@ Discussion: Intro to Logic
 
 [Solving Problems with Truth Tables](solving_problems_with_truth_tables.html)
 
-[Decision Trees](decision_tree.html)
+[Decision Trees](decision_tree.html) -->
 
-## M03: Logic Gates and Circuits
+<!-- ## M03: Logic Gates and Circuits
 
-[Logic Gates and Circuits](logic_gates.html)
+[Logic Gates and Circuits](logic_gates.html) -->
 
-## M04: Intro to Programming
+<!-- ## M04: Intro to Programming
 
 Review M03: Simplify best of 3 voting circuit?
 
@@ -92,35 +82,33 @@ Review M03: Simplify best of 3 voting circuit?
 
 Break: GitHub - Create an account if you don't have one
 
-[Cengage Programming Assignments](cengage_programming.html)
+[Cengage Programming Assignments](cengage_programming.html) -->
 
-## M05: Functional Arithmetic and Expression Parsing
+<!-- ## M05: Functional Arithmetic and Expression Parsing
 
 [Syntax and Expressions](syntax_expressions.html)
 
-[Abstract Syntax Trees](abstract_syntax_trees.html)
+[Abstract Syntax Trees](abstract_syntax_trees.html) -->
 
-## M06: System Modeling
+<!-- ## M06: System Modeling
 
 [Software Development Life Cycle](sdlc.html)
 
-[Unified Modeling Language (UML)](uml.html)
+[Unified Modeling Language (UML)](uml.html) -->
 
-## Midterm Study
+<!-- ## Midterm Study
 
-[Midterm Study Guide](midterm_study_guide.html)
+[Midterm Study Guide](midterm_study_guide.html) -->
 
-## M07: Selection Structures
+<!-- ## M07: Selection Structures
 
-[Selection Structures](selection.html)
+[Selection Structures](selection.html) -->
 
-## M08: Repetition
+<!-- ## M08: Repetition
 
-[Loops](loops.html)
+[Loops](loops.html) -->
 
-## M09: Data Representation and Encoding
-
-### Day 1
+<!-- ## M09: Data Representation and Encoding
 
 [Intro to Computer Numbering Systems](intro_to_numbering_systems.html)
 
@@ -128,23 +116,13 @@ Break: GitHub - Create an account if you don't have one
 
 [Applications for Binary and Hexadecimal](binary_hex_applications.html)
 
-Loops Lab
-
-### Day 2
-
 [Metric System for Computing](metric_system.html)
 
 [Numeric Data Types](numeric_data_types.html)
 
-[Text Data Types](text_data_types.html)
+[Text Data Types](text_data_types.html) -->
 
-Numbers and Metrics Lab
-
-<!-- ... -->
-
-<!-- Discussion: Defensive Programming -->
-
-## M10: Programming Paradigms
+<!-- ## M10: Programming Paradigms
 
 [Turing and Computability](turing_computability.html)
 
@@ -152,12 +130,12 @@ Numbers and Metrics Lab
 
 [Evolution of Computing](evolution_of_computing.html)
 
-[Evolution of Programming](evolution_of_programming.html)
+[Evolution of Programming](evolution_of_programming.html) -->
 
-## Overflow Topics
+<!-- ## Overflow Topics
 
-[Overview of Artificial Intelligence](ai_overview.html)
+[Overview of Artificial Intelligence](ai_overview.html) -->
 
-## Final Study
+<!-- ## Final Study
 
-[Final Study Guide](final_study_guide.html)
+[Final Study Guide](final_study_guide.html) -->

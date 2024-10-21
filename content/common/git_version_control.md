@@ -1,79 +1,99 @@
 ---
-title: Git for this Course
+title: Git for Version Control
 ---
 
-- [Git](#git)
-  - [What is Git?](#what-is-git)
-  - [How to Interface with Git](#how-to-interface-with-git)
-    - [Graphical User Interface (GUI)](#graphical-user-interface-gui)
-  - [GitHub](#github)
-    - [Git Repositories](#git-repositories)
-    - [GitHub Classroom Assignments](#github-classroom-assignments)
-      - [Finding Repos for the Course](#finding-repos-for-the-course)
-  - [GitHub Codespaces](#github-codespaces)
-    - [Creating a Codespace](#creating-a-codespace)
-    - [Closing a Codespace](#closing-a-codespace)
-    - [Checking Your Balance](#checking-your-balance)
-  - [VS Code](#vs-code)
-    - [VS Code Terminal](#vs-code-terminal)
-      - [Terminals and Shells](#terminals-and-shells)
-    - [VS Code Source Control Panel](#vs-code-source-control-panel)
-  - [Instructor Feedback for Assignments](#instructor-feedback-for-assignments)
-    - [Grading Results](#grading-results)
-    - [Asking for Help](#asking-for-help)
+~~wrapHtml(div,schedule){
 
-# Git
+- [Source Control / Version Control](#source-control--version-control)
+    - [Distributed Version Control](#distributed-version-control)
+      - [Solo Projects](#solo-projects)
+      - [Collaborative Projects](#collaborative-projects)
+  - [The Git Workflow](#the-git-workflow)
+  - [TODO](#todo)
 
-![Git](https://git-scm.com/images/logo@2x.png)
+}
 
-Git is a powerful tool that you'll almost certainly come across in your career.
+# Source Control / Version Control
 
-## What is Git?
+In these notes we will introduce Git as a version control system.
 
-**Git** is a program that runs on a computer. It needs to be installed like any other program:
-
-- [Git (installation and documentation)](https://git-scm.com/)
-
-Git is a **version control system (VCS)**:
+**Version control** or **source control** allows us (among other things) to be able to know what our project looked like at any point in time, e.g. last year, by keeping track of all the changes we've made to files over time.
 
 - Stores files and their history
 - Tracks changes to files over time
 - Allow for point in time recovery and comparison
 - Allows more than one person to work on (or examine) the same file at the same time.
 
-## How to Interface with Git
+### Distributed Version Control
 
-### Graphical User Interface (GUI)
+<figure style="text-align: center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git" style="width: 40%; height: auto;">
+</figure>
 
-- Recommended for beginners
-- GitHub via the browser
-- VS Code Source Control Panel
+Git is a very common version control tool that you'll almost certainly come across in your career.
 
-## GitHub
+---
 
-~~fig(20){https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png}
+<figure style="text-align: center;">
+    <img src="https://i0.wp.com/techjunction.co/wp-content/uploads/2023/03/Git-a-Distributed-Version-Control-System.png?fit=1698%2C1123&ssl=1" alt="Git Distributed" style="">
+    <figcaption>"Server" is the remote. "Workstations 1-3" are local machines. Each workstation has a copy of the repository.</figcaption>
+</figure>
 
-**GitHub** is a website that hosts Git repositories.
+---
 
-GitHub is not the same as Git.
+Git is a **distributed** version control system. The code is saves on multiple machines, and every user has a copy of the entire history of the project on his or her own computer.
 
-### Git Repositories
+Specifically:
 
-A **repository** is a collection of files and their history.
+- **Remote**: The main machine that hosts the project.
+- **Local**: Personal machine of a user.
 
-- Should be one repository per project.
+GitHub.com is the remote that we will use.
 
-- Roughly equivalent to a folder on your computer.
+#### Solo Projects
 
-- A user can have many repositories:
+For small solo projects, this usually means that there is a copy of the project on:
 
-![GitHub Repositories](images/github_repos.png)
+- Your local (personal) machine
+- github.com
 
-Files can be uploaded to the repository via drag and drop, or the upload button:
+#### Collaborative Projects
 
-![GitHub Upload](images/github_repos_2.png)
+For collaborative projects, this usually means that there is a copy of the project on:
 
-### GitHub Classroom Assignments
+- Your local (personal) machine
+- The machines of your teammates / coworkers
+- github.com or another remote host server
+
+## The Git Workflow
+
+Project files may be different between the remote and local repository, and may be in a variety of states:
+
+- **Modified**: Changed since last commit.
+- **Staged**: Added to the next commit.
+- **Committed**: Part of a commit.
+
+---
+
+## TODO
+
+These notes aren't finished, so I'll have to highlight the basics in class where needed.
+
+- Clone
+- Add
+- Commit
+- Push
+  - Status
+  - Diff
+- Pull
+- Merge
+  - Merge conflicts
+- Branch
+- .gitignore
+
+<!-- TODO: Move to "GitHub Classroom" notes. -->
+
+<!-- ### GitHub Classroom Assignments
 
 - Each assignment will have a link.
 - When you click the link, it will create a repository for you.
@@ -91,9 +111,13 @@ If you with to save your work you must fork your existing repository to your per
 
 ![GitHub Organizations](images/github_orgs.png)
 
-- Click the organization for the course; it will have your repos.
+- Click the organization for the course; it will have your repos. -->
 
-## GitHub Codespaces
+<!-- TODO: CLI notes -->
+
+<!-- TODO: Move to "GitHub Codespaces" notes. -->
+
+<!-- ## GitHub Codespaces
 
 - **GitHub Codespaces** is a virtual development environment that runs in the browser.
 - Run it by clicking the green button in the top right of the repository page:
@@ -138,9 +162,11 @@ You can always start a new one.
 
 - Note that hours listed are **core hours**.
 - We use 2 core machines, so 1 hour of Codespaces usage is 2 hours of core hours.
-- You should have 90 hours of Codespaces usage per month.
+- You should have 90 hours of Codespaces usage per month. -->
 
-## VS Code
+<!-- TODO: move to VS Code notes -->
+
+<!-- ## VS Code
 
 ~~fig(20){https://cdn.thenewstack.io/media/2021/10/4f0ac3e0-visual_studio_code.png}
 
@@ -188,9 +214,9 @@ The GUI for Git can be accessed in the VS Code Source Control Panel:
 
 After committing, you can push to GitHub with the Sync button:
 
-![VS Code Source Control](images/vscode_source_control_2.png)
+![VS Code Source Control](images/vscode_source_control_2.png) -->
 
-## Instructor Feedback for Assignments
+<!-- ## Instructor Feedback for Assignments
 
 ### Grading Results
 
@@ -212,3 +238,7 @@ After committing, you can push to GitHub with the Sync button:
 If requesting help via email, it will help your instructor if you leave inline comments. You may do this by opening a Codespace and clicking the message icon to the left of the line number that you'd like to comment on:
 
 ![GitHub feedback](images/github_feedback_4.png)
+
+## Installation
+
+- [Git (installation and documentation)](https://git-scm.com/) -->
