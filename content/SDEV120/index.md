@@ -5,8 +5,9 @@ course: SDEV120
 
 # Announcements
 
-- Welcome to SDEV120!
-- 💻🖥️🖱️⌨️🔌🖨️💾💿📱🔋🖲️🕹️🎮🎧️️📷📹🌐🔍🔐🔑🗝️🔒🔓🧮🧠🤖📁📂
+- All sections: **Even though we don't do formal write ups for discussions, there will always be a turn in component so that I have a submission on record.** Make sure you've submitted.
+
+- MW class - discussion revised, we'll catch up on it.
 
 # Schedule
 
