@@ -16,7 +16,9 @@ course: SDEV140
 
 # Module 00: Course Overview
 
-Demo: Current State of Coding (AI Assisted Coding)
+Introductions
+
+Demo and Discussion: [Current State of Coding (AI Assisted Coding)](cannonball.txt)
 
 Overview of course
 
