@@ -9,10 +9,13 @@ title: Basic Shell Commands
     - [Absolute Paths](#absolute-paths)
     - [Relative Paths](#relative-paths)
 - [Shell Commands](#shell-commands)
-    - [Directory Traversal](#directory-traversal)
-      - [Print Which Directory You Are In](#print-which-directory-you-are-in)
-      - [List the Contents of a Directory](#list-the-contents-of-a-directory)
-      - [Change Directory](#change-directory)
+  - [Utility Commands](#utility-commands)
+    - [Clear the Terminal](#clear-the-terminal)
+    - [Exit the Terminal](#exit-the-terminal)
+  - [Directory Traversal](#directory-traversal)
+    - [Print Which Directory You Are In](#print-which-directory-you-are-in)
+    - [List the Contents of a Directory](#list-the-contents-of-a-directory)
+    - [Change Directory](#change-directory)
   - [File Manipulation](#file-manipulation)
     - [Create a New Folder](#create-a-new-folder)
     - [Remove a Directory](#remove-a-directory)
@@ -77,7 +80,7 @@ Absolute Path Examples:
 
 Relative paths start at the current directory.
 
-Relateve paths start at:
+Relative paths start at:
 
 - The working directory from the terminal if we're in the terminal.
 - The current directory of a file if we're coding.
@@ -96,6 +99,22 @@ You can also use bash commands on Windows after you have installed Git via **git
 Some may work in other terminals such as `zsh` or `PowerShell`, but this is not guaranteed.
 
 **_\*Don't run commands blindly. Make sure you understand what they do before running them. You can wipe your entire system clean with one short command._**
+
+### Utility Commands
+
+#### Clear the Terminal
+
+```bash
+# clear = Clear the Terminal
+clear
+```
+
+#### Exit the Terminal
+
+```bash
+# exit = Exit the Terminal
+exit
+```
 
 ### Directory Traversal
 
