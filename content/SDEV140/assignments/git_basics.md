@@ -31,12 +31,19 @@ Consistency in commit messages and file contents is crucial for this assignment.
 1. On your repository page, click the 'Code' button and copy the HTTPS URL.
 2. Open your terminal or command prompt.
 3. Navigate to where you want to clone the repository.
-4. Run: `git clone <paste-your-repository-url-here>`
-5. Change into the new directory: `cd git-fundamentals-yourname`
+4. Run:
+
+   `git clone <paste-your-repository-url-here>`
+
+5. Change into the new directory:
+
+   `cd git-fundamentals-yourname`
 
 ## 5. Check Status
 
-Run: `git status`
+Run:
+
+`git status`
 
 You should see something like:
 
@@ -55,7 +62,9 @@ nothing to commit, working tree clean
 
 ## 7. Check Status
 
-Run: `git status`
+Run:
+
+`git status`
 
 This time you should see the hello.txt file listed as modified.
 
@@ -67,37 +76,51 @@ This time you should see the hello.txt file listed as modified.
 
 ## 9. Check Status
 
-Run: `git status`
+Run:
+
+`git status`
 
 Note that the new file is _untracked_, so it does not show up in the output. Git only keeps track of changes to files that it has been told to track.
 
 ## 10. Stage the Modified File
 
-Run: `git add hello.txt`
+Run:
+
+`git add hello.txt`
 
 ## 11. Stage the New File
 
-Run: `git add git-commands.txt`
+Run:
+
+`git add git-commands.txt`
 
 _Note: you can also stage multiple files at once by running `git add file1.txt file2.txt`, or by using wildcards like `git add *.txt`._
 
 ## 12. Check Status
 
-Run: `git status`
+Run:
 
-You should now see the new and modified files listed in the output as "Changes to be committed".
+`git status`
+
+You should now see the new and modified files listed in the output as "Changes to be committed". These files are now _staged_ for the next commit.
 
 ## 13. Commit the Changes
 
 Remember that the commit command requires a commit message. We add this in the text after the `-m` flag.
 
-Run: `git commit -m "Modified hello. Added new git commands file."`
+Run:
+
+`git commit -m "Modified hello. Added new git commands file."`
 
 In professional practice, we would strive to write messages that are not redundant, but this is just an exercise.
 
+The files are now _committed_.
+
 ## 14. Check Status
 
-Run: `git status`
+Run:
+
+`git status`
 
 We now see "Your branch is ahead of 'origin/main' by 1 commit". Let's see what that means.
 
@@ -105,7 +128,9 @@ Go back to your repository on GitHub.com. Note that your changes are not yet pus
 
 ## 15. Push to Remote
 
-Run: `git push`
+Run:
+
+`git push`
 
 Refresh your repository on GitHub.com. Note that your local changes have been pushed to the remote repository.
 
