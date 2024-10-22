@@ -6,70 +6,68 @@ course: SDEV140
 ~~fig(80){https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg}
 
 - [Announcements](#announcements)
-- [Schedule](#schedule)
-  - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
-    - [Day 1](#day-1)
-    - [Day 2](#day-2)
-  - [Module 02: Decision Structures](#module-02-decision-structures)
-    - [Day 3](#day-3)
-  - [Module 03: Functions and Modularity](#module-03-functions-and-modularity)
-    - [Day 4](#day-4)
-    - [Day 5](#day-5)
-  - [Module 04: Loops](#module-04-loops)
-    - [Day 6](#day-6)
-    - [Day 7](#day-7)
-  - [Midterm](#midterm)
-    - [Day 8](#day-8)
-  - [Module 05: Sequences and Mappings](#module-05-sequences-and-mappings)
-    - [Day 9](#day-9)
-    - [Day 10](#day-10)
-  - [Module 06: Event Driven Programming](#module-06-event-driven-programming)
-    - [Day 11](#day-11)
-    - [Day 12](#day-12)
-  - [Module 07: File I/O and Parsing](#module-07-file-io-and-parsing)
-  - [Module 08: Object Oriented Programming](#module-08-object-oriented-programming)
-    - [Day 13](#day-13)
-    - [Day 14](#day-14)
+- [Module 00: Course Overview](#module-00-course-overview)
+- [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
 
 # Announcements
 
-- M08: Quiz Sunday
+- Please create a GitHub account if you don't have one during break today:
+  - [github.com](https://github.com)
 
-# Schedule
+# Module 00: Course Overview
 
-## Module 01: Fundamentals of Coding
+Demo: Current State of Coding (AI Assisted Coding)
 
-### Day 1
+Overview of course
 
-Syllabus
+- Syllabus and policy review (policy assignment)
+- Review course content and schedule
+- Review course structure and resources
+- Make sure you can access the textbook
 
 [Computer Orientation](../common/computer_orientation.html?course=SDEV140)
 
-[Coding Environments](../SDEV120/coding_environments.html?course=SDEV140)
+# Module 01: Fundamentals of Coding
 
-[Using Git and GitHub](../common/git.html?course=SDEV140)
+Setting up your Coding Environment
 
-[Command Line Basics](../common/command_line_basics.html?course=SDEV140)
+- [Installing VS Code](../common/installing_vs_code.html?course=SDEV140)
 
-`input()` and `print()` functions
+- [Installing Python](../common/installing_python.html?course=SDEV140)
 
-Lab
+- [Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
 
-### Day 2
+Getting started with Python
 
-[Evolution of Programming Languages](../common/evolution_programming_languages.html?course=SDEV140)
+- [Coding Environments](../SDEV120/coding_environments.html?course=SDEV140)
 
-[Variables, Constants, Data Types](../SDEV120/data_types.html?course=SDEV140)
+- [Input, Output, and Comments in Python](../SDEV120/input_output_comments_python.html?course=SDEV140)
 
-[String Concatenation, Formatting, and Manipulation](string_manipulation.html)
+- [Variables and Constants](../SDEV120variables_and_constants.html?course=SDEV140)
 
-Lab
+- [String Concatenation, Formatting, and Manipulation](string_manipulation.html)
 
-## Module 02: Decision Structures
+Git
 
-### Day 3
+- Create a GitHub account if you don't have one
 
-<!-- See M02 notes -->
+- [GitHub](github.html)
+
+- [Installing Git](installing_git.html)
+
+- [Version Control via Git](git_version_control.html)
+
+- TODO: [GitHub Classroom](github_classroom.html)
+
+Command Line (bash)
+
+- [Command Line Basics](../common/command_line_basics.html?course=SDEV140)
+
+...
+
+discussion?...
+
+<!-- # Module 02: Decision Structures
 
 Comparison and Boolean Expressions
 
@@ -77,35 +75,35 @@ Logical Operators
 
 [Decision Structures](../SDEV120/decision.html?course=SDEV140)
 
-## Module 03: Functions and Modularity
+# Module 03: Functions and Modularity
 
-### Day 4
+## Day 4
 
 [Functions](functions.html)
 
-### Day 5
+## Day 5
 
 [Error Handling and Input Validation](error_handling.html)
 
-## Module 04: Loops
+# Module 04: Loops
 
-### Day 6
-
-[Loops](loops.html)
-
-### Day 7
+## Day 6
 
 [Loops](loops.html)
 
-## Midterm
+## Day 7
 
-### Day 8
+[Loops](loops.html)
+
+# Midterm
+
+## Day 8
 
 Midterm
 
-## Module 05: Sequences and Mappings
+# Module 05: Sequences and Mappings
 
-### Day 9
+## Day 9
 
 Informal Zoom poll - how comfortable are we with arrays?
 
@@ -117,38 +115,38 @@ Review: [Arrays](../SDEV120/arrays.html?course=SDEV140)
 
 Lab, walkthrough or partial walkthrough
 
-### Day 10
+## Day 10
 
 Multidimensional Arrays
 
 [Dictionaries](dictionaries.html)
 
-## Module 06: Event Driven Programming
+# Module 06: Event Driven Programming
 
-### Day 11
+## Day 11
 
 [Event Driven Programming](event_driven_programming.html)
 
-### Day 12
+## Day 12
 
-## Module 07: File I/O and Parsing
+# Module 07: File I/O and Parsing
 
 [File I/O](file_io.html)
 
 [File Parsing](file_parsing.html)
 
-## Module 08: Object Oriented Programming
+# Module 08: Object Oriented Programming
 
-### Day 13
+## Day 13
 
 [OOP Basics](oop_basics.html)
 
 [Encapsulation](encapsulation.html)
 
-### Day 14
+## Day 14
 
 [Inheritance](inheritance.html)
 
 [Abstraction](abstraction.html)
 
-[Polymorphism](polymorphism.html)
+[Polymorphism](polymorphism.html) -->

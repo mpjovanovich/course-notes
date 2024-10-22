@@ -34,7 +34,7 @@ title: Common Resources
 
 - [Version Control via Git](git_version_control.html)
 
-- [Managing Repositories](managing_repositories.html)
+<!-- TODO: Git via the CLI -->
 
 - [GitHub Classroom](github_classroom.html)
 

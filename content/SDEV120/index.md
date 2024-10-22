@@ -30,21 +30,24 @@ Here you will find resources for installing course software and supporting resou
 
 [Demo: The Least Helpful Chatbot Ever](https://github.com/mpjovanovich/openai_playground/blob/main/custom_chatbot.py)
 
-Overview of course content and structure.
+Overview of course
 
-Syllabus and policy review (policy assignment)
+- Syllabus and policy review (policy assignment)
+- Review course content and schedule
+- Review course structure and resources
+- Make sure you can access the textbook
 
-Make sure you can access the textbook.
-
-Intros and discussion.
+Intro and discussion
 
 [Computer Orientation](../common/computer_orientation.html?course=SDEV120)
 
-If time:
+Setting up your Coding Environment
 
-- [Installing VS Code](../common/installing_vs_code.html?course=SDEV120)
-- [Installing Python](../common/installing_python.html?course=SDEV120)
-- Assignment: show that you have a working VS Code and Python installation.
+- [Installing VS Code](../common/installing_vs_code.html?course=SDEV140)
+
+- [Installing Python](../common/installing_python.html?course=SDEV140)
+
+- [Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
 
 # M01: Algorithms and Structured Programming
 

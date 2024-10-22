@@ -1,5 +1,5 @@
 ---
-title: Git for Version Control
+title: Version Control via Git
 ---
 
 ~~wrapHtml(div,schedule){
@@ -8,8 +8,17 @@ title: Git for Version Control
     - [Distributed Version Control](#distributed-version-control)
       - [Solo Projects](#solo-projects)
       - [Collaborative Projects](#collaborative-projects)
-  - [The Git Workflow](#the-git-workflow)
-  - [TODO](#todo)
+- [Synchronizing Changes via Git](#synchronizing-changes-via-git)
+  - [Remote to Local Synchronization](#remote-to-local-synchronization)
+    - [Creating a New Repository](#creating-a-new-repository)
+    - [Cloning a Repository](#cloning-a-repository)
+    - [Pulling Changes](#pulling-changes)
+  - [Local to Remote Synchronization](#local-to-remote-synchronization)
+    - [Working Directory](#working-directory)
+    - [Staging Area](#staging-area)
+    - [Local Repository](#local-repository)
+    - [Remote Repository](#remote-repository)
+    - [File States](#file-states)
 
 }
 
@@ -36,7 +45,7 @@ Git is a very common version control tool that you'll almost certainly come acro
 
 <figure style="text-align: center;">
     <img src="https://i0.wp.com/techjunction.co/wp-content/uploads/2023/03/Git-a-Distributed-Version-Control-System.png?fit=1698%2C1123&ssl=1" alt="Git Distributed" style="">
-    <figcaption>"Server" is the remote. "Workstations 1-3" are local machines. Each workstation has a copy of the repository.</figcaption>
+    <figcaption>"Server" is the remote (github.com). "Workstations 1-3" are local machines (your computer, your teammates' computer, etc.). Each workstation has a copy of the repository.</figcaption>
 </figure>
 
 ---
@@ -65,15 +74,172 @@ For collaborative projects, this usually means that there is a copy of the proje
 - The machines of your teammates / coworkers
 - github.com or another remote host server
 
-## The Git Workflow
+# Synchronizing Changes via Git
 
-Project files may be different between the remote and local repository, and may be in a variety of states:
+Changes made on a local machine are not automatically reflected on the remote repository.
 
-- **Modified**: Changed since last commit.
-- **Staged**: Added to the next commit.
-- **Committed**: Part of a commit.
+Likewise, changes made on the remote repository (e.g. by a teammate) are not automatically reflected on a local machine.
+
+## Remote to Local Synchronization
+
+<figure>
+  <img src="https://codingbash.com/Images/Snippets/1/d979fade-ad18-4b17-a1e4-e0927fa877bf.png" alt="Remote to Local Synchronization" />
+</figure>
+
+### Creating a New Repository
+
+The easiest way to create a new repository is via the GitHub website. You can set the visibility and the name of the repository. Both can be changed later.
+
+### Cloning a Repository
+
+```bash
+git clone https://github.com/[username]/[repository_name].git
+```
+
+When we want to create a local copy of a remote repository, we use the `git clone` command.
+
+We can use this to:
+
+- Create a copy of someone else's work
+- Create a local copy of our own project
+
+You can find the URL to clone a repository by clicking the green "Code" button on the repository page and copying the URL.
+
+<figure style="">
+    <img src="images/github_clone.png" alt="GitHub Clone" style="width: 80%; height: auto;">
+</figure>
+
+**Steps to clone a repository:**
+
+1. Navigate to the repository page.
+2. Click the green "Code" button.
+3. Copy the URL.
+4. In your terminal, change to the directory where you want to clone the repository. It will create a subdirectory with the name of the repository.
+5. Run the `git clone` command with the URL.
+
+_Note: In this course we use GitHub Classroom to create repositories, so you won't need to do this manually; however you should know how to do this if you work in the field of computing._
+
+### Pulling Changes
+
+```bash
+git pull
+```
+
+After you have cloned a repository, you need a way to keep it up to date with the remote repository. For this we use the `git pull` command.
+
+This is always a good idea to do before you start working on the project to make sure that your local copy is up to date, especially if:
+
+- You're working in a team.
+- You're working from multiple computers that each have their own copy of the repository (e.g. home and work).
+
+~~demo{
+
+Here we will:
+
+- Create a new repository
+- Clone it to our local machine
+- Make some changes using the GitHub website
+- Pull the changes down to our local machine
+
+}
+
+## Local to Remote Synchronization
+
+<figure>
+  <img src="https://neurathsboat.blog/post/git-intro/featured.png" alt="Managing Repositories" />
+</figure>
+
+Getting our changes from the local machine to the remote machine is a little more complicated, but becomes easy once you understand the way that Git works.
 
 ---
+
+We can think of files that are tracked by Git as being in different "areas".
+
+### Working Directory
+
+All of the files that you are currently working on comprise your **working directory**. Saving files here does not automatically track the changes with Git.
+
+### Staging Area
+
+```bash
+git add [file_name]
+```
+
+When we want to commit changes to the repository, we first add the files that we want to commit to the **staging area**. Changes in the staging area are tracked by git but are not yet in the local repository.
+
+The purpose of the staging area is to allow you to group one or more changes together before committing them to the local repository as a single unit.
+
+To add a file to the staging area, we use the `git add` command:
+
+### Local Repository
+
+```bash
+git commit -m "[commit_message]"
+```
+
+The files in the local repository are the ones that have been committed. This does not mean that the files have been pushed to the remote repository.
+
+To commit the changes in the staging area to the local repository, we use the `git commit` command.
+
+This command requires a message to be provided between quotes. For starter personal projects this may not seem important, but it's best practice to provide a brief but concise message describing the changes that were made. The messages are used to quickly identify the changes when looking back at the commit history.
+
+### Remote Repository
+
+```bash
+git push
+```
+
+Finally, we need to push the changes from the local repository to the remote repository. It's usually best to do this immediately after committing the changes to the local repository.
+
+~~demo{
+
+Here we will:
+
+- Modify an existing file in the repository
+- Add a new file to the repository
+- Commit the changes to the local repository
+- Push the changes to the remote repository
+
+\*We will look at how to check what files are in what state in the next section.
+
+}
+
+---
+
+### File States
+
+Each file that is tracked by Git can be in one of four states, which roughly correspond to the areas that we discussed earlier:
+
+**Unmodified**:
+
+The file has not been modified since it was last committed.
+
+**Modified**:
+
+The file has been modified but not yet added to the staging area.
+
+**Staged**:
+
+The file has been added to the staging area but not yet committed.
+
+**Committed**:
+
+The file has been committed to the local repository (at which point is is again "unmodified").
+
+~~demo{
+
+Here we will:
+
+- Modify an existing file in the repository and save it on the file system
+- Check the status of the repositoryusing `git status`
+- Commit the changes to the local repository
+- Check the status of the repository using `git status`
+- Push the changes to the remote repository
+- Check the status of the repository using `git status`
+
+}
+
+<!-- ---
 
 ## TODO
 
@@ -89,7 +255,7 @@ These notes aren't finished, so I'll have to highlight the basics in class where
 - Merge
   - Merge conflicts
 - Branch
-- .gitignore
+- .gitignore -->
 
 <!-- TODO: Move to "GitHub Classroom" notes. -->
 
