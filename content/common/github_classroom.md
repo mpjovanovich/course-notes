@@ -49,13 +49,13 @@ Repositories for the class will not show up in your list of personal repositorie
 1. Click on your avatar (circle with a pixel image) in the top right corner.
 
 <figure>
-<img src="images/github_avatar.png" alt="GitHub Avatar" style="width: 50%;height: auto;" />
+<img src="images/github_avatar.png" alt="GitHub Avatar" style="width: 100%;height: auto;" />
 </figure>
 
 2. Click on "Your organizations".
 
 <figure>
-<img src="images/github_organization.png" alt="GitHub Organizations" style="width: 30%;height: auto;" />
+<img src="images/github_organization.png" alt="GitHub Organizations" style="width: 100%;height: auto;" />
 </figure>
 
 3. Choose "ivy-tech-mjovanovich".
@@ -81,19 +81,21 @@ Instructor feedback is given in the form of a **pull request**. To view it:
 You will see any comments, and possibly recommended changes in the following format:
 
 <figure>
-<img src="images/github_feedback1.png" alt="GitHub Feedback" style="width: 40%;height: auto;" />
+<img src="images/github_feedback1.png" alt="GitHub Feedback" style="width: 80%;height: auto;" />
 </figure>
 
 ### VS Code Extension
 
 <figure>
-<img src="images/vs_code_github_pull_requests_extension.png" alt="VS Code GitHub Pull Requests Extension" style="width: 40%;height: auto;" />
+<img src="images/vs_code_github_pull_requests_extension.png" alt="VS Code GitHub Pull Requests Extension" style="width: 100%;height: auto;" />
 </figure>
 
 Optionally, you can install the "GitHub Pull Requests" extension for VS Code. This will allow you to view pull request comments directly within VS Code, which may make it easier to interpret.
 
+You can install the extension from the Extensions Marketplace in VS Code (left sidebar, click the Extensions icon).
+
 To view comments, click on the "Comments" tab of the bottom toolbar (the one that has the terminal in it).
 
 <figure>
-<img src="images/vs_code_github_pull_requests_comments.png" alt="VS Code GitHub Pull Requests Comments" style="width: 90%;height: auto;" />
+<img src="images/vs_code_github_pull_requests_comments.png" alt="VS Code GitHub Pull Requests Comments" style="width: 80%;height: auto;" />
 </figure>
