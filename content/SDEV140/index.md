@@ -83,7 +83,7 @@ Git
 
 Command Line (bash)
 
-- [Command Line Basics](../common/command_line_basics.html?course=SDEV140)
+- [Command Line Basics](../common/basic_shell_commands.html?course=SDEV140)
 
 Lab: Git
 
