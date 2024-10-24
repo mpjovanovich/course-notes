@@ -4,6 +4,7 @@ title: Common Resources
 
 ~~wrapHtml(div,schedule){
 
+- [Coding Punctuation](#coding-punctuation)
 - [Command Line (Bash)](#command-line-bash)
 - [Python](#python)
 - [Visual Studio Code](#visual-studio-code)
@@ -11,6 +12,10 @@ title: Common Resources
 - [Additional Resources](#additional-resources)
 
 }
+
+# Coding Punctuation
+
+- [Coding Punctuation](coding_punctuation.html)
 
 # Command Line (Bash)
 

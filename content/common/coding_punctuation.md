@@ -4,42 +4,31 @@ title: Coding Punctuation
 
 # Coding Punctuation
 
-| Symbol                            | Name(s)          |
-| --------------------------------- | ---------------- |
-| **Enclosing Punctuation**         |
-| `(` `)`                           | Parentheses      |
-| `{` `}`                           | Curly Braces     |
-| `[` `]`                           | Square Brackets  |
-| `<` `>`                           | Angle Brackets   |
-| `"`                               | Double Quotes    |
-| `'`                               | Single Quotes    |
-| <code>&#96;</code>                | Backtick         |
-| **Operators and Logical Symbols** |
-| `=`                               | Equals Sign      |
-| `+`                               | Plus Sign        |
-| `-`                               | Dash, Hyphen     |
-| `*`                               | Asterisk         |
-| `/`                               | Forward Slash    |
-| `\`                               | Backslash        |
-| `%`                               | Percent, Modulus |
-| `^`                               | Caret            |
-| `&`                               | Ampersand        |
+Below are some symbols that are commonly used in coding.
 
-<!-- | `|` | Pipe, Vertical Bar |
-| `!` | Exclamation Mark, Bang |
-| `~` | Tilde |
-| `<` `>` | Less Than, Greater Than | -->
-
-<!--
-| **Separators and Terminators**                |
-| `;`          | Semicolon                      |
-| `:`          | Colon                          |
-| `,`          | Comma                          |
-| `.`          | Period, Dot                    |
-| `...`        | Ellipsis                       |
-| **Miscellaneous**                             |
-| `#`          | Hash, Pound, Number Sign       |
-| `@`          | At Sign                        |
-| `$`          | Dollar Sign                    |
-| `\`          | Backslash                      |
-| `?`          | Question Mark                  | -->
+| Symbol                    | Name(s)          |
+| ------------------------- | ---------------- |
+| **Enclosing Punctuation** |
+| `(` `)`                   | Parentheses      |
+| `{` `}`                   | Curly Braces     |
+| `[` `]`                   | Square Brackets  |
+| `<` `>`                   | Angle Brackets   |
+| `"`                       | Double Quote     |
+| `'`                       | Single Quote     |
+| <code>&#96;</code>        | Backtick         |
+| **Other**                 |
+| `~`                       | Tilde            |
+| `@`                       | At Sign          |
+| `#`                       | Pound, Hash      |
+| `$`                       | Dollar Sign      |
+| `%`                       | Percent, Modulus |
+| `^`                       | Caret            |
+| `&`                       | Ampersand        |
+| `*`                       | Asterisk         |
+| `-`                       | Dash, Hyphen     |
+| `_`                       | Underscore       |
+| `/`                       | Forward Slash    |
+| `\`                       | Backslash        |
+| <code>&#124;</code>       | Pipe, Bar        |
+| `;`                       | Semicolon        |
+| `:`                       | Colon            |

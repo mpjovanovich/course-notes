@@ -44,11 +44,11 @@ Intro and discussion
 
 Setting up your Coding Environment
 
-- [Installing VS Code](../common/installing_vs_code.html?course=SDEV140)
+- [Installing VS Code](../common/installing_vs_code.html?course=SDEV120)
 
-- [Installing Python](../common/installing_python.html?course=SDEV140)
+- [Installing Python](../common/installing_python.html?course=SDEV120)
 
-- [Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
+- [Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV120)
 
 # M01: Algorithms and Structured Programming
 
@@ -75,6 +75,8 @@ Discussion: Intro to Logic
 [Logic Gates and Circuits](logic_gates.html) -->
 
 <!-- ## M04: Intro to Programming
+
+[Coding Punctuation](../common/coding_punctuation.html?course=SDEV120)
 
 Review M03: Simplify best of 3 voting circuit?
 

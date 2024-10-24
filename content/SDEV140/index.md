@@ -51,6 +51,8 @@ Setting up your Coding Environment
 
 Getting started with Python
 
+- [Coding Punctuation](../common/coding_punctuation.html?course=SDEV140)
+
 - [Review: Coding Environments](../SDEV120/coding_environments.html?course=SDEV140)
 
 - [Review: Input, Output, and Comments in Python](../SDEV120/input_output_comments_python.html?course=SDEV140)
