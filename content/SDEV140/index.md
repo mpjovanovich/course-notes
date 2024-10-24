@@ -7,6 +7,7 @@ course: SDEV140
 
 ~~fig(80){https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg}
 
+- Confirm that remote students can see my screen draw?
 - Please create a GitHub account if you don't have one during break today:
   - [github.com](https://github.com)
 - Data Types notes added for M01
