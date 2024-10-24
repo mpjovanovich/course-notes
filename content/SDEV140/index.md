@@ -3,26 +3,31 @@ title: Home
 course: SDEV140
 ---
 
+# Announcements
+
 ~~fig(80){https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg}
 
+- Please create a GitHub account if you don't have one during break today:
+  - [github.com](https://github.com)
+- Data Types notes added for M01
+- Coding Punctuation notes added for M01
+- "Review" prefix = taken from my SDEV120 notes.
+  - Next week will be mostly review for my previous students ("if" and "while"); through first half of M03.
+  - If you are comfortable with the material you may skip lecture and do the labs.
+  - You are responsible for any material and assignments.
+
+# Schedule
+
+~~wrapHtml(div,schedule){
+
 - [Announcements](#announcements)
+- [Schedule](#schedule)
 - [Module 00: Course Overview](#module-00-course-overview)
 - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
 - [Module 02: Selection Structures](#module-02-selection-structures)
 - [Module 03: Loops](#module-03-loops)
 
-# Announcements
-
-- Please create a GitHub account if you don't have one during break today:
-
-  - [github.com](https://github.com)
-
-- Data Types notes added for M01
-
-- "Review" prefix = taken from my SDEV120 notes.
-  - Next week will be mostly review for my previous students ("if" and "while"); through first half of M03.
-  - If you are comfortable with the material you may skip lecture and do the labs.
-  - You are responsible for any material and assignments.
+}
 
 # Module 00: Course Overview
 
