@@ -87,7 +87,11 @@ The three basic control structures are:
 
 ## Applications and Domains
 
-Types of algorithms:
+_Thinking algorithmically:_
+
+While human brains are often compared to computers, they are actually quite different. In order to understand how computers work, we need to think in "instructions", or discrete steps.
+
+As we move through the applications below, let's think about the "humanlike" and "computerlike" ways of solving problems.
 
 ### Sorting
 
