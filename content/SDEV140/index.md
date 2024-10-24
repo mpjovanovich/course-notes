@@ -66,7 +66,7 @@ Getting started with Python
 
 - [Review: Data Types](../SDEV120/data_types.html?course=SDEV140)
 
-- [String Concatenation, Formatting, and Manipulation](../SDEV120/string_manipulation.html?course=SDEV140)
+- [String Concatenation, Formatting, and Manipulation](string_manipulation.html)
 
 Git
 
