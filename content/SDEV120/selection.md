@@ -16,16 +16,10 @@ course: SDEV120
       - [Flowchart](#flowchart-1)
     - [Python `if, else` Statement](#python-if-else-statement)
       - [Demo Programs](#demo-programs-1)
-  - [Fallthrough Decisions](#fallthrough-decisions)
+  - [Nested Decision Structures](#nested-decision-structures)
     - [Example Algorithm](#example-algorithm-2)
       - [Pseudocode](#pseudocode-2)
       - [Flowchart](#flowchart-2)
-    - [Python `if, elif, else` Statement](#python-if-elif-else-statement)
-      - [Demo Programs](#demo-programs-2)
-  - [Nested Decision Structures](#nested-decision-structures)
-    - [Example Algorithm](#example-algorithm-3)
-    - [Pseudocode](#pseudocode-3)
-    - [Flowchart](#flowchart-3)
 
 # Decision
 
@@ -155,7 +149,58 @@ _Do in class: Flowchart, code._
 
 - Number is even/odd
 
-## Fallthrough Decisions
+## Nested Decision Structures
+
+We can put decision structures into the flow of execution from another decision. These are called nested decisions.
+
+- Is it cold outside?
+  - Yes
+    - Is it snowing?
+      - Yes
+        - Wear boots
+      - No
+        - Wear shoes
+  - No
+    - Wear sandals
+
+### Example Algorithm
+
+Charge Customer for Item - v3
+
+#### Pseudocode
+
+```plaintext
+BEGIN
+    Begin point of sales transaction
+    Scan all items
+
+    IF customer is a rewards member:
+        Apply discount
+
+    Get payment method
+
+    IF payment method is credit card:
+        Swipe card
+
+        IF payment is declined:
+            Deny payment
+            Shelve items for restocking
+    ELSE
+        Take cash
+
+        IF change is due:
+            Give change
+    END IF
+
+    End point of sales transaction
+END
+```
+
+#### Flowchart
+
+_Do in class._
+
+<!-- ## Fallthrough Decisions
 
 We can chain together arbitrary amounts of decisions to represent “fallback logic” - if, else if, else if, … else.
 
@@ -258,4 +303,4 @@ END
 
 ### Flowchart
 
-_Do in class._
+_Do in class._ -->

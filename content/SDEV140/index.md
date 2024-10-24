@@ -8,11 +8,21 @@ course: SDEV140
 - [Announcements](#announcements)
 - [Module 00: Course Overview](#module-00-course-overview)
 - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
+- [Module 02: Selection Structures](#module-02-selection-structures)
+- [Module 03: Loops](#module-03-loops)
 
 # Announcements
 
 - Please create a GitHub account if you don't have one during break today:
+
   - [github.com](https://github.com)
+
+- Data Types notes added for M01
+
+- "Review" prefix = taken from my SDEV120 notes.
+  - Next week will be mostly review for my previous students ("if" and "while"); through first half of M03.
+  - If you are comfortable with the material you may skip lecture and do the labs.
+  - You are responsible for any material and assignments.
 
 # Module 00: Course Overview
 
@@ -27,7 +37,7 @@ Overview of course
 - Review course structure and resources
 - Make sure you can access the textbook
 
-[Computer Orientation](../common/computer_orientation.html?course=SDEV140)
+[Review: Computer Orientation](../common/computer_orientation.html?course=SDEV140)
 
 # Module 01: Fundamentals of Coding
 
@@ -37,47 +47,67 @@ Setting up your Coding Environment
 
 - [Installing Python](../common/installing_python.html?course=SDEV140)
 
-- [Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
+- [Review: Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
 
 Getting started with Python
 
-- [Coding Environments](../SDEV120/coding_environments.html?course=SDEV140)
+- [Review: Coding Environments](../SDEV120/coding_environments.html?course=SDEV140)
 
-- [Input, Output, and Comments in Python](../SDEV120/input_output_comments_python.html?course=SDEV140)
+- [Review: Input, Output, and Comments in Python](../SDEV120/input_output_comments_python.html?course=SDEV140)
 
-- [Variables and Constants](../SDEV120variables_and_constants.html?course=SDEV140)
+- [Review: Variables and Constants](../SDEV120/variables_and_constants.html?course=SDEV140)
 
-- [String Concatenation, Formatting, and Manipulation](string_manipulation.html)
+- [Review: Data Types](../SDEV120/data_types.html?course=SDEV140)
+
+- [String Concatenation, Formatting, and Manipulation](../SDEV120/string_manipulation.html?course=SDEV140)
 
 Git
 
 - Create a GitHub account if you don't have one
 
-- [GitHub](github.html)
+- [GitHub](../common/github.html?course=SDEV140)
 
-- [Installing Git](installing_git.html)
+- [Installing Git](../common/installing_git.html?course=SDEV140)
 
-- [Version Control via Git](git_version_control.html)
+- [Version Control via Git](../common/git_version_control.html?course=SDEV140)
 
-- TODO: [GitHub Classroom](github_classroom.html)
+- TODO: [GitHub Classroom](../common/github_classroom.html?course=SDEV140)
 
 Command Line (bash)
 
 - [Command Line Basics](../common/command_line_basics.html?course=SDEV140)
 
-...
+Lab: Git
 
-discussion?...
+Lab: Strings
 
-<!-- # Module 02: Decision Structures
+# Module 02: Selection Structures
 
-Comparison and Boolean Expressions
+[Review: Syntax and Expressions](../SDEV120/syntax_expressions.html?course=SDEV140)
 
-Logical Operators
+[Review: Selection Structures](../SDEV120/selection.html?course=SDEV140)
 
-[Decision Structures](../SDEV120/decision.html?course=SDEV140)
+TODO: [Advanced Selection Structures](advanced_selection_structures.html)
 
-# Module 03: Functions and Modularity
+# Module 03: Loops
+
+<!-- "Rewiews" will be broken up on SDEV120 notes; currently they're in one big file -->
+
+TODO: [Review: Loops Introduction](loops_introduction.html)
+
+TODO: [Review: Indefinite Loops](indefinite_loops.html)
+
+TODO: [Review: Off-by-One Errors](off_by_one_errors.html)
+
+TODO: [Definite Loops](definite_loops.html)
+
+TODO: [Step Values](step_values.html)
+
+TODO: [Nested Loops](nested_loops.html)
+
+TODO: [Break and Continue](break_continue.html)
+
+<!-- # Module 03: Functions and Modularity
 
 ## Day 4
 
