@@ -93,7 +93,7 @@ function longRunningOperation(processName) {
     // Wait for the random number of seconds
     setTimeout(resolve, 1000 * waitTime);
   });
-}
+/~
 ```
 
 <p class="demo">Example: Run an async operation to avoid blocking</p>
@@ -153,7 +153,7 @@ function chainedWorkFunction(value) {
     // Return the value with resolve
     resolve(value);
   });
-}
+/~
 
 // Call it once...
 chainedWorkFunction(1).then((result) => console.log(`Final value: ${result}`));

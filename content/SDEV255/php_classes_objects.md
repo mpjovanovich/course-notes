@@ -60,8 +60,8 @@ class Person
     public function getFullName() : string
     {
         return $this->firstName . " " . $this->lastName;
-    }
-}
+/~
+/~
 ```
 
 ## Instantiating an Object
@@ -101,7 +101,7 @@ echo "Name: {$person->getFullName()}<br>";
 public function getFullName() : string
 {
     return $this->firstName . " " . $this->lastName;
-}
+/~
 ```
 
 ## Constructors
@@ -117,7 +117,7 @@ public function __construct(string $firstName, string $lastName)
 {
     $this->firstName = $firstName;
     $this->lastName = $lastName;
-}
+/~
 // ...
 ```
 
@@ -150,14 +150,14 @@ class Person
     public function __construct(string $age)
     {
         $this->age = $age;
-    }
+/~
 
     // Getter
     // Any code can get the age.
     public function getAge() : string
     {
         return $this->age;
-    }
+/~
 
     // Setter
     // Outside code can't set the age directly.
@@ -165,8 +165,8 @@ class Person
     private function setAge() : void
     {
         $this->age = $age;
-    }
-}
+/~
+/~
 ```
 
 ### Private Methods
@@ -186,15 +186,15 @@ class Person
     public function allowAccess() : bool
     {
         return $this->isAdult() && $this->has_id;
-    }
+/~
 
     // Internal functions
     // Only used by the class.
     private function isAdult() : bool
     {
         return $this->age >= 18;
-    }
-}
+/~
+/~
 ```
 
 ## Objects as Properties
@@ -218,17 +218,17 @@ class Person
         $this->lastName = $lastName;
         $this->father = $father;
         $this->mother = $mother;
-    }
+/~
 
     public function addChild(Person $child): void
     {
         $this->children[] = $child;
-    }
+/~
 
     public function getFullName(): string
     {
         return $this->firstName . " " . $this->lastName;
-    }
+/~
 
     public function printInfo(): void
     {
@@ -238,8 +238,8 @@ class Person
         // Print children
         foreach ($this->children as $child) {
             echo $child->printFormattedInfo();
-        }
-    }
+/~
+/~
 
     private function printFormattedInfo(): string
     {
@@ -252,8 +252,8 @@ class Person
         $output .= "<p>Mother: $mother_name</p>";
 
         return $output;
-    }
-}
+/~
+/~
 
 // Create the parents (they have no parents).
 $father = new Person("John", "Doe", null, null);

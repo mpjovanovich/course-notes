@@ -90,7 +90,7 @@ if (isset($_GET['age'])) {
   echo $_GET['age'];
 } else {
   echo 'Age is not set.';
-}
+/~
 ```
 
 ### Patterns for Checking Parameter Set
@@ -121,7 +121,7 @@ We can include anchor tags in the page that link to the page itself.
 if (isset($_GET['color'])) {
     $color = $_GET['color'];
     echo '<style>body { background-color: ' . $color . '; }</style>';
-}
+/~
 ?>
 <!-- Some basic styles -->
 <style>
@@ -131,7 +131,7 @@ if (isset($_GET['color'])) {
         color: white;
         text-decoration: none;
         border-radius: 5px;
-    }
+/~
 </style>
 <!-- The links -->
 <a href="?color=red" style="background-color: red;">Red</a>
@@ -176,8 +176,8 @@ if ($operator) {
         $result = $first / $second;
     } else {
         $errorMessage = 'Invalid operator.';
-    }
-}
+/~
+/~
 
 /* ************************************************************ *
 * ADVANCED CONCEPT: match
@@ -201,19 +201,19 @@ if ($operator) {
         display: inline-block;
         margin-bottom: 10px;
         width: 200px;
-    }
+/~
 
     .error {
         color: red;
         font-weight: bold;
-    }
+/~
 </style>
 
 <!-- HTML -->
 <?php
 if ($errorMessage) {
     echo "<p class=\"error\">$errorMessage</p>";
-}
+/~
 ?>
 <h1>Result: <?= $result; ?></h1>
 <form method="GET" action="<?= $_SERVER['PHP_SELF'] ?>">

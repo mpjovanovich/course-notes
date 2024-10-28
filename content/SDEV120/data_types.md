@@ -3,7 +3,7 @@ title: Data Types
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Data Types](#data-types)
   - [Checking Data Type in Python](#checking-data-type-in-python)
@@ -12,7 +12,7 @@ course: SDEV120
   - [Boolean Data Types](#boolean-data-types)
   - [Compound Data Types](#compound-data-types)
 
-}
+/~
 
 # Data Types
 

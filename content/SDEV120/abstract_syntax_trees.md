@@ -3,7 +3,7 @@ title: Abstract Syntax Trees
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Tree Structures](#tree-structures)
   - [Tree Terminology](#tree-terminology)
@@ -18,7 +18,7 @@ course: SDEV120
 - [Boolean Logic in Syntax Trees](#boolean-logic-in-syntax-trees)
 - [For the Homework](#for-the-homework)
 
-}
+/~
 
 ## Tree Structures
 
@@ -85,7 +85,7 @@ Below is a syntax tree containing literals and operators for the expression:
     </span>
 </figure>
 
-~~example{
+~.focusContent.example
 
 Draw the syntax tree for the following expressions:
 
@@ -99,13 +99,13 @@ Draw the syntax tree for the following expressions:
 4)  10 / (2 / 2) - 1
 ```
 
-}
+/~
 
 ### Variables in Syntax Trees
 
 If a syntax tree includes variables, we treat them just like literals.
 
-~~example{
+~.focusContent.example
 
 1. Draw the syntax tree for the expression:
 
@@ -115,13 +115,13 @@ If a syntax tree includes variables, we treat them just like literals.
 
 2. Evaluate the expression for `x = 3` and `y = 5` by plugging in the values.
 
-}
+/~
 
 ### Expanding Function Calls
 
 We may need to substitute the function call with its definition within the tree. We just drop it in place.
 
-~~example{
+~.focusContent.example
 
 Given the function:
 
@@ -139,7 +139,7 @@ Find the syntax tree for the following expressions:
 3) f(2) * f(3)
 ```
 
-}
+/~
 
 ## Function Composition
 
@@ -156,7 +156,7 @@ g(x) = x * 2
 
 An example of function composition is `f(g(x))`.
 
-~~example{
+~.focusContent.example
 
 Given the functions:
 
@@ -177,9 +177,9 @@ f( g( 3 ) )
   = 7
 ```
 
-}
+/~
 
-~~example{
+~.focusContent.example
 
 Given the functions:
 
@@ -198,13 +198,13 @@ Evaluate the following expressions:
 3) f( f( f(6) + 1 ) + 2 ) + 3
 ```
 
-}
+/~
 
 ## Functions with Multiple Arguments
 
 Functions can take multiple arguments. In this case, we plug in the values for each argument in the order they are given.
 
-~~example{
+~.focusContent.example
 
 Given the function:
 
@@ -222,7 +222,7 @@ Evaluate the following expressions:
 3) f(3, f(2, 1))
 ```
 
-}
+/~
 
 ## Boolean Logic in Syntax Trees
 
@@ -230,7 +230,7 @@ We can drop in True and False values into our syntax trees along with logical co
 
 They work the same as we've seen so far.
 
-~~example{
+~.focusContent.example
 
 Draw the syntax tree for the following expressions, evaluating them as you go:
 
@@ -242,7 +242,7 @@ Draw the syntax tree for the following expressions, evaluating them as you go:
 3) not True
 ```
 
-}
+/~
 
 ## For the Homework
 

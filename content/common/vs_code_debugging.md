@@ -2,7 +2,7 @@
 title: Debugging in VS Code
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Debugging in VS Code](#debugging-in-vs-code)
   - [Switch to the Directory Containing the Code File](#switch-to-the-directory-containing-the-code-file)
@@ -11,7 +11,7 @@ title: Debugging in VS Code
   - [Stepping Through Code](#stepping-through-code)
   - [Watching Variables](#watching-variables)
 
-}
+/~
 
 # Debugging in VS Code
 

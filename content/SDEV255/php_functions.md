@@ -44,7 +44,7 @@ function functionName(datatype $param1, datatype $param2, ...) : return_datatype
 {
     // function body
     return $value;
-}
+/~
 ?>
 ```
 
@@ -59,7 +59,7 @@ function myFunction() : void
 {
     $localVariable = "I'm local!";
     echo $localVariable;
-}
+/~
 myFunction();
 echo $localVariable; // Error!
 ?>
@@ -78,7 +78,7 @@ function myFunction() : void
 
     $globalVariable += 1;
     echo $globalVariable;
-}
+/~
 myFunction();
 ?>
 ```

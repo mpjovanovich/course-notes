@@ -11,7 +11,7 @@ showBreadcrumb: false
 
 # Schedule
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [SDEV120: Announcements](#sdev120-announcements)
 - [Schedule](#schedule)
@@ -20,7 +20,7 @@ showBreadcrumb: false
 - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
   - [M04: Intro to Programming](#m04-intro-to-programming)
 
-}
+/~
 
 # Common Resources
 

@@ -53,7 +53,7 @@ const storeData = async (key, value) => {
     await AsyncStorage.setItem(key, value);
   } catch (e) {
     console.log(e);
-  }
+/~
 };
 
 // Retrieve data
@@ -64,10 +64,10 @@ const getData = async (key) => {
       console.log(value);
     } else {
       console.log("Key not found");
-    }
+/~
   } catch (e) {
     console.log(e);
-  }
+/~
 };
 
 // Remove data
@@ -76,7 +76,7 @@ const removeData = async (key) => {
     await AsyncStorage.removeItem(key);
   } catch (e) {
     console.log(e);
-  }
+/~
 };
 
 // Clear all data
@@ -85,7 +85,7 @@ const clearAllData = async () => {
     await AsyncStorage.clear();
   } catch (e) {
     console.log(e);
-  }
+/~
 };
 ```
 

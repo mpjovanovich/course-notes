@@ -2,7 +2,7 @@
 title: GitHub
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [GitHub](#github)
 - [Repositories](#repositories)
@@ -11,7 +11,7 @@ title: GitHub
   - [Public](#public)
   - [Private](#private)
 
-}
+/~
 
 # GitHub
 

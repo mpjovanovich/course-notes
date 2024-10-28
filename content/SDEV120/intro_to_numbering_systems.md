@@ -3,7 +3,7 @@ title: Intro to Computer Numbering Systems
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Intro to Computer Numbering Systems](#intro-to-computer-numbering-systems)
   - [Everyday Numbering Systems](#everyday-numbering-systems)
@@ -15,7 +15,7 @@ course: SDEV120
   - [Hexadecimal](#hexadecimal)
     - [Why use it?](#why-use-it-1)
 
-}
+/~
 
 # Intro to Computer Numbering Systems
 
@@ -86,10 +86,10 @@ Hexadecimal (hex) offers a nice, compact way to represent binary numbers.
 - Convert each nibble to hex.
 - Concatenate the results - put them back together.
 
-~~demo{
+~.focusContent.demo
 
 Using four bits to represent hex digits: [logic.ly](https://logic.ly/demo/)
 
 ~~fig{images/hex_bit_switch.png}
 
-}
+/~

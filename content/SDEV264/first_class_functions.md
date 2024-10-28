@@ -18,12 +18,12 @@ The term **first class functions** refers to the ability to treat functions as v
 // We don't call this directly. Instead, we pass it as an argument to callOtherFunction.
 function printSomething(): void {
   console.log("I will be printed.");
-}
+/~
 
 // This function expects a function as an argument. It then calls that function.
 function callOtherFunction(outputFunc: () => void): void {
   outputFunc();
-}
+/~
 
 // Now we call the outer function, passing the inner function as an argument.
 // Note that we do not use parentheses when passing the function as an argument,
@@ -40,14 +40,14 @@ We then call the function twice, passing a different string each time.
 ```typescript
 function printSomething(thingToPrint: string): void {
   console.log(thingToPrint);
-}
+/~
 
 function callOtherFunction(outputFunc: (string) => void): void {
   let message = "I will be printed.";
   outputFunc(message);
   message = "I will be printed again.";
   outputFunc(message);
-}
+/~
 
 callOtherFunction(printSomething);
 ```

@@ -2,7 +2,7 @@
 title: Cengage Programming Assignments
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Cengage Programming Assignments](#cengage-programming-assignments)
   - [Which Browser to Use](#which-browser-to-use)
@@ -20,7 +20,7 @@ title: Cengage Programming Assignments
     - [Running Tests](#running-tests)
   - [Submitting Assignments](#submitting-assignments)
 
-}
+/~
 
 # Cengage Programming Assignments
 

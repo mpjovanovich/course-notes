@@ -3,7 +3,7 @@ title: Applications of Binary and Hexadecimal
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Applications of Binary and Hexadecimal](#applications-of-binary-and-hexadecimal)
   - [Applications](#applications)
@@ -22,7 +22,7 @@ course: SDEV120
       - [Subnet Masking](#subnet-masking)
     - [Bitshifting](#bitshifting)
 
-}
+/~
 
 # Applications of Binary and Hexadecimal
 
@@ -62,7 +62,7 @@ In UNIX, file permissions are often set using octal notation.
 - Next three bits = group permissions
 - Last three bits = everyone else's (other) permissions.
 
-~~demo{
+~.focusContent.demo
 
 Setup: create a text file in Windows, test.txt We can open and edit the file.
 
@@ -76,7 +76,7 @@ chmod 444 /mnt/c/Users/mpjov/test.txt
 - What is 444 in binary?
 - Compare against UNIX file permissions positions
 
-}
+/~
 
 ### Networking
 
@@ -105,7 +105,7 @@ An IP (Internet Protocol) address is a unique identifier assigned to a network i
 
 Which has a larger address space, IPv4 or IPv6?
 
-~~demo{
+~.focusContent.demo
 
 **Checking your IP address**
 
@@ -123,7 +123,7 @@ Mac / Linux users:
 ifconfig
 ```
 
-}
+/~
 
 #### Graphics
 
@@ -141,7 +141,7 @@ Color values are often represented in hexadecimal.
 
 <span style="font-weight:bold;color:#0000FF">`#0000FF`</span> - Blue
 
-~~exercise{
+~.focusContent.exercise
 
 Try changing the color values in the following example using hexadecimal:
 
@@ -152,7 +152,7 @@ Try changing the color values in the following example using hexadecimal:
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-}
+/~
 
 ### Error Detection and Correction
 
@@ -170,7 +170,7 @@ Parity is a method of error detection that uses an extra bit to ensure the numbe
 
 - A **digest** is a fixed-size string that represents the contents of a file. The function used to calculate the digest is called a **hash function**. Useful for checking larger amounts of data.
 
-~~example{
+~.focusContent.example
 
 ```bash
 # We create an awesome program, and host it on our website.
@@ -190,7 +190,7 @@ sum test2.exe
 md5sum test2.exe
 ```
 
-}
+/~
 
 <!--
 No, TMI
@@ -226,7 +226,7 @@ A **bit array** is a data structure that uses a single byte to store multiple tr
 - The flags represent different boolean values.
 - More efficient than using multiple bytes.
 
-~~example{
+~.focusContent.example
 
 Given a bitmap with four flags that correspond to the following options:
 
@@ -259,13 +259,13 @@ flags = flags ^ 0b10000000
 dark_mode_enabled = flags & 0b00100000
 ```
 
-}
+/~
 
 #### Color Masking
 
 We can get the red, green, or blue values from a color using a mask. This is often used in graphics applications (e.g. a photo filter).
 
-~~example{
+~.focusContent.example
 
 Given the color <span style="font-weight:bold;color:#e5c1c1">`#e5c1c1`</span>, use the mask <span style="font-weight:bold;color:#ff0000">`#ff0000`</span> to extract the red value.
 
@@ -274,13 +274,13 @@ Given the color <span style="font-weight:bold;color:#e5c1c1">`#e5c1c1`</span>, u
 
 Red value = <span style="font-weight:bold;color:#ff0000">`#e50000`</span>
 
-}
+/~
 
 #### Subnet Masking
 
 A subnet mask is used to divide an IP address into network and host portions. This is useful for routing traffic on a network.
 
-~~example{
+~.focusContent.example
 
 Given:
 
@@ -294,6 +294,6 @@ Perform a bitwise AND operation to determine the network portion of the IP addre
 
 Network portion = **`192.168.1`**
 
-}
+/~
 
 ### Bitshifting

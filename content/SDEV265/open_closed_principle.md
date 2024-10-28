@@ -96,7 +96,7 @@ interface PaymentProcessor {
   paymentMethod: string;
   // Method signature
   processPayment(amount: number): void;
-}
+/~
 
 /* ************************************************************
  * CLASSES
@@ -108,20 +108,20 @@ class CreditCardPayment implements PaymentProcessor {
 
   constructor(private ownerName: string, private cardNumber: string) {
     this.paymentMethod = "Credit Card";
-  }
+/~
 
   // Interface method
   processPayment(amount: number): void {
     console.log(`Processing ${amount} via Credit Card.`);
-  }
+/~
 
   // Additional methods - not part of interface; shown here to illustrate that a class can have
   // more than just the interface methods
   validateCard(): boolean {
     console.log("Validating card...");
     return true;
-  }
-}
+/~
+/~
 
 // This class implements the PaymentProcessor interface, so it needs to have a processPayment method.
 class PayPalPayment implements PaymentProcessor {
@@ -130,20 +130,20 @@ class PayPalPayment implements PaymentProcessor {
 
   constructor(private email: string) {
     this.paymentMethod = "PayPal";
-  }
+/~
 
   // Interface method
   processPayment(amount: number): void {
     console.log(`Processing ${amount} via PayPal for ${this.email}.`);
-  }
+/~
 
   // Additional methods - not part of interface; shown here to illustrate that a class can have
   // more than just the interface methods
   validateEmail(): boolean {
     console.log("Validating email...");
     return true;
-  }
-}
+/~
+/~
 
 /* ************************************************************
  * PROGRAM LOGIC
@@ -159,7 +159,7 @@ function initiatePayment(paymentMethod: PaymentProcessor, amount: number) {
 
   // Do other stuff...
   console.log("Payment complete.");
-}
+/~
 
 // Create instances of payment methods
 let ccPayment = new CreditCardPayment("John Doe", "1234567890123456");

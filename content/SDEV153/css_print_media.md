@@ -42,27 +42,27 @@ You can view the result via Print Preview in the browser.
 @media print {
   @page {
     margin: 1in;
-  }
+/~
 
   /* Make the font fit better, and better colors... */
   body {
     font-size: 10pt;
     background-color: white;
     color: black;
-  }
+/~
 
   /* Avoid messy page breaks... */
   h1,
   h2,
   h3 {
     page-break-after: avoid;
-  }
+/~
 
   h2,
   h3,
   .newSection {
     page-break-before: always;
-  }
+/~
 
   /* Take care of orphans and widows... */
   /* Orphans = first line of paragraph left behind on a page break */
@@ -72,6 +72,6 @@ You can view the result via Print Preview in the browser.
   h3 {
     orphans: 3;
     widows: 3;
-  }
-}
+/~
+/~
 ```

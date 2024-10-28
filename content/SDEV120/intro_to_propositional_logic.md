@@ -3,7 +3,7 @@ title: Propositional Logic - Intro and Connectives
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Propositional Logic](#propositional-logic)
   - [Propositions](#propositions)
@@ -19,7 +19,7 @@ course: SDEV120
     - [Exclusive OR (XOR)](#exclusive-or-xor)
       - [Example](#example-5)
 
-}
+/~
 
 # Propositional Logic
 

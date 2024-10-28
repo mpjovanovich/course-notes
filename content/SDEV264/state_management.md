@@ -41,7 +41,7 @@ Example:
 const App = () => {
     let text = 'Hey.'
     <TextInput value={text} />
-}
+/~
 ```
 
 ## Two-way Data Binding

@@ -57,13 +57,13 @@ while i <= 4:
 
 _Do in class: flowchart for the above code._
 
-~~demo{
+~.focusContent.demo
 
 - Print multiples of x up to n (x _ 1, x _ 2, x _ 3, ..., x _ n)
 - Harmonic series: 1/1 + 1/2 + 1/3 + 1/4 + 1/5 + ... + 1/n
 - Base numbering table: n^0, n^1, n^2, n^3, n^4, n^5...
 
-}
+/~
 
 [Calculate Exponents](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/calculate_exponents.py)
 

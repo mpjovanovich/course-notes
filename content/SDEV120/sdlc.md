@@ -3,7 +3,7 @@ title: SDLC
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Software Development Life Cycle (SDLC)](#software-development-life-cycle-sdlc)
   - [Trends](#trends)
@@ -18,7 +18,7 @@ course: SDEV120
       - [Summary](#summary-2)
       - [Methodologies](#methodologies-2)
 
-}
+/~
 
 # Software Development Life Cycle (SDLC)
 
@@ -185,7 +185,7 @@ Extends on iterative development by focusing on rapid feedback loops and continu
 
 _\*Testing spans multiple domains._
 
-~~demo{
+~.focusContent.demo
 
 GitHub Actions - build and deploy process.
 
@@ -200,4 +200,4 @@ Let's try breaking it by putting a typo on the theme for the \_config.yml file.
 
 ... could have avoided the break if there were tests in our CI/CD pipeline.
 
-}
+/~

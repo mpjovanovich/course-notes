@@ -42,10 +42,10 @@ CSS `font-family` is used to define the name(s) of fonts to be used on the websi
 @font-face {
   font-family: Roboto;
   src: url("/fonts/roboto-regular.woff2");
-}
+/~
 body {
   font-family: Roboto, sans-serif;
-}
+/~
 ```
 
 ### Import vs Link

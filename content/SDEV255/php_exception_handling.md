@@ -36,10 +36,10 @@ try {
   // Code that may throw an exception
 } catch (Exception $e) {
   // Code to handle the exception if thrown
-}
+/~
 finally {
   // Optional: Will execute regardless of exception thrown or not
-}
+/~
 ```
 
 - The **catch** block will only execute if an exception is thrown.
@@ -67,7 +67,7 @@ try {
   // Code that may throw an exception
 } catch (Exception $e) {
   echo $e->getMessage();
-}
+/~
 ```
 
 ### Exception Types
@@ -84,7 +84,7 @@ try {
     // Will only execute if the exception type is FileNotFoundException
 } catch (Exception $e) {
     // Will catch anything else that is thrown.
-}
+/~
 ```
 
 ## Exception Bubbling
@@ -95,7 +95,7 @@ try {
 ```php
 function bar() {
   throw new Exception('I am an exception');
-}
+/~
 
 function foo() {
   try {
@@ -103,8 +103,8 @@ function foo() {
   } catch (Exception $e) {
     // Will catch the exception thrown by bar()
     echo $e->getMessage();
-  }
-}
+/~
+/~
 ```
 
 ## Validation vs Exception Handling

@@ -35,7 +35,7 @@ Function with one argument and a return value:
 // Standard function
 function addOne(x: number): number {
   return x + 1;
-}
+/~
 
 // Arrow function
 const addOne = (x: number): number => {
@@ -52,7 +52,7 @@ Function with multiple arguments and a return value:
 // Standard function
 function add(x: number, y: number): number {
   return x + y;
-}
+/~
 
 // Arrow function
 const add = (x: number, y: number): number => {
@@ -69,7 +69,7 @@ Function with no arguments and no return value (void function):
 // Standard function
 function printSomething(): void {
   console.log("I will be printed.");
-}
+/~
 
 // Arrow function
 const printSomething = (): void => {

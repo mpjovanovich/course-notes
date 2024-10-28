@@ -3,7 +3,7 @@ title: Evolution of Computing
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Evolution of Computing](#evolution-of-computing)
   - [Early Computing](#early-computing)
@@ -14,7 +14,7 @@ course: SDEV120
   - [Alternatives to Von Neumann Architecture](#alternatives-to-von-neumann-architecture)
   - [Alternatives to Transistor Based Computing](#alternatives-to-transistor-based-computing)
 
-}
+/~
 
 # Evolution of Computing
 

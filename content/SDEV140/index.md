@@ -1,6 +1,7 @@
 ---
 title: Home
 course: SDEV140
+showBreadcrumb: false
 ---
 
 # Announcements
@@ -12,7 +13,7 @@ course: SDEV140
 
 # Schedule
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Announcements](#announcements)
 - [Schedule](#schedule)
@@ -21,7 +22,7 @@ course: SDEV140
 - [Module 02: Selection Structures](#module-02-selection-structures)
 - [Module 03: Loops](#module-03-loops)
 
-}
+/~
 
 # Module 00: Course Overview
 

@@ -3,7 +3,7 @@ title: Von Neumann Architecture
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Von Neumann Architecture](#von-neumann-architecture)
   - [Prior to von Neumann](#prior-to-von-neumann)
@@ -17,7 +17,7 @@ course: SDEV120
       - [Arithmetic Logic Unit (ALU)](#arithmetic-logic-unit-alu)
   - [Fetch Decode Execute Cycle](#fetch-decode-execute-cycle)
 
-}
+/~
 
 # Von Neumann Architecture
 
@@ -126,7 +126,7 @@ The CPU will pick off one instruction at a time from memory and execute it. This
 
 By shuffling data between memory and registers, the CPU can perform all of the operations necessary to run a program.
 
-~~example{
+~.focusContent.example
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z5JC9Ve1sfI?si=q4IAEEs3UIgPdkuf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -138,4 +138,4 @@ _Slight correction to the video: the program counter is incremented immediately 
 
 _The "JUMP 1" instruction does not skip the execution cycle. It updates the program counter on its execution._
 
-}
+/~

@@ -78,7 +78,7 @@ _POST_
 ```php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // We will only get here if the form was submitted.
-}
+/~
 ```
 
 ## PHP POST Array
@@ -90,7 +90,7 @@ PHP automatically creates an associative array called `$_POST` that contains the
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo $_POST['name'] . <br />;
     echo $_POST['age'] . <br />;
-}
+/~
 ?>
 ```
 
@@ -110,5 +110,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ```php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // We will only get here if the form was submitted.
-}
+/~
 ```

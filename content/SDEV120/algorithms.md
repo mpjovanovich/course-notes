@@ -3,7 +3,7 @@ title: Algorithms
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Algorithms](#algorithms)
   - [What is an Algorithm?](#what-is-an-algorithm)
@@ -25,7 +25,7 @@ course: SDEV120
     - [Reinforcement Learning](#reinforcement-learning)
   - [Critical Thinking Exercise](#critical-thinking-exercise)
 
-}
+/~
 
 # Algorithms
 
@@ -190,7 +190,7 @@ As we move through the applications below, let's think about the "humanlike" and
 
 ## Critical Thinking Exercise
 
-~~exercise{
+~.focusContent.exercise
 
 **Problem:** We need to fly from Indianapolis to Los Angeles.
 
@@ -212,4 +212,4 @@ Consider:
   - What paramaters might the weights represent?
   - Optimize for a single parameter? A combination of parameters?
 
-}
+/~

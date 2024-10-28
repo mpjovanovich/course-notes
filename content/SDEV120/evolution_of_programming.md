@@ -3,7 +3,7 @@ title: Evolution of Programming
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Evolution of Programming Languages](#evolution-of-programming-languages)
   - [First Generation](#first-generation)
@@ -24,7 +24,7 @@ course: SDEV120
   - [Popularity Metrics](#popularity-metrics)
   - [Application Domains](#application-domains)
 
-}
+/~
 
 # Evolution of Programming Languages
 

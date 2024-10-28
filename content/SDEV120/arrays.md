@@ -3,7 +3,7 @@ title: Flowcharts
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Arrays](#arrays)
   - [Definitions](#definitions)
@@ -26,7 +26,7 @@ course: SDEV120
 - [Parallel Arrays](#parallel-arrays)
   - [Definition](#definition)
 
-}
+/~
 
 <figure>
     <span>

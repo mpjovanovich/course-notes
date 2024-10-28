@@ -3,7 +3,7 @@ title: Syntax and Expressions
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Syntax and Expressions](#syntax-and-expressions)
   - [Syntax](#syntax)
@@ -16,7 +16,7 @@ course: SDEV120
   - [Expressions](#expressions)
   - [Statements](#statements)
 
-}
+/~
 
 # Syntax and Expressions
 
@@ -30,7 +30,7 @@ In this lecture, we'll explore how to build a programming language from the grou
 
 English has its own set of rules.
 
-~~example {
+~.focusContent.example
 
 "I went to the store last Saturday."
 
@@ -38,20 +38,20 @@ Expressions: "(I) (went) (to the store) (last Saturday)."
 
 How many ways can we rearrange the words to form a gramatically valid sentence?
 
-}
+/~
 
 ### Programming Language Syntax
 
 Each programming language has its own syntax.
 
-~~example {
+~.focusContent.example
 
 ```python
 x = 5 # Synactically correct
 5 = x # Syntax error - we assign from right to left
 ```
 
-}
+/~
 
 ## Literals and Variables
 

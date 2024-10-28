@@ -5,7 +5,7 @@ course: SDEV120
 
 ~~fig(60){https://imgs.xkcd.com/comics/settling_2x.png}
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [PseudoCode](#pseudocode)
   - [What is PseudoCode?](#what-is-pseudocode)
@@ -14,7 +14,7 @@ course: SDEV120
   - [Examples](#examples)
   - [Critical Thinking Exercise](#critical-thinking-exercise)
 
-}
+/~
 
 # PseudoCode
 
@@ -98,7 +98,7 @@ END
 
 ## Critical Thinking Exercise
 
-~~exercise{
+~.focusContent.exercise
 
 **Problem:** Print even integers between 0 and 4 (inclusive)
 
@@ -106,4 +106,4 @@ How many algorithms can we come up with do this?
 
 PseudoCode them as we go.
 
-}
+/~

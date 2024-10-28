@@ -5,7 +5,7 @@ course: SDEV120
 
 ~~fig{https://imgs.xkcd.com/comics/flow_charts.png}
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Flowcharts](#flowcharts)
   - [Flowchart Symbols](#flowchart-symbols)
@@ -17,7 +17,7 @@ course: SDEV120
     - [Data Store](#data-store)
   - [Example](#example)
 
-}
+/~
 
 # Flowcharts
 
@@ -106,10 +106,10 @@ _Output Example:_
 
 ## Example
 
-~~exercise{
+~.focusContent.exercise
 
 _Flowchart our previous algorithm(s) for find even numbers 0-4 inclusive_
 
 We will do this together using [draw.io](https://draw.io).
 
-}
+/~

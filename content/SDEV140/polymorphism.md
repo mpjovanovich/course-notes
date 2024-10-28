@@ -23,7 +23,7 @@ interface IDatabase {
   connect(): void;
   disconnect(): void;
   execute_query(query: string): void;
-}
+/~
 ```
 
 - Functions that use the interface:
@@ -41,7 +41,7 @@ interface IFile {
   read(): string;
   write(data: string): void;
   delete(): void;
-}
+/~
 ```
 
 - Functions that use the interface:

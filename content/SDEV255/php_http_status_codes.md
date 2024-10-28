@@ -65,7 +65,7 @@ if( !$user_is_authenticated ) {
     http_response_code(301);
     header('Location: ' . LOGIN_PAGE_URL);
     exit;
-}
+/~
 ```
 
 Custom 404 page.
@@ -77,6 +77,6 @@ if( !$page_exists ) {
     http_response_code(404);
     header('Location: ' . 404_PAGE_URL);
     exit;
-}
+/~
 ?>
 ```

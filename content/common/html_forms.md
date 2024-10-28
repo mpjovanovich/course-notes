@@ -317,7 +317,7 @@ Response to an action.
 ```css
 input[type="radio"] {
   /* styles here */
-}
+/~
 ```
 
 ### Psuedo-Classes
@@ -333,7 +333,7 @@ select:focus,
 textarea:focus {
   border: 2px solid black;
   background: #fff;
-}
+/~
 ```
 
 #### Invalid vs User-invalid
@@ -348,7 +348,7 @@ textarea:focus {
 ```css
 input:user-invalid {
   border: 2px solid red;
-}
+/~
 ```
 
 ## Summary of Best Practices

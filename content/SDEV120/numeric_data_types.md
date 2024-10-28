@@ -3,7 +3,7 @@ title: Numeric Data Types
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Numeric Data Types](#numeric-data-types)
   - [Integer](#integer)
@@ -21,7 +21,7 @@ course: SDEV120
     - [Truncation](#truncation)
     - [Rounding Errors](#rounding-errors)
 
-}
+/~
 
 ~~fig{https://imgs.xkcd.com/comics/large_number_formats.png}
 
@@ -199,7 +199,7 @@ This can be due to:
   - 1/3 can't be represented exactly in decimal or binary (repeating decimal)
   - \*1/10 can't be represented exactly in binary.
 
-~~example{
+~.focusContent.example
 
 _Binary can only represent numbers that are a sum of powers of 2!_
 
@@ -220,7 +220,7 @@ Remember that negative exponents are fractions:
 
 (0.01)<sub>2</sub> = 1/4.
 
-}
+/~
 
 _Case Study: Binary arithmetic errors_
 

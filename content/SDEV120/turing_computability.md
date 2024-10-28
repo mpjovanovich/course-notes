@@ -3,7 +3,7 @@ title: Turing and Computability
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Computability](#computability)
   - [Alan Turing](#alan-turing)
@@ -11,7 +11,7 @@ course: SDEV120
 - [The Turing Machine](#the-turing-machine)
   - [Consequences for Modern Computing](#consequences-for-modern-computing)
 
-}
+/~
 
 # Computability
 

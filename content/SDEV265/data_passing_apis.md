@@ -48,7 +48,7 @@ curl -X POST -d '{
     "regionCode": "US",
     "postalCode": "47905",
     "addressLines": ["3101 S Creasy Ln"]
-  }
+/~
 }' \
 -H 'Content-Type: application/json' \
 "https://addressvalidation.googleapis.com/v1:validateAddress?key=$GOOGLE_MAPS_API_KEY" \

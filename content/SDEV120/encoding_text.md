@@ -3,7 +3,7 @@ title: Encoding Text for Computing
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Encoding Text for Computing](#encoding-text-for-computing)
   - [ASCII (American Standard Code for Information Interchange)](#ascii-american-standard-code-for-information-interchange)
@@ -27,7 +27,7 @@ course: SDEV120
       - [Emojis](#emojis)
     - [Usage](#usage)
 
-}
+/~
 
 # Encoding Text for Computing
 

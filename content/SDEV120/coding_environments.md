@@ -3,7 +3,7 @@ title: Coding Environments
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Coding Environments](#coding-environments)
   - [Integrated Development Environments (IDEs)](#integrated-development-environments-ides)
@@ -14,7 +14,7 @@ course: SDEV120
       - [Debugging](#debugging)
       - [Version Control Integration](#version-control-integration)
 
-}
+/~
 
 ~~fig{https://imgs.xkcd.com/comics/code_quality.png}
 

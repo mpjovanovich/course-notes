@@ -65,7 +65,7 @@ _Note: I gave you bad info earlier - you do not have to set the html height and 
 img {
   max-width: 100%;
   height: auto; /* Maintain aspect ratio */
-}
+/~
 ```
 
 #### srcset
@@ -131,16 +131,16 @@ Feature:
 body {
   /* Will be applied when viewport > 400px  and < 800px */
   background-color: orange;
-}
+/~
 
 @media screen and (max-width: 400px) {
   /* Styles for viewports narrower than 400 pixels. */
-}
+/~
 
 /* Styles for viewports wider than 800 pixels. */
 @media screen and (min-width: 800px) {
   /* Styles for viewports wider than 800 pixels. */
-}
+/~
 ```
 
 #### Breakpoints
@@ -163,7 +163,7 @@ Feature:
 ```css
 @media screen and (orientation: portrait) {
   /* Apply these styles if the device is in portrait orientation */
-}
+/~
 ```
 
 ### Combining Media Queries
@@ -173,24 +173,24 @@ Feature:
 ```css
 @media (min-width: 400px) and (max-width: 600px) {
   /* Apply these styles if viewport between 400px and 600px */
-  /* Apply these styles if: 
+  /* Apply these styles if:
     The viewport width is 400px or larger
         AND
     The viewport width is 600px or smaller
   */
-}
+/~
 ```
 
 - Multiple media queries can be combined using `,` to apply the rules if any of the conditions are met.
 
 ```css
 @media (max-width: 600px), (orientation: landscape) {
-  /* Apply these styles if: 
+  /* Apply these styles if:
     The viewport width is 600px or smaller
-        OR 
-    The device is in landscape orientation 
+        OR
+    The device is in landscape orientation
    */
-}
+/~
 ```
 
 ### A Media-Query Based Responsive Layout Demo

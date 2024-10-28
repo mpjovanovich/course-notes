@@ -2,7 +2,7 @@
 title: GitHub Classroom
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [GitHub Classroom](#github-classroom)
   - [Accepting Assignments](#accepting-assignments)
@@ -12,7 +12,7 @@ title: GitHub Classroom
     - [GitHub Web](#github-web)
     - [VS Code Extension](#vs-code-extension)
 
-}
+/~
 
 # GitHub Classroom
 

@@ -2,7 +2,7 @@
 title: Common Resources
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Coding Punctuation](#coding-punctuation)
 - [Command Line (Bash)](#command-line-bash)
@@ -11,7 +11,7 @@ title: Common Resources
 - [Source Control (Git and GitHub)](#source-control-git-and-github)
 - [Additional Resources](#additional-resources)
 
-}
+/~
 
 # Coding Punctuation
 

@@ -97,7 +97,7 @@ public bool FunctionName( int parameter1, int parameter2 )
 {
     // Function body
     return value;
-}
+/~
 ```
 
 A **function signature** consists of:

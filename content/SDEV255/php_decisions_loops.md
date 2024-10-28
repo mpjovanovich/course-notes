@@ -23,13 +23,13 @@ course: SDEV255
 $age = 42;
 if ($age >= 18) {
     echo "You are an adult.";
-}
+/~
 else if ($age >= 13) {
     echo "You are a teenager.";
-}
+/~
 else {
     echo "You are a child.";
-}
+/~
 ```
 
 ## Ternary Operator
@@ -57,7 +57,7 @@ $i = 0;
 while ($i < 10) {
     echo $i;
     $i++;
-}
+/~
 ```
 
 ## For Loop
@@ -65,7 +65,7 @@ while ($i < 10) {
 ```php
 for ($i = 0; $i < 10; $i++) {
     echo $i;
-}
+/~
 ```
 
 ## Foreach Loop
@@ -76,7 +76,7 @@ for ($i = 0; $i < 10; $i++) {
 $names = ["Bobby", "Sally", "Jimmy"];
 foreach ($names as $name) {
     echo $name;
-}
+/~
 ```
 
 ## Associative Arrays
@@ -89,7 +89,7 @@ $person = [
 ];
 foreach ($person as $key => $value) {
     echo "$key: $value";
-}
+/~
 ```
 
 ## Looping in HTML
@@ -107,7 +107,7 @@ $names = ["Bobby", "Sally", "Jimmy"];
     <?php
         foreach ($names as $name) {
             echo "<li>" . $name . "</li>";
-        }
+/~
     ?>
 </ul>
 ```

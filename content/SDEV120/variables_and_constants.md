@@ -3,7 +3,7 @@ title: Variables and Constants
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Variables](#variables)
 - [Constants](#constants)
@@ -11,7 +11,7 @@ course: SDEV120
   - [Naming Conventions](#naming-conventions)
   - [Best Practices](#best-practices)
 
-}
+/~
 
 ~~fig{https://imgs.xkcd.com/comics/code_quality_3.png}
 

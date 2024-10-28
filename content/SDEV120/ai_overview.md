@@ -7,7 +7,7 @@ title: Overview of AI
 
 <iframe class="center" width="560" height="315" src="https://www.youtube.com/embed/qTmPrVhdtks?si=8Z9CK1dP1vPdgcQv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Artificial Intelligence](#artificial-intelligence)
   - [Types of AI](#types-of-ai)
@@ -17,7 +17,7 @@ title: Overview of AI
     - [Potential Entrants to AI](#potential-entrants-to-ai)
   - [Staying Current on Innovation](#staying-current-on-innovation)
 
-}
+/~
 
 # Artificial Intelligence
 

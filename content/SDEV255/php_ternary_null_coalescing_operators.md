@@ -24,7 +24,7 @@ if (condition) {
     $var = value_if_true;
 } else {
     $var = value_if_false;
-}
+/~
 ```
 
 <p class="demo">Examples</p>
@@ -75,7 +75,7 @@ Basic If:
 $userVar = null;
 if ($userVar === null) {
     $userVar = 'default';
-}
+/~
 ```
 
 Ternary If:

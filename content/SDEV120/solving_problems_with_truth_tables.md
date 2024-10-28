@@ -3,7 +3,7 @@ title: Solving Problems with Truth Tables
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Solving Problems with Truth Tables](#solving-problems-with-truth-tables)
   - [The General Process](#the-general-process)
@@ -14,7 +14,7 @@ course: SDEV120
     - [De Morgan's Laws](#de-morgans-laws)
     - [Exclusive Or](#exclusive-or)
 
-}
+/~
 
 # Solving Problems with Truth Tables
 

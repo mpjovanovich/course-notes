@@ -215,13 +215,13 @@ We can chain together arbitrary amounts of decisions to represent “fallback lo
 
 ![Fallthrough Decision](images/grading_program.png)
 
-~~demo{
+~.focusContent.demo
 
 What happens if we use regular `if` statements instead of `else if`?
 
 What would the pseudocode look like if we did not have `else if`, and instead just used a series of `if` statements?
 
-}
+/~
 
 ### Example Algorithm
 

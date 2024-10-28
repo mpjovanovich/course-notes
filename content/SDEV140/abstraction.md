@@ -46,7 +46,7 @@ interface IDatabase {
   connect(): void;
   disconnect(): void;
   execute_query(query: string): void;
-}
+/~
 ```
 
 Implementation
@@ -55,16 +55,16 @@ Implementation
 class MySQLDatabase implements IDatabase {
   connect(): void {
     // Connect to MySQL database
-  }
+/~
 
   disconnect(): void {
     // Disconnect from MySQL database
-  }
+/~
 
   execute_query(query: string): void {
     // Execute query on MySQL database
-  }
-}
+/~
+/~
 ```
 
 ## Abstract Classes and Methods

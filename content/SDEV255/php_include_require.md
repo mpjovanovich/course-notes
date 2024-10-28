@@ -8,7 +8,7 @@ course: SDEV255
     - [Example](#example)
   - [Require](#require)
   - [Include vs Require - Which to Use?](#include-vs-require---which-to-use)
-- [Include\_once and Require\_once Statements](#include_once-and-require_once-statements)
+- [Include_once and Require_once Statements](#include_once-and-require_once-statements)
   - [Example](#example-1)
   - [Regular vs Once - Which to Use?](#regular-vs-once---which-to-use)
 - [Absolute, Relative, and Root-Relative Paths](#absolute-relative-and-root-relative-paths)
@@ -122,7 +122,7 @@ _output_
 
 # Absolute, Relative, and Root-Relative Paths
 
-For small projects relative paths are fine. 
+For small projects relative paths are fine.
 
 For larger projects, typically use absolute or root-relative paths.
 
@@ -272,7 +272,7 @@ function pretty_dump(mixed $var, string $name = ''): void
     ">';
     if ($name) {
         echo "Name: <strong>$name</strong><br >";
-    }
+/~
     echo "Type: <strong>" . gettype($var) . (is_array($var) ? '(' . count($var) . ')' : '')  . "</strong><br >";
     echo ".................................<br >";
     if (is_array($var)) {
@@ -291,13 +291,13 @@ function pretty_dump(mixed $var, string $name = ''): void
                 $v = $type === 'str' ? "'$v'" : $v;
 
                 echo str_pad($k, 30) . ' => ' . $type . ' ' . $v . "\n";
-            }
-        }
+/~
+/~
     } else {
         print_r($var);
-    }
+/~
     echo '</pre>';
-}
+/~
 
 // Usage:
 pretty_dump($_SERVER, '$_SERVER');

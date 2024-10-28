@@ -3,7 +3,7 @@ title: UML
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Unified Modeling Language (UML)](#unified-modeling-language-uml)
   - [Background](#background)
@@ -30,7 +30,7 @@ course: SDEV120
       - [Swimlane Diagram](#swimlane-diagram)
       - [Custom](#custom)
 
-}
+/~
 
 ~~fig(80){images/uml_guys.png}
 

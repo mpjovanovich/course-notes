@@ -2,7 +2,7 @@
 title: Computer Orientation
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Computer Orientation](#computer-orientation)
   - [Naming Files and Folders](#naming-files-and-folders)
@@ -11,7 +11,7 @@ title: Computer Orientation
   - [Tip: Ctrl / Cmd + f = Find!](#tip-ctrl--cmd--f--find)
   - [Summary: What Should I Be Able to Do?](#summary-what-should-i-be-able-to-do)
 
-}
+/~
 
 # Computer Orientation
 
@@ -35,13 +35,13 @@ The file extension allows a file to be associated with a specific program. For e
 
 You can change the file extension to whatever you want (despite warnings you may receive).
 
-~~demo{
+~.focusContent.demo
 
 - Create a new file called `test.txt`.
 - Remove the extension.
 - Open the file in a text editor.
 
-}
+/~
 
 **Good Habits:**
 
@@ -54,7 +54,7 @@ You can change the file extension to whatever you want (despite warnings you may
 - Directories are containers for storing other files.
 - They have a hierarchical structure, like a family tree.
 
-~~demo{
+~.focusContent.demo
 
 Use tree terminiology to draw and describe the following directory structure, from [Game of Life - React](https://github.com/mpjovanovich/life_react)
 
@@ -87,7 +87,7 @@ favicon.png
 ...
 ```
 
-}
+/~
 
 **Good Habits:**
 

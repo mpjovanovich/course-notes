@@ -3,13 +3,13 @@ title: Input, Output, and Comments in Python
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Code Comments](#code-comments)
 - [Output in Python](#output-in-python)
 - [Input in Python](#input-in-python)
 
-}
+/~
 
 ~~fig{https://imgs.xkcd.com/comics/code_quality_2.png}
 

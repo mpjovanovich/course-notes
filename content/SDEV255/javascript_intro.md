@@ -102,7 +102,7 @@ JavaScript uses curly braces to denote blocks of code.
 // We're normally talking about if statements, loops, functions, etc.
 {
   let x = 5;
-}
+/~
 print(x); // Error: x is not defined
 ```
 
@@ -163,7 +163,7 @@ In older JS you may see `var` used instead of `let`. `var` is function-scoped, w
 var x = 5;
 if (true) {
   var x = 10;
-}
+/~
 console.log(x); // 10
 ```
 
@@ -171,7 +171,7 @@ console.log(x); // 10
 let x = 5;
 if (true) {
   let x = 10;
-}
+/~
 console.log(x); // 5
 ```
 
@@ -226,7 +226,7 @@ if (condition1) {
   // code to be executed if condition1 is false and condition2 is true
 } else {
   // code to be executed if both condition1 and condition2 are false
-}
+/~
 ```
 
 ## Loops
@@ -238,7 +238,7 @@ let i = 0;
 while (i < 10) {
   console.log(i);
   i++;
-}
+/~
 ```
 
 ### For
@@ -246,7 +246,7 @@ while (i < 10) {
 ```javascript
 for (let i = 0; i < 10; i++) {
   console.log(i);
-}
+/~
 ```
 
 ### Foreach
@@ -265,7 +265,7 @@ Basic function syntax:
 ```javascript
 function myFunction() {
   // code to be executed
-}
+/~
 ```
 
 With arguments:
@@ -273,7 +273,7 @@ With arguments:
 ```javascript
 function myFunction(arg1, arg2) {
   // code to be executed
-}
+/~
 ```
 
 With return value:
@@ -282,5 +282,5 @@ With return value:
 function myFunction(arg1, arg2) {
   returnValue = arg1 + arg2;
   return returnValue;
-}
+/~
 ```

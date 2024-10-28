@@ -93,7 +93,7 @@ myButton.addEventListener("click", handleClick);
 
 function handleClick() {
   alert("CLICK!");
-}
+/~
 ```
 
 ### Anonymous Functions
@@ -115,7 +115,7 @@ Arrow functions are a shorthand way of defining functions:
 // Regular function:
 function handleClick() {
   alert("CLICK!");
-}
+/~
 
 // Arrow function:
 () => {
@@ -125,7 +125,7 @@ function handleClick() {
 // Regular function with parameters:
 function handleClick(message) {
   alert(message);
-}
+/~
 
 // Arrow function with parameters:
 (message) => {
@@ -162,8 +162,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const current_text = listItems[i].textContent.toLowerCase();
     if (colorMapping.hasOwnProperty(current_text)) {
       listItems[i].style.color = colorMapping[current_text];
-    }
-  }
+/~
+/~
 });
 ```
 
@@ -182,7 +182,7 @@ myButton2.addEventListener("click", printTarget);
 
 function printTarget(e) {
   console.log(e.target);
-}
+/~
 ```
 
 ## Event Bubbling

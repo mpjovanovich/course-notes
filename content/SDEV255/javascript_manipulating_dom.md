@@ -132,7 +132,7 @@ const bodyChildren = body.children;
 // We can loop through this collection to access each child element:
 for (let i = 0; i < bodyChildren.length; i++) {
   console.log(bodyChildren[i]);
-}
+/~
 ```
 
 ## Modifying HTML Elements

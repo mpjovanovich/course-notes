@@ -3,7 +3,7 @@ title: Text Data Types
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Text Data Types](#text-data-types)
   - [Characters](#characters)
@@ -12,7 +12,7 @@ course: SDEV120
     - [Applications](#applications)
   - [Text vs Binary Files](#text-vs-binary-files)
 
-}
+/~
 
 # Text Data Types
 
@@ -22,7 +22,7 @@ Since computers only have binary to work with, we **encode** text by assigning c
 
 Recall that text is made up of **characters**: letters, numbers, and symbols.
 
-~~demo{
+~.focusContent.demo
 
 **Whitespace** characters are an easy-to-miss source of computer errors. They include the space, tabs, carriage return, and line feed.
 
@@ -38,7 +38,7 @@ All text editors should have a way to show whitespace characters. In notepad++ t
 
 Try dropping the snippet above and looking at the characters.
 
-}
+/~
 
 ## ASCII
 
@@ -110,7 +110,7 @@ Although everything is stored as binary, we can categorize files as either **tex
 
 **Binary files** are not human-readable and must be opened in a program that understands the file format. These files may or may not contain text. E.g. Microsoft Word files are binary files. Try opening one in a text editor.
 
-~~demo{
+~.focusContent.demo
 
 We can use the `xxd` program in bash to view the contents of a file in hexadecimal.
 
@@ -125,4 +125,4 @@ xxd -b some_file.bin
 xxd some_file.txt
 ```
 
-}
+/~

@@ -58,7 +58,7 @@ let isTrue = true;
 ```typescript
 function add(x: number, y: number): number {
   return x + y;
-}
+/~
 ```
 
 ## TypeScript Compiler
@@ -80,7 +80,7 @@ tsc myFile.ts
 ## Example App
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>TS_Demo</title>

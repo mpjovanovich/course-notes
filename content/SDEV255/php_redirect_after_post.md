@@ -52,7 +52,7 @@ We will use three pages:
     // Display validation errors if any were set.
     if (isset($_GET['error'])) {
         echo $_GET['error'];
-    }
+/~
 ?>
 <form action="result.php" method="POST">
   <input type="text" name="name" />
@@ -71,7 +71,7 @@ We will use three pages:
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: index.php');
     exit();
-}
+/~
 
 /* *****************************************************************
  * DO VALIDATION
@@ -88,7 +88,7 @@ $error = '';
 if ($error) {
     header('Location: index.php?error=' . $error);
     exit;
-}
+/~
 
 /* *****************************************************************
  * PROCEED TO RESULT PAGE

@@ -28,7 +28,7 @@ if ($var) {
     echo 'true';
 } else {
     echo 'false';
-}
+/~
 ```
 
 ### Built in Functions
@@ -43,7 +43,7 @@ if ($var) {
 ```php
 if (isset($_GET['name'])) {
     // do something
-}
+/~
 ```
 
 ### Comparison of Functions
@@ -75,7 +75,7 @@ if (isset($_GET['name'])) {
 <?php
 if (is_array($_GET['items'])) {
     // do something
-}
+/~
 ?>
 ```
 
@@ -93,7 +93,7 @@ if (is_array($_GET['items'])) {
 <?php
 if (in_array($_GET['color'], ['red', 'green', 'blue'])) {
     // do something
-}
+/~
 ?>
 ```
 
@@ -107,6 +107,6 @@ if (in_array($_GET['color'], ['red', 'green', 'blue'])) {
 <?php
 if (preg_match('/^[a-zA-Z0-9]+$/', $_GET['username'])) {
     // do something
-}
+/~
 ?>
 ```

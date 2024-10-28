@@ -3,7 +3,7 @@ title: Logic Gates
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Logic Gates](#logic-gates)
   - [Foundations](#foundations)
@@ -19,7 +19,7 @@ course: SDEV120
       - [SR Flip-Flop](#sr-flip-flop)
       - [Demo: Building a Hold Activated Button](#demo-building-a-hold-activated-button)
 
-}
+/~
 
 # Logic Gates
 
@@ -81,31 +81,32 @@ b) Plug the above values into the circuit and solve.
 
 _Hint:_ Remember your truth tables and the fact that 1 = true and 0 = false.
 
-~~summary( Output: A < B ) {
+<details>
+<summary>
+Output: A < B
+</summary>
 
-**a)**
+**a)** ¬A ∧ B
 
-- ¬A ∧ B
+**b)** 0 ∧ 1 = False
 
-**b)**
+</details>
 
-- 0 ∧ 1 = False
+<details>
+<summary>
+Output: A > B
+</summary>
 
-}
+**a)** A ∧ ¬B
 
-~~summary( Output: A > B ) {
+**b)** 1 ∧ 0 = False
 
-**a)**
+</details>
 
-- A ∧ ¬B
-
-**b)**
-
-- 1 ∧ 0 = False
-
-}
-
-~~summary( Output: A = B ) {
+<details>
+<summary>
+Output: A = B
+</summary>
 
 **a)**
 
@@ -117,7 +118,7 @@ _Hint:_ Remember your truth tables and the fact that 1 = true and 0 = false.
 - 1 ∨ (0 ∧ 0) ∨ 1
 - 1 ∨ 0 ∨ 1 = True
 
-}
+</details>
 
 ### Keeping Values in Memory
 
@@ -150,7 +151,7 @@ _Circuit:_
 
 #### Demo: Building an Arm and Click Camera
 
-~~demo{
+~.focusContent.demo
 
 _Scenario:_
 
@@ -172,7 +173,7 @@ _Circuit:_
 
 [Arm and Click Camera](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/arm_click_camera.logicly)
 
-}
+/~
 
 ### Synchronizing Information
 
@@ -212,7 +213,7 @@ _Circuit:_
 
 #### Demo: Building a Hold Activated Button
 
-~~demo{
+~.focusContent.demo
 
 _Scenario:_
 
@@ -233,4 +234,4 @@ _Circuit:_
 
 [Hold Button](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/hold_button.logicly)
 
-}
+/~

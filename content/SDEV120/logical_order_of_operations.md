@@ -3,7 +3,7 @@ title: Propositional Logic - Order of Operations
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Order of Operations](#order-of-operations)
   - [Arithmetic Order of Operations](#arithmetic-order-of-operations)
@@ -12,7 +12,7 @@ course: SDEV120
   - [Logical Order of Operations](#logical-order-of-operations)
     - [Practice Problems](#practice-problems-1)
 
-}
+/~
 
 # Order of Operations
 

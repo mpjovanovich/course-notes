@@ -3,7 +3,7 @@ title: Converting Between Bases
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Converting Between Bases](#converting-between-bases)
   - [Positional Notation](#positional-notation)
@@ -23,7 +23,7 @@ course: SDEV120
       - [Example 1](#example-1-3)
       - [Example 2](#example-2-3)
 
-}
+/~
 
 # Converting Between Bases
 
@@ -88,7 +88,7 @@ Convert the binary number to decimal: (1101)<sub>2</sub>
 
 = 13<sub>(10)</sub>
 
-~~wrapHtml(div,focusContent){
+~.focusContent
 
 <p class="focusContentTitle">Pneumonic:</p>
 
@@ -105,7 +105,7 @@ Counting up...
 - 1001 = 1-eightsy one = 9
 - 1010 = 1-eightsy two = 10
 
-}
+/~
 
 ### Convert: Decimal to Binary
 

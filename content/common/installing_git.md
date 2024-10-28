@@ -2,12 +2,12 @@
 title: Installing Git
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Windows](#windows)
 - [Mac](#mac)
 
-}
+/~
 
 # Windows
 

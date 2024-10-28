@@ -3,7 +3,7 @@ title: The Metric System for Computing
 course: SDEV120
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Metric Prefixes](#metric-prefixes)
   - [Decimal Chart](#decimal-chart)
@@ -18,7 +18,7 @@ course: SDEV120
     - [Extreme Scales](#extreme-scales)
   - [Binary Applications](#binary-applications)
 
-}
+/~
 
 # Metric Prefixes
 
@@ -303,7 +303,7 @@ The binary prefixes were established by the International Electrotechnical Commi
 
 File sizes listed in base 10 can be misleading.
 
-~~example{
+~.focusContent.example
 
 Do the three reported memory sizes tie out in this example?
 
@@ -319,4 +319,4 @@ Do the three reported memory sizes tie out in this example?
     </span>
 </figure>
 
-}
+/~

@@ -128,5 +128,5 @@ max-height: 225px;
 selector1,
 selector2 {
   /* styles here */
-}
+/~
 ```

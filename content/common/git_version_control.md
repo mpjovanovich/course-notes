@@ -2,12 +2,12 @@
 title: Version Control via Git
 ---
 
-~~wrapHtml(div,schedule){
+~.schedule
 
 - [Source Control / Version Control](#source-control--version-control)
-    - [Distributed Version Control](#distributed-version-control)
-      - [Solo Projects](#solo-projects)
-      - [Collaborative Projects](#collaborative-projects)
+  - [Distributed Version Control](#distributed-version-control)
+    - [Solo Projects](#solo-projects)
+    - [Collaborative Projects](#collaborative-projects)
 - [Synchronizing Changes via Git](#synchronizing-changes-via-git)
   - [Remote to Local Synchronization](#remote-to-local-synchronization)
     - [Creating a New Repository](#creating-a-new-repository)
@@ -20,7 +20,7 @@ title: Version Control via Git
     - [Remote Repository](#remote-repository)
     - [File States](#file-states)
 
-}
+/~
 
 # Source Control / Version Control
 
@@ -132,7 +132,7 @@ This is always a good idea to do before you start working on the project to make
 - You're working in a team.
 - You're working from multiple computers that each have their own copy of the repository (e.g. home and work).
 
-~~demo{
+~.focusContent.demo
 
 Here we will:
 
@@ -141,7 +141,7 @@ Here we will:
 - Make some changes using the GitHub website
 - Pull the changes down to our local machine
 
-}
+/~
 
 ## Local to Remote Synchronization
 
@@ -191,7 +191,7 @@ git push
 
 Finally, we need to push the changes from the local repository to the remote repository. It's usually best to do this immediately after committing the changes to the local repository.
 
-~~demo{
+~.focusContent.demo
 
 Here we will:
 
@@ -202,7 +202,7 @@ Here we will:
 
 \*We will look at how to check what files are in what state in the next section.
 
-}
+/~
 
 ---
 
@@ -226,7 +226,7 @@ The file has been added to the staging area but not yet committed.
 
 The file has been committed to the local repository (at which point is is again "unmodified").
 
-~~demo{
+~.focusContent.demo
 
 Here we will:
 
@@ -237,7 +237,7 @@ Here we will:
 - Push the changes to the remote repository
 - Check the status of the repository using `git status`
 
-}
+/~
 
 <!-- ---
 
