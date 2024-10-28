@@ -16,7 +16,9 @@ course: SDEV264
 
 # React Native Application Structure
 
-~~fig(100){images/react_project_1.png}
+<figure>
+ <img src="images/react_project_1.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 React structure via Expo
 

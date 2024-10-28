@@ -3,7 +3,7 @@ title: Evolution of Programming
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Evolution of Programming Languages](#evolution-of-programming-languages)
   - [First Generation](#first-generation)

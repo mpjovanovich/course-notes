@@ -3,6 +3,8 @@ title: Dictionaries
 course: SDEV140
 ---
 
+~.toc
+
 - [Dictionaries](#dictionaries)
   - [Creating a Dictionary](#creating-a-dictionary)
   - [Common Uses for Dictionaries](#common-uses-for-dictionaries)
@@ -13,6 +15,8 @@ course: SDEV140
   - [Removing Key-Value Pairs](#removing-key-value-pairs)
   - [Checking if a Key Exists](#checking-if-a-key-exists)
   - [Iterating Through a Dictionary](#iterating-through-a-dictionary)
+
+/~
 
 # Dictionaries
 

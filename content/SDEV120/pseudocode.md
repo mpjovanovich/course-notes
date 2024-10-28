@@ -3,9 +3,7 @@ title: PseudoCode
 course: SDEV120
 ---
 
-~~fig(60){https://imgs.xkcd.com/comics/settling_2x.png}
-
-~.schedule
+~.toc
 
 - [PseudoCode](#pseudocode)
   - [What is PseudoCode?](#what-is-pseudocode)
@@ -18,15 +16,25 @@ course: SDEV120
 
 # PseudoCode
 
+<figure>
+ <img src="https://imgs.xkcd.com/comics/settling_2x.png" alt="" style="width: 60%;height: auto;">
+</figure>
+
 ## What is PseudoCode?
 
 _... and why are there so many?_
 
-~~fig(40){images/ps_code1.png}
+<figure>
+ <img src="images/ps_code1.png" alt="" style="width: 40%;height: auto;">
+</figure>
 
-~~fig(100){images/ps_code2.png}
+<figure>
+ <img src="images/ps_code2.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
-~~fig(100){images/ps_code3.png}
+<figure>
+ <img src="images/ps_code3.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 - Pseudocode is a way to write out the steps of an algorithm in a way that is understandable to humans.
 - Pseudo = fake

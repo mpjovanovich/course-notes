@@ -3,7 +3,7 @@ title: Variables and Constants
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Variables](#variables)
 - [Constants](#constants)
@@ -13,7 +13,9 @@ course: SDEV120
 
 /~
 
-~~fig{https://imgs.xkcd.com/comics/code_quality_3.png}
+<figure>
+  <img src="https://imgs.xkcd.com/comics/code_quality_3.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 # Variables
 

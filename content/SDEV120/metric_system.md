@@ -3,7 +3,7 @@ title: The Metric System for Computing
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Metric Prefixes](#metric-prefixes)
   - [Decimal Chart](#decimal-chart)
@@ -291,7 +291,9 @@ Manufacturers often use imperial units for physical hardware sizes, but the metr
 
 ### Extreme Scales
 
-~~fig{https://www.researchgate.net/profile/Tales-Pimenta/publication/221913555/figure/fig1/AS:671528278581250@1537116226210/Physical-structure-of-an-nMOS-transistor.png}
+<figure>
+  <img src="https://www.researchgate.net/profile/Tales-Pimenta/publication/221913555/figure/fig1/AS:671528278581250@1537116226210/Physical-structure-of-an-nMOS-transistor.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 Processor architectures are often discussed at the nanoscale, because we are manipulating atoms and subatomic particles (electrons).
 

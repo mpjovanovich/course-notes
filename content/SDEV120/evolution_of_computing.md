@@ -3,7 +3,7 @@ title: Evolution of Computing
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Evolution of Computing](#evolution-of-computing)
   - [Early Computing](#early-computing)

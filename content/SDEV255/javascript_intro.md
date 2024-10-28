@@ -27,7 +27,9 @@ course: SDEV255
     - [Foreach](#foreach)
   - [Functions](#functions)
 
-~~fig(40){images/javascript_rotten_child.png}
+<figure>
+ <img src="images/javascript_rotten_child.png" alt="" style="width: 40%;height: auto;">
+</figure>
 
 ## Developer Tools and the Console
 
@@ -73,7 +75,9 @@ Whoa!
 
 ## Semicolons
 
-~~fig(40){https://www.thecoderpedia.com/wp-content/uploads/2020/06/Programming-Memes-Java-Jokes-768x935.jpg}
+<figure>
+ <img src="https://www.thecoderpedia.com/wp-content/uploads/2020/06/Programming-Memes-Java-Jokes-768x935.jpg" alt="" style="width: 40%;height: auto;">
+</figure>
 
 Javascript is a semicolon-terminated language. They are required after every statement.
 

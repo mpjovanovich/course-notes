@@ -27,7 +27,9 @@ Recall that in HTML we have a Document Object Model (DOM) tree.
 
 The jsx above would render a tree like this:
 
-~~fig(75){https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Frender_tree.dark.png&w=640&q=75}
+<figure>
+ <img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Frender_tree.dark.png&w=640&q=75" alt="" style="width: 75%;height: auto;">
+</figure>
 
 React native uses the operating system's native rendering engine to render the user interface.
 

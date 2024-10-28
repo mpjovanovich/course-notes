@@ -5,7 +5,9 @@ course: SDEV153
 
 # Functions
 
-~~fig(80){https://web.dev/static/learn/css/functions/image/a-diagram-a-function-de-e40ae94dbccc1.svg}
+<figure>
+ <img src="https://web.dev/static/learn/css/functions/image/a-diagram-a-function-de-e40ae94dbccc1.svg" alt="" style="width: 80%;height: auto;">
+</figure>
 
 - CSS has built-in functions that can be used to manipulate values.
 

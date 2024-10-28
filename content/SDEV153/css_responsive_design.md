@@ -203,8 +203,12 @@ Use browser developer tools to test responsive design.
 
 - "Responsive Design Mode" in Firefox.
 
-~~fig(60){./images/dev_tools_responsive_design_firefox.png}
+<figure>
+ <img src="./images/dev_tools_responsive_design_firefox.png" alt="" style="width: 60%;height: auto;">
+</figure>
 
 - "Device Toolbar" in Chrome.
 
-~~fig(60){./images/dev_tools_responsive_design_chrome.png}
+<figure>
+ <img src="./images/dev_tools_responsive_design_chrome.png" alt="" style="width: 60%;height: auto;">
+</figure>

@@ -2,6 +2,12 @@
 title: Coding Punctuation
 ---
 
+~.toc
+
+- [Coding Punctuation](#coding-punctuation)
+
+/~
+
 # Coding Punctuation
 
 Below are some symbols that are commonly used in coding.

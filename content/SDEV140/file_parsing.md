@@ -3,6 +3,8 @@ title: File Parsing
 course: SDEV140
 ---
 
+~.toc
+
 - [File Parsing](#file-parsing)
   - [Validating Data](#validating-data)
   - [Cleaning Data](#cleaning-data)
@@ -10,6 +12,8 @@ course: SDEV140
     - [Scenario](#scenario)
     - [Useful Functions](#useful-functions)
   - [Third Party Libraries](#third-party-libraries)
+
+/~
 
 # File Parsing
 

@@ -2,6 +2,14 @@
 title: Git Resources
 ---
 
+~.toc
+
+- [Git Resources](#git-resources)
+  - [Official Git Resources](#official-git-resources)
+- [Videos](#videos)
+
+/~
+
 # Git Resources
 
 ## Official Git Resources

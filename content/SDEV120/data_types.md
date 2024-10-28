@@ -3,7 +3,7 @@ title: Data Types
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Data Types](#data-types)
   - [Checking Data Type in Python](#checking-data-type-in-python)

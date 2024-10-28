@@ -3,7 +3,7 @@ title: Logic Gates
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Logic Gates](#logic-gates)
   - [Foundations](#foundations)
@@ -27,7 +27,9 @@ For an excellent logic gate sandbox, see: [Logic.ly](https://logic.ly/demo).
 
 ## Foundations
 
-~~fig(30){https://www.electronicshub.org/wp-content/uploads/2019/03/Analog-Circuits-and-Digital-Circuits-Digital-Signals.jpg}
+<figure>
+ <img src="https://www.electronicshub.org/wp-content/uploads/2019/03/Analog-Circuits-and-Digital-Circuits-Digital-Signals.jpg" alt="" style="width: 30%;height: auto;">
+</figure>
 
 - Computers recognize only two states, based on the presence or absence of an electrical signal.
 
@@ -46,7 +48,9 @@ The truth table for each gate matches the truth table for the corresponding logi
 
 Logic.ly
 
-~~fig{images/basic_logic_gates.png}
+<figure>
+  <img src="images/basic_logic_gates.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 ## Circuits
 
@@ -65,7 +69,9 @@ A **magnitude comparator** is a type of combinational circuit that compares two 
 
 #### One bit magnitude comparator:
 
-~~fig{images/one_bit_magnitude_comparator.png}
+<figure>
+  <img src="images/one_bit_magnitude_comparator.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 [One Bit Magnitude Comparator - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/one_bit_magnitude_comparer.logicly)
 
@@ -181,7 +187,9 @@ In digital circuits, we need to be precise about when information is updated.
 
 #### The Clock
 
-~~fig{https://www.cyberphysics.co.uk/graphics/diagrams/electronics/clockPulse.png}
+<figure>
+  <img src="https://www.cyberphysics.co.uk/graphics/diagrams/electronics/clockPulse.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 The **clock** is a special signal that is used to synchronize the operations of a computer. For now, we just need to know:
 

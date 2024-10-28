@@ -5,6 +5,7 @@ import prettier from "prettier";
 import { parseDotmark } from "@mpjovanovich/dotmark";
 
 type Frontmatter = { [key: string]: string };
+const COURSE_ROOT_URL = "https://mpjovanovich.github.io/course-notes/";
 
 async function compileMarkdownToHtml(
   markdownFilePath: string,
@@ -51,15 +52,18 @@ function extractFrontmatter(markdown: string): {
 }
 
 function getSiteHtml(html: string, frontmatter?: Frontmatter): string {
-  let title = "Notes";
+  let title = "";
   let breadcrumbText = "";
   if (frontmatter?.course) {
-    title = frontmatter.course;
-    breadcrumbText = `<a href="https://mpjovanovich.github.io/course-notes/${frontmatter.course}/index.html">${frontmatter.course}</a>`;
+    title = frontmatter.course + ": ";
+    breadcrumbText = `<a href="${COURSE_ROOT_URL}${frontmatter.course}/index.html">${frontmatter.course}</a>`;
   }
   if (frontmatter?.title) {
-    title += ": " + frontmatter.title;
-    breadcrumbText += `:&nbsp;<a href="">${frontmatter.title}</a>`;
+    title += frontmatter.title;
+    if (breadcrumbText) {
+      breadcrumbText += ": ";
+    }
+    breadcrumbText += `<a href="">${frontmatter.title}</a>`;
   }
 
   html = `
@@ -73,13 +77,13 @@ function getSiteHtml(html: string, frontmatter?: Frontmatter): string {
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-32x32.png"
+            href="${COURSE_ROOT_URL}assets/images/favicon-32x32.png"
         >
         <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-16x16.png"
+            href="${COURSE_ROOT_URL}assets/images/favicon-16x16.png"
         >
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,8 +95,8 @@ function getSiteHtml(html: string, frontmatter?: Frontmatter): string {
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
             rel="stylesheet"
         >
-        <link rel="stylesheet" href="https://mpjovanovich.github.io/course-notes/assets/css/styles.css">
-        <link rel="stylesheet" href="https://mpjovanovich.github.io/course-notes/assets/css/highlight.css">
+        <link rel="stylesheet" href="${COURSE_ROOT_URL}assets/css/styles.css">
+        <link rel="stylesheet" href="${COURSE_ROOT_URL}assets/css/highlight.css">
     </head>
     <body>
         ${frontmatter?.showBreadcrumb !== "false" ? `<h1 class="breadcrumb">${breadcrumbText}</h1>` : ""}

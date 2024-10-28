@@ -2,7 +2,7 @@
 title: Common Resources
 ---
 
-~.schedule
+~.toc
 
 - [Coding Punctuation](#coding-punctuation)
 - [Command Line (Bash)](#command-line-bash)

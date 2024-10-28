@@ -92,7 +92,9 @@ From outermost to innermost:
 
 Margin > Border > Padding > Content
 
-~~fig(80){https://www.simplilearn.com/ice9/free_resources_article_thumb/CSS-Box-Model.png}
+<figure>
+ <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/CSS-Box-Model.png" alt="" style="width: 80%;height: auto;">
+</figure>
 
 ## Relevant Styles
 

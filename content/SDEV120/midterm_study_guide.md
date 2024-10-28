@@ -3,6 +3,33 @@ title: Midterm Study Guide
 course: SDEV120
 ---
 
+~.toc
+
+- [Midterm Study Guide](#midterm-study-guide)
+  - [Not Covered](#not-covered)
+  - [Covered](#covered)
+    - [M01](#m01)
+      - [Algorithms](#algorithms)
+      - [Pseudocode](#pseudocode)
+      - [Flowcharts](#flowcharts)
+    - [M02](#m02)
+      - [Terms](#terms)
+      - [Logical operators](#logical-operators)
+      - [Truth tables](#truth-tables)
+      - [Misc](#misc)
+    - [M03](#m03)
+    - [M05](#m05)
+      - [Terms](#terms-1)
+      - [Trees](#trees)
+      - [Abstract Syntax Trees](#abstract-syntax-trees)
+      - [Algebraic Functions](#algebraic-functions)
+    - [M06](#m06)
+      - [SDLC](#sdlc)
+      - [UML](#uml)
+  - [Final Notes](#final-notes)
+
+/~
+
 # Midterm Study Guide
 
 ## Not Covered

@@ -3,7 +3,7 @@ title: Solving Problems with Truth Tables
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Solving Problems with Truth Tables](#solving-problems-with-truth-tables)
   - [The General Process](#the-general-process)

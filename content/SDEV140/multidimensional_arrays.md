@@ -3,12 +3,16 @@ title: Multidimensional Arrays
 course: SDEV140
 ---
 
+~.toc
+
 - [Multidimensional Arrays](#multidimensional-arrays)
   - [When to Use Multidimensional Arrays](#when-to-use-multidimensional-arrays)
   - [Python - Lists of Lists](#python---lists-of-lists)
   - [Accessing Values](#accessing-values)
   - [Modifying Values](#modifying-values)
   - [Practical Example - Tic Tac Toe](#practical-example---tic-tac-toe)
+
+/~
 
 # Multidimensional Arrays
 

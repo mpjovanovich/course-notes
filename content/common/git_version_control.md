@@ -2,7 +2,7 @@
 title: Version Control via Git
 ---
 
-~.schedule
+~.toc
 
 - [Source Control / Version Control](#source-control--version-control)
   - [Distributed Version Control](#distributed-version-control)
@@ -334,7 +334,9 @@ You can always start a new one.
 
 <!-- ## VS Code
 
-~~fig(20){https://cdn.thenewstack.io/media/2021/10/4f0ac3e0-visual_studio_code.png}
+<figure>
+ <img src="https://cdn.thenewstack.io/media/2021/10/4f0ac3e0-visual_studio_code.png" alt="" style="width: 20%;height: auto;">
+</figure>
 
 ### VS Code Terminal
 

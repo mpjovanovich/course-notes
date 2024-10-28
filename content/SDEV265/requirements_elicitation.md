@@ -14,7 +14,9 @@ course: SDEV265
 
 # Requirements Elicitation
 
-~~fig(70){images/4.6_requirements_spiral.jpg}
+<figure>
+ <img src="images/4.6_requirements_spiral.jpg" alt="" style="width: 70%;height: auto;">
+</figure>
 
 Below processes are iterative and interleaved.
 

@@ -3,7 +3,7 @@ title: UML
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Unified Modeling Language (UML)](#unified-modeling-language-uml)
   - [Background](#background)
@@ -32,7 +32,9 @@ course: SDEV120
 
 /~
 
-~~fig(80){images/uml_guys.png}
+<figure>
+ <img src="images/uml_guys.png" alt="" style="width: 80%;height: auto;">
+</figure>
 
 # Unified Modeling Language (UML)
 
@@ -77,11 +79,15 @@ Different domains use some more than others.
 
 ## Diagram Types
 
-~~fig(70){https://drawio-app.com/wp-content/uploads/2018/10/UMLdiagrams.png}
+<figure>
+ <img src="https://drawio-app.com/wp-content/uploads/2018/10/UMLdiagrams.png" alt="" style="width: 70%;height: auto;">
+</figure>
 
 ### Use Case Diagram
 
-~~fig(70){https://cdn-images.visual-paradigm.com/guide/uml/what-is-use-case-diagram/02-use-case-diagram-annotated.png}
+<figure>
+ <img src="https://cdn-images.visual-paradigm.com/guide/uml/what-is-use-case-diagram/02-use-case-diagram-annotated.png" alt="" style="width: 70%;height: auto;">
+</figure>
 
 #### Description
 
@@ -100,7 +106,9 @@ Different domains use some more than others.
 
 ### Class Diagram
 
-~~fig(70){https://drawio-app.com/wp-content/uploads/2018/01/Class-Diagram-Habit-Tracker-app.png}
+<figure>
+ <img src="https://drawio-app.com/wp-content/uploads/2018/01/Class-Diagram-Habit-Tracker-app.png" alt="" style="width: 70%;height: auto;">
+</figure>
 
 #### Description
 
@@ -143,7 +151,9 @@ Different domains use some more than others.
 
 ### Sequence Diagram
 
-~~fig(70){https://drawio-app.com/wp-content/uploads/2018/02/drawio-sequence-checkin.png}
+<figure>
+ <img src="https://drawio-app.com/wp-content/uploads/2018/02/drawio-sequence-checkin.png" alt="" style="width: 70%;height: auto;">
+</figure>
 
 #### Description
 
@@ -162,7 +172,9 @@ What has to happen before another thing happens? Who is involved?
 
 ### State Diagram
 
-~~fig(70){https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Turnstile_state_machine_colored.svg/1185px-Turnstile_state_machine_colored.svg.png}
+<figure>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Turnstile_state_machine_colored.svg/1185px-Turnstile_state_machine_colored.svg.png" alt="" style="width: 70%;height: auto;">
+</figure>
 
 #### Description
 
@@ -181,7 +193,9 @@ State diagram for a light with two switches - one at each end of a hallway.
 
 ### Activity Diagram
 
-~~fig(100){https://cdn-images.visual-paradigm.com/guide/uml/what-is-activity-diagram/04-activity-diagram-example-process-order.png}
+<figure>
+ <img src="https://cdn-images.visual-paradigm.com/guide/uml/what-is-activity-diagram/04-activity-diagram-example-process-order.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 #### Description
 
@@ -199,7 +213,9 @@ State diagram for a light with two switches - one at each end of a hallway.
 
 #### Swimlane Diagram
 
-~~fig(60){https://img.officetimeline.com/website/Content/website/swimlane-diagram/swimlane-process-map-example.svg}
+<figure>
+ <img src="https://img.officetimeline.com/website/Content/website/swimlane-diagram/swimlane-process-map-example.svg" alt="" style="width: 60%;height: auto;">
+</figure>
 
 - Like an activity diagram... with swimlanes.
 - Swimlanes show boundaries between actors / roles in system.

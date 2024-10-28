@@ -3,7 +3,7 @@ title: Intro to Computer Numbering Systems
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Intro to Computer Numbering Systems](#intro-to-computer-numbering-systems)
   - [Everyday Numbering Systems](#everyday-numbering-systems)
@@ -90,6 +90,8 @@ Hexadecimal (hex) offers a nice, compact way to represent binary numbers.
 
 Using four bits to represent hex digits: [logic.ly](https://logic.ly/demo/)
 
-~~fig{images/hex_bit_switch.png}
+<figure>
+  <img src="images/hex_bit_switch.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 /~

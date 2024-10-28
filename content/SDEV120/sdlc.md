@@ -3,7 +3,7 @@ title: SDLC
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Software Development Life Cycle (SDLC)](#software-development-life-cycle-sdlc)
   - [Trends](#trends)
@@ -22,7 +22,9 @@ course: SDEV120
 
 # Software Development Life Cycle (SDLC)
 
-~~fig(80){images/software_practices_venn.png}
+<figure>
+ <img src="images/software_practices_venn.png" alt="" style="width: 80%;height: auto;">
+</figure>
 
 Most software development processes are a mix of established practices.
 
@@ -32,7 +34,9 @@ Which proccess is best depends on the project.
 
 ## Trends
 
-~~fig(60){images/2022_methodologies_stats.png}
+<figure>
+ <img src="images/2022_methodologies_stats.png" alt="" style="width: 60%;height: auto;">
+</figure>
 
 _Caution advised - good stats are hard to come by._
 
@@ -42,7 +46,9 @@ _Caution advised - good stats are hard to come by._
 
 Focuses on planning and documentation.
 
-~~fig{https://symphony-software.com/wp-content/uploads/2022/02/SDLC-waterfall-model-1.png}
+<figure>
+  <img src="https://symphony-software.com/wp-content/uploads/2022/02/SDLC-waterfall-model-1.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 #### Summary
 
@@ -86,7 +92,9 @@ Focuses on planning and documentation.
 
 Focuses on development in short cycles and flexibility.
 
-~~fig{https://bitbytesoft.com/wp-content/uploads/2022/01/Agile-software-Development-Life-Cycle-1-1024x356.jpg}
+<figure>
+  <img src="https://bitbytesoft.com/wp-content/uploads/2022/01/Agile-software-Development-Life-Cycle-1-1024x356.jpg" alt="" style="width: 100%;height: auto;">
+</figure>
 
 #### Summary
 
@@ -133,7 +141,9 @@ Others:
 
 Extends on iterative development by focusing on rapid feedback loops and continuous integration and deployment.
 
-~~fig{https://browserstack.wpenginepowered.com/wp-content/uploads/2023/02/DevOps-Lifecycle.jpg}
+<figure>
+  <img src="https://browserstack.wpenginepowered.com/wp-content/uploads/2023/02/DevOps-Lifecycle.jpg" alt="" style="width: 100%;height: auto;">
+</figure>
 
 #### Summary
 

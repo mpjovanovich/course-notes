@@ -3,7 +3,7 @@ title: Syntax and Expressions
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Syntax and Expressions](#syntax-and-expressions)
   - [Syntax](#syntax)

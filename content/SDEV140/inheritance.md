@@ -3,12 +3,16 @@ title: Inheritance
 course: SDEV140
 ---
 
+~.toc
+
 - [Inheritance](#inheritance)
   - [Base Class](#base-class)
   - [Derived Class](#derived-class)
   - [Why use a Derived Class?](#why-use-a-derived-class)
   - [Why use Inheritance?](#why-use-inheritance)
   - [Inheritance Example](#inheritance-example)
+
+/~
 
 # Inheritance
 

@@ -7,7 +7,7 @@ title: Overview of AI
 
 <iframe class="center" width="560" height="315" src="https://www.youtube.com/embed/qTmPrVhdtks?si=8Z9CK1dP1vPdgcQv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-~.schedule
+~.toc
 
 - [Artificial Intelligence](#artificial-intelligence)
   - [Types of AI](#types-of-ai)
@@ -68,7 +68,9 @@ Simulate human intelligence...
   - _No active learning by machine_.
   - _Rely upon predefined rules_.
 
-~~fig(60){https://static.javatpoint.com/tutorial/ai/images/expert-systems-in-ai.png}
+<figure>
+ <img src="https://static.javatpoint.com/tutorial/ai/images/expert-systems-in-ai.png" alt="" style="width: 60%;height: auto;">
+</figure>
 
 - **_Frequent firing of a neuron strengthens the synapse between connected neurons._**
   - Synaptic distance decreases; "tighter" connection along circuit.
@@ -89,7 +91,9 @@ Simulate human intelligence...
   - Linear functions - where output groupings (true or false) can be separated by a line.
   - E.g. AND - yes; XOR - no
 
-~~fig(90){https://static.packt-cdn.com/products/9781788299879/graphics/2271a103-bcc0-4ea0-acca-0eb3e3c99fbd.png}
+<figure>
+ <img src="https://static.packt-cdn.com/products/9781788299879/graphics/2271a103-bcc0-4ea0-acca-0eb3e3c99fbd.png" alt="" style="width: 90%;height: auto;">
+</figure>
 
 ### Potential Entrants to AI
 

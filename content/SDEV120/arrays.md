@@ -3,7 +3,7 @@ title: Flowcharts
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Arrays](#arrays)
   - [Definitions](#definitions)

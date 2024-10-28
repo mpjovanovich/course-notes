@@ -2,7 +2,7 @@
 title: Installing Git
 ---
 
-~.schedule
+~.toc
 
 - [Windows](#windows)
 - [Mac](#mac)

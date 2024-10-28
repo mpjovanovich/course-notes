@@ -3,7 +3,7 @@ title: Abstract Syntax Trees
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Tree Structures](#tree-structures)
   - [Tree Terminology](#tree-terminology)

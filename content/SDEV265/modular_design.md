@@ -145,11 +145,15 @@ These subproblems can inform the design of modules and components.
 
 **Draw a House**
 
-~~fig(100){https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVobh4pk3683ngLad6LwokRt7rOCFVO96phfT6GfbDvjq8DR6ncdroBkbUYWEMrCibIoY&usqp=CAU}
+<figure>
+ <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVobh4pk3683ngLad6LwokRt7rOCFVO96phfT6GfbDvjq8DR6ncdroBkbUYWEMrCibIoY&usqp=CAU" alt="" style="width: 100%;height: auto;">
+</figure>
 
 Reference:
 
-~~fig(80){https://cis.temple.edu/~wangp/1057-PC/Figure/03-10.png}
+<figure>
+ <img src="https://cis.temple.edu/~wangp/1057-PC/Figure/03-10.png" alt="" style="width: 80%;height: auto;">
+</figure>
 
 Our problem:
 

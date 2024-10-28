@@ -2,6 +2,17 @@
 title: Installing Python
 ---
 
+~.toc
+
+- [Install Python](#install-python)
+  - [Windows](#windows)
+  - [Mac and Linux](#mac-and-linux)
+- [Check if it Works](#check-if-it-works)
+  - [Windows](#windows-1)
+  - [Mac and Linux](#mac-and-linux-1)
+
+/~
+
 # Install Python
 
 ## Windows

@@ -4,31 +4,34 @@ course: SDEV120
 showBreadcrumb: false
 ---
 
-# SDEV120: Announcements
+# SDEV120
+
+## Announcements
 
 - Lecture recordings starting today. Review how to access them.
 - Schedule your exams today - both midterm and final.
 
-# Schedule
+## Schedule
 
-~.schedule
+~.toc
 
-- [SDEV120: Announcements](#sdev120-announcements)
-- [Schedule](#schedule)
-- [Common Resources](#common-resources)
-- [M00: Orientation](#m00-orientation)
-- [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
+- [SDEV120](#sdev120)
+  - [Announcements](#announcements)
+  - [Schedule](#schedule)
+  - [Common Resources](#common-resources)
+  - [M00: Orientation](#m00-orientation)
+  - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
   - [M04: Intro to Programming](#m04-intro-to-programming)
 
 /~
 
-# Common Resources
+## Common Resources
 
 Here you will find resources for installing course software and supporting resources for course technologies and content:
 
 **[Common Resources](../common/index.html)**
 
-# M00: Orientation
+## M00: Orientation
 
 [Demo: The Least Helpful Chatbot Ever](https://github.com/mpjovanovich/openai_playground/blob/main/custom_chatbot.py)
 
@@ -51,7 +54,7 @@ Setting up your Coding Environment
 
 - [Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV120)
 
-# M01: Algorithms and Structured Programming
+## M01: Algorithms and Structured Programming
 
 [Algorithms and Structured Programming](algorithms.html)
 

@@ -14,7 +14,9 @@ course: SDEV264
 
 # React Native Orientation
 
-~~fig(60){https://reactnative.dev/img/header_logo.svg}
+<figure>
+ <img src="https://reactnative.dev/img/header_logo.svg" alt="" style="width: 60%;height: auto;">
+</figure>
 
 [React Native Official Website](https://reactnative.dev/)
 
@@ -33,14 +35,18 @@ course: SDEV264
 
 ## Native Development: Android
 
-~~fig(20){https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Android_logo_2019.png/599px-Android_logo_2019.png?20190822201450}
+<figure>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Android_logo_2019.png/599px-Android_logo_2019.png?20190822201450" alt="" style="width: 20%;height: auto;">
+</figure>
 
 - Language = **Java** (older) or **Kotlin** (newer)
 - IDE = **Android Studio**
 
 ## Native Development: iOS
 
-~~fig(15){https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/IOS_logo.svg/1024px-IOS_logo.svg.png}
+<figure>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/IOS_logo.svg/1024px-IOS_logo.svg.png" alt="" style="width: 15%;height: auto;">
+</figure>
 
 - Language = **Objective-C** (older) or **Swift** (newer)
 - IDE = **Xcode**

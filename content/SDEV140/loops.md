@@ -3,6 +3,8 @@ title: Loops
 course: SDEV140
 ---
 
+~.toc
+
 - [Loops](#loops)
   - [Why Loops?](#why-loops)
   - [Pseudocode](#pseudocode)
@@ -19,11 +21,15 @@ course: SDEV140
   - [Break](#break)
   - [Continue](#continue)
 
+/~
+
 # Loops
 
 ## Why Loops?
 
-~~fig(70){https://timmousk.com/wp-content/uploads/2022/03/2-6.jpg}
+<figure>
+ <img src="https://timmousk.com/wp-content/uploads/2022/03/2-6.jpg" alt="" style="width: 70%;height: auto;">
+</figure>
 
 - Loops are commonly used to:
   - repeat a block of code

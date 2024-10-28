@@ -3,7 +3,7 @@ title: Algorithms
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Algorithms](#algorithms)
   - [What is an Algorithm?](#what-is-an-algorithm)
@@ -29,7 +29,9 @@ course: SDEV120
 
 # Algorithms
 
-~~fig(60){https://imgs.xkcd.com/comics/linear_regression_2x.png}
+<figure>
+ <img src="https://imgs.xkcd.com/comics/linear_regression_2x.png" alt="" style="width: 60%;height: auto;">
+</figure>
 
 ## What is an Algorithm?
 
@@ -95,7 +97,9 @@ As we move through the applications below, let's think about the "humanlike" and
 
 ### Sorting
 
-~~fig(bubble sort){https://miro.medium.com/v2/1*-qR66X2iwdcjhaqq10y9JQ.gif}
+<figure>
+  <img src="https://miro.medium.com/v2/1*-qR66X2iwdcjhaqq10y9JQ.gif" alt="" style="width: 100%;height: auto;">
+</figure>
 
 "How do we arrange a set of items in a specific order?"
 
@@ -106,7 +110,9 @@ As we move through the applications below, let's think about the "humanlike" and
 
 ### Searching
 
-~~fig(60){https://miro.medium.com/v2/resize:fit:786/format:webp/1*GT9oSo0agIeIj6nTg3jFEA.gif}
+<figure>
+ <img src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*GT9oSo0agIeIj6nTg3jFEA.gif" alt="" style="width: 60%;height: auto;">
+</figure>
 
 "How do we find a specific piece of information?"
 
@@ -133,7 +139,9 @@ As we move through the applications below, let's think about the "humanlike" and
 
 ### Pathfinding
 
-~~fig(60){https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif}
+<figure>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif" alt="" style="width: 60%;height: auto;">
+</figure>
 
 "How do we find the optimal path between two points?"
 
@@ -141,7 +149,9 @@ As we move through the applications below, let's think about the "humanlike" and
 
 ### Flocking
 
-~~fig{https://repository-images.githubusercontent.com/258305543/28971980-92d2-11ea-8a66-4d0d91c0e790}
+<figure>
+  <img src="https://repository-images.githubusercontent.com/258305543/28971980-92d2-11ea-8a66-4d0d91c0e790" alt="" style="width: 100%;height: auto;">
+</figure>
 
 "How do we simulate flock behavior?"
 
@@ -149,9 +159,13 @@ As we move through the applications below, let's think about the "humanlike" and
 
 ### Network Analysis / Search Ranking
 
-~~fig{https://miro.medium.com/v2/resize:fit:720/format:webp/0*311Gn2vCqFYpPfi0}
+<figure>
+  <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*311Gn2vCqFYpPfi0" alt="" style="width: 100%;height: auto;">
+</figure>
 
-~~fig{https://miro.medium.com/v2/1*j-WoG309GW2UHI9gN3uJeg.gif}
+<figure>
+  <img src="https://miro.medium.com/v2/1*j-WoG309GW2UHI9gN3uJeg.gif" alt="" style="width: 100%;height: auto;">
+</figure>
 
 - "How do we model the spread of a virus?"
 - "How do we match text from an Internet search to relevant results?"
@@ -159,7 +173,9 @@ As we move through the applications below, let's think about the "humanlike" and
 
 ### Classification
 
-~~fig(60){https://miro.medium.com/v2/resize:fit:720/format:webp/1*bhFifratH9DjKqMBTeQG5A.gif}
+<figure>
+ <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*bhFifratH9DjKqMBTeQG5A.gif" alt="" style="width: 60%;height: auto;">
+</figure>
 
 "How do we categorize items from a set of data?"
 

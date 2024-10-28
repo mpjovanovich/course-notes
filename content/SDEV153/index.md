@@ -10,7 +10,9 @@ course: SDEV153
 
 # Announcements
 
-~~fig(50){https://i.kym-cdn.com/entries/icons/original/000/000/554/picard-facepalm.jpg}
+<figure>
+ <img src="https://i.kym-cdn.com/entries/icons/original/000/000/554/picard-facepalm.jpg" alt="" style="width: 50%;height: auto;">
+</figure>
 
 - Review: Final Project Sign Off Assignment
   - Make sure you're on the schedule.

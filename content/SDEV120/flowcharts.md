@@ -3,9 +3,7 @@ title: Flowcharts
 course: SDEV120
 ---
 
-~~fig{https://imgs.xkcd.com/comics/flow_charts.png}
-
-~.schedule
+~.toc
 
 - [Flowcharts](#flowcharts)
   - [Flowchart Symbols](#flowchart-symbols)
@@ -21,6 +19,10 @@ course: SDEV120
 
 # Flowcharts
 
+<figure>
+  <img src="https://imgs.xkcd.com/comics/flow_charts.png" alt="" style="width: 100%;height: auto;">
+</figure>
+
 A flowchart is a visual representation of a process.
 
 Flowchart symbols are standardized, the way the text is written is not.
@@ -29,21 +31,27 @@ Flowchart symbols are standardized, the way the text is written is not.
 
 ### Terminator
 
-~~fig(60){https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-01.svg}
+<figure>
+ <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-01.svg" alt="" style="width: 60%;height: auto;">
+</figure>
 
 - Oval or rounded rectangle.
 - Indicates the start or end of a process.
 
 ### Flow Arrow
 
-~~fig(60){https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-06.svg}
+<figure>
+ <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-06.svg" alt="" style="width: 60%;height: auto;">
+</figure>
 
 - Arrow connecting two symbols.
 - Indicates the flow of the process.
 
 ### Process
 
-~~fig(60){https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-02.svg}
+<figure>
+ <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-02.svg" alt="" style="width: 60%;height: auto;">
+</figure>
 
 - Rectangle.
 - Represents a process, action, or operation.
@@ -59,7 +67,9 @@ Flowchart symbols are standardized, the way the text is written is not.
 
 ### Decision
 
-~~fig(60){https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-11.svg}
+<figure>
+ <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-11.svg" alt="" style="width: 60%;height: auto;">
+</figure>
 
 - Represents a decision point.
 - Branches to different parts of the flowchart based on a condition.
@@ -74,7 +84,9 @@ Flowchart symbols are standardized, the way the text is written is not.
 
 ### Input / Output
 
-~~fig(60){https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-04.svg}
+<figure>
+ <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-04.svg" alt="" style="width: 60%;height: auto;">
+</figure>
 
 - Represents input or output.
 - May have arrow pointing to or from the symbol.
@@ -97,7 +109,9 @@ _Output Example:_
 
 ### Data Store
 
-~~fig(60){https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-05.svg}
+<figure>
+ <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-05.svg" alt="" style="width: 60%;height: auto;">
+</figure>
 
 - Cylinder
 - Represents a data store

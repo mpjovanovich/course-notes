@@ -3,6 +3,8 @@ title: Functions and Modularity
 course: SDEV120
 ---
 
+~.toc
+
 - [Functions](#functions)
   - [Overview: Why Functions?](#overview-why-functions)
     - [Code Reuse](#code-reuse)
@@ -25,6 +27,8 @@ course: SDEV120
   - [The Call Stack](#the-call-stack)
     - [Stack Data Structure](#stack-data-structure)
     - [Stack Frames](#stack-frames)
+
+/~
 
 # Functions
 

@@ -32,7 +32,9 @@ A **web application** is a program that:
 
 ## The Client-Server Model
 
-~~fig(20){https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1200px-Client-server-model.svg.png}
+<figure>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1200px-Client-server-model.svg.png" alt="" style="width: 20%;height: auto;">
+</figure>
 
 - JavaScript is (clasically) a **client-side** programming language.
 - Client side code runs in the browser.

@@ -3,7 +3,7 @@ title: Text Data Types
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Text Data Types](#text-data-types)
   - [Characters](#characters)

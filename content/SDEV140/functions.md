@@ -3,6 +3,8 @@ title: Functions and Modularity
 course: SDEV140
 ---
 
+~.toc
+
 - [Functions](#functions)
   - [Overview: Why Functions?](#overview-why-functions)
     - [Code Reuse](#code-reuse)
@@ -22,6 +24,8 @@ course: SDEV140
   - [Default Parameters](#default-parameters)
   - [Type Annotations](#type-annotations)
   - [The `main` Function](#the-main-function)
+
+/~
 
 # Functions
 

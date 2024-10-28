@@ -3,7 +3,7 @@ title: Decision Trees
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Decision Trees](#decision-trees)
   - [Walkthrough](#walkthrough)
@@ -22,7 +22,9 @@ A decision tree is a flowchart-like structure in which...
 
 ~.focusContent.exercise
 
-~~fig{https://upload.wikimedia.org/wikipedia/commons/e/eb/Decision_Tree.jpg}
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Decision_Tree.jpg" alt="" style="width: 100%;height: auto;">
+</figure>
 
 https://en.wikipedia.org/wiki/Decision_tree_learning#/media/File:Decision_Tree.jpg
 

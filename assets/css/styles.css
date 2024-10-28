@@ -108,7 +108,8 @@ summary:before {
 }
 
 figure {
-  margin: 2rem auto;
+  /* margin: 2rem auto; */
+  margin: 2rem;
   padding: 8px;
   height: fit-content;
   width: fit-content;
@@ -287,7 +288,7 @@ h1.breadcrumb a:hover {
 
 /* This should be the table of contents. If we forget a TOC it will cause stying issues, 
 so there should always be a TOC */
-.schedule > ul {
+.toc > ul {
   border: 2px solid #ddd;
   margin: 0;
   font-size: 1rem;

@@ -1,3 +1,31 @@
+---
+title: Git Basics Lab
+course: SDEV140
+---
+
+~.toc
+
+- [Lab: Git Basics](#lab-git-basics)
+  - [1. Create a New Repository](#1-create-a-new-repository)
+  - [2. Create a New File Locally](#2-create-a-new-file-locally)
+  - [3. Add a File via GitHub UI](#3-add-a-file-via-github-ui)
+  - [4. Clone the Repository](#4-clone-the-repository)
+  - [5. Check Status](#5-check-status)
+  - [6. Modify Existing File](#6-modify-existing-file)
+  - [7. Check Status](#7-check-status)
+  - [8. Create a New File](#8-create-a-new-file)
+  - [9. Check Status](#9-check-status)
+  - [10. Stage the Modified File](#10-stage-the-modified-file)
+  - [11. Stage the New File](#11-stage-the-new-file)
+  - [12. Check Status](#12-check-status)
+  - [13. Commit the Changes](#13-commit-the-changes)
+  - [14. Check Status](#14-check-status)
+  - [15. Push to Remote](#15-push-to-remote)
+  - [Side note: credentials](#side-note-credentials)
+  - [Submission](#submission)
+
+/~
+
 # Lab: Git Basics
 
 This assignment will guide you through the basic operations of Git and GitHub. Follow these steps carefully to complete the assignment.

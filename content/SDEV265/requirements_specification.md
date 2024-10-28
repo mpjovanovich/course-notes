@@ -79,7 +79,9 @@ Describe what the system should do. Form the basis for use cases and test cases.
 
 ## Non-Functional Requirements
 
-~~fig(90){images/4.3_non_functional_requirements.jpg}
+<figure>
+ <img src="images/4.3_non_functional_requirements.jpg" alt="" style="width: 90%;height: auto;">
+</figure>
 
 _Avoid:_
 

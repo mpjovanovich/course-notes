@@ -8,7 +8,7 @@ course: SDEV255
   - [Purpose of Sanitization](#purpose-of-sanitization)
   - [Removing Unwanted Values](#removing-unwanted-values)
     - [trim()](#trim)
-    - [strip\_tags()](#strip_tags)
+    - [strip_tags()](#strip_tags)
   - [Escaping Values](#escaping-values)
     - [Cross-Site Scripting (XSS)](#cross-site-scripting-xss)
       - [How XSS Works](#how-xss-works)
@@ -75,7 +75,9 @@ The scripts may then:
 
 1. Hacker visits a website and probes for query string vulnerabilities.
 
-~~fig(40){images/hacker.jpg}
+<figure>
+ <img src="images/hacker.jpg" alt="" style="width: 40%;height: auto;">
+</figure>
 
 2. Hacker finds query string named `q` is not sanitized.
 
@@ -85,7 +87,9 @@ The scripts may then:
 
 5. Hacker sells data on the dark web and buys yacht.
 
-~~fig(40){https://media.boatsnews.com/src/images/news/articles/ima-computer-science-screen-37738.webp}
+<figure>
+ <img src="https://media.boatsnews.com/src/images/news/articles/ima-computer-science-screen-37738.webp" alt="" style="width: 40%;height: auto;">
+</figure>
 
 #### XSS Example
 

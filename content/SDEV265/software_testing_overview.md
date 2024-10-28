@@ -24,7 +24,9 @@ Demonstrate software meets requirements. Check against functional and non-functi
 
 Find inputs that cause software to break.
 
-~~fig(80){images/8.1_defect_testing.jpg}
+<figure>
+ <img src="images/8.1_defect_testing.jpg" alt="" style="width: 80%;height: auto;">
+</figure>
 
 ## Stages of Testing
 

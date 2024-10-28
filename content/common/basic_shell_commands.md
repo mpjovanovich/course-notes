@@ -2,6 +2,8 @@
 title: Basic Shell Commands
 ---
 
+~.toc
+
 - [Terminal Emulators](#terminal-emulators)
   - [Native Shells](#native-shells)
   - [VS Code Terminal](#vs-code-terminal)
@@ -25,6 +27,8 @@ title: Basic Shell Commands
     - [Rename a File](#rename-a-file)
     - [Delete a File](#delete-a-file)
   - [What Should I Be Able to Do?](#what-should-i-be-able-to-do)
+
+/~
 
 # Terminal Emulators
 
@@ -51,7 +55,7 @@ Visual Studio Code has an integrated terminal. If you've close the terminal you 
 You can see what shell you are using on the Terminal tab:
 
 <figure>
-  <img src="images/vs_code_terminal.png" alt="VS Code Terminal" style="width: 86%;">
+  <img src="images/vs_code_terminal.png" alt="VS Code Terminal" style="width: 86%;height: auto;">
 </figure>
 
 You can change the shell in VS Code using the dropdown arrow next to the plus sign:

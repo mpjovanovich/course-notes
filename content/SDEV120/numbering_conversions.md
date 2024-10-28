@@ -3,7 +3,7 @@ title: Converting Between Bases
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Converting Between Bases](#converting-between-bases)
   - [Positional Notation](#positional-notation)

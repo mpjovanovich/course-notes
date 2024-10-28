@@ -19,7 +19,9 @@ course: SDEV255
       - [So uh... Should I Accept Cookies?](#so-uh-should-i-accept-cookies)
     - [Examples](#examples-1)
 
-~~fig(60){https://opendoorsorganizing.com/wp-content/uploads/2020/08/Portfolio-Cover-Shot-Before-3.jpg}
+<figure>
+ <img src="https://opendoorsorganizing.com/wp-content/uploads/2020/08/Portfolio-Cover-Shot-Before-3.jpg" alt="" style="width: 60%;height: auto;">
+</figure>
 
 # State Management
 

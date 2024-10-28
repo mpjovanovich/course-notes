@@ -3,7 +3,7 @@ title: Input, Output, and Comments in Python
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Code Comments](#code-comments)
 - [Output in Python](#output-in-python)
@@ -11,7 +11,9 @@ course: SDEV120
 
 /~
 
-~~fig{https://imgs.xkcd.com/comics/code_quality_2.png}
+<figure>
+  <img src="https://imgs.xkcd.com/comics/code_quality_2.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 # Code Comments
 

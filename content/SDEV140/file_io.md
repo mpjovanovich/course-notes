@@ -3,6 +3,8 @@ title: File I/O
 course: SDEV140
 ---
 
+~.toc
+
 - [File I/O](#file-io)
   - [What is a file?](#what-is-a-file)
   - [Loading a File](#loading-a-file)
@@ -15,6 +17,8 @@ course: SDEV140
     - [Whole File](#whole-file)
     - [Line by Line](#line-by-line)
   - [Writing](#writing)
+
+/~
 
 # File I/O
 

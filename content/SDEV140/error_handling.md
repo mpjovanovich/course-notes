@@ -3,6 +3,8 @@ title: Error Handling and Input Validation
 course: SDEV140
 ---
 
+~.toc
+
 - [Error Handling and Input Validation](#error-handling-and-input-validation)
   - [Exception Handling](#exception-handling)
     - [VS Code Exception Settings](#vs-code-exception-settings)
@@ -14,6 +16,8 @@ course: SDEV140
     - [Data Type Validation](#data-type-validation)
     - [Data Range Validation](#data-range-validation)
     - [Data Format Validation](#data-format-validation)
+
+/~
 
 # Error Handling and Input Validation
 

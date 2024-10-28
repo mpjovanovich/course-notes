@@ -97,12 +97,12 @@ function getSiteHtml(html: string, frontmatter?: Frontmatter): string {
   let title = "Notes";
   let breadcrumbText = "";
   if (frontmatter?.course) {
-    title = frontmatter.course;
+    title = frontmatter.course + ": ";
     breadcrumbText = `<a href="https://mpjovanovich.github.io/course-notes/${frontmatter.course}/index.html">${frontmatter.course}</a>`;
   }
   if (frontmatter?.title) {
-    title += ": " + frontmatter.title;
-    breadcrumbText += `:&nbsp;<a href="">${frontmatter.title}</a>`;
+    title += frontmatter.title;
+    breadcrumbText += `<a href="">${frontmatter.title}</a>`;
   }
 
   html = `

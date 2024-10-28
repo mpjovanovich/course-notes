@@ -3,6 +3,8 @@ title: Event Driven Programming
 course: SDEV140
 ---
 
+~.toc
+
 - [Event Driven Programming](#event-driven-programming)
   - [The Producer Consumer Pattern](#the-producer-consumer-pattern)
   - [Events](#events)
@@ -10,6 +12,8 @@ course: SDEV140
   - [GUI Development](#gui-development)
   - [JavaScript Examples](#javascript-examples)
   - [Writing an Event Loop in Python](#writing-an-event-loop-in-python)
+
+/~
 
 # Event Driven Programming
 
@@ -19,7 +23,9 @@ The **producer-consumer pattern** is used when two parts of a system need to com
 
 They communicate via a **queue** or **buffer**:
 
-~~fig(80){https://iximiuz.com/nodejs-writable-streams-distilled/kdpv.gif}
+<figure>
+ <img src="https://iximiuz.com/nodejs-writable-streams-distilled/kdpv.gif" alt="" style="width: 80%;height: auto;">
+</figure>
 
 - **Producer**: Generates data
 - **Consumer**: Consumes data

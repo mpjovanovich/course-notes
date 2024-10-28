@@ -3,7 +3,7 @@ title: Propositional Logic - Order of Operations
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Order of Operations](#order-of-operations)
   - [Arithmetic Order of Operations](#arithmetic-order-of-operations)

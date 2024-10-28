@@ -3,8 +3,12 @@ title: Polymorphism
 course: SDEV140
 ---
 
+~.toc
+
 - [Polymorphism](#polymorphism)
-  - [Usage](#usage)
+    - [Usage](#usage)
+
+/~
 
 # Polymorphism
 
@@ -23,7 +27,6 @@ interface IDatabase {
   connect(): void;
   disconnect(): void;
   execute_query(query: string): void;
-/~
 ```
 
 - Functions that use the interface:

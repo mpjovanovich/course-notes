@@ -3,7 +3,7 @@ title: Encoding Text for Computing
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Encoding Text for Computing](#encoding-text-for-computing)
   - [ASCII (American Standard Code for Information Interchange)](#ascii-american-standard-code-for-information-interchange)
@@ -31,7 +31,9 @@ course: SDEV120
 
 # Encoding Text for Computing
 
-~~fig(40){https://www.unicode.org/announcements/annc-iuc45-life-before-after.png}
+<figure>
+ <img src="https://www.unicode.org/announcements/annc-iuc45-life-before-after.png" alt="" style="width: 40%;height: auto;">
+</figure>
 
 A computer can only store numbers, so we need a way to represent text as numbers.
 

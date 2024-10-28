@@ -2,7 +2,7 @@
 title: Cengage Programming Assignments
 ---
 
-~.schedule
+~.toc
 
 - [Cengage Programming Assignments](#cengage-programming-assignments)
   - [Which Browser to Use](#which-browser-to-use)
@@ -36,7 +36,9 @@ title: Cengage Programming Assignments
 
 - After clicking the assignment link in Cengage you will see a popup window that looks like this:
 
-~~fig{images/enable_cengage_popups.png}
+<figure>
+  <img src="images/enable_cengage_popups.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 - Click the button on the top right and enable popups for this site. It's best to close and reopen the browser after doing this.
 
@@ -50,7 +52,9 @@ title: Cengage Programming Assignments
 
 - You can always get back to the files (Explorer pane) by clicking the icon on the left side toolbar.
 
-~~fig{images/vs_code_explorer.png}
+<figure>
+  <img src="images/vs_code_explorer.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 ### Running Code
 
@@ -58,27 +62,37 @@ title: Cengage Programming Assignments
 
 - Choose "Python" debugger.
 
-~~fig{images/debugging_python.png}
+<figure>
+  <img src="images/debugging_python.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 - Choose "Python File".
 
-~~fig{images/debug_python_active_file.png}
+<figure>
+  <img src="images/debug_python_active_file.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 #### Output
 
 - The output from our `input()` and `print()` functions will appear in the terminal at the bottom of the screen.
 
-~~fig{images/terminal_output.png}
+<figure>
+  <img src="images/terminal_output.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 - If you don't see the terminal, you can open it from the file menu.
 
-~~fig{images/terminal_menu.png}
+<figure>
+  <img src="images/terminal_menu.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 #### Understanding Errors
 
 VS Code offers two colors of squiggly lines to indicate errors. Both types should be fixed if you encounter them:
 
-~~fig{images/vs_code_squiggly_errors.png}
+<figure>
+  <img src="images/vs_code_squiggly_errors.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 **Red Squiggles:** Syntax errors. Often caused by typos and missing punctuation.
 
@@ -94,7 +108,9 @@ Breakpoints are very useful for new and experienced programmers alike. They allo
 
 - When you run your code, it will pause at the breakpoint.
 
-~~fig{images/vs_code_debugger_stepping.png}
+<figure>
+  <img src="images/vs_code_debugger_stepping.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 - You can then execute the code line by line using the controls at the top of the screen, or the F10 / F11 keys.
 
@@ -114,7 +130,9 @@ Once we move into functions:
 
 - While sitting on a breakpoint, you can also manually add expressions to the "Watch" pane to track their values. This is useful to view intermediate results.
 
-~~fig{images/vs_code_debugger.png}
+<figure>
+  <img src="images/vs_code_debugger.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 ## Checking Your Work with Cengage
 
@@ -122,11 +140,15 @@ Once we move into functions:
 
 Cengage provides a "Companion" tool that will check your code against a set of test cases. Click "Accept" when you're first prompted.
 
-~~fig{images/cengage_companion.png}
+<figure>
+  <img src="images/cengage_companion.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 If you close the window, you can get back to it from the left-side toolbar.
 
-~~fig{images/cengage_companion_toolbar.png}
+<figure>
+  <img src="images/cengage_companion_toolbar.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 ### Running Tests
 
@@ -134,11 +156,15 @@ _Test Format:_
 
 Each test is checking for one specific requirement from the instructions. Click the icon to the left of the test case to run it.
 
-~~fig{images/cengage_single_test.png}
+<figure>
+  <img src="images/cengage_single_test.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 When you pass or fail, you will get details - you can click the dropdown arrow to see more information.
 
-~~fig{images/fail_message.png}
+<figure>
+  <img src="images/fail_message.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 Looks like we failed. We're most interested in the:
 
@@ -164,4 +190,6 @@ When you're ready to submit:
 
 - Cengage has a delay when syncing with IvyLearn, so you may not see the assignment as "completed" in the gradebook right away.
 
-~~fig{images/cengage_submit.png}
+<figure>
+  <img src="images/cengage_submit.png" alt="" style="width: 100%;height: auto;">
+</figure>

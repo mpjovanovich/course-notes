@@ -15,7 +15,9 @@ course: SDEV264
 - Syntax extension for JavaScript
 - Specific to React
 
-~~fig(100){https://reactnative.dev/img/homepage/ReactRefresh.mp4}
+<figure>
+ <img src="https://reactnative.dev/img/homepage/ReactRefresh.mp4" alt="" style="width: 100%;height: auto;">
+</figure>
 
 ## Core Components
 
@@ -27,7 +29,9 @@ A component is a reusable piece of code that describes a part of a user interfac
 
 These pieces are translated into native components for each platform.
 
-~~fig(800){https://reactnative.dev/docs/assets/diagram_ios-android-views.svg}
+<figure>
+ <img src="https://reactnative.dev/docs/assets/diagram_ios-android-views.svg" alt="" style="width: 800%;height: auto;">
+</figure>
 
 Reference the table here:
 

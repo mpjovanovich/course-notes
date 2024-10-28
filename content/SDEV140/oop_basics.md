@@ -3,6 +3,8 @@ title: Object Oriented Programming
 course: SDEV140
 ---
 
+~.toc
+
 - [Object Oriented Programming](#object-oriented-programming)
   - [Basics](#basics)
     - [Example Classes](#example-classes)
@@ -12,6 +14,8 @@ course: SDEV140
   - [Accessing Properties and Methods](#accessing-properties-and-methods)
     - [The `self` Keyword](#the-self-keyword)
   - [Constructors](#constructors)
+
+/~
 
 # Object Oriented Programming
 
@@ -50,7 +54,9 @@ class Person:
 
 ### Pythonic Guidelines - Class Names
 
-~~fig(25){https://miro.medium.com/v2/1*ls5qApmZPtUIV3Z_wll7Fw.png}
+<figure>
+ <img src="https://miro.medium.com/v2/1*ls5qApmZPtUIV3Z_wll7Fw.png" alt="" style="width: 25%;height: auto;">
+</figure>
 
 - Per [PEP 8 - Class Names](https://www.python.org/dev/peps/pep-0008/#class-names).
   - Class names are

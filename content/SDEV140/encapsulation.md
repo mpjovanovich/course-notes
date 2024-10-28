@@ -3,6 +3,8 @@ title: Encapsulation
 course: SDEV140
 ---
 
+~.toc
+
 - [Encapsulation](#encapsulation)
   - [Access Modifiers](#access-modifiers)
   - [Pythonic Guidelines - Controlling Access](#pythonic-guidelines---controlling-access)
@@ -10,6 +12,8 @@ course: SDEV140
 - [Basics - Examples](#basics---examples)
   - [Example 1: Maintaining State](#example-1-maintaining-state)
   - [Example 2: Objects as Properties](#example-2-objects-as-properties)
+
+/~
 
 # Encapsulation
 
@@ -62,7 +66,9 @@ class Person
 
 ## Pythonic Guidelines - Controlling Access
 
-~~fig(25){https://miro.medium.com/v2/1*ls5qApmZPtUIV3Z_wll7Fw.png}
+<figure>
+ <img src="https://miro.medium.com/v2/1*ls5qApmZPtUIV3Z_wll7Fw.png" alt="" style="width: 25%;height: auto;">
+</figure>
 
 Per [PEP 8 - Designing for Inheritance](https://peps.python.org/pep-0008/#designing-for-inheritance)...
 

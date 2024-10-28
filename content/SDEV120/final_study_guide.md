@@ -3,7 +3,32 @@ title: Final Study Guide
 course: SDEV120
 ---
 
-# Final Study Guide
+~.toc
+
+- [Not Covered](#not-covered)
+- [Covered](#covered)
+  - [M04: Intro to Programming](#m04-intro-to-programming)
+    - [Coding Environments](#coding-environments)
+    - [Input, Output, and Comments in Python](#input-output-and-comments-in-python)
+    - [Variables and Constants](#variables-and-constants)
+    - [Data Types](#data-types)
+  - [M07: Selection Structures](#m07-selection-structures)
+  - [M08: Repetition](#m08-repetition)
+  - [Decisions and Loops](#decisions-and-loops)
+  - [M09: Data Representation and Encoding](#m09-data-representation-and-encoding)
+    - [Intro to Computer Numbering Systems](#intro-to-computer-numbering-systems)
+    - [Converting Between Bases](#converting-between-bases)
+    - [Applications for Binary and Hexadecimal](#applications-for-binary-and-hexadecimal)
+    - [Metric System for Computing](#metric-system-for-computing)
+    - [Numeric Data Types](#numeric-data-types)
+    - [Text Data Types](#text-data-types)
+  - [M10: Programming Paradigms](#m10-programming-paradigms)
+    - [Turing and Computability](#turing-and-computability)
+    - [Von Neumann Architecture](#von-neumann-architecture)
+    - [Evolution of Computing](#evolution-of-computing)
+    - [Evolution of Programming](#evolution-of-programming)
+
+/~
 
 ## Not Covered
 

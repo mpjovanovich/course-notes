@@ -3,7 +3,9 @@ title: Home
 course: SDEV264
 ---
 
-~~fig(100){images/huang_xiangjian_searching_for_my_parents.jpg}
+<figure>
+ <img src="images/huang_xiangjian_searching_for_my_parents.jpg" alt="" style="width: 100%;height: auto;">
+</figure>
 
 - [Announcements](#announcements)
 - [Schedule](#schedule)

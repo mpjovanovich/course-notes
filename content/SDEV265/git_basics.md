@@ -33,7 +33,9 @@ Git is a **version control system (VCS)**:
 
 ## GitHub
 
-~~fig(20){https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png}
+<figure>
+ <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="" style="width: 20%;height: auto;">
+</figure>
 
 **GitHub** is a website that hosts Git repositories.
 

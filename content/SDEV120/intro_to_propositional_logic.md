@@ -3,7 +3,7 @@ title: Propositional Logic - Intro and Connectives
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Propositional Logic](#propositional-logic)
   - [Propositions](#propositions)

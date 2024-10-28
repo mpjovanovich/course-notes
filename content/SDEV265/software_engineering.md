@@ -40,7 +40,9 @@ course: SDEV265
 
 ## The Balancing Act
 
-~~fig(40){https://imgs.xkcd.com/comics/focus_knob_2x.png}
+<figure>
+ <img src="https://imgs.xkcd.com/comics/focus_knob_2x.png" alt="" style="width: 40%;height: auto;">
+</figure>
 
 - Overengineering= bad
 - Underengineering= bad
@@ -99,7 +101,9 @@ Be aware of the differences and similarities when looking for jobs.
 
 ### Dillemas
 
-~~fig(50){https://imgs.xkcd.com/comics/settling_2x.png}
+<figure>
+ <img src="https://imgs.xkcd.com/comics/settling_2x.png" alt="" style="width: 50%;height: auto;">
+</figure>
 
 #### Case 1: The Abusive Boss
 

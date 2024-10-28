@@ -3,7 +3,7 @@ title: Von Neumann Architecture
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Von Neumann Architecture](#von-neumann-architecture)
   - [Prior to von Neumann](#prior-to-von-neumann)

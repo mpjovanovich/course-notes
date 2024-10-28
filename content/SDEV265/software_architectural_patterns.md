@@ -35,7 +35,9 @@ Best used when:
 
 #### Three-tier Architecture Example
 
-~~fig(100){https://miro.medium.com/v2/resize:fit:640/format:webp/1*4jyJN40XarxOInJvA9zEVw.jpeg}
+<figure>
+ <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*4jyJN40XarxOInJvA9zEVw.jpeg" alt="" style="width: 100%;height: auto;">
+</figure>
 
 - Presentation layer
   - User interface

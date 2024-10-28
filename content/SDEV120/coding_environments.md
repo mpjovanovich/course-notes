@@ -3,7 +3,7 @@ title: Coding Environments
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Coding Environments](#coding-environments)
   - [Integrated Development Environments (IDEs)](#integrated-development-environments-ides)
@@ -16,7 +16,9 @@ course: SDEV120
 
 /~
 
-~~fig{https://imgs.xkcd.com/comics/code_quality.png}
+<figure>
+  <img src="https://imgs.xkcd.com/comics/code_quality.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 # Coding Environments
 
@@ -40,7 +42,9 @@ _Examples:_
 
 ## Integrated Development Environments (IDEs)
 
-~~fig(80){images/vs_code.PNG}
+<figure>
+ <img src="images/vs_code.PNG" alt="" style="width: 80%;height: auto;">
+</figure>
 
 An **integrated development environment (IDE)** is a software application used to develop software.
 

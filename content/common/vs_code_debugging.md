@@ -2,7 +2,7 @@
 title: Debugging in VS Code
 ---
 
-~.schedule
+~.toc
 
 - [Debugging in VS Code](#debugging-in-vs-code)
   - [Switch to the Directory Containing the Code File](#switch-to-the-directory-containing-the-code-file)

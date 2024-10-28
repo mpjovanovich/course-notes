@@ -3,6 +3,8 @@ title: String Manipulation
 course: SDEV140
 ---
 
+~.toc
+
 - [String Manipulation](#string-manipulation)
   - [Concatenation](#concatenation)
     - [The `+` Operator](#the--operator)
@@ -11,6 +13,8 @@ course: SDEV140
   - [Formatting Output](#formatting-output)
     - [Number Formatting](#number-formatting)
     - [Width and Padding](#width-and-padding)
+
+/~
 
 # String Manipulation
 

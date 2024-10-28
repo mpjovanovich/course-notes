@@ -3,7 +3,7 @@ title: Numeric Data Types
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Numeric Data Types](#numeric-data-types)
   - [Integer](#integer)
@@ -23,7 +23,9 @@ course: SDEV120
 
 /~
 
-~~fig{https://imgs.xkcd.com/comics/large_number_formats.png}
+<figure>
+  <img src="https://imgs.xkcd.com/comics/large_number_formats.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 # Numeric Data Types
 
@@ -111,7 +113,9 @@ _Quiz:_
 
 As with integers, the number of bits used to represent a floating point number determines the **precision** of the number.
 
-~~fig{https://www.baseclass.io/newsletter/floating-point-numbers/layout.png}
+<figure>
+  <img src="https://www.baseclass.io/newsletter/floating-point-numbers/layout.png" alt="" style="width: 100%;height: auto;">
+</figure>
 
 They are represented in computer memory using three parts, with a fixed number of bits for each part:
 

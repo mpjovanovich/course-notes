@@ -2,7 +2,7 @@
 title: GitHub Classroom
 ---
 
-~.schedule
+~.toc
 
 - [GitHub Classroom](#github-classroom)
   - [Accepting Assignments](#accepting-assignments)

@@ -3,7 +3,7 @@ title: Turing and Computability
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Computability](#computability)
   - [Alan Turing](#alan-turing)

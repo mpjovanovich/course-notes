@@ -3,11 +3,15 @@ title: Abstraction
 course: SDEV140
 ---
 
+~.toc
+
 - [Abstraction](#abstraction)
   - [Interfaces](#interfaces)
     - [Usage](#usage)
   - [Abstract Classes and Methods](#abstract-classes-and-methods)
     - [Usage](#usage-1)
+
+/~
 
 # Abstraction
 

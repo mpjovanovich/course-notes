@@ -2,7 +2,7 @@
 title: GitHub
 ---
 
-~.schedule
+~.toc
 
 - [GitHub](#github)
 - [Repositories](#repositories)

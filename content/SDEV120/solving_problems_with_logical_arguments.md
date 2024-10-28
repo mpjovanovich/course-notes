@@ -3,7 +3,18 @@ title: Solving Problems with Logical Arguments
 course: SDEV120
 ---
 
-# Solving Problems with Logical Arguments
+~.toc
+
+- [Implication Truth Table (reminder):](#implication-truth-table-reminder)
+- [Contrapositive](#contrapositive)
+- [Inverse](#inverse)
+  - [Fallacy](#fallacy)
+- [Converse](#converse)
+  - [Fallacy](#fallacy-1)
+- [Translating Verbal Statements](#translating-verbal-statements)
+- [Group Exercise](#group-exercise)
+
+/~
 
 ## Implication Truth Table (reminder):
 

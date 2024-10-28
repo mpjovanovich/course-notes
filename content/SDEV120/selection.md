@@ -3,6 +3,8 @@ title: Selection
 course: SDEV120
 ---
 
+~.toc
+
 - [Decision](#decision)
   - [Single Alternative](#single-alternative)
     - [Example Algorithm](#example-algorithm)
@@ -27,6 +29,8 @@ course: SDEV120
       - [Flowchart](#flowchart-3)
     - [Python `if, elif, else` Statement](#python-if-elif-else-statement)
       - [Demo Programs](#demo-programs-2)
+
+/~
 
 # Decision
 

@@ -3,7 +3,7 @@ title: Applications of Binary and Hexadecimal
 course: SDEV120
 ---
 
-~.schedule
+~.toc
 
 - [Applications of Binary and Hexadecimal](#applications-of-binary-and-hexadecimal)
   - [Applications](#applications)

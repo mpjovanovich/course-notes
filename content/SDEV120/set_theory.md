@@ -3,6 +3,8 @@ title: Set Theory
 course: SDEV120
 ---
 
+~.toc
+
 - [Set Theory](#set-theory)
   - [Definitions](#definitions)
   - [Notation](#notation)
@@ -14,9 +16,11 @@ course: SDEV120
     - [Complement](#complement)
   - [Quizzes and Walkthroughs](#quizzes-and-walkthroughs)
 
-> Russell's paradox: consider "the set of all sets that are not members of themselves", which leads to a contradiction since it must be a member of itself and not a member of itself.
+/~
 
 # Set Theory
+
+> Russell's paradox: consider "the set of all sets that are not members of themselves", which leads to a contradiction since it must be a member of itself and not a member of itself.
 
 ## Definitions
 

@@ -2,7 +2,7 @@
 title: Computer Orientation
 ---
 
-~.schedule
+~.toc
 
 - [Computer Orientation](#computer-orientation)
   - [Naming Files and Folders](#naming-files-and-folders)

@@ -6,14 +6,16 @@ showBreadcrumb: false
 
 # Announcements
 
-~~fig(80){https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg}
+<figure>
+ <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
+</figure>
 
 - Lecture recordings starting today. Review how to access them.
 - Schedule your exams today - both midterm and final.
 
 # Schedule
 
-~.schedule
+~.toc
 
 - [Announcements](#announcements)
 - [Schedule](#schedule)
