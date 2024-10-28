@@ -12,6 +12,7 @@ showBreadcrumb: false
 
 - Lecture recordings starting today. Review how to access them.
 - Schedule your exams today - both midterm and final.
+- Testing 1, 2, 3... this is a new version of the site.
 
 # Schedule
 
