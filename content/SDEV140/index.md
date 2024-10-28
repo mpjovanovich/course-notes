@@ -4,7 +4,9 @@ course: SDEV140
 showBreadcrumb: false
 ---
 
-# Announcements
+# SDEV140
+
+## Announcements
 
 <figure>
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
@@ -14,20 +16,21 @@ showBreadcrumb: false
 - Schedule your exams today - both midterm and final.
 - Testing 1, 2, 3... this is a new version of the site.
 
-# Schedule
+## Schedule
 
 ~.toc
 
-- [Announcements](#announcements)
-- [Schedule](#schedule)
-- [Module 00: Course Overview](#module-00-course-overview)
-- [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
-- [Module 02: Selection Structures](#module-02-selection-structures)
-- [Module 03: Loops](#module-03-loops)
+- [SDEV140](#sdev140)
+  - [Announcements](#announcements)
+  - [Schedule](#schedule)
+  - [Module 00: Course Overview](#module-00-course-overview)
+  - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
+  - [Module 02: Selection Structures](#module-02-selection-structures)
+  - [Module 03: Loops](#module-03-loops)
 
 /~
 
-# Module 00: Course Overview
+## Module 00: Course Overview
 
 Introductions
 
@@ -42,7 +45,7 @@ Overview of course
 
 [Review: Computer Orientation](../common/computer_orientation.html?course=SDEV140)
 
-# Module 01: Fundamentals of Coding
+## Module 01: Fundamentals of Coding
 
 Setting up your Coding Environment
 
@@ -86,13 +89,13 @@ Lab: Git
 
 Lab: Strings
 
-# Module 02: Selection Structures
+## Module 02: Selection Structures
 
 [Review: Syntax and Expressions](../SDEV120/syntax_expressions.html?course=SDEV140)
 
 [Review: Selection Structures](../SDEV120/selection.html?course=SDEV140)
 
-# Module 03: Loops
+## Module 03: Loops
 
 <!-- "Reviews" will be broken up on SDEV120 notes; currently they're in one big file -->
 
@@ -110,35 +113,35 @@ TODO: [Nested Loops](nested_loops.html)
 
 TODO: [Break and Continue](break_continue.html)
 
-<!-- # Module 03: Functions and Modularity
+<!-- ## Module 03: Functions and Modularity
 
-## Day 4
+### Day 4
 
 [Functions](functions.html)
 
-## Day 5
+### Day 5
 
 [Error Handling and Input Validation](error_handling.html)
 
-# Module 04: Loops
+## Module 04: Loops
 
-## Day 6
-
-[Loops](loops.html)
-
-## Day 7
+### Day 6
 
 [Loops](loops.html)
 
-# Midterm
+### Day 7
 
-## Day 8
+[Loops](loops.html)
+
+## Midterm
+
+### Day 8
 
 Midterm
 
-# Module 05: Sequences and Mappings
+## Module 05: Sequences and Mappings
 
-## Day 9
+### Day 9
 
 Informal Zoom poll - how comfortable are we with arrays?
 
@@ -150,35 +153,35 @@ Review: [Arrays](../SDEV120/arrays.html?course=SDEV140)
 
 Lab, walkthrough or partial walkthrough
 
-## Day 10
+### Day 10
 
 Multidimensional Arrays
 
 [Dictionaries](dictionaries.html)
 
-# Module 06: Event Driven Programming
+## Module 06: Event Driven Programming
 
-## Day 11
+### Day 11
 
 [Event Driven Programming](event_driven_programming.html)
 
-## Day 12
+### Day 12
 
-# Module 07: File I/O and Parsing
+## Module 07: File I/O and Parsing
 
 [File I/O](file_io.html)
 
 [File Parsing](file_parsing.html)
 
-# Module 08: Object Oriented Programming
+## Module 08: Object Oriented Programming
 
-## Day 13
+### Day 13
 
 [OOP Basics](oop_basics.html)
 
 [Encapsulation](encapsulation.html)
 
-## Day 14
+### Day 14
 
 [Inheritance](inheritance.html)
 
