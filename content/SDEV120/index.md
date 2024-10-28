@@ -21,7 +21,7 @@ showBreadcrumb: false
   - [Common Resources](#common-resources)
   - [M00: Orientation](#m00-orientation)
   - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
-  - [M04: Intro to Programming](#m04-intro-to-programming)
+  - [M02: Intro to Programming](#m02-intro-to-programming)
 
 /~
 
@@ -62,7 +62,7 @@ Setting up your Coding Environment
 
 [Flowcharts](flowcharts.html)
 
-## M04: Intro to Programming
+## M02: Intro to Programming
 
 [Coding Punctuation](../common/coding_punctuation.html?course=SDEV120)
 
