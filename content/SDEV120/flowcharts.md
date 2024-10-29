@@ -122,7 +122,7 @@ _Output Example:_
 
 ~.focusContent.exercise
 
-_Flowchart our previous algorithm(s) for find even numbers 0-4 inclusive_
+_Flowchart our previous algorithm for "have a good or bad day" algorithm_ 
 
 We will do this together using [draw.io](https://draw.io).
 

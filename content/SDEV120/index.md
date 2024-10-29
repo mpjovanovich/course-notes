@@ -74,9 +74,14 @@ Setting up your Coding Environment
 
 [Data Types](data_types.html)
 
-<!-- ## M02: Boolean Logic
+## M02: Boolean Algebra
 
 Discussion: Intro to Logic
+
+<!--
+Solutions:
+1. 
+-->
 
 [Intro to Propositional Logic](intro_to_propositional_logic.html)
 
