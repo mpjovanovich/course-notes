@@ -79,8 +79,7 @@ Setting up your Coding Environment
 Discussion: Intro to Logic
 
 <!--
-Solutions:
-1. 
+Solutions: see the html comments in the assignment.
 -->
 
 [Intro to Propositional Logic](intro_to_propositional_logic.html)
