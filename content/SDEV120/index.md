@@ -78,8 +78,37 @@ Setting up your Coding Environment
 
 Discussion: Intro to Logic
 
-<!--
-Solutions: see the html comments in the assignment.
+<!-- 
+
+SOLUTIONS:
+
+Tips: 
+
+- Start by picking a character and assuming they're telling the truth.
+- Eliminate roles as they are taken.
+- If you hit a logical contradiction then try the next character, assuming that he/she is telling the truth.
+- Continue until you find an answer without contradictions.
+
+1) 
+
+Assume J = True
+
+J = Kni, B = Spy, G = Kna
+
+If you were to ask G, he would not actually tell you what he told you that he would tell you... he knows he's lying. So this answer is logically consistent.
+
+2) 
+
+Assume B = T
+
+J = Kna, B = Kni, G = Spy
+
+3)
+
+Assume Ely = T
+
+Ely = Kni, B = Spy, Ell = Knave
+
 -->
 
 [Intro to Propositional Logic](intro_to_propositional_logic.html)
