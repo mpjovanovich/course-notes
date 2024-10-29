@@ -14,7 +14,7 @@ showBreadcrumb: false
 
 - Lecture recordings starting today. Review how to access them.
 - Schedule your exams today - both midterm and final.
-- Testing 1, 2, 3... this is a new version of the site.
+- Git: see the announcement from last week if you haven't checked it
 
 ## Schedule
 
@@ -79,7 +79,7 @@ Git
 
 - [Version Control via Git](../common/git_version_control.html?course=SDEV140)
 
-- TODO: [GitHub Classroom](../common/github_classroom.html?course=SDEV140)
+- [GitHub Classroom](../common/github_classroom.html?course=SDEV140)
 
 Command Line (bash)
 
@@ -91,9 +91,16 @@ Lab: Strings
 
 ## Module 02: Selection Structures
 
+First GitHub Classroom lab: 
+- Introduce strings lab
+- Notes: Included in M01 notes above, but I'll link temporarily for today
+  - [GitHub Classroom](../common/github_classroom.html?course=SDEV140)
+
 [Review: Syntax and Expressions](../SDEV120/syntax_expressions.html?course=SDEV140)
 
 [Review: Selection Structures](../SDEV120/selection.html?course=SDEV140)
+
+Lab: Selection
 
 ## Module 03: Loops
 
