@@ -113,10 +113,8 @@ int main() {
     for (int i = 0; i < 10; i++) {
         // A print statement in C
         printf("%d\n", i);
-/~
 
     return 0;
-/~
 ```
 
 ### Changing the Step

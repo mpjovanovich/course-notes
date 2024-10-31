@@ -106,15 +106,13 @@ Lab: Selection
 
 <!-- "Reviews" will be broken up on SDEV120 notes; currently they're in one big file -->
 
-TODO: [Review: Loops Introduction](loops_introduction.html)
+[Review: Loops Introduction](loops_introduction.html)
 
-TODO: [Review: Indefinite Loops](indefinite_loops.html)
+[Review: Indefinite Loops](indefinite_loops.html)
 
-TODO: [Review: Off-by-One Errors](off_by_one_errors.html)
+[Review: Step Values](step_values.html)
 
 TODO: [Definite Loops](definite_loops.html)
-
-TODO: [Step Values](step_values.html)
 
 TODO: [Nested Loops](nested_loops.html)
 
