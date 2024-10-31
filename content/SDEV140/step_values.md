@@ -3,7 +3,7 @@ title: Step Values
 course: SDEV140
 ---
 
-~toc
+~.toc
 
 - [Step Values](#step-values)
   - [Off by One Errors](#off-by-one-errors)
