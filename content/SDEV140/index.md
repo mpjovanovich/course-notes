@@ -12,9 +12,7 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- Lecture recordings starting today. Review how to access them.
-- Schedule your exams today - both midterm and final.
-- Git: see the announcement from last week if you haven't checked it
+- ...
 
 ## Schedule
 
@@ -111,6 +109,9 @@ Lab: Selection
 [Review: Indefinite Loops](indefinite_loops.html)
 
 [Review: Step Values](step_values.html)
+
+Lab: Indefinite Loops
+- Prep for lab: how to write a guessing game
 
 TODO: [Definite Loops](definite_loops.html)
 
