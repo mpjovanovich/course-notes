@@ -22,6 +22,7 @@ showBreadcrumb: false
   - [M00: Orientation](#m00-orientation)
   - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
   - [M02: Intro to Programming](#m02-intro-to-programming)
+  - [M03: Boolean Algebra](#m03-boolean-algebra)
 
 /~
 
@@ -74,22 +75,22 @@ Setting up your Coding Environment
 
 [Data Types](data_types.html)
 
-## M02: Boolean Algebra
+## M03: Boolean Algebra
 
 Discussion: Intro to Logic
 
-<!-- 
+<!--
 
 SOLUTIONS:
 
-Tips: 
+Tips:
 
 - Start by picking a character and assuming they're telling the truth.
 - Eliminate roles as they are taken.
 - If you hit a logical contradiction then try the next character, assuming that he/she is telling the truth.
 - Continue until you find an answer without contradictions.
 
-1) 
+1)
 
 Assume J = True
 
@@ -97,7 +98,7 @@ J = Kni, B = Spy, G = Kna
 
 If you were to ask G, he would not actually tell you what he told you that he would tell you... he knows he's lying. So this answer is logically consistent.
 
-2) 
+2)
 
 Assume B = T
 
@@ -117,17 +118,17 @@ Ely = Kni, B = Spy, Ell = Knave
 
 [Solving Problems with Truth Tables](solving_problems_with_truth_tables.html)
 
-[Decision Trees](decision_tree.html) -->
-
-<!-- ## M03: Logic Gates and Circuits
-
-[Logic Gates and Circuits](logic_gates.html) -->
+[Decision Trees](decision_tree.html)
 
 <!-- ## M05: Functional Arithmetic and Expression Parsing
 
 [Syntax and Expressions](syntax_expressions.html)
 
 [Abstract Syntax Trees](abstract_syntax_trees.html) -->
+
+<!-- ## M03: Logic Gates and Circuits
+
+[Logic Gates and Circuits](logic_gates.html) -->
 
 <!-- ## M06: System Modeling
 

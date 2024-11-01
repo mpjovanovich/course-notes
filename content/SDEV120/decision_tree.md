@@ -18,6 +18,10 @@ A decision tree is a flowchart-like structure in which...
 - Each branch represents the outcome of the test
 - Each leaf node represents a class label (result)
 
+<figure>
+  <img src="https://miro.medium.com/v2/1*kwCh2-U02xf-EWaTt3Xr4w.png" alt="" style="width: 100%;height: auto;">
+</figure>
+
 ## Walkthrough
 
 ~.focusContent.exercise
