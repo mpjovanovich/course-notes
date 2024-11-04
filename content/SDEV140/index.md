@@ -12,12 +12,7 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-
-### Important Dates
-
-- **Today**: Last day to get help with Git and Strings labs
-- **Sunday**: All labs from this week due.
-- **Next Week**: We may allow for resubmissions of current week's labs so that you can view feedback and change your submission; however _you must have made an attempt by the due date_ or you can't resubmit.
+- ...
 
 ## Schedule
 
@@ -25,7 +20,6 @@ showBreadcrumb: false
 
 - [SDEV140](#sdev140)
   - [Announcements](#announcements)
-    - [Important Dates](#important-dates)
   - [Schedule](#schedule)
   - [Module 00: Course Overview](#module-00-course-overview)
   - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
@@ -134,16 +128,6 @@ TODO: [Break and Continue](break_continue.html)
 ### Day 5
 
 [Error Handling and Input Validation](error_handling.html)
-
-## Module 04: Loops
-
-### Day 6
-
-[Loops](loops.html)
-
-### Day 7
-
-[Loops](loops.html)
 
 ## Midterm
 
