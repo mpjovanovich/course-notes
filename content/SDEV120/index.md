@@ -9,6 +9,7 @@ showBreadcrumb: false
 ## Announcements
 
 - T / Th class - need to cover De Morgan's Laws
+- AI is notoriously bad at propositional logic; don't use it for homework help
 
 ## Schedule
 
