@@ -8,8 +8,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Lecture recordings starting today. Review how to access them.
-- Schedule your exams today - both midterm and final.
+- T / Th class - need to cover De Morgan's Laws
 
 ## Schedule
 
@@ -23,6 +22,7 @@ showBreadcrumb: false
   - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
   - [M02: Intro to Programming](#m02-intro-to-programming)
   - [M03: Boolean Algebra](#m03-boolean-algebra)
+  - [M04: Functional Arithmetic and Expression Parsing](#m04-functional-arithmetic-and-expression-parsing)
 
 /~
 
@@ -120,11 +120,11 @@ Ely = Kni, B = Spy, Ell = Knave
 
 [Decision Trees](decision_tree.html)
 
-<!-- ## M05: Functional Arithmetic and Expression Parsing
+## M04: Functional Arithmetic and Expression Parsing
 
 [Syntax and Expressions](syntax_expressions.html)
 
-[Abstract Syntax Trees](abstract_syntax_trees.html) -->
+[Abstract Syntax Trees](abstract_syntax_trees.html)
 
 <!-- ## M03: Logic Gates and Circuits
 

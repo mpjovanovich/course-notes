@@ -16,6 +16,12 @@ course: SDEV120
 
 /~
 
+> Bertrand Russell, in a lecture on logic, mentioned that in the sense of material implication, a false proposition implies any proposition.
+>
+> A student raised his hand and said "In that case, given that 1 = 0, prove that you are the Pope."
+>
+> Russell immediately replied, "Add 1 to both sides of the equation: then we have 2 = 1. The set containing just me and the Pope has 2 members. But 2 = 1, so it has only 1 member; therefore, I am the Pope."
+
 ## Implication Truth Table (reminder):
 
 | p   | q   | p → q |
