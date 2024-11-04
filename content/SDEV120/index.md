@@ -121,11 +121,15 @@ Ely = Kni, B = Spy, Ell = Knave
 
 [Decision Trees](decision_tree.html)
 
+Review: Truth Tables Assignment
+
 ## M04: Functional Arithmetic and Expression Parsing
 
 [Syntax and Expressions](syntax_expressions.html)
 
 [Abstract Syntax Trees](abstract_syntax_trees.html)
+
+Review: AST Assignment
 
 <!-- ## M03: Logic Gates and Circuits
 
