@@ -12,7 +12,7 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- ...
+- Have we covered nested loops?
 
 ## Schedule
 
@@ -113,7 +113,7 @@ Lab: Selection
 Lab: Indefinite Loops
 - Prep for lab: how to write a guessing game
 
-TODO: [Definite Loops](definite_loops.html)
+[Definite Loops](definite_loops.html)
 
 TODO: [Nested Loops](nested_loops.html)
 
