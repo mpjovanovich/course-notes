@@ -13,6 +13,7 @@ showBreadcrumb: false
 </figure>
 
 - Have we covered nested loops?
+- MAKE SURE THAT YOUR NAME IS ON YOUR ASSIGNMENTS. This includes lab assignments, in the header.
 - Some assignments are graded; the rest will be in by next lecture.
 - If you are flagged for review you have 48 hours to set up a meeting. Meetings must take place outside of class time. Office hours are posted on the syllabus.
 
