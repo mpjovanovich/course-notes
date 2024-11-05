@@ -81,10 +81,8 @@ for i in range( START, END + 1, 1 ):
 We can make this more dynamic by asking the user for the base and end numbers.
 
 ```python
-## Get the starting number for the multiplication table
+## Get the starting and ending number for the multiplication table
 start = int( input( "Enter the starting number: " ) )
-
-## Get the ending number for the multiplication table
 end = int( input( "Enter the ending number: " ) )
 
 ## Print the multiplication table
@@ -107,10 +105,11 @@ for i in range(0, 5, 1):
 ```
 
 Output:
+
 ```
 *
 **
 ***
 ****
 *****
-``` 
+```

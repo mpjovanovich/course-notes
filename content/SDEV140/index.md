@@ -89,7 +89,8 @@ Lab: Strings
 
 ## Module 02: Selection Structures
 
-First GitHub Classroom lab: 
+First GitHub Classroom lab:
+
 - Introduce strings lab
 - Notes: Included in M01 notes above, but I'll link temporarily for today
   - [GitHub Classroom](../common/github_classroom.html?course=SDEV140)
@@ -111,11 +112,12 @@ Lab: Selection
 [Review: Step Values](step_values.html)
 
 Lab: Indefinite Loops
+
 - Prep for lab: how to write a guessing game
 
 [Definite Loops](definite_loops.html)
 
-TODO: [Nested Loops](nested_loops.html)
+[Nested Loops](nested_loops.html)
 
 TODO: [Break and Continue](break_continue.html)
 
