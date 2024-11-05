@@ -119,7 +119,9 @@ Lab: Indefinite Loops
 
 [Nested Loops](nested_loops.html)
 
-TODO: [Break and Continue](break_continue.html)
+[Break and Continue](break_continue.html)
+
+Lab: Definite Loops
 
 <!-- ## Module 03: Functions and Modularity
 
