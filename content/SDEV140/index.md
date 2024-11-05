@@ -121,6 +121,8 @@ Lab: Indefinite Loops
 
 [Break and Continue](break_continue.html)
 
+[Optimizing Loop Performance](optimizing_loop_performance.html)
+
 Lab: Definite Loops
 
 <!-- ## Module 03: Functions and Modularity
