@@ -3,7 +3,7 @@ title: Break and Continue
 course: SDEV140
 ---
 
-~/
+~.toc
 
 - [Controlled Loops with "break" and "continue"](#controlled-loops-with-break-and-continue)
   - [Break](#break)
@@ -44,6 +44,11 @@ for i in range( 0, 10, 1 ):
     print( i )
 ```
 
-Example scenario:
+~.focusContent.demo
 
-- Loop through a course roster and print all students except those who have withdrawn. You'd use a `continue` statement to skip the withdrawn students.
+**Some examples:**
+
+- Loop through a 
+- Loop through a string and print all characters except vowels.
+
+/~
