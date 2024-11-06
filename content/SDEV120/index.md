@@ -8,8 +8,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- T / Th class - need to cover De Morgan's Laws
-- AI is notoriously bad at propositional logic; don't use it for homework help
+- ...
 
 ## Schedule
 
@@ -24,6 +23,8 @@ showBreadcrumb: false
   - [M02: Intro to Programming](#m02-intro-to-programming)
   - [M03: Boolean Algebra](#m03-boolean-algebra)
   - [M04: Functional Arithmetic and Expression Parsing](#m04-functional-arithmetic-and-expression-parsing)
+  - [M0X - System Modeling](#m0x---system-modeling)
+  - [M05: Selection Structures](#m05-selection-structures)
 
 /~
 
@@ -131,6 +132,16 @@ Review: Truth Tables Assignment
 
 Review: AST Assignment
 
+## M0X - System Modeling
+
+Discussion: Data Structures - Choose Your Own Adventure
+
+[Unified Modeling Language (UML)](uml.html)
+
+## M05: Selection Structures
+
+[Selection Structures](selection.html)
+
 <!-- ## M03: Logic Gates and Circuits
 
 [Logic Gates and Circuits](logic_gates.html) -->
@@ -144,10 +155,6 @@ Review: AST Assignment
 <!-- ## Midterm Study
 
 [Midterm Study Guide](midterm_study_guide.html) -->
-
-<!-- ## M07: Selection Structures
-
-[Selection Structures](selection.html) -->
 
 <!-- ## M08: Repetition
 

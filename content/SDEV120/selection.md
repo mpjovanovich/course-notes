@@ -93,15 +93,24 @@ if is_admin == False or user_logged_in == False:
 
 #### Demo Programs
 
-Number is even
+~.focusContent.demo
 
-- Order processing logic:
-  - Default ship date = 5 days from order date
-  - If payment not received, ship date = 14 days from order date
-  - If out of stock, ship date = 30 days from order date
-  - If rush order, ship date = 1 days from order date
+Check if a number is even. (We will do even or odd in a single program shortly.)
 
-(We will do even or odd in a single program shortly.)
+/~
+
+~.focusContent.demo
+
+1.  Order processing logic
+
+Write a program given the following logic:
+
+- Default ship date = 5 days from order date
+- If payment not received, ship date = 14 days from order date
+- If out of stock, ship date = 30 days from order date
+- If rush order, ship date = 1 days from order date
+
+/~
 
 ## Dual Alternative
 
@@ -156,23 +165,27 @@ else:
 
 #### Demo Programs
 
-_Do in class: Flowchart, code._
+~.focusContent.demo
 
-- Number is even/odd
+Check if a number is even/odd.
+
+/~
 
 ## Nested Decision Structures
 
 We can put decision structures into the flow of execution from another decision. These are called nested decisions.
 
-- Is it cold outside?
-  - Yes
-    - Is it snowing?
-      - Yes
-        - Wear boots
-      - No
-        - Wear shoes
-  - No
-    - Wear sandals
+```
+BEGIN
+    IF it is cold outside:
+        IF it is snowing:
+            Wear boots
+        ELSE:
+            Wear shoes
+    ELSE:
+        Wear sandals
+END
+```
 
 ### Example Algorithm
 
