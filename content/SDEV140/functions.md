@@ -22,8 +22,6 @@ course: SDEV140
   - [Variable Scope](#variable-scope)
   - [Named Arguments](#named-arguments)
   - [Default Parameters](#default-parameters)
-  - [Type Annotations](#type-annotations)
-  - [The `main` Function](#the-main-function)
 
 /~
 
@@ -182,7 +180,7 @@ Or, function chaining:
 
 ```python
 text = "   Hello, World!   "
-result = text.strip().lower().replace("world", "Python").capitalize()
+result = text.strip().lower().replace("world", "Python")
 print(result)
 ```
 
@@ -262,6 +260,8 @@ def greet( name="Jumping Jennifer", greeting ):
 greet("Hello") # SyntaxError: non-default argument follows default argument
 ```
 
+<!--
+
 ## Type Annotations
 
 Python allows us to add type annotations to function parameters and return values.
@@ -301,3 +301,4 @@ def main():
 
 main()
 ```
+-->

@@ -12,10 +12,9 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- Have we covered nested loops?
-- MAKE SURE THAT YOUR NAME IS ON YOUR ASSIGNMENTS. This includes lab assignments, in the header.
-- Some assignments are graded; the rest will be in by next lecture.
-- If you are flagged for review you have 48 hours to set up a meeting. Meetings must take place outside of class time. Office hours are posted on the syllabus.
+- Reminder: Tutoring options, see announcement
+- We've swapped Functions and Lists - we will cover lists next
+  - Quiz due Sunday; keep up on the readings
 
 ## Schedule
 
@@ -28,6 +27,7 @@ showBreadcrumb: false
   - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
   - [Module 02: Selection Structures](#module-02-selection-structures)
   - [Module 03: Loops](#module-03-loops)
+  - [Module 04: Lists and Dictionaries](#module-04-lists-and-dictionaries)
 
 /~
 
@@ -106,8 +106,6 @@ Lab: Selection
 
 ## Module 03: Loops
 
-<!-- "Reviews" will be broken up on SDEV120 notes; currently they're in one big file -->
-
 [Review: Loops Introduction](loops_introduction.html)
 
 [Review: Indefinite Loops](indefinite_loops.html)
@@ -128,9 +126,14 @@ Lab: Indefinite Loops
 
 Lab: Definite Loops
 
-<!-- ## Module 03: Functions and Modularity
+## Module 04: Lists and Dictionaries
 
-### Day 4
+[Arrays](arrays.html)
+
+[Dictionaries](dictionaries.html)
+
+<!--
+## Module 03: Functions and Modularity
 
 [Functions](functions.html)
 

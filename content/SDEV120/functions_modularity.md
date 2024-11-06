@@ -21,7 +21,6 @@ course: SDEV120
   - [The `main` Function](#the-main-function)
   - [Variable Scope](#variable-scope)
     - [Local Scope](#local-scope)
-    - [Enclosing Scope](#enclosing-scope)
     - [Global Scope](#global-scope)
   - [Value Passing](#value-passing)
   - [The Call Stack](#the-call-stack)
@@ -177,9 +176,9 @@ Because of execution context, variables can have different scopes.
 
 In Python, there are three levels of variable scope:
 
-1. **Local**: Inside a function
-2. **Enclosing**: Inside a nested function
-3. **Global**: Outside of all functions
+1. **Local**: Inside a function.
+2. **Enclosing**: Inside a nested function. We will not cover this in this course.
+3. **Global**: Outside of all functions.
 
 ### Local Scope
 
@@ -194,6 +193,8 @@ def my_function():
 my_function()
 print(x)  # NameError: name 'x' is not defined
 ```
+
+<!--
 
 ### Enclosing Scope
 
@@ -212,6 +213,8 @@ def outer_function():
 
     inner_function() # This works - will print 10
 ```
+
+-->
 
 ### Global Scope
 
