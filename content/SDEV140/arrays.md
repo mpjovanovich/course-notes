@@ -28,12 +28,6 @@ course: SDEV120
 
 /~
 
-<figure>
-    <span>
-        <img src="https://imgs.xkcd.com/comics/donald_knuth.png" style="">
-    </span>
-</figure>
-
 # Arrays
 
 ## Definitions

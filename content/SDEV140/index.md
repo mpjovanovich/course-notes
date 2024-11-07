@@ -12,9 +12,10 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- Reminder: Tutoring options, see announcement
-- We've swapped Functions and Lists - we will cover lists next
-  - Quiz due Sunday; keep up on the readings
+- Dreshawn and Nathan - git accounts switched?
+- Unit 3 Quiz due Sunday
+- Review strings lab; use techniques covered in class
+  - Resubmits for all labs past strings due Friday night
 
 ## Schedule
 
