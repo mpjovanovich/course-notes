@@ -12,10 +12,7 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- Dreshawn and Nathan - git accounts switched?
-- Unit 3 Quiz due Sunday
-- Review strings lab; use techniques covered in class
-  - Resubmits for all labs past strings due Friday night
+- Review: Final project and milestone 1
 
 ## Schedule
 
