@@ -173,7 +173,9 @@ for key, value in my_dict.items():
 
 ~.focusContent.lookout
 
-Note that in the demos below we should really be checking if the key exists before accessing it by using the `in` keyword, as shown in the "Checking if a Key Exists" section above.
+In the demos below we should really be checking if the key exists before accessing it by using the `in` keyword, as shown in the "Checking if a Key Exists" section above.
+
+This has been left out to keep the examples simple.
 
 /~
 
