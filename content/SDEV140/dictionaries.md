@@ -6,12 +6,11 @@ course: SDEV140
 ~.toc
 
 - [Dictionaries](#dictionaries)
+  - [Why use a Dictionary?](#why-use-a-dictionary)
   - [Creating a Dictionary](#creating-a-dictionary)
-  - [Common Uses for Dictionaries](#common-uses-for-dictionaries)
-  - [Dictionary Keys](#dictionary-keys)
   - [Accessing Values](#accessing-values)
-  - [Modifying Values](#modifying-values)
   - [Adding new Key-Value Pairs](#adding-new-key-value-pairs)
+  - [Modifying Values](#modifying-values)
   - [Removing Key-Value Pairs](#removing-key-value-pairs)
   - [Checking if a Key Exists](#checking-if-a-key-exists)
   - [Iterating Through a Dictionary](#iterating-through-a-dictionary)
@@ -28,41 +27,30 @@ course: SDEV140
 
 # Dictionaries
 
-A dictionary is a collection of key-value pairs. Dictionaries are also known as
+A dictionary is a collection of **key-value pairs**.
 
-- **Maps**
-- **Hashmaps**
-- **Associative arrays**
+They follow the following format:
 
-## Creating a Dictionary
-
-- You can create a dictionary using curly braces `{}` and separating key-value pairs with colons `:`
-- Keys and values can be any data type.
-
-```python
-# String / string
-my_dict = {
-    "key1": "value1",
-    "key2": "value2",
-
-# Int / int
-my_dict2 = {
-    1 : 31,
-    2 : 29,
-    3 : 31,
-    12 : 31,
-
-# String / int
-my_dict3 = {
-    "January": 31,
-    "February": 29,
-    "March": 31,
-    "December": 31,
+```
+{
+    key1: value1,
+    key2: value2
+}
 ```
 
-## Common Uses for Dictionaries
+Dictionaries are also known as **maps** and **hashmaps**.
 
-- Storing a set of items that are related to each other
+## Why use a Dictionary?
+
+Dictionaries are useful for creating lookup tables.
+
+They are a way to store related information.
+
+| Item   | Price |
+| ------ | ----- |
+| Apple  | $0.75 |
+| Orange | $0.25 |
+| Banana | $0.99 |
 
 ```python
 # Storing a set of items that are related to each other -
@@ -71,32 +59,36 @@ prices = {
     "apple": .75,
     "orange": .25,
     "banana": .99,
+}
 ```
 
-- Storing a set of items that are related to a single item
+## Creating a Dictionary
+
+- You can create a dictionary using curly braces `{}` and separating key-value pairs with colons `:`
+- Keys and values can be any data type.
 
 ```python
-# Storing a set of items that are related to a single item -
-# creating a simple "object" with properties.
-person = {
-    "name": "John",
-    "age": 25,
-    "city": "New York",
-```
+# String / string
+product_description = {
+    "TNT": "A high explosive. Can destroy buildings.",
+    "Dynamite": "A high explosive. Can destroy more buildings.",
+}
 
-## Dictionary Keys
+# Int / int
+product_count_by_id = {
+    10402 : 10,
+    10403 : 20,
+    10404 : 30,
+    10405 : 40,
+}
 
-Dictionary keys must be unique. If you try to create a dictionary with duplicate keys, the last key-value pair will overwrite the previous one:
-
-```python
-# Duplicate keys
-my_dict = {
-    "name": "John",
-    "age": 25,
-    "city": "New York",
-    "name": "Jane"
-print(my_dict)
-# Output: {"name": "Jane", "age": 25, "city": "New York"}
+# String / int
+days_in_month = {
+    "January": 31,
+    "February": 29,
+    "March": 31,
+    "December": 31,
+}
 ```
 
 ## Accessing Values
@@ -109,16 +101,6 @@ print(my_dict["name"])  # Output: John
 print(my_dict["age"])   # Output: 25
 ```
 
-## Modifying Values
-
-You can modify the values associated with a key:
-
-```python
-# Modifying values
-my_dict["age"] = 26
-print(my_dict["age"])   # Output: 26
-```
-
 ## Adding new Key-Value Pairs
 
 You can add new key-value pairs to a dictionary:
@@ -126,8 +108,18 @@ You can add new key-value pairs to a dictionary:
 ```python
 # Adding a new key-value pair
 my_dict["gender"] = "Male"
-print(my_dict)
-# Output: {"name": "John", "age": 26, "city": "New York", "gender": "Male"}
+```
+
+## Modifying Values
+
+You can modify the existing values associated with a key. It works the same way as adding a new key-value pair:
+
+```python
+# Modifying values
+my_dict["age"] = 25
+print(my_dict["age"])   # Output: 25
+my_dict["age"] = 26
+print(my_dict["age"])   # Output: 26
 ```
 
 ## Removing Key-Value Pairs
@@ -137,8 +129,6 @@ You can remove a key-value pair from a dictionary using the `del` keyword:
 ```python
 # Removing a key-value pair
 del my_dict["city"]
-print(my_dict)
-# Output: {"name": "John", "age": 26, "gender": "Male"}
 ```
 
 ## Checking if a Key Exists
