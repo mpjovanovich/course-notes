@@ -8,7 +8,8 @@ showBreadcrumb: false
 
 ## Announcements
 
-- ...
+- Midterm exam next week
+- Quizzes due next week
 
 ## Schedule
 
@@ -23,7 +24,7 @@ showBreadcrumb: false
   - [M02: Intro to Programming](#m02-intro-to-programming)
   - [M03: Boolean Algebra](#m03-boolean-algebra)
   - [M04: Functional Arithmetic and Expression Parsing](#m04-functional-arithmetic-and-expression-parsing)
-  - [M0X - System Modeling](#m0x---system-modeling)
+  - [M0X: System Modeling](#m0x-system-modeling)
   - [M05: Selection Structures](#m05-selection-structures)
 
 /~
@@ -132,7 +133,7 @@ Review: Truth Tables Assignment
 
 Review: AST Assignment
 
-## M0X - System Modeling
+## M0X: System Modeling
 
 Discussion: Data Structures - Choose Your Own Adventure
 
