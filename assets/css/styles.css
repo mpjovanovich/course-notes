@@ -337,7 +337,7 @@ so there should always be a TOC */
 }
 /* Common mistake */
 .lookout::before {
-  content: "👀 Common Mistake";
+  content: "👀 Lookout!";
 }
 
 /* 

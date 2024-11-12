@@ -44,7 +44,6 @@ A dictionary is a collection of key-value pairs. Dictionaries are also known as
 my_dict = {
     "key1": "value1",
     "key2": "value2",
-/~
 
 # Int / int
 my_dict2 = {
@@ -52,7 +51,6 @@ my_dict2 = {
     2 : 29,
     3 : 31,
     12 : 31,
-/~
 
 # String / int
 my_dict3 = {
@@ -60,7 +58,6 @@ my_dict3 = {
     "February": 29,
     "March": 31,
     "December": 31,
-/~
 ```
 
 ## Common Uses for Dictionaries
@@ -74,7 +71,6 @@ prices = {
     "apple": .75,
     "orange": .25,
     "banana": .99,
-/~
 ```
 
 - Storing a set of items that are related to a single item
@@ -86,7 +82,6 @@ person = {
     "name": "John",
     "age": 25,
     "city": "New York",
-/~
 ```
 
 ## Dictionary Keys
@@ -100,7 +95,6 @@ my_dict = {
     "age": 25,
     "city": "New York",
     "name": "Jane"
-/~
 print(my_dict)
 # Output: {"name": "Jane", "age": 25, "city": "New York"}
 ```
