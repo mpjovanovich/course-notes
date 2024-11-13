@@ -26,6 +26,7 @@ showBreadcrumb: false
   - [M04: Functional Arithmetic and Expression Parsing](#m04-functional-arithmetic-and-expression-parsing)
   - [M0X: System Modeling](#m0x-system-modeling)
   - [M05: Selection Structures](#m05-selection-structures)
+    - [M06: Loops and Iteration](#m06-loops-and-iteration)
 
 /~
 
@@ -142,6 +143,14 @@ Discussion: Data Structures - Choose Your Own Adventure
 ## M05: Selection Structures
 
 [Selection Structures](selection.html)
+
+### M06: Loops and Iteration
+
+[Loops Introduction](../SDEV140/loops_introduction.html?course=SDEV120)
+
+[Indefinite Loops](../SDEV140/indefinite_loops.html?course=SDEV120)
+
+[Step Values](../SDEV140/step_values.html?course=SDEV120)
 
 <!-- ## M03: Logic Gates and Circuits
 
