@@ -26,6 +26,7 @@ showBreadcrumb: false
   - [Module 02: Selection Structures](#module-02-selection-structures)
   - [Module 03: Loops](#module-03-loops)
   - [Module 04: Lists and Dictionaries](#module-04-lists-and-dictionaries)
+  - [Module 05: Exceptions and Error Handling](#module-05-exceptions-and-error-handling)
 
 /~
 
@@ -127,6 +128,10 @@ Lab: Definite Loops
 [Arrays](arrays.html)
 
 [Dictionaries](dictionaries.html)
+
+## Module 05: Exceptions and Error Handling
+
+[Error Handling and Input Validation](error_handling.html)
 
 <!--
 ## Module 03: Functions and Modularity
