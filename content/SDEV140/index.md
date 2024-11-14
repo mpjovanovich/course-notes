@@ -12,7 +12,7 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- Review: Final project and milestone 1
+- ...
 
 ## Schedule
 
@@ -130,6 +130,8 @@ Lab: Definite Loops
 [Dictionaries](dictionaries.html)
 
 ## Module 05: Exceptions and Error Handling
+
+Unit Testing: Demo; how to interpret results for your labs
 
 [Error Handling and Input Validation](error_handling.html)
 
