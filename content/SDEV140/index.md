@@ -104,8 +104,6 @@ Lab: Selection
 
 ## Module 03: Loops
 
-[Review: Loops Introduction](loops_introduction.html)
-
 [Review: Indefinite Loops](../SDEV120/programming_with_loops.html?course=SDEV140)
 
 [Review: Step Values](step_values.html)
