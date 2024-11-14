@@ -18,27 +18,32 @@ course: SDEV140
 </figure>
 
 Loops are commonly used to:
+
 - repeat a block of code
 - iterate over a collection of data
 
 Loops can run zero to infinite times depending on the condition and inputs.
+
 - **Iteration** = one execution of the loop body.
 
 ## Pseudocode
 
 ```
-while some_condition == True:
-    # loop body
+WHILE some_condition is true:
+    Do some work...
+END WHILE
 ```
 
 ```
-for some_start_value to some_end_value:
-    # loop body
+FOR some_start_value TO some_end_value:
+    Do some work...
+END FOR
 ```
 
 ```
-for each item in some_collection:
-    # loop body
+FOR each item IN some_collection:
+    Do some work...
+END FOR
 ```
 
 ## Flowchart

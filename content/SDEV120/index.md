@@ -147,9 +147,7 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 ## M06: Loops and Iteration
 
-[Loops Introduction](../SDEV140/loops_introduction.html?course=SDEV120)
-
-[Indefinite Loops](../SDEV140/indefinite_loops.html?course=SDEV120)
+[Programming with Loops](programming_with_loops.html)
 
 [Step Values](../SDEV140/step_values.html?course=SDEV120)
 
