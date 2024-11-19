@@ -12,7 +12,12 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- ...
+- Milestone 1 pushed back to Friday
+  - New syllabus posted
+- Lab syllabus posted
+  - Review how to access test results and why changes were made to your code.
+  - Resubmissions due Friday for selection lab and forward
+  - _Check that your output matches the expected output **exactly**!_
 
 ## Schedule
 
@@ -27,6 +32,7 @@ showBreadcrumb: false
   - [Module 03: Loops](#module-03-loops)
   - [Module 04: Lists and Dictionaries](#module-04-lists-and-dictionaries)
   - [Module 05: Exceptions and Error Handling](#module-05-exceptions-and-error-handling)
+  - [Module 06: Functions and Modularity](#module-06-functions-and-modularity)
 
 /~
 
@@ -135,15 +141,11 @@ Unit Testing: Demo; how to interpret results for your labs
 
 [Error Handling and Input Validation](error_handling.html)
 
-<!--
-## Module 03: Functions and Modularity
+## Module 06: Functions and Modularity
 
 [Functions](functions.html)
 
-### Day 5
-
-[Error Handling and Input Validation](error_handling.html)
-
+<!--
 ## Midterm
 
 ### Day 8

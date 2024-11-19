@@ -5,124 +5,168 @@ course: SDEV140
 
 ~.toc
 
-- [Functions](#functions)
-  - [Overview: Why Functions?](#overview-why-functions)
-    - [Code Reuse](#code-reuse)
-    - [Code Consistency](#code-consistency)
-    - [Code Organization](#code-organization)
-    - [Code Readability](#code-readability)
-    - [Code Testability](#code-testability)
-    - [Code Modularity / Portability](#code-modularity--portability)
+- [Functions in Python](#functions-in-python)
+  - [Why Use Functions?](#why-use-functions)
+  - [Function Naming Conventions](#function-naming-conventions)
   - [Function Definition](#function-definition)
-  - [The Call Stack](#the-call-stack)
-    - [Stack Data Structure](#stack-data-structure)
-    - [Stack Frames](#stack-frames)
-    - [Call Stack](#call-stack)
-  - [Function Composition](#function-composition)
-  - [Variable Scope](#variable-scope)
-  - [Named Arguments](#named-arguments)
-  - [Default Parameters](#default-parameters)
+  - [Key Components](#key-components)
+  - [Parameters vs. Arguments](#parameters-vs-arguments)
+  - [Examples](#examples)
+  - [Refactoring](#refactoring)
 
 /~
 
-# Functions
+# Functions in Python
 
-## Overview: Why Functions?
+## Why Use Functions?
 
-### Code Reuse
+**Code Reuse**
 
-- **Don't Repeat Yourself** (DRY) principle
+- Implement the **Don't Repeat Yourself** (DRY) principle
+- Write code once, use multiple times
 
-### Code Consistency
+**Code Organization**
 
-- One version of a function for all callers.
+- Break complex programs into manageable pieces
+- Apply **single responsibility principle**
+- Each function should have a clear, specific purpose
 
-### Code Organization
+**Code Readability**
 
-- Break up large programs into smaller, more manageable pieces.
-- **Single responsibility principle**: function should have a single, well-defined responsibility / purpose.
+- Use descriptive, verb-based function names
+- Make code self-documenting
 
-### Code Readability
-
-- Descriptive function names make code self-documenting.
-- Usually start with a verb, except for boolean checks.
-
-_Example Function Names_
+## Function Naming Conventions
 
 User input:
 
-- `get_user_input()`
-- `get_user_input_as_int()`
+```python
+def get_user_input()
+def get_user_input_as_int()
+```
 
 Getters and setters:
 
-- `get_account_balance()`
-- `update_account_balance()`
+```python
+def get_account_balance()
+def update_account_balance()
+```
 
 Boolean checks:
 
-- `is_user_logged_in()`
-- `is_user_admin()`
+```python
+def is_user_logged_in()
+def is_user_admin()
+```
 
 Data processing:
 
-- `calculate_tax()`
-- `filter_items_by_user()`
-
-### Code Testability
-
-- Unit testing
-
-### Code Modularity / Portability
-
-- Functions can be used by other parts of the same program.
-- Functions can be used by different programs.
+```python
+def calculate_tax()
+def filter_items_by_user()
+```
 
 ## Function Definition
 
-_Python_
-
 ```python
-# Function signature
-def function_name( parameter1, parameter2, ... ):
+def function_name(parameter1, parameter2, ...):
     # Function body
     return value
 ```
 
-_C# / Java_
+## Key Components
 
-```csharp
-// C# / Java style function signature
-// Return type is bool, accepts two int parameters
-// Uses curly braces for block of code instead of indentation
-public bool FunctionName( int parameter1, int parameter2 )
-{
-    // Function body
-    return value;
-/~
+| Component     | Description                                                                |
+| ------------- | -------------------------------------------------------------------------- |
+| Identifier    | The name of the function.                                                  |
+| Parameters    | Zero or more values that the function takes as input.                      |
+| Return value  | A value returned by the function (even if that value is `None` or `void`). |
+| Function body | The code inside the function.                                              |
+
+## Parameters vs. Arguments
+
+A **parameter** is the variable in the function definition.
+
+An **argument** is the value passed to the function when it is called.
+
+_Function definition:_
+
+```python
+# thing = parameter
+def do_something(thing):
+    # Function body
 ```
 
-A **function signature** consists of:
+_Function call:_
 
-- The keyword `def`
-- The function name
-- A list of parameters in parentheses; zero to many parameters
-  - Parameter name
-  - Parameter data type (in typed languages)
-- A return type (in typed languages)
-  - If function does not return a (useful) value we do not need `return` keyword.
-    - We call this a **void function**.
-    - Since all functions must return a value, function returns special value to signify "no return value"
-    - `None`, `null`, `void`, etc.
+```python
+# jump = argument
+do_something("jumping")
+```
 
-A **function body** is a block of code that is executed when the function is called.
+Variable names for parameters and arguments do not have to match:
 
-- Must be indented.
-- One or more statements.
+```python
+activity = "jumping"
+do_something(activity)
+```
 
-<p class="demo">Demo:</p>
+We will see why when we discuss **scope**.
 
-m04_create_truth_table.py
+## Examples
+
+~/.focusContent.example
+
+**Let's try a few functions:**
+
+- A simple `print_header` function for a report (no arguments)
+- Wrap some text in an HTML `<p>` tag
+- Wrap some text in a tag provided as a parameter
+- Calculate the sum of a list of numbers
+- Find the index of an item in a list
+- Print items in a list formatted in a specific way
+- Get user input as integer
+
+/~
+
+## Refactoring
+
+**Refactoring** is the process of restructuring code without changing its external behavior.
+
+~.focusContent.demo
+
+**Let's take a messy program and refactor it using functions:**
+
+```python
+# messy_program.py
+# TODO
+```
+
+/~
+
+<!-- ## Function Composition
+
+### Nested Function Calls
+
+```python
+def add_one(x):
+    return x + 1
+
+def add_five(x):
+    return x + 5
+
+result = add_five(add_one(3))  # (3 + 1) + 5 = 9
+```
+
+### Method Chaining
+
+```python
+text = "  Hello, World!  "
+# Strip whitespace,
+# convert to lowercase,
+# replace "world" with "Python"
+cleaned_text = text.strip().lower().replace("world", "Python")
+```
 
 ## The Call Stack
 
@@ -157,59 +201,19 @@ The call stack:
 
 **Stack overflow** = when the call stack grows too large, and the program runs out of memory.
 
-## Function Composition
-
-- We can say that functions are **composable**.
-- We can use the output of one function as the input to another function.
-- We can use the output of a function as the input to itself.
-
-Two main ways that we see this:
-
-```python
-def f( x ):
-    return x + 1
-
-def g( x ):
-    return x * 2
-
-## Composition
-print( f( g( 2 ) ) )
-```
-
-Or, function chaining:
-
-```python
-text = "   Hello, World!   "
-result = text.strip().lower().replace("world", "Python")
-print(result)
-```
-
 ## Variable Scope
-
-**Variable scope** = the part of a program where a variable is visible.
-
-Typically two types:
-
-- **Global scope** = visible to entire program.
-- **Local scope** = visible only within function.
 
 ```python
 # Global scope
-x = 10
+total = 100
 
-def my_function():
-    y = 20
+def calculate_discount():
+    # Local scope
+    discount_rate = 0.1
+    return total * discount_rate
 
-    ## In scope: x, y
-    print(x, y)
-
-
-my_function()
-
-## In scope: x
-## Out of scope: y
-print(x) # This works
-print(y)  # NameError: name 'y' is not defined
+print(total)  # Accessible
+# print(discount_rate)  # Would raise NameError
 ```
 
 ## Named Arguments
@@ -260,45 +264,9 @@ def greet( name="Jumping Jennifer", greeting ):
 greet("Hello") # SyntaxError: non-default argument follows default argument
 ```
 
-<!--
+## Review: Best Practices
 
-## Type Annotations
-
-Python allows us to add type annotations to function parameters and return values.
-
-```python
-# greet function takes two string parameters and returns None (void function)
-def greet( first_name: str, last_name: str ) -> None:
-    print(f"Hello, {first_name} {last_name}!")
-```
-
-Type annotations are not enforced by Python, but can be used by linters.
-
-**Linting** = static analysis of code to find errors before runtime.
-
-VS Code, e.g., will provide warnings if you pass the wrong type to a function if type hints are present.
-
-```python
-def greet( first_name: str, last_name: str ) -> None:
-    print(f"Hello, {first_name} {last_name}!")
-
-greet( "Billy", "Bornsen" )
-greet( 1, 2 ) # No error, but linters will warn
-```
-
-## The `main` Function
-
-- Historically, the `main` function is the entry point of a program.
-- In Python, the `main` function is not required, but is a common convention.
-- Handles the setup and execution of a program, e.g. get user input, call other functions, etc.
-
-```python
-def main():
-    x = getUserInput()
-    y = doSomething(x)
-    print(y)
-    # etc. etc.
-
-main()
-```
--->
+- Keep functions small and focused.
+- Use meaningful names.
+- Prefer returning values over modifying global state.
+- Handle potential errors. Document any exceptions that may be raised. -->
