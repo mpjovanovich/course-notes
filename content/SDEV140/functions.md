@@ -115,7 +115,7 @@ We will see why when we discuss **scope**.
 
 ## Examples
 
-~/.focusContent.example
+~.focusContent.example
 
 **Let's try a few functions:**
 
