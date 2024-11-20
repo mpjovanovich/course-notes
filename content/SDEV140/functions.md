@@ -9,7 +9,7 @@ course: SDEV140
   - [What are Functions?](#what-are-functions)
   - [How are Functions Used?](#how-are-functions-used)
   - [Key Components](#key-components)
-  - [Examples](#examples)
+  - [Basic Examples](#basic-examples)
   - [Why do we use Functions?](#why-do-we-use-functions)
   - [Function Naming Conventions](#function-naming-conventions)
   - [Parameters vs. Arguments](#parameters-vs-arguments)
@@ -61,7 +61,7 @@ def function_name(parameter1, parameter2, ...):
 | Return value  | Data that the function returns as output. This data is returned to the **caller**. In Python this is done using the `return` keyword.                                                |
 | Function body | The code inside the function. This is indented one level from the `def` keyword.                                                                                                     |
 
-## Examples
+## Basic Examples
 
 Let's look at some examples of functions with different inputs and outputs.
 
