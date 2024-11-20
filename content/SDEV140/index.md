@@ -140,6 +140,8 @@ Unit Testing: Demo; how to interpret results for your labs
 
 [Functions](functions.html)
 
+[The Call Stack and Variable Scope](stack_scope.html)
+
 <!--
 ## Midterm
 

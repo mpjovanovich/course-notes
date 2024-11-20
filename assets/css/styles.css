@@ -340,6 +340,10 @@ so there should always be a TOC */
   content: "👀 Lookout!";
 }
 
+.note::before {
+  content: "📚 Side Note";
+}
+
 /* 
 * MEDIA QUERIES
 */
