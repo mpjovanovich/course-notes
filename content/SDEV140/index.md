@@ -12,12 +12,7 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- Milestone 1 pushed back to Friday
-  - New syllabus posted
-- Lab syllabus posted
-  - Review how to access test results and why changes were made to your code.
-  - Resubmissions due Friday for selection lab and forward
-  - _Check that your output matches the expected output **exactly**!_
+- Clarify how to do previous lab; fill in function body
 
 ## Schedule
 
