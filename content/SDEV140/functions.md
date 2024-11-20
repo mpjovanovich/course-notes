@@ -6,19 +6,147 @@ course: SDEV140
 ~.toc
 
 - [Functions in Python](#functions-in-python)
-  - [Why Use Functions?](#why-use-functions)
-  - [Function Naming Conventions](#function-naming-conventions)
-  - [Function Definition](#function-definition)
+  - [What are Functions?](#what-are-functions)
+  - [How are Functions Used?](#how-are-functions-used)
   - [Key Components](#key-components)
-  - [Parameters vs. Arguments](#parameters-vs-arguments)
   - [Examples](#examples)
+  - [Why do we use Functions?](#why-do-we-use-functions)
+  - [Function Naming Conventions](#function-naming-conventions)
+  - [Parameters vs. Arguments](#parameters-vs-arguments)
+  - [Walkthrough](#walkthrough)
   - [Refactoring](#refactoring)
 
 /~
 
 # Functions in Python
 
-## Why Use Functions?
+## What are Functions?
+
+Functions are reusable blocks of code that perform a specific task. They can be called multiple times with different inputs to perform the same task. Functions operate like a mini-program within a program.
+
+Functions are a way to:
+
+- Take data as input (Optionally)
+- Perform some operations
+- Return data as output (Optionally)
+
+## How are Functions Used?
+
+_Definition:_
+
+A function is first **defined**.
+
+This definition is a very simple program that fulfills a specific task. You might think of it as template that's waiting to be used.
+
+_Call:_
+
+A function is then **called** using its name followed by parentheses. The function may be called as many times as needed throughout the program.
+
+Larger complex programs are built by combining many simple functions.
+
+## Key Components
+
+**Anatomy:**
+
+```python
+def function_name(parameter1, parameter2, ...):
+    # Function body
+    return value
+```
+
+| Component     | Description                                                                                                                                                                          |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Identifier    | The name of the function. In Python this is preceded by the `def` keyword.                                                                                                           |
+| Parameters    | Data that the function takes as input. These are the variables that are "plugged in" to the function. There may be no variables or many variables. These are wrapped in parenthesis. |
+| Return value  | Data that the function returns as output. This data is returned to the **caller**. In Python this is done using the `return` keyword.                                                |
+| Function body | The code inside the function. This is indented one level from the `def` keyword.                                                                                                     |
+
+## Examples
+
+Let's look at some examples of functions with different inputs and outputs.
+
+~.focusContent.example
+
+**Function with no inputs and no outputs:**
+
+_Definition:_
+
+```python
+def add_numbers():
+    sum = 1 + 2
+    print(sum)
+```
+
+_Call:_
+
+```python
+add_numbers()
+```
+
+/~
+
+~.focusContent.demo
+
+**Function with input:**
+
+_Definition:_
+
+```python
+def add_one (num):
+    sum = num + 1
+    print(sum)
+```
+
+_Call:_
+
+```python
+add_one(5)
+```
+
+/~
+
+/~
+
+**Function with multiple inputs:**
+
+_Definition:_
+
+```python
+def add_two_numbers(num1, num2):
+    sum = num1 + num2
+    print(sum)
+```
+
+_Call:_
+
+```python
+add_two_numbers(1, 2)
+```
+
+/~
+
+~.focusContent.example
+
+**Function with inputs and outputs:**
+
+_Definition:_
+
+```python
+def add_two_numbers(num1, num2):
+    sum = num1 + num2
+    return sum
+```
+
+_Call:_
+
+```python
+result = add_two_numbers(1, 2)
+print(result)
+```
+
+/~
+
+## Why do we use Functions?
 
 **Code Reuse**
 
@@ -66,23 +194,6 @@ def calculate_tax()
 def filter_items_by_user()
 ```
 
-## Function Definition
-
-```python
-def function_name(parameter1, parameter2, ...):
-    # Function body
-    return value
-```
-
-## Key Components
-
-| Component     | Description                                                                |
-| ------------- | -------------------------------------------------------------------------- |
-| Identifier    | The name of the function.                                                  |
-| Parameters    | Zero or more values that the function takes as input.                      |
-| Return value  | A value returned by the function (even if that value is `None` or `void`). |
-| Function body | The code inside the function.                                              |
-
 ## Parameters vs. Arguments
 
 A **parameter** is the variable in the function definition.
@@ -113,9 +224,9 @@ do_something(activity)
 
 We will see why when we discuss **scope**.
 
-## Examples
+## Walkthrough
 
-~.focusContent.example
+~.focusContent.demo
 
 **Let's try a few functions:**
 
