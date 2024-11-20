@@ -85,7 +85,7 @@ add_numbers()
 
 /~
 
-~.focusContent.demo
+~.focusContent.example
 
 **Function with input:**
 
@@ -203,26 +203,27 @@ An **argument** is the value passed to the function when it is called.
 _Function definition:_
 
 ```python
-# thing = parameter
+# thing is the parameter
 def do_something(thing):
     # Function body
 ```
 
 _Function call:_
 
+We can pass a literal value as the argument...
+
 ```python
-# jump = argument
+# "jumping" is the argument that we pass to the function
 do_something("jumping")
 ```
 
-Variable names for parameters and arguments do not have to match:
+Or we can pass a variable as the argument...
 
 ```python
+# activity is the argument that we pass to the function
 activity = "jumping"
 do_something(activity)
 ```
-
-We will see why when we discuss **scope**.
 
 ## Walkthrough
 
