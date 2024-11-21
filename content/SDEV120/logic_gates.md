@@ -44,13 +44,15 @@ The logical connectives that we've learned so far have corresponding logic gates
 
 The truth table for each gate matches the truth table for the corresponding logical connective.
 
-<p class="demo">Demo:</p>
+~.focusContent.demo
 
 Logic.ly
 
 <figure>
   <img src="images/basic_logic_gates.png" alt="" style="width: 100%;height: auto;">
 </figure>
+
+/~
 
 ## Circuits
 

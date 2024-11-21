@@ -250,8 +250,34 @@ do_something(activity)
 **Let's take a messy program and refactor it using functions:**
 
 ```python
-# messy_program.py
-# TODO
+# Program to greet people and tell them their age in dog years
+print("Welcome to the Dog Age Calculator!")
+
+name1 = "Alice"
+age1 = 15
+dog_age1 = age1 * 7
+print("Hello", name1)
+print("You are", age1, "years old")
+print("In dog years you are", dog_age1, "years old")
+print("Goodbye", name1)
+print()
+
+name2 = "Bob"
+age2 = 12
+dog_age2 = age2 * 7
+print("Hello", name2)
+print("You are", age2, "years old")
+print("In dog years you are", dog_age2, "years old")
+print("Goodbye", name2)
+print()
+
+name3 = "Charlie"
+age3 = 14
+dog_age3 = age3 * 7
+print("Hello", name3)
+print("You are", age3, "years old")
+print("In dog years you are", dog_age3, "years old")
+print("Goodbye", name3)
 ```
 
 /~

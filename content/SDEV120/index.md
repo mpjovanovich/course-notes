@@ -28,7 +28,7 @@ showBreadcrumb: false
   - [M05: Selection Structures](#m05-selection-structures)
   - [M06: Loops and Iteration](#m06-loops-and-iteration)
   - [Midterm Review](#midterm-review)
-  - [M03: Logic Gates and Circuits](#m03-logic-gates-and-circuits)
+  - [M07: Logic Gates and Circuits](#m07-logic-gates-and-circuits)
 
 /~
 
@@ -156,7 +156,7 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Midterm Review](midterm_study_f24.html)
 
-## M03: Logic Gates and Circuits
+## M07: Logic Gates and Circuits
 
 [Logic Gates and Circuits](logic_gates.html)
 
