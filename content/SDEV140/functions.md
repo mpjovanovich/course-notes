@@ -13,6 +13,8 @@ course: SDEV140
   - [Why do we use Functions?](#why-do-we-use-functions)
   - [Function Naming Conventions](#function-naming-conventions)
   - [Parameters vs. Arguments](#parameters-vs-arguments)
+    - [Parameters](#parameters)
+    - [Arguments](#arguments)
   - [Walkthrough](#walkthrough)
   - [Refactoring](#refactoring)
 
@@ -166,39 +168,40 @@ print(result)
 
 ## Function Naming Conventions
 
-User input:
+Functions typically start with a verb:
+
+_Get input data:_
 
 ```python
 def get_user_input()
-def get_user_input_as_int()
+def get_first_name()
+def get_age()
+def get_first_record()
 ```
 
-Getters and setters:
-
-```python
-def get_account_balance()
-def update_account_balance()
-```
-
-Boolean checks:
-
-```python
-def is_user_logged_in()
-def is_user_admin()
-```
-
-Data processing:
+_Process some data:_
 
 ```python
 def calculate_tax()
 def filter_items_by_user()
+def sort_items()
+def format_items()
+```
+
+_Boolean checks:_
+
+```python
+def is_user_logged_in()
+def is_user_admin()
+def has_permission()
+def contains_item()
 ```
 
 ## Parameters vs. Arguments
 
-A **parameter** is the variable in the function definition.
+### Parameters
 
-An **argument** is the value passed to the function when it is called.
+A **parameter** is the variable in the function definition.
 
 _Function definition:_
 
@@ -207,6 +210,10 @@ _Function definition:_
 def do_something(thing):
     # Function body
 ```
+
+### Arguments
+
+An **argument** is the value passed to the function when it is called.
 
 _Function call:_
 
@@ -247,7 +254,12 @@ do_something(activity)
 
 ~.focusContent.demo
 
-**Let's take a messy program and refactor it using functions:**
+**Refactor the Following:**
+
+We can clean up this program by breaking it into smaller functions:
+
+- `calculate_dog_age`
+- `print_greeting`
 
 ```python
 # Program to greet people and tell them their age in dog years
@@ -256,28 +268,23 @@ print("Welcome to the Dog Age Calculator!")
 name1 = "Alice"
 age1 = 15
 dog_age1 = age1 * 7
-print("Hello", name1)
-print("You are", age1, "years old")
-print("In dog years you are", dog_age1, "years old")
-print("Goodbye", name1)
+print(f"Hello, {name1}, you are {age1} years old")
+print(f"In dog years you are {dog_age1} years old")
 print()
 
 name2 = "Bob"
 age2 = 12
 dog_age2 = age2 * 7
-print("Hello", name2)
-print("You are", age2, "years old")
-print("In dog years you are", dog_age2, "years old")
-print("Goodbye", name2)
+print(f"Hello, {name2}, you are {age2} years old")
+print(f"In dog years you are {dog_age2} years old")
 print()
 
 name3 = "Charlie"
 age3 = 14
 dog_age3 = age3 * 7
-print("Hello", name3)
-print("You are", age3, "years old")
-print("In dog years you are", dog_age3, "years old")
-print("Goodbye", name3)
+print(f"Hello, {name3}, you are {age3} years old")
+print(f"In dog years you are {dog_age3} years old")
+print()
 ```
 
 /~
