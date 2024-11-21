@@ -313,53 +313,6 @@ text = "  Hello, World!  "
 cleaned_text = text.strip().lower().replace("world", "Python")
 ```
 
-## The Call Stack
-
-### Stack Data Structure
-
-LIFO (last in, first out) data structure.
-
-<figure>
-    <span>
-        <img src="https://miro.medium.com/v2/resize:fit:640/1*lb-0r80YYhcnoVcQ3HY-1g.gif" style="">
-    </span>
-    <figcaption>
-        <a href="https://medium.com/@todoroski97/data-structure-stack-17b80ed3bfa9">The Stack Data Structure</a>
-    </figcaption>
-</figure>
-
-### Stack Frames
-
-A stack frame:
-
-- Represents the execution context of a single function call.
-- Contains all data relevant to the function call.
-- Exists only during the execution of a function call.
-
-### Call Stack
-
-The call stack:
-
-- Keeps track of the sequence of function calls in a program
-- Is composed of stack frames
-- Exists for the lifetime of a program
-
-**Stack overflow** = when the call stack grows too large, and the program runs out of memory.
-
-## Variable Scope
-
-```python
-# Global scope
-total = 100
-
-def calculate_discount():
-    # Local scope
-    discount_rate = 0.1
-    return total * discount_rate
-
-print(total)  # Accessible
-# print(discount_rate)  # Would raise NameError
-```
 
 ## Named Arguments
 

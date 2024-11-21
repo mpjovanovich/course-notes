@@ -9,6 +9,10 @@ course: SDEV140
   - [Stack Data Structure](#stack-data-structure)
   - [Stack Frames](#stack-frames)
   - [Call Stack](#call-stack)
+- [Variable Scope](#variable-scope)
+  - [Global Scope](#global-scope)
+  - [Function Scope](#function-scope)
+  - [Scope Examples](#scope-examples)
 
 /~
 
@@ -37,7 +41,7 @@ It's like laying down a stack of cards. You can only add or remove cards from th
 
 ## Stack Frames
 
-A **stack frame** is a data structure that contains all relevant information that's needed to execute a function.
+A **stack frame** is a data structure that contains all relevant information that's needed to execute a function. It's much like a snapshot of all of the data about a function at a given point in time.
 
 The **execution context** is the stack frame that's currently being executed. The computer only "pays attention" to the current execution context, and knows nothing about the other stack frames.
 
@@ -93,18 +97,100 @@ infinite_recursion()
 
 /~
 
-<!--
 # Variable Scope
 
+**Scope** is the region of a program where a variable is accessible. In Python, there are two types of scope:
+
+- **Global scope**: accessible everywhere in the program
+- **Function scope**: accessible only within the function where it's defined
+
+## Global Scope
+
+Variables defined outside of any function are called **global variables**. They are accessible everywhere in the program, even within functions.
+
+In general, global variables should be used sparingly. You might use a global variable if you have a read only constant value that is used in many places in your program:
+
 ```python
-# Global scope
-total = 100
+PROGRAM_CODE = "SDEV140"
 
-def calculate_discount():
-    # Local scope
-    discount_rate = 0.1
-    return total * discount_rate
+# Program code is used here...
+def print_student_record(student_id):
+    print(f"Student ID: {student_id}, Program: {PROGRAM_CODE}")
 
-print(total)  # Accessible
-# print(discount_rate)  # Would raise NameError
-``` -->
+# and here...
+def print_course_info():
+    print(f"Course Code: {PROGRAM_CODE}")
+
+print_student_record("A12345")
+print_course_info()
+```
+
+## Function Scope
+
+More typically, any variable that needs to be used within a function is either:
+
+- Passed in as a parameter
+- Created within the function
+
+These variables are called **local variables**. They are only accessible within the function where they are defined.
+
+This is because they are part of the function's stack frame, and are not accessible outside of that frame.
+
+## Scope Examples
+
+~.focusContent.lookout
+
+Trying to access a local variable outside of its function will cause an error.
+
+```python
+def print_name():
+    name = "Alice"
+    print(name)
+
+## This works fine...
+print_name()
+
+## This will cause an error - name only exists within the function
+print(name)
+```
+
+/~
+
+~.focusContent.lookout
+
+Updating a local variable will not affect the value of a variable that was passed in.
+
+**_The function creates its own local variable, which is a copy of the value passed in_**. Updating this local variable does not affect the value of the variable that was passed in.
+
+Take a look at the Stack Trace in the VS Code debugger to see how this works.
+
+```python
+def update_name(name):
+    # This "name" is actually a completely new local variable with no connection
+    # to the name variable in the outer scope
+    name = name.upper()
+    print(name)  # ALICE
+
+name = "Alice"
+print(name)  # Alice
+update_name(name)
+print(name)  # Alice
+```
+
+/~
+
+~.focusContent.example
+
+If we want to modify the value of a variable that was passed in and access it later, we do so by returning the modified value.
+
+```python
+def update_name(name):
+    name = name.upper()
+    return name
+
+name = "Alice"
+name = update_name(name)
+print(name)  # ALICE
+```
+
+/~
