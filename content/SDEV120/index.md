@@ -8,8 +8,8 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Midterm exam next week
-- Quizzes due next week
+- Check if you've missed quizzes
+- TODO Next week: how to simplify majority of three logic gate
 
 ## Schedule
 
