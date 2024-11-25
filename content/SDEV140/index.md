@@ -28,6 +28,7 @@ showBreadcrumb: false
   - [Module 04: Lists and Dictionaries](#module-04-lists-and-dictionaries)
   - [Module 05: Exceptions and Error Handling](#module-05-exceptions-and-error-handling)
   - [Module 06: Functions and Modularity](#module-06-functions-and-modularity)
+  - [Module 07: File I/O and File Parsing](#module-07-file-io-and-file-parsing)
 
 /~
 
@@ -141,6 +142,12 @@ Unit Testing: Demo; how to interpret results for your labs
 [Functions](functions.html)
 
 [The Call Stack and Variable Scope](stack_scope.html)
+
+## Module 07: File I/O and File Parsing
+
+[File I/O](file_io.html)
+
+[File Parsing](file_parsing.html)
 
 <!--
 ## Midterm
