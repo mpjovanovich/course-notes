@@ -3,6 +3,19 @@ title: Midterm Study Guide
 course: SDEV120
 ---
 
+---
+
+Most missed topics, F24:
+
+- Pascal vs camel case
+- There is no "decimal" data type; it's called a "float"
+- Nested loops - how to determine the output
+- De Morgan's law clarification (not always necessary - you can solve inside parentheses then negate)
+- f ( f ( x ) )
+- Modulo (non two case)
+
+---
+
 ### M01: Algorithms and Structured Programming
 
 #### Algorithms

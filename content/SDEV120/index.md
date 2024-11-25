@@ -8,8 +8,8 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Check if you've missed quizzes
-- TODO Next week: how to simplify majority of three logic gate
+- Review: How to simplify majority of three logic gate
+- Wednesday does have class. Thursday does not.
 
 ## Schedule
 
@@ -29,6 +29,7 @@ showBreadcrumb: false
   - [M06: Loops and Iteration](#m06-loops-and-iteration)
   - [Midterm Review](#midterm-review)
   - [M07: Logic Gates and Circuits](#m07-logic-gates-and-circuits)
+  - [M08: Data Representation and Encoding](#m08-data-representation-and-encoding)
 
 /~
 
@@ -138,6 +139,8 @@ Review: AST Assignment
 
 ## M0X: System Modeling
 
+(Not covered in F24) [Software Development Life Cycle](sdlc.html)
+
 Discussion: Data Structures - Choose Your Own Adventure
 
 [Unified Modeling Language (UML)](uml.html)
@@ -160,21 +163,7 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Logic Gates and Circuits](logic_gates.html)
 
-<!-- ## M06: System Modeling
-
-[Software Development Life Cycle](sdlc.html)
-
-[Unified Modeling Language (UML)](uml.html) -->
-
-<!-- ## Midterm Study
-
-[Midterm Study Guide](midterm_study_guide.html) -->
-
-<!-- ## M08: Repetition
-
-[Loops](loops.html) -->
-
-<!-- ## M09: Data Representation and Encoding
+## M08: Data Representation and Encoding
 
 [Intro to Computer Numbering Systems](intro_to_numbering_systems.html)
 
@@ -186,7 +175,7 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Numeric Data Types](numeric_data_types.html)
 
-[Text Data Types](text_data_types.html) -->
+[Text Data Types](text_data_types.html)
 
 <!-- ## M10: Programming Paradigms
 
@@ -205,3 +194,12 @@ Discussion: Data Structures - Choose Your Own Adventure
 <!-- ## Final Study
 
 [Final Study Guide](final_study_guide.html) -->
+
+<!--
+
+TODO NEXT COURSE RUN
+
+- Use autograded assignment for truth tables thing
+- Quiz for function composition and function basics
+
+-->
