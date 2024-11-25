@@ -81,17 +81,15 @@ else:
 
 Several Python functions useful for file I/O:
 
-| Function        | Description                               |
-| --------------- | ----------------------------------------- |
-| \*`open()`      | Opens a file for reading or writing       |
-| \*`read()`      | Reads the entire file into a string       |
-| `readline()`    | Reads a single line from the file         |
-| \*`readlines()` | Reads all lines from the file into a list |
-| \*`write()`     | Writes a string to the file               |
-| `writelines()`  | Writes a list of strings to the file      |
-| `close()`       | Closes the file                           |
-
-\*In my experience these are the most commonly used
+| Function       | Description                               |
+| -------------- | ----------------------------------------- |
+| `open()`       | Opens a file for reading or writing       |
+| `read()`       | Reads the entire file into a string       |
+| `readline()`   | Reads a single line from the file         |
+| `readlines()`  | Reads all lines from the file into a list |
+| `write()`      | Writes a string to the file               |
+| `writelines()` | Writes a list of strings to the file      |
+| `close()`      | Closes the file                           |
 
 ## Context Managers
 
