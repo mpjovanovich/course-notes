@@ -10,6 +10,7 @@ showBreadcrumb: false
 
 - Review: How to simplify majority of three logic gate
 - Wednesday does have class. Thursday does not.
+- Quizzes due Sunday
 
 ## Schedule
 

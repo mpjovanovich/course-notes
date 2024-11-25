@@ -14,6 +14,8 @@ showBreadcrumb: false
 
 - Syllabus Amendment: Lowest lab score will be dropped
 - Clarify how to do previous lab; fill in function body
+- No class Thursday
+- Review: **Milestone 2, due Sunday**
 
 ## Schedule
 
