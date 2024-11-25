@@ -170,4 +170,8 @@ with open("file.txt", "w") as file:
     file.write("Secondline")
 ```
 
-- Don't forget the newline character (`\n`) at the end of a write() call if you want a new line.
+~.focusContent.lookout
+
+Don't forget the newline character (`\n`) at the end of a write() call if you want a new line!
+
+/~
