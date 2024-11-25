@@ -12,6 +12,7 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
+- Syllabus Amendment: Lowest lab score will be dropped
 - Clarify how to do previous lab; fill in function body
 
 ## Schedule
