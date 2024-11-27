@@ -705,6 +705,10 @@ so there should always be a TOC */
   background-color: #e0e0e0;
 }
 
+.mathTable table {
+  margin: 0 5%;
+}
+
 .mathTable table th,
 .mathTable table td {
   font-family: "Courier New", monospace;

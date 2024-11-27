@@ -92,8 +92,9 @@ They use a **sign bit** to indicate the sign of the number. If the sign bit is 0
 
 ~.focusContent.exercise.mathTable.hideHeaderRow
 
-| 1   | 0   | 0   | 0   | 0   | 0   | 0   | 1   |
+|     |     |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1   | 0   | 0   | 0   | 0   | 0   | 0   | 1   |
 
 <details>
     <summary>What does the above 8 bit signed integer represent?</summary>

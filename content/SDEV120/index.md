@@ -174,8 +174,6 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Metric System for Computing](metric_system.html)
 
-[Applications for Binary and Hexadecimal](binary_hex_applications.html)
-
 [Numeric Data Types](numeric_data_types.html)
 
 [Text Data Types](text_data_types.html)
