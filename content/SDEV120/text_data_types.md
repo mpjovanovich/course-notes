@@ -23,7 +23,7 @@ Since computers only have binary to work with, we **encode** text by assigning c
 
 Recall that text is made up of **characters**: letters, numbers, and symbols.
 
-~.focusContent.demo
+~.focusContent.example
 
 **Whitespace** characters are an easy-to-miss source of computer errors. They include the space, tabs, carriage return, and line feed.
 
@@ -136,7 +136,7 @@ Now that we know more about how text is encoded, let's look at an application.
 
 - A **digest** is a fixed-size string that represents the contents of a file. The function used to calculate the digest is called a **hash function**. Useful for checking larger amounts of data.
 
-~.focusContent.example
+~.focusContent.demo
 
 ```bash
 # We create an awesome program, and host it on our website.
