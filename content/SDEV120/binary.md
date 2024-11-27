@@ -64,7 +64,7 @@ Convert the binary number to decimal: (111)<sub>2</sub>
 
 Answer: **(7)<sub>10</sub>**
 
-~/
+/~
 
 ~.focusContent.example.mathTable
 
@@ -80,7 +80,7 @@ Convert the binary number to decimal: (1101)<sub>2</sub>
 
 Answer: **(13)<sub>10</sub>**
 
-~/
+/~
 
 ## Convert: Decimal to Binary
 
@@ -106,7 +106,7 @@ Convert the decimal number to binary: 12<sub>(10)</sub>
 
 Answer: **_(1100)<sub>2</sub>_**
 
-~/
+/~
 
 ~.focusContent.example.mathTable.lastColResult
 
@@ -124,7 +124,7 @@ Convert the decimal number to binary: (21)<sub>10</sub>
 
 Answer: **_(10101)<sub>2</sub>_**
 
-~/
+/~
 
 ## Binary Addition
 
@@ -151,7 +151,7 @@ Calculate (0111)<sub>2</sub> + (1110)<sub>2</sub>.
 
 - Does this tie out with the result we obtain if we convert to decimal then add?
 
-~/
+/~
 
 ~.focusContent.example.mathTable.lastRowResult
 
@@ -167,4 +167,4 @@ Calculate (1011)<sub>2</sub> + (1101)<sub>2</sub>.
 
 - Does this tie out with the result we obtain if we convert to decimal then add?
 
-~/
+/~
