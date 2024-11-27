@@ -709,8 +709,8 @@ so there should always be a TOC */
   margin: 0 5%;
 }
 
-.mathTable table th,
-.mathTable table td {
+.mathTable > table > thead > tr > th,
+.mathTable > table > tbody > tr > td {
   font-family: "Courier New", monospace;
   letter-spacing: 0.05em;
   padding: 0.5em;
