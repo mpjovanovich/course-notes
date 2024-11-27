@@ -168,11 +168,13 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Intro to Computer Numbering Systems](intro_to_numbering_systems.html)
 
-[Converting Between Bases](numbering_conversions.html)
+[Binary](binary.html)
 
-[Applications for Binary and Hexadecimal](binary_hex_applications.html)
+[Hexadecimal](hexadecimal.html)
 
 [Metric System for Computing](metric_system.html)
+
+[Applications for Binary and Hexadecimal](binary_hex_applications.html)
 
 [Numeric Data Types](numeric_data_types.html)
 

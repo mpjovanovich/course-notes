@@ -10,10 +10,9 @@ course: SDEV120
     - [Base 10](#base-10)
     - [Base 12 and 24](#base-12-and-24)
     - [Base 60](#base-60)
-  - [Binary](#binary)
-    - [Why use it?](#why-use-it)
-  - [Hexadecimal](#hexadecimal)
-    - [Why use it?](#why-use-it-1)
+  - [Computer Numbering Systems](#computer-numbering-systems)
+    - [Binary](#binary)
+    - [Hexadecimal](#hexadecimal)
 
 /~
 
@@ -63,35 +62,28 @@ To indicate the base of a number, we use a subscript. These are not the same num
   - 60 seconds in minute
   - 60 minutes in hour
 
-## Binary
+## Computer Numbering Systems
+
+### Binary
 
 Numbers in base 2 are called **_binary_** numbers: { 0, 1 }
 
-### Why use it?
+These are the building blocks of all data in a computer.
 
-- Digital signal can be in one of two states:
-  - **_Off = 0_**
-  - **_On = 1_**
+Distiguished from decimal numbers by the prefix **_0b_**, or by using the subscript **_2_**:
 
-## Hexadecimal
+- 0b1010
+- 0b1111
+- (1010)<sub>2</sub>
+- (1111)<sub>2</sub>
+
+### Hexadecimal
 
 Numbers in base 16 are called **_hexadecimal_** numbers: { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F }
 
-### Why use it?
+Hexadecimal is way to write binary numbers in a more compact form.
 
-Hexadecimal (hex) offers a nice, compact way to represent binary numbers.
+Distiguished from decimal numbers by the prefix **_0x_**. Does not typically use the subscript **_16_**.
 
-- Break binary number into groups of 4 bits (called a **nibble**).
-  - Each nibble is guaranteed to be a number from 0-15; 0-F in hex.
-- Convert each nibble to hex.
-- Concatenate the results - put them back together.
-
-~.focusContent.demo
-
-Using four bits to represent hex digits: [logic.ly](https://logic.ly/demo/)
-
-<figure>
-  <img src="images/hex_bit_switch.png" alt="" style="width: 100%;height: auto;">
-</figure>
-
-/~
+- 0x1A
+- 0x10
