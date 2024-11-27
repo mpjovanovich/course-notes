@@ -137,33 +137,35 @@ When adding a column you can either have (depending on remainder and row values)
 - two = 10
 - three = 11
 
-~.focusContent.example.mathTable.lastRowResult
+~.focusContent.example.mathTable.hideHeaderRow.lastRowResult
 
 **Example 1**
 
 Calculate (0111)<sub>2</sub> + (1110)<sub>2</sub>.
 
-|     1 |     1 |     1 |       |       |
-| ----: | ----: | ----: | ----: | ----: |
-|       |     0 |     1 |     1 |     1 |
-|     + |     1 |     1 |     1 |     0 |
-| **1** | **0** | **1** | **0** | **1** |
+|     |       |       |       |       |       |
+| --- | ----: | ----: | ----: | ----: | ----: |
+| R:  |     1 |     1 |     1 |       |       |
+|     |       |     0 |     1 |     1 |     1 |
+|     |     + |     1 |     1 |     1 |     0 |
+|     | **1** | **0** | **1** | **0** | **1** |
 
 - Does this tie out with the result we obtain if we convert to decimal then add?
 
 /~
 
-~.focusContent.example.mathTable.lastRowResult
+~.focusContent.example.mathTable.hideHeaderRow.lastRowResult
 
 **Example 2**
 
 Calculate (1011)<sub>2</sub> + (1101)<sub>2</sub>.
 
-|     1 |     1 |     1 |     1 |       |       |
-| ----: | ----: | ----: | ----: | ----: | ----: |
-|       |     1 |     0 |     1 |     1 |     1 |
-|     + |     1 |     1 |     0 |     1 |     0 |
-| **1** | **1** | **0** | **0** | **0** | **1** |
+|     |       |       |       |       |       |       |
+| --- | ----: | ----: | ----: | ----: | ----: | ----: |
+| R:  |       |     1 |     1 |     1 |     1 |       |
+|     |       |     1 |     0 |     1 |     1 |     1 |
+|     |     + |     1 |     1 |     0 |     1 |     0 |
+|     | **1** | **1** | **0** | **0** | **0** | **1** |
 
 - Does this tie out with the result we obtain if we convert to decimal then add?
 
