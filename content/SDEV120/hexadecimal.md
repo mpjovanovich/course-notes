@@ -68,9 +68,9 @@ Convert the binary number to hexadecimal: (11011100)<sub>2</sub>
 - 13 = D
 - 12 = C
 
-4. Concatenate the results:
+4. Concatenate the results (don't forget the 0x prefix!):
 
-(0xDC)<sub>16</sub>
+**0xDC**
 
 /~
 

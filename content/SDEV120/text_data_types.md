@@ -11,6 +11,7 @@ course: SDEV120
   - [Unicode](#unicode)
     - [Applications](#applications)
   - [Text vs Binary Files](#text-vs-binary-files)
+  - [Checksums, Digests, and Hashes](#checksums-digests-and-hashes)
 
 /~
 
@@ -123,6 +124,36 @@ xxd -b some_file.bin
 
 # Look at the hex notation for our text file to show why we use hex
 xxd some_file.txt
+```
+
+/~
+
+## Checksums, Digests, and Hashes
+
+Now that we know more about how text is encoded, let's look at an application.
+
+- A **checksum** is calculated by adding the bytes in a message and storing the result in a separate byte. Useful for checking small amount of data.
+
+- A **digest** is a fixed-size string that represents the contents of a file. The function used to calculate the digest is called a **hash function**. Useful for checking larger amounts of data.
+
+~.focusContent.example
+
+```bash
+# We create an awesome program, and host it on our website.
+# We provide a checksum and MD5 digest for users to verify the
+# file's integrity.
+echo "Hey, I'm the file." > test.exe
+sum test.exe    # Checksum
+md5sum test.exe # MD5 digest
+
+# Bad actor changes the file and distributes it,
+# pretending it's authentic.
+echo "I've come to ruin your computer." > test2.exe
+
+# Our friend downloads the file and checks the checksum
+# to make sure it's the same as the original.
+sum test2.exe
+md5sum test2.exe
 ```
 
 /~

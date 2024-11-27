@@ -8,9 +8,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Review: How to simplify majority of three logic gate
-- Wednesday does have class. Thursday does not.
-- Quizzes due Sunday
+- ...
 
 ## Schedule
 
@@ -168,9 +166,11 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Intro to Computer Numbering Systems](intro_to_numbering_systems.html)
 
-[Binary](binary.html)
+[Binary Numbers](binary.html)
 
-[Hexadecimal](hexadecimal.html)
+[Hexadecimal Numbers](hexadecimal.html)
+
+[Bitwise Operations](bitwise_operations.html)
 
 [Metric System for Computing](metric_system.html)
 
@@ -179,6 +179,8 @@ Discussion: Data Structures - Choose Your Own Adventure
 [Numeric Data Types](numeric_data_types.html)
 
 [Text Data Types](text_data_types.html)
+
+[Data Types: Challenges and Limitations](data_types_challenges.html)
 
 <!-- ## M10: Programming Paradigms
 
