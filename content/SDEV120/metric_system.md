@@ -9,8 +9,8 @@ course: SDEV120
   - [Decimal Chart](#decimal-chart)
   - [Binary Chart](#binary-chart)
     - [Prefix Conversions](#prefix-conversions)
-      - [Going up the chart:](#going-up-the-chart)
-      - [Going down the chart:](#going-down-the-chart)
+      - [Going down the chart](#going-down-the-chart)
+      - [Going up the chart](#going-up-the-chart)
   - [Decimal Applications](#decimal-applications)
     - [Data transfer rates](#data-transfer-rates)
     - [Device Speeds](#device-speeds)
@@ -81,14 +81,15 @@ Note the uppercase "B" for bytes and lowercase "b" for bits.
 | 1 KiB = 1,024 B    |
 | 1 MiB = 1,024 KiB  |
 | 1 GiB = 1,024 MiB  |
+| ...                |
 
-#### Going up the chart:
+#### Going down the chart
 
 Multiply by 1,024 (2<sup>10</sup>) to go up a level, except for bits. Cancel units until you reach the desired level.
 
 _Example_
 
-Convert GiB to bits:
+Convert 1.4 GiB to bits:
 
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mstyle displaystyle="true" scriptlevel="0">
@@ -174,7 +175,7 @@ Convert GiB to bits:
 1.4 GiB \cdot \frac{1024 MiB}{1 GiB} \cdot \frac{1024 KiB}{1 MiB} \cdot \frac{1024 B}{1 KiB} \cdot \frac{8 b}{1 B} = 12,025,908,428 b
 $$ -->
 
-#### Going down the chart:
+#### Going up the chart
 
 Divide by 1,024 (2<sup>10</sup>) to go down a level, except for bits. Cancel units until you reach the desired level.
 
@@ -185,7 +186,7 @@ Divide by 1,024 (2<sup>10</sup>) to go down a level, except for bits. Cancel uni
 
 _Example_
 
-Convert bits to GiB:
+Convert 12,025,908,428 bits to GiB:
 
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mstyle displaystyle="true" scriptlevel="0">
@@ -303,22 +304,6 @@ At the nanoscale, electrical properties are important. For example, the thicknes
 
 The binary prefixes were established by the International Electrotechnical Commission (IEC) in 1999. Not everyone uses them, but they provide more clarity when discussing computer memory sizes.
 
+_When talking about memory sizes, prefer binary prefixes._
+
 File sizes listed in base 10 can be misleading.
-
-~.focusContent.example
-
-Do the three reported memory sizes tie out in this example?
-
-<figure>
-    <span>
-        <img src="images/metric_walkthrough_1.png" style="width: 100%;">
-    </span>
-</figure>
-
-<figure>
-    <span>
-        <img src="images/metric_walkthrough_2.png" style="width: 100%;">
-    </span>
-</figure>
-
-/~
