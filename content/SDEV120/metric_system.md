@@ -69,7 +69,7 @@ If exact memory sizes are important for your context...
 - **Prefer:** 1 KiB = 1,024 bytes
 - **Avoid:** 1 KB = 1,000 bytes
 
-~/
+/~
 
 | Name | Symbol | Power of 2     | Bytes                              |
 | ---- | ------ | -------------- | ---------------------------------- |
