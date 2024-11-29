@@ -11,12 +11,11 @@ course: SDEV120
     - [Prefix Conversions](#prefix-conversions)
       - [Going down the chart](#going-down-the-chart)
       - [Going up the chart](#going-up-the-chart)
-  - [Decimal Applications](#decimal-applications)
-    - [Data transfer rates](#data-transfer-rates)
+  - [Decimal Applications for Metric Prefixes](#decimal-applications-for-metric-prefixes)
+    - [Data Transfer Rates](#data-transfer-rates)
     - [Device Speeds](#device-speeds)
-    - [Physical Hardware Sizes](#physical-hardware-sizes)
     - [Extreme Scales](#extreme-scales)
-  - [Binary Applications](#binary-applications)
+  - [Binary Applications for Metric Prefixes](#binary-applications-for-metric-prefixes)
 
 /~
 
@@ -58,6 +57,19 @@ _I did not include deca and hecto. We will leave those for the other scientists.
 Since computers use base 2, we also have binary prefixes for describing numbers of bytes.
 
 Note the uppercase "B" for bytes and lowercase "b" for bits.
+
+~.focusContent.lookout
+
+The binary prefixes were established by the International Electrotechnical Commission (IEC) in 1999. Not everyone uses them, but they provide more clarity when discussing computer memory sizes.
+
+**Example:**
+
+If exact memory sizes are important for your context...
+
+- **Prefer:** 1 KiB = 1,024 bytes
+- **Avoid:** 1 KB = 1,000 bytes
+
+~/
 
 | Name | Symbol | Power of 2     | Bytes                              |
 | ---- | ------ | -------------- | ---------------------------------- |
@@ -272,9 +284,9 @@ $$
 12,025,908,428 b \cdot \frac{1 B}{8 b} \cdot \frac{1 KiB}{1024 B} \cdot \frac{1 MiB}{1024 KiB} \cdot \frac{1 GiB}{1024 MiB} = 1.4 GiB
 $$ -->
 
-## Decimal Applications
+## Decimal Applications for Metric Prefixes
 
-### Data transfer rates
+### Data Transfer Rates
 
 Base 10 is preferred in networking, because we're thinking of a bit transfer rate - how many bits are passing through a network or device per some unit of time.
 
@@ -286,10 +298,6 @@ Clock speeds are often measured in hertz (Hz), which is a unit of frequency. Thi
 
 Modern processors are in the gigahertz range (e.g. 3 GHz).
 
-### Physical Hardware Sizes
-
-Manufacturers often use imperial units for physical hardware sizes, but the metric system is used in some cases.
-
 ### Extreme Scales
 
 <figure>
@@ -300,10 +308,12 @@ Processor architectures are often discussed at the nanoscale, because we are man
 
 At the nanoscale, electrical properties are important. For example, the thickness of a transistor gate oxide in a MOSFET is on the order of nanometers.
 
-## Binary Applications
+## Binary Applications for Metric Prefixes
 
-The binary prefixes were established by the International Electrotechnical Commission (IEC) in 1999. Not everyone uses them, but they provide more clarity when discussing computer memory sizes.
+Memory, memory, memory.
 
-_When talking about memory sizes, prefer binary prefixes._
-
-File sizes listed in base 10 can be misleading.
+- File sizes
+- Disk sizes
+- RAM sizes
+- Cache sizes
+- ...
