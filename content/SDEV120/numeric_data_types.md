@@ -49,13 +49,13 @@ long distance = 1000000000000;
 
 | Data Type       | Number of Bits |                   Range (Exponents) |                                        Range (Friendly) |
 | --------------- | -------------: | ----------------------------------: | ------------------------------------------------------: |
-| 8-bit unsigned  |              8 |                  0 to 2<sup>8</sup> |                                                0 to 255 |
+| 8-bit unsigned  |              8 |              0 to 2<sup>8</sup> - 1 |                                                0 to 255 |
 | 8-bit signed    |              8 |   -2<sup>7</sup> to 2<sup>7</sup>-1 |                                             -128 to 127 |
-| 16-bit unsigned |             16 |                 0 to 2<sup>16</sup> |                                             0 to 65,535 |
+| 16-bit unsigned |             16 |             0 to 2<sup>16</sup> - 1 |                                             0 to 65,535 |
 | 16-bit signed   |             16 | -2<sup>15</sup> to 2<sup>15</sup>-1 |                                       -32,768 to 32,767 |
-| 32-bit unsigned |             32 |                 0 to 2<sup>32</sup> |                                      0 to 4,294,967,295 |
+| 32-bit unsigned |             32 |             0 to 2<sup>32</sup> - 1 |                                      0 to 4,294,967,295 |
 | 32-bit signed   |             32 | -2<sup>31</sup> to 2<sup>31</sup>-1 |                         -2,147,483,648 to 2,147,483,647 |
-| 64-bit unsigned |             64 |                 0 to 2<sup>64</sup> |                         0 to 18,446,744,073,709,551,615 |
+| 64-bit unsigned |             64 |             0 to 2<sup>64</sup> - 1 |                         0 to 18,446,744,073,709,551,615 |
 | 64-bit signed   |             64 | -2<sup>63</sup> to 2<sup>63</sup>-1 | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
 
 ### Unsigned Integers
@@ -123,7 +123,11 @@ They are represented in computer memory using three parts, with a fixed number o
 
 ~.focusContent.example
 
-Let's pretend that we have a 16-bit floating point number:
+Deconstruct the following 16-bit floating point number:
+
+```
+0010010011000000
+```
 
 | Sign | Exponent | Mantissa   |
 | ---- | -------- | ---------- |
