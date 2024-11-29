@@ -170,9 +170,9 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Hexadecimal Numbers](hexadecimal.html)
 
-[Bitwise Operations](bitwise_operations.html)
-
 [Metric System for Computing](metric_system.html)
+
+[Bitwise Operations](bitwise_operations.html)
 
 [Numeric Data Types](numeric_data_types.html)
 
