@@ -45,7 +45,7 @@ Try dropping the snippet above and looking at the characters.
 
 The **American Standard Code for Information Interchange** (ASCII) is a character set that uses 7 bits to represent 128 characters. It was developed in the 1960s and is still in use today.
 
-[https://www.ascii-code.com/]()
+[https://www.ascii-code.com/](https://www.ascii-code.com/)
 
 - A = 65
 - B = 66
