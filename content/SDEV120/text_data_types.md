@@ -113,14 +113,11 @@ Although everything is stored as binary, we can categorize files as either **tex
 
 ~.focusContent.demo
 
-We can use the `xxd` program in bash to view the contents of a file in hexadecimal.
+We can use the `xxd` program in bash to view the contents of a file in binary and hexadecimal.
 
 ```bash
 # View a text file in class
 xxd -b some_file.txt
-
-# View a binary file in class
-xxd -b some_file.bin
 
 # Look at the hex notation for our text file to show why we use hex
 xxd some_file.txt
