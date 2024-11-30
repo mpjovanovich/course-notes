@@ -116,10 +116,10 @@ Although everything is stored as binary, we can categorize files as either **tex
 We can use the `xxd` program in bash to view the contents of a file in binary and hexadecimal.
 
 ```bash
-# View a text file in class
+# View a text file in binary
 xxd -b some_file.txt
 
-# Look at the hex notation for our text file to show why we use hex
+# View a text file in hexadecimal
 xxd some_file.txt
 ```
 
