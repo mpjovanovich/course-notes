@@ -23,24 +23,6 @@ Since computers only have binary to work with, we **encode** text by assigning c
 
 Recall that text is made up of **characters**: letters, numbers, and symbols.
 
-~.focusContent.example
-
-**Whitespace** characters are an easy-to-miss source of computer errors. They include the space, tabs, carriage return, and line feed.
-
-One example is Python, which uses indentation to define code blocks. If you mix tabs and spaces, you will get an error.
-
-```python
-if True:
-	print("Hello")
-    print("World")
-```
-
-All text editors should have a way to show whitespace characters. In notepad++ try going to `View > Show Symbol > Show All Characters`.
-
-Try dropping the snippet above and looking at the characters.
-
-/~
-
 ## ASCII
 
 The **American Standard Code for Information Interchange** (ASCII) is a character set that uses 7 bits to represent 128 characters. It was developed in the 1960s and is still in use today.
@@ -102,6 +84,24 @@ _Arabic_: ا, ب, ج, ..., ي
 - ♠, ♡, ♢, ♣
 - ♩, ♪, ♫, ♬
 - ...
+
+~.focusContent.lookout
+
+**Whitespace** characters are an easy-to-miss source of computer errors. They include the space, tabs, carriage return, and line feed.
+
+One example is Python, which uses indentation to define code blocks. If you mix tabs and spaces, you will get an error.
+
+```python
+if True:
+	print("Hello")
+    print("World")
+```
+
+All text editors should have a way to show whitespace characters. In notepad++ try going to `View > Show Symbol > Show All Characters`.
+
+Try dropping the snippet above and looking at the characters.
+
+/~
 
 ## Text vs Binary Files
 
