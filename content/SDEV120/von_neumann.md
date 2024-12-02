@@ -130,7 +130,7 @@ By shuffling data between memory and registers, the CPU can perform all of the o
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z5JC9Ve1sfI?si=q4IAEEs3UIgPdkuf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-We discuss these instructions in more detail in the "Evoltuion of Programming Languages" page.
+We discuss these instructions in more detail in the "Evolution of Programming" page.
 
 See: [x86 instruction listings](https://en.wikipedia.org/wiki/X86_instruction_listings)
 

@@ -31,6 +31,7 @@ showBreadcrumb: false
   - [Midterm Review](#midterm-review)
   - [M07: Logic Gates and Circuits](#m07-logic-gates-and-circuits)
   - [M08: Data Representation and Encoding](#m08-data-representation-and-encoding)
+  - [M10: Programming Paradigms](#m10-programming-paradigms)
 
 /~
 
@@ -182,7 +183,7 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Data Types: Challenges and Limitations](data_types_challenges.html)
 
-<!-- ## M10: Programming Paradigms
+## M10: Programming Paradigms
 
 [Turing and Computability](turing_computability.html)
 
@@ -190,7 +191,7 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Evolution of Computing](evolution_of_computing.html)
 
-[Evolution of Programming](evolution_of_programming.html) -->
+[Evolution of Programming](evolution_of_programming.html)
 
 <!-- ## Overflow Topics
 
