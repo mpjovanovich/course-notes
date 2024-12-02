@@ -8,7 +8,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- ...
+- Walkthrough - first "Step Into Python" assignment
 
 ## Schedule
 
