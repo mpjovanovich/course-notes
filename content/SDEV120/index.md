@@ -8,7 +8,9 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Walkthrough - first "Step Into Python" assignment
+- Walkthrough - first "Step Into Python" assignment. Common issues:
+  - If you don't see exercises after login, refresh the page
+  - If a button doesn't work, click it again
 
 ## Schedule
 
