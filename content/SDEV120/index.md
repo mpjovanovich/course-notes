@@ -32,6 +32,7 @@ showBreadcrumb: false
   - [M07: Logic Gates and Circuits](#m07-logic-gates-and-circuits)
   - [M08: Data Representation and Encoding](#m08-data-representation-and-encoding)
   - [M10: Programming Paradigms](#m10-programming-paradigms)
+  - [Overflow Topics](#overflow-topics)
 
 /~
 
@@ -193,9 +194,9 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Evolution of Programming](evolution_of_programming.html)
 
-<!-- ## Overflow Topics
+## Overflow Topics
 
-[Overview of Artificial Intelligence](ai_overview.html) -->
+[Overview of Artificial Intelligence](ai_overview.html)
 
 <!-- ## Final Study
 
