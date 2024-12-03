@@ -170,7 +170,7 @@ Unit Testing: Demo; how to interpret results for your labs
 
 [Abstraction](abstraction.html)
 
-[Polymorphism](polymorphism.html) -->
+[Polymorphism](polymorphism.html)
 
 <!--
 ## Midterm
