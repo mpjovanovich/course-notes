@@ -13,9 +13,7 @@ showBreadcrumb: false
 </figure>
 
 - Syllabus Amendment: Lowest lab score will be dropped
-- Clarify how to do previous lab; fill in function body
-- No class Thursday
-- Review: **Milestone 2, due Sunday**
+- Helpful tips on how to approach final project...
 
 ## Schedule
 
@@ -32,6 +30,16 @@ showBreadcrumb: false
   - [Module 05: Exceptions and Error Handling](#module-05-exceptions-and-error-handling)
   - [Module 06: Functions and Modularity](#module-06-functions-and-modularity)
   - [Module 07: File I/O and File Parsing](#module-07-file-io-and-file-parsing)
+  - [Module 08: Object Oriented Programming](#module-08-object-oriented-programming)
+  - [Midterm](#midterm)
+    - [Day 8](#day-8)
+  - [Module 05: Sequences and Mappings](#module-05-sequences-and-mappings)
+    - [Day 9](#day-9)
+    - [Day 10](#day-10)
+  - [Module 06: Event Driven Programming](#module-06-event-driven-programming)
+    - [Day 11](#day-11)
+    - [Day 12](#day-12)
+  - [Module 07: File I/O and Parsing](#module-07-file-io-and-parsing)
 
 /~
 
@@ -152,6 +160,18 @@ Unit Testing: Demo; how to interpret results for your labs
 
 [File Parsing](file_parsing.html)
 
+## Module 08: Object Oriented Programming
+
+[OOP Basics](oop_basics.html)
+
+[Encapsulation](encapsulation.html)
+
+[Inheritance](inheritance.html)
+
+[Abstraction](abstraction.html)
+
+[Polymorphism](polymorphism.html) -->
+
 <!--
 ## Midterm
 
@@ -192,19 +212,3 @@ Multidimensional Arrays
 [File I/O](file_io.html)
 
 [File Parsing](file_parsing.html)
-
-## Module 08: Object Oriented Programming
-
-### Day 13
-
-[OOP Basics](oop_basics.html)
-
-[Encapsulation](encapsulation.html)
-
-### Day 14
-
-[Inheritance](inheritance.html)
-
-[Abstraction](abstraction.html)
-
-[Polymorphism](polymorphism.html) -->
