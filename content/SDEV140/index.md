@@ -31,15 +31,6 @@ showBreadcrumb: false
   - [Module 06: Functions and Modularity](#module-06-functions-and-modularity)
   - [Module 07: File I/O and File Parsing](#module-07-file-io-and-file-parsing)
   - [Module 08: Object Oriented Programming](#module-08-object-oriented-programming)
-  - [Midterm](#midterm)
-    - [Day 8](#day-8)
-  - [Module 05: Sequences and Mappings](#module-05-sequences-and-mappings)
-    - [Day 9](#day-9)
-    - [Day 10](#day-10)
-  - [Module 06: Event Driven Programming](#module-06-event-driven-programming)
-    - [Day 11](#day-11)
-    - [Day 12](#day-12)
-  - [Module 07: File I/O and Parsing](#module-07-file-io-and-parsing)
 
 /~
 
@@ -212,3 +203,5 @@ Multidimensional Arrays
 [File I/O](file_io.html)
 
 [File Parsing](file_parsing.html)
+
+-->
