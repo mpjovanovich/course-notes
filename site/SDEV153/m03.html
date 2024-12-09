@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV153: M03</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/highlight.css"
+    />
+  </head>
+  <body>
+    <h1 class="breadcrumb">
+      <a href="https://mpjovanovich.github.io/course-notes/SDEV153/index.html"
+        >SDEV153</a
+      >: <a href="">M03</a>
+    </h1>
+    <ul>
+      <li>
+        <a href="#css-part-ii">CSS Part II</a>
+        <ul>
+          <li><a href="#review-of-basics">Review of Basics</a></li>
+          <li><a href="#child-combinators">Child Combinators</a></li>
+          <li><a href="#descendant-combinators">Descendant Combinators</a></li>
+          <li>
+            <a href="#pseudo-classes">Pseudo-classes</a>
+            <ul>
+              <li><a href="#links">Links</a></li>
+              <li><a href="#other-pseudo-classes">Other Pseudo-classes</a></li>
+            </ul>
+          </li>
+          <li><a href="#pseudo-elements">Pseudo-elements</a></li>
+          <li><a href="#inheritance">Inheritance</a></li>
+          <li>
+            <a href="#specificity">Specificity</a>
+            <ul>
+              <li><a href="#the-algorithm">The Algorithm</a></li>
+              <li>
+                <a href="#typical-specificity-values"
+                  >Typical Specificity Values</a
+                >
+              </li>
+              <li>
+                <a href="#descendant-selector-specificity"
+                  >Descendant Selector Specificity</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <h1 id="css-part-ii">CSS Part II</h1>
+    <h2 id="review-of-basics">Review of Basics</h2>
+    <ul>
+      <li>Element selectors</li>
+      <li>Class selectors</li>
+      <li>ID selectors</li>
+      <li>The cascade model</li>
+    </ul>
+    <h2 id="child-combinators">Child Combinators</h2>
+    <p>
+      Selects <em>only direct</em> children of a given selector that fit the
+      criteria.
+    </p>
+    <p><em>Example:</em></p>
+    <pre><code class="language-css">main &gt; p {
+  color: red;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+</code></pre>
+    <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I'm a direct child of main.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I'm a grandchild of main.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I'm a grandchild of main.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+</code></pre>
+    <h2 id="descendant-combinators">Descendant Combinators</h2>
+    <p>
+      Selects <em>all ancestor</em> descendants of a given selector that fit the
+      criteria.
+    </p>
+    <p><em>Example:</em></p>
+    <pre><code class="language-css">main p {
+  color: red;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+</code></pre>
+    <p>Can be chained:</p>
+    <pre><code class="language-css">nav ul li a {
+  /* rules */
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+</code></pre>
+    <h2 id="pseudo-classes">Pseudo-classes</h2>
+    <p>
+      Predefined keyword added to a selector that specifies a special state of
+      the selected element(s).
+    </p>
+    <h3 id="links">Links</h3>
+    <pre><code class="language-css">/* link with no href; also used to style all pseudo-classes*/
+a {
+  color: orange;
+  font-size: 1.2em;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+
+/* unvisited link */
+a:link {
+  color: red;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+
+/* visited link */
+a:visited {
+  color: green;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+
+/* selected link */
+a:active {
+  color: blue;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+</code></pre>
+    <h3 id="other-pseudo-classes">Other Pseudo-classes</h3>
+    <p>Hover can be used for limited interactivity:</p>
+    <pre><code class="language-css">h1:hover {
+  background-color: yellow;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+</code></pre>
+    <p>Focus is often used in forms:</p>
+    <pre><code class="language-css">input:focus {
+  outline: 4px solid red;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+</code></pre>
+    <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"myInput"</span>&gt;</span>My Input<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> /&gt;</span>
+</code></pre>
+    <p>The following are often used with forms, lists, and tables:</p>
+    <ul>
+      <li><code>:first-child</code></li>
+      <li><code>:last-child</code></li>
+      <li><code>:nth-child(n)</code></li>
+    </ul>
+    <h2 id="pseudo-elements">Pseudo-elements</h2>
+    <p>
+      Predefined keyword added to a selector that specifies a special part of
+      the selected element(s).
+    </p>
+    <ul>
+      <li><code>::first-line</code></li>
+      <li><code>::first-letter</code></li>
+      <li><code>::before</code></li>
+      <li><code>::after</code></li>
+    </ul>
+    <p><em>Example:</em></p>
+    <pre><code class="language-css">.my-class::first-letter {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff0000;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+
+.my-class::first-line {
+  text-transform: uppercase;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+
+ul.emoji-list {
+  list-style-type: none;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+
+.emoji-list li::before {
+  content: "😄";
+  margin-right: 10px;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+
+/* Technically this is a pseudo-class */
+ul.emoji-list li:nth-child(even) {
+  background-color: #eee;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+</code></pre>
+    <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"emoji-list"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Be happy<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Be more happy<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Be more more happy<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Be more more more happy<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my-class"</span>&gt;</span>
+  Donec fermentum rutrum commodo. Fusce vitae pharetra mauris. Cras feugiat enim
+  nunc, quis accumsan justo egestas quis. Mauris vestibulum augue eget tellus
+  varius rhoncus. In in purus sed metus congue volutpat a ac libero. Nullam
+  semper, purus eget tempus venenatis, eros enim ullamcorper dui, id aliquet
+  purus purus in lacus. Aliquam in lacus magna. In ullamcorper neque pulvinar,
+  lacinia felis vel, luctus nibh. Praesent tristique dapibus libero, in pretium
+  purus.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+    <h2 id="inheritance">Inheritance</h2>
+    <p>Some properties are inherited from parent elements.</p>
+    <p>
+      <a
+        href="https://web.dev/learn/css/inheritance#which_properties_are_inherited_by_default"
+        >Which Properties are Inherited by Default</a
+      >
+    </p>
+    <p><em>Example:</em></p>
+    <pre><code class="language-css">p {
+  color: blue;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+span {
+  color: inherit; /* The default value - let's change it... */
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+</code></pre>
+    <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  We can change the color by targeting the element with a selector, such as this
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>span<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+    <h2 id="specificity">Specificity</h2>
+    <h3 id="the-algorithm">The Algorithm</h3>
+    <p>
+      A rule with greater <strong>specificity</strong> will take precedence over
+      a rule with lesser specificity.
+    </p>
+    <p>
+      <a href="https://www.w3.org/TR/2018/REC-selectors-3-20181106/#specificity"
+        >W3C Explanation</a
+      >
+    </p>
+    <p>
+      A selector&#39;s specificity can be represented by a three digit number in
+      the format:
+    </p>
+    <p><code>a b c</code></p>
+    <p>It is calculated as follows:</p>
+    <ul>
+      <li>Count the number of ID selectors in the selector (= a)</li>
+      <li>
+        Count the number of class selectors, attributes selectors, and
+        pseudo-classes in the selector (= b)
+      </li>
+      <li>
+        Count the number of type selectors and pseudo-elements in the selector
+        (= c)
+      </li>
+      <li>Ignore the universal selector</li>
+    </ul>
+    <h3 id="typical-specificity-values">Typical Specificity Values</h3>
+    <p>From most to least specific:</p>
+    <ul>
+      <li>Inline styles</li>
+      <li>ID selectors</li>
+      <li>Class selectors</li>
+      <li>Element selectors</li>
+      <li>Universal selectors</li>
+    </ul>
+    <p><em>Example:</em></p>
+    <pre><code class="language-css">#myElement {
+  color: blue;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+.myClass {
+  color: orange;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+p {
+  color: pink;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+* {
+  color: green;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: sans-serif;
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+</code></pre>
+    <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myElement"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"myClass"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: red;"</span>&gt;</span>This text is ?????.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+    <h3 id="descendant-selector-specificity">
+      Descendant Selector Specificity
+    </h3>
+    <p>
+      Specificity of the selector is the sum of the specificities of the element
+      and all ancestor selectors.
+    </p>
+    <p><em>Example:</em></p>
+    <pre><code class="language-css">p {
+  /* zero id selectors */
+  /* zero class selectors */
+  /* one element selector: p */
+  /* 0, 0, 1 = 001 Specificity */
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+
+.container {
+  /* zero id selectors */
+  /* one class selector: container */
+  /* zero element selectors */
+  /* 0, 1, 0 = 010 Specificity */
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+
+p.flashy {
+  /* zero id selectors */
+  /* one class selector: flashy */
+  /* one element selector: p */
+  /* 0, 1, 1 = 011 Specificity */
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+
+.container article p {
+  /* zero id selectors */
+  /* one class selector: container */
+  /* two element selectors: article and p */
+  /* 0, 1, 2 = 012 Specificity */
+&lt;!--DOTMARK_DIV&lt;/div&gt;DOTMARK_DIV--&gt;
+</code></pre>
+  </body>
+</html>

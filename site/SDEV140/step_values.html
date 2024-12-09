@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV140: Step Values</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/highlight.css"
+    />
+  </head>
+  <body>
+    <h1 class="breadcrumb">
+      <a href="https://mpjovanovich.github.io/course-notes/SDEV140/index.html"
+        >SDEV140</a
+      >: <a href="">Step Values</a>
+    </h1>
+    <div class="toc">
+      <ul>
+        <li>
+          <a href="#step-values">Step Values</a>
+          <ul>
+            <li><a href="#off-by-one-errors">Off by One Errors</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <h1 id="step-values">Step Values</h1>
+    <ul>
+      <li>
+        We can <strong>increment</strong> or <strong>decrement</strong> the step
+        value by a value other than 1.
+      </li>
+      <li>
+        We don&#39;t have to use <code>i</code>, <code>j</code>, <code>k</code>,
+        etc for the loop control variable, but it&#39;s a convention in many
+        languages.
+      </li>
+    </ul>
+    <pre><code class="language-python"><span class="hljs-comment">## "Print even numbers" algorithm</span>
+<span class="hljs-comment">## Prints 0, 2, 4, 6, 8</span>
+i = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> i &lt; <span class="hljs-number">10</span>:
+    print( i )
+    i = i + <span class="hljs-number">2</span>
+</code></pre>
+    <pre><code class="language-python"><span class="hljs-comment">## Prints 10, 9, 8, ..., 1</span>
+i = <span class="hljs-number">10</span>
+<span class="hljs-keyword">while</span> i &gt; <span class="hljs-number">0</span>:
+    print( i )
+    i = i - <span class="hljs-number">1</span>
+</code></pre>
+    <h2 id="off-by-one-errors">Off by One Errors</h2>
+    <ul>
+      <li>Be mindful of the inclusiveness of the range function.</li>
+      <li>
+        <strong>Start inclusive</strong> and <strong>end exclusive</strong>.
+      </li>
+      <li>[start, end)</li>
+      <li>
+        When using while, also be mindful of &lt; vs &lt;= and &gt; vs &gt;=.
+      </li>
+    </ul>
+    <pre><code class="language-python"><span class="hljs-comment">## Prints 1-9, not 1-10</span>
+i = <span class="hljs-number">1</span>
+<span class="hljs-keyword">while</span> i &lt; <span class="hljs-number">10</span>:
+    print( i )
+    i += <span class="hljs-number">1</span>
+</code></pre>
+  </body>
+</html>
