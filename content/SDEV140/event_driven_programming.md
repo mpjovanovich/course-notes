@@ -9,9 +9,9 @@ course: SDEV140
   - [The Producer Consumer Pattern](#the-producer-consumer-pattern)
   - [Events](#events)
   - [Event Loop](#event-loop)
+  - [Writing an Event Loop in Python](#writing-an-event-loop-in-python)
   - [GUI Development](#gui-development)
   - [JavaScript Examples](#javascript-examples)
-  - [Writing an Event Loop in Python](#writing-an-event-loop-in-python)
 
 /~
 
@@ -63,6 +63,22 @@ The process goes like this:
 4. If a handler is found, the handler function is called.
 5. Repeat... forever... until the program is closed.
 
+## Writing an Event Loop in Python
+
+~.focusContent.demo
+
+We can simulate an event loop in Python using a `while` loop and a list of events. We will:
+
+- Create a dictionary of events and functions to handle those events
+- Create a loop that continually listens for events and calls the appropriate event handler
+- (Normally this loop would be running in the background for the full time the program is running)
+
+[Python Event Loop](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV140_Intro_Software_Development/python_event_loop_noargs.py)
+
+[Python Event Loop with Arguments](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV140_Intro_Software_Development/python_event_loop_args.py)
+
+/~
+
 ## GUI Development
 
 Event driven programming is a common paradigm in GUI development, where we need to respond to user input.
@@ -85,6 +101,8 @@ The web browser has an event loop running that listens for events like:
 | `keydown`   | User presses a key                   |
 | `load`      | Page has finished loading            |
 | `close`     | Window is closed                     |
+
+~.focusContent.example
 
 In JavaScript, we can add event listeners to elements in the DOM (Document Object Model) to listen for these events.
 
@@ -121,14 +139,4 @@ for (let i = 0; i < h2Elements.length; i++) {
 /~
 ```
 
-## Writing an Event Loop in Python
-
-We can simulate an event loop in Python using a `while` loop and a list of events. We will:
-
-- Create a dictionary of events and functions to handle those events
-- Create a loop that continually listens for events and calls the appropriate event handler
-- (Normally this loop would be running in the background for the full time the program is running)
-
-[Python Event Loop](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV140_Intro_Software_Development/python_event_loop_noargs.py)
-
-[Python Event Loop with Arguments](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV140_Intro_Software_Development/python_event_loop_args.py)
+/~

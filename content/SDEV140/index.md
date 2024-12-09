@@ -31,6 +31,7 @@ showBreadcrumb: false
   - [Module 06: Functions and Modularity](#module-06-functions-and-modularity)
   - [Module 07: File I/O and File Parsing](#module-07-file-io-and-file-parsing)
   - [Module 08: Object Oriented Programming](#module-08-object-oriented-programming)
+  - [Module 09: Event Driven Programming](#module-09-event-driven-programming)
 
 /~
 
@@ -162,6 +163,10 @@ Unit Testing: Demo; how to interpret results for your labs
 [Abstraction](abstraction.html)
 
 [Polymorphism](polymorphism.html)
+
+## Module 09: Event Driven Programming
+
+[Event Driven Programming](event_driven_programming.html)
 
 <!--
 ## Midterm

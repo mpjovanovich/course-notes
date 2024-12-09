@@ -18,24 +18,24 @@ Functions can accept an interface or base class as a parameter type, and accept 
 
 ### Usage
 
-_Example_:
-
-\*TypeScript programming language
+~.focusContent.example
 
 ```typescript
 interface IDatabase {
   connect(): void;
   disconnect(): void;
   execute_query(query: string): void;
+}
 ```
 
-- Functions that use the interface:
-  - `fetch_setting(IDatabase db, string setting_name)`
-  - `validate_credentials(IDatabase db, string username, string password)`
+Functions that might use the interface:
 
-_Example_:
+- `fetch_setting(IDatabase db, string setting_name)`
+- `validate_credentials(IDatabase db, string username, string password)`
 
-\*TypeScript programming language
+/~
+
+~.focusContent.example
 
 ```typescript
 interface IFile {
@@ -44,17 +44,18 @@ interface IFile {
   read(): string;
   write(data: string): void;
   delete(): void;
-/~
+}
 ```
 
-- Functions that use the interface:
-  - `copy_file(IFile source, IFile destination)`
-  - `move_file(IFile source, IFile destination)`
-  - `delete_file(IFile file)`
+Functions that might use the interface:
 
-_Example_:
+- `copy_file(IFile source, IFile destination)`
+- `move_file(IFile source, IFile destination)`
+- `delete_file(IFile file)`
 
-\*Python programming language
+/~
+
+~.focusContent.example
 
 ```python
 from abc import ABC, abstractmethod
@@ -114,6 +115,7 @@ class Rectangle(Shape):
 ```
 
 ```python
+## This is the key part to demonstrate polymorphism
 ## Function that uses the Shape interface
 ## Does not care if the object is a Circle or Rectangle
 def print_shape_info(shape: Shape):
@@ -127,3 +129,5 @@ r = Rectangle("Rectangle", 5, 10)
 print_shape_info(c)
 print_shape_info(r)
 ```
+
+/~

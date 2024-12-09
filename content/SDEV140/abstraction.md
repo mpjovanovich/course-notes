@@ -37,39 +37,39 @@ We may speak of interface as:
 
 A class may implement zero to many interfaces.
 
-**A note on Python**: Python does not have a built-in `Interface` keyword. Instead, we use abstract classes and methods (discussed below) to define interfaces.
+**A note on Python**: Although most programming languages do, Python does not have a built-in `Interface` keyword. Instead, we use abstract classes and methods (discussed below) to define interfaces.
 
-_Example_:
+~.focusContent.example
 
-\*TypeScript programming language
-
-Interface
+_Interface_
 
 ```typescript
 interface IDatabase {
   connect(): void;
   disconnect(): void;
   execute_query(query: string): void;
-/~
+}
 ```
 
-Implementation
+_Implementation_
 
 ```typescript
 class MySQLDatabase implements IDatabase {
   connect(): void {
     // Connect to MySQL database
-/~
+  }
 
   disconnect(): void {
     // Disconnect from MySQL database
-/~
+  }
 
   execute_query(query: string): void {
     // Execute query on MySQL database
-/~
-/~
+  }
+}
 ```
+
+/~
 
 ## Abstract Classes and Methods
 
@@ -90,6 +90,8 @@ class MySQLDatabase implements IDatabase {
 ### Usage
 
 A class may (usually) inherit from one and only one abstract base class.
+
+~.focusContent.example
 
 ```python
 from abc import ABC, abstractmethod
@@ -146,3 +148,5 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * (self.__width + self.__height)
 ```
+
+/~
