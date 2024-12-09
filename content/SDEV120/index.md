@@ -198,12 +198,7 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Final Study Guide](final_study_f24.html)
 
-<!-- ## Overflow Topics
-
-[Overview of Artificial Intelligence](ai_overview.html) -->
-
-<!-- 
-
+[Overview of Artificial Intelligence](ai_overview.html)
 
 <!--
 
