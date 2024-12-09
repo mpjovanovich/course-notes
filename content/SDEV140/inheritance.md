@@ -51,6 +51,8 @@ Typically more specialized in terms of functionality.
 
 ## Inheritance Example
 
+~.focusContent.example
+
 ```python
 class Quadrilateral:
     def __init__(self, side1, side2, side3, side4):
@@ -92,3 +94,5 @@ print(f"Rectangle perimeter: {r.perimeter()}")
 print(f"Square area: {s.area()}")
 print(f"Square perimeter: {s.perimeter()}")
 ```
+
+/~
