@@ -13,7 +13,7 @@ showBreadcrumb: false
 </figure>
 
 - Syllabus Amendment: Lowest lab score will be dropped
-- Helpful tips on how to approach final project...
+- Final project - final last hints and due end of day Tuesday.
 
 ## Schedule
 
