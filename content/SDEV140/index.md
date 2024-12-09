@@ -13,9 +13,11 @@ showBreadcrumb: false
 </figure>
 
 - Syllabus Amendment: Lowest lab score will be dropped
+  - You will see an "excused" on this.
 - Please check announcements if you missed them
 - Final project - final last hints and due end of day Tuesday.
-- Course evaluations are available, "Final Project" module. Please take a moment to fill it out and help improve the course.
+- Last two labs will be video walkthroughs. **They are due Friday evening.**
+- Course evaluations are available, "Final Project" module. Please take a moment to fill it out.
 
 ## Schedule
 
