@@ -33,6 +33,7 @@ showBreadcrumb: false
   - [M08: Data Representation and Encoding](#m08-data-representation-and-encoding)
   - [M09: Programming Paradigms](#m09-programming-paradigms)
   - [Final Review](#final-review)
+  - [Overflow Topics](#overflow-topics)
 
 /~
 
@@ -197,6 +198,8 @@ Discussion: Data Structures - Choose Your Own Adventure
 ## Final Review
 
 [Final Study Guide](final_study_f24.html)
+
+## Overflow Topics
 
 [Overview of Artificial Intelligence](ai_overview.html)
 
