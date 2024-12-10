@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV140: Call Stack and Variable Scope</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://mpjovanovich.github.io/course-notes/assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://mpjovanovich.github.io/course-notes/assets/css/highlight.css"
+    />
+  </head>
+  <body>
+    <h1 class="breadcrumb">
+      <a href="https://mpjovanovich.github.io/course-notes/SDEV140/index.html"
+        >SDEV140</a
+      >: <a href="">Call Stack and Variable Scope</a>
+    </h1>
+    <div class="toc">
+      <ul>
+        <li>
+          <a href="#the-call-stack">The Call Stack</a>
+          <ul>
+            <li><a href="#stack-data-structure">Stack Data Structure</a></li>
+            <li><a href="#stack-frames">Stack Frames</a></li>
+            <li><a href="#call-stack">Call Stack</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#variable-scope">Variable Scope</a>
+          <ul>
+            <li><a href="#global-scope">Global Scope</a></li>
+            <li><a href="#function-scope">Function Scope</a></li>
+            <li><a href="#scope-examples">Scope Examples</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <h1 id="the-call-stack">The Call Stack</h1>
+    <p>The <strong>call stack</strong>:</p>
+    <ul>
+      <li>Keeps track of the sequence of function calls in a program</li>
+      <li>Is composed of stack frames</li>
+      <li>Exists for the lifetime of a program</li>
+    </ul>
+    <h2 id="stack-data-structure">Stack Data Structure</h2>
+    <p>
+      A <strong>stack</strong> is a LIFO (last in, first out) data structure.
+    </p>
+    <p>
+      It&#39;s like laying down a stack of cards. You can only add or remove
+      cards from the top of the stack.
+    </p>
+    <figure>
+      <span>
+        <img
+          src="https://miro.medium.com/v2/resize:fit:640/1*lb-0r80YYhcnoVcQ3HY-1g.gif"
+          style=""
+        />
+      </span>
+      <figcaption>
+        <a
+          href="https://medium.com/@todoroski97/data-structure-stack-17b80ed3bfa9"
+          >The Stack Data Structure</a
+        >
+      </figcaption>
+    </figure>
+
+    <h2 id="stack-frames">Stack Frames</h2>
+    <p>
+      A <strong>stack frame</strong> is a data structure that contains all
+      relevant information that&#39;s needed to execute a function. It&#39;s
+      much like a snapshot of all of the data about a function at a given point
+      in time.
+    </p>
+    <p>
+      The <strong>execution context</strong> is the stack frame that&#39;s
+      currently being executed. The computer only &quot;pays attention&quot; to
+      the current execution context, and knows nothing about the other stack
+      frames.
+    </p>
+    <p>
+      For a simple program with no functions (we would typically call this a
+      <strong>script</strong>), the call stack only has one stack frame.
+      It&#39;s typically called the <strong>global script</strong> when
+      referring to it.
+    </p>
+    <h2 id="call-stack">Call Stack</h2>
+    <p>
+      When a program calls a function, a new stack frame is created for that
+      function call and <strong>pushed</strong> onto the top of the call stack.
+      The execution context is then switched to the new stack frame. Each
+      function operates as if it is its own program.
+    </p>
+    <p><em>Example:</em></p>
+    <p>For the following program:</p>
+    <pre><code class="language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">greet</span><span class="hljs-params">(name)</span>:</span>
+    message = <span class="hljs-string">f"Hello, <span class="hljs-subst">{name}</span>!"</span>
+    <span class="hljs-keyword">return</span> message
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    user = <span class="hljs-string">"Alice"</span>
+    result = greet(user)
+    print(result)
+
+main()
+</code></pre>
+    <p>The call stack would look like this:</p>
+    <pre><code>3. greet(name="Alice")     &lt;- Current execution context
+2. main()
+1. Global script
+</code></pre>
+    <p>
+      Let&#39;s try it in VS Code. Run the program, and then open the call stack
+      in the debugger...
+    </p>
+    <div class="focusContent note">
+      <p>
+        A <strong>stack overflow</strong> occurs when the call stack grows too
+        large, and the program runs out of memory.
+      </p>
+      <p>
+        This is usually caused by a recursive function that calls itself without
+        a base case (i.e., a condition to stop the recursion).
+      </p>
+      <p><strong>Try it out!</strong></p>
+      <p>Run this for a stack overflow, on the house:</p>
+      <pre><code class="language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">infinite_recursion</span><span class="hljs-params">()</span>:</span>
+    infinite_recursion()
+
+infinite_recursion()
+</code></pre>
+    </div>
+
+    <h1 id="variable-scope">Variable Scope</h1>
+    <p>
+      <strong>Scope</strong> is the region of a program where a variable is
+      accessible. In Python, there are two types of scope:
+    </p>
+    <ul>
+      <li>
+        <strong>Global scope</strong>: accessible everywhere in the program
+      </li>
+      <li>
+        <strong>Function scope</strong>: accessible only within the function
+        where it&#39;s defined
+      </li>
+    </ul>
+    <h2 id="global-scope">Global Scope</h2>
+    <p>
+      Variables defined outside of any function are called
+      <strong>global variables</strong>. They are accessible everywhere in the
+      program, even within functions.
+    </p>
+    <p>
+      In general, global variables should be used sparingly. You might use a
+      global variable if you have a read only constant value that is used in
+      many places in your program:
+    </p>
+    <pre><code class="language-python">PROGRAM_CODE = <span class="hljs-string">"SDEV140"</span>
+
+<span class="hljs-comment"># Program code is used here...</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_student_record</span><span class="hljs-params">(student_id)</span>:</span>
+    print(<span class="hljs-string">f"Student ID: <span class="hljs-subst">{student_id}</span>, Program: <span class="hljs-subst">{PROGRAM_CODE}</span>"</span>)
+
+<span class="hljs-comment"># and here...</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_course_info</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">f"Course Code: <span class="hljs-subst">{PROGRAM_CODE}</span>"</span>)
+
+print_student_record(<span class="hljs-string">"A12345"</span>)
+print_course_info()
+</code></pre>
+    <h2 id="function-scope">Function Scope</h2>
+    <p>
+      More typically, any variable that needs to be used within a function is
+      either:
+    </p>
+    <ul>
+      <li>Passed in as a parameter</li>
+      <li>Created within the function</li>
+    </ul>
+    <p>
+      These variables are called <strong>local variables</strong>. They are only
+      accessible within the function where they are defined.
+    </p>
+    <p>
+      This is because they are part of the function&#39;s stack frame, and are
+      not accessible outside of that frame.
+    </p>
+    <h2 id="scope-examples">Scope Examples</h2>
+    <div class="focusContent lookout">
+      <p>
+        Trying to access a local variable outside of its function will cause an
+        error.
+      </p>
+      <pre><code class="language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_name</span><span class="hljs-params">()</span>:</span>
+    name = <span class="hljs-string">"Alice"</span>
+    print(name)
+
+<span class="hljs-comment">## This works fine...</span>
+print_name()
+
+<span class="hljs-comment">## This will cause an error - name only exists within the function</span>
+print(name)
+</code></pre>
+    </div>
+
+    <div class="focusContent lookout">
+      <p>
+        Updating a local variable will not affect the value of a variable that
+        was passed in.
+      </p>
+      <p>
+        <strong
+          ><em
+            >The function creates its own local variable, which is a copy of the
+            value passed in</em
+          ></strong
+        >. Updating this local variable does not affect the value of the
+        variable that was passed in.
+      </p>
+      <p>
+        Take a look at the Stack Trace in the VS Code debugger to see how this
+        works.
+      </p>
+      <pre><code class="language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update_name</span><span class="hljs-params">(name)</span>:</span>
+    <span class="hljs-comment"># This "name" is actually a completely new local variable with no connection</span>
+    <span class="hljs-comment"># to the name variable in the outer scope</span>
+    name = name.upper()
+    print(name)  <span class="hljs-comment"># ALICE</span>
+
+name = <span class="hljs-string">"Alice"</span>
+print(name)  <span class="hljs-comment"># Alice</span>
+update_name(name)
+print(name)  <span class="hljs-comment"># Alice</span>
+</code></pre>
+    </div>
+
+    <div class="focusContent example">
+      <p>
+        If we want to modify the value of a variable that was passed in and
+        access it later, we do so by returning the modified value.
+      </p>
+      <pre><code class="language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update_name</span><span class="hljs-params">(name)</span>:</span>
+    name = name.upper()
+    <span class="hljs-keyword">return</span> name
+
+name = <span class="hljs-string">"Alice"</span>
+name = update_name(name)
+print(name)  <span class="hljs-comment"># ALICE</span>
+</code></pre>
+    </div>
+  </body>
+</html>
