@@ -136,7 +136,7 @@ for (let i = 0; i < h2Elements.length; i++) {
     // print the text of the element that was clicked
     alert(e.target.innerText);
   });
-/~
+}
 ```
 
 /~
