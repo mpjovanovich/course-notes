@@ -53,17 +53,11 @@ function extractFrontmatter(markdown: string): {
 
 function getSiteHtml(html: string, frontmatter?: Frontmatter): string {
   let title = "";
-  let breadcrumbText = "";
   if (frontmatter?.course) {
     title = frontmatter.course + ": ";
-    breadcrumbText = `<a href="${COURSE_ROOT_URL}${frontmatter.course}/index.html">${frontmatter.course}</a>`;
   }
   if (frontmatter?.title) {
     title += frontmatter.title;
-    if (breadcrumbText) {
-      breadcrumbText += ": ";
-    }
-    breadcrumbText += `<a href="">${frontmatter.title}</a>`;
   }
 
   html = `
@@ -96,10 +90,11 @@ function getSiteHtml(html: string, frontmatter?: Frontmatter): string {
             rel="stylesheet"
         >
         <link rel="stylesheet" href="${COURSE_ROOT_URL}assets/css/styles.css">
-        <link rel="stylesheet" href="${COURSE_ROOT_URL}assets/css/highlight.css">
+        <script src="${COURSE_ROOT_URL}assets/scripts/code_snippets.js" defer></script>
+        <script src="${COURSE_ROOT_URL}assets/scripts/focus_content.js" defer></script>
+        <script src="${COURSE_ROOT_URL}assets/scripts/table_of_contents.js" defer></script>
     </head>
     <body>
-        ${frontmatter?.showBreadcrumb !== "false" ? `<h1 class="breadcrumb">${breadcrumbText}</h1>` : ""}
         ${html}
     </body>
 `;

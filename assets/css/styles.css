@@ -138,6 +138,7 @@ h6 {
 
 h1 {
   padding: 2rem 1rem;
+  margin: 1rem 0;
   background-color: #408080;
   color: #fff;
   font-size: 1.8rem;
@@ -165,6 +166,10 @@ hr {
   margin-top: 1rem;
 }
 
+h1 + h2 {
+  margin-top: 0;
+}
+
 canvas,
 iframe,
 video,
@@ -188,14 +193,12 @@ pre {
   padding: 0.5rem;
   border-radius: 8px;
   line-height: 1.5;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 pre,
 code {
   font-family: Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 1.2rem;
-  font-weight: bold;
 }
 
 table {
@@ -236,6 +239,10 @@ tbody tr {
   border-top: 2px solid #dee2e6;
 }
 
+tr:hover td {
+  background-color: #f0f0f0;
+}
+
 .attr {
   font-size: 0.875rem;
   margin-top: 1rem;
@@ -266,39 +273,122 @@ tbody tr {
 /* 
 * HEADING AND TABLE OF CONTENTS
 */
-h1.breadcrumb {
-  font-size: 1.2rem;
-  border-width: 0;
-  background-color: #408080;
-  padding: 30px;
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: #408080;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-content: space-between; /* For menu and title spacing */
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.header-title {
+  color: white;
   margin: 0;
-  text-align: left;
-}
-
-h1.breadcrumb a,
-h1.breadcrumb a:visited,
-h1.breadcrumb a:focus,
-h1.breadcrumb a:active,
-h1.breadcrumb a:hover {
-  color: #fff;
+  padding: 0;
   font-size: 1rem;
+  flex-grow: 1;
+  text-align: center;
 }
 
-/* This should be the table of contents. If we forget a TOC it will cause stying issues, 
-so there should always be a TOC */
+.toc {
+  position: fixed;
+  left: -300px;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  background: white;
+  padding-top: 50px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.toc.open {
+  left: 0;
+}
+
 .toc > ul {
-  border: 2px solid #ddd;
+  height: 100%;
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.2rem;
+  padding: 0;
+}
+
+.toc ul {
+  list-style: none;
+}
+
+.toc ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.toc a {
+  display: block;
+  font-weight: normal;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.toc a:hover {
+  background-color: #f5f5f5;
+  color: #408080;
+}
+
+/* Indent nested lists */
+.toc > ul ul {
+  padding-left: 20px;
+}
+
+/* 
+* CODE SNIPPETS
+*/
+
+.codeSnippetButtonContainer {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  gap: 5px;
+}
+
+.codeSnippetButton {
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 /* 
 * FOCUS CONTENT COMPONENTS
 */
-.focusContentTitle {
+.focusContentTitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
   color: #408080;
-  font-weight: bold;
 }
 
 .focusContent {
@@ -306,28 +396,6 @@ so there should always be a TOC */
   border-radius: 8px;
   padding: 0 20px;
   margin-top: 3rem;
-}
-
-/* A more involved live demo that I will do */
-.demo::before {
-  content: "💡 Demo";
-}
-/* Standalone examples that do not require elaboration. */
-.example::before {
-  content: "🔍 Example";
-}
-/* Something the student should attempt. */
-.exercise::before {
-  content: "📝 Exercise";
-}
-/* Common mistake */
-.lookout::before {
-  content: "👀 Lookout!";
-}
-
-/* An aside */
-.note::before {
-  content: "📚 Side Note";
 }
 
 /* 
@@ -391,4 +459,17 @@ so there should always be a TOC */
   body {
     padding: 0.5rem 1rem;
   }
+}
+
+/* 
+* SHIKI THEME - Needed for dark mode
+*/
+
+body.dark .shiki,
+body.dark .shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
 }
