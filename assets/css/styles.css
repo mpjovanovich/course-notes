@@ -1,20 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* 
 * CSS RESET
 */
-/* *,
+*,
 *:after,
 *:before {
   box-sizing: border-box;
-} */
+}
 
 /* 
 * GENERAL STYLES
 */
-/* body {
+body {
   background-color: white;
   color: #202124;
   font-size: 18px;
@@ -245,8 +241,6 @@ tbody tr {
   margin-top: 1rem;
   padding: 1rem;
 }
-
-*/
 
 /* 
 * GENERIC CLASSES
