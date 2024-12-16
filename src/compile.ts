@@ -124,31 +124,31 @@ async function processDirectory(markdownDirectory: string): Promise<void> {
       await processDirectory(markdownFilePath);
       // } else if (entry.isFile() && entry.name.endsWith(".md")) {
     } else if (entry.isFile()) {
-        if (entry.name.endsWith(".md")) {
-          try{
-              console.log(`Processing file: ${markdownFilePath}`);
+      if (entry.name.endsWith(".md")) {
+        try {
+          console.log(`Processing file: ${markdownFilePath}`);
 
-              // Replace the .md file extension with .html
-              const htmlFileName = entry.name.replace(/\.md$/, ".html");
-              const htmlFilePath = path
-                .join(markdownDirectory, htmlFileName)
-                .replace("/content/", "/output/");
+          // Replace the .md file extension with .html
+          const htmlFileName = entry.name.replace(/\.md$/, ".html");
+          const htmlFilePath = path
+            .join(markdownDirectory, htmlFileName)
+            .replace("/content/", "/output/");
 
-              // Process the markdown file
-              await compileMarkdownToHtml(markdownFilePath, htmlFilePath);
-          } catch (error) {
-            throw new Error(
-              `Error processing file ${markdownFilePath}: ${error instanceof Error ? error.message : String(error)}`
-            );
-          }
-        } else {
-          // Copy the file to the output directory
-          const outputFilePath = markdownFilePath.replace(
-            "/content/",
-            "/output/"
+          // Process the markdown file
+          await compileMarkdownToHtml(markdownFilePath, htmlFilePath);
+        } catch (error) {
+          throw new Error(
+            `Error processing file ${markdownFilePath}: ${error instanceof Error ? error.message : String(error)}`
           );
-          await fs.copy(markdownFilePath, outputFilePath);
         }
+      } else {
+        // Copy the file to the output directory
+        const outputFilePath = markdownFilePath.replace(
+          "/content/",
+          "/output/"
+        );
+        await fs.copy(markdownFilePath, outputFilePath);
+      }
     }
   }
 }

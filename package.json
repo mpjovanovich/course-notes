@@ -20,7 +20,7 @@
     "typescript": "^5.5.3"
   },
   "dependencies": {
-    "@mpjovanovich/dotmark": "^0.0.1",
+    "@mpjovanovich/dotmark": "^0.0.5",
     "fs-extra": "^11.2.0",
     "prettier": "^3.3.3"
   }
