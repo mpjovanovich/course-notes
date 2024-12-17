@@ -59,10 +59,14 @@ A **binary operator** is an operator that takes two operands.
 
 ### Negation (NOT)
 
+~.lastColResult
+
 | P     |    ¬P |
 | :---- | ----: |
 | True  | False |
 | False |  True |
+
+~/
 
 **Symbol**: ¬
 
@@ -84,12 +88,16 @@ Express using propositions: "It is not raining".
 
 ### Conjunction (AND)
 
+~.lastColResult
+
 | P     | Q     | P ∧ Q |
 | :---- | :---- | ----: |
 | True  | True  |  True |
 | True  | False | False |
 | False | True  | False |
 | False | False | False |
+
+~/
 
 **Symbol**: ∧
 
@@ -125,12 +133,16 @@ Express using propositions: "Spot is a dog".
 
 ### Disjunction (OR)
 
+~.lastColResult
+
 | P     | Q     | P ∨ Q |
 | :---- | :---- | ----: |
 | True  | True  |  True |
 | True  | False |  True |
 | False | True  |  True |
 | False | False | False |
+
+~/
 
 **Symbol**: ∨
 
@@ -168,12 +180,16 @@ Express using propositions: "Karen is an Ivy Tech student or a Purdue student.".
 
 ### Exclusive OR (XOR)
 
+~.lastColResult
+
 | P     | Q     | P ⊕ Q |
 | :---- | :---- | ----: |
 | True  | True  | False |
 | True  | False |  True |
 | False | True  |  True |
 | False | False | False |
+
+~/
 
 **Symbol**: ⊕
 

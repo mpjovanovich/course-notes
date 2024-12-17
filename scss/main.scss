@@ -142,7 +142,7 @@ table {
   font-size: $font-size-base;
   line-height: $line-height-base;
   width: auto;
-  margin: 0 40px;
+  margin: $spacer * 2 $spacer * 2.5;
 
   th,
   td {
@@ -304,6 +304,51 @@ pre {
   border: none;
   border-radius: 0 4px 4px 0;
   transition: transform 0.2s ease;
+}
+
+// Details / Summary
+details {
+  @extend .card;
+  margin: $spacer 0;
+
+  &[open] {
+    > summary {
+      border-bottom: 1px solid $gray-200;
+      margin-bottom: $spacer;
+
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+summary {
+  @extend .card-header;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $gray-100;
+  }
+
+  &::marker,
+  &::-webkit-details-marker {
+    display: none;
+    content: "";
+  }
+
+  &::before {
+    content: "\F231";
+    color: $primary;
+    font-family: "bootstrap-icons";
+    margin-right: 0.5em;
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+}
+
+details > *:not(summary) {
+  @extend .card-body;
 }
 
 /* 
