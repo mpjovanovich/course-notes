@@ -8,13 +8,15 @@ codeBlocks.forEach((pre) => {
 
   // Create copy button
   const copyButton = document.createElement("button");
-  copyButton.innerHTML = "📋";
+  copyButton.innerHTML = '<i class="bi bi-clipboard"></i>';
   copyButton.classList.add("codeSnippetButton");
+  copyButton.setAttribute("title", "Copy code");
 
   // Create dark mode toggle button
   const darkModeButton = document.createElement("button");
-  darkModeButton.innerHTML = "️☀️";
+  darkModeButton.innerHTML = '<i class="bi bi-sun"></i>';
   darkModeButton.classList.add("codeSnippetButton");
+  darkModeButton.setAttribute("title", "Toggle dark mode");
 
   // Add click handlers
   copyButton.addEventListener("click", () => {
@@ -22,17 +24,19 @@ codeBlocks.forEach((pre) => {
     navigator.clipboard.writeText(code);
 
     // Visual feedback
-    const originalText = copyButton.innerHTML;
-    copyButton.innerHTML = "✓ Copied!";
+    const originalIcon = copyButton.innerHTML;
+    copyButton.innerHTML = '<i class="bi bi-clipboard-check"></i>';
     setTimeout(() => {
-      copyButton.innerHTML = originalText;
+      copyButton.innerHTML = originalIcon;
     }, 1000);
   });
 
   darkModeButton.addEventListener("click", () => {
     const body = document.querySelector("body");
     body.classList.toggle("dark");
-    darkModeButton.innerHTML = body.classList.contains("dark") ? "🌙" : "☀️";
+    darkModeButton.innerHTML = body.classList.contains("dark")
+      ? '<i class="bi bi-moon"></i>'
+      : '<i class="bi bi-sun"></i>';
   });
 
   // Add buttons to container

@@ -4,8 +4,12 @@
   "version": "1.0.0",
   "main": "dist/compile.js",
   "scripts": {
-    "build": "tsc --project tsconfig.json",
-    "start": "node dist/compile.js",
+    "clean": "rm -rf output",
+    "create:dirs": "mkdir -p output/assets/css output/assets/scripts",
+    "build:sass": "sass scss/main.scss:output/assets/css/styles.css --style compressed --no-source-map",
+    "build:sass:dev": "rm -rf output/assets/css && sass scss/main.scss:output/assets/css/styles.css --watch",
+    "build:ts": "tsc --project tsconfig.json",
+    "build": "npm run clean && npm run create:dirs && npm run build:sass && npm run build:ts && node dist/compile.js",
     "quicktest": "node --loader ts-node/esm src/test.ts"
   },
   "keywords": [],
@@ -21,6 +25,8 @@
   },
   "dependencies": {
     "@mpjovanovich/dotmark": "^0.0.5",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "fs-extra": "^11.2.0",
     "prettier": "^3.3.3"
   }

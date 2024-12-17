@@ -1,0 +1,306 @@
+// Bootstrap variable overrides
+$primary: #408080;
+$secondary: #eeeeee;
+$light: #ffffff;
+$body-color: #202124;
+$font-family-sans-serif: "Roboto", sans-serif;
+$font-family-heading: "Arimo", Helvetica, sans-serif;
+$font-size-base: 1.25rem; // 18px
+$font-size-root: 16px;
+$line-height-base: 1.75;
+$enable-shadows: true;
+$prefix: "mo-";
+
+// Code
+$code-font-size: $font-size-base;
+$code-font-family: Consolas, "Liberation Mono", "Courier New", monospace;
+
+// Custom variables
+$header-height: 3.5rem;
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+pre {
+  font-weight: bold;
+  border-radius: 8px;
+  position: relative;
+}
+
+// Base styles
+a {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+body {
+  @extend .bg-light;
+  line-height: $line-height-base;
+  padding: 0 8px 40px 8px;
+}
+
+.content-wrapper {
+  @extend .container;
+  max-width: map-get($container-max-widths, "xxl");
+
+  > p,
+  > ol,
+  > ul {
+    margin-left: $spacer * 1.25;
+    margin-right: $spacer * 1.25;
+  }
+}
+
+figure {
+  margin: $spacer * 2;
+  padding: $spacer * 0.5;
+  height: fit-content;
+  width: fit-content;
+}
+
+figcaption {
+  font-style: italic;
+  font-size: $font-size-base * 1.2;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+li {
+  margin: $spacer * 0.8 0;
+}
+
+ol,
+ul {
+  margin: $spacer * 0.5 0;
+  padding-left: $spacer * 2.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headings-font-family;
+  padding: $spacer * 1.4 $spacer;
+  margin: $spacer * 3 0 $spacer 0;
+}
+
+h1 {
+  padding: $spacer * 2 $spacer;
+  margin: $spacer 0;
+  background-color: $primary;
+  color: $white;
+  font-size: $font-size-base * 1.8;
+  text-align: center;
+}
+
+h2 {
+  background-color: $secondary;
+  font-size: $font-size-base * 1.5;
+  font-weight: $font-weight-normal;
+}
+
+h3 {
+  border-color: $gray-300;
+  border-style: solid;
+  border-width: 3px 0 0 0;
+  padding: $spacer * 0.625;
+  font-size: $font-size-base * 1.4;
+}
+
+h1 + h2 {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+p {
+  margin-top: $spacer * 1.2;
+  margin-bottom: $spacer * 1.2;
+}
+
+table {
+  @extend .table;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  margin: $spacer * 2.5 5%;
+
+  th,
+  td {
+    font-family: $headings-font-family;
+    padding: $table-cell-padding-y;
+  }
+
+  th {
+    font-size: $font-size-base * 1.1;
+    font-weight: $font-weight-bold;
+    background-color: $secondary;
+  }
+
+  td {
+    font-size: $font-size-base * 1.2;
+    background-color: $gray-100;
+    min-width: $spacer * 5;
+  }
+}
+
+pre {
+  line-height: 1.5;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.focusContent {
+  border: 3px solid $primary;
+  border-radius: 8px;
+  padding: 0 20px;
+  margin-top: 3rem;
+  overflow: hidden;
+}
+
+.focusContentTitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  padding: 4px 1rem;
+  color: $primary;
+  background-color: $gray-100;
+  margin: 0 -20px;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid $primary;
+}
+
+.toc {
+  // Use bootstrap card component
+  @extend .card;
+  position: fixed;
+  left: -300px;
+  top: $header-height;
+  width: 300px;
+  height: calc(100vh - #{$header-height});
+  transition: left 0.3s ease;
+  z-index: 1000;
+
+  &.open {
+    left: 0;
+  }
+
+  ul {
+    @extend .list-unstyled;
+    margin: 0;
+    padding: 0;
+
+    ul {
+      padding-left: 20px;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 12px 20px;
+    border-bottom: 1px solid $secondary;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+  }
+}
+
+// Custom table variations
+.hideHeaderRow thead {
+  display: none;
+}
+
+.firstColLabels tbody td:first-child {
+  border-right: 2px solid $secondary;
+  font-weight: 700;
+}
+
+.lastColResult tbody td:last-child {
+  border-left: 2px solid $secondary;
+  border-right: 2px solid $secondary;
+  font-weight: 700;
+  background-color: $gray-200;
+}
+
+.mathTable {
+  :is(th, td) {
+    font-family: "Courier New", monospace;
+    letter-spacing: 0.05em;
+    padding: 0.5em;
+    white-space: nowrap;
+  }
+}
+
+// Media queries
+@include media-breakpoint-down(sm) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@include media-breakpoint-between(sm, lg) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+/* 
+* SHIKI THEME - Needed for dark mode
+*/
+
+body.dark .shiki,
+body.dark .shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+// Code snippet controls
+.codeSnippetButtonContainer {
+  @extend .d-flex;
+  @extend .justify-content-end;
+  @extend .gap-2;
+  position: absolute;
+  top: $spacer * 0.5;
+  right: $spacer * 0.5;
+}
+
+.codeSnippetButton {
+  @extend .btn;
+  @extend .btn-sm;
+  @extend .btn-light;
+  padding: $spacer * 0.25 $spacer * 0.5;
+  opacity: 0.7;
+  border: 1px solid $gray-300;
+
+  &:hover {
+    opacity: 1;
+    background-color: $gray-100;
+  }
+}

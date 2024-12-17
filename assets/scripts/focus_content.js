@@ -1,6 +1,6 @@
-const renderTitle = (element, icon, title) => {
-  const iconElement = document.createElement("span");
-  iconElement.textContent = icon;
+const renderTitle = (element, iconClass, title) => {
+  const iconElement = document.createElement("i");
+  iconElement.className = `bi ${iconClass}`;
 
   const titleElement = document.createElement("span");
   titleElement.textContent = title;
@@ -20,21 +20,21 @@ const lookouts = document.querySelectorAll(".lookout");
 const asides = document.querySelectorAll(".note");
 
 demos.forEach((demo) => {
-  renderTitle(demo, "💡", "Demo");
+  renderTitle(demo, "bi-lightbulb", "Demo");
 });
 
 examples.forEach((example) => {
-  renderTitle(example, "🔍", "Example");
+  renderTitle(example, "bi-search", "Example");
 });
 
 exercises.forEach((exercise) => {
-  renderTitle(exercise, "📝", "Exercise");
+  renderTitle(exercise, "bi-pencil-square", "Exercise");
 });
 
 lookouts.forEach((lookout) => {
-  renderTitle(lookout, "👀", "Lookout!");
+  renderTitle(lookout, "bi-exclamation-circle", "Lookout!");
 });
 
 asides.forEach((aside) => {
-  renderTitle(aside, "📚", "Side Note");
+  renderTitle(aside, "bi-book", "Side Note");
 });
