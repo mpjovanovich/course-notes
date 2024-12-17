@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV255: PHP - Redirect After POST</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#the-redirect-after-post-rap-pattern"
+            >The Redirect After POST (RAP) Pattern</a
+          >
+          <ul>
+            <li><a href="#pattern">Pattern</a></li>
+            <li><a href="#benefits">Benefits:</a></li>
+            <li><a href="#example">Example</a></li>
+            <li><a href="#pages">Pages</a></li>
+            <li><a href="#flow">Flow</a></li>
+            <li><a href="#code">Code</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="the-redirect-after-post-rap-pattern">
+        The Redirect After POST (RAP) Pattern
+      </h1>
+      <h2 id="pattern">Pattern</h2>
+      <ol>
+        <li>User submits form.</li>
+        <li>Server processes form data.</li>
+        <li>Server issues redirect response.</li>
+        <li>User browser makes GET request to redirect URL.</li>
+        <li>Server responds with result page.</li>
+      </ol>
+      <h2 id="benefits">Benefits:</h2>
+      <ul>
+        <li>Prevents duplicate form submissions if page refreshed.</li>
+        <li>Clean URL in browser address bar.</li>
+        <li>Separates form processing from form presentation.</li>
+      </ul>
+      <h2 id="example">Example</h2>
+      <h2 id="pages">Pages</h2>
+      <p>We will use three pages:</p>
+      <ol>
+        <li><code>index.php</code> - Form page.</li>
+        <li><code>process.php</code> - Process form data.</li>
+        <li><code>result.php</code> - Display result.</li>
+      </ol>
+      <h2 id="flow">Flow</h2>
+      <ul>
+        <li>From form page, submit to process page.</li>
+        <li>If errors, redirect back to form page with error message.</li>
+        <li>If no errors, redirect to result page.</li>
+      </ul>
+      <h2 id="code">Code</h2>
+      <p><strong>index.php</strong></p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    // Display validation errors if any were set.</span></span>
+<span class="line"><span style="color:#A626A4">    if</span><span style="color:#383A42"> (</span><span style="color:#0184BC">isset</span><span style="color:#383A42">(</span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'error'</span><span style="color:#383A42">])) {</span></span>
+<span class="line"><span style="color:#0184BC">        echo</span><span style="color:#E45649"> $_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'error'</span><span style="color:#383A42">];</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"><span style="color:#383A42">?></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">form</span><span style="color:#986801"> action</span><span style="color:#383A42">=</span><span style="color:#50A14F">"result.php"</span><span style="color:#986801"> method</span><span style="color:#383A42">=</span><span style="color:#50A14F">"POST"</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#986801">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"text"</span><span style="color:#986801"> name</span><span style="color:#383A42">=</span><span style="color:#50A14F">"name"</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#986801">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"submit"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"Submit"</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">form</span><span style="color:#383A42">></span></span></code></pre>
+      <p><strong>process.php</strong></p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">/* *****************************************************************</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"> * REDIRECT TO FORM IF NOT POST</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">* *****************************************************************/</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Users should not be able to access this page directly (via GET)</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> (</span><span style="color:#E45649">$_SERVER</span><span style="color:#383A42">[</span><span style="color:#50A14F">'REQUEST_METHOD'</span><span style="color:#383A42">] !== </span><span style="color:#50A14F">'POST'</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#0184BC">    header</span><span style="color:#383A42">(</span><span style="color:#50A14F">'Location: index.php'</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#A626A4">    exit</span><span style="color:#383A42">();</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">/* *****************************************************************</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"> * DO VALIDATION</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">* *****************************************************************/</span></span>
+<span class="line"><span style="color:#E45649">$error</span><span style="color:#383A42"> = </span><span style="color:#50A14F">''</span><span style="color:#383A42">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// We can check for errors in many ways - for this example we'll</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// assume that we've populated this error variable with a string if</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// there is an error...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">/* *****************************************************************</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"> * REDIRECT TO FORM IF ERRORS</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">* *****************************************************************/</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> (</span><span style="color:#E45649">$error</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#0184BC">    header</span><span style="color:#383A42">(</span><span style="color:#50A14F">'Location: index.php?error='</span><span style="color:#383A42"> .</span><span style="color:#E45649"> $error</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#A626A4">    exit</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">/* *****************************************************************</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"> * PROCEED TO RESULT PAGE</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">* *****************************************************************/</span></span>
+<span class="line"><span style="color:#0184BC">header</span><span style="color:#383A42">(</span><span style="color:#50A14F">'Location: result.php?name='</span><span style="color:#383A42"> .</span><span style="color:#E45649"> $_POST</span><span style="color:#383A42">[</span><span style="color:#50A14F">'name'</span><span style="color:#383A42">]);</span></span>
+<span class="line"><span style="color:#A626A4">exit</span><span style="color:#383A42">;</span></span></code></pre>
+      <p><strong>result.php</strong></p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">h1</span><span style="color:#383A42">></span><span style="color:#986801">SUCCESS</span><span style="color:#383A42">!&#x3C;/</span><span style="color:#986801">h1</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">p</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#986801">  Welcome</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;?</span><span style="color:#986801">php</span><span style="color:#0184BC"> echo</span><span style="color:#E45649"> $_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'name'</span><span style="color:#383A42">]; ?></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">p</span><span style="color:#383A42">></span></span></code></pre>
+    </div>
+  </body>
+</html>

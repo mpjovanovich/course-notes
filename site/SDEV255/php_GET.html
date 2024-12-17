@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV255: PHP - GET</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#get">GET</a>
+          <ul>
+            <li>
+              <a href="#query-strings">Query Strings</a>
+              <ul>
+                <li>
+                  <a href="#parts-of-a-query-string">Parts of a Query String</a>
+                </li>
+                <li>
+                  <a href="#sources-of-get-request">Sources of GET Request</a>
+                </li>
+                <li>
+                  <a href="#form-with-get-method">Form with GET Method</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#php-get-array">PHP GET Array</a>
+              <ul>
+                <li><a href="#missing-parameters">Missing Parameters</a></li>
+                <li>
+                  <a href="#patterns-for-checking-parameter-set"
+                    >Patterns for Checking Parameter Set</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#get-examples">GET Examples</a>
+              <ul>
+                <li><a href="#self-linking-page">Self-linking Page</a></li>
+                <li><a href="#maintaining-state">Maintaining State</a></li>
+                <li><a href="#calculator-program">Calculator Program</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#passing-an-array-via-get">Passing an Array via GET</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="get">GET</h1>
+      <p>A GET request is used to request data from a specified resource.</p>
+      <h2 id="query-strings">Query Strings</h2>
+      <p>Parameters may be passed in the URL of a GET request.</p>
+      <p>
+        A URL may contain data that is passed to the server via a
+        <strong>query string</strong>.
+      </p>
+      <h3 id="parts-of-a-query-string">Parts of a Query String</h3>
+      <figure>
+        <span>
+          <img
+            src="https://lh4.googleusercontent.com/bzNgNITcGMxVszuieKXJSF7Lswjw64bI7yuOvzQIyiedIzTqURKndIZkBL6OJXZcn3mQDMinzqM939F7ATVxr70XqyJVoG8EC9KOuwndGjpc_S0howFdJXKsXkrIwB2UF2ezFSFV"
+            style=""
+          />
+        </span>
+        <figcaption>
+          <a href=""></a>
+        </figcaption>
+      </figure>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Part of Query String</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>?</code></td>
+            <td>start of query string</td>
+          </tr>
+          <tr>
+            <td><code>=</code></td>
+            <td>separator between name and value</td>
+          </tr>
+          <tr>
+            <td><code>&amp;</code></td>
+            <td>separator between parameters (if more than one)</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="sources-of-get-request">Sources of GET Request</h3>
+      <ul>
+        <li>A link on a web page</li>
+        <li>A form submitted with the <code>GET</code> method</li>
+        <li>A program / API</li>
+        <li>A user typing in a URL (a reason to always validate)</li>
+      </ul>
+      <h3 id="form-with-get-method">Form with GET Method</h3>
+      <p>
+        If data comes from an HTML form, the <code>name</code> attribute of
+        input is used as the key in the <code>$_GET</code> array.
+      </p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#E45649">form</span><span style="color:#986801"> action</span><span style="color:#383A42">=</span><span style="color:#50A14F">"test.php"</span><span style="color:#986801"> method</span><span style="color:#383A42">=</span><span style="color:#50A14F">"GET"</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#E45649">label</span><span style="color:#986801"> for</span><span style="color:#383A42">=</span><span style="color:#50A14F">"name"</span><span style="color:#383A42">>Name:&#x3C;/</span><span style="color:#E45649">label</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#E45649">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"text"</span><span style="color:#986801"> name</span><span style="color:#383A42">=</span><span style="color:#50A14F">"name"</span><span style="color:#986801"> id</span><span style="color:#383A42">=</span><span style="color:#50A14F">"name"</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#E45649">label</span><span style="color:#986801"> for</span><span style="color:#383A42">=</span><span style="color:#50A14F">"age"</span><span style="color:#383A42">>Age:&#x3C;/</span><span style="color:#E45649">label</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#E45649">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"text"</span><span style="color:#986801"> name</span><span style="color:#383A42">=</span><span style="color:#50A14F">"age"</span><span style="color:#986801"> id</span><span style="color:#383A42">=</span><span style="color:#50A14F">"age"</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#E45649">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"submit"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"Submit"</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;/</span><span style="color:#E45649">form</span><span style="color:#383A42">></span></span></code></pre>
+      <p>
+        Result URL:
+        <code>http://localhost:8080/test.php?name=John&amp;age=42</code>
+      </p>
+      <h2 id="php-get-array">PHP GET Array</h2>
+      <p>
+        PHP automatically creates an associative array called
+        <code>$_GET</code> that contains the query string parameters.
+      </p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// http://localhost:8080/test.php?name=John&#x26;age=42</span></span>
+<span class="line"><span style="color:#0184BC">echo</span><span style="color:#E45649"> $_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'name'</span><span style="color:#383A42">]; </span><span style="color:#A0A1A7;font-style:italic">// John</span></span>
+<span class="line"><span style="color:#0184BC">echo</span><span style="color:#E45649"> $_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'age'</span><span style="color:#383A42">]; </span><span style="color:#A0A1A7;font-style:italic">// 42</span></span></code></pre>
+      <h3 id="missing-parameters">Missing Parameters</h3>
+      <p>If a parameter is missing, PHP will throw an error.</p>
+      <p>
+        Use the <code>isset()</code> function to check if a parameter is set.
+      </p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic">// http://localhost:8080/test.php?name=John&#x26;age=42</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> (</span><span style="color:#0184BC">isset</span><span style="color:#383A42">(</span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'age'</span><span style="color:#383A42">])) {</span></span>
+<span class="line"><span style="color:#0184BC">  echo</span><span style="color:#E45649"> $_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'age'</span><span style="color:#383A42">];</span></span>
+<span class="line"><span style="color:#383A42">} </span><span style="color:#A626A4">else</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#0184BC">  echo</span><span style="color:#50A14F"> 'Age is not set.'</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span></code></pre>
+      <h3 id="patterns-for-checking-parameter-set">
+        Patterns for Checking Parameter Set
+      </h3>
+      <p>Ternary if:</p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649">$age</span><span style="color:#383A42"> = </span><span style="color:#0184BC">isset</span><span style="color:#383A42">(</span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'age'</span><span style="color:#383A42">]) ? </span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'age'</span><span style="color:#383A42">] : </span><span style="color:#50A14F">''</span><span style="color:#383A42">;</span></span></code></pre>
+      <p>Null coalescing:</p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649">$age</span><span style="color:#383A42"> = </span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'age'</span><span style="color:#383A42">] ?? </span><span style="color:#50A14F">''</span><span style="color:#383A42">;</span></span></code></pre>
+      <h2 id="get-examples">GET Examples</h2>
+      <p>
+        In these examples we use <code>$_SERVER[&#39;PHP_SELF&#39;]</code> to
+        set the form action to the current page.
+      </p>
+      <h3 id="self-linking-page">Self-linking Page</h3>
+      <p>
+        We can include anchor tags in the page that link to the page itself.
+      </p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Check if the color parameter is set in the query string</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> (</span><span style="color:#0184BC">isset</span><span style="color:#383A42">(</span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'color'</span><span style="color:#383A42">])) {</span></span>
+<span class="line"><span style="color:#E45649">    $color</span><span style="color:#383A42"> = </span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'color'</span><span style="color:#383A42">];</span></span>
+<span class="line"><span style="color:#0184BC">    echo</span><span style="color:#50A14F"> '&#x3C;style>body { background-color: '</span><span style="color:#383A42"> .</span><span style="color:#E45649"> $color</span><span style="color:#383A42"> .</span><span style="color:#50A14F"> '; }&#x3C;/style>'</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"><span style="color:#383A42">?></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!-- </span><span style="color:#986801">Some</span><span style="color:#986801"> basic</span><span style="color:#986801"> styles</span><span style="color:#383A42"> --></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">style</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#986801">    a</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#383A42">        padding: </span><span style="color:#986801">10px</span><span style="color:#986801"> 20px</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">        margin: </span><span style="color:#986801">10px</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">        color: </span><span style="color:#986801">white</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#986801">        text</span><span style="color:#383A42">-</span><span style="color:#986801">decoration</span><span style="color:#383A42">: </span><span style="color:#986801">none</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#986801">        border</span><span style="color:#383A42">-</span><span style="color:#986801">radius</span><span style="color:#383A42">: </span><span style="color:#986801">5px</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">style</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!-- </span><span style="color:#986801">The</span><span style="color:#986801"> links</span><span style="color:#383A42"> --></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">a</span><span style="color:#986801"> href</span><span style="color:#383A42">=</span><span style="color:#50A14F">"?color=red"</span><span style="color:#986801"> style</span><span style="color:#383A42">=</span><span style="color:#50A14F">"background-color: red;"</span><span style="color:#383A42">></span><span style="color:#986801">Red</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">a</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">a</span><span style="color:#986801"> href</span><span style="color:#383A42">=</span><span style="color:#50A14F">"?color=green"</span><span style="color:#986801"> style</span><span style="color:#383A42">=</span><span style="color:#50A14F">"background-color: green;"</span><span style="color:#383A42">></span><span style="color:#986801">Green</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">a</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">a</span><span style="color:#986801"> href</span><span style="color:#383A42">=</span><span style="color:#50A14F">"?color=blue"</span><span style="color:#986801"> style</span><span style="color:#383A42">=</span><span style="color:#50A14F">"background-color: blue;"</span><span style="color:#383A42">></span><span style="color:#986801">Blue</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">a</span><span style="color:#383A42">></span></span></code></pre>
+      <h3 id="maintaining-state">Maintaining State</h3>
+      <p>
+        If a user submits a form, the form should be redisplayed with the
+        user&#39;s input (rather than a &quot;new&quot; blank form).
+      </p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#E45649">$remembered</span><span style="color:#383A42"> = </span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'remembered'</span><span style="color:#383A42">] ?? </span><span style="color:#50A14F">''</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">?></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">form</span><span style="color:#986801"> action</span><span style="color:#383A42">=</span><span style="color:#50A14F">"&#x3C;?= </span><span style="color:#E45649">$_SERVER</span><span style="color:#50A14F">['PHP_SELF'] ?>"</span><span style="color:#986801"> method</span><span style="color:#383A42">=</span><span style="color:#50A14F">"GET"</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#986801">label</span><span style="color:#A626A4"> for</span><span style="color:#383A42">=</span><span style="color:#50A14F">"remembered"</span><span style="color:#383A42">></span><span style="color:#986801">Remember</span><span style="color:#986801"> me</span><span style="color:#986801"> please</span><span style="color:#383A42">:&#x3C;/</span><span style="color:#986801">label</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#986801">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"text"</span><span style="color:#986801"> name</span><span style="color:#383A42">=</span><span style="color:#50A14F">"remembered"</span><span style="color:#986801"> id</span><span style="color:#383A42">=</span><span style="color:#50A14F">"remembered"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"&#x3C;?= </span><span style="color:#E45649">$remembered</span><span style="color:#50A14F"> ?>"</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#986801">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"submit"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"Submit"</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">form</span><span style="color:#383A42">></span></span></code></pre>
+      <h3 id="calculator-program">Calculator Program</h3>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#E45649">$first</span><span style="color:#383A42"> = </span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'first'</span><span style="color:#383A42">] ?? </span><span style="color:#50A14F">''</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#E45649">$second</span><span style="color:#383A42"> = </span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'second'</span><span style="color:#383A42">] ?? </span><span style="color:#50A14F">''</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#E45649">$operator</span><span style="color:#383A42"> = </span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'operator'</span><span style="color:#383A42">] ?? </span><span style="color:#50A14F">''</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#E45649">$result</span><span style="color:#383A42"> = </span><span style="color:#50A14F">''</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#E45649">$errorMessage</span><span style="color:#383A42"> = </span><span style="color:#50A14F">''</span><span style="color:#383A42">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Ideally we would do more validation on the input prior...</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> (</span><span style="color:#E45649">$operator</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#A626A4">    if</span><span style="color:#383A42"> (</span><span style="color:#E45649">$operator</span><span style="color:#383A42"> == </span><span style="color:#50A14F">'+'</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#E45649">        $result</span><span style="color:#383A42"> = </span><span style="color:#E45649">$first</span><span style="color:#383A42"> + </span><span style="color:#E45649">$second</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">    } </span><span style="color:#A626A4">elseif</span><span style="color:#383A42"> (</span><span style="color:#E45649">$operator</span><span style="color:#383A42"> == </span><span style="color:#50A14F">'-'</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#E45649">        $result</span><span style="color:#383A42"> = </span><span style="color:#E45649">$first</span><span style="color:#383A42"> - </span><span style="color:#E45649">$second</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">    } </span><span style="color:#A626A4">elseif</span><span style="color:#383A42"> (</span><span style="color:#E45649">$operator</span><span style="color:#383A42"> == </span><span style="color:#50A14F">'*'</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#E45649">        $result</span><span style="color:#383A42"> = </span><span style="color:#E45649">$first</span><span style="color:#383A42"> * </span><span style="color:#E45649">$second</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">    } </span><span style="color:#A626A4">elseif</span><span style="color:#383A42"> (</span><span style="color:#E45649">$operator</span><span style="color:#383A42"> == </span><span style="color:#50A14F">'/'</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#E45649">        $result</span><span style="color:#383A42"> = </span><span style="color:#E45649">$first</span><span style="color:#383A42"> / </span><span style="color:#E45649">$second</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">    } </span><span style="color:#A626A4">else</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#E45649">        $errorMessage</span><span style="color:#383A42"> = </span><span style="color:#50A14F">'Invalid operator.'</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">/* ************************************************************ *</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">* ADVANCED CONCEPT: match</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">* Will have same result as if statements above</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">/* ************************************************************ */</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// if ($operator) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">//     $result = match ($operator) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">//         '+' => $first + $second,</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">//         '-' => $first - $second,</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">//         '*' => $first * $second,</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">//         '/' => $first / $second,</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">//         default => $errorMessage = 'Invalid operator.',</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">//     };</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// }};</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">/* ************************************************************ */</span></span>
+<span class="line"><span style="color:#383A42">?></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42">&#x3C;!-- </span><span style="color:#986801">Make</span><span style="color:#986801"> it</span><span style="color:#986801"> look</span><span style="color:#986801"> decent</span><span style="color:#383A42"> --></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">style</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#986801">    label</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#383A42">        display: </span><span style="color:#986801">inline</span><span style="color:#383A42">-</span><span style="color:#986801">block</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#986801">        margin</span><span style="color:#383A42">-</span><span style="color:#986801">bottom</span><span style="color:#383A42">: </span><span style="color:#986801">10px</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">        width: </span><span style="color:#986801">200px</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42">    .</span><span style="color:#986801">error</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#383A42">        color: </span><span style="color:#986801">red</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#986801">        font</span><span style="color:#383A42">-</span><span style="color:#986801">weight</span><span style="color:#383A42">: </span><span style="color:#986801">bold</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">style</span><span style="color:#383A42">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42">&#x3C;!-- </span><span style="color:#986801">HTML</span><span style="color:#383A42"> --></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> (</span><span style="color:#E45649">$errorMessage</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#0184BC">    echo</span><span style="color:#50A14F"> "&#x3C;p class=</span><span style="color:#0184BC">\"</span><span style="color:#50A14F">error</span><span style="color:#0184BC">\"</span><span style="color:#50A14F">></span><span style="color:#E45649">$errorMessage</span><span style="color:#50A14F">&#x3C;/p>"</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"><span style="color:#383A42">?></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">h1</span><span style="color:#383A42">></span><span style="color:#986801">Result</span><span style="color:#383A42">: &#x3C;?= </span><span style="color:#E45649">$result</span><span style="color:#383A42">; ?>&#x3C;/</span><span style="color:#986801">h1</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">form</span><span style="color:#986801"> method</span><span style="color:#383A42">=</span><span style="color:#50A14F">"GET"</span><span style="color:#986801"> action</span><span style="color:#383A42">=</span><span style="color:#50A14F">"&#x3C;?= </span><span style="color:#E45649">$_SERVER</span><span style="color:#50A14F">['PHP_SELF'] ?>"</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#986801">label</span><span style="color:#A626A4"> for</span><span style="color:#383A42">=</span><span style="color:#50A14F">"first"</span><span style="color:#383A42">></span><span style="color:#986801">First</span><span style="color:#986801"> Number</span><span style="color:#383A42">:&#x3C;/</span><span style="color:#986801">label</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#986801">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"text"</span><span style="color:#986801"> name</span><span style="color:#383A42">=</span><span style="color:#50A14F">"first"</span><span style="color:#986801"> id</span><span style="color:#383A42">=</span><span style="color:#50A14F">"first"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"&#x3C;?= </span><span style="color:#E45649">$first</span><span style="color:#50A14F"> ?>"</span><span style="color:#383A42"> />&#x3C;</span><span style="color:#986801">br</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#986801">label</span><span style="color:#A626A4"> for</span><span style="color:#383A42">=</span><span style="color:#50A14F">"operator"</span><span style="color:#383A42">></span><span style="color:#986801">Operator</span><span style="color:#383A42">:&#x3C;/</span><span style="color:#986801">label</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#986801">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"text"</span><span style="color:#986801"> name</span><span style="color:#383A42">=</span><span style="color:#50A14F">"operator"</span><span style="color:#986801"> id</span><span style="color:#383A42">=</span><span style="color:#50A14F">"operator"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"&#x3C;?= </span><span style="color:#E45649">$operator</span><span style="color:#50A14F"> ?>"</span><span style="color:#383A42"> />&#x3C;</span><span style="color:#986801">br</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#986801">label</span><span style="color:#A626A4"> for</span><span style="color:#383A42">=</span><span style="color:#50A14F">"second"</span><span style="color:#383A42">></span><span style="color:#986801">Second</span><span style="color:#986801"> Number</span><span style="color:#383A42">:&#x3C;/</span><span style="color:#986801">label</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#986801">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"text"</span><span style="color:#986801"> name</span><span style="color:#383A42">=</span><span style="color:#50A14F">"second"</span><span style="color:#986801"> id</span><span style="color:#383A42">=</span><span style="color:#50A14F">"second"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"&#x3C;?= </span><span style="color:#E45649">$second</span><span style="color:#50A14F"> ?>"</span><span style="color:#383A42"> />&#x3C;</span><span style="color:#986801">br</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#986801">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"submit"</span><span style="color:#986801"> name</span><span style="color:#383A42">=</span><span style="color:#50A14F">"calculate"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"Calculate"</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">form</span><span style="color:#383A42">></span></span></code></pre>
+      <h2 id="passing-an-array-via-get">Passing an Array via GET</h2>
+      <ul>
+        <li>
+          Arrays can be passed via GET by using the <code>[]</code> notation in
+          the name attribute.
+        </li>
+        <li>
+          In the example below, the <code>$_GET[&#39;stuff&#39;]</code> array
+          will contain the values of any checked boxes.
+        </li>
+      </ul>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#E45649">$stuff</span><span style="color:#383A42"> = </span><span style="color:#E45649">$_GET</span><span style="color:#383A42">[</span><span style="color:#50A14F">'stuff'</span><span style="color:#383A42">] ?? [];</span></span>
+<span class="line"><span style="color:#0184BC">print_r</span><span style="color:#383A42">(</span><span style="color:#E45649">$stuff</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#383A42">?></span></span></code></pre>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#E45649">form</span><span style="color:#986801"> action</span><span style="color:#383A42">=</span><span style="color:#50A14F">""</span><span style="color:#986801"> method</span><span style="color:#383A42">=</span><span style="color:#50A14F">"GET"</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#E45649">label</span><span style="color:#383A42">>&#x3C;</span><span style="color:#E45649">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"checkbox"</span><span style="color:#986801"> name</span><span style="color:#383A42">=</span><span style="color:#50A14F">"stuff[]"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"item1"</span><span style="color:#383A42"> />Item 1&#x3C;/</span><span style="color:#E45649">label</span></span>
+<span class="line"><span style="color:#383A42">  >&#x3C;</span><span style="color:#E45649">br</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#E45649">label</span><span style="color:#383A42">>&#x3C;</span><span style="color:#E45649">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"checkbox"</span><span style="color:#986801"> name</span><span style="color:#383A42">=</span><span style="color:#50A14F">"stuff[]"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"item2"</span><span style="color:#383A42"> />Item 2&#x3C;/</span><span style="color:#E45649">label</span></span>
+<span class="line"><span style="color:#383A42">  >&#x3C;</span><span style="color:#E45649">br</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#E45649">label</span><span style="color:#383A42">>&#x3C;</span><span style="color:#E45649">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"checkbox"</span><span style="color:#986801"> name</span><span style="color:#383A42">=</span><span style="color:#50A14F">"stuff[]"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"item3"</span><span style="color:#383A42"> />Item 3&#x3C;/</span><span style="color:#E45649">label</span></span>
+<span class="line"><span style="color:#383A42">  >&#x3C;</span><span style="color:#E45649">br</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#E45649">input</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"submit"</span><span style="color:#986801"> value</span><span style="color:#383A42">=</span><span style="color:#50A14F">"Submit"</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;/</span><span style="color:#E45649">form</span><span style="color:#383A42">></span></span></code></pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV265: Single Responsibility Principle</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#single-responsibility-principle"
+            >Single Responsibility Principle</a
+          >
+          <ul>
+            <li>
+              <a href="#refactoring-for-single-responsibility"
+                >Refactoring for Single Responsibility</a
+              >
+            </li>
+            <li>
+              <a href="#command-query-separation">Command Query Separation</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="single-responsibility-principle">
+        Single Responsibility Principle
+      </h1>
+      <p>&quot;A class should have only one reason to change.&quot;</p>
+      <p>We are usually referring to:</p>
+      <ul>
+        <li>Functions</li>
+        <li>Classes</li>
+      </ul>
+      <p>But it can also apply to:</p>
+      <ul>
+        <li>Packages</li>
+        <li>Services</li>
+        <li>...</li>
+      </ul>
+      <h2 id="refactoring-for-single-responsibility">
+        Refactoring for Single Responsibility
+      </h2>
+      <p><em>Examples:</em></p>
+      <p>Messy function to refactor:</p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic"># Creates a database connection</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"># Fetches user from db</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"># Fetches user preference from db</span></span>
+<span class="line"><span style="color:#A626A4">def</span><span style="color:#4078F2"> fetch_user_preference</span><span style="color:#383A42">(</span><span style="color:#986801">user_id</span><span style="color:#383A42">,</span><span style="color:#986801"> preference_name</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#383A42">    db = get_db()</span></span>
+<span class="line"><span style="color:#383A42">    user_row = db.query(</span><span style="color:#50A14F">'SELECT * FROM users WHERE id = ?'</span><span style="color:#383A42">, user_id)</span></span>
+<span class="line"><span style="color:#383A42">    user = new User(user_row)</span></span>
+<span class="line"><span style="color:#A626A4">    if</span><span style="color:#383A42"> preference_name </span><span style="color:#A626A4">in</span><span style="color:#383A42"> user[</span><span style="color:#50A14F">'preferences'</span><span style="color:#383A42">]:</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#383A42"> user[</span><span style="color:#50A14F">'preferences'</span><span style="color:#383A42">][preference_name]</span></span>
+<span class="line"><span style="color:#A626A4">    else</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A626A4">        raise</span><span style="color:#0184BC"> ValueError</span><span style="color:#383A42">(</span><span style="color:#50A14F">'Preference not found'</span><span style="color:#383A42">)</span></span></code></pre>
+      <p>Even small functions can be refactored:</p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic"># Deposits money into account</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"># Returns new balance</span></span>
+<span class="line"><span style="color:#A626A4">def</span><span style="color:#4078F2"> deposit</span><span style="color:#383A42">(</span><span style="color:#986801">account</span><span style="color:#383A42">,</span><span style="color:#986801"> amount</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#383A42">    account.balance += amount</span></span>
+<span class="line"><span style="color:#A626A4">    return</span><span style="color:#383A42"> account.balance</span></span></code></pre>
+      <h2 id="command-query-separation">Command Query Separation</h2>
+      <p>
+        <strong>Command Query Separation</strong> (CQS) is a design principle
+        that states that a method should either be a command that performs an
+        action or a query that returns data, but not both.
+      </p>
+      <p>Commands: Change the state of the system and do not return data</p>
+      <p>Queries: Return data and do not change the state of the system</p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> Account</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#0184BC"> __init__</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> balance</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.balance = balance</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Command</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> deposit</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> amount</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.balance += amount</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Command</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> withdraw</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> amount</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.balance -= amount</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Query</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> get_balance</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#E45649"> self</span><span style="color:#383A42">.balance</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Query</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> validate_pending_withdrawal</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> amount</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#E45649"> self</span><span style="color:#383A42">.balance >= amount</span></span></code></pre>
+    </div>
+  </body>
+</html>

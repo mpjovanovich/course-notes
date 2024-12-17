@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV140: Abstraction</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#abstraction">Abstraction</a>
+            <ul>
+              <li>
+                <a href="#interfaces">Interfaces</a>
+                <ul>
+                  <li><a href="#usage">Usage</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#abstract-classes-and-methods"
+                  >Abstract Classes and Methods</a
+                >
+                <ul>
+                  <li><a href="#usage-1">Usage</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="abstraction">Abstraction</h1>
+      <p>Primary purposes of <strong>abstraction</strong> are to:</p>
+      <ul>
+        <li>Hide the complexity of the system from the user.</li>
+        <li>Segregate interfaces from implementation.</li>
+      </ul>
+      <h2 id="interfaces">Interfaces</h2>
+      <p>
+        <strong>Interface</strong>: The set of public methods and properties
+        that a class provides.
+      </p>
+      <p>
+        <strong>Implementation</strong>: The actual code that performs the
+        operations.
+      </p>
+      <p>
+        An interface defines a <strong>contract</strong> between the class and
+        the outside world. The class promises to provide the methods and
+        properties defined in the interface.
+      </p>
+      <p>We may speak of interface as:</p>
+      <ul>
+        <li>
+          General sense: The set of methods and properties that a class
+          provides.
+        </li>
+        <li>
+          Specific sense: A language construct that defines a contract between
+          the class and the outside world (keyword <code>Interface</code>).
+        </li>
+      </ul>
+      <h3 id="usage">Usage</h3>
+      <p>A class may implement zero to many interfaces.</p>
+      <p>
+        <strong>A note on Python</strong>: Although most programming languages
+        do, Python does not have a built-in <code>Interface</code> keyword.
+        Instead, we use abstract classes and methods (discussed below) to define
+        interfaces.
+      </p>
+      <div class="focusContent example">
+        <p><em>Interface</em></p>
+        <pre
+          class="shiki one-light"
+          style="background-color: #fafafa; color: #383a42"
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4">interface</span><span style="color:#C18401"> IDatabase</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#4078F2">  connect</span><span style="color:#383A42">()</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#4078F2">  disconnect</span><span style="color:#383A42">()</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#4078F2">  execute_query</span><span style="color:#383A42">(query</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#383A42">)</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">}</span></span></code></pre>
+        <p><em>Implementation</em></p>
+        <pre
+          class="shiki one-light"
+          style="background-color: #fafafa; color: #383a42"
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> MySQLDatabase</span><span style="color:#A626A4"> implements</span><span style="color:#C18401"> IDatabase</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#4078F2">  connect</span><span style="color:#383A42">()</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    // Connect to MySQL database</span></span>
+<span class="line"><span style="color:#383A42">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#4078F2">  disconnect</span><span style="color:#383A42">()</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    // Disconnect from MySQL database</span></span>
+<span class="line"><span style="color:#383A42">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#4078F2">  execute_query</span><span style="color:#383A42">(query</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#383A42">)</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    // Execute query on MySQL database</span></span>
+<span class="line"><span style="color:#383A42">  }</span></span>
+<span class="line"><span style="color:#383A42">}</span></span></code></pre>
+      </div>
+
+      <h2 id="abstract-classes-and-methods">Abstract Classes and Methods</h2>
+      <p><strong>Abstract</strong>: Cannot be directly instantiated or used.</p>
+      <p><strong>Concrete</strong>: Can be directly instantiated or used.</p>
+      <ul>
+        <li>
+          <p>Abstract base classes</p>
+          <ul>
+            <li>Are only used as a base class for other classes.</li>
+            <li>May contain abstract methods or properties.</li>
+            <li>May contain concrete methods or properties.</li>
+          </ul>
+        </li>
+        <li>
+          <p>Abstract methods</p>
+          <ul>
+            <li>May only by defined in an abstract class.</li>
+            <li>
+              <em
+                >Must be implemented in a derived class by overriding them in
+                the derived class.</em
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3 id="usage">Usage</h3>
+      <p>
+        A class may (usually) inherit from one and only one abstract base class.
+      </p>
+      <div class="focusContent example">
+        <pre
+          class="shiki one-light"
+          style="background-color: #fafafa; color: #383a42"
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4">from</span><span style="color:#383A42"> abc </span><span style="color:#A626A4">import</span><span style="color:#383A42"> ABC, abstractmethod</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">## Abstract base class</span></span>
+<span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> Shape(</span><span style="color:#383A42">ABC</span><span style="color:#C18401">)</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#0184BC"> __init__</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> name</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">._name = name</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Concrete method</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> print_name</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#0184BC">        print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Name: </span><span style="color:#986801">{</span><span style="color:#E45649">self</span><span style="color:#383A42">._name</span><span style="color:#986801">}</span><span style="color:#50A14F">"</span><span style="color:#383A42">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Abstract methods - must be implemented in derived classes</span></span>
+<span class="line"><span style="color:#4078F2">    @abstractmethod</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> area</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        pass</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#4078F2">    @abstractmethod</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> perimeter</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        pass</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> Circle(Shape)</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#0184BC"> __init__</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> name</span><span style="color:#383A42">,</span><span style="color:#986801"> radius</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">        ## Call parent class constructor</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">        ## super = 'Shape'</span></span>
+<span class="line"><span style="color:#0184BC">        super</span><span style="color:#383A42">().</span><span style="color:#0184BC">__init__</span><span style="color:#383A42">(name)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">        ## Private attributes</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.__PI = </span><span style="color:#986801">3.14159</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.__radius = radius</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Override abstract methods</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> area</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#E45649"> self</span><span style="color:#383A42">.__PI * </span><span style="color:#E45649">self</span><span style="color:#383A42">.__radius ** </span><span style="color:#986801">2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> perimeter</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#986801"> 2</span><span style="color:#383A42"> * </span><span style="color:#E45649">self</span><span style="color:#383A42">.__PI * </span><span style="color:#E45649">self</span><span style="color:#383A42">.__radius</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> Rectangle(Shape)</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#0184BC"> __init__</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> name</span><span style="color:#383A42">,</span><span style="color:#986801"> width</span><span style="color:#383A42">,</span><span style="color:#986801"> height</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">        ## Call parent class constructor</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">        ## super = 'Shape'</span></span>
+<span class="line"><span style="color:#0184BC">        super</span><span style="color:#383A42">().</span><span style="color:#0184BC">__init__</span><span style="color:#383A42">(name)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">        ## Private attributes</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.__width = width</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.__height = height</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Override abstract methods</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> area</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#E45649"> self</span><span style="color:#383A42">.__width * </span><span style="color:#E45649">self</span><span style="color:#383A42">.__height</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> perimeter</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#986801"> 2</span><span style="color:#383A42"> * (</span><span style="color:#E45649">self</span><span style="color:#383A42">.__width + </span><span style="color:#E45649">self</span><span style="color:#383A42">.__height)</span></span></code></pre>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV264: Intro to TypeScript</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#typescript">TypeScript</a>
+          <ul>
+            <li>
+              <a href="#why-might-i-uses-over-plain-js"
+                >Why might I uses over plain JS?</a
+              >
+            </li>
+            <li>
+              <a href="#any-reason-to-still-use-js-then"
+                >Any Reason to still use JS then?</a
+              >
+            </li>
+            <li>
+              <a href="#syntax">Syntax</a>
+              <ul>
+                <li><a href="#type-annotations">Type Annotations</a></li>
+                <li><a href="#functions">Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="#typescript-compiler">TypeScript Compiler</a></li>
+            <li><a href="#example-app">Example App</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="typescript">TypeScript</h1>
+      <ul>
+        <li>TypeScript is a <strong>superset</strong> of JavaScript</li>
+        <li>Adds <strong>static typing</strong> to the language.</li>
+      </ul>
+      <h2 id="why-might-i-uses-over-plain-js">
+        Why might I uses over plain JS?
+      </h2>
+      <ul>
+        <li>Can check for errors at compile time (before running the code)</li>
+        <li>Better tooling support</li>
+        <li>Easier to read and understand code</li>
+        <li>Easier to maintain code</li>
+        <li>Easier to refactor code</li>
+        <li>Easier to write tests</li>
+      </ul>
+      <h2 id="any-reason-to-still-use-js-then">
+        Any Reason to still use JS then?
+      </h2>
+      <p>Yes, there are still reasons to use JavaScript:</p>
+      <ul>
+        <li>Fast to write.</li>
+        <li>Easy to learn, get started.</li>
+        <li>Great for small projects.</li>
+      </ul>
+      <h2 id="syntax">Syntax</h2>
+      <h3 id="type-annotations">Type Annotations</h3>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">let</span><span style="color:#383A42"> message</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#0184BC"> =</span><span style="color:#50A14F"> "Oh hello there!"</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#A626A4">let</span><span style="color:#383A42"> count</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> number</span><span style="color:#0184BC"> =</span><span style="color:#986801"> 5</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#A626A4">let</span><span style="color:#383A42"> isTrue</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> boolean</span><span style="color:#0184BC"> =</span><span style="color:#986801"> true</span><span style="color:#383A42">;</span></span></code></pre>
+      <p>
+        // The transpiler will still infer types if you don&#39;t specify them,
+        but you // cannot change the type of a variable after it has been
+        declared.
+      </p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">let</span><span style="color:#383A42"> message </span><span style="color:#0184BC">=</span><span style="color:#50A14F"> "Oh hello there!"</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#A626A4">let</span><span style="color:#383A42"> count </span><span style="color:#0184BC">=</span><span style="color:#986801"> 5</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#A626A4">let</span><span style="color:#383A42"> isTrue </span><span style="color:#0184BC">=</span><span style="color:#986801"> true</span><span style="color:#383A42">;</span></span></code></pre>
+      <h3 id="functions">Functions</h3>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">function</span><span style="color:#4078F2"> add</span><span style="color:#383A42">(x</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> number</span><span style="color:#383A42">, y</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> number</span><span style="color:#383A42">)</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> number</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A626A4">  return</span><span style="color:#383A42"> x </span><span style="color:#0184BC">+</span><span style="color:#383A42"> y;</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span></code></pre>
+      <h2 id="typescript-compiler">TypeScript Compiler</h2>
+      <ul>
+        <li>The TypeScript compiler is called <code>tsc</code>.</li>
+        <li>It compiles TypeScript code to JavaScript code.</li>
+        <li>It can be installed with npm.</li>
+      </ul>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#4078F2">npm</span><span style="color:#50A14F"> install</span><span style="color:#986801"> -g</span><span style="color:#50A14F"> typescript</span></span></code></pre>
+      <p>To compile a file:</p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#4078F2">tsc</span><span style="color:#50A14F"> myFile.ts</span></span></code></pre>
+      <h2 id="example-app">Example App</h2>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;!</span><span style="color:#E45649">doctype</span><span style="color:#986801"> html</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#E45649">html</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#E45649">head</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#E45649">title</span><span style="color:#383A42">>TS_Demo&#x3C;/</span><span style="color:#E45649">title</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#E45649">link</span><span style="color:#986801"> rel</span><span style="color:#383A42">=</span><span style="color:#50A14F">"stylesheet"</span><span style="color:#986801"> type</span><span style="color:#383A42">=</span><span style="color:#50A14F">"text/css"</span><span style="color:#986801"> href</span><span style="color:#383A42">=</span><span style="color:#50A14F">"style.css"</span><span style="color:#383A42"> /></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#E45649">script</span><span style="color:#986801"> src</span><span style="color:#383A42">=</span><span style="color:#50A14F">"app.js"</span><span style="color:#986801"> defer</span><span style="color:#383A42">>&#x3C;/</span><span style="color:#E45649">script</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;/</span><span style="color:#E45649">head</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;</span><span style="color:#E45649">body</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#E45649">h1</span><span style="color:#383A42">>TS Demo&#x3C;/</span><span style="color:#E45649">h1</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#E45649">p</span><span style="color:#383A42">>I'm p1!&#x3C;/</span><span style="color:#E45649">p</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#E45649">p</span><span style="color:#383A42">>I'm p2!&#x3C;/</span><span style="color:#E45649">p</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#E45649">p</span><span style="color:#383A42">>I'm p3!&#x3C;/</span><span style="color:#E45649">p</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#E45649">p</span><span style="color:#383A42">>I'm p4!&#x3C;/</span><span style="color:#E45649">p</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#E45649">p</span><span style="color:#383A42">>I'm p5!&#x3C;/</span><span style="color:#E45649">p</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">    &#x3C;</span><span style="color:#E45649">button</span><span style="color:#986801"> id</span><span style="color:#383A42">=</span><span style="color:#50A14F">"btnClick"</span><span style="color:#383A42">>Click me!&#x3C;/</span><span style="color:#E45649">button</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">  &#x3C;/</span><span style="color:#E45649">body</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;/</span><span style="color:#E45649">html</span><span style="color:#383A42">></span></span></code></pre>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">let</span><span style="color:#383A42"> cur_color</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> number</span><span style="color:#0184BC"> =</span><span style="color:#986801"> 0</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#A626A4">const</span><span style="color:#986801"> colors</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#383A42">[] </span><span style="color:#0184BC">=</span><span style="color:#383A42"> [</span></span>
+<span class="line"><span style="color:#50A14F">  "red"</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#50A14F">  "green"</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#50A14F">  "blue"</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#50A14F">  "orange"</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#50A14F">  "purple"</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#50A14F">  "teal"</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#50A14F">  "pink"</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#383A42">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Whenever the button is clicked, do this function...</span></span>
+<span class="line"><span style="color:#383A42">document.</span><span style="color:#4078F2">getElementById</span><span style="color:#383A42">(</span><span style="color:#50A14F">"btnClick"</span><span style="color:#383A42">)?.</span><span style="color:#4078F2">addEventListener</span><span style="color:#383A42">(</span><span style="color:#50A14F">"click"</span><span style="color:#383A42">, () </span><span style="color:#A626A4">=></span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // Get all of the paragraph elements, and for each one...</span></span>
+<span class="line"><span style="color:#383A42">  document.</span><span style="color:#4078F2">querySelectorAll</span><span style="color:#383A42">(</span><span style="color:#50A14F">"p"</span><span style="color:#383A42">).</span><span style="color:#4078F2">forEach</span><span style="color:#383A42">((p) </span><span style="color:#A626A4">=></span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    // Change the color of the text to the next color in the array</span></span>
+<span class="line"><span style="color:#383A42">    p.</span><span style="color:#E45649">style</span><span style="color:#383A42">.</span><span style="color:#E45649">color</span><span style="color:#0184BC"> =</span><span style="color:#383A42"> colors[cur_color];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    // Increment the color index, and if it's at the end of the array, reset it to 0</span></span>
+<span class="line"><span style="color:#383A42">    cur_color </span><span style="color:#0184BC">=</span><span style="color:#383A42"> (cur_color </span><span style="color:#0184BC">+</span><span style="color:#986801"> 1</span><span style="color:#383A42">) </span><span style="color:#0184BC">%</span><span style="color:#383A42"> colors.</span><span style="color:#E45649">length</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">  });</span></span>
+<span class="line"><span style="color:#383A42">});</span></span></code></pre>
+    </div>
+  </body>
+</html>

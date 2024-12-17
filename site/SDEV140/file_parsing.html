@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV140: File Parsing</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#file-parsing">File Parsing</a>
+            <ul>
+              <li><a href="#validating-data">Validating Data</a></li>
+              <li><a href="#cleaning-data">Cleaning Data</a></li>
+              <li>
+                <a href="#example-parsing-a-csv-file"
+                  >Example: Parsing a CSV File</a
+                >
+              </li>
+              <li><a href="#useful-functions">Useful Functions</a></li>
+              <li>
+                <a href="#shorthand-conditionals">Shorthand Conditionals</a>
+              </li>
+              <li><a href="#truthy--falsy-values">Truthy / Falsy Values</a></li>
+              <li>
+                <a href="#validation-patterns-guard-clauses"
+                  >Validation Patterns: Guard Clauses</a
+                >
+              </li>
+              <li>
+                <a href="#third-party-libraries">Third Party Libraries</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="file-parsing">File Parsing</h1>
+      <p>
+        <strong>File parsing</strong> is the process of extracting and
+        transforming data from a file into a usable format.
+      </p>
+      <p>We should not trust data in a file to conform to our expectations.</p>
+      <h2 id="validating-data">Validating Data</h2>
+      <p>
+        <strong>Data validation</strong> is the process of ensuring that data is
+        correct and useful.
+      </p>
+      <ul>
+        <li>Check for empty lines</li>
+        <li>Check for missing fields</li>
+        <li>Check data types</li>
+        <li>Check data ranges</li>
+        <li>Check for invalid characters</li>
+        <li>Check for bad data formats</li>
+      </ul>
+      <h2 id="cleaning-data">Cleaning Data</h2>
+      <p>Data should be validated and cleaned.</p>
+      <ul>
+        <li>
+          <strong>Trim</strong> / <strong>strip</strong> whitespace
+          <ul>
+            <li>
+              Remove tabs, spaces, and newlines from the beginning and end of a
+              string
+            </li>
+            <li>
+              These terms are used interchangeably depending on the programming
+              language
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Normalize</strong> / <strong>standardize</strong> data
+          <ul>
+            <li>Convert data to a consistent format</li>
+            <li>
+              For example,
+              <ul>
+                <li>
+                  Convert all text to lowercase for case-insensitive comparisons
+                </li>
+                <li>Convert dates to a consistent format</li>
+                <li>...</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Remove <strong>duplicates</strong></li>
+      </ul>
+      <h2 id="example-parsing-a-csv-file">Example: Parsing a CSV File</h2>
+      <div class="focusContent exercise">
+        <p>Suppose we have a CSV file with the following data:</p>
+        <pre
+          class="shiki one-light"
+          style="background-color: #fafafa; color: #383a42"
+          tabindex="0"
+        ><code><span class="line"><span style="color:#383A42">Name,</span><span style="color:#A626A4">Email,</span><span style="color:#4078F2">Phone</span></span>
+<span class="line"><span style="color:#383A42">Alice,</span><span style="color:#A626A4">alice@mail.ez,</span><span style="color:#4078F2">555-555-1234</span></span>
+<span class="line"><span style="color:#383A42">Bob,</span><span style="color:#A626A4">bob@mail,</span><span style="color:#4078F2">555-555-5678</span></span>
+<span class="line"><span style="color:#383A42">Alice,</span><span style="color:#A626A4">alice@mail.ez,</span><span style="color:#4078F2">555-555-1234</span></span>
+<span class="line"><span style="color:#383A42">Jane,</span><span style="color:#A626A4"> jane@mail.ez,</span><span style="color:#4078F2">555-555-9012</span></span>
+<span class="line"><span style="color:#383A42">Tom,</span><span style="color:#A626A4">tom@mail.ez,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42">Zane,</span><span style="color:#A626A4">zane@mail.ez,</span><span style="color:#4078F2">555-3456</span></span></code></pre>
+        <p>What are some potential issues with this data?</p>
+      </div>
+
+      <h2 id="useful-functions">Useful Functions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>strip()</code></td>
+            <td>Remove whitespace from the beginning and end of a string</td>
+          </tr>
+          <tr>
+            <td><code>split()</code></td>
+            <td>Split a string into a list of strings using a delimiter</td>
+          </tr>
+          <tr>
+            <td><code>len()</code></td>
+            <td>Get the length of a string or list</td>
+          </tr>
+          <tr>
+            <td><code>contains()</code></td>
+            <td>Check if a string contains a substring</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="shorthand-conditionals">Shorthand Conditionals</h2>
+      <p>
+        We do not have to write <code>== True</code> within a conditional
+        statement. It is implied (assumed to be there) if you leave it out.
+      </p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic">## These are equivalent:</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> has_permission == </span><span style="color:#986801">True</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> has_permission:</span></span></code></pre>
+      <h2 id="truthy--falsy-values">Truthy / Falsy Values</h2>
+      <p>
+        Many languages such as Python have a concept of
+        <strong>truthy</strong> and <strong>falsy</strong> values.
+      </p>
+      <p>
+        It&#39;s a syntax feature that allows for concise conditional
+        statements.
+      </p>
+      <ul>
+        <li>An empty string is considered <code>False</code></li>
+        <li>A non-empty string is considered <code>True</code></li>
+      </ul>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic">## These are equivalent:</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> name != </span><span style="color:#50A14F">""</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> name:</span></span></code></pre>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic">## These are also equivalent:</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> name == </span><span style="color:#50A14F">""</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#A626A4"> not</span><span style="color:#383A42"> name:</span></span></code></pre>
+      <div class="focusContent example">
+        <p>Let&#39;s rewrite a code snippet using truthy / falsy values.</p>
+        <p><strong>Before:</strong></p>
+        <pre
+          class="shiki one-light"
+          style="background-color: #fafafa; color: #383a42"
+          tabindex="0"
+        ><code><span class="line"><span style="color:#383A42">name = </span><span style="color:#0184BC">input</span><span style="color:#383A42">(</span><span style="color:#50A14F">"Enter your name: "</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> name != </span><span style="color:#50A14F">""</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#0184BC">    print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Hello, </span><span style="color:#986801">{</span><span style="color:#383A42">name</span><span style="color:#986801">}</span><span style="color:#50A14F">!"</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#A626A4">else</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#0184BC">    print</span><span style="color:#383A42">(</span><span style="color:#50A14F">"You must enter a name."</span><span style="color:#383A42">)</span></span></code></pre>
+        <p><strong>After:</strong></p>
+        <pre
+          class="shiki one-light"
+          style="background-color: #fafafa; color: #383a42"
+          tabindex="0"
+        ><code><span class="line"><span style="color:#383A42">name = </span><span style="color:#0184BC">input</span><span style="color:#383A42">(</span><span style="color:#50A14F">"Enter your name: "</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#A626A4">if</span><span style="color:#383A42"> name:</span></span>
+<span class="line"><span style="color:#0184BC">    print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Hello, </span><span style="color:#986801">{</span><span style="color:#383A42">name</span><span style="color:#986801">}</span><span style="color:#50A14F">!"</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#A626A4">else</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#0184BC">    print</span><span style="color:#383A42">(</span><span style="color:#50A14F">"You must enter a name."</span><span style="color:#383A42">)</span></span></code></pre>
+      </div>
+
+      <h2 id="validation-patterns-guard-clauses">
+        Validation Patterns: Guard Clauses
+      </h2>
+      <p>
+        It is often useful to use <strong>guard clauses</strong> to validate
+        data.
+      </p>
+      <p>
+        A guard clause is a conditional statement that returns early if the
+        condition is not met. These can be used in loops via the
+        <code>break</code> or <code>continue</code> statements.
+      </p>
+      <div class="focusContent example">
+        <p>In the code snippet below, we will parse a CSV file line by line.</p>
+        <p>
+          Several uses of guard clauses are demonstrated, as shown in the code
+          comments.
+        </p>
+        <pre
+          class="shiki one-light"
+          style="background-color: #fafafa; color: #383a42"
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A0A1A7;font-style:italic">## Parsing a CSV file...</span></span>
+<span class="line"><span style="color:#A626A4">for</span><span style="color:#383A42"> line </span><span style="color:#A626A4">in</span><span style="color:#E45649"> file</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Strip whitespace from the line</span></span>
+<span class="line"><span style="color:#383A42">    line = line.strip()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Guard: Skip empty lines</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## (Remember: An empty string is considered False)</span></span>
+<span class="line"><span style="color:#A626A4">    if</span><span style="color:#A626A4"> not</span><span style="color:#383A42"> line:</span></span>
+<span class="line"><span style="color:#A626A4">        continue</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Get the items in the line</span></span>
+<span class="line"><span style="color:#383A42">    line_items = line.split(</span><span style="color:#50A14F">","</span><span style="color:#383A42">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Guard: Validate the number of items in the line</span></span>
+<span class="line"><span style="color:#A626A4">    if</span><span style="color:#0184BC"> len</span><span style="color:#383A42">(line_items) != </span><span style="color:#986801">3</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#0184BC">        print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Invalid number of items in line: </span><span style="color:#986801">{</span><span style="color:#383A42">line</span><span style="color:#986801">}</span><span style="color:#50A14F">"</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#A626A4">        continue</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Assume first item is a record number</span></span>
+<span class="line"><span style="color:#383A42">    record_number = line_items[</span><span style="color:#986801">0</span><span style="color:#383A42">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Guard: Validate the record number is not empty</span></span>
+<span class="line"><span style="color:#A626A4">    if</span><span style="color:#A626A4"> not</span><span style="color:#383A42"> record_number:</span></span>
+<span class="line"><span style="color:#0184BC">        print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Invalid record number: </span><span style="color:#986801">{</span><span style="color:#383A42">record_number</span><span style="color:#986801">}</span><span style="color:#50A14F">"</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#A626A4">        continue</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Guard: Validate the record number is a number</span></span>
+<span class="line"><span style="color:#A626A4">    if</span><span style="color:#A626A4"> not</span><span style="color:#383A42"> record_number.isdigit():</span></span>
+<span class="line"><span style="color:#0184BC">        print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Invalid record number: </span><span style="color:#986801">{</span><span style="color:#383A42">record_number</span><span style="color:#986801">}</span><span style="color:#50A14F">"</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#A626A4">        continue</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## ... continue processing the line</span></span></code></pre>
+      </div>
+
+      <h2 id="third-party-libraries">Third Party Libraries</h2>
+      <p>
+        Many programming languages have third-party libraries that can help with
+        file parsing.
+      </p>
+      <ul>
+        <li>
+          Python: <code>csv</code>, <code>pandas</code>, <code>openpyxl</code>,
+          <code>xlrd</code>...
+        </li>
+      </ul>
+      <p>
+        No need to reinvent the wheel. Use these libraries when appropriate.
+      </p>
+    </div>
+  </body>
+</html>

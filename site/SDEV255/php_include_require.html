@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV255: PHP - Include and Require</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#include-and-require-statements"
+            >Include and Require Statements</a
+          >
+          <ul>
+            <li>
+              <a href="#include">Include</a>
+              <ul>
+                <li><a href="#example">Example</a></li>
+              </ul>
+            </li>
+            <li><a href="#require">Require</a></li>
+            <li>
+              <a href="#include-vs-require---which-to-use"
+                >Include vs Require - Which to Use?</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#include_once-and-require_once-statements"
+            >Include_once and Require_once Statements</a
+          >
+          <ul>
+            <li><a href="#example-1">Example</a></li>
+            <li>
+              <a href="#regular-vs-once---which-to-use"
+                >Regular vs Once - Which to Use?</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#absolute-relative-and-root-relative-paths"
+            >Absolute, Relative, and Root-Relative Paths</a
+          >
+          <ul>
+            <li><a href="#relative-path">Relative Path</a></li>
+            <li><a href="#absolute-path">Absolute Path</a></li>
+            <li><a href="#root-relative-path">Root-Relative Path</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#typical-uses">Typical Uses</a>
+          <ul>
+            <li>
+              <a href="#repeated-front-end-html-components"
+                >Repeated Front End HTML Components</a
+              >
+            </li>
+            <li>
+              <a href="#repeated-back-end-components"
+                >Repeated Back End Components</a
+              >
+              <ul>
+                <li>
+                  <a href="#configuring-global-constants"
+                    >Configuring Global Constants</a
+                  >
+                </li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#classes">Classes</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#php-project-structure">PHP Project Structure</a></li>
+        <li>
+          <a href="#friendly-output-for-debugging"
+            >Friendly Output for Debugging</a
+          >
+        </li>
+      </ul>
+      <h1 id="include-and-require-statements">
+        Include and Require Statements
+      </h1>
+      <p>
+        Used to drop in the contents of another file exactly where the
+        include/require statement is.
+      </p>
+      <h2 id="include">Include</h2>
+      <ul>
+        <li>Drops in the included file and continues execution.</li>
+        <li>
+          If the file is not found, a warning is issued and execution continues.
+        </li>
+      </ul>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">include</span><span style="color:#50A14F"> 'header.php'</span><span style="color:#383A42">;</span></span></code></pre>
+      <h3 id="example">Example</h3>
+      <p><em>header.php</em></p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">h1</span><span style="color:#383A42">></span><span style="color:#986801">I</span><span style="color:#986801"> am</span><span style="color:#986801"> the</span><span style="color:#986801"> header</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">h1</span><span style="color:#383A42">></span></span></code></pre>
+      <p><em>index.php</em></p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#A626A4">include</span><span style="color:#50A14F"> 'header.php'</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">?></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">p</span><span style="color:#383A42">></span><span style="color:#986801">I</span><span style="color:#50A14F">'m some content&#x3C;/p></span></span></code></pre>
+      <p><em>output</em></p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#E45649">h1</span><span style="color:#383A42">>I am the header&#x3C;/</span><span style="color:#E45649">h1</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#E45649">p</span><span style="color:#383A42">>I'm some content&#x3C;/</span><span style="color:#E45649">p</span><span style="color:#383A42">></span></span></code></pre>
+      <h2 id="require">Require</h2>
+      <ul>
+        <li>Drops in the included file and continues execution.</li>
+        <li>
+          If the file is not found, a fatal error is issued and execution stops.
+        </li>
+      </ul>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">require</span><span style="color:#50A14F"> 'header.php'</span><span style="color:#383A42">;</span></span></code></pre>
+      <h2 id="include-vs-require---which-to-use">
+        Include vs Require - Which to Use?
+      </h2>
+      <ul>
+        <li>
+          Use include only if you have a reason to continue execution if the
+          file is not found.
+        </li>
+        <li>Otherwise, use require.</li>
+      </ul>
+      <h1 id="include_once-and-require_once-statements">
+        Include_once and Require_once Statements
+      </h1>
+      <ul>
+        <li>Only includes the file once if is included multiple times.</li>
+      </ul>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">include_once</span><span style="color:#50A14F"> 'header.php'</span><span style="color:#383A42">;</span></span></code></pre>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">require_once</span><span style="color:#50A14F"> 'header.php'</span><span style="color:#383A42">;</span></span></code></pre>
+      <h2 id="example">Example</h2>
+      <p><em>header.php</em></p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">h1</span><span style="color:#383A42">></span><span style="color:#986801">I</span><span style="color:#986801"> am</span><span style="color:#986801"> the</span><span style="color:#986801"> header</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">h1</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">?></span></span></code></pre>
+      <p><em>index.php</em></p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#A626A4">include_once</span><span style="color:#50A14F"> 'header.php'</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#A626A4">include_once</span><span style="color:#50A14F"> 'header.php'</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#A626A4">include_once</span><span style="color:#50A14F"> 'header.php'</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">?></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#986801">p</span><span style="color:#383A42">></span><span style="color:#986801">I</span><span style="color:#50A14F">'m some content&#x3C;/p></span></span></code></pre>
+      <p><em>output</em></p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#E45649">h1</span><span style="color:#383A42">>I am the header&#x3C;/</span><span style="color:#E45649">h1</span><span style="color:#383A42">></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;</span><span style="color:#E45649">p</span><span style="color:#383A42">>I'm some content&#x3C;/</span><span style="color:#E45649">p</span><span style="color:#383A42">></span></span></code></pre>
+      <h2 id="regular-vs-once---which-to-use">
+        Regular vs Once - Which to Use?
+      </h2>
+      <ul>
+        <li>
+          Slower than include and require, but only on a scale of milliseconds.
+        </li>
+        <li>Prefer these versions unless you have a reason not to.</li>
+      </ul>
+      <h1 id="absolute-relative-and-root-relative-paths">
+        Absolute, Relative, and Root-Relative Paths
+      </h1>
+      <p>For small projects relative paths are fine.</p>
+      <p>For larger projects, typically use absolute or root-relative paths.</p>
+      <p><strong>Directory Traversal</strong></p>
+      <ul>
+        <li><code>/</code> is the root directory</li>
+        <li><code>..</code> moves up one directory</li>
+      </ul>
+      <p><em>Example</em></p>
+      <ul>
+        <li>
+          <code>../includes/header.php</code> moves up one directory and then
+          into the includes directory.
+        </li>
+      </ul>
+      <h2 id="relative-path">Relative Path</h2>
+      <p><strong>Relative Path</strong> is the path from the current file.</p>
+      <ul>
+        <li><code>header.php</code></li>
+        <li><code>includes/header.php</code></li>
+        <li><code>../includes/header.php</code></li>
+      </ul>
+      <h2 id="absolute-path">Absolute Path</h2>
+      <p>
+        <strong>Absolute Path</strong> is the full path from the root of the
+        file system.
+      </p>
+      <ul>
+        <li><code>/var/www/html/includes/header.php</code></li>
+        <li><code>C:\xampp\htdocs\my_lab\includes\header.php</code></li>
+      </ul>
+      <h2 id="root-relative-path">Root-Relative Path</h2>
+      <p>
+        <strong>Root-Relative Path</strong> is the path from the root of the web
+        server.
+      </p>
+      <ul>
+        <li><code>/includes/header.php</code></li>
+        <li><code>/my_lab/includes/header.php</code></li>
+        <li><code>/../config.php</code></li>
+      </ul>
+      <h1 id="typical-uses">Typical Uses</h1>
+      <h2 id="repeated-front-end-html-components">
+        Repeated Front End HTML Components
+      </h2>
+      <ul>
+        <li>Header</li>
+        <li>Footer</li>
+        <li>Navigation</li>
+        <li>etc.</li>
+      </ul>
+      <h2 id="repeated-back-end-components">Repeated Back End Components</h2>
+      <h3 id="configuring-global-constants">Configuring Global Constants</h3>
+      <ul>
+        <li>File paths</li>
+      </ul>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#0184BC">define</span><span style="color:#383A42">(</span><span style="color:#50A14F">'SITE_ROOT'</span><span style="color:#383A42">, </span><span style="color:#986801">__DIR__</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#0184BC">define</span><span style="color:#383A42">(</span><span style="color:#50A14F">'INCLUDES_PATH'</span><span style="color:#383A42">, </span><span style="color:#986801">SITE_ROOT</span><span style="color:#383A42"> .</span><span style="color:#50A14F"> 'includes/'</span><span style="color:#383A42">);</span></span></code></pre>
+      <ul>
+        <li>Database connection information</li>
+      </ul>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#0184BC">define</span><span style="color:#383A42">(</span><span style="color:#50A14F">'DB_HOST'</span><span style="color:#383A42">, </span><span style="color:#50A14F">'localhost'</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#0184BC">define</span><span style="color:#383A42">(</span><span style="color:#50A14F">'DB_USER'</span><span style="color:#383A42">, </span><span style="color:#50A14F">'root'</span><span style="color:#383A42">);</span></span></code></pre>
+      <ul>
+        <li>Debugging information</li>
+      </ul>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#0184BC">define</span><span style="color:#383A42">(</span><span style="color:#50A14F">'DEBUG'</span><span style="color:#383A42">, </span><span style="color:#986801">true</span><span style="color:#383A42">);</span></span></code></pre>
+      <ul>
+        <li>Application settings</li>
+      </ul>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#0184BC">define</span><span style="color:#383A42">(</span><span style="color:#50A14F">'APP_NAME'</span><span style="color:#383A42">, </span><span style="color:#50A14F">'My Application'</span><span style="color:#383A42">);</span></span></code></pre>
+      <h3 id="functions">Functions</h3>
+      <ul>
+        <li>
+          Utility functions
+          <ul>
+            <li>Date formatting</li>
+            <li>String manipulation</li>
+            <li>Sanatization</li>
+          </ul>
+        </li>
+      </ul>
+      <h3 id="classes">Classes</h3>
+      <ul>
+        <li>
+          Business logic classes
+          <ul>
+            <li>User</li>
+            <li>Product</li>
+          </ul>
+        </li>
+        <li>
+          Utility classes
+          <ul>
+            <li>Database connection</li>
+            <li>File upload</li>
+            <li>Email</li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="php-project-structure">PHP Project Structure</h1>
+      <p>
+        Project structure is a matter of preference, but here is a common
+        structure. This is a simplified version of the structure used in the
+        [PHP Project Template](
+      </p>
+      <ul>
+        <li>
+          root
+          <ul>
+            <li>config.php</li>
+            <li>
+              includes
+              <ul>
+                <li>functions.php</li>
+                <li>classes.php</li>
+              </ul>
+            </li>
+            <li>
+              public
+              <ul>
+                <li>index.php</li>
+                <li>about.php</li>
+                <li>contact.php</li>
+              </ul>
+            </li>
+            <li>
+              templates
+              <ul>
+                <li>header.php</li>
+                <li>footer.php</li>
+                <li>nav.php</li>
+              </ul>
+            </li>
+            <li>
+              assets
+              <ul>
+                <li>css</li>
+                <li>js</li>
+                <li>images</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="friendly-output-for-debugging">Friendly Output for Debugging</h1>
+      <ul>
+        <li>
+          Functions like <code>print_r()</code>, <code>var_export()</code> and
+          <code>var_dump()</code> are great for debugging.
+        </li>
+        <li>
+          It can be helpful to wrap them in a function cleans up the output:
+        </li>
+        <li>
+          You can put this in a <code>functions.php</code> file and include it
+          in your scripts.
+        </li>
+      </ul>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42">&#x3C;?</span><span style="color:#986801">php</span></span>
+<span class="line"><span style="color:#A626A4">function</span><span style="color:#4078F2"> pretty_dump</span><span style="color:#383A42">(</span><span style="color:#A626A4">mixed</span><span style="color:#E45649"> $var</span><span style="color:#383A42">, </span><span style="color:#A626A4">string</span><span style="color:#E45649"> $name</span><span style="color:#383A42"> = </span><span style="color:#50A14F">''</span><span style="color:#383A42">): </span><span style="color:#A626A4">void</span></span>
+<span class="line"><span style="color:#383A42">{</span></span>
+<span class="line"><span style="color:#E45649">    $short_type_names</span><span style="color:#383A42"> = [</span></span>
+<span class="line"><span style="color:#50A14F">        'boolean'</span><span style="color:#383A42"> => </span><span style="color:#50A14F">'bool'</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#50A14F">        'integer'</span><span style="color:#383A42"> => </span><span style="color:#50A14F">'int'</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#50A14F">        'double'</span><span style="color:#383A42"> => </span><span style="color:#50A14F">'float'</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#50A14F">        'string'</span><span style="color:#383A42"> => </span><span style="color:#50A14F">'str'</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#383A42">    ];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    // Style CSS to your liking</span></span>
+<span class="line"><span style="color:#0184BC">    echo</span><span style="color:#50A14F"> '</span></span>
+<span class="line"><span style="color:#50A14F">&#x3C;pre style="</span></span>
+<span class="line"><span style="color:#50A14F">        background-color:#f5f5f5;</span></span>
+<span class="line"><span style="color:#50A14F">        color:#333;</span></span>
+<span class="line"><span style="color:#50A14F">		line-height:1.2;</span></span>
+<span class="line"><span style="color:#50A14F">        font-size:14px;</span></span>
+<span class="line"><span style="color:#50A14F">        padding:10px;</span></span>
+<span class="line"><span style="color:#50A14F">        margin:10px;</span></span>
+<span class="line"><span style="color:#50A14F">        border-radius:5px;</span></span>
+<span class="line"><span style="color:#50A14F">        border:1px solid #ddd;</span></span>
+<span class="line"><span style="color:#50A14F">        min-width:600px;</span></span>
+<span class="line"><span style="color:#50A14F">		max-width:960px;</span></span>
+<span class="line"><span style="color:#50A14F">		width:fit-content;</span></span>
+<span class="line"><span style="color:#50A14F">		overflow:auto;</span></span>
+<span class="line"><span style="color:#50A14F">		box-sizing:border-box;</span></span>
+<span class="line"><span style="color:#50A14F">    ">'</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#A626A4">    if</span><span style="color:#383A42"> (</span><span style="color:#E45649">$name</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#0184BC">        echo</span><span style="color:#50A14F"> "Name: &#x3C;strong></span><span style="color:#E45649">$name</span><span style="color:#50A14F">&#x3C;/strong>&#x3C;br >"</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"><span style="color:#0184BC">    echo</span><span style="color:#50A14F"> "Type: &#x3C;strong>"</span><span style="color:#383A42"> .</span><span style="color:#0184BC"> gettype</span><span style="color:#383A42">(</span><span style="color:#E45649">$var</span><span style="color:#383A42">) </span><span style="color:#383A42">.</span><span style="color:#383A42"> (</span><span style="color:#0184BC">is_array</span><span style="color:#383A42">(</span><span style="color:#E45649">$var</span><span style="color:#383A42">) ? </span><span style="color:#50A14F">'('</span><span style="color:#383A42"> .</span><span style="color:#0184BC"> count</span><span style="color:#383A42">(</span><span style="color:#E45649">$var</span><span style="color:#383A42">) </span><span style="color:#383A42">.</span><span style="color:#50A14F"> ')'</span><span style="color:#383A42"> : </span><span style="color:#50A14F">''</span><span style="color:#383A42">)  </span><span style="color:#383A42">.</span><span style="color:#50A14F"> "&#x3C;/strong>&#x3C;br >"</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#0184BC">    echo</span><span style="color:#50A14F"> ".................................&#x3C;br >"</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#A626A4">    if</span><span style="color:#383A42"> (</span><span style="color:#0184BC">is_array</span><span style="color:#383A42">(</span><span style="color:#E45649">$var</span><span style="color:#383A42">)) {</span></span>
+<span class="line"><span style="color:#A626A4">        foreach</span><span style="color:#383A42"> (</span><span style="color:#E45649">$var</span><span style="color:#383A42"> as </span><span style="color:#E45649">$k</span><span style="color:#383A42"> => </span><span style="color:#E45649">$v</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#A626A4">            if</span><span style="color:#383A42"> (</span><span style="color:#0184BC">is_array</span><span style="color:#383A42">(</span><span style="color:#E45649">$v</span><span style="color:#383A42">)) {</span></span>
+<span class="line"><span style="color:#0184BC">                echo</span><span style="color:#0184BC"> str_pad</span><span style="color:#383A42">(</span><span style="color:#E45649">$k</span><span style="color:#383A42">, </span><span style="color:#986801">30</span><span style="color:#383A42">) </span><span style="color:#383A42">.</span><span style="color:#50A14F"> " => "</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#4078F2">                pretty_dump</span><span style="color:#383A42">(</span><span style="color:#E45649">$v</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#383A42">            } </span><span style="color:#A626A4">else</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">                // Use short type names</span></span>
+<span class="line"><span style="color:#E45649">                $type</span><span style="color:#383A42"> = </span><span style="color:#E45649">$short_type_names</span><span style="color:#383A42">[</span><span style="color:#0184BC">gettype</span><span style="color:#383A42">(</span><span style="color:#E45649">$v</span><span style="color:#383A42">)] ?? </span><span style="color:#0184BC">gettype</span><span style="color:#383A42">(</span><span style="color:#E45649">$v</span><span style="color:#383A42">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">                // If boolean value, show true/false instead of 1/0</span></span>
+<span class="line"><span style="color:#E45649">                $v</span><span style="color:#383A42"> = </span><span style="color:#E45649">$type</span><span style="color:#383A42"> === </span><span style="color:#50A14F">'bool'</span><span style="color:#383A42"> ? (</span><span style="color:#E45649">$v</span><span style="color:#383A42"> ? </span><span style="color:#50A14F">'true'</span><span style="color:#383A42"> : </span><span style="color:#50A14F">'false'</span><span style="color:#383A42">) : </span><span style="color:#E45649">$v</span><span style="color:#383A42">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">                // If string value, show it in quotes</span></span>
+<span class="line"><span style="color:#E45649">                $v</span><span style="color:#383A42"> = </span><span style="color:#E45649">$type</span><span style="color:#383A42"> === </span><span style="color:#50A14F">'str'</span><span style="color:#383A42"> ? </span><span style="color:#50A14F">"'</span><span style="color:#E45649">$v</span><span style="color:#50A14F">'"</span><span style="color:#383A42"> : </span><span style="color:#E45649">$v</span><span style="color:#383A42">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0184BC">                echo</span><span style="color:#0184BC"> str_pad</span><span style="color:#383A42">(</span><span style="color:#E45649">$k</span><span style="color:#383A42">, </span><span style="color:#986801">30</span><span style="color:#383A42">) </span><span style="color:#383A42">.</span><span style="color:#50A14F"> ' => '</span><span style="color:#383A42"> .</span><span style="color:#E45649"> $type</span><span style="color:#383A42"> .</span><span style="color:#50A14F"> ' '</span><span style="color:#383A42"> .</span><span style="color:#E45649"> $v</span><span style="color:#383A42"> .</span><span style="color:#50A14F"> "</span><span style="color:#0184BC">\n</span><span style="color:#50A14F">"</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"><span style="color:#383A42">    } </span><span style="color:#A626A4">else</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#0184BC">        print_r</span><span style="color:#383A42">(</span><span style="color:#E45649">$var</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"><span style="color:#0184BC">    echo</span><span style="color:#50A14F"> '&#x3C;/pre>'</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#383A42">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">&#x3C;/</span><span style="color:#986801">div</span><span style="color:#383A42">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#383A42">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Usage:</span></span>
+<span class="line"><span style="color:#4078F2">pretty_dump</span><span style="color:#383A42">(</span><span style="color:#E45649">$_SERVER</span><span style="color:#383A42">, </span><span style="color:#50A14F">'$_SERVER'</span><span style="color:#383A42">);</span></span></code></pre>
+    </div>
+  </body>
+</html>

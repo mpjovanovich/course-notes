@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV140: Inheritance</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#inheritance">Inheritance</a>
+            <ul>
+              <li><a href="#base-class">Base Class</a></li>
+              <li><a href="#derived-class">Derived Class</a></li>
+              <li>
+                <a href="#why-use-a-derived-class">Why use a Derived Class?</a>
+              </li>
+              <li><a href="#why-use-inheritance">Why use Inheritance?</a></li>
+              <li><a href="#inheritance-example">Inheritance Example</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="inheritance">Inheritance</h1>
+      <ul>
+        <li>One of the &quot;three pillars of OOP&quot;</li>
+        <li>
+          <strong>Inheritance</strong> is the idea of extending functionality
+          from an existing class.
+        </li>
+      </ul>
+      <h2 id="base-class">Base Class</h2>
+      <p>The class from which other classes inherit is called the:</p>
+      <ul>
+        <li><strong>Base class</strong></li>
+        <li><strong>Parent class</strong></li>
+        <li><strong>Superclass</strong></li>
+      </ul>
+      <p>Typically more general in terms of functionality.</p>
+      <h2 id="derived-class">Derived Class</h2>
+      <p>The class that inherits from another class is called the:</p>
+      <ul>
+        <li><strong>Derived class</strong></li>
+        <li><strong>Child class</strong></li>
+        <li><strong>Subclass</strong></li>
+      </ul>
+      <p>Typically more specialized in terms of functionality.</p>
+      <h2 id="why-use-a-derived-class">Why use a Derived Class?</h2>
+      <ul>
+        <li>Override properties/methods from base class.</li>
+        <li>Add new properties/methods specific to derived class.</li>
+      </ul>
+      <h2 id="why-use-inheritance">Why use Inheritance?</h2>
+      <ul>
+        <li>Override properties/methods from base class.</li>
+        <li>Add new properties/methods specific to derived class.</li>
+      </ul>
+      <h2 id="inheritance-example">Inheritance Example</h2>
+      <div class="focusContent example">
+        <pre
+          class="shiki one-light"
+          style="background-color: #fafafa; color: #383a42"
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> Quadrilateral</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#0184BC"> __init__</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> side1</span><span style="color:#383A42">,</span><span style="color:#986801"> side2</span><span style="color:#383A42">,</span><span style="color:#986801"> side3</span><span style="color:#383A42">,</span><span style="color:#986801"> side4</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">        ## Protected attributes</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">._side1 = side1</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">._side2 = side2</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">._side3 = side3</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">._side4 = side4</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> perimeter</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#E45649"> self</span><span style="color:#383A42">._side1 + </span><span style="color:#E45649">self</span><span style="color:#383A42">._side2 + </span><span style="color:#E45649">self</span><span style="color:#383A42">._side3 + </span><span style="color:#E45649">self</span><span style="color:#383A42">._side4</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> Rectangle(Quadrilateral)</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Call parent class constructor</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## super = 'Quadrilateral'</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#0184BC"> __init__</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> width</span><span style="color:#383A42">,</span><span style="color:#986801"> height</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#0184BC">        super</span><span style="color:#383A42">().</span><span style="color:#0184BC">__init__</span><span style="color:#383A42">(width, height, width, height)</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.__width = width</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.__height = height</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> area</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#E45649"> self</span><span style="color:#383A42">.__width * </span><span style="color:#E45649">self</span><span style="color:#383A42">.__height</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> Square(Quadrilateral)</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Call parent class constructor</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## super = 'Quadrilateral'</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#0184BC"> __init__</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> side</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#0184BC">        super</span><span style="color:#383A42">().</span><span style="color:#0184BC">__init__</span><span style="color:#383A42">(side, side, side, side)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> area</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#E45649"> self</span><span style="color:#383A42">._side1 ** </span><span style="color:#986801">2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">## Create instances of derived classes</span></span>
+<span class="line"><span style="color:#383A42">r = Rectangle(</span><span style="color:#986801">5</span><span style="color:#383A42">, </span><span style="color:#986801">10</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#383A42">s = Square(</span><span style="color:#986801">5</span><span style="color:#383A42">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0184BC">print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Rectangle area: </span><span style="color:#986801">{</span><span style="color:#383A42">r.area()</span><span style="color:#986801">}</span><span style="color:#50A14F">"</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#0184BC">print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Rectangle perimeter: </span><span style="color:#986801">{</span><span style="color:#383A42">r.perimeter()</span><span style="color:#986801">}</span><span style="color:#50A14F">"</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#0184BC">print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Square area: </span><span style="color:#986801">{</span><span style="color:#383A42">s.area()</span><span style="color:#986801">}</span><span style="color:#50A14F">"</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#0184BC">print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Square perimeter: </span><span style="color:#986801">{</span><span style="color:#383A42">s.perimeter()</span><span style="color:#986801">}</span><span style="color:#50A14F">"</span><span style="color:#383A42">)</span></span></code></pre>
+      </div>
+    </div>
+  </body>
+</html>

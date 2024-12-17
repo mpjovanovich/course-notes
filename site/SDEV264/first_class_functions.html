@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV264: First Class Functions</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#first-class-functions">First Class Functions</a>
+          <ul>
+            <li>
+              <a href="#example-passing-a-function-as-an-argument"
+                >Example: Passing a function as an argument</a
+              >
+            </li>
+            <li>
+              <a href="#example-passing-a-function-that-takes-an-argument"
+                >Example: Passing a function that takes an argument</a
+              >
+            </li>
+            <li>
+              <a href="#example-using-arrow-functions"
+                >Example: Using arrow functions</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="first-class-functions">First Class Functions</h1>
+      <p>
+        The term <strong>first class functions</strong> refers to the ability to
+        treat functions as values. This means that you can pass functions as
+        arguments to other functions, return functions from other functions, and
+        assign functions to variables.
+      </p>
+      <h2 id="example-passing-a-function-as-an-argument">
+        Example: Passing a function as an argument
+      </h2>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic">// We don't call this directly. Instead, we pass it as an argument to callOtherFunction.</span></span>
+<span class="line"><span style="color:#A626A4">function</span><span style="color:#4078F2"> printSomething</span><span style="color:#383A42">()</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#383A42">  console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(</span><span style="color:#50A14F">"I will be printed."</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// This function expects a function as an argument. It then calls that function.</span></span>
+<span class="line"><span style="color:#A626A4">function</span><span style="color:#4078F2"> callOtherFunction</span><span style="color:#383A42">(</span><span style="color:#4078F2">outputFunc</span><span style="color:#0184BC">:</span><span style="color:#383A42"> () </span><span style="color:#A626A4">=></span><span style="color:#0184BC"> void</span><span style="color:#383A42">)</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#4078F2">  outputFunc</span><span style="color:#383A42">();</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Now we call the outer function, passing the inner function as an argument.</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Note that we do not use parentheses when passing the function as an argument,</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// because we are not calling it directly. We are just passing a reference to it.</span></span>
+<span class="line"><span style="color:#4078F2">callOtherFunction</span><span style="color:#383A42">(printSomething);</span></span></code></pre>
+      <h2 id="example-passing-a-function-that-takes-an-argument">
+        Example: Passing a function that takes an argument
+      </h2>
+      <p>
+        This example does the same as above, but the function that is passed as
+        an argument now takes a string argument.
+      </p>
+      <p>
+        We then call the function twice, passing a different string each time.
+      </p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">function</span><span style="color:#4078F2"> printSomething</span><span style="color:#383A42">(thingToPrint</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#383A42">)</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#383A42">  console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(thingToPrint);</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">function</span><span style="color:#4078F2"> callOtherFunction</span><span style="color:#383A42">(</span><span style="color:#4078F2">outputFunc</span><span style="color:#0184BC">:</span><span style="color:#383A42"> (string) </span><span style="color:#A626A4">=></span><span style="color:#0184BC"> void</span><span style="color:#383A42">)</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A626A4">  let</span><span style="color:#383A42"> message </span><span style="color:#0184BC">=</span><span style="color:#50A14F"> "I will be printed."</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#4078F2">  outputFunc</span><span style="color:#383A42">(message);</span></span>
+<span class="line"><span style="color:#383A42">  message </span><span style="color:#0184BC">=</span><span style="color:#50A14F"> "I will be printed again."</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#4078F2">  outputFunc</span><span style="color:#383A42">(message);</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#4078F2">callOtherFunction</span><span style="color:#383A42">(printSomething);</span></span></code></pre>
+      <h2 id="example-using-arrow-functions">Example: Using arrow functions</h2>
+      <p>
+        This example does the same as the above; we have just rewritten
+        <code>printSomething</code> and <code>callOtherFunction</code> using
+        arrow functions.
+      </p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">const</span><span style="color:#4078F2"> printSomething</span><span style="color:#0184BC"> =</span><span style="color:#383A42"> (thingToPrint</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#383A42">)</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#A626A4"> =></span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#383A42">  console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(thingToPrint);</span></span>
+<span class="line"><span style="color:#383A42">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">const</span><span style="color:#4078F2"> callOtherFunction</span><span style="color:#0184BC"> =</span><span style="color:#383A42"> (</span><span style="color:#4078F2">outputFunc</span><span style="color:#0184BC">:</span><span style="color:#383A42"> (string) </span><span style="color:#A626A4">=></span><span style="color:#0184BC"> void</span><span style="color:#383A42">)</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#A626A4"> =></span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A626A4">  let</span><span style="color:#383A42"> message </span><span style="color:#0184BC">=</span><span style="color:#50A14F"> "I will be printed."</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#4078F2">  outputFunc</span><span style="color:#383A42">(message);</span></span>
+<span class="line"><span style="color:#383A42">  message </span><span style="color:#0184BC">=</span><span style="color:#50A14F"> "I will be printed again."</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#4078F2">  outputFunc</span><span style="color:#383A42">(message);</span></span>
+<span class="line"><span style="color:#383A42">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#4078F2">callOtherFunction</span><span style="color:#383A42">(printSomething);</span></span></code></pre>
+    </div>
+  </body>
+</html>

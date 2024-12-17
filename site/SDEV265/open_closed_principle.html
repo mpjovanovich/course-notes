@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV265: Open/Closed Principle</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#openclosed-principle">Open/Closed Principle</a>
+          <ul>
+            <li><a href="#abstract-base-classes">Abstract Base Classes</a></li>
+            <li><a href="#interfaces">Interfaces</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="openclosed-principle">Open/Closed Principle</h1>
+      <p>
+        &quot;Software entities should be open for extension but closed for
+        modification.&quot;
+      </p>
+      <p>
+        In other words, you should be able to add new functionality to a module
+        without changing its existing code.
+      </p>
+      <h2 id="abstract-base-classes">Abstract Base Classes</h2>
+      <p>
+        An <strong>abstract base class</strong> is a class that cannot be
+        instantiated and is designed to be subclassed.
+      </p>
+      <p>
+        <strong>Use Case:</strong> When you want to provide some common
+        functionality and also enforce that certain methods are implemented by
+        all subclasses.
+      </p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">import</span><span style="color:#383A42"> abc</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> Employee()</span><span style="color:#383A42">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Common attributes for all employees</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#0184BC"> __init__</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> employee_id</span><span style="color:#383A42">:</span><span style="color:#0184BC"> int</span><span style="color:#383A42">,</span><span style="color:#986801"> first_name</span><span style="color:#383A42">:</span><span style="color:#0184BC"> str</span><span style="color:#383A42">,</span><span style="color:#986801"> last_name</span><span style="color:#383A42">:</span><span style="color:#0184BC"> str</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.employee_id = employee_id</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.first_name = first_name</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.last_name = last_name</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## Abstract method</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    ## There's no sensible implementation for this method in the base class</span></span>
+<span class="line"><span style="color:#4078F2">    @abc.abstractmethod</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> calculate_year_to_date_pay</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        pass</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> HourlyEmployee(Employee)</span><span style="color:#383A42">:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#0184BC"> __init__</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> employee_id</span><span style="color:#383A42">:</span><span style="color:#0184BC"> int</span><span style="color:#383A42">,</span><span style="color:#986801"> first_name</span><span style="color:#383A42">:</span><span style="color:#0184BC"> str</span><span style="color:#383A42">,</span><span style="color:#986801"> last_name</span><span style="color:#383A42">:</span><span style="color:#0184BC"> str</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#986801">                 hours_worked_current_year</span><span style="color:#383A42">:</span><span style="color:#0184BC"> float</span><span style="color:#383A42">,</span><span style="color:#986801"> hourly_rate</span><span style="color:#383A42">:</span><span style="color:#0184BC"> float</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#0184BC">        super</span><span style="color:#383A42">().</span><span style="color:#0184BC">__init__</span><span style="color:#383A42">(employee_id, first_name, last_name)</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.hours_worked_current_year = hours_worked_current_year</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.hourly_rate = hourly_rate</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    # This method is required by the Employee base class</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> calculate_year_to_date_pay</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#E45649"> self</span><span style="color:#383A42">.hours_worked_current_year * </span><span style="color:#E45649">self</span><span style="color:#383A42">.hourly_rate</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> SalariedEmployee(Employee)</span><span style="color:#383A42">:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#0184BC"> __init__</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">,</span><span style="color:#986801"> employee_id</span><span style="color:#383A42">:</span><span style="color:#0184BC"> int</span><span style="color:#383A42">,</span><span style="color:#986801"> first_name</span><span style="color:#383A42">:</span><span style="color:#0184BC"> str</span><span style="color:#383A42">,</span><span style="color:#986801"> last_name</span><span style="color:#383A42">:</span><span style="color:#0184BC"> str</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#986801">                 salary</span><span style="color:#383A42">:</span><span style="color:#0184BC"> float</span><span style="color:#383A42">,</span><span style="color:#986801"> pay_periods_per_year</span><span style="color:#383A42">:</span><span style="color:#0184BC"> int</span><span style="color:#383A42">,</span></span>
+<span class="line"><span style="color:#986801">                 pay_periods_elapsed</span><span style="color:#383A42">:</span><span style="color:#0184BC"> int</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#0184BC">        super</span><span style="color:#383A42">().</span><span style="color:#0184BC">__init__</span><span style="color:#383A42">(employee_id, first_name, last_name)</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.salary = salary</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.pay_periods_per_year = pay_periods_per_year</span></span>
+<span class="line"><span style="color:#E45649">        self</span><span style="color:#383A42">.pay_periods_elapsed = pay_periods_elapsed</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">    # This method is required by the Employee base class</span></span>
+<span class="line"><span style="color:#A626A4">    def</span><span style="color:#4078F2"> calculate_year_to_date_pay</span><span style="color:#383A42">(</span><span style="color:#986801">self</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#A626A4">        return</span><span style="color:#383A42"> (</span><span style="color:#E45649">self</span><span style="color:#383A42">.salary /</span></span>
+<span class="line"><span style="color:#E45649">                self</span><span style="color:#383A42">.pay_periods_per_year) * </span><span style="color:#E45649">self</span><span style="color:#383A42">.pay_periods_elapsed</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">## This function takes any employee object</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">## We are therefore guaranteed that the calculate_year_to_date_pay method will exist</span></span>
+<span class="line"><span style="color:#A626A4">def</span><span style="color:#4078F2"> summarize_employee</span><span style="color:#383A42">(</span><span style="color:#986801">employee</span><span style="color:#383A42">:</span><span style="color:#986801"> Employee</span><span style="color:#383A42">):</span></span>
+<span class="line"><span style="color:#0184BC">    print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Employee ID: </span><span style="color:#986801">{</span><span style="color:#383A42">employee.employee_id</span><span style="color:#986801">}</span><span style="color:#50A14F">"</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#0184BC">    print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Employee Name: </span><span style="color:#986801">{</span><span style="color:#383A42">employee.first_name</span><span style="color:#986801">}</span><span style="color:#986801"> {</span><span style="color:#383A42">employee.last_name</span><span style="color:#986801">}</span><span style="color:#50A14F">"</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#0184BC">    print</span><span style="color:#383A42">(</span><span style="color:#A626A4">f</span><span style="color:#50A14F">"Year to date pay: $</span><span style="color:#986801">{</span><span style="color:#383A42">employee.calculate_year_to_date_pay()</span><span style="color:#A626A4">:.2f</span><span style="color:#986801">}</span><span style="color:#50A14F">"</span><span style="color:#383A42">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"># Create some employees</span></span>
+<span class="line"><span style="color:#383A42">hourly_employee = HourlyEmployee(</span><span style="color:#986801">1</span><span style="color:#383A42">, </span><span style="color:#50A14F">"John"</span><span style="color:#383A42">, </span><span style="color:#50A14F">"Doe"</span><span style="color:#383A42">, </span><span style="color:#986801">100</span><span style="color:#383A42">, </span><span style="color:#986801">10</span><span style="color:#383A42">)</span></span>
+<span class="line"><span style="color:#383A42">salaried_employee = SalariedEmployee(</span><span style="color:#986801">2</span><span style="color:#383A42">, </span><span style="color:#50A14F">"Jane"</span><span style="color:#383A42">, </span><span style="color:#50A14F">"Doe"</span><span style="color:#383A42">, </span><span style="color:#986801">50000</span><span style="color:#383A42">, </span><span style="color:#986801">26</span><span style="color:#383A42">, </span><span style="color:#986801">2</span><span style="color:#383A42">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"># We can plug in either of our employees because they inherit from Employee</span></span>
+<span class="line"><span style="color:#383A42">summarize_employee(hourly_employee)</span></span>
+<span class="line"><span style="color:#383A42">summarize_employee(salaried_employee)</span></span></code></pre>
+      <h2 id="interfaces">Interfaces</h2>
+      <p>
+        An <strong>interface</strong> is a <em>contract</em> that specifies the
+        methods that a class must implement.
+      </p>
+      <p>
+        <strong>Use Case:</strong> When you want to ensure that a class has
+        certain properties or methods, but you don&#39;t care about the
+        implementation.
+      </p>
+      <p>
+        Python does not have a built-in interface type, but we can use abstract
+        base classes to create interfaces. Below is an example in TypeScript.
+      </p>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic">/* ************************************************************</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"> * INTERFACES</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"> ************************************************************ */</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// There is no implementation in an interface, only method signatures.</span></span>
+<span class="line"><span style="color:#A626A4">interface</span><span style="color:#C18401"> PaymentProcessor</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // Property</span></span>
+<span class="line"><span style="color:#383A42">  paymentMethod</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // Method signature</span></span>
+<span class="line"><span style="color:#4078F2">  processPayment</span><span style="color:#383A42">(amount</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> number</span><span style="color:#383A42">)</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> void</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">/* ************************************************************</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"> * CLASSES</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"> ************************************************************ */</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// This class implements the PaymentProcessor interface, so it needs to have a processPayment method.</span></span>
+<span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> CreditCardPayment</span><span style="color:#A626A4"> implements</span><span style="color:#C18401"> PaymentProcessor</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // Interface property</span></span>
+<span class="line"><span style="color:#383A42">  paymentMethod</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#383A42">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">  constructor</span><span style="color:#383A42">(</span><span style="color:#A626A4">private</span><span style="color:#383A42"> ownerName</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#383A42">, </span><span style="color:#A626A4">private</span><span style="color:#383A42"> cardNumber</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#E45649">    this</span><span style="color:#383A42">.</span><span style="color:#E45649">paymentMethod</span><span style="color:#0184BC"> =</span><span style="color:#50A14F"> "Credit Card"</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // Interface method</span></span>
+<span class="line"><span style="color:#4078F2">  processPayment</span><span style="color:#383A42">(amount: number): </span><span style="color:#0184BC">void</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#383A42">    console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(</span><span style="color:#50A14F">`Processing </span><span style="color:#CA1243">${</span><span style="color:#383A42">amount</span><span style="color:#CA1243">}</span><span style="color:#50A14F"> via Credit Card.`</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // Additional methods - not part of interface; shown here to illustrate that a class can have</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // more than just the interface methods</span></span>
+<span class="line"><span style="color:#4078F2">  validateCard</span><span style="color:#383A42">(): boolean {</span></span>
+<span class="line"><span style="color:#383A42">    console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(</span><span style="color:#50A14F">"Validating card..."</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#A626A4">    return</span><span style="color:#986801"> true</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// This class implements the PaymentProcessor interface, so it needs to have a processPayment method.</span></span>
+<span class="line"><span style="color:#A626A4">class</span><span style="color:#C18401"> PayPalPayment</span><span style="color:#A626A4"> implements</span><span style="color:#C18401"> PaymentProcessor</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // Interface property</span></span>
+<span class="line"><span style="color:#383A42">  paymentMethod</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#383A42">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4">  constructor</span><span style="color:#383A42">(</span><span style="color:#A626A4">private</span><span style="color:#383A42"> email</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> string</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#E45649">    this</span><span style="color:#383A42">.</span><span style="color:#E45649">paymentMethod</span><span style="color:#0184BC"> =</span><span style="color:#50A14F"> "PayPal"</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // Interface method</span></span>
+<span class="line"><span style="color:#4078F2">  processPayment</span><span style="color:#383A42">(amount: number): </span><span style="color:#0184BC">void</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#383A42">    console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(</span><span style="color:#50A14F">`Processing </span><span style="color:#CA1243">${</span><span style="color:#383A42">amount</span><span style="color:#CA1243">}</span><span style="color:#50A14F"> via PayPal for </span><span style="color:#CA1243">${</span><span style="color:#E45649">this</span><span style="color:#50A14F">.</span><span style="color:#E45649">email</span><span style="color:#CA1243">}</span><span style="color:#50A14F">.`</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // Additional methods - not part of interface; shown here to illustrate that a class can have</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // more than just the interface methods</span></span>
+<span class="line"><span style="color:#4078F2">  validateEmail</span><span style="color:#383A42">(): boolean {</span></span>
+<span class="line"><span style="color:#383A42">    console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(</span><span style="color:#50A14F">"Validating email..."</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#A626A4">    return</span><span style="color:#986801"> true</span><span style="color:#383A42">;</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">/* ************************************************************</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"> * PROGRAM LOGIC</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic"> ************************************************************ */</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// This function doesn't care what class is passed in, as long as that class implements the</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// PaymentProcessor interface. This guarantees that the class has a processPayment method.</span></span>
+<span class="line"><span style="color:#A626A4">function</span><span style="color:#4078F2"> initiatePayment</span><span style="color:#383A42">(paymentMethod</span><span style="color:#0184BC">:</span><span style="color:#C18401"> PaymentProcessor</span><span style="color:#383A42">, amount</span><span style="color:#0184BC">:</span><span style="color:#0184BC"> number</span><span style="color:#383A42">) {</span></span>
+<span class="line"><span style="color:#383A42">  console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(</span><span style="color:#50A14F">"Payment started for "</span><span style="color:#0184BC"> +</span><span style="color:#383A42"> paymentMethod.</span><span style="color:#E45649">paymentMethod</span><span style="color:#0184BC"> +</span><span style="color:#50A14F"> "."</span><span style="color:#383A42">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // Use the processPayment method from the interface.</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // We don't need to know which class was passed in.</span></span>
+<span class="line"><span style="color:#383A42">  paymentMethod.</span><span style="color:#4078F2">processPayment</span><span style="color:#383A42">(amount);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">  // Do other stuff...</span></span>
+<span class="line"><span style="color:#383A42">  console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(</span><span style="color:#50A14F">"Payment complete."</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Create instances of payment methods</span></span>
+<span class="line"><span style="color:#A626A4">let</span><span style="color:#383A42"> ccPayment </span><span style="color:#0184BC">=</span><span style="color:#A626A4"> new</span><span style="color:#4078F2"> CreditCardPayment</span><span style="color:#383A42">(</span><span style="color:#50A14F">"John Doe"</span><span style="color:#383A42">, </span><span style="color:#50A14F">"1234567890123456"</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#A626A4">let</span><span style="color:#383A42"> ppPayment </span><span style="color:#0184BC">=</span><span style="color:#A626A4"> new</span><span style="color:#4078F2"> PayPalPayment</span><span style="color:#383A42">(</span><span style="color:#50A14F">"john@example.com"</span><span style="color:#383A42">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Process payments</span></span>
+<span class="line"><span style="color:#4078F2">initiatePayment</span><span style="color:#383A42">(ccPayment, </span><span style="color:#986801">100</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#4078F2">initiatePayment</span><span style="color:#383A42">(ppPayment, </span><span style="color:#986801">200</span><span style="color:#383A42">);</span></span></code></pre>
+    </div>
+  </body>
+</html>

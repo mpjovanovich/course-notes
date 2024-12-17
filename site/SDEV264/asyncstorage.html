@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV264: AsyncStorage</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#asyncstorage">AsyncStorage</a>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#common-use-cases">Common Use Cases</a></li>
+            <li>
+              <a href="#installing-the-package">Installing the package</a>
+            </li>
+            <li><a href="#functions">Functions</a></li>
+            <li><a href="#demo">Demo</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="asyncstorage">AsyncStorage</h1>
+      <p>
+        Documentation:
+        <a href="https://reactnative.dev/docs/asyncstorage">AsyncStorage</a>
+      </p>
+      <h2 id="features">Features</h2>
+      <ul>
+        <li>Simple key-value storage</li>
+        <li>Local to device (saved on the phone)</li>
+        <li>Asynchronous</li>
+        <li>Unencrypted</li>
+        <li>Persistent (data remains after app is closed)</li>
+      </ul>
+      <h2 id="common-use-cases">Common Use Cases</h2>
+      <ul>
+        <li>
+          Session storage (login tokens, session data, etc.)
+          <ul>
+            <li>Login tokens</li>
+            <li>Session data</li>
+            <li>etc.</li>
+          </ul>
+        </li>
+        <li>
+          User settings and preferences
+          <ul>
+            <li>Theme</li>
+            <li>Language</li>
+            <li>etc.</li>
+          </ul>
+        </li>
+        <li>
+          Offline data storage
+          <ul>
+            <li>
+              Persistent application data (data &quot;saved&quot; by user)
+            </li>
+            <li>Local store for sync with server; user can work if offline</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="installing-the-package">Installing the package</h2>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#4078F2">npm</span><span style="color:#50A14F"> install</span><span style="color:#50A14F"> @react-native-async-storage/async-storage</span></span></code></pre>
+      <h2 id="functions">Functions</h2>
+      <pre
+        class="shiki one-light"
+        style="background-color: #fafafa; color: #383a42"
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4">import</span><span style="color:#E45649"> AsyncStorage</span><span style="color:#A626A4"> from</span><span style="color:#50A14F"> "@react-native-async-storage/async-storage"</span><span style="color:#383A42">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Save data</span></span>
+<span class="line"><span style="color:#A626A4">const</span><span style="color:#4078F2"> storeData</span><span style="color:#0184BC"> =</span><span style="color:#A626A4"> async</span><span style="color:#383A42"> (key, value) </span><span style="color:#A626A4">=></span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A626A4">  try</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A626A4">    await</span><span style="color:#383A42"> AsyncStorage.</span><span style="color:#4078F2">setItem</span><span style="color:#383A42">(key, value);</span></span>
+<span class="line"><span style="color:#383A42">  } </span><span style="color:#A626A4">catch</span><span style="color:#383A42"> (e) {</span></span>
+<span class="line"><span style="color:#383A42">    console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(e);</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"><span style="color:#383A42">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Retrieve data</span></span>
+<span class="line"><span style="color:#A626A4">const</span><span style="color:#4078F2"> getData</span><span style="color:#0184BC"> =</span><span style="color:#A626A4"> async</span><span style="color:#383A42"> (key) </span><span style="color:#A626A4">=></span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A626A4">  try</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A626A4">    const</span><span style="color:#986801"> value</span><span style="color:#0184BC"> =</span><span style="color:#A626A4"> await</span><span style="color:#383A42"> AsyncStorage.</span><span style="color:#4078F2">getItem</span><span style="color:#383A42">(key);</span></span>
+<span class="line"><span style="color:#A626A4">    if</span><span style="color:#383A42"> (value) {</span></span>
+<span class="line"><span style="color:#383A42">      console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(value);</span></span>
+<span class="line"><span style="color:#383A42">    } </span><span style="color:#A626A4">else</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#383A42">      console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(</span><span style="color:#50A14F">"Key not found"</span><span style="color:#383A42">);</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"><span style="color:#383A42">  } </span><span style="color:#A626A4">catch</span><span style="color:#383A42"> (e) {</span></span>
+<span class="line"><span style="color:#383A42">    console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(e);</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"><span style="color:#383A42">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Remove data</span></span>
+<span class="line"><span style="color:#A626A4">const</span><span style="color:#4078F2"> removeData</span><span style="color:#0184BC"> =</span><span style="color:#A626A4"> async</span><span style="color:#383A42"> (key) </span><span style="color:#A626A4">=></span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A626A4">  try</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A626A4">    await</span><span style="color:#383A42"> AsyncStorage.</span><span style="color:#4078F2">removeItem</span><span style="color:#383A42">(key);</span></span>
+<span class="line"><span style="color:#383A42">  } </span><span style="color:#A626A4">catch</span><span style="color:#383A42"> (e) {</span></span>
+<span class="line"><span style="color:#383A42">    console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(e);</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"><span style="color:#383A42">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic">// Clear all data</span></span>
+<span class="line"><span style="color:#A626A4">const</span><span style="color:#4078F2"> clearAllData</span><span style="color:#0184BC"> =</span><span style="color:#A626A4"> async</span><span style="color:#383A42"> () </span><span style="color:#A626A4">=></span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A626A4">  try</span><span style="color:#383A42"> {</span></span>
+<span class="line"><span style="color:#A626A4">    await</span><span style="color:#383A42"> AsyncStorage.</span><span style="color:#4078F2">clear</span><span style="color:#383A42">();</span></span>
+<span class="line"><span style="color:#383A42">  } </span><span style="color:#A626A4">catch</span><span style="color:#383A42"> (e) {</span></span>
+<span class="line"><span style="color:#383A42">    console.</span><span style="color:#4078F2">log</span><span style="color:#383A42">(e);</span></span>
+<span class="line"><span style="color:#0184BC">&#x3C;!--</span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">&#x3C;/</span><span style="color:#383A42">div</span><span style="color:#0184BC">></span><span style="color:#986801">DOTMARK_DIV</span><span style="color:#0184BC">--></span></span>
+<span class="line"><span style="color:#383A42">};</span></span></code></pre>
+      <h2 id="demo">Demo</h2>
+      <p>Do some basics using console.log to warm up...</p>
+      <p>
+        <a href="https://snack.expo.dev/@mpjovanovich/asyncstorage"
+          >Snack: AsyncStorage</a
+        >
+      </p>
+    </div>
+  </body>
+</html>
