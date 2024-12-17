@@ -19,6 +19,9 @@ $code-font-family: Consolas, "Liberation Mono", "Courier New", monospace;
 // Tables
 $table-cell-padding-y: 1rem;
 $table-cell-padding-x: 3rem;
+$table-margin-y: $spacer * 2;
+$table-margin-x: $spacer * 2.5;
+
 // Custom variables
 $header-height: 3.5rem;
 $toc-width: 300px;
@@ -142,7 +145,6 @@ table {
   font-size: $font-size-base;
   line-height: $line-height-base;
   width: auto;
-  margin: $spacer * 2 $spacer * 2.5;
 
   th,
   td {
