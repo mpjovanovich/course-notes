@@ -1,23 +1,28 @@
-// Create and append the sticky header
-const stickyHeader = document.createElement("header");
-stickyHeader.classList.add("sticky-header");
+const toc = document.querySelector(".toc");
+if (toc) {
+  // Add Bootstrap collapse class
+  toc.classList.add("collapse");
+  toc.id = "toc";
 
-// Add menu button
-const menuButton = document.createElement("button");
-menuButton.innerHTML = "☰";
-menuButton.classList.add("menu-toggle");
+  // Create toggle button with Bootstrap attributes
+  const toggleBtn = document.createElement("button");
+  toggleBtn.className = "toc-toggle btn btn-primary";
+  toggleBtn.setAttribute("data-bs-toggle", "collapse");
+  toggleBtn.setAttribute("data-bs-target", "#toc");
+  toggleBtn.innerHTML = '<i class="bi bi-chevron-right"></i>';
 
-// Add title
-const title = document.createElement("h1");
-title.classList.add("header-title");
+  toggleBtn.addEventListener("click", () => {
+    const icon = toggleBtn.querySelector("i");
+    setTimeout(() => {
+      if (icon.classList.contains("bi-chevron-right")) {
+        icon.classList.remove("bi-chevron-right");
+        icon.classList.add("bi-chevron-left");
+      } else {
+        icon.classList.remove("bi-chevron-left");
+        icon.classList.add("bi-chevron-right");
+      }
+    }, 200);
+  });
 
-// Add click handler
-menuButton.addEventListener("click", () => {
-  const toc = document.querySelector(".toc");
-  toc.classList.toggle("open");
-});
-
-// Append elements
-stickyHeader.appendChild(menuButton);
-stickyHeader.appendChild(title);
-document.body.prepend(stickyHeader);
+  toc.parentNode.insertBefore(toggleBtn, toc.nextSibling);
+}
