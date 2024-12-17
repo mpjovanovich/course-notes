@@ -4,7 +4,7 @@ git commit -m "Pre-deploy commit"
 git push origin main 
 
 # Build the site
-npm run build && npm run start
+npm run build
 
 # Remove upstream and local site branches
 git push origin --delete site
