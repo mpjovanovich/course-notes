@@ -12,9 +12,13 @@ $enable-shadows: true;
 $prefix: "mo-";
 
 // Code
+// $code-color: #ae6f94;
 $code-font-size: $font-size-base;
 $code-font-family: Consolas, "Liberation Mono", "Courier New", monospace;
 
+// Tables
+$table-cell-padding-y: 1rem;
+$table-cell-padding-x: 3rem;
 // Custom variables
 $header-height: 3.5rem;
 $toc-width: 300px;
@@ -137,13 +141,13 @@ table {
   @extend .table;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  width: 90%;
-  margin: 0 auto;
+  width: auto;
+  margin: 0 40px;
 
   th,
   td {
     font-family: $headings-font-family;
-    padding: $table-cell-padding-y;
+    padding: $table-cell-padding-y $table-cell-padding-x;
   }
 
   th {
