@@ -66,7 +66,7 @@ A **binary operator** is an operator that takes two operands.
 | True  | False |
 | False |  True |
 
-~/
+/~
 
 **Symbol**: ¬
 
@@ -97,7 +97,7 @@ Express using propositions: "It is not raining".
 | False | True  | False |
 | False | False | False |
 
-~/
+/~
 
 **Symbol**: ∧
 
@@ -142,7 +142,7 @@ Express using propositions: "Spot is a dog".
 | False | True  |  True |
 | False | False | False |
 
-~/
+/~
 
 **Symbol**: ∨
 
@@ -189,7 +189,7 @@ Express using propositions: "Karen is an Ivy Tech student or a Purdue student.".
 | False | True  |  True |
 | False | False | False |
 
-~/
+/~
 
 **Symbol**: ⊕
 
