@@ -100,10 +100,12 @@ A **compiler** is a program that translates code written in a high-level languag
 
 - C, C++, Rust, Go, Swift, Java, C#...
 
-<p class="demo">Demo:</p>
+~.focusContent.demo
 
 - Compile a C program with gcc
 - Run a Python program line by line
+
+/~
 
 ## Interpreted Code
 
@@ -194,7 +196,9 @@ https://www.researchgate.net/publication/353521212_Programming_Languages_A_Usage
 
 ---
 
-<p class="demo">Critical Thinking Exercise:</p>
+~.focusContent.exercise
+
+Critical Thinking Exercise:
 
 **What do the above data tell us?.**
 
@@ -217,3 +221,5 @@ In no particular order:
 - **Game Development**: C++, C#, Java, JavaScript, Rust
 - **Data Science**: Python, R, SQL
 - **Scripting**: Python, Bash, PowerShell
+
+/~
