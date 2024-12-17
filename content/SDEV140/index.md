@@ -4,6 +4,23 @@ course: SDEV140
 showBreadcrumb: false
 ---
 
+~.toc
+
+- [SDEV140](#sdev140)
+  - [Announcements](#announcements)
+  - [Module 00: Course Introduction](#module-00-course-introduction)
+  - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
+  - [Module 02: Selection Structures](#module-02-selection-structures)
+  - [Module 03: Loops](#module-03-loops)
+  - [Module 04: Lists and Dictionaries](#module-04-lists-and-dictionaries)
+  - [Module 05: Exceptions and Error Handling](#module-05-exceptions-and-error-handling)
+  - [Module 06: Functions and Modularity](#module-06-functions-and-modularity)
+  - [Module 07: File I/O and File Parsing](#module-07-file-io-and-file-parsing)
+  - [Module 08: Object Oriented Programming](#module-08-object-oriented-programming)
+  - [Module 09: Event Driven Programming](#module-09-event-driven-programming)
+
+/~
+
 # SDEV140
 
 ## Announcements
@@ -19,32 +36,7 @@ showBreadcrumb: false
 - Last two labs will be video walkthroughs. **They are due Friday evening.**
 - Course evaluations are available, "Final Project" module. Please take a moment to fill it out.
 
-## Schedule
-
-~.toc
-
-- [SDEV140](#sdev140)
-  - [Announcements](#announcements)
-  - [Schedule](#schedule)
-  - [Test , , ! Heading](#test----heading)
-  - [Test -Heading](#test--heading)
-  - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
-  - [Module 02: Selection Structures](#module-02-selection-structures)
-  - [Module 03: Loops](#module-03-loops)
-  - [Module 04: Lists and Dictionaries](#module-04-lists-and-dictionaries)
-  - [Module 05: Exceptions and Error Handling](#module-05-exceptions-and-error-handling)
-  - [Module 06: Functions and Modularity](#module-06-functions-and-modularity)
-  - [Module 07: File I/O and File Parsing](#module-07-file-io-and-file-parsing)
-  - [Module 08: Object Oriented Programming](#module-08-object-oriented-programming)
-  - [Module 09: Event Driven Programming](#module-09-event-driven-programming)
-
-/~
-
-## Test , , ! Heading
-
-## Test -Heading
-
-Introductions
+## Module 00: Course Introduction
 
 Demo and Discussion: [Current State of Coding (AI Assisted Coding)](cannonball.txt)
 

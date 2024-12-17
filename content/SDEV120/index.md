@@ -4,21 +4,10 @@ course: SDEV120
 showBreadcrumb: false
 ---
 
-# SDEV120
-
-## Announcements
-
-- Walkthrough - first "Step Into Python" assignment. Common issues:
-  - If you don't see exercises after login, refresh the page
-  - If a button doesn't work, click it again
-
-## Schedule
-
 ~.toc
 
 - [SDEV120](#sdev120)
   - [Announcements](#announcements)
-  - [Schedule](#schedule)
   - [Common Resources](#common-resources)
   - [M00: Orientation](#m00-orientation)
   - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
@@ -37,11 +26,19 @@ showBreadcrumb: false
 
 /~
 
+# SDEV120
+
+## Announcements
+
+- Walkthrough - first "Step Into Python" assignment. Common issues:
+  - If you don't see exercises after login, refresh the page
+  - If a button doesn't work, click it again
+
 ## Common Resources
 
 Here you will find resources for installing course software and supporting resources for course technologies and content:
 
-**[Common Resources](../common/index.html)**
+[Common Resources](../common/index.html)
 
 ## M00: Orientation
 

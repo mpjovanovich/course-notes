@@ -23,7 +23,6 @@ $toc-width: 300px;
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 pre {
-  font-weight: bold;
   border-radius: 8px;
   position: relative;
 }
@@ -138,7 +137,8 @@ table {
   @extend .table;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  margin: $spacer * 2.5 5%;
+  width: 90%;
+  margin: 0 auto;
 
   th,
   td {
@@ -196,37 +196,23 @@ pre {
 }
 
 .lastColResult tbody td:last-child {
-  border-left: 2px solid $secondary;
-  border-right: 2px solid $secondary;
+  border-left: 2px solid $gray-500;
+  font-weight: 700;
+  background-color: $gray-200;
+}
+
+.lastRowResult tbody tr:last-child td {
+  border-top: 2px solid $gray-500;
   font-weight: 700;
   background-color: $gray-200;
 }
 
 .mathTable {
   :is(th, td) {
-    font-family: "Courier New", monospace;
+    font-family: $code-font-family;
     letter-spacing: 0.05em;
     padding: 0.5em;
     white-space: nowrap;
-  }
-}
-
-// Media queries
-@include media-breakpoint-down(sm) {
-  :root {
-    font-size: 14px;
-  }
-}
-
-@include media-breakpoint-between(sm, lg) {
-  :root {
-    font-size: 16px;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  :root {
-    font-size: 18px;
   }
 }
 
@@ -327,4 +313,23 @@ body.dark .shiki span {
   font-style: var(--shiki-dark-font-style) !important;
   font-weight: var(--shiki-dark-font-weight) !important;
   text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+// Media queries
+@include media-breakpoint-down(sm) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@include media-breakpoint-between(sm, lg) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  :root {
+    font-size: 18px;
+  }
 }

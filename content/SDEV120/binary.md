@@ -91,7 +91,7 @@ To convert a decimal number to binary, we follow an algorithm:
 3. Repeat steps 1 and 2 until the quotient is 0.
 4. The binary number is the remainders in reverse order.
 
-~.focusContent.example.mathTable.lastRowResult
+~.focusContent.example.mathTable.lastColResult
 
 **Example 1**
 
@@ -150,6 +150,8 @@ Calculate (0111)<sub>2</sub> + (1110)<sub>2</sub>.
 |     |     + |     1 |     1 |     1 |     0 |
 |     | **1** | **0** | **1** | **0** | **1** |
 
+Answer: **_(10101)<sub>2</sub>_**
+
 - Does this tie out with the result we obtain if we convert to decimal then add?
 
 /~
@@ -160,12 +162,14 @@ Calculate (0111)<sub>2</sub> + (1110)<sub>2</sub>.
 
 Calculate (1011)<sub>2</sub> + (1101)<sub>2</sub>.
 
-|     |       |       |       |       |       |       |
-| --- | ----: | ----: | ----: | ----: | ----: | ----: |
-| R:  |       |     1 |     1 |     1 |     1 |       |
-|     |       |     1 |     0 |     1 |     1 |     1 |
-|     |     + |     1 |     1 |     0 |     1 |     0 |
-|     | **1** | **1** | **0** | **0** | **0** | **1** |
+|     |       |       |       |       |       |
+| --- | ----: | ----: | ----: | ----: | ----: |
+| R:  |       |     1 |     1 |     1 |     1 |
+|     |       |     1 |     0 |     1 |     1 |
+|     |     + |     1 |     1 |     0 |     1 |
+|     | **1** | **1** | **0** | **0** | **0** |
+
+Answer: **_(11000)<sub>2</sub>_**
 
 - Does this tie out with the result we obtain if we convert to decimal then add?
 
