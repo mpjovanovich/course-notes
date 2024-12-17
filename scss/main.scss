@@ -144,6 +144,7 @@ table {
   @extend .table;
   font-size: $font-size-base;
   line-height: $line-height-base;
+  margin: $table-margin-y $table-margin-x;
   width: auto;
 
   th,
