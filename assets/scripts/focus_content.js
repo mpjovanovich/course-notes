@@ -32,7 +32,7 @@ exercises.forEach((exercise) => {
 });
 
 lookouts.forEach((lookout) => {
-  renderTitle(lookout, "bi-exclamation-circle", "Lookout!");
+  renderTitle(lookout, "bi-exclamation-circle", "Look Out!");
 });
 
 asides.forEach((aside) => {

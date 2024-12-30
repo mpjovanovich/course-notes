@@ -4,6 +4,27 @@ if (toc) {
   toc.classList.add("collapse");
   toc.id = "toc";
 
+  // Extract course URL from current path
+  const currentPath = window.location.pathname;
+  const courseMatch = currentPath.match(/\/course-notes\/([^\/]+)/);
+  if (courseMatch) {
+    const courseUrl = `https://mpjovanovich.github.io/course-notes/${courseMatch[1]}/`;
+
+    // Create home link
+    const homeLink = document.createElement("a");
+    homeLink.href = courseUrl;
+    homeLink.textContent = "Home";
+    homeLink.className = "toc-home";
+
+    // Create container for home link
+    const homeLi = document.createElement("li");
+    homeLi.appendChild(homeLink);
+
+    // Insert at top of TOC
+    const tocUl = toc.querySelector("ul");
+    tocUl.insertBefore(homeLi, tocUl.firstChild);
+  }
+
   // Create toggle button with Bootstrap attributes
   const toggleBtn = document.createElement("button");
   toggleBtn.className = "toc-toggle btn btn-primary";

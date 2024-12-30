@@ -256,6 +256,7 @@ pre {
   background: $white;
   border: 1px solid $gray-200;
   padding: 1rem;
+  padding-top: 0;
   overflow-y: auto;
   scrollbar-width: none;
   &::-webkit-scrollbar {
@@ -307,6 +308,18 @@ pre {
   border: none;
   border-radius: 0 4px 4px 0;
   transition: transform 0.2s ease;
+}
+
+// "Home" link in TOC
+a.toc-home {
+  font-weight: bold;
+  color: $white;
+  background-color: $primary;
+  text-align: center;
+}
+
+a.toc-home:hover {
+  background-color: $primary;
 }
 
 // Details / Summary

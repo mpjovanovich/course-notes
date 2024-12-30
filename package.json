@@ -24,7 +24,7 @@
     "typescript": "^5.5.3"
   },
   "dependencies": {
-    "@mpjovanovich/dotmark": "^0.0.5",
+    "@mpjovanovich/dotmark": "^0.0.6",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "fs-extra": "^11.2.0",
