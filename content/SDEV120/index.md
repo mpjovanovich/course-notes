@@ -134,11 +134,11 @@ Review: Truth Tables Assignment
 
 ## M05: System Modeling
 
-[Software Development Life Cycle](sdlc.html)
-
 Discussion: Data Structures - Choose Your Own Adventure
 
 [Unified Modeling Language (UML)](uml.html)
+
+[Software Development Life Cycle](sdlc.html)
 
 ## M06: Selection Structures
 
@@ -152,11 +152,15 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 ## Midterm Review
 
-[Midterm Review](midterm_study_f24.html)
+Midterm Study Guide to be posted.
+
+<!-- [Midterm Review](midterm_study_f24.html) -->
 
 ## M08: Logic Gates and Circuits
 
 [Logic Gates and Circuits](logic_gates.html)
+
+Group Exercise: Logic Gates and Circuits
 
 ## M09: Data Representation and Encoding
 
@@ -178,9 +182,13 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 ## M10: Programming Paradigms
 
+Discussion: Influential Figures in Computing
+
 [Turing and Computability](turing_computability.html)
 
 [Von Neumann Architecture](von_neumann.html)
+
+Discussion: Analysis of a Programming Language
 
 [Evolution of Computing](evolution_of_computing.html)
 
@@ -188,7 +196,9 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 ## Final Review
 
-[Final Study Guide](final_study_f24.html)
+Final Study Guide to be posted.
+
+<!-- [Final Study Guide](final_study_f24.html) -->
 
 <!-- ## Overflow Topics
 

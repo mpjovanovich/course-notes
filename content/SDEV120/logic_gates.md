@@ -46,7 +46,7 @@ The truth table for each gate matches the truth table for the corresponding logi
 
 ~.focusContent.demo
 
-Logic.ly
+Let's try out some basic gates in [Logic.ly](https://logic.ly/demo).
 
 <figure>
   <img src="images/basic_logic_gates.png" alt="" style="width: 100%;height: auto;">
@@ -77,7 +77,7 @@ A **magnitude comparator** is a type of combinational circuit that compares two 
 
 [One Bit Magnitude Comparator - Logicly](https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/one_bit_magnitude_comparer.logicly)
 
-_Exercise:_
+~.focusContent.exercise
 
 Assume that A = 1, B = 1.
 
@@ -128,6 +128,8 @@ Output: A = B
 
 </details>
 
+/~
+
 ### Keeping Values in Memory
 
 #### SR (Set-Reset) Latch
@@ -137,21 +139,6 @@ The **SR latch** is a simple form of flip-flop that can store one bit of informa
 When in the **hold** state, the outputs remain the same.
 
 They will only change when either the **set** or **reset** input is activated.
-
-_Inputs / Outputs:_
-
-- S = Set signal
-- R = Reset signal
-- Q = Current output
-- Q<sub>t-1</sub> = Previous output
-
-_Truth Table:_
-
-|                     | S   | R   | Q               |
-| ------------------- | --- | --- | --------------- |
-| **Set Condition**   | 1   | 0   | 1               |
-| **Reset Condition** | 0   | 1   | 0               |
-| **Hold Condition**  | 0   | 0   | Q<sub>t-1</sub> |
 
 _Circuit:_
 
