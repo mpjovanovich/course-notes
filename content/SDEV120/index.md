@@ -14,9 +14,9 @@ showBreadcrumb: false
   - [M03: Boolean Algebra](#m03-boolean-algebra)
   - [M04: Functional Arithmetic and Expression Parsing](#m04-functional-arithmetic-and-expression-parsing)
   - [M05: System Modeling](#m05-system-modeling)
+  - [Midterm Review](#midterm-review)
   - [M06: Selection Structures](#m06-selection-structures)
   - [M07: Loops and Iteration](#m07-loops-and-iteration)
-  - [Midterm Review](#midterm-review)
   - [M08: Logic Gates and Circuits](#m08-logic-gates-and-circuits)
   - [M09: Data Representation and Encoding](#m09-data-representation-and-encoding)
   - [M10: Programming Paradigms](#m10-programming-paradigms)
@@ -140,6 +140,12 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Software Development Life Cycle](sdlc.html)
 
+## Midterm Review
+
+Midterm Study Guide to be posted.
+
+<!-- [Midterm Review](midterm_study_f24.html) -->
+
 ## M06: Selection Structures
 
 [Selection Structures](selection.html)
@@ -149,12 +155,6 @@ Discussion: Data Structures - Choose Your Own Adventure
 [Programming with Loops](programming_with_loops.html)
 
 [Step Values](../SDEV140/step_values.html?course=SDEV120)
-
-## Midterm Review
-
-Midterm Study Guide to be posted.
-
-<!-- [Midterm Review](midterm_study_f24.html) -->
 
 ## M08: Logic Gates and Circuits
 
