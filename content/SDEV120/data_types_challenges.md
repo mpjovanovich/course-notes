@@ -122,7 +122,7 @@ In other cases errors can be more serious.
 
 ~.focusContent.example
 
-[Lethal Software Defects: Patriot Missile Failure](https://barrgroup.com/blog/lethal-software-defects-patriot-missile-failure)
+[Case Study: Patriot Missile Failure](https://barrgroup.com/blog/lethal-software-defects-patriot-missile-failure)
 
 > During the Gulf War, twenty-eight U.S. soldiers were killed and almost one hundred others were wounded when a nearby Patriot missile defense system failed to properly track a Scud missile launched from Iraq. The cause of the failure was later found to be a programming error in the computer embedded in the Patriot’s weapons control system.
 
