@@ -80,17 +80,6 @@ if x:
     # do something
 ```
 
-Examples:
-
-```python
-if x:
-if x == True:
-if has_account == False:
-if a > b:
-if is_admin and current_page == 'User Management':
-if is_admin == False or user_logged_in == False:
-```
-
 #### Demo Programs
 
 ~.focusContent.demo
