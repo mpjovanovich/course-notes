@@ -150,6 +150,8 @@ Midterm Study Guide to be posted.
 
 [Selection Structures](selection.html)
 
+Discussion: Designing a Smart Music Recommender
+
 ## M07: Loops and Iteration
 
 [Programming with Loops](programming_with_loops.html)
