@@ -71,12 +71,12 @@ The **modulus** operator returns the remainder of a division operation.
 
 ## Logical Order of Operations
 
-| Precedence | Operator | Description |
-| :--------: | :------- | :---------- |
-|     1      | ()       | Parentheses |
-|     2      | ¬        | Negation    |
-|     3      | ∧        | Conjunction |
-|     4      | ∨        | Disjunction |
+| Precedence | Operator | Operation   | Description |
+| :--------: | :------- | :---------- | :---------- |
+|     1      | ()       | Parentheses | Grouping    |
+|     2      | ¬        | Negation    | NOT         |
+|     3      | ∧        | Conjunction | AND         |
+|     4      | ∨        | Disjunction | OR          |
 
 ### Practice Problems
 
