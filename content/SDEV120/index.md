@@ -47,6 +47,8 @@ Overview of course
 - Review course structure and resources
 - Make sure you can access the textbook
 
+Schedule Exams (Remote students only)
+
 Discussion: Computing and Society
 
 [Computer Orientation](../common/computer_orientation.html?course=SDEV120)
