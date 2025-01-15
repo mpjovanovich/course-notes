@@ -3,6 +3,13 @@ title: Home
 course: SDEV265
 ---
 
+~.toc
+
+- [Announcements](#announcements)
+- [M01: SDLC; Source Control](#m01-sdlc-source-control)
+
+/~
+
 > I chanced upon an ancient cache of code:  
 > a stack of printouts, tall as any man,  
 > that in decaying boxes had been stowed.  
@@ -22,40 +29,13 @@ course: SDEV265
 
 -- http://thecodelesscode.com/case/234
 
-# Announcements
+## Announcements
 
-- Final presentation requirements posted
-
-# Schedule
-
-- [Announcements](#announcements)
-- [Schedule](#schedule)
-  - [M01: SDLC; Source Control](#m01-sdlc-source-control)
-    - [Day 1](#day-1)
-    - [Day 2](#day-2)
-  - [M02: Software Evolution; Project Management; Project Planning](#m02-software-evolution-project-management-project-planning)
-    - [Day 3](#day-3)
-    - [Day 4](#day-4)
-    - [Day 5](#day-5)
-  - [M03: Requirements Engineering; Agile Development](#m03-requirements-engineering-agile-development)
-    - [Day 6](#day-6)
-    - [Day 7](#day-7)
-    - [Day 8](#day-8)
-  - [M04: Software Testing; Reliability](#m04-software-testing-reliability)
-    - [Day 9](#day-9)
-    - [Day 10](#day-10)
-    - [Day 11](#day-11)
-    - [Day 12](#day-12)
-  - [M05: Data and Process Modeling](#m05-data-and-process-modeling)
-    - [Day 13](#day-13)
-  - [M06: Modular Design and SOLID Programming](#m06-modular-design-and-solid-programming)
-    - [Day 14](#day-14)
-  - [M07: Distributed Architectures](#m07-distributed-architectures)
-    - [Day 15](#day-15)
+- ...
 
 ## M01: SDLC; Source Control
 
-### Day 1
+<!-- ### Day 1
 
 Lecture:
 
@@ -115,8 +95,6 @@ Lecture:
 ### Day 5
 
 Lecture:
-
-<!-- (TODO: transfer old notes SDEV_265_M03_W2) -->
 
 https://docs.google.com/document/d/1B56TB159UEySnExPDaq1nnYiV0qKAXRUfZKbcCRXtRU/edit?usp=sharing
 
@@ -212,15 +190,10 @@ Review: [UML](../SDEV120/uml.html?course=SDEV265)
 
 ### Day 14
 
-<!-- This was too much material for one day -->
 
 [Modular Design](modular_design.html)
 
 [Software Architectural Patterns](software_architectural_patterns.html)
-
-<!-- Review of OOP -->
-
-<!-- Do on its own day next run -->
 
 [SOLID Programming Principles](solid.html)
 
@@ -242,4 +215,8 @@ Review: [UML](../SDEV120/uml.html?course=SDEV265)
 
 [Software Communication Patterns](software_communication_patterns.html)
 
-<!-- [Virtualization](virtualization.html) -->
+...
+
+Build Tools and Automation Assignment
+
+-->
