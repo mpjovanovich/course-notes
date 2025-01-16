@@ -7,25 +7,29 @@ course: SDEV265
 
 - [Announcements](#announcements)
 - [M01: SDLC; Source Control](#m01-sdlc-source-control)
+  - [Day 1](#day-1)
+  - [Day 2](#day-2)
 
 /~
 
-> I chanced upon an ancient cache of code:  
-> a stack of printouts, tall as any man,  
-> that in decaying boxes had been stowed.  
-> Ten thousand crumbling pages long it ran.  
-> Abandoned in the blackness to erode,  
-> what steered a ship through blackness to the moon.  
-> The language is unused in this late year.  
-> The target hardware, likewise, lies in ruin.  
-> Entombed within one lone procedure’s scope,  
-> a line of code and then these words appear:  
-> <br> > \# TEMPORARY, I HOPE HOPE HOPE  
-> <br>
-> The code beside persisting to the last—  
-> as permanent as aught upon this sphere—  
-> while overhead, a vacant moon flies past.
-> <br>
+<blockquote>     
+    I chanced upon an ancient cache of code:       <br />
+    a stack of printouts, tall as any man,         <br />
+    that in decaying boxes had been stowed.        <br />
+    Ten thousand crumbling pages long it ran.      <br />
+    Abandoned in the blackness to erode,           <br />
+    what steered a ship through blackness to the moon. <br />
+    The language is unused in this late year.      <br />
+    The target hardware, likewise, lies in ruin.   <br />
+    Entombed within one lone procedure’s scope,    <br />
+    a line of code and then these words appear:    <br />
+                                                  <br />
+    <tt># TEMPORARY, I HOPE HOPE HOPE</tt>         <br />
+                                                  <br />
+    The code beside persisting to the last&mdash;<br />
+    as permanent as aught upon this sphere&mdash;<br />
+    while overhead, a vacant moon flies past.      <br />
+</blockquote>
 
 -- http://thecodelesscode.com/case/234
 
@@ -35,38 +39,49 @@ course: SDEV265
 
 ## M01: SDLC; Source Control
 
-<!-- ### Day 1
+Lecture Topics:
 
-Lecture:
+- [Git Resources](../common/git_resoures.md?course=SDEV265)
+- [Shell Commands](../common/basic_shell_commands.md?course=SDEV265)
+- [GitHub](../common/github.md?course=SDEV265)
+- [Installing Git](../common/installing_git.md?course=SDEV265)
+- [Version Control via Git](../common/git_version_control.md?course=SDEV265)
+- [Software Development Life Cycle (SDLC)](../common/sdlc.html?course=SDEV265)
+- [Intro to Software Engineering](software_engineering.html)
+
+<!--
+Git: branch, branching strategies, merge, merge conflicts
+-->
+
+Discussions:
+
+- Software ethics (https://ethics.acm.org/code-of-ethics/software-engineering-code/)
+  - What are some possible violations for each point?
+  - What are some best practices for each point?
+
+### Day 1
+
+We will still have discussions, but they will not be graded - they will be instructor led.
 
 - Course Overview
 - [Tips to be successful in this class](intro_to_course.html)
 - Demo previous projects
-- [Software Development Life Cycle (SDLC)](../common/sdlc.html?course=SDEV265)
-
-Intro to Assignments:
-
-- Create GitHub account
-- Project proposals
+- Introductions
+- Lecture
+- Assignment: VC Assignment 1
+- Assignment: Project proposals
 
 ### Day 2
 
-Activities:
-
 - Project pitches and voting (DUE TODAY)
+- Sponsored project speaker?
+- Discussion: ethics
+- Lecture
+- Assignment: VC Assignment 2
+- Assignment: Company formation, website, communication policy
+- Groups break out
 
-Lecture:
-
-- [Intro to Software Engineering](software_engineering.html)
-- [Git Basics](git_basics.html)
-
-Discussion:
-
-- Software ethics (https://ethics.acm.org/code-of-ethics/software-engineering-code/)
-
-Intro to Assignments:
-
-- VC Assignment 1
+<!--
 
 ## M02: Software Evolution; Project Management; Project Planning
 
