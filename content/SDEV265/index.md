@@ -49,15 +49,15 @@ showBreadcrumb: false
 
 Lecture Topics:
 
-- [Git Resources](../common/git_resoures.md?course=SDEV265)
-- [Shell Commands](../common/basic_shell_commands.md?course=SDEV265)
-- [GitHub](../common/github.md?course=SDEV265)
-- [Installing Git](../common/installing_git.md?course=SDEV265)
-- [Version Control via Git](../common/git_version_control.md?course=SDEV265)
-- [Software Development Life Cycle (SDLC)](../common/sdlc.html?course=SDEV265)
+- [Git Resources](../common/git_resoures.html?course=SDEV265)
+- [Shell Commands](../common/basic_shell_commands.html?course=SDEV265)
+- [GitHub](../common/github.html?course=SDEV265)
+- [Installing Git](../common/installing_git.html?course=SDEV265)
+- [Version Control via Git](../common/git_version_control.html?course=SDEV265)
 - [Intro to Software Engineering](software_engineering.html)
 
 <!--
+- [Software Development Life Cycle (SDLC)](../common/sdlc.html?course=SDEV265)
 Git: branch, branching strategies, merge, merge conflicts
 -->
 
