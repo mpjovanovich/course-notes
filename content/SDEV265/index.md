@@ -1,16 +1,22 @@
 ---
 title: Home
 course: SDEV265
+showBreadcrumb: false
 ---
 
 ~.toc
 
-- [Announcements](#announcements)
-- [M01: SDLC; Source Control](#m01-sdlc-source-control)
-  - [Day 1](#day-1)
-  - [Day 2](#day-2)
+- [SDEV 265](#sdev-265)
+  - [Announcements](#announcements)
+  - [M01: SDLC; Source Control](#m01-sdlc-source-control)
+    - [Day 1](#day-1)
+    - [Day 2](#day-2)
 
 /~
+
+# SDEV 265
+
+---
 
 <blockquote>     
     I chanced upon an ancient cache of code:       <br />
@@ -32,6 +38,8 @@ course: SDEV265
 </blockquote>
 
 -- http://thecodelesscode.com/case/234
+
+---
 
 ## Announcements
 
