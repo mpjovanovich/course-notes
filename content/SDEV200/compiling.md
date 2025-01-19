@@ -37,4 +37,6 @@ Note that you do not need to include the `.class` extension when running the pro
 
 It may seem like we're "running" the program directly in an IDE such as VS Code. The **debugger** is actually a special program that compiles and runs the program for us and keeps track of the program's state to aid with development.
 
+A Java program must always be compiled with a Java compiler prior to being released to the public.
+
 /~
