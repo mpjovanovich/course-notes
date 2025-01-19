@@ -5,18 +5,18 @@ course: SDEV200
 
 # SDEV200
 
-- [Data Types](./data_types.md)
+- [Data Types](./data_types.html)
 
-- [Input / Output](./input_output.md)
+- [Input / Output](./input_output.html)
 
-- [String Formatting](./string_formatting.md)
+- [String Formatting](./string_formatting.html)
 
-- [Arrays](./arrays.md)
+- [Arrays](./arrays.html)
 
-- [Compiling and Running a Program](./compiling.md)
+- [Compiling and Running a Program](./compiling.html)
 
-- [Command Line Arguments](./command_line_arguments.md)
+- [Command Line Arguments](./command_line_arguments.html)
 
-- [Utility Classes](./utility_classes.md)
+- [Utility Classes](./utility_classes.html)
 
-- [Reference Types](./reference_types.md)
+- [Reference Types](./reference_types.html)
