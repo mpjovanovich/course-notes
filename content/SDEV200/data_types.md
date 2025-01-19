@@ -13,6 +13,7 @@ course: SDEV200
     - [Implicit Conversion](#implicit-conversion)
     - [Explicit Conversion](#explicit-conversion)
     - [String Conversions](#string-conversions)
+  - [Special Note: String Comparison](#special-note-string-comparison)
 
 /~
 
@@ -93,3 +94,46 @@ Java provides utility methods on each primitive data type to convert between str
 String number = "123";
 int num = Integer.parseInt(number);
 ```
+
+## Special Note: String Comparison
+
+**When comparing strings, we should use the `equals()` method instead of the `==` operator.**
+
+~.focusContent.lookout
+
+Make sure to use the `equals()` method when comparing strings, not the `==` operator!
+
+The `==` operator compares the references of the strings, not the actual data.
+
+```java
+import java.util.Scanner;
+
+class Test {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Would you like to continue (y/n): ");
+    String userInput = scanner.nextLine();
+
+    // WILL NOT WORK!
+    // The "no" option will always be selected
+    if (userInput == "y") {
+      System.out.println("User selected yes.");
+    } else {
+      System.out.println("User selected no.");
+    }
+
+    // BEST PRACTICE
+    // Use the equals() method to compare strings
+    if (userInput.equals("y")) {
+      System.out.println("User selected yes.");
+    } else {
+      System.out.println("User selected no.");
+    }
+
+    scanner.close();
+  }
+}
+```
+
+/~
