@@ -108,13 +108,13 @@ When an exception is thrown, the program:
 
 This process of moving up through the methods looking for error handling is called **propagating** the exception.
 
-~/focusContent.lookout
+~.focusContent.lookout
 
 If a method throws an exception, or if it calls a method that throws an exception, we must declare the exception in the method signature.
 
 /~
 
-~/focusContent.demo
+~.focusContent.demo
 
 Let's take a look at propagation, and how to interpret the stack trace.
 
@@ -154,7 +154,7 @@ public class Test {
 
 When possible, prefer **validating** input over using exception handling.
 
-~focusContent.example
+~.focusContent.example
 
 Assume a simple "divide two numbers" program.
 
