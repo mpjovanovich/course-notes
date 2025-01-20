@@ -9,6 +9,7 @@ course: SDEV200
   - [Definitions](#definitions)
   - [Creating a Class in Java](#creating-a-class-in-java)
   - [Constructors](#constructors)
+  - [The `this` Keyword](#the-this-keyword)
 
 /~
 
@@ -45,6 +46,8 @@ public class Person {
 
 ```
 
+- We can create an instance of a class using the `new` keyword.
+
 _Test.java_
 
 ```java
@@ -61,6 +64,7 @@ public class Test {
 - A **constructor** is a special method that is called when an object is created.
 - The constructor is used to initialize the object.
 - A default constructor is created if no constructor is defined.
+- We may have multiple constructors in a class, each with different parameters.
 
 _Person.java_
 
@@ -69,6 +73,11 @@ public class Diety {
   // Declare the name field, but don't set it.
   private String name;
   private String title;
+
+  public Diety() {
+    this.name = "Unknown";
+    this.title = "An Unknown God";
+  }
 
   public Diety(String name, String title) {
     // Name is set in the constructor.
@@ -87,11 +96,30 @@ _Test.java_
 ```java
 class Test {
   public static void main(String[] args) {
+    // Call the parameterless constructor
+    Diety diety1 = new Diety();
+    diety1.printMessage();
+
+    // Call the constructor with name and title
     Diety diety2 = new Diety("Shiva", "The Destroyer");
     diety2.printMessage();
 
-    Diety diety = new Diety("The Holy Trinity", "The Father, The Son, and The Holy Spirit");
-    diety.printMessage();
+    // Call the constructor with name and title
+    Diety diety3 = new Diety("The Holy Trinity", "The Father, The Son, and The Holy Spirit");
+    diety3.printMessage();
   }
 }
 ```
+
+## The `this` Keyword
+
+The `this` keyword refers to the current object.
+
+It is used to access the current object's properties and methods.
+
+Notice our constructor above uses `this` to set the `name` and `title` properties. We must use it here because there is a naming conflict between the parameters used in the constructor method and the properties of the class.
+
+Typically in Java:
+
+- Use `this` if there is a naming conflict between a parameter and a property.
+- If there is no naming conflict, you can omit `this` (as with the `printMessage()` method above).

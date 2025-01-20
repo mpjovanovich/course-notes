@@ -21,4 +21,14 @@ course: SDEV200
 
 - [Reference Types](./reference_types.html)
 
+- [Exceptions](./exceptions.html)
+
 - [OOP Basics](./oop_basics.html)
+
+- [Class Diagrams](./class_diagrams.html)
+
+- [Encapsulation](./encapsulation.html)
+
+- [Organizing Code Within a Class](./organizing_class_code.html)
+
+- [Case Study - Tic Tac Toe](./tic_tac_toe.html)
