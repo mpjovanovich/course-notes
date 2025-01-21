@@ -10,8 +10,8 @@ showBreadcrumb: false
   - [Common Resources](#common-resources)
   - [M00: Orientation](#m00-orientation)
   - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
-  - [M02: Intro to Programming](#m02-intro-to-programming)
   - [M03: Boolean Algebra](#m03-boolean-algebra)
+  - [M02: Intro to Programming](#m02-intro-to-programming)
   - [M04: Functional Arithmetic and Expression Parsing](#m04-functional-arithmetic-and-expression-parsing)
   - [M05: System Modeling](#m05-system-modeling)
   - [Midterm Review](#midterm-review)
@@ -69,18 +69,6 @@ Setting up your Coding Environment
 
 [Flowcharts](flowcharts.html)
 
-## M02: Intro to Programming
-
-[Coding Punctuation](../common/coding_punctuation.html?course=SDEV120)
-
-[Coding Environments](coding_environments.html)
-
-[Input, Output, and Comments in Python](input_output_comments_python.html)
-
-[Variables and Constants](variables_and_constants.html)
-
-[Data Types](data_types.html)
-
 ## M03: Boolean Algebra
 
 Discussion: Intro to Logic
@@ -126,7 +114,17 @@ Ely = Kni, B = Spy, Ell = Knave
 
 [Decision Trees](decision_tree.html)
 
-Review: Truth Tables Assignment
+## M02: Intro to Programming
+
+[Coding Punctuation](../common/coding_punctuation.html?course=SDEV120)
+
+[Coding Environments](coding_environments.html)
+
+[Input, Output, and Comments in Python](input_output_comments_python.html)
+
+[Variables and Constants](variables_and_constants.html)
+
+[Data Types](data_types.html)
 
 ## M04: Functional Arithmetic and Expression Parsing
 
