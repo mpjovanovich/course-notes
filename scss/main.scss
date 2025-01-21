@@ -385,11 +385,17 @@ body.dark .shiki span {
   :root {
     font-size: 14px;
   }
+  div.content-wrapper {
+    padding: 0 0.5rem;
+  }
 }
 
 @include media-breakpoint-between(sm, lg) {
   :root {
     font-size: 16px;
+  }
+  div.content-wrapper {
+    padding: 0 2rem;
   }
 }
 
@@ -397,8 +403,7 @@ body.dark .shiki span {
   :root {
     font-size: 18px;
   }
-
-  .content-wrapper {
-    padding: 0 calc(var(--mo-gutter-x) * 2);
+  div.content-wrapper {
+    padding: 0 6rem;
   }
 }
