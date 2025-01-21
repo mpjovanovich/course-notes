@@ -397,4 +397,8 @@ body.dark .shiki span {
   :root {
     font-size: 18px;
   }
+
+  .content-wrapper {
+    padding: 0 calc(var(--mo-gutter-x) * 2);
+  }
 }
