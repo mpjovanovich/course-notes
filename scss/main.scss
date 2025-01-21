@@ -385,25 +385,16 @@ body.dark .shiki span {
   :root {
     font-size: 14px;
   }
-  div.content-wrapper {
-    padding: 0 0.5rem;
-  }
 }
 
 @media (min-width: 577px) and (max-width: 992px) {
   :root {
     font-size: 16px;
   }
-  div.content-wrapper {
-    padding: 0 2rem;
-  }
 }
 
 @media (min-width: 993px) {
   :root {
-    font-size: 18px;
-  }
-  div.content-wrapper {
-    padding: 0 6rem;
+    font-size: 24px;
   }
 }
