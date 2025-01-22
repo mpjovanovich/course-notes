@@ -5,6 +5,8 @@ course: SDEV200
 
 # SDEV200
 
+## Module 01
+
 - [Data Types](./data_types.html)
 
 - [Input / Output](./input_output.html)
@@ -21,7 +23,7 @@ course: SDEV200
 
 - [Reference Types](./reference_types.html)
 
-- [Exceptions](./exceptions.html)
+## Module 02
 
 - [OOP Basics](./oop_basics.html)
 
@@ -40,3 +42,5 @@ course: SDEV200
 - [Interfaces](./interfaces.html)
 
 - [Polymorphism](./polymorphism.html)
+
+- [Exceptions](./exceptions.html)
