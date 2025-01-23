@@ -10,14 +10,14 @@ showBreadcrumb: false
   - [Common Resources](#common-resources)
   - [M00: Orientation](#m00-orientation)
   - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
-  - [M03: Boolean Algebra](#m03-boolean-algebra)
-  - [M02: Intro to Programming](#m02-intro-to-programming)
-  - [M04: Functional Arithmetic and Expression Parsing](#m04-functional-arithmetic-and-expression-parsing)
+  - [M02: Boolean Algebra](#m02-boolean-algebra)
+  - [M03: Functional Arithmetic and Expression Parsing](#m03-functional-arithmetic-and-expression-parsing)
+  - [M04: Logic Gates and Circuits](#m04-logic-gates-and-circuits)
   - [M05: System Modeling](#m05-system-modeling)
   - [Midterm Review](#midterm-review)
-  - [M06: Selection Structures](#m06-selection-structures)
-  - [M07: Loops and Iteration](#m07-loops-and-iteration)
-  - [M08: Logic Gates and Circuits](#m08-logic-gates-and-circuits)
+  - [M06: Intro to Programming](#m06-intro-to-programming)
+  - [M07: Selection Structures](#m07-selection-structures)
+  - [M08: Loops and Iteration](#m08-loops-and-iteration)
   - [M09: Data Representation and Encoding](#m09-data-representation-and-encoding)
   - [M10: Programming Paradigms](#m10-programming-paradigms)
   - [Final Review](#final-review)
@@ -69,7 +69,7 @@ Setting up your Coding Environment
 
 [Flowcharts](flowcharts.html)
 
-## M03: Boolean Algebra
+## M02: Boolean Algebra
 
 Discussion: Intro to Logic
 
@@ -114,23 +114,17 @@ Ely = Kni, B = Spy, Ell = Knave
 
 [Decision Trees](decision_tree.html)
 
-## M02: Intro to Programming
-
-[Coding Punctuation](../common/coding_punctuation.html?course=SDEV120)
-
-[Coding Environments](coding_environments.html)
-
-[Input, Output, and Comments in Python](input_output_comments_python.html)
-
-[Variables and Constants](variables_and_constants.html)
-
-[Data Types](data_types.html)
-
-## M04: Functional Arithmetic and Expression Parsing
+## M03: Functional Arithmetic and Expression Parsing
 
 [Syntax and Expressions](syntax_expressions.html)
 
 [Abstract Syntax Trees](abstract_syntax_trees.html)
+
+## M04: Logic Gates and Circuits
+
+[Logic Gates and Circuits](logic_gates.html)
+
+Group Exercise: Logic Gates and Circuits
 
 ## M05: System Modeling
 
@@ -146,23 +140,29 @@ Midterm Study Guide to be posted.
 
 <!-- [Midterm Review](midterm_study_f24.html) -->
 
-## M06: Selection Structures
+## M06: Intro to Programming
+
+[Coding Punctuation](../common/coding_punctuation.html?course=SDEV120)
+
+[Coding Environments](coding_environments.html)
+
+[Input, Output, and Comments in Python](input_output_comments_python.html)
+
+[Variables and Constants](variables_and_constants.html)
+
+[Data Types](data_types.html)
+
+## M07: Selection Structures
 
 [Selection Structures](selection.html)
 
 Discussion: Designing a Smart Music Recommender
 
-## M07: Loops and Iteration
+## M08: Loops and Iteration
 
 [Programming with Loops](programming_with_loops.html)
 
 [Step Values](../SDEV140/step_values.html?course=SDEV120)
-
-## M08: Logic Gates and Circuits
-
-[Logic Gates and Circuits](logic_gates.html)
-
-Group Exercise: Logic Gates and Circuits
 
 ## M09: Data Representation and Encoding
 
