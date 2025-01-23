@@ -1,3 +1,7 @@
+// Start off in dark mode - it looks nicer
+const body = document.querySelector("body");
+body.classList.add("dark");
+
 // Get all code blocks
 const codeBlocks = document.querySelectorAll("pre");
 
