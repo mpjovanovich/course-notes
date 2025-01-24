@@ -55,6 +55,7 @@ Lecture Topics:
 - [Installing Git](../common/installing_git.html?course=SDEV265)
 - [Version Control via Git](../common/git_version_control.html?course=SDEV265)
 - [Intro to Software Engineering](software_engineering.html)
+- [Software Development Life Cycle (SDLC)](../SDEV120/sdlc.html?course=SDEV265)
 
 <!--
 - [Software Development Life Cycle (SDLC)](../common/sdlc.html?course=SDEV265)
@@ -76,18 +77,31 @@ We will still have discussions, but they will not be graded - they will be instr
 - Demo previous projects
 - Introductions
 - Lecture
+- Discussion: ethics
 - Assignment: VC Assignment 1
 - Assignment: Project proposals
 
 ### Day 2
 
 - Project pitches and voting (DUE TODAY)
-- Sponsored project speaker?
-- Discussion: ethics
+- Technical discussion on project proposals
+- Sponsored project speaker (12:30pm)
 - Lecture
-- Assignment: VC Assignment 2
 - Assignment: Company formation, website, communication policy
 - Groups break out
+
+## M02: Software Evolution; Project Management; Project Planning
+
+Lecture Topics:
+
+- [Configuration Management](configuration_management.html)
+
+<!-- - [Git - Beyond the Basics](git_advanced.html) -->
+
+...
+
+- Lecture
+- Assignment: VC Assignment 2
 
 <!--
 
