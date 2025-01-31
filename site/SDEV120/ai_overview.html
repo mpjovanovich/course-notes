@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Overview of AI</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <blockquote>
+        <p>
+          This, said Theuth, will make the Egyptians wiser and give them better
+          memories; it is a specific both for the memory and for the wit. Thamus
+          replied: O most ingenious Theuth, the parent or inventor of an art is
+          not always the best judge of the utility or inutility of his own
+          inventions to the users of them. And in this instance, you who are the
+          father of letters, from a paternal love of your own children have been
+          led to attribute to them a quality which they cannot have; for this
+          discovery of yours will create forgetfulness in the learners&#39;
+          souls, because they will not use their memories; they will trust to
+          the external written characters and not remember of themselves. The
+          specific which you have discovered is an aid not to memory, but to
+          reminiscence, and you give your disciples not truth, but only the
+          semblance of truth; they will be hearers of many things and will have
+          learned nothing; they will appear to be omniscient and will generally
+          know nothing; they will be tiresome company, having the show of wisdom
+          without the reality. <br /><span class="attr"
+            >--Socrates recounting the gift of letters offered by Ammon</span
+          >
+        </p>
+      </blockquote>
+      <iframe
+        class="center"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/qTmPrVhdtks?si=8Z9CK1dP1vPdgcQv"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#artificial-intelligence">Artificial Intelligence</a>
+            <ul>
+              <li>
+                <a href="#types-of-ai">Types of AI</a>
+                <ul>
+                  <li>
+                    <a href="#expert-systems">Expert Systems</a>
+                    <ul>
+                      <li>
+                        <a href="#artificial-neural-networks"
+                          >Artificial Neural Networks</a
+                        >
+                        <ul>
+                          <li>
+                            <a href="#single-layer-perceptron"
+                              >Single layer perceptron</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#potential-entrants-to-ai"
+                      >Potential Entrants to AI</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#staying-current-on-innovation"
+                  >Staying Current on Innovation</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="artificial-intelligence">Artificial Intelligence</h1>
+      <!-- TODO: split into several pages -->
+
+      <p>These notes are a mess, as I&#39;m currently porting them from:</p>
+      <p>
+        <a
+          href="https://docs.google.com/document/d/1ctlNbZHVTEDOqJWp9rlHQWI1H_RKuFs8A7oxcxTqUA8/edit?usp=sharing"
+          >https://docs.google.com/document/d/1ctlNbZHVTEDOqJWp9rlHQWI1H_RKuFs8A7oxcxTqUA8/edit?usp=sharing</a
+        >
+      </p>
+      <p>Not all info is copied over.</p>
+      <p><strong>See also:</strong></p>
+      <ul>
+        <li>
+          demos on git
+          <ul>
+            <li>Python NNs</li>
+            <li>OCR</li>
+            <li>k-means clustering</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Other topics to discuss:</strong></p>
+      <ul>
+        <li>How to encode inputs</li>
+        <li>
+          Where is AI being used
+          <ul>
+            <li>Medical imaging</li>
+            <li>Pharmaceutical discovery</li>
+            <li>Self-driving cars</li>
+            <li>Marketing</li>
+            <li>Precision agriculture</li>
+            <li>...</li>
+          </ul>
+        </li>
+        <li>
+          LLMs
+          <ul>
+            <li>The &quot;old&quot; way</li>
+            <li>
+              Attention mechanisms (QKV puts words in context and assigns
+              weights)
+            </li>
+          </ul>
+        </li>
+        <li>
+          Ethical issues
+          <ul>
+            <li>
+              How does training data affect the model?
+              <ul>
+                <li>Who is labeling?</li>
+                <li>
+                  How representative is the data of the population? Try making
+                  an image of &quot;successful businessman sipping a cocktail
+                  while riding a rodeo bull&quot;...
+                </li>
+              </ul>
+            </li>
+            <li>Open vs closed source</li>
+            <li>
+              Who owns the training data? Can you train from artists&#39; or
+              researchers&#39; work?
+            </li>
+            <li>Where does the data &quot;live&quot;?</li>
+            <li>
+              Limits to AI (case study of facial recognition used in hiring)
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="types-of-ai">Types of AI</h2>
+      <h3 id="expert-systems">Expert Systems</h3>
+      <p>Simulate human intelligence...</p>
+      <ul>
+        <li>
+          Are a form of AI.
+          <ul>
+            <li><em>No active learning by machine</em>.</li>
+            <li><em>Rely upon predefined rules</em>.</li>
+          </ul>
+        </li>
+      </ul>
+      <figure>
+        <img
+          src="https://static.javatpoint.com/tutorial/ai/images/expert-systems-in-ai.png"
+          alt=""
+          style="width: 60%; height: auto"
+        />
+      </figure>
+
+      <ul>
+        <li>
+          <strong
+            ><em
+              >Frequent firing of a neuron strengthens the synapse between
+              connected neurons.</em
+            ></strong
+          >
+          <ul>
+            <li>
+              Synaptic distance decreases; &quot;tighter&quot; connection along
+              circuit.
+            </li>
+            <li>Close synapses are more likely to fire together.</li>
+            <li>Aids in memory formation.</li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="artificial-neural-networks">Artificial Neural Networks</h4>
+      <ul>
+        <li>
+          Inputs are called &quot;features&quot; or &quot;parameters&quot;
+        </li>
+        <li>
+          Each layer behaves like a function, transforming the previous layer.
+        </li>
+        <li>
+          Complexity of function that can be learned depends on the architecture
+          that’s used.
+        </li>
+      </ul>
+      <h5 id="single-layer-perceptron">Single layer perceptron</h5>
+      <!-- https://towardsdatascience.com/everything-you-need-to-know-about-neural-networks-and-backpropagation-machine-learning-made-easy-e5285bc2be3a -->
+
+      <ul>
+        <li>
+          What can it compute?
+          <ul>
+            <li>
+              Linear functions - where output groupings (true or false) can be
+              separated by a line.
+            </li>
+            <li>E.g. AND - yes; XOR - no</li>
+          </ul>
+        </li>
+      </ul>
+      <figure>
+        <img
+          src="https://static.packt-cdn.com/products/9781788299879/graphics/2271a103-bcc0-4ea0-acca-0eb3e3c99fbd.png"
+          alt=""
+          style="width: 90%; height: auto"
+        />
+      </figure>
+
+      <h3 id="potential-entrants-to-ai">Potential Entrants to AI</h3>
+      <ul>
+        <li>
+          <strong><em>Barriers to entry</em></strong> = factors that make it
+          difficult for new competitors to enter the market.
+          <ul>
+            <li>
+              Capital
+              <ul>
+                <li>Can&#39;t raise initial funding to start</li>
+              </ul>
+            </li>
+            <li>
+              Expertise
+              <ul>
+                <li>Can&#39;t afford to hire experts</li>
+              </ul>
+            </li>
+            <li>
+              Monopoly
+              <ul>
+                <li>Supply locked</li>
+                <li>Can&#39;t compete with prices</li>
+                <li>Can&#39;t compete with branding</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p class="demo">Case study:</p>
+
+      <p><strong>nVidia and GPU Market</strong></p>
+      <ul>
+        <li><p>Industries scrambling to create/employ AI plan</p></li>
+        <li><p>Huge demand, low supply</p></li>
+        <li><p>Rivalry / competitors in ramp up mode</p></li>
+        <li>
+          <p>Who profits?</p>
+          <ul>
+            <li>Are these profits tenable long term?</li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            Currently, there are linear profits for linear scaling in compute
+          </p>
+        </li>
+        <li><p>Will there be a &quot;compute bust&quot;?</p></li>
+        <li>
+          <p>Responses to need for massive compute power...</p>
+          <ul>
+            <li>Efficient algorithms</li>
+            <li>Compression</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="demo">Case study:</p>
+
+      <p><strong>AI Software and Hardware Architechtures</strong></p>
+      <ul>
+        <li>Started off niche</li>
+        <li>
+          Odd position where &quot;products&quot; are not yet defined;
+          <ul>
+            <li>Exploritory investment</li>
+          </ul>
+        </li>
+        <li>
+          Major tech leaders, e.g. Meta, now open sourcing how to do things
+        </li>
+        <li>
+          How does this influence barrier to entry?
+          <ul>
+            <li>Startups?</li>
+            <li>Good or bad for innovation?</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="staying-current-on-innovation">Staying Current on Innovation</h2>
+      <p>
+        Technical skills must be supplemented with knowledge of current trends
+        and innovations.
+      </p>
+      <ul>
+        <li>
+          <p>
+            MS Build convention, Satya Nadella and others, Microsoft... find
+            something interesting!
+          </p>
+          <ul>
+            <li>
+              <p>
+                <a href="https://news.microsoft.com/build-2023/"
+                  >Microsoft Build 2023</a
+                >
+              </p>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/FaV0tIaWWEg?si=p7Z10SGF9KC5Tkmf"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </li>
+          </ul>
+        </li>
+        <li><p>Andrej Karpathy, Tesla / OpenAI</p></li>
+      </ul>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/bZQun8Y4L2A?si=0hnLcMHB6GZwOzgT"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </body>
+</html>
