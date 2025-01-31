@@ -11,6 +11,8 @@ showBreadcrumb: false
   - [M01: SDLC; Source Control](#m01-sdlc-source-control)
     - [Day 1](#day-1)
     - [Day 2](#day-2)
+    - [Day 3](#day-3)
+  - [M02: Software Evolution; Project Management; Project Planning](#m02-software-evolution-project-management-project-planning)
 
 /~
 
@@ -91,10 +93,11 @@ We will still have discussions, but they will not be graded - they will be instr
 - Assignment: Company formation, website, communication policy
 - Groups break out
 
-### Day 2
+### Day 3
 
 - Lecture
 - Assignment: VC Assignment 2
+- Project implementation brainstorming / planning
 
 ## M02: Software Evolution; Project Management; Project Planning
 
