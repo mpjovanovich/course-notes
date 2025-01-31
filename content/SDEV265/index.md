@@ -56,6 +56,7 @@ Lecture Topics:
 - [Version Control via Git](../common/git_version_control.html?course=SDEV265)
 - [Intro to Software Engineering](software_engineering.html)
 - [Software Development Life Cycle (SDLC)](../SDEV120/sdlc.html?course=SDEV265)
+- [Version Control Strategies](version_control_strategies.html)
 
 <!--
 - [Software Development Life Cycle (SDLC)](../common/sdlc.html?course=SDEV265)
@@ -89,6 +90,11 @@ We will still have discussions, but they will not be graded - they will be instr
 - Lecture
 - Assignment: Company formation, website, communication policy
 - Groups break out
+
+### Day 2
+
+- Lecture
+- Assignment: VC Assignment 2
 
 ## M02: Software Evolution; Project Management; Project Planning
 
