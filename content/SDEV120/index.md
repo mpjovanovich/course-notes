@@ -141,9 +141,7 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 ## Midterm Review
 
-Midterm Study Guide to be posted.
-
-<!-- [Midterm Review](midterm_study_s25.html) -->
+[Midterm Review](midterm_study_s25.html)
 
 ## M06: Intro to Programming
 
