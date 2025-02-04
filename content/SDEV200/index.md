@@ -44,3 +44,9 @@ course: SDEV200
 - [Polymorphism](./polymorphism.html)
 
 - [Exceptions](./exceptions.html)
+
+...
+
+- [Singly Linked List](./singly_linked_list.html)
+
+- [Doubly Linked List](./doubly_linked_list.html)
