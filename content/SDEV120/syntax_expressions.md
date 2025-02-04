@@ -14,7 +14,6 @@ course: SDEV120
     - [Comparison Operators in Python](#comparison-operators-in-python)
     - [Logical Operators in Python](#logical-operators-in-python)
   - [Expressions](#expressions)
-  - [Statements](#statements)
 
 /~
 
@@ -28,15 +27,17 @@ In this lecture, we'll explore how to build a programming language from the grou
 
 ### Natural Language Syntax
 
-English has its own set of rules.
+English has its own set of rules: Capitalization, punctuation, sentence structure, etc.
 
 ~.focusContent.example
 
-"I went to the store last Saturday."
+**Good English:**
 
-Expressions: "(I) (went) (to the store) (last Saturday)."
+"I went to the store."
 
-How many ways can we rearrange the words to form a gramatically valid sentence?
+**Bad English:**
+
+"\*went STore!! (tothe) saturday I,"
 
 /~
 
@@ -97,7 +98,7 @@ A comparison always returns a boolean value, either `True` or `False`.
 | >=       | Greater than or equal to |
 
 ```python
-# Comparing two literals
+# Comparing two literals in Python
 print(5 == 5) # True
 print(5 != 5) # False
 ```
@@ -120,20 +121,21 @@ print( not True ) # False
 
 Expressions are combinations of literals, variables, and operators that evaluate to a value.
 
-They **return** something.
-
 ```python
 # Returns 2
 3 - 1
 
+# Returns 1 (single value can be an expression)
+1
+
 # Returns value of x + value of y
 x + y
 
-# Returns True if x is equal to y, False if not
-x == y
+# Returns True if x is greater than 4, False if not
+x > 4
 ```
 
-## Statements
+<!-- ## Statements
 
 Statements are also combinations of literals, variables, and operators.
 
@@ -150,4 +152,4 @@ if x > y:
 
     # Calls a function
     print('x is greater than y')
-```
+``` -->
