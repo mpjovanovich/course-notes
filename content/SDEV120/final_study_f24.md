@@ -23,10 +23,56 @@ course: SDEV120
 
 /~
 
-### M07: Logic Gates and Circuits
+### M02: Intro to Programming
 
-- Given a circuit diagram (image of a logicly diagram), determine the output - is the light on or off given some  on / off condition for the inputs.
-- What is the computer clock used for?... Synchronizing instruction execution and data transfer among components of the computer.
+#### Coding Environments
+
+- How is an **IDE** different from a **text editor**?
+- What does it mean to **debug** code?
+- What is a **debugger**? This is more specific than the concept of debugging. It's a tool that helps you debug code, typically by setting **breakpoints** and stepping through code.
+
+#### Input, Output, and Comments in Python
+
+- Know what code comments are used for in general
+- Know how to write comments in Python
+- Know how to use the `input()` function
+- Know how to use the `print()` function
+
+#### Variables and Constants
+
+- What is a **variable**?
+- What is a **constant**?
+- What naming conventions should you follow for variables and constants?
+  - **Camel Case**, **Pascal Case**, **snake case** / **underscore case**
+  - Best practices for descriptive variable names (which of these names is better...)
+- Know the words **declare**, **initialize**, and **assign** in the context of variables
+
+#### Data Types
+
+- Given some variable value, match it to the correct data type
+
+### M05: Selection Structures
+
+- Single vs dual alternative decisions; what is the difference?
+- Is an "else" condition (dual alternative) always necessary?
+- When do we hit an "else" condition?
+- Given a decision (Python or flowchart), determine what will print.
+- _You do not need to know fallthrough decisions, "elif"_
+
+### M06: Loops and Iteration
+
+- Why use loops?
+- What is an **iteration**?
+- What does it mean to **increment** or **decrement** a value?
+- What is an **infinite loop**? Given some snippet of code, determine if it will run forever.
+- What is an **off-by-one error**? Given some snippet of code, determine what needs to go in the loop condition to get the desired output.
+
+### Decisions and Loops
+
+- What is **nested** structure?
+  - Given a nested decision (Python or flowchart), determine what will print.
+  - Given a nested loop (Python or flowchart), determine what will print.
+  - In a nested loop know terminology for **outer loop** and **inner loop**.
 
 ### M08: Data Representation and Encoding
 
@@ -101,8 +147,8 @@ course: SDEV120
 #### Evolution of Programming
 
 - Coding evolution
-    - First fen = machine code = binary
-    - Second gen = assembly = processor specific instruction sets
-    - Third gen = compiled and interpreted code = more human readable (e.g. Python)
+  - First fen = machine code = binary
+  - Second gen = assembly = processor specific instruction sets
+  - Third gen = compiled and interpreted code = more human readable (e.g. Python)
 - The purpose of compiling or interpreting code is to...
 - Name five programming languages.

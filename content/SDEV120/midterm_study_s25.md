@@ -36,7 +36,7 @@ Most missed topics, F24:
 - Know the symbols
 - Given a flowchart - follow it and determine the output
 
-### M03: Boolean Algebra
+### M02: Boolean Algebra
 
 #### Terms
 
@@ -66,7 +66,7 @@ Most missed topics, F24:
 - Modulo operator: be able to solve basic problems (5 % 2 = 1, 7 % 10 = 7)
 - Decision trees: given some tree and a set of inputs, be able to determine the leaf node that is reached
 
-### M04: Functional Arithmetic and Expression Parsing
+### M03: Functional Arithmetic and Expression Parsing
 
 #### Terms
 
@@ -101,7 +101,16 @@ Be able to evaluate:
 - Functions with multiple arguments, e.g. f(x, y)
 - Functions with boolean logic, e.g. f(x, y, z) = x AND y OR z
 
-### M0X: System Modeling
+### M04: Logic Gates and Circuits
+
+- Given a circuit diagram (image of a logicly diagram), determine the output - is the light on or off given some on / off condition for the inputs.
+- What is the computer clock used for?... Synchronizing instruction execution and data transfer among components of the computer.
+
+### M05: System Modeling
+
+#### SDLC
+
+...
 
 #### UML
 
