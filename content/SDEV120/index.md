@@ -26,6 +26,13 @@ showBreadcrumb: false
 
 # SDEV120
 
+<figure>
+ <img src="https://uploads0.wikiart.org/images/rene-magritte/the-fair-captive-1947(1).jpg" alt="" style="width: 80%;height: auto;">
+ <figcaption>
+  <span class="attr">--Magritte, The Fair Captive (1947)</span>
+ </figcaption>
+</figure>
+
 <!-- ## Announcements
 
 - Walkthrough - first "Step Into Python" assignment. Common issues:

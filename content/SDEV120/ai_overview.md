@@ -2,10 +2,12 @@
 title: Overview of AI
 ---
 
-> This, said Theuth, will make the Egyptians wiser and give them better memories; it is a specific both for the memory and for the wit. Thamus replied: O most ingenious Theuth, the parent or inventor of an art is not always the best judge of the utility or inutility of his own inventions to the users of them. And in this instance, you who are the father of letters, from a paternal love of your own children have been led to attribute to them a quality which they cannot have; for this discovery of yours will create forgetfulness in the learners' souls, because they will not use their memories; they will trust to the external written characters and not remember of themselves. The specific which you have discovered is an aid not to memory, but to reminiscence, and you give your disciples not truth, but only the semblance of truth; they will be hearers of many things and will have learned nothing; they will appear to be omniscient and will generally know nothing; they will be tiresome company, having the show of wisdom without the reality. \
-> <span class="attr">--Socrates recounting the gift of letters offered by Ammon</span>
-
-<iframe class="center" width="560" height="315" src="https://www.youtube.com/embed/qTmPrVhdtks?si=8Z9CK1dP1vPdgcQv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<figure>
+ <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg" alt="" style="">
+ <figcaption>
+  <span class="attr">--Magritte, The Treachery of Images ("This is not a pipe")</span>
+ </figcaption>
+</figure>
 
 ~.toc
 
