@@ -24,7 +24,7 @@ $table-margin-x: 2.5rem;
 
 // Custom variables
 $header-height: 3.5rem;
-$toc-width: 300px;
+$toc-width: 420px;
 
 // Import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
@@ -257,6 +257,7 @@ pre {
   border: 1px solid $gray-200;
   padding: 1rem;
   padding-top: 0;
+  font-size: $font-size-base * 0.8;
   overflow-y: auto;
   scrollbar-width: none;
   &::-webkit-scrollbar {
