@@ -103,6 +103,7 @@ We will still have discussions, but they will not be graded - they will be instr
 
 Lecture Topics:
 
+- [Software Evolution](software_evolution.html)
 - [Configuration Management](configuration_management.html)
 
 ### Day 1
