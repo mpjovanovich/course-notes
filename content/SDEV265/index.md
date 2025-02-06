@@ -105,12 +105,12 @@ Lecture Topics:
 
 - [Configuration Management](configuration_management.html)
 
-<!-- - [Git - Beyond the Basics](git_advanced.html) -->
+### Day 1
 
 ...
 
 - Lecture
-- Assignment: VC Assignment 2
+- Assignment: System Component Diagram
 
 <!--
 
