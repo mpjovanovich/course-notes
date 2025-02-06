@@ -45,8 +45,18 @@ course: SDEV200
 
 - [Exceptions](./exceptions.html)
 
+## Module 03
+
 ...
+
+## Module 04
 
 - [Singly Linked List](./singly_linked_list.html)
 
 - [Doubly Linked List](./doubly_linked_list.html)
+
+- [Paths, Files, and Directories](./paths_files_directories.html)
+
+- [Reading and Writing Files](./reading_writing_files.html)
+
+- [Binary Files and File Streams](./binary_files_streams.html)
