@@ -13,6 +13,7 @@ showBreadcrumb: false
     - [Day 2](#day-2)
     - [Day 3](#day-3)
   - [M02: Software Evolution; Project Management; Project Planning](#m02-software-evolution-project-management-project-planning)
+    - [Day 1](#day-1-1)
 
 /~
 
@@ -105,53 +106,19 @@ Lecture Topics:
 
 - [Software Evolution](software_evolution.html)
 - [Configuration Management](configuration_management.html)
+- [Feasibility](feasibility.html)
+- [Feature Scoping and Analysis](feature_scoping_analysis.html)
 
 ### Day 1
 
 ...
 
 - Lecture
+- [Discussion: Prioritizating Requirements](discussions/prioritization_frameworks.html)
 - Assignment: System Component Diagram
 
 <!--
 
-## M02: Software Evolution; Project Management; Project Planning
-
-### Day 3
-
-Lecture:
-
-- [Configuration Management](configuration_management.html)
-- [Git - Beyond the Basics](git_advanced.html)
-
-Intro to Assignments:
-
-- VC Assignment 2
-- Company formation assignment
-
-### Day 4
-
-Activities:
-
-**Guest Speaker: Tactile Engineering**
-
-Lecture:
-
-- Software Evolution (ch 9.1-9.3) (TODO: transfer from SDEV_265_M02_W1)
-
-### Day 5
-
-Lecture:
-
-https://docs.google.com/document/d/1B56TB159UEySnExPDaq1nnYiV0qKAXRUfZKbcCRXtRU/edit?usp=sharing
-
-- Risk Managment
-- People and Teams
-- Project Planning
-
-Intro to Assignments:
-
-- Resource Selection Assignment
 
 ## M03: Requirements Engineering; Agile Development
 

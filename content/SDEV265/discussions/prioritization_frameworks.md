@@ -1,8 +1,8 @@
-# Categorization Analysis
+# Prioritization Frameworks
 
 ## Discussion
 
-In the following will look at categorical and hybrid quantitative / categorical tools that may be used in the decision making process for requirements.
+In the following will look at categorical and hybrid quantitative / categorical tools that may be used to prioritize requirements.
 
 ### Part 1:
 
