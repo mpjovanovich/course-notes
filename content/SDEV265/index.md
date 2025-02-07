@@ -115,6 +115,8 @@ Lecture Topics:
 
 - Lecture
 - [Discussion: Prioritizating Requirements](discussions/prioritization_frameworks.html)
+  - 30(?) minute recess to do some information gathering
+  - Come back and discuss
 - Assignment: System Component Diagram
 
 <!--
