@@ -24,6 +24,8 @@ course: SDEV120
 
 A **tree structure** is a data structure that represents a hierarchy of elements. They are used in many areas of computer science.
 
+In the previous lecture we discussed expressions. Computers need an algorithm to evaluate expressions. One way to do this is with a tree structure.
+
 ### Tree Terminology
 
 - **Node**: Any single element in a tree.
@@ -38,7 +40,7 @@ There are many algorithms for determining the order in which to visit nodes in a
 
 We will use a **post-order** traversal for syntax trees:
 
-```
+<!-- ```
 Let VISIT(node) be:
 
 BEGIN
@@ -59,7 +61,7 @@ BEGIN
 END
 
 VISIT(root)
-```
+``` -->
 
 ![post-order tree traversal](https://files.codingninjas.in/article_images/iterative-postorder-traversal-of-binary-tree-0-1635320121.jpg)
 

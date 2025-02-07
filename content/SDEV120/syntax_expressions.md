@@ -54,7 +54,7 @@ x = 5 # Synactically correct
 
 /~
 
-## Literals and Variables
+<!-- ## Literals and Variables
 
 The most basic components of code are literals and variables.
 
@@ -68,7 +68,7 @@ print("hello")
 # Assign a string literal to a variable, then use it to say "hello":
 greeting = "hello"
 print(greeting)
-```
+``` -->
 
 ## Operators
 
@@ -134,22 +134,3 @@ x + y
 # Returns True if x is greater than 4, False if not
 x > 4
 ```
-
-<!-- ## Statements
-
-Statements are also combinations of literals, variables, and operators.
-
-They **do** something.
-
-```python
-# Assigns value to x
-x = 9
-# Assigns value y
-y = 3
-
-# Branches based on the comparison of x and y
-if x > y:
-
-    # Calls a function
-    print('x is greater than y')
-``` -->
