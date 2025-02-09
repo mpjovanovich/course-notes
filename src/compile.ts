@@ -27,7 +27,7 @@ async function compileMarkdownToHtml(
 ): Promise<void> {
   let markdown = await fs.readFile(markdownFilePath, "utf-8");
   let { frontmatter, content } = extractFrontmatter(markdown);
-  let html = await parseDotmark(content, true, true);
+  let html = await parseDotmark(content);
   html = getSiteHtml(html, outputFileDepth, frontmatter);
   html = await prettier.format(html, prettierOptions);
   await fs.writeFile(outputFilePath, html);

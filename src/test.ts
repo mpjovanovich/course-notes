@@ -34,7 +34,7 @@ compileMarkdownToHtml(markdownFilePath, outputFilePath);
 
 // One off strings for testing
 async function compileMarkdownStringToHtml(markdown: string): Promise<void> {
-  let html = await parseDotmark(markdown, true, true);
+  let html = await parseDotmark(markdown);
   console.log(html);
 }
 
@@ -45,7 +45,7 @@ async function compileMarkdownToHtml(
 ): Promise<void> {
   let markdown = await fs.readFile(markdownFilePath, "utf-8");
   let { frontmatter, content } = extractFrontmatter(markdown);
-  let html = await parseDotmark(content, true, true);
+  let html = await parseDotmark(content);
   const prettierOptions = {
     parser: "html",
     printWidth: 80,
