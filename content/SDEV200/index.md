@@ -60,3 +60,11 @@ course: SDEV200
 - [Reading and Writing Files](./reading_writing_files.html)
 
 - [Binary Files and File Streams](./binary_files_streams.html)
+
+## Module 05
+
+- [JavaFX Installation](./javafx_install.html)
+
+<!-- - [JavaFX Basics](./javafx_basics.html) -->
+
+<!-- - [JavaFX Event Handling](./javafx_event_handling.html) -->
