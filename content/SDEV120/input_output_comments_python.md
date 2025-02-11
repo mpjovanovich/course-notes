@@ -11,11 +11,11 @@ course: SDEV120
 
 /~
 
+# Code Comments
+
 <figure>
   <img src="https://imgs.xkcd.com/comics/code_quality_2.png" alt="" style="width: 100%;height: auto;">
 </figure>
-
-# Code Comments
 
 **Comments** are lines of code that are not actually executed by the computer. They may be used to:
 

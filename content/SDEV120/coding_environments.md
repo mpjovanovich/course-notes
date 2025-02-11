@@ -16,11 +16,11 @@ course: SDEV120
 
 /~
 
+# Coding Environments
+
 <figure>
   <img src="https://imgs.xkcd.com/comics/code_quality.png" alt="" style="width: 100%;height: auto;">
 </figure>
-
-# Coding Environments
 
 A **text editor** is a type of program used for editing plain text files.
 

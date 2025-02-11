@@ -13,11 +13,11 @@ course: SDEV120
 
 /~
 
+# Variables
+
 <figure>
   <img src="https://imgs.xkcd.com/comics/code_quality_3.png" alt="" style="width: 100%;height: auto;">
 </figure>
-
-# Variables
 
 - A **variable** is a named storage location in a computer's memory.
 - Variable name is used to reference its value.
