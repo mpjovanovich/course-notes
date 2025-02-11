@@ -11,6 +11,7 @@ course: SDEV200
   - [Basic Controls](#basic-controls)
   - [Styling](#styling)
   - [Example](#example)
+  - [Nesting Controls](#nesting-controls)
 
 /~
 
@@ -107,4 +108,33 @@ public class Main extends Application {
         launch(args);
     }
 }
+```
+
+## Nesting Controls
+
+Controls can be nested within other controls. The controls form a hierarchy, starting with the root node.
+
+We can utilize this to create more complex layouts.
+
+```java
+// Create four label controls
+Label lblFirst = new Label("First");
+Label lblSecond = new Label("Second");
+Label lblThird = new Label("Third");
+Label lblFourth = new Label("Fourth");
+
+// Add the labels to the HBox (to make a row)
+hbox.getChildren().add(lblFirst);
+hbox.getChildren().add(lblSecond);
+
+// Create a HBox container
+HBox hbox = new HBox(10);
+hbox.getChildren().add(lblSecond);
+hbox.getChildren().add(lblThird);
+
+// Create a VBox container
+VBox vbox = new VBox(10);
+vbox.getChildren().add(lblFirst);
+vbox.getChildren().add(hbox);
+vbox.getChildren().add(lblFourth);
 ```
