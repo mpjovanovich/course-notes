@@ -65,6 +65,6 @@ course: SDEV200
 
 - [JavaFX Installation](./javafx_install.html)
 
-<!-- - [JavaFX Basics](./javafx_basics.html) -->
+- [JavaFX Layout and Controls](./javafx_layout_controls.html)
 
-<!-- - [JavaFX Event Handling](./javafx_event_handling.html) -->
+- [JavaFX Event Handling](./javafx_event_handling.html)
