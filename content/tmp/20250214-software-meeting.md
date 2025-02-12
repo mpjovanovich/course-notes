@@ -4,7 +4,7 @@ title: Software Meeting, 2025-02-14
 
 ~.toc
 
-- [Software Development Program Review - Spring 2025](#software-development-program-review---spring-2025)
+- [Software Development Program Review, 2025-02-14](#software-development-program-review-2025-02-14)
   - [Part 1: Program Implementation Review](#part-1-program-implementation-review)
     - [Course Pacing and Scheduling](#course-pacing-and-scheduling)
     - [Teaching and Assessment Methods](#teaching-and-assessment-methods)
@@ -14,7 +14,7 @@ title: Software Meeting, 2025-02-14
 
 /~
 
-# Software Development Program Review - Spring 2025
+# Software Development Program Review, 2025-02-14
 
 ## Part 1: Program Implementation Review
 
@@ -87,9 +87,9 @@ _Suggestion:_ For assignments in the format: "Submit a link to your GitHub repo"
 
 **Vision:** Apply software engineering principles to course development and delivery
 
-~.focusContent.example
-
 ### Proposed Modern Workflow
+
+~.focusContent.example
 
 1. **Continuous Feedback**
 
