@@ -81,6 +81,7 @@ _Suggestion:_ For assignments in the format: "Submit a link to your GitHub repo"
 
 **Current Challenges:**
 
+- Feedback largely based on "group of experts" review
 - Feedback systems are reactive and delayed
 - Quality control is manual and inconsistent
 - Course improvements are disconnected from real-time student experience
@@ -103,6 +104,6 @@ _Suggestion:_ For assignments in the format: "Submit a link to your GitHub repo"
    - Small teams with authority to make limited changes
    - Quality control checkpoints (integration test - someone other than author must complete assignment, another must grade)
    - 8-week improvement cycles
-   - Case for major revision is more tightly coupled with feedback, loosely coupled with "group of experts" review.
+   - Case for major revision is more tightly coupled with feedback.
 
 /~
