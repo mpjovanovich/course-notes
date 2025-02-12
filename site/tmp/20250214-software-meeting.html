@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Software Meeting, 2025-02-14</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#software-development-program-review-2025-02-14"
+              >Software Development Program Review, 2025-02-14</a
+            >
+            <ul>
+              <li>
+                <a href="#part-1-program-implementation-review"
+                  >Part 1: Program Implementation Review</a
+                >
+                <ul>
+                  <li>
+                    <a href="#course-pacing-and-scheduling"
+                      >Course Pacing and Scheduling</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#teaching-and-assessment-methods"
+                      >Teaching and Assessment Methods</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#part-2-modernization-proposal"
+                  >Part 2: Modernization Proposal</a
+                >
+                <ul>
+                  <li>
+                    <a href="#the-case-for-change">The Case for Change</a>
+                  </li>
+                  <li>
+                    <a href="#proposed-modern-workflow"
+                      >Proposed Modern Workflow</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="software-development-program-review-2025-02-14">
+        Software Development Program Review, 2025-02-14
+      </h1>
+      <h2 id="part-1-program-implementation-review">
+        Part 1: Program Implementation Review
+      </h2>
+      <h3 id="course-pacing-and-scheduling">Course Pacing and Scheduling</h3>
+      <p>
+        <strong>Discussion Focus:</strong> Understanding cross-campus approaches
+        to manage:
+      </p>
+      <ul>
+        <li>Enrollment volatility</li>
+        <li>Resource allocation</li>
+        <li>Program tracks</li>
+      </ul>
+      <p>Reference Materials:</p>
+      <ul>
+        <li>
+          <a
+            href="https://catalog.ivytech.edu/preview_program.php?catoid=9&poid=7887&returnto=1110"
+            >Software Development AAS Requirements</a
+          >
+        </li>
+        <li>
+          <a href="https://mpjovanovich.github.io/ivy-sdev-aas-walkthrough/"
+            >Lafayette Scheduling Implementation</a
+          >
+        </li>
+      </ul>
+      <p><strong>Lafayette Context:</strong></p>
+      <ul>
+        <li>Currently offering AAS in Software Development via TC in web</li>
+        <li>Single track implementation due to faculty bandwidth</li>
+        <li>Potential impacts from cross-campus enrollment</li>
+      </ul>
+      <p><strong>Open Discussion Points:</strong></p>
+      <ol>
+        <li>Track formalization approaches across campuses</li>
+        <li>Pre/post-pandemic expectations for program offerings</li>
+        <li>Status of 1-credit hour requirement (accreditation, enrollment)</li>
+        <li>Cross-campus enrollment coordination</li>
+        <li>Resource allocation strategies</li>
+        <li>Course offering conflicts (e.g., DBMS 110 impact)</li>
+      </ol>
+      <h3 id="teaching-and-assessment-methods">
+        Teaching and Assessment Methods
+      </h3>
+      <p><strong>Discussion Focus:</strong> Sharing effective practices for:</p>
+      <ul>
+        <li>Virtual vs. in-person delivery</li>
+        <li>Lab implementation</li>
+        <li>Academic integrity</li>
+      </ul>
+      <p><strong>Topics for Exchange:</strong></p>
+      <ol>
+        <li>In-person vs. LA delivery mix</li>
+        <li>Student return-to-classroom initiatives</li>
+        <li>Performance data: in-person vs. virtual performance gap for LA</li>
+        <li>Lab time utilization strategies</li>
+        <li>Current academic integrity approaches</li>
+        <li>Experience with tools (ZyLabs, etc.)</li>
+      </ol>
+      <div class="focusContent lookout">
+        <p><strong>GitHub Submission Concerns:</strong></p>
+        <ul>
+          <li>
+            In many course shells students currently forced to expose public
+            repositories, not understanding the ramifications.
+          </li>
+          <li>
+            PRs cannot be used to provide instructor feedback for public
+            repositories.
+          </li>
+          <li>URL submission is messy and error prone.</li>
+        </ul>
+        <p>
+          <em>Suggestion:</em> For assignments in the format: &quot;Submit a
+          link to your GitHub repo&quot;, switch to GitHub Classrooms.
+        </p>
+      </div>
+
+      <h2 id="part-2-modernization-proposal">Part 2: Modernization Proposal</h2>
+      <h3 id="the-case-for-change">The Case for Change</h3>
+      <p><strong>Current Challenges:</strong></p>
+      <ul>
+        <li>Feedback largely based on &quot;group of experts&quot; review</li>
+        <li>Feedback systems are reactive and delayed</li>
+        <li>Quality control is manual and inconsistent</li>
+        <li>
+          Course improvements are disconnected from real-time student experience
+        </li>
+      </ul>
+      <p>
+        <strong>Vision:</strong> Apply software engineering principles to course
+        development and delivery
+      </p>
+      <h3 id="proposed-modern-workflow">Proposed Modern Workflow</h3>
+      <div class="focusContent example">
+        <ol>
+          <li>
+            <p><strong>Continuous Feedback</strong></p>
+            <ul>
+              <li>
+                GitHub issues tracking (or similar) from students and
+                instructors
+              </li>
+              <li>Direct coupling between feedback and course iterations</li>
+              <li>Transparent change management and auditing trail</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>Quality Control Pipeline</strong></p>
+            <ul>
+              <li>
+                Version-controlled course content where possible (e.g. GitHub
+                organization)
+              </li>
+              <li>Small teams with authority to make limited changes</li>
+              <li>
+                Quality control checkpoints (integration test - someone other
+                than author must complete assignment, another must grade)
+              </li>
+              <li>8-week improvement cycles</li>
+              <li>
+                Case for major revision is more tightly coupled with feedback.
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>
