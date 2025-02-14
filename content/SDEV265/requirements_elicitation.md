@@ -3,6 +3,8 @@ title: Requirements Elicitation
 course: SDEV265
 ---
 
+~.toc
+
 - [Requirements Elicitation](#requirements-elicitation)
   - [Techniques](#techniques)
     - [Interview](#interview)
@@ -11,6 +13,8 @@ course: SDEV265
     - [Stakeholder Communication](#stakeholder-communication)
     - [Environmental Factors](#environmental-factors)
     - [Domain Knowledge](#domain-knowledge)
+
+/~
 
 # Requirements Elicitation
 
@@ -74,6 +78,7 @@ Software engineers must tactfully:
   - Don't understand invisible **technical debt**.
 
 - Incomplete information
+
   - Only from one party / primary source
   - Only from one division
   - Only from one level of management (not seeing how it works "on the ground")
@@ -99,9 +104,9 @@ Incomplete knowledge of the domain by software engineers can lead to misundersto
 - Acronyms
 - Specialized terms
 
-<p class="demo">Case Study:</p>
+~.focusContent.example
 
-**"What the heck does this 'locked' checkbox mean?"**
+Domain driven modeling: **"What the heck does this 'locked' checkbox mean?"**
 
 _Problem:_
 
@@ -128,3 +133,5 @@ _Issues:_
 - How go get requirements from multiple parties that use different terminology?
 - How to sell same software to multiple parties that use different terminology?
 - How to train and onboard engineers, analysts, and devs to understand the domain?
+
+/~
