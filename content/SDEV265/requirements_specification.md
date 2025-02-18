@@ -3,6 +3,8 @@ title: Requirements Specification
 course: SDEV265
 ---
 
+~.toc
+
 - [Requirements Sepecification](#requirements-sepecification)
   - [User Requirements](#user-requirements)
   - [System Requirements (Functional Specifications)](#system-requirements-functional-specifications)
@@ -16,6 +18,8 @@ course: SDEV265
     - [External Requirements](#external-requirements)
     - [Using Quantitative Metrics](#using-quantitative-metrics)
   - [Business Rules](#business-rules)
+
+/~
 
 # Requirements Sepecification
 
@@ -52,7 +56,6 @@ _Example:_
   - **shall**: mandatory
   - **should**: recommended
   - **may**: optional
-  - **will**: facts or declarations
 
 ## Natural Language vs Structured Formats
 
@@ -108,5 +111,5 @@ _Reference:_
 
 You may hear, "The company has a business rule that [...]".
 
-- "Transactions of over $10,000 must be audited by two persons."
+- "Transactions of over $10,000 must be approved manually."
 - "Invoice totals must appear on the front page of the invoice."

@@ -3,12 +3,16 @@ title: Requirements Validation
 course: SDEV265
 ---
 
+~.toc
+
 - [Requirements Validation](#requirements-validation)
   - [Why validate?](#why-validate)
   - [How is it done?](#how-is-it-done)
   - [Agile Validation](#agile-validation)
   - [Requirements Management](#requirements-management)
     - [Software Tooling](#software-tooling)
+
+/~
 
 # Requirements Validation
 

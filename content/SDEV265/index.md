@@ -111,40 +111,37 @@ Lecture Topics:
 
 ### Day 1
 
-...
-
 - Lecture
 - [Discussion: Prioritizating Requirements](discussions/prioritization_frameworks.html)
   - 30(?) minute recess to do some information gathering
   - Come back and discuss
 - Assignment: System Component Diagram
 
-<!--
-
-
 ## M03: Requirements Engineering; Agile Development
 
-### Day 6
+Lecture topics:
 
-Lecture:
+- [Requirements Elicitation](requirements_elicitation.html)
+- [Requirements Specification](requirements_specification.html)
+- [Requirements Validation](requirements_validation.html)
+- Agile Development Tools
 
-- [Feasibility](feasibility.html)
+### Day 1
+
+- Lecture
+- Client requirements meeting
+
+### Day 2
+
+Walkthrough: Agile Development Tools, GH Projects
 
 Intro to Assignments:
 
-- Iteration 1 Requirements Documentation
+- Iter 1 - Requirements documentation
 
-### Day 7
+<!--
 
-Lecture:
 
-- [Requirements Elicitation](requirements_elicitation.html)
-
-- [Requirements Specification](requirements_specification.html)
-
-  - We covered this last time
-
-- [Requirements Validation](requirements_validation.html)
 
 Intro to Assignments:
 
@@ -173,6 +170,8 @@ Intro to Assignments:
 - Iteration 1 Release
 
 ### Day 10
+
+TODO: Test Driven Development
 
 Intro to Assignments:
 
