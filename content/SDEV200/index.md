@@ -68,3 +68,9 @@ course: SDEV200
 - [JavaFX Layout and Controls](./javafx_layout_controls.html)
 
 - [JavaFX Event Handling](./javafx_event_handling.html)
+
+## Module 0X
+
+<!-- Build Tools and Dependency Management -->
+
+- [Building Java Projects with Maven](./maven.html)
