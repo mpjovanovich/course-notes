@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV200: Polymorphism</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#polymorphism">Polymorphism</a>
+            <ul>
+              <li><a href="#polymorphism-example">Polymorphism Example</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="polymorphism">Polymorphism</h1>
+      <p>
+        In the previous notes, we saw how we can use inheritance or interfaces
+        to define a contract for a method that must be implemented by a subclass
+        or implementing class.
+      </p>
+      <p>
+        <strong>Polymorphism</strong> allows us to treat different types of
+        objects in a similar way if they share a common parent class or
+        interface.
+      </p>
+      <h2 id="polymorphism-example">Polymorphism Example</h2>
+      <p>Take note of the following:</p>
+      <ul>
+        <li>
+          Any class that implements the <code>Canine</code> interface must
+          implement the <code>getAverageWeight</code> and
+          <code>getContinents</code> methods.
+        </li>
+        <li>
+          The <code>printCanineInfo</code> method will accept any class that
+          implements the <code>Canine</code> interface.
+        </li>
+        <li>
+          The <code>printCanineInfo</code> method works because it
+          &quot;knows&quot; that any <code>Canine</code> will have the two
+          methods on it.
+        </li>
+      </ul>
+      <div class="focusContent example">
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">interface</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Canine</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    double</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> getAverageWeight</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">    String</span><span style="color:#383A42;--shiki-dark:#61AFEF">[] </span><span style="color:#4078F2;--shiki-dark:#61AFEF">getContinents</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> GrayWolf</span><span style="color:#A626A4;--shiki-dark:#C678DD"> implements</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Canine</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> double</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> getAverageWeight</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#986801;--shiki-dark:#D19A66"> 80</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#C18401;--shiki-dark:#E5C07B"> String</span><span style="color:#383A42;--shiki-dark:#61AFEF">[] </span><span style="color:#4078F2;--shiki-dark:#61AFEF">getContinents</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#C18401;--shiki-dark:#E5C07B"> String</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[] { </span><span style="color:#50A14F;--shiki-dark:#98C379">"North America"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> };</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> RedFox</span><span style="color:#A626A4;--shiki-dark:#C678DD"> implements</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Canine</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> double</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> getAverageWeight</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#986801;--shiki-dark:#D19A66"> 20</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#C18401;--shiki-dark:#E5C07B"> String</span><span style="color:#383A42;--shiki-dark:#61AFEF">[] </span><span style="color:#4078F2;--shiki-dark:#61AFEF">getContinents</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#C18401;--shiki-dark:#E5C07B"> String</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[] { </span><span style="color:#50A14F;--shiki-dark:#98C379">"North America"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Europe"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Asia"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> };</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Test</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // This method will work for any class that implements the Canine interface</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> printCanineInfo</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Canine</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> canine</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Average weight: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#E45649;--shiki-dark:#E5C07B"> canine</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getAverageWeight</span><span style="color:#383A42;--shiki-dark:#ABB2BF">());</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Continents: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        for</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#E45649;--shiki-dark:#E06C75"> continent</span><span style="color:#A626A4;--shiki-dark:#C678DD"> :</span><span style="color:#E45649;--shiki-dark:#E5C07B"> canine</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getContinents</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()) {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(continent);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[] </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">args</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        GrayWolf</span><span style="color:#E45649;--shiki-dark:#E06C75"> grayWolf</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> GrayWolf</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        RedFox</span><span style="color:#E45649;--shiki-dark:#E06C75"> redFox</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> RedFox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">        printCanineInfo</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(grayWolf);</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">        printCanineInfo</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(redFox);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      </div>
+    </div>
+  </body>
+</html>

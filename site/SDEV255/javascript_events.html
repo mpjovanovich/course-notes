@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV255: JavaScript - Events</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#events">Events</a>
+          <ul>
+            <li><a href="#intro">Intro</a></li>
+            <li><a href="#common-events">Common Events</a></li>
+            <li>
+              <a href="#listening-for-events">Listening for Events</a>
+              <ul>
+                <li>
+                  <a href="#inline-event-handlers">Inline Event Handlers</a>
+                </li>
+                <li>
+                  <a href="#property-event-handlers">Property Event Handlers</a>
+                </li>
+                <li>
+                  <a href="#addeventlistener-method">AddEventListener Method</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#setting-the-event-handler-function"
+                >Setting the Event Handler Function</a
+              >
+              <ul>
+                <li><a href="#named-functions">Named Functions</a></li>
+                <li><a href="#anonymous-functions">Anonymous Functions</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#domcontentloaded---waiting-for-the-document-to-load"
+                >DOMContentLoaded - Waiting for the Document to Load</a
+              >
+            </li>
+            <li><a href="#the-event-object">The Event Object</a></li>
+            <li><a href="#event-bubbling">Event Bubbling</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="events">Events</h1>
+      <h2 id="intro">Intro</h2>
+      <ul>
+        <li>
+          Events are actions that happen in the browser that can be detected by
+          JavaScript.
+        </li>
+        <li>Events can be used to trigger functions.</li>
+        <li>Events can be attached to elements in the DOM.</li>
+      </ul>
+      <h2 id="common-events">Common Events</h2>
+      <ul>
+        <li>
+          DOMContentLoaded: Fired when the DOM is fully loaded and ready to be
+          manipulated.
+        </li>
+        <li>
+          Unload: Fired when a page is about to be unloaded (e.g., when
+          navigating to a different page).
+        </li>
+        <li>Load: Fired when a resource (e.g., an image) finishes loading.</li>
+        <li>Focus: Triggered when an element receives focus.</li>
+        <li>Blur: Fired when an element loses focus.</li>
+        <li>Click: Fired when an element is clicked.</li>
+        <li>
+          Contextmenu: Fired when the context menu (right-click menu) is
+          requested.
+        </li>
+        <li>Mouseover: Triggered when the mouse pointer enters an element.</li>
+        <li>Mouseout: Fired when the mouse pointer leaves an element.</li>
+        <li>
+          Mouseenter: Similar to mouseover, but doesn&#39;t bubble and
+          doesn&#39;t trigger when entering child elements.
+        </li>
+        <li>
+          Mouseleave: Similar to mouseout, but doesn&#39;t bubble and
+          doesn&#39;t trigger when leaving child elements.
+        </li>
+        <li>Change: Triggered when the value of an input element changes.</li>
+        <li>
+          Input: Fired when an input element&#39;s value changes. Works for
+          various form elements, including text inputs and textareas.
+        </li>
+        <li>Keydown: Fired when a key is pressed down.</li>
+        <li>Keyup: Triggered when a key is released.</li>
+        <li>Keypress: Fired when a key is pressed.</li>
+        <li>Resize: Triggered when the window or an element is resized.</li>
+        <li>Submit: Fired when a form is submitted.</li>
+      </ul>
+      <h2 id="listening-for-events">Listening for Events</h2>
+      <p>
+        An <strong>event listener</strong> or
+        <strong>event handler</strong> (same thing) is a function that is
+        triggered when a specific event happens.
+      </p>
+      <p>
+        A dome node may <strong>register</strong> an event listener, which is
+        then <strong>subscribed</strong> to that event.
+      </p>
+      <h3 id="inline-event-handlers">Inline Event Handlers</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">button</span><span style="color:#986801;--shiki-dark:#D19A66"> onclick</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#4078F2;--shiki-dark:#61AFEF">alert</span><span style="color:#383A42;--shiki-dark:#98C379">(</span><span style="color:#50A14F;--shiki-dark:#98C379">'CLICK!'</span><span style="color:#383A42;--shiki-dark:#98C379">)</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>Click Me&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">button</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span></code></pre>
+      <h3 id="property-event-handlers">Property Event Handlers</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> myButton</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E5C07B"> document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getElementById</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"myButton"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">myButton</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">onclick</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> () </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  alert</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"CLICK!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">};</span></span></code></pre>
+      <h3 id="addeventlistener-method">AddEventListener Method</h3>
+      <p>This is the preferred way to add event listeners.</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> myButton</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E5C07B"> document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getElementById</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"myButton"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">myButton</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">addEventListener</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"click"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, () </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  alert</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"CLICK!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">});</span></span></code></pre>
+      <h2 id="setting-the-event-handler-function">
+        Setting the Event Handler Function
+      </h2>
+      <p>
+        We have a couple of options for setting the event handler function. Both
+        work fine.
+      </p>
+      <h3 id="named-functions">Named Functions</h3>
+      <ul>
+        <li>Predefined function that is called when the event happens.</li>
+        <li>Useful for when the function is used in multiple places.</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> myButton</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E5C07B"> document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getElementById</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"myButton"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">myButton</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">addEventListener</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"click"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#383A42;--shiki-dark:#E06C75">handleClick</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">function</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> handleClick</span><span style="color:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  alert</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"CLICK!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span></code></pre>
+      <h3 id="anonymous-functions">Anonymous Functions</h3>
+      <ul>
+        <li>Function that is defined when the event happens.</li>
+        <li>Useful for when the function is only used in one place.</li>
+        <li>Typically uses <strong>arrow function</strong> syntax.</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> myButton</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E5C07B"> document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getElementById</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"myButton"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">myButton</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">addEventListener</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"click"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, () </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  alert</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"CLICK!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">});</span></span></code></pre>
+      <p>Arrow functions are a shorthand way of defining functions:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Regular function:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">function</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> handleClick</span><span style="color:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  alert</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"CLICK!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Arrow function:</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">() </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  alert</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"CLICK!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Regular function with parameters:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">function</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> handleClick</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">message</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  alert</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">message</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Arrow function with parameters:</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">message</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  alert</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">message</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">};</span></span></code></pre>
+      <h2 id="domcontentloaded---waiting-for-the-document-to-load">
+        DOMContentLoaded - Waiting for the Document to Load
+      </h2>
+      <ul>
+        <li>
+          JavaScript code may execute before the DOM is fully loaded (all HTML
+          elements are in place).
+        </li>
+        <li>
+          If you try to access an element that doesn&#39;t exist, you&#39;ll get
+          an error.
+        </li>
+        <li>
+          This includes adding event listeners to elements that don&#39;t exist
+          yet.
+        </li>
+        <li>
+          The <strong>DOMContentLoaded</strong> event is fired when the DOM is
+          fully loaded and ready to be manipulated.
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">ul</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>Apple&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>Orange&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>Cherry&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">ul</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Try removing the DOMContentLoaded event listener and see what happens.</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">addEventListener</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"DOMContentLoaded"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, () </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  const</span><span style="color:#986801;--shiki-dark:#E5C07B"> colorMapping</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    apple</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> "green"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    cherry</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> "red"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    orange</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> "orange"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  };</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  const</span><span style="color:#986801;--shiki-dark:#E5C07B"> listItems</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E5C07B"> document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getElementsByTagName</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"li"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  for</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> i</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">; </span><span style="color:#383A42;--shiki-dark:#E06C75">i</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> &#x3C;</span><span style="color:#383A42;--shiki-dark:#E5C07B"> listItems</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E06C75">length</span><span style="color:#383A42;--shiki-dark:#ABB2BF">; </span><span style="color:#383A42;--shiki-dark:#E06C75">i</span><span style="color:#0184BC;--shiki-dark:#56B6C2">++</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    const</span><span style="color:#986801;--shiki-dark:#E5C07B"> current_text</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E06C75"> listItems</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#383A42;--shiki-dark:#E06C75">i</span><span style="color:#383A42;--shiki-dark:#ABB2BF">].</span><span style="color:#E45649;--shiki-dark:#E5C07B">textContent</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">toLowerCase</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#383A42;--shiki-dark:#E5C07B">colorMapping</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">hasOwnProperty</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">current_text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)) {</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">      listItems</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#383A42;--shiki-dark:#E06C75">i</span><span style="color:#383A42;--shiki-dark:#ABB2BF">].</span><span style="color:#E45649;--shiki-dark:#E5C07B">style</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E06C75">color</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E06C75"> colorMapping</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#383A42;--shiki-dark:#E06C75">current_text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">];</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">});</span></span></code></pre>
+      <h2 id="the-event-object">The Event Object</h2>
+      <ul>
+        <li>
+          When an event happens, the browser creates an
+          <strong>event object</strong>.
+        </li>
+        <li>The event object contains information about the event.</li>
+        <li>
+          The event object is often named <code>e</code> or
+          <code>event</code> by convention.
+        </li>
+        <li>
+          We can use the <code>e.target</code> property to get the element that
+          triggered the event.
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> myButton1</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E5C07B"> document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getElementById</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"myButton1"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> myButton2</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E5C07B"> document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getElementById</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"myButton2"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">myButton1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">addEventListener</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"click"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#383A42;--shiki-dark:#E06C75">printTarget</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">myButton2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">addEventListener</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"click"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#383A42;--shiki-dark:#E06C75">printTarget</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">function</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> printTarget</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">e</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">  console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E5C07B">e</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E06C75">target</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span></code></pre>
+      <h2 id="event-bubbling">Event Bubbling</h2>
+      <ul>
+        <li>
+          When an event happens on an element, it first runs the handlers on it,
+          then on its parent, then all the way up on other ancestors.
+        </li>
+        <li>This is called <strong>event bubbling</strong>.</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">body</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">h1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>The Title&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">h1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>A paragraph.&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">ul</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>Apple&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>Orange&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>Cherry&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">li</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">ul</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">body</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">addEventListener</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"DOMContentLoaded"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, () </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  const</span><span style="color:#986801;--shiki-dark:#E5C07B"> body</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E5C07B"> document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">querySelector</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"body"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">  body</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">addEventListener</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"click"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, (</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">event</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">    console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Element clicked: "</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#E5C07B"> event</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">target</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E06C75">tagName</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  });</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">});</span></span></code></pre>
+      <p>
+        In this example the event bubbles up from the child elements (of body)
+        to the body element itself. The event handler on the body then runs.
+      </p>
+    </div>
+  </body>
+</html>
