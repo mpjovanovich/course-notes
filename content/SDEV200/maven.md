@@ -72,7 +72,7 @@ This kind of organization is called a **namespace**. A namespace provides a hier
 
 For this class we will always use `com.example.app` as our package name.
 
-~/
+/~
 
 ### pom.xml
 

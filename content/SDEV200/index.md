@@ -3,6 +3,19 @@ title: Home
 course: SDEV200
 ---
 
+~.toc
+
+- [SDEV200](#sdev200)
+  - [Module 01](#module-01)
+  - [Module 02](#module-02)
+  - [Module 03](#module-03)
+  - [Module 04](#module-04)
+  - [Module 05](#module-05)
+  - [Module 0X](#module-0x)
+  - [Mid-term Review of Concepts](#mid-term-review-of-concepts)
+
+/~
+
 # SDEV200
 
 ## Module 01
@@ -71,6 +84,8 @@ course: SDEV200
 
 ## Module 0X
 
-<!-- Build Tools and Dependency Management -->
-
 - [Building Java Projects with Maven](./maven.html)
+
+## Mid-term Review of Concepts
+
+- [Mid-term Review of Concepts](./midterm_concept_review.html)
