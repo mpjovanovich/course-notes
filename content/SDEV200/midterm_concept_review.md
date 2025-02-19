@@ -45,63 +45,10 @@ Review: How to autoformat code
   - Expected results of logical paths through code
   - Error handling
 
-~.focusContent.example
+## Bringing It All Together - Walkthrough
 
-```java
-// Main function to test
-public class GradeCalculator {
-    public static String getLetterGrade(double score) {
-        if (score < 0 || score > 100) {
-            throw new IllegalArgumentException("Score must be between 0 and 100");
-        }
-
-        if (score >= 90) return "A";
-        if (score >= 80) return "B";
-        if (score >= 70) return "C";
-        if (score >= 60) return "D";
-        return "F";
-    }
-
-    // Development tests
-    public static void testGradeCalculator() {
-        // Test normal cases
-        System.out.println("Testing normal grades...");
-        System.out.println("95 should be A: " + getLetterGrade(95));
-        System.out.println("85 should be B: " + getLetterGrade(85));
-        System.out.println("75 should be C: " + getLetterGrade(75));
-        System.out.println("65 should be D: " + getLetterGrade(65));
-        System.out.println("55 should be F: " + getLetterGrade(55));
-
-        // Test boundary cases
-        System.out.println("\nTesting boundary cases...");
-        System.out.println("100 should be A: " + getLetterGrade(100));
-        System.out.println("0 should be F: " + getLetterGrade(0));
-        System.out.println("90 should be A: " + getLetterGrade(90));
-
-        // Test error cases
-        System.out.println("\nTesting error cases...");
-        try {
-            getLetterGrade(-1);
-            System.out.println("ERROR: Should have thrown exception for -1");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Correctly caught negative number");
-        }
-
-        try {
-            getLetterGrade(101);
-            System.out.println("ERROR: Should have thrown exception for 101");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Correctly caught number over 100");
-        }
-    }
-}
-```
-
-/~
-
-## Best Practices by Example
-
-- Walkthrough sln to book exercise 20.11
+- Walkthrough sln to book exercise 20.11 (with tests!)
+  - [Java Developer Testing Examples](https://github.com/mpjovanovich/java-developer-testing-examples)
 
 ## Closing Announcements
 
