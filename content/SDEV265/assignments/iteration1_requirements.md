@@ -5,9 +5,9 @@ course: SDEV265
 
 ## Assignment Description
 
-There are many effective ways to organize and track requirements. In this assignment we will use the _GitHub Project_ software tool to create a product backlog and a sprint backlog. This will allow us to track manage requirements and track the progress of our project in a way that is consistent with Agile development practices.
+There are many effective ways to organize and track requirements. In this assignment, we will use _GitHub Projects_ to create a product backlog and a sprint backlog. This will allow us to track and manage requirements for our project in a way that aligns with Agile development practices.
 
-We will refer to your **repository** as the repo for your product, and the **project** as the GitHub project board.
+Your **repository** contains your product code, while the **project** refers to your GitHub project board where we'll manage the work.
 
 _Reference:_
 
@@ -26,7 +26,7 @@ You may view the following link to see an example:
 1. From your product repository, navigate to the projects tab and create a GitHub project.
    1. Title your project appropriately.
    1. Use the "table" template.
-   1. Make sure that your new project is set to public visibility. This can be changed in the project settings.
+   1. Make sure that your new project is set to public visibility. This can be changed in the project settings. In practice, most project boards would likely be private. We are making it public so that you can showcase your experience building a project board.
 
 _Reference:_
 
@@ -54,18 +54,18 @@ _Reference:_
 
 ### C. Add User Stories
 
-1. Create at least five issues for your user stories. These will form our initial product backlog.
-   1. Type # in a new row and select your repository prior to creating the issue. This links the issue to your repository.
-   2. The title of the issue should be brief but descriptive.
-   3. In the details pane of the issue, flush out the details of the scenario using the format provided in the example project:
-      1. Assumptions / Preconditions - what is assumed to be true before the scenario begins?
-      2. Outcomes / Postconditions - what is expected to be true after the scenario ends?
-      3. Normal Scenario - what happens in the scenario?
-      4. Error Conditions - under what conditions would the scenario fail?
-   4. Tag the issues with the label “user story”.
-   5. Assign a priority to the issue. Make at least one high, one medium, and one low priority item.
-   6. Assign an estimated level of effort to the issue.
-   7. Assign the issue to a developer.
+1. Create at least five issues for your user stories to form your initial product backlog.
+   1. Type # in a new row and select your repository to link the issue.
+   1. Write a brief but descriptive title for the issue.
+   1. In the details pane, document the scenario using this format:
+      1. Title
+      1. Description
+      1. Success Criteria
+      1. Implementation Notes
+   1. Tag the issues with the label “user story”.
+   1. Assign a priority to the issue. Make at least one high, one medium, and one low priority item.
+   1. Assign an estimated level of effort to the issue.
+   1. Assign the issue to a developer.
 
 _Reference:_
 
@@ -81,7 +81,7 @@ _Reference:_
    1. In Development
    1. Ready to Test
    1. Done
-1. Place some of your user stories in the "Backlog" column, and somne in the "In Development" column.
+1. Place some of your user stories in the "Backlog" column, and some in the "In Development" column.
 
 ## Deliverable
 

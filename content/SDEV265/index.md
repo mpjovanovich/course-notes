@@ -14,6 +14,9 @@ showBreadcrumb: false
     - [Day 3](#day-3)
   - [M02: Software Evolution; Project Management; Project Planning](#m02-software-evolution-project-management-project-planning)
     - [Day 1](#day-1-1)
+  - [M03: Requirements Engineering; Agile Development](#m03-requirements-engineering-agile-development)
+    - [Day 1](#day-1-2)
+    - [Day 2](#day-2-1)
 
 /~
 
@@ -124,7 +127,7 @@ Lecture topics:
 - [Requirements Elicitation](requirements_elicitation.html)
 - [Requirements Specification](requirements_specification.html)
 - [Requirements Validation](requirements_validation.html)
-- Agile Development Tools
+- [Agile Planning](agile_planning.html)
 
 ### Day 1
 
