@@ -141,6 +141,7 @@ Walkthrough: Agile Development Tools, GH Projects
 Intro to Assignments:
 
 - Iter 1 - Requirements documentation
+- \*Spring 25: Add instructor as write-collaborator
 
 <!--
 
