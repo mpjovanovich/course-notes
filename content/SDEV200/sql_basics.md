@@ -121,6 +121,20 @@ FROM
     Book;
 ```
 
+### Filtering Data
+
+To filter data, we use the `WHERE` clause.
+
+```sql
+SELECT title FROM Book WHERE publication_year > 2000;
+```
+
+Importantly, if we are filtering on a string, we must use single quotes.
+
+```sql
+SELECT title FROM Book WHERE author = 'Martha Stewart';
+```
+
 ## Initialization Script
 
 Here is a script that you can use to recreate the database and tables from scratch.
