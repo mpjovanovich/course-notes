@@ -136,21 +136,23 @@ Now that we know more about how text is encoded, let's look at an application.
 ~.focusContent.demo
 
 ```bash
-# We create an awesome program, and host it on our website.
-# We provide a checksum and MD5 digest for users to verify the
-# file's integrity.
-echo "Hey, I'm the file." > test.exe
-sum test.exe    # Checksum
-md5sum test.exe # MD5 digest
+# We create an awesome program, and host it on our website:
+echo "Hey, I'm the file." > testGood.exe
 
-# Bad actor changes the file and distributes it,
-# pretending it's authentic.
-echo "I've come to ruin your computer." > test2.exe
+# We provide a checksum and MD5 digest for users to verify the
+# file's integrity:
+sum testGood.exe    # Checksum
+md5sum testGood.exe # MD5 digest
+
+# Bad actor changes the file and distributes it, from a
+# malicious copycat site, pretending it's authentic:
+echo "I've come to ruin your computer." > testBad.exe
 
 # Our friend downloads the file and checks the checksum
-# to make sure it's the same as the original.
-sum test2.exe
-md5sum test2.exe
+# to make sure it's the same as the original. She sees that
+# the sums don't match the original, and knows she has bad files:
+sum testBad.exe    # Checksum
+md5sum testBad.exe # MD5 digest
 ```
 
 /~

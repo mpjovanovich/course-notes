@@ -17,35 +17,40 @@ course: SDEV120
 
 /~
 
+# Numeric Data Types
+
 <figure>
   <img src="https://imgs.xkcd.com/comics/large_number_formats.png" alt="" style="width: 100%;height: auto;">
 </figure>
 
-# Numeric Data Types
+When a program runs, it needs memory to store its data. Different types of data (like numbers or text) need different amounts of memory. We call these different types "data types".
 
-When computers are running a program, they must **allocate** (reserve / check out) memory to hold the data that they use. Data types tell the computer how much memory to allocate and how to interpret the data when they use it.
+Python makes coding easier by figuring out the data type for you automatically. For example:
+
+```python
+age = 42        # Python sees this is a number
+name = "John"   # Python sees this is text
+```
+
+Other languages like C# require you to specify the data type. For example:
+
+```csharp
+// Tell C# this is a regular-sized number (int)
+int age = 42;
+
+// Tell C# this is a big number (long)
+long distance = 1000000000000;
+```
+
+What's the difference between these number types? Why do we need different sizes? Let's explore how computers store numbers and why these differet types are available to us.
 
 ## Integer
 
 **Integers** are **whole numbers**.
 
-They are represented in computer memory by a fixed number of bits.
-
-### Example Usage
-
-Most programming languages have fairly consistent naming conventions for data types. Here is an example in C#.
-
-```csharp
-// Declare and initialize a signed 32 bit integer
-int age = 42;
-
-// Declare and initialize a signed 64 bit integer
-long distance = 1000000000000;
-```
-
-\*Reminder: Python does not require you to declare the data type of a variable, but many other languages do. We will cover typed languages in more detail later.
-
 ### Size and Range
+
+We will refer to this table of ranges throughout the discussion...
 
 | Data Type       | Number of Bits |                   Range (Exponents) |                                        Range (Friendly) |
 | --------------- | -------------: | ----------------------------------: | ------------------------------------------------------: |
@@ -109,13 +114,15 @@ They use a **sign bit** to indicate the sign of the number. If the sign bit is 0
 
 **Floating point** numbers are numbers that may have a fractional part (not whole numbers).
 
-As with integers, the number of bits used to represent a floating point number determines the **precision** of the number.
+As with integers, the number of bits used to represent a floating point number determines the **precision** of the number. The decimal point "floats" to the left or right to accommodate the value.
+
+## Implementation Details
 
 <figure>
   <img src="https://www.baseclass.io/newsletter/floating-point-numbers/layout.png" alt="" style="width: 100%;height: auto;">
 </figure>
 
-They are represented in computer memory using three parts, with a fixed number of bits for each part:
+Floating point numbers are represented in computer memory using three parts, with a fixed number of bits for each part:
 
 - **Sign Bit**: 0 for positive, 1 for negative
 - **Mantissa**: the base value
@@ -123,60 +130,31 @@ They are represented in computer memory using three parts, with a fixed number o
 
 ~.focusContent.example
 
-Deconstruct the following 16-bit floating point number:
+Deconstruct the following 16-bit floating point number, assuming a sign bit, 5 bit exponent, and 10 bit mantissa:
 
 ```
-0010010011000000
+0001001011000000
 ```
 
 | Sign | Exponent | Mantissa   |
 | ---- | -------- | ---------- |
-| 0    | 01000    | 1001100000 |
+| 0    | 00010    | 0101100000 |
 
 Picking apart the pieces:
 
 - Sign: 0 (positive)
-- Exponent: 1000<sub>(2)</sub> = 8
-- Mantissa: 1.1001100000<sub>(2)</sub>. _\*We implicitly add a 1 to the front of the mantissa._
+- Exponent: 00010<sub>(2)</sub> = 2
+- Mantissa: 1.1011000000<sub>(2)</sub>. _\*We implicitly add a 1 to the front of the mantissa._
 
 So we now have:
 
-- 1.1001100000<sub>(2)</sub> x 2<sup>8</sup>
+- 1.1011000000<sub>(2)</sub> x 2<sup> 2</sup>
 
-Because we're in base 2 we can simply move the decimal point 8 places to the right:
+Because we're in base 2 we can simply move the decimal point 2 places to the right:
 
-- 11001100.0<sub>(2)</sub>
+- 110.11000000<sub>(2)</sub>
+- Our starting number was the floating point representation of the decimal number 6.75
 
-_Note: This is a simplification, but it's fairly close to the actual IEEE standard - what your computer is doing._
+/_Note: this is not the actual IEEE standard for floating point numbers; we did some simplification._/
 
 /~
-
-### Example Usage
-
-Below is an example of how to declare and initialize floating point numbers in C#.
-
-```csharp
-// Declare and initialize a 32 bit floating point number
-float PI = 3.14159;
-
-// Declare and initialize a 64 bit floating point number
-double SUPER_ACCURATE_PI = 3.1415926535897932384626433832795028841971
-```
-
-### Size and Range
-
-Imagine a series of digits, 45017568. You can think of a floating point number as (not exactly, but roughly) being able to represent the following values:
-
-- 45017568
-- 4501756.8
-- 450175.68
-- 45017.568
-- 4501.7568
-- 450.17568
-- 45.017568
-- 4.5017568
-- 0.45017568
-
-Looking at the range of values for floating point numbers, we can see that it's constrained by where the decimal point can be placed.
-
-In this case we trade off precision for range. Using the above example we could not represent "45017568.84501756"
