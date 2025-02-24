@@ -29,13 +29,22 @@ These operations follow the same logical rules as the Boolean operations we disc
 | ^      | XOR       | Toggle bits             |
 | ~      | NOT       | Invert bits for masking |
 
+_Example Boolean operations:_
+
+- 1 & 0 = 0
+- 1 \| 0 = 1
+- 1 ^ 0 = 1
+- ~1 = 0
+
 ## Bitmasking
 
-A **bitmask** is a pattern of bits that is used to enable or disable specific bits in a byte.
+A **bitmask** is a pattern of bits that is used to enable or disable specific bits in a byte using **bitwise operations**.
 
 We can use bitmasks to turn specific bits on or off.
 
 ~.focusContent.example.mathTable.hideHeaderRow.firstColLabels.lastRowResult
+
+**Bitwise AND**
 
 In this example we apply a bitwise AND operation to a byte.
 
@@ -55,27 +64,90 @@ _Result:_ **`00001101`**
 
 /~
 
+~.focusContent.example.mathTable.hideHeaderRow.firstColLabels.lastRowResult
+
+**Bitwise OR**
+
+In this example we apply a bitwise OR operation to a byte.
+
+The mask effectively turns on the specified bits.
+
+_Starting bits:_ **`00101101`**
+
+_Mask:_ **`00001111`**
+
+|               |     |     |     |     |     |     |     |     |
+| ------------- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Starting bits | 0   | 0   | 1   | 0   | 1   | 1   | 0   | 1   |
+| Mask          | 0   | 0   | 0   | 0   | 1   | 1   | 1   | 1   |
+| Result        | 0   | 0   | 1   | 0   | 1   | 1   | 1   | 1   |
+
+_Result:_ **`00101111`**
+
+/~
+
+## Working in Bytes
+
+Recall that a byte is 8 bits. In many cases, the most common way to arrange logical groupings within some data is to use one (or more) bytes for each part.
+
+### Decimal Bytes
+
+In many cases, it's easier for a human to work with decimal values than binary values.
+
+We can use a decimal value in the range 0-255 to represent a byte.
+
+_Example:_
+
+```
+1 = 00000001
+2 = 00000010
+3 = 00000011
+...
+255 = 11111111
+```
+
+### Hexadecimal Bytes
+
+Recall that a hexadecimal digit represents 4 bits. This means that two hexadecimal digits represent a byte.
+
+We can use a hexadecimal value in the range 00-FF to represent a byte.
+
+_Example:_
+
+```
+00 = 00000000
+01 = 00000001
+02 = 00000010
+...
+FF = 11111111
+```
+
+## Applications
+
 ### Graphics Applications
 
-**Using Hexadecimal for Color Values**
+#### Using Hexadecimal for Color Values
 
 Color values are often represented in hexadecimal.
 
-- RGB (Red, Green, Blue) values are represented as three octets (8 bits each, 0-255) in hexadecimal.
+- RGB (Red, Green, Blue) values are represented as three octets (8 bits each)
+- Each octet is a value in the range 0x00-FF
 
-<span style="font-weight:bold;color:#000000">`#000000`</span> - Black
+<span style="font-weight:bold;color:#FF0000">#FF0000</span> - Red
 
-<span style="font-weight:bold;color:#ffffff">`#FFFFFF`</span> - White
+<span style="font-weight:bold;color:#00FF00">#00FF00</span> - Green
 
-<span style="font-weight:bold;color:#FF0000">`#FF0000`</span> - Red
+<span style="font-weight:bold;color:#0000FF">#0000FF</span> - Blue
 
-<span style="font-weight:bold;color:#00FF00">`#00FF00`</span> - Green
+- Alternatively, each octet can be represented as a decimal value in the range 0-255
 
-<span style="font-weight:bold;color:#0000FF">`#0000FF`</span> - Blue
+<span style="font-weight:bold;color:#FF0000">rgb(255, 0, 0)</span> - Red
 
----
+<span style="font-weight:bold;color:#00FF00">rgb(0, 255, 0)</span> - Green
 
-**Masking a Color Value**
+<span style="font-weight:bold;color:#0000FF">rgb(0, 0, 255)</span> - Blue
+
+#### Masking a Color Value
 
 We can get the red, green, or blue values from a color using a mask. This is often used in graphics applications (e.g. a photo filter).
 
@@ -95,7 +167,7 @@ Red value = <span style="font-weight:bold;color:#e50000">`#e50000`</span>
 
 ### Networking Applications
 
-**MAC Address**
+#### MAC Address
 
 A MAC (Media Access Control) address is a unique identifier assigned to a network interface at the physical layer.
 
@@ -104,9 +176,7 @@ A MAC (Media Access Control) address is a unique identifier assigned to a networ
 - How many bits are represented by this address?
 - Hint: how many bits does each hex digit (nibble) represent?
 
----
-
-**IP Address**
+#### IP Address
 
 An IP (Internet Protocol) address is a unique identifier assigned to a network interface at the network layer.
 
@@ -142,7 +212,7 @@ ifconfig
 
 ---
 
-**Subnet Masking**
+#### Subnet Masking
 
 A subnet mask is used to divide an IP address into network and host portions. This is useful for routing traffic on a network.
 
@@ -151,7 +221,7 @@ A subnet mask is used to divide an IP address into network and host portions. Th
 Given:
 
 IP address = **`192.168.1.1`**
-Subnet mask = **`255.255.255.0'**
+Subnet mask = **`255.255.255.0`**
 
 Perform a bitwise AND operation to determine the network portion of the IP addresss.
 
@@ -165,7 +235,7 @@ Network portion = **`192.168.1.0`**
 
 /~
 
-## Boolean Flags
+### Boolean Flags
 
 A **bit array** is a data structure that uses a single byte to store multiple true/false values.
 

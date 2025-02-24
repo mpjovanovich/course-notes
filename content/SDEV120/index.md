@@ -220,7 +220,9 @@ Final Study Guide to be posted.
 
 TODO NEXT COURSE RUN
 
-- Use autograded assignment for truth tables thing
-- Quiz for function composition and function basics
+- Add table classes to make binary and hex topics easier to understand.
+  - Positional notation / weights still not clear to many students.
+- Fix truth tables assignment again? Split into pieces.
+- Quiz for function composition and function basics. Many students still missed this.
 
 -->
