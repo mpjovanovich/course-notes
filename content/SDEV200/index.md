@@ -96,3 +96,11 @@ course: SDEV200
 - [SQL Basics](./sql_basics.html)
 
 - [JDBC](./jdbc.html)
+
+<!--
+SQL Injection
+PreparedStatements
+Object mapping (e.g. Book.java)
+ResultSet to Object mapping
+Adding a "save" method (upsert) to our Book class
+-->
