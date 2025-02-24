@@ -13,6 +13,7 @@ course: SDEV200
   - [Module 05](#module-05)
   - [Module 0X](#module-0x)
   - [Mid-term Review of Concepts](#mid-term-review-of-concepts)
+  - [Module 06](#module-06)
 
 /~
 
@@ -89,3 +90,9 @@ course: SDEV200
 ## Mid-term Review of Concepts
 
 - [Mid-term Review of Concepts](./midterm_concept_review.html)
+
+## Module 06
+
+- [SQL Basics](./sql_basics.html)
+
+- [JDBC](./jdbc.html)
