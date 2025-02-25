@@ -36,7 +36,7 @@ _Note: any number raised to the power of 0 is 1._
 
 Let's remind ourselves how base 10 works:
 
-(324)<sub>10</sub> =
+324<sub>10</sub> =
 
 |     | 3              |     | 2              |     | 4              |
 | --- | -------------- | --- | -------------- | --- | -------------- |
@@ -56,7 +56,7 @@ We simply follow the positional notation algorithm.
 
 **Example 1**
 
-Convert the binary number to decimal: (111)<sub>2</sub>
+Convert the binary number to decimal: 111<sub>2</sub>
 
 |     | 1             |     | 1             |     | 1             |
 | --- | ------------- | --- | ------------- | --- | ------------- |
@@ -72,7 +72,7 @@ Answer: **_7<sub>10</sub>_**
 
 **Example 2**
 
-Convert the binary number to decimal: (1101)<sub>2</sub>
+Convert the binary number to decimal: 1101<sub>2</sub>
 
 |     | 1             |     | 1             |     | 0             |     | 1             |
 | --- | ------------- | --- | ------------- | --- | ------------- | --- | ------------- |
@@ -114,7 +114,7 @@ Answer: **_1100<sub>2</sub>_**
 
 **Example 2**
 
-Convert the decimal number to binary: (21)<sub>10</sub>
+Convert the decimal number to binary: 21<sub>10</sub>
 
 | Division | Quotient | Remainder | Binary Digit |
 | :------: | :------: | :-------: | :----------: |
