@@ -38,11 +38,13 @@ Let's remind ourselves how base 10 works:
 
 (324)<sub>10</sub> =
 
-|     | 3                   |     | 2                   |     | 4                   |
-| --- | ------------------- | --- | ------------------- | --- | ------------------- |
-| =   | 3 \* 10<sup>2</sup> | +   | 2 \* 10<sup>1</sup> | +   | 4 \* 10<sup>0</sup> |
-| =   | 3 \* 100            | +   | 2 \* 10             | +   | 4 \* 1              |
-| =   | 300                 | +   | 20                  | +   | 4                   |
+|     | 3              |     | 2              |     | 4              |
+| --- | -------------- | --- | -------------- | --- | -------------- |
+|     | \*             |     | \*             |     | \*             |
+|     | 10<sup>2</sup> |     | 10<sup>1</sup> |     | 10<sup>0</sup> |
+| =   | 300            | +   | 20             | +   | 4              |
+
+Answer: **_324<sub>10</sub>_**
 
 /~
 
@@ -50,35 +52,35 @@ Let's remind ourselves how base 10 works:
 
 We simply follow the positional notation algorithm.
 
-~.focusContent.example.mathTable
+~.focusContent.example.mathTable.firstRowLabels.lastRowResult
 
 **Example 1**
 
 Convert the binary number to decimal: (111)<sub>2</sub>
 
-|     | 1                  |     | 1                  |     | 1                  |
-| --- | ------------------ | --- | ------------------ | --- | ------------------ |
-| =   | 1 \* 2<sup>2</sup> | +   | 1 \* 2<sup>1</sup> | +   | 1 \* 2<sup>0</sup> |
-| =   | 1 \* 4             | +   | 1 \* 2             | +   | 1 \* 1             |
-| =   | 4                  | +   | 2                  | +   | 1                  |
+|     | 1             |     | 1             |     | 1             |
+| --- | ------------- | --- | ------------- | --- | ------------- |
+|     | \*            |     | \*            |     | \*            |
+|     | 2<sup>2</sup> |     | 2<sup>1</sup> |     | 2<sup>0</sup> |
+| =   | 4             | +   | 2             | +   | 1             |
 
-Answer: **(7)<sub>10</sub>**
+Answer: **_7<sub>10</sub>_**
 
 /~
 
-~.focusContent.example.mathTable
+~.focusContent.example.mathTable.firstRowLabels.lastRowResult
 
 **Example 2**
 
 Convert the binary number to decimal: (1101)<sub>2</sub>
 
-|     | 1                  |     | 1                  |     | 0                  |     | 1                  |
-| --- | ------------------ | --- | ------------------ | --- | ------------------ | --- | ------------------ |
-| =   | 1 \* 2<sup>3</sup> | +   | 1 \* 2<sup>2</sup> | +   | 0 \* 2<sup>1</sup> | +   | 1 \* 2<sup>0</sup> |
-| =   | 1 \* 8             | +   | 1 \* 4             | +   | 0 \* 2             | +   | 1 \* 1             |
-| =   | 8                  | +   | 4                  | +   | 0                  | +   | 1                  |
+|     | 1             |     | 1             |     | 0             |     | 1             |
+| --- | ------------- | --- | ------------- | --- | ------------- | --- | ------------- |
+|     | \*            |     | \*            |     | \*            |     | \*            |
+|     | 2<sup>3</sup> |     | 2<sup>2</sup> |     | 2<sup>1</sup> |     | 2<sup>0</sup> |
+| =   | 8             | +   | 4             | +   | 0             | +   | 1             |
 
-Answer: **(13)<sub>10</sub>**
+Answer: **_13<sub>10</sub>_**
 
 /~
 
@@ -104,7 +106,7 @@ Convert the decimal number to binary: 12<sub>(10)</sub>
 |  3 / 2   |    1     |     1     |      1       |
 |  1 / 2   |    0     |     1     |      1       |
 
-Answer: **_(1100)<sub>2</sub>_**
+Answer: **_1100<sub>2</sub>_**
 
 /~
 
@@ -122,7 +124,7 @@ Convert the decimal number to binary: (21)<sub>10</sub>
 |  2 / 2   |    1     |     0     |      0       |
 |  1 / 2   |    0     |     1     |      1       |
 
-Answer: **_(10101)<sub>2</sub>_**
+Answer: **_10101<sub>2</sub>_**)
 
 /~
 
@@ -141,7 +143,7 @@ When adding a column you can either have (depending on remainder and row values)
 
 **Example 1**
 
-Calculate (0111)<sub>2</sub> + (1110)<sub>2</sub>.
+Calculate 0111<sub>2</sub> + 1110<sub>2</sub>.
 
 |     |       |       |       |       |       |
 | --- | ----: | ----: | ----: | ----: | ----: |
@@ -150,7 +152,7 @@ Calculate (0111)<sub>2</sub> + (1110)<sub>2</sub>.
 |     |     + |     1 |     1 |     1 |     0 |
 |     | **1** | **0** | **1** | **0** | **1** |
 
-Answer: **_(10101)<sub>2</sub>_**
+Answer: **_10101<sub>2</sub>_**
 
 - Does this tie out with the result we obtain if we convert to decimal then add?
 
@@ -160,7 +162,7 @@ Answer: **_(10101)<sub>2</sub>_**
 
 **Example 2**
 
-Calculate (1011)<sub>2</sub> + (1101)<sub>2</sub>.
+Calculate 1011<sub>2</sub> + 1101<sub>2</sub>.
 
 |     |       |       |       |       |       |
 | --- | ----: | ----: | ----: | ----: | ----: |
@@ -169,7 +171,7 @@ Calculate (1011)<sub>2</sub> + (1101)<sub>2</sub>.
 |     |     + |     1 |     1 |     0 |     1 |
 |     | **1** | **1** | **0** | **0** | **0** |
 
-Answer: **_(11000)<sub>2</sub>_**
+Answer: **_11000<sub>2</sub>_**
 
 - Does this tie out with the result we obtain if we convert to decimal then add?
 
