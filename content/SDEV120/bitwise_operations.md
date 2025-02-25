@@ -57,7 +57,7 @@ _Mask:_ **`00001111`**
 |               |     |     |     |     |     |     |     |     |
 | ------------- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Starting bits | 0   | 0   | 1   | 0   | 1   | 1   | 0   | 1   |
-| Mask          | 0   | 0   | 0   | 0   | 1   | 1   | 1   | 1   |
+| Mask ( & )    | 0   | 0   | 0   | 0   | 1   | 1   | 1   | 1   |
 | Result        | 0   | 0   | 0   | 0   | 1   | 1   | 0   | 1   |
 
 _Result:_ **`00001101`**
@@ -70,7 +70,7 @@ _Result:_ **`00001101`**
 
 In this example we apply a bitwise OR operation to a byte.
 
-The mask effectively turns on the specified bits.
+This operation effectively turns on the specified bits.
 
 _Starting bits:_ **`00101101`**
 
@@ -79,7 +79,7 @@ _Mask:_ **`00001111`**
 |               |     |     |     |     |     |     |     |     |
 | ------------- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Starting bits | 0   | 0   | 1   | 0   | 1   | 1   | 0   | 1   |
-| Mask          | 0   | 0   | 0   | 0   | 1   | 1   | 1   | 1   |
+| Mask ( \| )   | 0   | 0   | 0   | 0   | 1   | 1   | 1   | 1   |
 | Result        | 0   | 0   | 1   | 0   | 1   | 1   | 1   | 1   |
 
 _Result:_ **`00101111`**
