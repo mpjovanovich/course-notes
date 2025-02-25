@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV255: Fonts</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <h1 id="fonts">Fonts</h1>
+      <h2 id="font-families">Font Families</h2>
+      <p>
+        CSS <code>font-family</code> is used to define the name(s) of fonts to
+        be used on the website.
+      </p>
+      <h3 id="defaults">Defaults</h3>
+      <ul>
+        <li>
+          A font must exists on the user&#39;s device in order to be used.
+        </li>
+        <li>
+          Browser will use &quot;User Agent Stylesheet&quot; if no CSS rule set.
+        </li>
+        <li>
+          Multiple fonts may be listed for font-family using a
+          <strong>font stack</strong>.
+          <ul>
+            <li>Goes through list left to right until font is found.</li>
+            <li>
+              Traditionally use
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#web_safe_fonts"
+                >Web Safe Fonts</a
+              >
+              to ensure availability.
+            </li>
+            <li>
+              <pre
+                class="shiki shiki-themes one-light one-dark-pro"
+                style="
+                  background-color: #fafafa;
+                  --shiki-dark-bg: #282c34;
+                  color: #383a42;
+                  --shiki-dark: #abb2bf;
+                "
+                tabindex="0"
+              ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">font-family</span><span style="color:#A626A4;--shiki-dark:#C678DD">: Helvetica</span><span style="color:#A626A4;--shiki-dark:#ABB2BF">,</span><span style="color:#A626A4;--shiki-dark:#C678DD"> "Trebuchet MS"</span><span style="color:#A626A4;--shiki-dark:#ABB2BF">,</span><span style="color:#A626A4;--shiki-dark:#C678DD"> Verdana</span><span style="color:#A626A4;--shiki-dark:#ABB2BF">,</span><span style="color:#E45649;--shiki-dark:#E06C75"> sans-serif</span><span style="color:#A626A4;--shiki-dark:#C678DD">;</span></span></code></pre>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="serif">Serif</h4>
+      <ul>
+        <li>Serif fonts have small strokes at the edges of letters.</li>
+        <li>&quot;Curly&quot; letters.</li>
+        <li>
+          Font-family value of <code>serif</code> signifies that the device
+          should use the system-defined default serif font.
+        </li>
+      </ul>
+      <h4 id="sans-serif">Sans-Serif</h4>
+      <ul>
+        <li>Sans-serif fonts have no strokes at the edges of letters.</li>
+        <li>Sans = &quot;without&quot;</li>
+        <li>&quot;Block&quot; letters.</li>
+        <li>
+          Font-family value of <code>sans-serif</code> signifies that the device
+          should use the system-defined default serif font.
+        </li>
+      </ul>
+      <h2 id="web-fonts">Web Fonts</h2>
+      <ul>
+        <li>
+          Fonts may be loaded from the web server or an external url using
+          <code>@font-face</code>.
+        </li>
+        <li>Specified font file(s) are downloaded:</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">@font-face</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  font-family: Roboto;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  src: </span><span style="color:#0184BC;--shiki-dark:#56B6C2">url</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"/fonts/roboto-regular.woff2"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;!</span><span style="color:#E45649;--shiki-dark:#E06C75">--DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;/div></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">body {</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  font-family: Roboto, </span><span style="color:#986801;--shiki-dark:#D19A66">sans-serif</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;!</span><span style="color:#E45649;--shiki-dark:#E06C75">--DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;/div></span></span></code></pre>
+      <h3 id="import-vs-link">Import vs Link</h3>
+      <h4 id="import">@import</h4>
+      <ul>
+        <li>Goes in CSS file.</li>
+        <li>Must be at beginning of file.</li>
+        <li>
+          Imported stylesheet; browser fetches with web request after initial
+          stylesheet is loaded.
+        </li>
+      </ul>
+      <h4 id="link">`<link />`</h4>
+      <ul>
+        <li>Goes in <code>&lt;head&gt;</code> of HTML.</li>
+        <li>Fetched with web request as part of initial page load.</li>
+        <li>Recommended</li>
+      </ul>
+      <h3 id="local-vs-web-hosted">Local vs Web Hosted</h3>
+      <h4 id="local-fonts">Local Fonts</h4>
+      <ul>
+        <li>url points to file file that developer has uploaded to site.</li>
+      </ul>
+      <h4 id="online-font-service">Online Font Service</h4>
+      <ul>
+        <li>Font hosting services store saved copies of fonts for download.</li>
+        <li>
+          Fonts may be cached already from other website visits (e.g. Roboto),
+          saving another download.
+          <ul>
+            <li>
+              E.g.:
+              <a href="https://fonts.google.com/">https://fonts.google.com/</a>
+              <ul>
+                <li>
+                  <pre
+                    class="shiki shiki-themes one-light one-dark-pro"
+                    style="
+                      background-color: #fafafa;
+                      --shiki-dark-bg: #282c34;
+                      color: #383a42;
+                      --shiki-dark: #abb2bf;
+                    "
+                    tabindex="0"
+                  ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">link</span><span style="color:#986801;--shiki-dark:#D19A66"> rel</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"preconnect"</span><span style="color:#986801;--shiki-dark:#D19A66"> href</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"https://fonts.googleapis.com"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> /></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">link</span><span style="color:#986801;--shiki-dark:#D19A66"> rel</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"preconnect"</span><span style="color:#986801;--shiki-dark:#D19A66"> href</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"https://fonts.gstatic.com"</span><span style="color:#986801;--shiki-dark:#D19A66"> crossorigin</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> /></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">link</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">  href</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"https://fonts.googleapis.com/css2?family=Nunito&#x26;display=swap"</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">  rel</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"stylesheet"</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">/></span></span></code></pre>
+                </li>
+                <li>
+                  First two <code>preconnect</code> lines are not necessary, but
+                  help optimize delivery from google.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Fonts may then be used with <code>font-family</code> in CSS.
+              <ul>
+                <li>
+                  <pre
+                    class="shiki shiki-themes one-light one-dark-pro"
+                    style="
+                      background-color: #fafafa;
+                      --shiki-dark-bg: #282c34;
+                      color: #383a42;
+                      --shiki-dark: #abb2bf;
+                    "
+                    tabindex="0"
+                  ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">font-family</span><span style="color:#A626A4;--shiki-dark:#C678DD">: "Nunito"</span><span style="color:#A626A4;--shiki-dark:#ABB2BF">,</span><span style="color:#E45649;--shiki-dark:#E06C75"> sans-serif</span><span style="color:#A626A4;--shiki-dark:#C678DD">;</span></span></code></pre>
+                </li>
+              </ul>
+            </li>
+            <li>
+              User may see fallback font initially; once font is downloaded it
+              will &quot;swap&quot; in b/c of the
+              <code>display=swap</code> query on the stylesheet fetch.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>Demo: try popping open the URL that google fonts returns:</p>
+      <p>
+        <a href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+          >https://fonts.googleapis.com/css2?family=Nunito&amp;display=swap</a
+        >
+      </p>
+      <h5 id="font-weight-considerations">Font Weight Considerations</h5>
+      <ul>
+        <li>
+          If different font weights are needed in the site, they must all be
+          requested:
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">link</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">  rel</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"stylesheet"</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">  href</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&#x26;display=swap"</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">/></span></span></code></pre>
+      <ul>
+        <li>
+          Variable weight fonts effectively take the place of using multiple
+          font versions, but may not be available.
+        </li>
+      </ul>
+      <h1 id="icons-via-hosted-service">Icons via Hosted Service</h1>
+      <p>Just like fonts, icons can be loaded from a web hosted service.</p>
+      <h2 id="sources">Sources</h2>
+      <ul>
+        <li>
+          <a href="https://fontawesome.com/search?m=free&o=r"
+            >Font Awesome Icons</a
+          >
+        </li>
+        <li>
+          <a href="https://fonts.google.com/icons">Google Material Icons</a>
+        </li>
+      </ul>
+      <h2 id="example">Example</h2>
+      <p>
+        <a href="https://fontawesome.com/icons/headphones?f=classic&s=solid"
+          >Headphones Icon...</a
+        >
+      </p>
+      <p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="16"
+          width="16"
+          viewBox="0 0 512 512"
+        >
+          <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+          <path
+            d="M256 80C149.9 80 62.4 159.4 49.6 262c9.4-3.8 19.6-6 30.4-6c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48c-44.2 0-80-35.8-80-80V384 336 288C0 146.6 114.6 32 256 32s256 114.6 256 256v48 48 16c0 44.2-35.8 80-80 80c-26.5 0-48-21.5-48-48V304c0-26.5 21.5-48 48-48c10.8 0 21 2.1 30.4 6C449.6 159.4 362.1 80 256 80z"
+          />
+        </svg>
+      </p>
+      <h3 id="via-svg">Via SVG</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">svg</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">  xmlns</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">  height</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"16"</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">  width</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"16"</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">  viewBox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"0 0 512 512"</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  &#x3C;!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">path</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    d</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"M256 80C149.9 80 62.4 159.4 49.6 262c9.4-3.8 19.6-6 30.4-6c26.5 0 48 21.5 48 48V432c0 26.5-21.5 48-48 48c-44.2 0-80-35.8-80-80V384 336 288C0 146.6 114.6 32 256 32s256 114.6 256 256v48 48 16c0 44.2-35.8 80-80 80c-26.5 0-48-21.5-48-48V304c0-26.5 21.5-48 48-48c10.8 0 21 2.1 30.4 6C449.6 159.4 362.1 80 256 80z"</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  /></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">svg</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span></code></pre>
+      <h3 id="via-font">Via Font</h3>
+      <p>Font families can be used to serve icons.</p>
+      <p>
+        Demo:
+        <a href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          >https://fonts.googleapis.com/icon?family=Material+Icons</a
+        >
+      </p>
+      <h4 id="font-awesome">Font Awesome</h4>
+      <ul>
+        <li>
+          Use latest CDN link to fetch stylesheet:
+          <ul>
+            <li>
+              <a href="https://cdnjs.com/libraries/font-awesome"
+                >https://cdnjs.com/libraries/font-awesome</a
+              >
+            </li>
+            <li>Pick smallest file that has needed icons</li>
+            <li>Set CSS class for style</li>
+            <li>Set CSS class for icon name</li>
+          </ul>
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">link</span><span style="color:#986801;--shiki-dark:#D19A66"> rel</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"stylesheet"</span><span style="color:#986801;--shiki-dark:#D19A66"> href</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">&#x3C;!-- ... -></span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">&#x3C;i class="fa-solid fa-headphones">&#x3C;/i></span></span></code></pre>
+      <h4 id="google-materials">Google Materials</h4>
+      <ul>
+        <li>Fetch stylesheet</li>
+        <li>Set CSS class for style</li>
+        <li>Put icon name in HTML element</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">link</span><span style="color:#986801;--shiki-dark:#D19A66"> rel</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"stylesheet"</span><span style="color:#986801;--shiki-dark:#D19A66"> href</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> /></span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">&#x3C;!-- ... -></span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">&#x3C;i class="material-symbols-outlined">key&#x3C;/i></span></span></code></pre>
+    </div>
+  </body>
+</html>

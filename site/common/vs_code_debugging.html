@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Debugging in VS Code</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#debugging-in-vs-code">Debugging in VS Code</a>
+            <ul>
+              <li>
+                <a href="#switch-to-the-directory-containing-the-code-file"
+                  >Switch to the Directory Containing the Code File</a
+                >
+              </li>
+              <li><a href="#begin-debugging">Begin Debugging</a></li>
+              <li><a href="#breakpoints">Breakpoints</a></li>
+              <li>
+                <a href="#stepping-through-code">Stepping Through Code</a>
+              </li>
+              <li><a href="#watching-variables">Watching Variables</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="debugging-in-vs-code">Debugging in VS Code</h1>
+      <p>We will assume that we&#39;re using Python for these examples.</p>
+      <h2 id="switch-to-the-directory-containing-the-code-file">
+        Switch to the Directory Containing the Code File
+      </h2>
+      <p>
+        You can open a code file by double clicking it, but VS Code functions
+        better if you open the directory containing the file.
+      </p>
+      <figure>
+        <img
+          src="images/vs_code_open_directory.png"
+          alt="Switch to the Correct Directory"
+          style="width: 50%; height: auto"
+        />
+      </figure>
+
+      <p>
+        If prompted about whether you trust the workspace, click
+        &quot;Yes&quot;.
+      </p>
+      <p>
+        <em
+          >Be aware of where your files are saved! If your computer is saving to
+          the cloud (OneDrive, Google Drive, etc.), you may not be able to debug
+          the files.</em
+        >
+      </p>
+      <h2 id="begin-debugging">Begin Debugging</h2>
+      <p>
+        Find the Debug icon (looks like a bug) in the Activity Bar on the left
+        side of the screen. Click on it.
+      </p>
+      <figure>
+        <img
+          src="images/vs_code_debug_icon.png"
+          alt="Start Debugging"
+          style="width: 60%; height: auto"
+        />
+      </figure>
+
+      <p>Then click on the green play button.</p>
+      <p>
+        <em
+          >Note: there is another play button in the upper right corner of the
+          screen. For consistency I recommend using the one in the Activity
+          Bar.</em
+        >
+      </p>
+      <figure>
+        <img
+          src="images/vs_code_start_debugging.png"
+          alt="Start Debugging"
+          style="width: 60%; height: auto"
+        />
+      </figure>
+
+      <p>
+        You may then be prompted from the top bar once or twice to select the
+        Python interpreter and choose the current file. Both times chose the
+        default (topmost) option.
+      </p>
+      <p>
+        If it worked you should see any output in the terminal, something like
+        this:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>mpjovanovich:  cd /home/mpjovanovich/tmp ; /usr/bin/env /bin/python3 ...</span></span>
+<span class="line"><span>8</span></span></code></pre>
+      <h2 id="breakpoints">Breakpoints</h2>
+      <p>
+        The real power of debugging comes from setting breakpoints. These stop
+        the execution of the program at specific lines and allow you to see the
+        values of variables. You can then step through the code one line at a
+        time to see how it executes.
+      </p>
+      <p>
+        To do this click in the margin to the left of the line you want to set
+        the breakpoint on. A red dot should appear.
+      </p>
+      <figure>
+        <img
+          src="images/vs_code_breakpoint.png"
+          alt="Breakpoint"
+          style="width: 60%; height: auto"
+        />
+      </figure>
+
+      <p>
+        When starting out, it&#39;s often best to set the breakpoint on the
+        first line that isn&#39;t a comment.
+      </p>
+      <h2 id="stepping-through-code">Stepping Through Code</h2>
+      <p>
+        After setting a breakpoint and starting the debugger you should see the
+        program halt at the breakpoint, and a new toolbar should appear at the
+        top with several buttons.
+      </p>
+      <figure>
+        <img
+          src="images/vs_code_debug_toolbar.png"
+          alt="Debug Toolbar"
+          style="width: 60%; height: auto"
+        />
+      </figure>
+
+      <p>The option descriptions can be seen by hovering over the buttons.</p>
+      <ul>
+        <li>
+          <p>
+            <strong><em>Continue (play button)</em></strong
+            >: Continues execution until the next breakpoint, if any. It
+            basically &quot;unpauses&quot; the program.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong><em>Step Over (curved right arrow button)</em></strong
+            >: Will step to the next line of code.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong><em>Step Into (down arrow button)</em></strong
+            >: Will step to the next line of code, but if that line contains a
+            function call it will step into the function and continue execution
+            from there. It&#39;s the same as &quot;step over&quot; if you&#39;re
+            not on a line with a function call.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong><em>Step Out (left arrow button)</em></strong
+            >: Will step out of the current function if you&#39;re in one.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong><em>Restart (green circle button)</em></strong
+            >: Will restart the program from the beginning.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong><em>Stop (red square button)</em></strong
+            >: Will stop the program. Make sure to do this before you try to run
+            the debugger again. You can tell the debugger running if you see the
+            debug toolbar showing and the status bar at the bottom has changed
+            color.
+          </p>
+        </li>
+      </ul>
+      <h2 id="watching-variables">Watching Variables</h2>
+      <p>
+        Being able to see the values of variables as the program runs is
+        extremely useful.
+      </p>
+      <p>There are several places to check these values:</p>
+      <figure>
+        <img
+          src="images/vs_code_watch_variables.png"
+          alt="Watch Variables"
+          style=""
+        />
+      </figure>
+
+      <p>
+        <strong><em>Hovering (Tool Tip)</em></strong>
+      </p>
+      <p>
+        Hovering over a variable will show you its value at that point in the
+        program.
+      </p>
+      <p>
+        <strong><em>Variables View</em></strong>
+      </p>
+      <p>All variables in scope are shown here.</p>
+      <p>
+        <strong><em>Watch View</em></strong>
+      </p>
+      <p>You can add your own custom expressions to watch by either:</p>
+      <ul>
+        <li>clicking the plus button</li>
+        <li>
+          highlighting an expression, right clicking, and choosing &quot;Add to
+          Watch&quot;
+        </li>
+      </ul>
+      <p>
+        This is useful for watching &quot;subexpressions&quot; that are part of
+        a larger expression.
+      </p>
+    </div>
+  </body>
+</html>
