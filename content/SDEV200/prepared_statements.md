@@ -25,7 +25,7 @@ They also help prevent SQL injection attacks.
 
 We will refer to this example throughout these notes:
 
-```SQL
+```sql
 -- Create a users table
 CREATE TABLE User (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
