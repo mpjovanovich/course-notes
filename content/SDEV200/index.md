@@ -97,10 +97,6 @@ course: SDEV200
 
 - [JDBC](./jdbc.html)
 
-<!--
-SQL Injection
-PreparedStatements
-Object mapping (e.g. Book.java)
-ResultSet to Object mapping
-Adding a "save" method (upsert) to our Book class
--->
+- [Prepared Statements](./prepared_statements.html)
+
+- [Object Mapping](./object_mapping.html)
