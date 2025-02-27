@@ -8,6 +8,7 @@ course: SDEV200
 - [Prepared Statements](#prepared-statements)
   - [Example](#example)
   - [SQL Injection](#sql-injection)
+  - [Naive Implementation](#naive-implementation)
   - [Prepared Statements](#prepared-statements-1)
 
 /~
@@ -37,6 +38,8 @@ CREATE TABLE User (
 -- Insert sample data
 -- Note: We should never actually store passwords in plain text like this.
 INSERT INTO User (first_name, last_name, username, password) VALUES
+    ('admin', 'admin', 'admin', 'supersecretAdminPass'), -- This is first so that when we hack in we get to the admin account
+    ('Donny', 'Dummikins', 'user', 'pass'), -- Easy login demo user
     ('John', 'Smith', 'jsmith', 'password123'),
     ('Jane', 'Doe', 'jdoe', 'securepass456'),
     ('Robert', 'Johnson', 'rjohnson', 'robert2024'),
@@ -70,11 +73,48 @@ SELECT * FROM users WHERE username = '' OR '1'='1' AND password = '' OR '1'='1'
 
 This is a very simple example, but it can be much more dangerous in real applications.
 
+## Naive Implementation
+
+Below is an unsafe implementation of a login function. A user can inject malicious SQL code into the query.
+
+```java
+// Get username and password from user...
+
+// Interpolate the username and password directly into the query (bad idea)
+String query = "SELECT * FROM User WHERE username='" + username +
+                "' AND password='" + password + "'";
+
+System.out.println("Generated query: " + query);
+
+try (Connection connection = DriverManager.getConnection(JDBC_URL);
+        Statement statement = connection.createStatement();) {
+
+    ResultSet resultSet = stmt.executeQuery());
+    if (resultSet.next()) {
+        return resultSet.getString("username");
+    }
+    else {
+        // Handle invalid credentials...
+    }
+} catch (SQLException ex) {
+    // Handle exception...
+}
+```
+
 ## Prepared Statements
 
 Prepared statements are a way to execute SQL statements with parameters. These parameters are placeholders that are replaced with actual values when the statement is executed.
 
+The main benefits are that:
+
+- It is more secure; parameters are not interpolated into the SQL string.
+- It is more efficient; the SQL is pre-compiled and the parameters are bound to the statement.
+- It handles data type conversion automatically via the "set" methods on the `PreparedStatement` object.
+- It's (arguably) easier to read and write.
+
 ```java
+// Get username and password from user...
+
 try (Connection connection = DriverManager.getConnection(JDBC_URL);
         PreparedStatement stmt = connection.prepareStatement(query)) {
 
@@ -95,5 +135,3 @@ try (Connection connection = DriverManager.getConnection(JDBC_URL);
     // Handle exception...
 }
 ```
-
-This query is safe from SQL injection because the parameters are not interpolated into the SQL string. Instead, they are passed as arguments to the `executeQuery` method.
