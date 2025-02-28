@@ -137,10 +137,10 @@ Planning and implementation may be split into separate tasks.
 
 ## User Story vs Use Case
 
-User stories and use cases are two different ways to describe what we want our software to do:
+User stories and use cases are similar, but differ in their focus:
 
-- User stories are like short summaries that tell us WHO needs WHAT and WHY they need it
-- Use cases are like step-by-step instructions that tell us HOW someone will use a feature
+- User stories focus on the value the feature will provide to the user.
+- Use cases focus on the sequence of steps (interactions) required to complete a task.
 
 ~.focusContent.example
 

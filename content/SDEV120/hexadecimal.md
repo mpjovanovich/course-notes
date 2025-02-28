@@ -35,7 +35,7 @@ Using four bits to represent hex digits: [logic.ly](https://logic.ly/demo/)
 
 ~.focusContent.lookout
 
-When you see the hexadecimal prefix (0x), know that you're looking at a binary number - even though you're not seeing the zeroes and ones.
+When you see the hexadecimal prefix (0x), know that you're looking at a hex number - even though you're not seeing the zeroes and ones.
 
 _Example: 0x24 does not equal (24)<sub>10</sub>._
 
