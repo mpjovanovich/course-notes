@@ -100,3 +100,11 @@ course: SDEV200
 - [Prepared Statements](./prepared_statements.html)
 
 - [Object Mapping](./object_mapping.html)
+
+...
+
+## Module 07
+
+- Install Tomcat
+
+- See demo project: JavaServletsDemo
