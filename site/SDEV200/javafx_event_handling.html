@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV200: JavaFX Event Handling</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#javafx-event-handling">JavaFX Event Handling</a>
+            <ul>
+              <li><a href="#event-handling">Event Handling</a></li>
+              <li><a href="#lambda-expressions">Lambda Expressions</a></li>
+              <li>
+                <a href="#accessing-control-properties"
+                  >Accessing Control Properties</a
+                >
+              </li>
+              <li><a href="#example">Example</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="javafx-event-handling">JavaFX Event Handling</h1>
+      <p>
+        JavaFX event handling is the process of responding to user interactions,
+        such as clicking a button or typing in a text field.
+      </p>
+      <h2 id="event-handling">Event Handling</h2>
+      <p>
+        An <strong>event</strong> is an action that occurs in the application,
+        such as a button click or a key press.
+      </p>
+      <p>
+        An <strong>event handler</strong> is a method that is called when an
+        event occurs.
+      </p>
+      <p>
+        Java controls have a predefined set of events that can be handled. For
+        example, the <code>Button</code> control has an
+        <code>ActionEvent</code> event.
+      </p>
+      <p>
+        Events can be <strong>subscribed to</strong> using the
+        <code>setOn...</code> methods. You can see which events are offered by
+        looking at the autocomplete suggestions for the control in your IDE.
+        Just type the control name and press <code>.</code> to see the available
+        events.
+      </p>
+      <h2 id="lambda-expressions">Lambda Expressions</h2>
+      <p>
+        Lambda expressions are a way to write anonymous methods. They are often
+        used in event handling.
+      </p>
+      <p>
+        In the below example, the code inside of the parentheses is the lambda
+        expression. This is a function that:
+      </p>
+      <ul>
+        <li>
+          Takes an <code>ActionEvent</code> parameter, which we&#39;ve named
+          <code>e</code>
+        </li>
+        <li>Returns <code>void</code></li>
+        <li>Prints &quot;Button clicked&quot; to the console</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">btnClickMe</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setOnAction</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(e </span><span style="color:#C18401;--shiki-dark:#C678DD">-></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Button clicked"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">});</span></span></code></pre>
+      <p>
+        We can use any function that matches the signature that the method
+        expects (takes ActionEvent, returns void).
+      </p>
+      <h2 id="accessing-control-properties">Accessing Control Properties</h2>
+      <p>
+        In may cases we need to access properties of the controls that are on
+        the page.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Get the text from a TextField as a string</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#E45649;--shiki-dark:#E06C75"> name </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#E45649;--shiki-dark:#E5C07B"> txtName</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getText</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Get the text from a TextField as an integer</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">int</span><span style="color:#E45649;--shiki-dark:#E06C75"> age </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#E45649;--shiki-dark:#E5C07B"> Integer</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">parseInt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E5C07B">txtAge</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getText</span><span style="color:#383A42;--shiki-dark:#ABB2BF">());</span></span></code></pre>
+      <h2 id="example">Example</h2>
+      <p>
+        When the button is clicked in this program it will toggle some styles
+        and increment a counter.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.application.Application</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.scene.Scene</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.scene.control.Button</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.scene.control.Label</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.scene.layout.VBox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.stage.Stage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Main</span><span style="color:#A626A4;--shiki-dark:#C678DD"> extends</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Application</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Create a counter variable</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    int</span><span style="color:#E45649;--shiki-dark:#E06C75"> counter </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    boolean</span><span style="color:#E45649;--shiki-dark:#E06C75"> isStyle1 </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> true</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    final</span><span style="color:#C18401;--shiki-dark:#E5C07B"> String</span><span style="color:#E45649;--shiki-dark:#E06C75"> style1 </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379"> "-fx-background-color: black; -fx-text-fill: white;"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    final</span><span style="color:#C18401;--shiki-dark:#E5C07B"> String</span><span style="color:#E45649;--shiki-dark:#E06C75"> style2 </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379"> "-fx-background-color: white; -fx-text-fill: black;"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    @</span><span style="color:#A626A4;--shiki-dark:#E5C07B">Override</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> start</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Stage</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> primaryStage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Create controls</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Label</span><span style="color:#E45649;--shiki-dark:#E06C75"> lblWelcome</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Label</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Current count: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> counter);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        lblWelcome</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setStyle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"-fx-font-weight: bold;"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Button</span><span style="color:#E45649;--shiki-dark:#E06C75"> btnToggleStyles</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Button</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Toggle Styles"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        btnToggleStyles</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setStyle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(style1);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Create VBox container</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        VBox</span><span style="color:#E45649;--shiki-dark:#E06C75"> vbox</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> VBox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        vbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setStyle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"-fx-padding: 20;"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Add child controls to vbox</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        vbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getChildren</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(lblWelcome);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        vbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getChildren</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(btnToggleStyles);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Create the event handler for the button</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        btnToggleStyles</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setOnAction</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(e </span><span style="color:#C18401;--shiki-dark:#C678DD">-></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Toggle the styles</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">            isStyle1 </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#56B6C2"> !</span><span style="color:#383A42;--shiki-dark:#ABB2BF">isStyle1;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">            if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (isStyle1) {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">                btnToggleStyles</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setStyle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(style1);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">            } </span><span style="color:#A626A4;--shiki-dark:#C678DD">else</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">                btnToggleStyles</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setStyle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(style2);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Increment the counter</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">            counter++;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Update the label</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            lblWelcome</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setText</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Current count: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> counter);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Add the VBox to a Scene. It will be the root node in the scene</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Scene</span><span style="color:#E45649;--shiki-dark:#E06C75"> scene</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Scene</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(vbox, </span><span style="color:#986801;--shiki-dark:#D19A66">300</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">200</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Set the controls needed to "start" the application</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        primaryStage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setTitle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Toggle App"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        primaryStage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setScene</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(scene);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        primaryStage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">show</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <div class="focusContent lookout">
+        <p>
+          The order in which you subscribe to events matters. We should
+          subscribe to events after we have added the controls to the container,
+          but before we show the stage.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

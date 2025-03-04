@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV200: Paths, Files, and Directories</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#paths-files-and-directories"
+              >Paths, Files, and Directories</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="paths-files-and-directories">Paths, Files, and Directories</h1>
+      <p>
+        The <code>Path</code> interface is a new API that was added in Java 7.
+        It should be preferred over the old <code>File</code> class.
+      </p>
+      <p>The library for handling paths is:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> java.nio.file.Path</span></span></code></pre>
+      <p>Some common use cases for <code>Path</code> are:</p>
+      <ul>
+        <li>Getting the current working directory</li>
+        <li>Getting the directory portion of a path</li>
+        <li>Getting the file name from a path</li>
+        <li>Getting the file extension from a path</li>
+      </ul>
+      <div class="focusContent note">
+        <p>
+          Many of the methods in the <code>Path</code> interface are static
+          methods.
+        </p>
+        <p>
+          <strong>Static methods</strong> are methods that are associated with
+          the class itself, rather than a particular instance of the class.
+        </p>
+        <p>
+          We don&#39;t have to use the <code>new</code> keyword and create an
+          object to call them.
+        </p>
+      </div>
+
+      <div class="focusContent example">
+        <p><strong>Backup File Program</strong></p>
+        <p>
+          Let&#39;s first take a source file from the user as a parameter. We
+          will then create a new file in the same directory with the same name
+          but with a
+          <code>.bak</code> extension.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#C18401;--shiki-dark:#E5C07B"> java.nio.file.StandardCopyOption.REPLACE_EXISTING</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> java.nio.file.Path</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> java.nio.file.Paths</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> java.nio.file.Files</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> java.io.IOException</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Let's first take a source file from the user as a parameter. We will then</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// create a new file in the same directory with the same name but with a `.bak`</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// extension.</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> BackupUtility</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> backupFile</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> source</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        try</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Convert the String to a Path object</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Java needs a Path to work with files</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">            Path</span><span style="color:#E45649;--shiki-dark:#E06C75"> sourcePath</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E5C07B"> Paths</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">get</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(source);</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">            Path</span><span style="color:#E45649;--shiki-dark:#E06C75"> backupPath</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> getBackupPath</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(sourcePath);</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">            copyFile</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(sourcePath, backupPath);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"File backed up successfully."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        } </span><span style="color:#A626A4;--shiki-dark:#C678DD">catch</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#C18401;--shiki-dark:#E5C07B">IOException</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> e</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">err</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Failed to backup file: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#E45649;--shiki-dark:#E5C07B"> e</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getMessage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">());</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    private</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Path</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> getBackupPath</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Path</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> sourcePath</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#A626A4;--shiki-dark:#C678DD"> throws</span><span style="color:#C18401;--shiki-dark:#E5C07B"> IOException</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Source file: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> sourcePath);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Get the directory portion of the path</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Path</span><span style="color:#E45649;--shiki-dark:#E06C75"> sourceDirectory</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E5C07B"> sourcePath</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getParent</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Source directory: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> sourceDirectory);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Get the file name</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        String</span><span style="color:#E45649;--shiki-dark:#E06C75"> sourceFileName</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E5C07B"> sourcePath</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getFileName</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">toString</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Source file name: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> sourceFileName);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Create the backup file path</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // This will combine the directory and the file name with a `.bak` extension</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Path</span><span style="color:#E45649;--shiki-dark:#E06C75"> backupPath</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E5C07B"> sourceDirectory</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">resolve</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(sourceFileName </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#50A14F;--shiki-dark:#98C379"> ".bak"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Backup file: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> backupPath);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> backupPath;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    private</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> copyFile</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Path</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> sourcePath</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#C18401;--shiki-dark:#E5C07B">Path</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> backupPath</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#A626A4;--shiki-dark:#C678DD"> throws</span><span style="color:#C18401;--shiki-dark:#E5C07B"> IOException</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Copy the file from sourcePath to backupPath</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        Files</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">copy</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(sourcePath, backupPath, REPLACE_EXISTING);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Test</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[] </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">args</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Get the path to the source file from the first command line argument</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#E45649;--shiki-dark:#E5C07B">args</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">length</span><span style="color:#383A42;--shiki-dark:#56B6C2"> ==</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Usage: java Test &#x3C;source file>"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">exit</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"-----------------------------"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        BackupUtility</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">backupFile</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(args[</span><span style="color:#986801;--shiki-dark:#D19A66">0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">]);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"-----------------------------"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      </div>
+    </div>
+  </body>
+</html>

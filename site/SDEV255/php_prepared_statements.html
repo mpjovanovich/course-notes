@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV255: SQL Prepared Statements</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#sql-prepared-statements">SQL Prepared Statements</a>
+          <ul>
+            <li>
+              <a href="#advantages-over-regular-sql-statements"
+                >Advantages Over Regular SQL Statements</a
+              >
+            </li>
+            <li>
+              <a href="#naive-dynamic-query-approach-concatenation"
+                >Naive Dynamic Query Approach: Concatenation</a
+              >
+            </li>
+            <li><a href="#sql-injection-attack">SQL Injection Attack</a></li>
+            <li>
+              <a href="#php-prepared-statement-syntax"
+                >PHP Prepared Statement Syntax</a
+              >
+              <ul>
+                <li><a href="#example-insert">Example Insert</a></li>
+                <li><a href="#example-update">Example Update</a></li>
+                <li><a href="#example-delete">Example Delete</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="sql-prepared-statements">SQL Prepared Statements</h1>
+      <p>
+        A <strong>prepared statement</strong> is a used to execute similar SQL
+        statements repeatedly.
+      </p>
+      <h2 id="advantages-over-regular-sql-statements">
+        Advantages Over Regular SQL Statements
+      </h2>
+      <ul>
+        <li>
+          <strong>Performance</strong> - Precompiled and optimized by the
+          database engine (saves a few extra steps that DB normally has to do
+          each time).
+        </li>
+        <li>
+          <strong>Security</strong> - Immune to SQL injection attacks. Database
+          engine can distinguish between SQL statement and data that the user
+          has provided.
+        </li>
+        <li>
+          <strong>Convenience</strong> - Prepared statements can be used to
+          execute the same SQL statement multiple times with different
+          parameters. This means that the application does not need to create a
+          new SQL statement every time it wants to execute the statement.
+        </li>
+        <li>
+          <strong>Readability</strong> - Prepared statements can make the
+          application code more readable. This is because the SQL statement is
+          separated from the data that the user has provided.
+        </li>
+      </ul>
+      <h2 id="naive-dynamic-query-approach-concatenation">
+        Naive Dynamic Query Approach: Concatenation
+      </h2>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Get the user id from the query string</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$userid</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E06C75"> $_GET</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'userid'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">];</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "</span><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> *</span><span style="color:#A626A4;--shiki-dark:#C678DD"> FROM</span><span style="color:#383A42;--shiki-dark:#98C379"> users </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#98C379"> userid </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#E45649;--shiki-dark:#E06C75"> $userid</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <h2 id="sql-injection-attack">SQL Injection Attack</h2>
+      <p>
+        A <strong>SQL injection attack</strong> is a code injection technique
+        where SQL statements are submitted as GET or POST values.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// http://example.com?userid=1;DROP TABLE users;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$userid</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E06C75"> $_GET</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'userid'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">];</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// $userid = "1;DROP TABLE users;"</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "</span><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> *</span><span style="color:#A626A4;--shiki-dark:#C678DD"> FROM</span><span style="color:#383A42;--shiki-dark:#98C379"> users </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#98C379"> userid </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#E45649;--shiki-dark:#E06C75"> $userid</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <p>We should sanitize the input, but also use prepared statements.</p>
+      <h2 id="php-prepared-statement-syntax">PHP Prepared Statement Syntax</h2>
+      <p><strong>Single Parameter Binding</strong></p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$user_id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Create the SQL. :userid is a placeholder</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "</span><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> *</span><span style="color:#A626A4;--shiki-dark:#C678DD"> FROM</span><span style="color:#383A42;--shiki-dark:#98C379"> users </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#98C379"> userid </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#98C379"> :userid</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// $db is our PDO connection object.</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// It has methods on it to prepare statements.</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E06C75"> $db</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">prepare</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Bind the parameter to the placeholder</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Use a PDO constant to specify the data type for the third argument for safety</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">bindParam</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">':userid'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#E45649;--shiki-dark:#E06C75">$user_id</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#C18401;--shiki-dark:#E5C07B">PDO</span><span style="color:#383A42;--shiki-dark:#ABB2BF">::</span><span style="color:#986801;--shiki-dark:#D19A66">PARAM_INT</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Execute the statement</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">execute</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Fetch the results</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$results</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E06C75"> $stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">fetchAll</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span></code></pre>
+      <p><strong>Multiple Parameter Binding</strong></p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// ...</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "</span><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> *</span><span style="color:#A626A4;--shiki-dark:#C678DD"> FROM</span><span style="color:#383A42;--shiki-dark:#98C379"> users </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#98C379"> category_id </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#98C379"> :category_id </span><span style="color:#A626A4;--shiki-dark:#C678DD">AND</span><span style="color:#383A42;--shiki-dark:#98C379"> price </span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;=</span><span style="color:#383A42;--shiki-dark:#98C379"> :price</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E06C75"> $db</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">prepare</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">bindParam</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">':category_id'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#E45649;--shiki-dark:#E06C75">$category_id</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#C18401;--shiki-dark:#E5C07B">PDO</span><span style="color:#383A42;--shiki-dark:#ABB2BF">::</span><span style="color:#986801;--shiki-dark:#D19A66">PARAM_INT</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">bindParam</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">':price'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#E45649;--shiki-dark:#E06C75">$price</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#C18401;--shiki-dark:#E5C07B">PDO</span><span style="color:#383A42;--shiki-dark:#ABB2BF">::</span><span style="color:#986801;--shiki-dark:#D19A66">PARAM_FLOAT</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">execute</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// No need to fetch results if we're doing an insert, update, or delete</span></span></code></pre>
+      <h3 id="example-insert">Example Insert</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// ...</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "</span><span style="color:#A626A4;--shiki-dark:#C678DD">INSERT INTO</span><span style="color:#383A42;--shiki-dark:#98C379"> users (username, title) </span><span style="color:#A626A4;--shiki-dark:#C678DD">VALUES</span><span style="color:#383A42;--shiki-dark:#98C379"> (:username, :title)</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E06C75"> $db</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">prepare</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">bindParam</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">':username'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#E45649;--shiki-dark:#E06C75">$username</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#C18401;--shiki-dark:#E5C07B">PDO</span><span style="color:#383A42;--shiki-dark:#ABB2BF">::</span><span style="color:#986801;--shiki-dark:#D19A66">PARAM_STR</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">bindParam</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">':title'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#E45649;--shiki-dark:#E06C75">$title</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#C18401;--shiki-dark:#E5C07B">PDO</span><span style="color:#383A42;--shiki-dark:#ABB2BF">::</span><span style="color:#986801;--shiki-dark:#D19A66">PARAM_STR</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">execute</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// No need to fetch results for an insert</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">execute</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span></code></pre>
+      <h3 id="example-update">Example Update</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// ...</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "</span><span style="color:#A626A4;--shiki-dark:#C678DD">UPDATE</span><span style="color:#383A42;--shiki-dark:#98C379"> users </span><span style="color:#A626A4;--shiki-dark:#C678DD">SET</span><span style="color:#383A42;--shiki-dark:#98C379"> username </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#98C379"> :username, title </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#98C379"> :title </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#98C379"> userid </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#98C379"> :userid</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E06C75"> $db</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">prepare</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">bindParam</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">':username'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#E45649;--shiki-dark:#E06C75">$username</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#C18401;--shiki-dark:#E5C07B">PDO</span><span style="color:#383A42;--shiki-dark:#ABB2BF">::</span><span style="color:#986801;--shiki-dark:#D19A66">PARAM_STR</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">bindParam</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">':title'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#E45649;--shiki-dark:#E06C75">$title</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#C18401;--shiki-dark:#E5C07B">PDO</span><span style="color:#383A42;--shiki-dark:#ABB2BF">::</span><span style="color:#986801;--shiki-dark:#D19A66">PARAM_STR</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">bindParam</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">':userid'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#E45649;--shiki-dark:#E06C75">$userid</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#C18401;--shiki-dark:#E5C07B">PDO</span><span style="color:#383A42;--shiki-dark:#ABB2BF">::</span><span style="color:#986801;--shiki-dark:#D19A66">PARAM_INT</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">execute</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span></code></pre>
+      <h3 id="example-delete">Example Delete</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// ...</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "</span><span style="color:#A626A4;--shiki-dark:#C678DD">DELETE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> FROM</span><span style="color:#383A42;--shiki-dark:#98C379"> users </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#98C379"> userid </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#98C379"> :userid</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E06C75"> $db</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">prepare</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$sql</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">bindParam</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">':userid'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#E45649;--shiki-dark:#E06C75">$userid</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#C18401;--shiki-dark:#E5C07B">PDO</span><span style="color:#383A42;--shiki-dark:#ABB2BF">::</span><span style="color:#986801;--shiki-dark:#D19A66">PARAM_INT</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$stmt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">-></span><span style="color:#4078F2;--shiki-dark:#61AFEF">execute</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span></code></pre>
+    </div>
+  </body>
+</html>
