@@ -2,6 +2,26 @@
 title: Overview of AI
 ---
 
+~.toc
+
+- [Artificial Intelligence](#artificial-intelligence)
+  - [Expert Systems](#expert-systems)
+  - [Machine Learning](#machine-learning)
+    - [Supervised Learning](#supervised-learning)
+    - [Artificial Neural Networks](#artificial-neural-networks)
+      - [Single layer perceptron](#single-layer-perceptron)
+      - [Layered Neural Networks (Deep Learning)](#layered-neural-networks-deep-learning)
+    - [Generative AI](#generative-ai)
+  - [Industry and Market Considerations](#industry-and-market-considerations)
+    - [GPU Market and Compute Resources](#gpu-market-and-compute-resources)
+  - [Challenges and Considerations in AI](#challenges-and-considerations-in-ai)
+    - [Technical Challenges](#technical-challenges)
+    - [Ethical and Regulatory Considerations](#ethical-and-regulatory-considerations)
+
+/~
+
+# Artificial Intelligence
+
 <figure>
  <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg" alt="" style="">
  <figcaption>
@@ -9,60 +29,7 @@ title: Overview of AI
  </figcaption>
 </figure>
 
-~.toc
-
-- [Artificial Intelligence](#artificial-intelligence)
-  - [Types of AI](#types-of-ai)
-    - [Expert Systems](#expert-systems)
-      - [Artificial Neural Networks](#artificial-neural-networks)
-        - [Single layer perceptron](#single-layer-perceptron)
-    - [Potential Entrants to AI](#potential-entrants-to-ai)
-  - [Staying Current on Innovation](#staying-current-on-innovation)
-
-/~
-
-# Artificial Intelligence
-
-<!-- TODO: split into several pages -->
-
-These notes are a mess, as I'm currently porting them from:
-
-https://docs.google.com/document/d/1ctlNbZHVTEDOqJWp9rlHQWI1H_RKuFs8A7oxcxTqUA8/edit?usp=sharing
-
-Not all info is copied over.
-
-**See also:**
-
-- demos on git
-  - Python NNs
-  - OCR
-  - k-means clustering
-
-**Other topics to discuss:**
-
-- How to encode inputs
-- Where is AI being used
-  - Medical imaging
-  - Pharmaceutical discovery
-  - Self-driving cars
-  - Marketing
-  - Precision agriculture
-  - ...
-- LLMs
-  - The "old" way
-  - Attention mechanisms (QKV puts words in context and assigns weights)
-- Ethical issues
-  - How does training data affect the model?
-    - Who is labeling?
-    - How representative is the data of the population? Try making an image of "successful businessman sipping a cocktail while riding a rodeo bull"...
-  - Open vs closed source
-  - Who owns the training data? Can you train from artists' or researchers' work?
-  - Where does the data "live"?
-  - Limits to AI (case study of facial recognition used in hiring)
-
-## Types of AI
-
-### Expert Systems
+## Expert Systems
 
 Simulate human intelligence...
 
@@ -79,16 +46,35 @@ Simulate human intelligence...
   - Close synapses are more likely to fire together.
   - Aids in memory formation.
 
-#### Artificial Neural Networks
+## Machine Learning
+
+**Machine Learning** allows computer systems to learn from data, without being explicitly programmed.
+
+Even though neural networks are most discussed today, there are many types of machine learning.
+
+### Supervised Learning
+
+- Supervised learning is a type of machine learning where the model is trained on a labeled dataset.
+- The model learns to map inputs to outputs based on the correctly labeled data.
+- The model is then used to predict the output for new inputs that it has not seen before.
+
+### Artificial Neural Networks
+
+<figure>
+ <img src="https://www.cusabio.com/statics/images/Structure-Neuron.jpg" alt="" style="">
+</figure>
 
 - Inputs are called "features" or "parameters"
 - Each layer behaves like a function, transforming the previous layer.
-- Complexity of function that can be learned depends on the architecture that’s used.
+- Complexity of function that can be learned depends on the architecture that's used.
 
-##### Single layer perceptron
+#### Single layer perceptron
 
-<!-- https://towardsdatascience.com/everything-you-need-to-know-about-neural-networks-and-backpropagation-machine-learning-made-easy-e5285bc2be3a -->
+<figure>
+ <img src="https://schwalbe10.github.io/thinkage/images/posts/perceptron.png" alt="" style="width: 80%;height: auto;">
+</figure>
 
+- Simplest form of neural network.
 - What can it compute?
   - Linear functions - where output groupings (true or false) can be separated by a line.
   - E.g. AND - yes; XOR - no
@@ -97,57 +83,81 @@ Simulate human intelligence...
  <img src="https://static.packt-cdn.com/products/9781788299879/graphics/2271a103-bcc0-4ea0-acca-0eb3e3c99fbd.png" alt="" style="width: 90%;height: auto;">
 </figure>
 
-### Potential Entrants to AI
+**Demo:** NN Perceptron in Python
 
-- **_Barriers to entry_** = factors that make it difficult for new competitors to enter the market.
-  - Capital
-    - Can't raise initial funding to start
-  - Expertise
-    - Can't afford to hire experts
-  - Monopoly
-    - Supply locked
-    - Can't compete with prices
-    - Can't compete with branding
+#### Layered Neural Networks (Deep Learning)
 
-<p class="demo">Case study:</p>
+<figure>
+ <img src="https://miro.medium.com/v2/resize:fit:2000/1*ui3IvoiVYBFtaU0auj63ew.gif" alt="" style="width: 80%;height: auto;">
+</figure>
 
-**nVidia and GPU Market**
+<figure>
+ <img src="https://www.quantib.com/hs-fs/hubfs/assets/pillar%20pages/The%20ultimate%20guide%20to%20AI%20in%20radiology/images/Pillar%20page%20-%20figure%2010-2.png?width=1022&name=Pillar%20page%20-%20figure%2010-2.png" alt="" style="width: 80%;height: auto;">
+</figure>
 
-- Industries scrambling to create/employ AI plan
-- Huge demand, low supply
-- Rivalry / competitors in ramp up mode
-- Who profits?
+- Add more layers to the network.
+- Can compute more complex functions.
 
-  - Are these profits tenable long term?
+### Generative AI
 
-- Currently, there are linear profits for linear scaling in compute
-- Will there be a "compute bust"?
-- Responses to need for massive compute power...
-  - Efficient algorithms
-  - Compression
+What we've focused on so for is classification (e.g. "this is a cat" or "this is a dog").
 
-<p class="demo">Case study:</p>
+- Generative AI is a type of machine learning where the model is trained to generate new data.
+- The model learns to generate new data that is similar to the training data.
 
-**AI Software and Hardware Architechtures**
+**Large Language Models (LLMs)** are a type of generative AI that are trained to generate text. There are also models that can generate images, audio, and other types of data.
 
-- Started off niche
-- Odd position where "products" are not yet defined;
-  - Exploritory investment
-- Major tech leaders, e.g. Meta, now open sourcing how to do things
-- How does this influence barrier to entry?
-  - Startups?
-  - Good or bad for innovation?
+## Industry and Market Considerations
 
-## Staying Current on Innovation
+### GPU Market and Compute Resources
 
-Technical skills must be supplemented with knowledge of current trends and innovations.
+- **Current State**
 
-- MS Build convention, Satya Nadella and others, Microsoft... find something interesting!
+  - nVidia dominance and supply constraints
+  - Currently linear relationship between compute investment and model performance
+    - E.g. 10x larger model -> 10x model performance
+    - This is slowing down
 
-  - [Microsoft Build 2023](https://news.microsoft.com/build-2023/)
+- **Future Challenges**
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/FaV0tIaWWEg?si=p7Z10SGF9KC5Tkmf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  - Potential "AI bust" scenario for industry
+    - Similar to dot-com bubble
+  - Potential "compute bust" scenario with limited compute resources
+    - US effort: [Stargate Project](https://openai.com/index/announcing-the-stargate-project/)
+      - $500 billion US project
+      - Energy infrastructure
+      - AI hardware
 
-- Andrej Karpathy, Tesla / OpenAI
+## Challenges and Considerations in AI
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bZQun8Y4L2A?si=0hnLcMHB6GZwOzgT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+### Technical Challenges
+
+- Input encoding methodologies
+- Computational limitations
+- Model scaling issues
+
+### Ethical and Regulatory Considerations
+
+- **Data Rights and Ownership**
+
+  - Open vs closed source models
+  - Training data ownership and sale of data
+  - Data storage and sovereignty
+
+- **Ethical Implementation**
+
+  - Training data bias and representation
+  - Data labeling practices
+  - Fair use of artistic and research works
+  - Responsible AI deployment
+    - Example: Ethics of AI in hiring practices (facial recognition)
+
+- **AI Safety**
+
+  - Human initiated: Avoid nuclear, biological, chemical, social engineering, autonomous weaponry, cyber warfare
+  - AI evolution: AI alignment to human values in case of autonomous AI
+  - US has chosen not to join EU level of regulation for AI
+
+- **Long Term Cognitive Impact**
+  - Code quality issues for generated code
+  - Decreased critical thinking skills for AI "power users" (over-reliance on AI)

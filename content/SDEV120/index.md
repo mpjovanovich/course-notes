@@ -21,6 +21,7 @@ showBreadcrumb: false
   - [M09: Data Representation and Encoding](#m09-data-representation-and-encoding)
   - [M10: Programming Paradigms](#m10-programming-paradigms)
   - [Final Review](#final-review)
+  - [Overflow Topics](#overflow-topics)
 
 /~
 
@@ -210,11 +211,11 @@ Discussion: Analysis of a Programming Language
 
 Final Study Guide to be posted.
 
-<!-- [Final Study Guide](final_study_f24.html) -->
+<!-- [Final Study Guide](final_study_f25.html) -->
 
-<!-- ## Overflow Topics
+## Overflow Topics
 
-[Overview of Artificial Intelligence](ai_overview.html) -->
+[Overview of Artificial Intelligence](ai_overview.html)
 
 <!--
 
