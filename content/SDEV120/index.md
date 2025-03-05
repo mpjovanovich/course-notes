@@ -209,9 +209,7 @@ Discussion: Analysis of a Programming Language
 
 ## Final Review
 
-Final Study Guide to be posted.
-
-<!-- [Final Study Guide](final_study_f25.html) -->
+[Final Study Guide](final_study_s25.html)
 
 ## Overflow Topics
 
