@@ -6,20 +6,18 @@ showBreadcrumb: false
 
 ~.toc
 
-- [SDEV140](#sdev140)
+- [INFM109](#infm109)
   - [Announcements](#announcements)
   - [Module 00: Course Introduction](#module-00-course-introduction)
   - [Module 01: Digital Citizenry \& The Internet](#module-01-digital-citizenry--the-internet)
 
 /~
 
-# SDEV140
+# INFM109
 
 ## Announcements
 
-<figure>
- <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
-</figure>
+...
 
 ## Module 00: Course Introduction
 
