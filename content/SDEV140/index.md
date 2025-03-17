@@ -29,12 +29,7 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- Syllabus Amendment: Lowest lab score will be dropped
-  - You will see an "excused" on this.
-- Please check announcements if you missed them
-- Final project - final last hints and due end of day Tuesday.
-- Last two labs will be video walkthroughs. **They are due Friday evening.**
-- Course evaluations are available, "Final Project" module. Please take a moment to fill it out.
+...
 
 ## Module 00: Course Introduction
 
@@ -48,6 +43,11 @@ Overview of course
 - Make sure you can access the textbook
 
 [Review: Computer Orientation](../common/computer_orientation.html?course=SDEV140)
+
+Set up file structure for the course on your machine
+
+- SDEV 140 folder (preferably not on C drive, and not in cloud folder)
+- Subfolder for each assignment
 
 ## Module 01: Fundamentals of Coding
 

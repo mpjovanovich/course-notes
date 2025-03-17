@@ -19,7 +19,7 @@ title: Computer Orientation
 
 ## Naming Files and Folders
 
-Spaces in files and directories can be a cause of bugs, and generally make life more difficult for programmers. Instead:
+Spaces and special characters in files and directories can be a cause of bugs, and generally make life more difficult for programmers and technical users.
 
 **Good Habits:**
 
@@ -40,13 +40,14 @@ You can change the file extension to whatever you want (despite warnings you may
 - Create a new file called `test.txt`.
 - Remove the extension.
 - Open the file in a text editor.
+- It still works!
 
 /~
 
 **Good Habits:**
 
 - Make sure file extensions are visible. Windows hides them by default.
-- Be sure to check the file extension prior to saving.
+- Be sure to check the file extension prior to saving in a program, such as notepad or Notepad++.
 
 ## Directory Structure
 
@@ -56,36 +57,23 @@ You can change the file extension to whatever you want (despite warnings you may
 
 ~.focusContent.demo
 
-Use tree terminiology to draw and describe the following directory structure, from [Game of Life - React](https://github.com/mpjovanovich/life_react)
+Create the directory structure below:
 
-In particular:
+```
+C
+├── folder1
+│   ├── file1.txt
+│   ├── file2.txt
+├── file3.txt
+├── file4.txt
+```
+
+Describe the following:
 
 - Root directory?
 - Sibling directories?
 - Child directories?
 - Parent directories?
-- Ancestor directories?
-- Descendant directories?
-
-```
-src
-├── App.tsx
-├── Cell.tsx
-├── GameGrid.tsx
-├── Life.ts
-├── assets
-│   ├── desert_life_logo.webp
-│   ├── favicon.ico
-│   └── hc_mask_20.svg
-├── index.css
-├── main.tsx
-└── vite-env.d.ts
-.eslintrc.cjs
-.firebaserc
-.gitignore
-favicon.png
-...
-```
 
 /~
 
@@ -102,7 +90,7 @@ If there's something you're looking for, e.g. a homework keyword, try using this
 
 ## Summary: What Should I Be Able to Do?
 
-- Find files and folders
+- _Easily_ find files and folders on your machine
 - Create new files and folders
 - Move files and folders
 - Delete files and folders
