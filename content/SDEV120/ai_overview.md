@@ -161,3 +161,4 @@ What we've focused on so for is classification (e.g. "this is a cat" or "this is
 - **Long Term Cognitive Impact**
   - Code quality issues for generated code
   - Decreased critical thinking skills for AI "power users" (over-reliance on AI)
+  - "Groupthink" perpetuated by AI, as it generates feedback loops of similar responses (possibly from itself or other AI)

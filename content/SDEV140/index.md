@@ -9,6 +9,7 @@ showBreadcrumb: false
 - [SDEV140](#sdev140)
   - [Announcements](#announcements)
   - [Module 00: Course Introduction](#module-00-course-introduction)
+  - [Module 00: Review Items (if Needed)](#module-00-review-items-if-needed)
   - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
   - [Module 02: Selection Structures](#module-02-selection-structures)
   - [Module 03: Loops](#module-03-loops)
@@ -33,7 +34,7 @@ showBreadcrumb: false
 
 ## Module 00: Course Introduction
 
-Demo and Discussion: [Current State of Coding (AI Assisted Coding)](cannonball.txt)
+<!-- Demo and Discussion: [Current State of Coding (AI Assisted Coding)](cannonball.txt) -->
 
 Overview of course
 
@@ -42,12 +43,16 @@ Overview of course
 - Review course structure and resources
 - Make sure you can access the textbook
 
-[Review: Computer Orientation](../common/computer_orientation.html?course=SDEV140)
+<!-- [Review: Computer Orientation](../common/computer_orientation.html?course=SDEV140) -->
 
-Set up file structure for the course on your machine
+<!-- Set up file structure for the course on your machine
 
 - SDEV 140 folder (preferably not on C drive, and not in cloud folder)
-- Subfolder for each assignment
+- Subfolder for each assignment -->
+
+## Module 00: Review Items (if Needed)
+
+- [Coding Punctuation](../common/coding_punctuation.html?course=SDEV140)
 
 ## Module 01: Fundamentals of Coding
 
@@ -57,13 +62,28 @@ Setting up your Coding Environment
 
 - [Installing Python](../common/installing_python.html?course=SDEV140)
 
-- [Review: Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
+- Create a GitHub account if you don't have one
+
+  - [GitHub](../common/github.html?course=SDEV140)
+
+- [Installing Git](../common/installing_git.html?course=SDEV140)
+
+- Set default terminal: `Ctrl + Shift + P` -> `Terminal: Select Default Profile` -> `Git Bash`
+
+Command Line (bash)
+
+- [Command Line Basics](../common/basic_shell_commands.html?course=SDEV140)
+
+- Exercise:
+  - Check which shell terminal is using
+  - Create and close new terminals
+  - Clear terminal
+  - Create course directory structure
+  - Open a working folder in VS Code
 
 Getting started with Python
 
-- [Coding Punctuation](../common/coding_punctuation.html?course=SDEV140)
-
-- [Review: Coding Environments](../SDEV120/coding_environments.html?course=SDEV140)
+- [Review: Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
 
 - [Review: Input, Output, and Comments in Python](../SDEV120/input_output_comments_python.html?course=SDEV140)
 
@@ -73,33 +93,15 @@ Getting started with Python
 
 - [String Concatenation, Formatting, and Manipulation](string_manipulation.html)
 
-Git
-
-- Create a GitHub account if you don't have one
-
-- [GitHub](../common/github.html?course=SDEV140)
-
-- [Installing Git](../common/installing_git.html?course=SDEV140)
-
-- [Version Control via Git](../common/git_version_control.html?course=SDEV140)
+Submitting Projects - GitHub Classroom
 
 - [GitHub Classroom](../common/github_classroom.html?course=SDEV140)
 
-Command Line (bash)
-
-- [Command Line Basics](../common/basic_shell_commands.html?course=SDEV140)
-
-Lab: Git
+Lab: Command Line and Debugging
 
 Lab: Strings
 
 ## Module 02: Selection Structures
-
-First GitHub Classroom lab:
-
-- Introduce strings lab
-- Notes: Included in M01 notes above, but I'll link temporarily for today
-  - [GitHub Classroom](../common/github_classroom.html?course=SDEV140)
 
 [Review: Syntax and Expressions](../SDEV120/syntax_expressions.html?course=SDEV140)
 
