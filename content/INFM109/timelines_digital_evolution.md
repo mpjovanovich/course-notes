@@ -1,5 +1,5 @@
 ---
-title: Timelines for Tech Literacy and Communication
+title: Timelines - Digital Evolution
 course: INFM109
 ---
 
