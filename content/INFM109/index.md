@@ -33,3 +33,4 @@ Overview of course
 
 - [Timelines: Digital Evolution](timelines_digital_evolution.html)
 - Discussion: Digital Communication Patterns
+- [The Internet](internet.html)
