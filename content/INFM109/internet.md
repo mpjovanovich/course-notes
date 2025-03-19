@@ -217,3 +217,38 @@ http://174.138.52.187:81
 ```
 
 /~
+
+## VPN, Proxy, and Private Browsing
+
+### Private Browsing
+
+Convenience feature in browsers to clear cookies and cache, not save history, etc.
+
+Meant to give some degree of privacy to users sharing a single device.
+
+Does **not** hide the origin of requests.
+
+### Proxy
+
+A proxy server is a server that acts as an intermediary for requests from clients seeking resources from other servers.
+
+Meant to hide the origin of requests.
+
+When I visit a website through a proxy, the request will go to the proxy server first, and then to the website.
+
+### VPN
+
+**VPN** = Virtual Private Network
+
+You are "inside" a private network, and the VPN creates a secure tunnel to the Internet.
+
+Meant to provide access to a private network (private IP addresses). E.g. - none of you can "talk" to my lab machine.
+
+When I VPN to Ivy Tech then visit a website, the request will go to the Ivy Tech network first, and then to the website.
+
+## Password Management
+
+Practical Password Management Tips:
+
+- Use multifactor authentication whenever possible
+- Use a unique password for each site; DO NOT USE THE SAME PASSWORD FOR MULTIPLE SITES
