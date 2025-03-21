@@ -143,8 +143,21 @@ Intro to Assignments:
 - Iter 1 - Requirements documentation
 - \*Spring 25: Add instructor as write-collaborator
 
-<!--
+## M04: Software Testing; Reliability
 
+### Day 9
+
+Lecture topics:
+
+- [Software Testing Overview](software_testing_overview.html)
+- [Development Testing](development_testing.html)
+- [Release Testing](release_testing.html)
+- [User Testing](user_testing.html)
+- [Software Testing Review](software_testing_review.html)
+
+<!-- TODO: Test Driven Development, Unit testing demos -->
+
+<!--
 
 
 Intro to Assignments:
@@ -155,19 +168,6 @@ Intro to Assignments:
 
 Performance Review and Career Development
 
-## M04: Software Testing; Reliability
-
-### Day 9
-
-- [Software Testing Overview](software_testing_overview.html)
-
-- [Development Testing](development_testing.html)
-
-- [Release Testing](release_testing.html)
-
-- [User Testing](user_testing.html)
-
-- [Software Testing Review](software_testing_review.html)
 
 Intro to Assignments:
 
