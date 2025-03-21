@@ -3,6 +3,12 @@ title: Software Testing Review
 course: SDEV265
 ---
 
+~.toc
+
+- [Software Testing - Review](#software-testing---review)
+
+/~
+
 # Software Testing - Review
 
 Excercise: complete the following diagram.

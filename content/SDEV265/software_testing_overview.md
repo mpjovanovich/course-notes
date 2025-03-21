@@ -3,10 +3,14 @@ title: Software Testing
 course: SDEV265
 ---
 
+~.toc
+
 - [Software Testing](#software-testing)
   - [Validation Testing](#validation-testing)
   - [Defect Testing](#defect-testing)
   - [Stages of Testing](#stages-of-testing)
+
+/~
 
 # Software Testing
 

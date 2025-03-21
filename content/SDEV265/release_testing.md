@@ -3,11 +3,15 @@ title: Release Testing
 course: SDEV265
 ---
 
+~.toc
+
 - [Release Testing](#release-testing)
   - [Requirements Based Testing](#requirements-based-testing)
   - [Scenario Testing](#scenario-testing)
   - [Performance Testing](#performance-testing)
   - [Regression Testing](#regression-testing)
+
+/~
 
 # Release Testing
 

@@ -3,6 +3,8 @@ title: Development Testing
 course: SDEV265
 ---
 
+~.toc
+
 - [Development Testing](#development-testing)
   - [Unit Testing](#unit-testing)
     - [Parts of a Unit Test](#parts-of-a-unit-test)
@@ -14,6 +16,8 @@ course: SDEV265
     - [Interface Errors](#interface-errors)
     - [Timing Errors](#timing-errors)
   - [You Can't Catch Em All](#you-cant-catch-em-all)
+
+/~
 
 # Development Testing
 

@@ -3,10 +3,14 @@ title: User Testing
 course: SDEV265
 ---
 
+~.toc
+
 - [User Testing](#user-testing)
   - [Alpha Testing](#alpha-testing)
   - [Beta Testing](#beta-testing)
   - [Acceptance Testing](#acceptance-testing)
+
+/~
 
 # User Testing
 
