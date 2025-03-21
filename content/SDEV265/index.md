@@ -17,6 +17,9 @@ showBreadcrumb: false
   - [M03: Requirements Engineering; Agile Development](#m03-requirements-engineering-agile-development)
     - [Day 1](#day-1-2)
     - [Day 2](#day-2-1)
+  - [M04: Software Testing; Reliability](#m04-software-testing-reliability)
+    - [Day 1](#day-1-3)
+    - [Day 2](#day-2-2)
 
 /~
 
@@ -145,8 +148,6 @@ Intro to Assignments:
 
 ## M04: Software Testing; Reliability
 
-### Day 9
-
 Lecture topics:
 
 - [Software Testing Overview](software_testing_overview.html)
@@ -154,6 +155,17 @@ Lecture topics:
 - [Release Testing](release_testing.html)
 - [User Testing](user_testing.html)
 - [Software Testing Review](software_testing_review.html)
+
+### Day 1
+
+- Lecture
+- Client requirements meeting
+- Work session
+
+### Day 2
+
+- Lecture
+- TBD
 
 <!-- TODO: Test Driven Development, Unit testing demos -->
 
