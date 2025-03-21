@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV255: PHP - Input Validation</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#input-validation">Input Validation</a>
+          <ul>
+            <li>
+              <a href="#presence-checks">Presence Checks</a>
+              <ul>
+                <li><a href="#truthy-and-falsy">Truthy and Falsy</a></li>
+                <li><a href="#built-in-functions">Built in Functions</a></li>
+                <li>
+                  <a href="#comparison-of-functions">Comparison of Functions</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#data-type-checks">Data Type Checks</a></li>
+            <li><a href="#value-checks">Value Checks</a></li>
+            <li>
+              <a href="#regular-expression-checks">Regular Expression Checks</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="input-validation">Input Validation</h1>
+      <h2 id="presence-checks">Presence Checks</h2>
+      <h3 id="truthy-and-falsy">Truthy and Falsy</h3>
+      <ul>
+        <li>When put into an if statement, variables are cast to boolean.</li>
+        <li>
+          This concept is called &quot;truthy&quot; and &quot;falsy&quot;.
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$var</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> ''</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#E45649;--shiki-dark:#E06C75">$var</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    echo</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'true'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">} </span><span style="color:#A626A4;--shiki-dark:#C678DD">else</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    echo</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'false'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+      <h3 id="built-in-functions">Built in Functions</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Returns true if</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>isset()</code></td>
+            <td>Variable exists and is not <code>null</code></td>
+          </tr>
+          <tr>
+            <td><code>empty()</code></td>
+            <td>Variable exists and != false</td>
+          </tr>
+          <tr>
+            <td><code>is_null()</code></td>
+            <td>Variable is <code>null</code></td>
+          </tr>
+          <tr>
+            <td><code>array_key_exists()</code></td>
+            <td>Key exists in the array</td>
+          </tr>
+        </tbody>
+      </table>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#0184BC;--shiki-dark:#56B6C2">isset</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$_GET</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'name'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">])) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // do something</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+      <h3 id="comparison-of-functions">Comparison of Functions</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Value</th>
+            <th><code>truthy</code></th>
+            <th><code>isset()</code></th>
+            <th><code>empty()</code></th>
+            <th><code>is_null()</code></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>false</code></td>
+            <td>false</td>
+            <td>true</td>
+            <td>true</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>true</code></td>
+            <td>true</td>
+            <td>true</td>
+            <td>false</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>null</code></td>
+            <td>false</td>
+            <td>false</td>
+            <td>true</td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td><code>&#39;&#39;</code></td>
+            <td>false</td>
+            <td>true</td>
+            <td>true</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>&#39;abc&#39;</code></td>
+            <td>true</td>
+            <td>true</td>
+            <td>false</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>&#39;0&#39;</code></td>
+            <td>false</td>
+            <td>true</td>
+            <td>true</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>&#39;1&#39;</code></td>
+            <td>true</td>
+            <td>true</td>
+            <td>false</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>0</code></td>
+            <td>false</td>
+            <td>true</td>
+            <td>true</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>1</code></td>
+            <td>true</td>
+            <td>true</td>
+            <td>false</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>[]</code></td>
+            <td>false</td>
+            <td>true</td>
+            <td>true</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><code>[1,2,3]</code></td>
+            <td>true</td>
+            <td>true</td>
+            <td>false</td>
+            <td>false</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="data-type-checks">Data Type Checks</h2>
+      <ul>
+        <li><code>is_string()</code></li>
+        <li><code>is_numeric()</code></li>
+        <li><code>is_int()</code></li>
+        <li><code>is_float()</code></li>
+        <li><code>is_bool()</code></li>
+        <li><code>is_array()</code></li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#0184BC;--shiki-dark:#56B6C2">is_array</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$_GET</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'items'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">])) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // do something</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+      <h2 id="value-checks">Value Checks</h2>
+      <ul>
+        <li><code>==</code> - check if two values are equal</li>
+        <li>
+          <code>===</code> - check if two values are equal and of the same type
+        </li>
+        <li>
+          <code>array_key_exists()</code> - check if a key exists in an array
+        </li>
+        <li><code>in_array()</code> - check if a value exists in an array</li>
+        <li>
+          <code>ctype_digit()</code> - check if a string contains only digits
+        </li>
+        <li>
+          <code>ctype_alpha()</code> - check if a string contains only letters
+        </li>
+        <li>
+          <code>ctype_alnum()</code> - check if a string contains only letters
+          and digits
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#0184BC;--shiki-dark:#56B6C2">in_array</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$_GET</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'color'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">],</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [</span><span style="color:#50A14F;--shiki-dark:#98C379">'red'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'green'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'blue'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">])) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // do something</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+      <h2 id="regular-expression-checks">Regular Expression Checks</h2>
+      <ul>
+        <li><code>preg_match()</code> - check if a string matches a pattern</li>
+        <li>
+          <code>preg_match_all()</code> - check if a string matches a pattern
+          multiple times
+        </li>
+        <li><code>preg_replace()</code> - replace a pattern in a string</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#0184BC;--shiki-dark:#56B6C2">preg_match</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#0184BC;--shiki-dark:#E06C75">'/</span><span style="color:#383A42;--shiki-dark:#C678DD">^</span><span style="color:#0184BC;--shiki-dark:#E06C75">[a-zA-Z0-9]</span><span style="color:#383A42;--shiki-dark:#C678DD">+$</span><span style="color:#0184BC;--shiki-dark:#E06C75">/'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#E45649;--shiki-dark:#E06C75"> $_GET</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'username'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">])) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // do something</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+    </div>
+  </body>
+</html>
