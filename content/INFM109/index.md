@@ -18,7 +18,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-...
+- Sign up for exams!
 
 ## Module 00: Course Introduction
 

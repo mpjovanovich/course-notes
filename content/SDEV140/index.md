@@ -30,7 +30,9 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-...
+- How to view lab rubric.
+- How to get to submitted labs.
+- How to view lab feedback.
 
 ## Module 00: Course Introduction
 
