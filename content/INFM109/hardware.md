@@ -12,9 +12,11 @@ course: INFM109
     - [Form Factors](#form-factors)
     - [Chassis](#chassis)
     - [Motherboard](#motherboard)
-    - [CPU (Central Processing Unit)](#cpu-central-processing-unit)
     - [System Bus](#system-bus)
+    - [CPU (Central Processing Unit)](#cpu-central-processing-unit)
   - [Memory](#memory)
+    - [Registers](#registers)
+    - [Cache](#cache)
     - [Random Access Memory (RAM)](#random-access-memory-ram)
     - [Storage Devices](#storage-devices)
   - [Graphics](#graphics)
@@ -102,6 +104,17 @@ As we move through these notes, we'll talk about **compute** and **I/O** perform
 - **Practical takeaways:**
   - The motherboard determines what components are compatible with your system and future upgrade options
 
+### System Bus
+
+- **What is it?** Communication pathways that transfer data between components
+  - Not an individual component; it is a specification of the motherboard
+- **32-bit vs 64-bit systems:**
+  - **Word size:** Refers to the size of data chunks processed at once
+  - 64-bit systems can address more RAM (>4GB)
+  - 64-bit applications can process larger chunks of data
+- **Practical takeaways:**
+  - 64-bit systems are standard now and necessary for modern computing tasks
+
 ### CPU (Central Processing Unit)
 
 <figure>
@@ -135,16 +148,6 @@ As we move through these notes, we'll talk about **compute** and **I/O** perform
 
 /~
 
-### System Bus
-
-- **What is it?** Communication pathways that transfer data between components
-- **32-bit vs 64-bit systems:**
-  - Refers to the size of data chunks processed at once
-  - 64-bit systems can address more RAM (>4GB)
-  - 64-bit applications can process larger chunks of data
-- **Practical takeaways:**
-  - 64-bit systems are standard now and necessary for modern computing tasks and utilizing more than 4GB of RAM
-
 ## Memory
 
 <figure>
@@ -152,6 +155,49 @@ As we move through these notes, we'll talk about **compute** and **I/O** perform
         <img src="https://www.learncomputerscienceonline.com/wp-content/uploads/2019/06/Computer-Memory-Hierarchy-.jpg" style="width: 100%;height: auto;">
     </span>
 </figure>
+
+~.focusContent.note
+
+**Computer Latency in Perspective**
+
+Computers are so fast that it can be difficult to understand the latency of different components. Let's put the relative latency of different components into a human scale:
+
+| Component          | Latency (Round Trip Fetch) | Activity                                    |
+| ------------------ | -------------------------- | ------------------------------------------- |
+| CPU Registers      | 1 minute                   | Fetch something from your desk              |
+| L1 Cache           | 4 minutes                  | Fetch something from other side of building |
+| L2 Cache           | 10 minutes                 | Fetch something from another building       |
+| L3 Cache           | 50 minutes                 | Fetch something from a nearby town          |
+| RAM                | 4 hours                    | Fetch something from another state          |
+| SSD                | 1-2 days                   | Fetch something from across the country     |
+| HDD                | 5-7 days                   | Fetch something from another country        |
+| Network (Internet) | 2-4 weeks                  | Fetch something from another continent      |
+
+/~
+
+### Registers
+
+**Registers** are temporary storage for the CPU to work with as it performs calculations.
+
+- Registers aren't an individual component; they built into the CPU.
+- Extremely fast, because they are in the "working space" of the CPU.
+- Very small amount - roughly 128-256 bytes
+- **Practical takeaways:**
+  - Registers are fundamental to the operation of the CPU; they are not a specification that is listed by CPU manufacturers.
+  - You do not need to consider this specification when buying a CPU for most everyday computing tasks.
+
+### Cache
+
+**Cache** is a type of memory that stores copies of frequently used data from RAM.
+
+- Also not an individual component; it's built into the CPU.
+- Cache is faster than RAM, but smaller and more expensive.
+- Cache is used to store copies of frequently used data from RAM.
+- Avoids need for longer trip to RAM for frequently used data.
+- Different types (L1, L2, L3) have to do with the speed of the cache and the size.
+- **Practical takeaways:**
+  - Cache becomes important for high-performance computing and specialized computers (e.g. servers)
+  - When buying a CPU, you can see the cache size as a specification.
 
 ### Random Access Memory (RAM)
 
@@ -214,7 +260,7 @@ As we move through these notes, we'll talk about **compute** and **I/O** perform
 
 <figure>
     <span>
-        <img src="https://www.google.com/imgres?q=computer%20psu&imgurl=https%3A%2F%2Fwww.pcworld.com%2Fwp-content%2Fuploads%2F2023%2F04%2Fevga-power-supply-100883513-orig.jpg%3Fquality%3D50%26strip%3Dall&imgrefurl=https%3A%2F%2Fwww.pcworld.com%2Farticle%2F456490%2Fhow-to-pick-the-best-pc-power-supply.html&docid=Z8TbRQyQhZs0iM&tbnid=WDm4o9zNNR8ISM&vet=12ahUKEwiy553P56KMAxVa6ckDHbf3MpsQM3oECFkQAA..i&w=1600&h=1232&hcb=2&ved=2ahUKEwiy553P56KMAxVa6ckDHbf3MpsQM3oECFkQAA" style="width: 80%;height: auto;">
+        <img src="https://www.pcworld.com/wp-content/uploads/2023/04/evga-power-supply-100883513-orig.jpg?quality=50&strip=all" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -223,7 +269,7 @@ As we move through these notes, we'll talk about **compute** and **I/O** perform
   - Wattage rating - total power output
   - Efficiency rating (80 Plus Bronze, Silver, Gold, etc.)
 - **Practical takeaways:**
-  - Don't cheap out on the PSU—a quality power supply protects your components and can save on electricity bills
+  - A quality power supply protects your components and can save on electricity bills
 
 ## Connectivity
 
@@ -299,14 +345,10 @@ As we move through these notes, we'll talk about **compute** and **I/O** perform
   - Web browsing, document editing
   - Cloud-based applications
   - Minimal local storage
-- **Standard laptop:**
+- **Laptop:**
   - Office productivity
   - Light gaming
   - Media consumption
-- **Performance laptop/desktop:**
-  - Content creation
-  - Gaming
-  - Multitasking
 - **Workstation:**
   - Professional 3D/video work
   - Scientific computing
@@ -359,44 +401,39 @@ As we move through these notes, we'll talk about **compute** and **I/O** perform
 ### Warranty and Coverage
 
 - **Manufacturer warranty:**
-  - Standard coverage (typically 1 year)
+  - Standard coverage
   - Extended warranty options
-  - What's covered vs. what's not
-- **Credit card purchase protection:**
-  - Many cards extend manufacturer warranties
-  - May cover accidental damage
-- **School/institution coverage:**
-  - Many educational institutions have insurance or repair services
 - **Practical takeaways:**
-  - Check your warranty status and register your products;
-  - Keep receipts and warranty information organized
+  - You may have manufacturer warranty, even if you didn't buy extra coverage
+  - Check your warranty status and register your products
 
 ### Practical Data Management
 
 - **Backup strategies:**
-  - 3-2-1 rule: 3 copies, 2 different media types, 1 off-site
+  - Differs depending on personal vs business use
   - Automated backup solutions
-  - Cloud sync vs. true backup
+  - Cloud vs multiple external drives
+  - Off site backups for critical data
 - **File organization:**
   - Consistent folder structures
   - Descriptive file naming
   - Regular digital decluttering
 - **Practical takeaways:**
-  - Set up automated backups immediately after getting a new device;
-  - Test recovery occasionally
+  - Set up automated backups
+  - Make sure you know which of your files are being backed up
 
 ### System Images and Restore Points
 
 - **System images:**
   - Complete snapshot of your entire system
-  - Useful for complete disaster recovery
+  - Useful for cloning an environment to multiple machines
 - **System restore points:**
   - Snapshot of system files and settings
   - Doesn't affect personal files
   - Useful for rolling back problematic updates
 - **Practical takeaways:**
-  - Create system images before major changes;
   - Enable automatic restore points
+  - If you regularly set up machines in the same way, use images instead of manually installing software
 
 ---
 
@@ -404,6 +441,5 @@ As we move through these notes, we'll talk about **compute** and **I/O** perform
 
 - Hardware choices should match your actual usage patterns
 - Focus on balanced systems rather than maximizing single components
-- Regular maintenance extends equipment life and performance
 - Proper protection (both physical and electrical) prevents costly damage
 - Good data practices prevent catastrophic information loss
