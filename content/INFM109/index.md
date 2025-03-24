@@ -10,6 +10,7 @@ showBreadcrumb: false
   - [Announcements](#announcements)
   - [Module 00: Course Introduction](#module-00-course-introduction)
   - [Module 01: Digital Citizenry \& The Internet](#module-01-digital-citizenry--the-internet)
+  - [Module 02: Hardware](#module-02-hardware)
 
 /~
 
@@ -34,3 +35,7 @@ Overview of course
 - [Timelines: Digital Evolution](timelines_digital_evolution.html)
 - Discussion: Digital Communication Patterns
 - [The Internet](internet.html)
+
+## Module 02: Hardware
+
+- [Hardware](hardware.html)
