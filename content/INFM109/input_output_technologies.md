@@ -1,5 +1,7 @@
+---
 title: Input & Output Technologies
 course: INFM109
+---
 
 ~.toc
 
@@ -45,15 +47,15 @@ course: INFM109
 
 /~
 
-# Input & Output Technologies: Beyond the Basics
+# Input & Output Technologies
 
-## Introduction: The Input/Output Cycle
-
-### The Foundation of Human-Computer Interaction
+IO devices go beyond the keyboard, mouse, and screens. Almost all modern technology has some kind of embedded computer system, which relies on input, and responds with output.
 
 - **Input:** Entering data into the computer system
 - **Processing:** The computer's handling of that data
 - **Output:** The production of usable information
+
+## Input
 
 ### Keyboards
 
@@ -110,18 +112,12 @@ The first computer mouse was made of wood in the 1960s.
   - **_Laser_**: Higher precision tracking using laser technology
     - _Warning: Can be dangerous to eyes - keep away from children and pets_
   - **_DPI (Dots Per Inch)_**:
-    - Specification that determines mouse cursor movement sensitivity
-    - Higher DPI = faster cursor movement per physical mouse movement
-    - Adjustable DPI useful for different tasks (e.g., gaming, precision work, everyday use)
+    - Specification that determines mouse cursor movement sensitivity; may want higher DPI for precision editing
 
-- **Alternative pointing devices:**
-  - **_Trackballs_**:
-    - Stationary base with moveable ball
-    - Benefits: Space-efficient, reduces wrist strain, good for repetitive stress injuries
-  - **_Touchpads_**:
-    - Multi-touch gesture support (scroll, zoom, rotate)
-    - Offer _**gesture**_ support
-    - Common in laptops but also available as standalone devices
+- **Touchpads**
+  - Multi-touch gesture support (scroll, zoom, rotate)
+  - Offer _**gesture**_ support
+  - Common in laptops but also available as standalone devices
 
 ### Touch Technologies
 
@@ -196,281 +192,183 @@ The computer takes into account:
   - Transcription (e.g. YouTube captions)
   - Linguistic translation
 
-### Imaging and Sensing Input
+### Video and Imaging Input
 
-#### Video and Imaging Input
+~.focusContent.note
 
-- **Camera technologies:**
-  - Webcam limitations and optimization
-  - Document cameras vs. webcams
-  - Depth-sensing cameras and their applications
+_Is it Paranoid to Cover your Webcam?:_
+
+Not according to former FBI Director James Comey.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nThtJj6vTbg?si=h4i8s-8wt8kQiMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+/~
+
 - **Professional applications:**
-  - Digital video workflow and storage requirements
-  - Green screen technology and background manipulation
-  - Security and monitoring considerations
-- **Practical takeaway:** Lighting affects camera quality more than most hardware upgrades
 
-#### Motion Input Systems
+  - Video conferencing
+  - Baby and pet monitoring
+  - Security cameras
 
-- **Motion capture methods:**
-  - Marker-based vs. markerless tracking
-  - Inertial measurement units (IMUs)
-  - Computer vision-based tracking
-- **Applications beyond gaming:**
-  - Medical rehabilitation and assessment
-  - Sports performance analysis
-  - Industrial training and safety
-- **Practical takeaway:** Consumer-grade motion input has professional applications with the right software
+- **Other interesting applications:**
 
-#### Data Capture Technologies
+  - Plant health monitoring (cameras detect stress before visible to humans)
+  - Sleep studies (infrared cameras track movement patterns)
+  - Wildlife research (automated species identification)
+  - Sports player analysis (facial expressions, movement patterns, stress indicators)
+  - Quality control (AI-powered manufacturing inspection)
 
-- **Scanning technologies compared:**
-  - 1D barcodes vs. 2D codes (QR)
-  - Contact vs. image-based scanning
-  - Machine-readable zones on documents
-- **RFID and NFC:**
-  - Passive vs. active RFID
-  - Security considerations and encryption
-  - Emerging applications beyond inventory
-- **Specialized financial inputs:**
-  - MICR technology and its security features
-  - Magstripe vs. chip vs. contactless payment
-  - Biometric payment authentication
-- **Practical takeaway:** QR codes need good contrast and adequate size—creating effective codes matters
+- **Practical takeaway:** Lighting affects camera quality more than most hardware upgrades. Try adjusting lighting before buying a new webcam.
 
-## Output Technologies: Creating Meaningful Experiences
+### Motion Input Systems
 
-### Physical Outputs
+<figure>
+    <span>
+        <img src="https://imgix.ranker.com/user_node_img/67/1336538/original/jurassic-world-photo-u14?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=500" style="width: 70%;height: auto;">
+    </span>
+    <figcaption>
+        <p>Velociraptors...</p>
+    </figcaption>
+</figure>
 
-#### Print Technologies and Materials
+~.focusContent.note
 
-- **Modern printer mechanisms:**
-  - Ink delivery systems: Tank vs. cartridge
-  - Print head technologies and limitations
-  - Media compatibility and considerations
-- **Specialized printing:**
-  - 3D printing: FDM vs. SLA technologies
-  - Large format and technical considerations
-  - Sustainable printing practices
-- **Print quality factors:**
-  - Beyond DPI: Drop size, precision, and color accuracy
-  - Color spaces and calibration
-  - Paper types and their effect on output
-- **Practical takeaway:** Printer maintenance dramatically extends lifespan and improves quality
+_From Medicine to Video_
 
-#### Display Technologies
+Motion capture, or "mocap," started as a tool for studying human movement patterns and biomechanics, particularly in fields like gait analysis.
 
-- **Panel technology differences:**
-  - TFT-LCD vs. IPS vs. VA panels: Real-world differences
-  - OLED and self-emissive displays
-  - Mini-LED, micro-LED and emerging technologies
-- **Key specifications explained:**
-  - Resolution needs based on viewing distance
-  - Refresh rate: When it matters and when it doesn't
-  - Color accuracy: sRGB vs. Adobe RGB vs. P3
-- **Multi-display considerations:**
-  - Graphics processing requirements
-  - Software management tools
-  - Productivity research on multiple monitors
-- **Practical takeaway:** Display positioning and height affect neck strain—proper ergonomics matter more than specs
+/~
 
-#### Audio Output Evolution
+- **Common Applications:**
+  - Digital animation
+  - Medical rehabilitation (Step and limb movement tracking)
+  - Security systems (_**LIDAR = Light Detection and Ranging**_)
 
-- **Speaker technology basics:**
-  - Driver types and configurations
-  - Amplification and power handling
-  - Frequency response and human hearing
-- **Headphones and personal audio:**
-  - Over-ear vs. on-ear vs. in-ear design considerations
-  - Open-back vs. closed-back acoustic properties
-  - Noise cancellation: Passive vs. active approaches
-- **Spatial audio developments:**
-  - Virtual surround vs. true multi-channel
-  - Object-based audio formats
-  - Binaural recording and reproduction
-- **Practical takeaway:** Good audio quality improves learning outcomes and reduces listening fatigue
+### Locational Technologies
 
-### Specialized Output Technologies
+~.focusContent.note
 
-#### Projection Systems
+_Einstein and GPS:_
 
-- **Projector technologies:**
-  - LCD vs. DLP vs. laser light sources
-  - Throw ratio and placement considerations
-  - Brightness requirements for different environments
-- **Interactive projection:**
-  - Interactive whiteboard technologies
-  - Touch-enabled projection surfaces
-  - Calibration and maintenance considerations
-- **Practical takeaway:** Ambient light management matters more than projector brightness in most settings
+GPS satellites must account for Einstein's theory of relativity! The satellites' atomic clocks run slightly faster (about 38 microseconds per day) than Earth-based clocks due to weaker gravitational forces in orbit.
 
-#### Tactile and Force Feedback
+Without compensating for this effect, GPS would cause a position error on Earth of about 11 kilometers per day.
 
-- **Haptic feedback mechanisms:**
-  - Vibration motors vs. linear resonant actuators
-  - Force feedback in specialized controllers
-  - Precision haptics in medical applications
-- **Emerging haptic technologies:**
-  - Ultrasonic haptics (touchless feedback)
-  - Variable surface textures
-  - Wearable haptic devices
-- **Practical takeaway:** Haptic feedback improves task performance and reduces visual attention requirements
+/~
 
-## Accessibility and Customization
+- **Global Positioning System (GPS):**
 
-### Adaptive Technologies
+  - Satellite-based navigation
+  - Precision within meters
+  - Used in navigation, tracking, and timing applications
 
-#### Input Adaptations
+- **Indoor Positioning Systems:**
 
-- **Physical accessibility solutions:**
-  - Switch access and scanning interfaces
-  - Eye tracking and head tracking
-  - Voice control and dictation systems
-- **Cognitive accessibility tools:**
-  - Prediction and completion tools
-  - Alternative keyboard layouts
-  - Visual supports and simplified interfaces
-- **Practical takeaway:** Accessibility features benefit all users in certain situations—not just those with permanent disabilities
+  - RFID/NFC - short-range identification (access cards, payments)
+  - QR codes - visual scanning for location/information
+  - Wi-Fi/Bluetooth - device tracking and navigation
 
-#### Output Adaptations
+- **Applications:**
 
-- **Visual output adaptations:**
-  - Screen magnification and focus tools
-  - Color filters and contrast adjustments
-  - Screen readers and their operation
-- **Auditory alternatives:**
-  - Captioning and transcription
-  - Visual notifications and alerts
-  - Mono audio and balance controls
-- **Practical takeaway:** Creating accessible content follows predictable patterns that benefit content organization
+  - Navigation and wayfinding
+  - Asset tracking (shipping, fleet tracking, inventory, etc.)
+  - Location-based services (recommendations, etc.)
+  - Emergency response (search and rescue, COVID-19 contact tracing)
+  - Geofencing
 
-### System Customization
+~.focusContent.note
 
-#### Operating System Adjustments
+_What is Geofencing?:_
 
-- **Beyond default settings:**
-  - Keyboard shortcuts and custom mappings
-  - Mouse/pointer precision and acceleration
-  - Display scaling and arrangement
-- **Automation opportunities:**
-  - Input macros and text expansion
-  - Keyboard management software
-  - Voice commands and system control
-- **Practical takeaway:** Taking time to customize inputs increases long-term productivity
+_**Geofencing**_ creates a virtual boundary around a geographic area. When a device enters or leaves this boundary, it can trigger specific actions. For example:
 
-#### Input/Output Management
+- A store might send you a coupon when you walk nearby
+- Your smart thermostat could adjust the temperature when you get home
+- Parents can get alerts if their child leaves a designated safe zone
 
-- **Device management:**
-  - Driver updates and importance
-  - Conflict resolution techniques
-  - Performance optimization tips
-- **Multi-device strategies:**
-  - Input sharing across devices
-  - KVM switches and software alternatives
-  - Universal control systems
-- **Practical takeaway:** Managing input latency improves user experience more than many realize
+/~
 
-## Environmental and Security Considerations
+## Output
 
-### Environmental Impact
+### Print Technologies and Materials
 
-#### E-Waste Management
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NM8z7j7yUHE?si=2YvEVFZH036vR3Qp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-- **Disposal challenges:**
-  - Hazardous materials in I/O devices
-  - Recycling limitations and realities
-  - Producer responsibility programs
-- **Sustainable practices:**
-  - Repair vs. replace decision framework
-  - Responsible purchasing decisions
-  - Lifespan extension strategies
-- **Practical takeaway:** Many "dead" devices have simple fixable problems—basic troubleshooting skills reduce waste
+- Paper printers
+- 3D printers
 
-#### Radiation and Health
+### Display Technologies
 
-- **Types of emissions:**
-  - Electromagnetic fields from devices
-  - Blue light considerations
-  - Heat and physical factors
-- **Mitigation strategies:**
-  - Proper positioning and distance
-  - Filtering technologies and limitations
-  - Usage patterns and breaks
-- **Practical takeaway:** Distance is the most effective protection against any type of radiation
+- **Modern Display Types:**
+  - _**LCD (Liquid Crystal Display)**_ and _**LED (Light Emitting Diode)**_: Common in laptops and monitors
+  - _**OLED (Organic Light Emitting Diode)**_: Better contrast, used in phones and high-end displays
+  - _**E-ink (Electrophoretic Ink)**_: Paper-like display used in e-readers
 
-### Security Implications
+~.focusContent.lookout
 
-#### Input Security Risks
+_Eye Strain Tip:_
 
-- **Physical security:**
-  - Keyloggers and hardware implants
-  - Shoulder surfing prevention
-  - Public terminal risks
-- **Digital protection:**
-  - Input sanitization concepts
-  - Keyboard monitoring: Legitimate vs. malicious uses
-  - Biometric security considerations
-- **Practical takeaway:** Cover cameras when not in use and be aware of physical access to your devices
+<figure>
+    <span>
+        <img src="https://biotechhealthcare.com/wp-content/uploads/2025/02/How-Does-the-20-20-20-Rule-Prevent-Eye-Strain-scaled.jpg" style="width: 100%;height: auto;">
+    </span>
+</figure>
 
-#### Output Security Concerns
+Working on a screen can cause:
 
-- **Information leakage:**
-  - Screen privacy and viewing angles
-  - Printer security and abandoned output
-  - Audio leakage in shared spaces
-- **Data protection:**
-  - Secure disposal of output media
-  - Printer memory and stored documents
-  - Screen capture prevention
-- **Practical takeaway:** Consider who might see your screen or hear your audio in various environments
+- Dry eyes
+- Blurred / unfocused vision
+- Headaches / migraines
+
+Your health is important!
+
+/~
+
+### Audio Output
+
+- **Professional applications:**
+
+  - Conferencing
+  - Media creation/production
+
+- **Other interesting applications:**
+
+  - Active _**SONAR**_ (Sound Navigation and Ranging)
+    - Geolocation
+    - Topographic mapping
+    - Military applications
 
 ## Future Trends and Technologies
 
 ### Emerging Input Methods
 
+<figure>
+    <span>
+        <img src="https://imageio.forbes.com/blogs-images/bernardmarr/files/2018/07/AdobeStock_124464399-1200x800.jpeg?format=jpg&height=900&width=1600&fit=bounds" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
+- **Augmented reality:**
+  - Information overlay on top of real-world view
+- **Virtual reality:**
+  - Complete immersion in a simulated environment
 - **Brain-computer interfaces:**
-  - Non-invasive current technologies
-  - Application areas developing now
-  - Ethical considerations
-- **Contextual sensing:**
-  - Environmental awareness in devices
-  - Predictive input and assistance
-  - Multimodal fusion techniques
-- **Practical takeaway:** Learning to combine input methods (voice+touch, gesture+keyboard) offers immediate productivity benefits
+  - New non-invasive modalities
+  - Physical applications (restoring paralyzed limbs, ALS or "locked-in syndrome" communication, neurological monitoring)
+  - Cognitive applications (attention, working memory, treatment of PTSD and depression)
 
-### Next-Generation Output
+~.focusContent.exercise
 
-- **Augmented and mixed reality:**
-  - Optical see-through vs. video pass-through
-  - Spatial mapping and awareness
-  - Information overlay strategies
-- **Volumetric and holographic displays:**
-  - Current limitations and technologies
-  - View-dependent vs. true 3D
-  - Interactive possibilities
-- **Practical takeaway:** AR applications available now can enhance learning and task performance in specific domains
+**Quiz:**
 
-## Conclusion: Creating Effective Human-Computer Interaction
+Think of one application where augmented reality is currently being used, or may be used in the future.
 
-- The goal of all I/O technology is to reduce friction between human intent and computer action
-- Understanding the capabilities and limitations of devices leads to better selection and use
-- Accessibility features benefit everyone in different contexts
-- Environmental and security considerations should inform purchasing and usage decisions
-- The future of I/O is moving toward more natural and intuitive interaction methods
+**Case Study:**
 
-## Additional Resources
+Read on your own.
 
-- Device testing opportunities on campus
-- Accessibility services and support
-- E-waste collection programs
-- Recommended ergonomic practices
+[Promising applications of non-invasive
+brain stimulation on military cognition
+enhancement: a long way to go](https://pmc.ncbi.nlm.nih.gov/articles/PMC10618962/pdf/gpsych-2023-101264.pdf)
 
-............
-
-TODO:
-
-Human-computer interface / modalities
-
-Future IO technologies
-
-Think of how many ways we're using modern IO technology in the classroom for teaching!
+/~
