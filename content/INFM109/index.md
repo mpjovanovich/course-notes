@@ -39,3 +39,4 @@ Overview of course
 ## Module 02: Hardware
 
 - [Hardware](hardware.html)
+- [Input and Output Technologies](input_output_technologies.html)

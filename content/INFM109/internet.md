@@ -13,6 +13,11 @@ course: INFM109
   - [Domain Name System (DNS)](#domain-name-system-dns)
   - [Putting it All Together: A Round Trip](#putting-it-all-together-a-round-trip)
   - [Demo: What do Websites Look Like from the Back End?](#demo-what-do-websites-look-like-from-the-back-end)
+  - [VPN, Proxy, and Private Browsing](#vpn-proxy-and-private-browsing)
+    - [Private Browsing](#private-browsing)
+    - [Proxy](#proxy)
+    - [VPN](#vpn)
+  - [Password Management](#password-management)
 
 /~
 
