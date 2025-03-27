@@ -152,11 +152,15 @@ Intro to Assignments:
 
 Lecture topics:
 
-- [Software Testing Overview](software_testing_overview.html)
+- Software Testing Techniques
+- Automation and Build Tools
+- Risk Analysis
+
+<!-- - [Software Testing Overview](software_testing_overview.html)
 - [Development Testing](development_testing.html)
 - [Release Testing](release_testing.html)
 - [User Testing](user_testing.html)
-- [Software Testing Review](software_testing_review.html)
+- [Software Testing Review](software_testing_review.html) -->
 
 ### Day 1
 
