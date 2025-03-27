@@ -71,7 +71,7 @@ Unit tests follow the pattern of **Arrange-Act-Assert** (AAA).
 - **Act** - Call the function or method under test.
 - **Assert** - Verify the expected outcome.
 
-**Method Under Test:** _calculate_price.py_
+**Method Under Test:** _tax_utility.py_
 
 ```python
 def calculate_total_price(base_price: float, tax_rate: float) -> float:
@@ -91,11 +91,11 @@ def calculate_total_price(base_price: float, tax_rate: float) -> float:
     return base_price * (1 + tax_rate)
 ```
 
-**Unit tests:** _test_calculate_price.py_
+**Unit tests:** _test_tax_utility.py_
 
 ```python
 import unittest
-from calculator_price import calculate_total_price
+from tax_utility import calculate_total_price
 
 class TestPriceCalculator(unittest.TestCase):
     def test_calculate_total_price(self):
