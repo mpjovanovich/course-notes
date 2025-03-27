@@ -167,7 +167,13 @@ Lecture topics:
 ### Day 2
 
 - Lecture
-- TBD
+- Intro assignments
+- Help session if needed
+
+Intro to Assignments:
+
+- Iter 1 - Release and Deployment
+- Iter 1 - Release Notes
 
 <!-- TODO: Test Driven Development, Unit testing demos -->
 
