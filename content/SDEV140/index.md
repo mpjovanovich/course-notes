@@ -30,13 +30,9 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- How to view lab rubric.
-- How to get to submitted labs.
-- How to view lab feedback.
+- Post grading tests in advance?
 
 ## Module 00: Course Introduction
-
-<!-- Demo and Discussion: [Current State of Coding (AI Assisted Coding)](cannonball.txt) -->
 
 Overview of course
 
@@ -44,8 +40,6 @@ Overview of course
 - Review course content and schedule
 - Review course structure and resources
 - Make sure you can access the textbook
-
-<!-- [Review: Computer Orientation](../common/computer_orientation.html?course=SDEV140) -->
 
 <!-- Set up file structure for the course on your machine
 
@@ -58,7 +52,10 @@ Overview of course
 
 ## Module 01: Fundamentals of Coding
 
-Setting up your Coding Environment
+- Set up file structure for the course on your machine
+
+  - SDEV 140 folder (preferably not on C drive, and not in cloud folder)
+  - Subfolder for each lab / assignment
 
 - [Installing VS Code](../common/installing_vs_code.html?course=SDEV140)
 

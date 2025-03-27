@@ -52,7 +52,9 @@ showBreadcrumb: false
 
 ## Announcements
 
-- ...
+- House bill to move forward next year
+- Note on terminology
+- Legal and ownership of product
 
 ## M01: SDLC; Source Control
 
