@@ -1,0 +1,5 @@
+- Performance testing (response times, throughput)
+- Load testing (system behavior under load)
+- Security testing (vulnerabilities, authentication)
+- Reliability testing (system stability)
+- Scalability testing (system growth capabilities)
