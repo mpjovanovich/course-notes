@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV200: Input / Output</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li><a href="#output">Output</a></li>
+          <li>
+            <a href="#input">Input</a>
+            <ul>
+              <li><a href="#basic-usage">Basic Usage</a></li>
+              <li><a href="#scanner-methods">Scanner Methods</a></li>
+              <li><a href="#the-input-buffer">The Input Buffer</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="output">Output</h1>
+      <p>We use the following methods to output data to the console:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>System.out.print()</code></td>
+            <td>Prints the data to the console without a newline.</td>
+          </tr>
+          <tr>
+            <td><code>System.out.println()</code></td>
+            <td>Prints the data to the console with a newline.</td>
+          </tr>
+          <tr>
+            <td><code>System.out.printf()</code></td>
+            <td>
+              Prints the data to the console with a newline, using a format
+              string.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        These methods are overloaded to accept many different types of data.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Hooray printing!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">123</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">123.456</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">true</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <h1 id="input">Input</h1>
+      <p>
+        To read input from the console, we use the <code>Scanner</code> class.
+      </p>
+      <h2 id="basic-usage">Basic Usage</h2>
+      <p>
+        We must first import the <code>Scanner</code> class from the
+        <code>java.util</code> package, then create a
+        <code>Scanner</code> object and pass <code>System.in</code> to the
+        constructor.
+      </p>
+      <p>
+        Unlike Python&#39;s <code>input()</code> function, we prompt the user
+        for input using a print function call prior to reading the input.
+      </p>
+      <p>
+        After reading all input, we should close the <code>Scanner</code> object
+        to free up resources.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> java.util.Scanner</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Test</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[] </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">args</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Create a Scanner object</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">    Scanner</span><span style="color:#E45649;--shiki-dark:#E06C75"> scanner</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Scanner</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E5C07B">System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">in</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Prompt the user to enter some text</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter some text: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Read the text entered by the user</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">    String</span><span style="color:#E45649;--shiki-dark:#E06C75"> text</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E5C07B"> scanner</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">nextLine</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Print the text entered by the user</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"--- User Text ---"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(text);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Close the Scanner object to free resources</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    scanner</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">close</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <div class="focusContent lookout">
+        <p>
+          When prompting the user for input, be sure to use the
+          <code>print()</code> method, not <code>println()</code>.
+        </p>
+        <p>Otherwise the prompt will be followed by a line break.</p>
+      </div>
+
+      <h2 id="scanner-methods">Scanner Methods</h2>
+      <p>
+        The <code>Scanner</code> class has methods for reading different types
+        of data.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>scanner.next()</code></td>
+            <td>Reads the next token from the console as a String.</td>
+          </tr>
+          <tr>
+            <td><code>scanner.nextLine()</code></td>
+            <td>Reads the next line of input from the console as a String.</td>
+          </tr>
+          <tr>
+            <td><code>scanner.nextInt()</code></td>
+            <td>Reads the next integer from the console.</td>
+          </tr>
+          <tr>
+            <td><code>scanner.nextLong()</code></td>
+            <td>Reads the next long from the console.</td>
+          </tr>
+          <tr>
+            <td><code>scanner.nextFloat()</code></td>
+            <td>Reads the next float from the console.</td>
+          </tr>
+          <tr>
+            <td><code>scanner.nextDouble()</code></td>
+            <td>Reads the next double from the console.</td>
+          </tr>
+        </tbody>
+      </table>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter your age: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">int</span><span style="color:#E45649;--shiki-dark:#E06C75"> age </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#E45649;--shiki-dark:#E5C07B"> scanner</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">nextInt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span></code></pre>
+      <h2 id="the-input-buffer">The Input Buffer</h2>
+      <p>
+        The <strong>input buffer</strong> is the area of memory where the input
+        is stored.
+      </p>
+      <p>
+        The <code>Scanner</code> reads and <strong>consumes</strong> from the
+        input buffer in units called <strong>tokens</strong>.
+      </p>
+      <p>
+        Tokens are delimited by whitespace (spaces, tabs, and newlines) by
+        default.
+      </p>
+      <p>Tokens remain in the buffer until they are consumed.</p>
+      <div class="focusContent lookout">
+        <p>
+          Except for <code>nextLine()</code>, the methods above consume a single
+          token at a time. If you are reading a piece of data using one of these
+          methods that is followed by a newline, you will need to consume the
+          newline before reading again.
+        </p>
+        <p>
+          Try removing the <code>scanner.nextLine()</code> call in the following
+          code after the <code>nextInt()</code> call, and see what happens.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">Scanner</span><span style="color:#E45649;--shiki-dark:#E06C75"> scanner </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Scanner</span><span style="color:#383A42;--shiki-dark:#E06C75">(</span><span style="color:#E45649;--shiki-dark:#E5C07B">System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">in</span><span style="color:#383A42;--shiki-dark:#E06C75">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter your age: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">int</span><span style="color:#E45649;--shiki-dark:#E06C75"> age </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#E45649;--shiki-dark:#E5C07B"> scanner</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">nextInt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">scanner</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">nextLine</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter your name: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#E45649;--shiki-dark:#E06C75"> name </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#E45649;--shiki-dark:#E5C07B"> scanner</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">nextLine</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(name </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#50A14F;--shiki-dark:#98C379"> " is "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> age </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#50A14F;--shiki-dark:#98C379"> " years old."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">scanner</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">close</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span></code></pre>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV264: Intro to TypeScript</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#typescript">TypeScript</a>
+          <ul>
+            <li>
+              <a href="#why-might-i-uses-over-plain-js"
+                >Why might I uses over plain JS?</a
+              >
+            </li>
+            <li>
+              <a href="#any-reason-to-still-use-js-then"
+                >Any Reason to still use JS then?</a
+              >
+            </li>
+            <li>
+              <a href="#syntax">Syntax</a>
+              <ul>
+                <li><a href="#type-annotations">Type Annotations</a></li>
+                <li><a href="#functions">Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="#typescript-compiler">TypeScript Compiler</a></li>
+            <li><a href="#example-app">Example App</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="typescript">TypeScript</h1>
+      <ul>
+        <li>TypeScript is a <strong>superset</strong> of JavaScript</li>
+        <li>Adds <strong>static typing</strong> to the language.</li>
+      </ul>
+      <h2 id="why-might-i-uses-over-plain-js">
+        Why might I uses over plain JS?
+      </h2>
+      <ul>
+        <li>Can check for errors at compile time (before running the code)</li>
+        <li>Better tooling support</li>
+        <li>Easier to read and understand code</li>
+        <li>Easier to maintain code</li>
+        <li>Easier to refactor code</li>
+        <li>Easier to write tests</li>
+      </ul>
+      <h2 id="any-reason-to-still-use-js-then">
+        Any Reason to still use JS then?
+      </h2>
+      <p>Yes, there are still reasons to use JavaScript:</p>
+      <ul>
+        <li>Fast to write.</li>
+        <li>Easy to learn, get started.</li>
+        <li>Great for small projects.</li>
+      </ul>
+      <h2 id="syntax">Syntax</h2>
+      <h3 id="type-annotations">Type Annotations</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> message</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> string</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Oh hello there!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> count</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> isTrue</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> boolean</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> true</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <p>
+        // The transpiler will still infer types if you don&#39;t specify them,
+        but you // cannot change the type of a variable after it has been
+        declared.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> message</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Oh hello there!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> count</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> isTrue</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> true</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <h3 id="functions">Functions</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">function</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">x</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">y</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  return</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#E06C75"> y</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span></code></pre>
+      <h2 id="typescript-compiler">TypeScript Compiler</h2>
+      <ul>
+        <li>The TypeScript compiler is called <code>tsc</code>.</li>
+        <li>It compiles TypeScript code to JavaScript code.</li>
+        <li>It can be installed with npm.</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">npm</span><span style="color:#50A14F;--shiki-dark:#98C379"> install</span><span style="color:#986801;--shiki-dark:#D19A66"> -g</span><span style="color:#50A14F;--shiki-dark:#98C379"> typescript</span></span></code></pre>
+      <p>To compile a file:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">tsc</span><span style="color:#50A14F;--shiki-dark:#98C379"> myFile.ts</span></span></code></pre>
+      <h2 id="example-app">Example App</h2>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;!</span><span style="color:#E45649;--shiki-dark:#E06C75">doctype</span><span style="color:#986801;--shiki-dark:#D19A66"> html</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">html</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">head</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">title</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>TS_Demo&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">title</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">link</span><span style="color:#986801;--shiki-dark:#D19A66"> rel</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"stylesheet"</span><span style="color:#986801;--shiki-dark:#D19A66"> type</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"text/css"</span><span style="color:#986801;--shiki-dark:#D19A66"> href</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"style.css"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> /></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">script</span><span style="color:#986801;--shiki-dark:#D19A66"> src</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"app.js"</span><span style="color:#986801;--shiki-dark:#D19A66"> defer</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">script</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">head</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">body</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">h1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>TS Demo&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">h1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>I'm p1!&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>I'm p2!&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>I'm p3!&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>I'm p4!&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>I'm p5!&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">button</span><span style="color:#986801;--shiki-dark:#D19A66"> id</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"btnClick"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>Click me!&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">button</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">body</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">html</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> cur_color</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> colors</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> string</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[] </span><span style="color:#0184BC;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">  "red"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">  "green"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">  "blue"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">  "orange"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">  "purple"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">  "teal"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">  "pink"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Whenever the button is clicked, do this function...</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getElementById</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"btnClick"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)?.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">addEventListener</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"click"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, () </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // Get all of the paragraph elements, and for each one...</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">  document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">querySelectorAll</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"p"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">).</span><span style="color:#4078F2;--shiki-dark:#61AFEF">forEach</span><span style="color:#383A42;--shiki-dark:#ABB2BF">((</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Change the color of the text to the next color in the array</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">    p</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">style</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E06C75">color</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E06C75"> colors</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#383A42;--shiki-dark:#E06C75">cur_color</span><span style="color:#383A42;--shiki-dark:#ABB2BF">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Increment the color index, and if it's at the end of the array, reset it to 0</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">    cur_color</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#383A42;--shiki-dark:#E06C75">cur_color</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#0184BC;--shiki-dark:#56B6C2">%</span><span style="color:#383A42;--shiki-dark:#E5C07B"> colors</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E06C75">length</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  });</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">});</span></span></code></pre>
+    </div>
+  </body>
+</html>

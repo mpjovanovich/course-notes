@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Syntax and Expressions</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#syntax-and-expressions">Syntax and Expressions</a>
+            <ul>
+              <li>
+                <a href="#syntax">Syntax</a>
+                <ul>
+                  <li>
+                    <a href="#natural-language-syntax"
+                      >Natural Language Syntax</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#programming-language-syntax"
+                      >Programming Language Syntax</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#literals-and-variables">Literals and Variables</a>
+              </li>
+              <li>
+                <a href="#operators">Operators</a>
+                <ul>
+                  <li>
+                    <a href="#comparison-operators-in-python"
+                      >Comparison Operators in Python</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#logical-operators-in-python"
+                      >Logical Operators in Python</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#expressions">Expressions</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="syntax-and-expressions">Syntax and Expressions</h1>
+      <p>
+        In this lecture, we&#39;ll explore how to build a programming language
+        from the ground up. To do so we&#39;ll need to understand the basic
+        components of code: syntax, literals, variables, operators, expressions,
+        and statements.
+      </p>
+      <h2 id="syntax">Syntax</h2>
+      <p>
+        <strong>Syntax</strong> is the set of rules that defines how symbols can
+        be arranged to form valid code.
+      </p>
+      <h3 id="natural-language-syntax">Natural Language Syntax</h3>
+      <p>
+        English has its own set of rules: Capitalization, punctuation, sentence
+        structure, etc.
+      </p>
+      <div class="focusContent example">
+        <p><strong>Good English:</strong></p>
+        <p>&quot;I went to the store.&quot;</p>
+        <p><strong>Bad English:</strong></p>
+        <p>&quot;*went STore!! (tothe) saturday I,&quot;</p>
+      </div>
+
+      <h3 id="programming-language-syntax">Programming Language Syntax</h3>
+      <p>Each programming language has its own syntax.</p>
+      <div class="focusContent example">
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">x </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> # Synactically correct</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> x </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Syntax error - we assign from right to left</span></span></code></pre>
+      </div>
+
+      <!-- ## Literals and Variables
+
+The most basic components of code are literals and variables.
+
+- **Literals** are fixed values.
+- **Variables** (and constants) are placeholders for values.
+
+```python
+# Say "hello" using a string literal:
+print("hello")
+
+# Assign a string literal to a variable, then use it to say "hello":
+greeting = "hello"
+print(greeting)
+``` -->
+
+      <h2 id="operators">Operators</h2>
+      <p>
+        Code is primarily made up of operators, operands, expressions, and
+        statements.
+      </p>
+      <p>
+        <strong>Operators</strong> are symbols that perform operations on
+        values.
+      </p>
+      <ul>
+        <li>
+          Arithmetic operators: <code>+</code>, <code>-</code>, <code>*</code>,
+          <code>/</code>, <code>//</code>, <code>%</code>, <code>**</code>
+        </li>
+        <li>
+          Comparison operators: <code>==</code>, <code>!=</code>,
+          <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
+          <code>&gt;=</code>
+        </li>
+        <li>
+          Logical operators: <code>and</code>, <code>or</code>, <code>not</code>
+        </li>
+      </ul>
+      <p><strong>Operands</strong> are the values that operators act on.</p>
+      <ul>
+        <li><code>5</code>, <code>x</code>, <code>True</code></li>
+      </ul>
+      <h3 id="comparison-operators-in-python">
+        Comparison Operators in Python
+      </h3>
+      <p>
+        A comparison always returns a boolean value, either <code>True</code> or
+        <code>False</code>.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Operator</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>==</td>
+            <td>Equal to</td>
+          </tr>
+          <tr>
+            <td>!=</td>
+            <td>Not equal to</td>
+          </tr>
+          <tr>
+            <td>&lt;</td>
+            <td>Less than</td>
+          </tr>
+          <tr>
+            <td>&gt;</td>
+            <td>Greater than</td>
+          </tr>
+          <tr>
+            <td>&lt;=</td>
+            <td>Less than or equal to</td>
+          </tr>
+          <tr>
+            <td>&gt;=</td>
+            <td>Greater than or equal to</td>
+          </tr>
+        </tbody>
+      </table>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Comparing two literals in Python</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#56B6C2"> ==</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># True</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#56B6C2"> !=</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># False</span></span></code></pre>
+      <h3 id="logical-operators-in-python">Logical Operators in Python</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Operator</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>and</td>
+            <td>conjunction</td>
+          </tr>
+          <tr>
+            <td>or</td>
+            <td>disjunction</td>
+          </tr>
+          <tr>
+            <td>not</td>
+            <td>negation</td>
+          </tr>
+        </tbody>
+      </table>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">( </span><span style="color:#986801;--shiki-dark:#D19A66">True</span><span style="color:#A626A4;--shiki-dark:#C678DD"> and</span><span style="color:#986801;--shiki-dark:#D19A66"> False</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> ) </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># False</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">( </span><span style="color:#986801;--shiki-dark:#D19A66">True</span><span style="color:#A626A4;--shiki-dark:#C678DD"> or</span><span style="color:#986801;--shiki-dark:#D19A66"> False</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> ) </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># True</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">( </span><span style="color:#A626A4;--shiki-dark:#C678DD">not</span><span style="color:#986801;--shiki-dark:#D19A66"> True</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> ) </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># False</span></span></code></pre>
+      <h2 id="expressions">Expressions</h2>
+      <p>
+        Expressions are combinations of literals, variables, and operators that
+        evaluate to a value.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Returns 2</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">3</span><span style="color:#383A42;--shiki-dark:#56B6C2"> -</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Returns 1 (single value can be an expression)</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Returns value of x + value of y</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">x </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> y</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Returns True if x is greater than 4, False if not</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">x </span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#D19A66"> 4</span></span></code></pre>
+    </div>
+  </body>
+</html>
