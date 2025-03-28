@@ -154,10 +154,9 @@ Lecture topics:
 
 - [Software Testing Approaches](software_testing_approaches.html)
 - [Software Testing Hierarchy](software_testing_hierarchy.html)
-<!-- - [Automation and Build Tools](automation_build_tools.html)
-- [Risk Analysis](risk_analysis.html)
 - [Performance Testing and Profiling](performance_testing_profiling.html)
-- [Quality Assurance and Reliability](quality_assurance_reliability.html) -->
+- [Risk Analysis](risk_analysis.html)
+- [Quality Assurance and Reliability](quality_assurance_reliability.html)
 
 <!-- - [Software Testing Overview](software_testing_overview.html)
 - [Development Testing](development_testing.html)

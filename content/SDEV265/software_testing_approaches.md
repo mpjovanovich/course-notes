@@ -52,6 +52,14 @@ When testing you want to consider:
 - **Edge cases** - The code's behavior at the boundaries of the input space.
 - **Error handling** - The code's behavior when it encounters errors.
 
+A helpful way to think about what to test is to group similar inputs that should behave the same way. Common groups include:
+
+- Data types: null, boolean, string, number, list, set, etc.
+- Numbers: positive, negative, zero
+- Text: empty, single character, many characters
+- Lists/Sets: empty, single item, many items
+- Categorical: one from each category (admin vs non-admin, etc.)
+
 Let's look at an example:
 
 ```python
@@ -80,6 +88,28 @@ When writing the test we follow the pattern of:
 - **Red** - Write a test that fails before implementing the code.
 - **Green** - Write the code to make the test pass.
 - **Refactor** - Refactor the code to make it better.
+
+/~
+
+~.focusContent.exercise
+
+**Ticket Price Calculator**
+
+The local movie theater needs a function to calculate ticket prices. Here are their requirements:
+
+- The theater offers regular shows and matinee shows
+- Regular shows cost $12.00
+- Matinee shows cost $8.00
+- The theater offers age-based discounts:
+  - Children 3 and under get in free
+  - Children 4-12 get half off
+  - Adults (13-64) pay full price
+  - Seniors (65+) get 20% off
+- The system should not accept negative ages
+
+What test cases should we write to confirm that the function behaves as expected?
+
+TODO: Let's implement this after we cover unit testing!
 
 /~
 
