@@ -40,3 +40,10 @@ Overview of course
 
 - [Hardware](hardware.html)
 - [Input and Output Technologies](input_output_technologies.html)
+
+## Module 03: Software
+
+- Take a moment to sign up for exams
+- [Application Software](application_software.html)
+- Discussion: Location Data Case Studies
+- Intro to Assignments
