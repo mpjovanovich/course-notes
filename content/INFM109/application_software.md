@@ -69,17 +69,6 @@ Commonly used office software are called **productivity applications**. These in
 - Email
 - Calendar
 
-- Spreadsheets:
-
-  - Double click header to auto-resize
-  - Manual set column or row width
-  - Sorting and filtering data
-  - Basic formulas (SUM, AVERAGE, COUNT)
-  - Auto-fill for series and formulas
-  - Cell references (absolute vs. relative); F4 or dollar sign in front of the row and column references
-  - Freeze panes to lock rows/columns
-  - Conditional formatting to highlight data
-
 ~.focusContent.demo
 
 **Spreadsheet Tips and Tricks:**
@@ -98,6 +87,7 @@ Demo1: Basic Formulas
 
 Demo2: [Kaggle CVE 2024 Database: Exploits, CVSS, OS](https://www.kaggle.com/datasets/manavkhambhayata/cve-2024-database-exploits-cvss-os)
 
+- Auto set column widths
 - Bold top row
 - Freeze top row
 - Filter OS to "Google Android 13.0, Google Android 12.0"
