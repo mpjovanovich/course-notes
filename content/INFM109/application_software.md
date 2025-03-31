@@ -48,6 +48,17 @@ The line between one category and another can be blurry. There are very few appl
 - **Web**: Applications accessed through a web browser without local installation
 - **Mobile**: Applications designed for mobile devices (smartphones, tablets)
 
+~.focusContent.exercise
+
+**Real-World Examples:**
+
+- **Local + Native**: Adobe Photoshop, Microsoft Word
+- **Remote + Web**: Google Docs, Netflix in browser
+- **Local + Web**: Spotify desktop app (hybrid)
+- **Mobile Native**: Instagram (app)
+
+/~
+
 ### Productivity Applications
 
 Commonly used office software are called **productivity applications**. These include:
@@ -58,42 +69,84 @@ Commonly used office software are called **productivity applications**. These in
 - Email
 - Calendar
 
-~.focusContent.example
-
-**Tips and Tricks:**
-
-- Word Processing:
-
-  - Headers and footers for consistent page formatting
-  - Page breaks to control document flow
-  - Show/hide formatting marks (¶) to see hidden characters
-  - Styles for consistent formatting throughout document
-  - Find and Replace with formatting options
-
 - Spreadsheets:
 
+  - Double click header to auto-resize
+  - Manual set column or row width
+  - Sorting and filtering data
   - Basic formulas (SUM, AVERAGE, COUNT)
   - Auto-fill for series and formulas
-  - Cell references (absolute vs. relative)
+  - Cell references (absolute vs. relative); F4 or dollar sign in front of the row and column references
   - Freeze panes to lock rows/columns
   - Conditional formatting to highlight data
+
+~.focusContent.demo
+
+**Spreadsheet Tips and Tricks:**
+
+Demo1: Basic Formulas
+
+| Tax Rate:   | 15%     |                  |                |
+| ----------- | ------- | ---------------- | -------------- |
+| Item        | Price   | Tax Amount       | Total          |
+| ----------- | ------- | ---------------- | -------------- |
+| Item 1      | 10.00   | =B3\*$B$1        | =B3+C3         |
+| Item 2      | 25.00   | =B4\*$B$1        | =B4+C4         |
+| Item 3      | 15.00   | =B5\*$B$1        | =B5+C5         |
+| Item 4      | 50.00   | =B6\*$B$1        | =B6+C6         |
+| Grand Total |         |                  | =SUM(D3:D6)    |
+
+Demo2: [Kaggle CVE 2024 Database: Exploits, CVSS, OS](https://www.kaggle.com/datasets/manavkhambhayata/cve-2024-database-exploits-cvss-os)
+
+- Bold top row
+- Freeze top row
+- Filter OS to "Google Android 13.0, Google Android 12.0"
+- Sort by CVSS
+- Remove filter
 
 /~
 
 ~.focusContent.note
 
-Several common keyboard shortcuts are fairly universal, and are essential for productivity:
+Several common keyboard shortcuts are fairly universal, and are essential for productivity. Here are my recommendations in order of priority:
 
-| Shortcut | Action     |
-| -------- | ---------- |
-| Ctrl+S   | Save       |
-| Ctrl+Z   | Undo       |
-| Ctrl+C   | Copy       |
-| Ctrl+X   | Cut        |
-| Ctrl+V   | Paste      |
-| Ctrl+A   | Select all |
-| Ctrl+F   | Find       |
-| Ctrl+B   | Bold       |
+| Shortcut | Action        |
+| -------- | ------------- |
+| Ctrl+S   | Save          |
+| Ctrl+Z   | Undo          |
+| Ctrl+C   | Copy          |
+| Ctrl+X   | Cut           |
+| Ctrl+V   | Paste         |
+| Ctrl+A   | Select all    |
+| Ctrl+F   | Find          |
+| Ctrl+B   | Bold          |
+| Ctrl++   | Increase zoom |
+| Ctrl+-   | Decrease zoom |
+
+/~
+
+~.focusContent.exercise
+
+**Challenge: Keyboard Shortcut Madness!**
+
+Your instructor will now race through the following challenge, first using only the mouse, then using only keyboard shortcuts.
+
+You may ridicule him if he fails to complete the challenge in under 10 seconds using shortcuts.
+
+_Preparation:_
+
+1. Create a new document in your favorite word processor
+1. Type "I love shortcuts."
+
+_Challenge:_
+
+1. Copy the line and paste it 5 times
+1. Undo the latest paste (should now have 4 lines)
+1. Select all text
+1. Make it bold
+1. Save the document
+
+Now you try!
 
 /~
 
@@ -165,6 +218,29 @@ If you need to send a high quality image to someone, you should send the origina
 
 /~
 
+~.focusContent.example
+
+**Using GIMP**
+
+Let's try using GIMP to edit and export an image.
+
+<figure>
+    <span>
+        <img src="https://blogs.nasa.gov/spacestation/wp-content/uploads/sites/240/2023/01/nasa-logo-web-rgb.png" style="width:80%;height: auto;">
+    </span>
+</figure>
+
+1. Right click image
+2. Choose "Save Image As..." and save to your machine
+3. Open GIMP
+4. Open the image
+5. Export as JPEG with 100% quality
+6. Export as JPEG with 20% quality
+
+Compare the two file sizes and file qualities. Also note that JPEG does not support transparency like with the original PNG, so the background is filled.
+
+/~
+
 ## Software Business & Management
 
 ### Design Considerations
@@ -187,6 +263,22 @@ We will talk about why applications have different versions for different platfo
 - **Subscription**: Recurring payment for continued access
   - Software as a Service (SaaS)
   - Usually includes continuous updates and cloud features
+
+~.focusContent.note
+
+**Open Source Software**
+
+Open source software is software who's source code is available to the public, usually online. Although it is often free, it is not always free.
+
+Some advantages of open source software include:
+
+- **Flexibility**: Can be easily modified to meet specific needs
+- **Transparency**: Source code is publicly available for scrutiny. Free testing and development by many people.
+- **Community**: Many open source projects have large communities of users who contribute to the project.
+
+Example: [GIMP](https://github.com/GNOME/gimp)
+
+/~
 
 ### Target Markets
 
