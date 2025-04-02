@@ -11,6 +11,7 @@ showBreadcrumb: false
   - [Module 00: Course Introduction](#module-00-course-introduction)
   - [Module 01: Digital Citizenry \& The Internet](#module-01-digital-citizenry--the-internet)
   - [Module 02: Hardware](#module-02-hardware)
+  - [Module 03: Software](#module-03-software)
 
 /~
 
@@ -18,7 +19,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Sign up for exams!
+- Sign up for exams! Last reminder.
 
 ## Module 00: Course Introduction
 
@@ -46,4 +47,6 @@ Overview of course
 - Take a moment to sign up for exams
 - [Application Software](application_software.html)
 - Discussion: Location Data Case Studies
+- Intro to Assignments
+- [System Software and the Operating System](system_software_operating_system.html)
 - Intro to Assignments
