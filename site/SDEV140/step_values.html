@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV140: Step Values</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#step-values">Step Values</a>
+            <ul>
+              <li><a href="#off-by-one-errors">Off by One Errors</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="step-values">Step Values</h1>
+      <ul>
+        <li>
+          We can <strong>increment</strong> or <strong>decrement</strong> the
+          step value by a value other than 1.
+        </li>
+        <li>
+          We don&#39;t have to use <code>i</code>, <code>j</code>,
+          <code>k</code>, etc for the loop control variable, but it&#39;s a
+          convention in many languages.
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## "Print even numbers" algorithm</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Prints 0, 2, 4, 6, 8</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">i </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">while</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">( i )</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    i </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Prints 10, 9, 8, ..., 1</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">i </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">while</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">( i )</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    i </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#383A42;--shiki-dark:#56B6C2">-</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span></span></code></pre>
+      <h2 id="off-by-one-errors">Off by One Errors</h2>
+      <ul>
+        <li>Be mindful of the inclusiveness of the range function.</li>
+        <li>
+          <strong>Start inclusive</strong> and <strong>end exclusive</strong>.
+        </li>
+        <li>[start, end)</li>
+        <li>
+          When using while, also be mindful of &lt; vs &lt;= and &gt; vs &gt;=.
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Prints 1-9, not 1-10</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">i </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">while</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">( i )</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    i </span><span style="color:#383A42;--shiki-dark:#56B6C2">+=</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span></span></code></pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Programming with Loops</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#programming-with-loops">Programming with Loops</a>
+            <ul>
+              <li>
+                <a href="#basics">Basics</a>
+                <ul>
+                  <li>
+                    <a href="#print-1-4-pseudocode">Print 1-4 Pseudocode</a>
+                  </li>
+                  <li>
+                    <a href="#print-1-4-flowchart">Print 1-4 Flowchart</a>
+                  </li>
+                  <li><a href="#print-1-4-python">Print 1-4 Python</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#priming-reads">Priming Reads</a>
+                <ul>
+                  <li>
+                    <a href="#sentence-builder-pseudocode"
+                      >Sentence Builder Pseudocode</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#sentence-builder-flowchart"
+                      >Sentence Builder Flowchart</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#sentence-builder-python"
+                      >Sentence Builder Python</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="programming-with-loops">Programming with Loops</h1>
+      <figure>
+        <img
+          src="https://timmousk.com/wp-content/uploads/2022/03/2-6.jpg"
+          alt=""
+          style="width: 70%; height: auto"
+        />
+      </figure>
+
+      <p>
+        When we need to repeat some action within an algorithm, we use a loop.
+      </p>
+      <p>
+        Loops can run zero to infinite times depending on the condition and
+        inputs.
+      </p>
+      <p><em>Terminology:</em></p>
+      <ul>
+        <li><strong>Iteration</strong> = one execution of the loop body.</li>
+        <li>
+          <strong>Entry Condition</strong> = the condition that controls whether
+          we enter the loop.
+        </li>
+        <li>
+          <strong>Loop Control Variable</strong> = the variable in the entry
+          condition that controls the loop.
+        </li>
+      </ul>
+      <h2 id="basics">Basics</h2>
+      <p>Flow of execution within a loop is as follows:</p>
+      <ul>
+        <li>
+          The loop control variable is initialized before the loop starts.
+        </li>
+        <li>The entry condition is checked.</li>
+        <li>If the entry condition is true, we enter the loop body.</li>
+        <li>The loop body executes.</li>
+        <li>The loop control variable is updated inside the loop.</li>
+        <li>The entry condition is checked again until it is false.</li>
+      </ul>
+      <h3 id="print-1-4-pseudocode">Print 1-4 Pseudocode</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>START</span></span>
+<span class="line"><span>    SET i = 1</span></span>
+<span class="line"><span>    WHILE i &#x3C;= 4:</span></span>
+<span class="line"><span>        PRINT i</span></span>
+<span class="line"><span>        SET i = i + 1</span></span>
+<span class="line"><span>    END WHILE</span></span>
+<span class="line"><span>END</span></span></code></pre>
+      <h3 id="print-1-4-flowchart">Print 1-4 Flowchart</h3>
+      <figure>
+        <img
+          src="images/print_1_4_flowchart.svg"
+          alt=""
+          style="width: 80%; height: auto"
+        />
+      </figure>
+
+      <h3 id="print-1-4-python">Print 1-4 Python</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## This program prints numbers 1-4</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">i </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">while</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;=</span><span style="color:#986801;--shiki-dark:#D19A66"> 4</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Print the current value of i</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">( i )</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Increment the loop control variable</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## If we forget this, the loop will run forever (infinite loop)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    i </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span></span></code></pre>
+      <div class="focusContent demo">
+        <p><strong>Program the following:</strong></p>
+        <ul>
+          <li>
+            Times table: base from 1 to n (x * 1, x * 2, x * 3, ..., x * n)
+          </li>
+          <li>Harmonic series: 1/1 + 1/2 + 1/3 + 1/4 + 1/5 + ... + 1/n</li>
+        </ul>
+      </div>
+
+      <h2 id="priming-reads">Priming Reads</h2>
+      <p>
+        Now let&#39;s try a program that needs user input to control the loop.
+      </p>
+      <p>
+        The first time we get input (outside of the loop) from the user is
+        called a
+        <strong>priming read</strong>.
+      </p>
+      <p>We repeat this read inside the loop.</p>
+      <h3 id="sentence-builder-pseudocode">Sentence Builder Pseudocode</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>START</span></span>
+<span class="line"><span>	SET sentence to empty</span></span>
+<span class="line"><span>	GET next word</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	WHILE word is not "quit":</span></span>
+<span class="line"><span>		Add word to sentence</span></span>
+<span class="line"><span>		GET next word</span></span>
+<span class="line"><span>	END WHILE</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	PRINT sentence</span></span>
+<span class="line"><span>END</span></span></code></pre>
+      <h3 id="sentence-builder-flowchart">Sentence Builder Flowchart</h3>
+      <figure>
+        <img
+          src="images/sentence_builder_flowchart.svg"
+          alt=""
+          style="width: 80%; height: auto"
+        />
+      </figure>
+
+      <h3 id="sentence-builder-python">Sentence Builder Python</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## This program builds a sentence one word</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## at a time.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Set sentence to empty</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">sentence </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379"> ''</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Get next word</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">word </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter next word or 'quit': "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## As long as the user didn't enter "quit", then</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## enter the loop body</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">while</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> word </span><span style="color:#383A42;--shiki-dark:#56B6C2">!=</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'quit'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Add the word to the end of the sentence</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    sentence </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> sentence </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> word</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Get next word</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    word </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter next word or 'quit': "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Print the final result</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(sentence)</span></span></code></pre>
+      <div class="focusContent demo">
+        <p><strong>Program the following:</strong></p>
+        <p>
+          Enter grades until the user enters -1. Calculate the sum and average.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
