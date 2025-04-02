@@ -307,25 +307,11 @@ The OS can allocate **buffers** to store data that is being transferred between 
 
 _Device Drivers_
 
-**Device drivers** are specialized programs that form a layer between hardware and the operating system. Their primary purpose is abstraction - hiding the complex, device-specific details from the rest of the system. They do this through:
+**Device drivers** are specialized programs that form a layer between hardware and the operating system. Their primary purpose is abstraction - hiding the complex, device-specific details from the rest of the system.
 
-1. **Abstraction**: Drivers hide how devices actually work, which means:
-
-   - Applications don't need to know anything about specific hardware
-   - The OS can treat different devices in similar ways
-   - Hardware can be updated without changing the OS or applications
-
-2. **Standardization**: Because of this abstraction, drivers can provide standard ways to communicate:
-
-   - Many different brands of mice can use the same basic mouse driver
-   - Different printers can all understand the same print commands
-   - Various keyboards can all send keystrokes in a format the OS understands
-
-3. **Hardware Interface**: Under this abstraction layer, drivers contain the actual device-specific instructions needed to:
-
-   - Send documents to a printer
-   - Display images on a screen
-   - Read data from a USB drive
+- Applications don't need to know anything about specific hardware
+- The OS can treat different devices in similar ways
+- Hardware can be updated without changing the OS or applications
 
 ### File Systems
 
