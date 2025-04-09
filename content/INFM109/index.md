@@ -12,6 +12,7 @@ showBreadcrumb: false
   - [Module 01: Digital Citizenry \& The Internet](#module-01-digital-citizenry--the-internet)
   - [Module 02: Hardware](#module-02-hardware)
   - [Module 03: Software](#module-03-software)
+  - [Module 05: Information Systems](#module-05-information-systems)
 
 /~
 
@@ -50,3 +51,9 @@ Overview of course
 - Intro to Assignments
 - [System Software and the Operating System](system_software_operating_system.html)
 - Intro to Assignments
+
+## Module 05: Information Systems
+
+- [Types of Data](types_of_data.html)
+- [Data Hierarchy and Modeling](data_hierarchy_modeling.html)
+- [Database Storage](database_storage.html)
