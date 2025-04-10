@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Coding Environments</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#coding-environments">Coding Environments</a>
+            <ul>
+              <li>
+                <a href="#integrated-development-environments-ides"
+                  >Integrated Development Environments (IDEs)</a
+                >
+                <ul>
+                  <li>
+                    <a href="#features">Features</a>
+                    <ul>
+                      <li>
+                        <a href="#syntax-highlighting">Syntax Highlighting</a>
+                      </li>
+                      <li><a href="#auto-formatting">Auto-Formatting</a></li>
+                      <li><a href="#code-completion">Code Completion</a></li>
+                      <li><a href="#debugging">Debugging</a></li>
+                      <li>
+                        <a href="#version-control-integration"
+                          >Version Control Integration</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="coding-environments">Coding Environments</h1>
+      <figure>
+        <img
+          src="https://imgs.xkcd.com/comics/code_quality.png"
+          alt=""
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <p>
+        A <strong>text editor</strong> is a type of program used for editing
+        plain text files.
+      </p>
+      <p>Good for simple programs when debugging is not necessary.</p>
+      <p>May or may not offer syntax highlighting.</p>
+      <p><em>Examples:</em></p>
+      <ul>
+        <li><strong>Notepad</strong></li>
+        <li><strong>Notepad++</strong></li>
+        <li><strong>TextEdit</strong></li>
+        <li><strong>nano</strong></li>
+        <li><strong>vi</strong> / <strong>vim</strong></li>
+        <li><strong>emacs</strong></li>
+        <li><strong>gedit</strong></li>
+        <li><strong>Sublime Text</strong></li>
+        <li><strong>Atom</strong></li>
+      </ul>
+      <h2 id="integrated-development-environments-ides">
+        Integrated Development Environments (IDEs)
+      </h2>
+      <figure>
+        <img src="images/vs_code.PNG" alt="" style="width: 80%; height: auto" />
+      </figure>
+
+      <p>
+        An <strong>integrated development environment (IDE)</strong> is a
+        software application used to develop software.
+      </p>
+      <p>More complex than a text editor.</p>
+      <p><em>Examples:</em></p>
+      <ul>
+        <li><strong>VS Code</strong></li>
+        <li><strong>Visual Studio</strong></li>
+        <li><strong>Eclipse</strong></li>
+        <li><strong>NetBeans</strong></li>
+        <li><strong>IntelliJ IDEA</strong></li>
+        <li><strong>PyCharm</strong></li>
+        <li><strong>Xcode</strong></li>
+        <li><strong>Android Studio</strong></li>
+      </ul>
+      <h3 id="features">Features</h3>
+      <p>
+        The following features are common in IDEs. Some text editors may also
+        offer these features.
+      </p>
+      <h4 id="syntax-highlighting">Syntax Highlighting</h4>
+      <p>
+        <strong>Syntax highlighting</strong> displays code in different colors
+        and fonts according to the category of terms.
+      </p>
+      <p>Makes the code much easier to read.</p>
+      <h4 id="auto-formatting">Auto-Formatting</h4>
+      <p>
+        <strong>Auto-formatting</strong> automatically indents and formats code.
+      </p>
+      <h4 id="code-completion">Code Completion</h4>
+      <p>
+        <strong>Code completion</strong> automatically suggests code as you
+        type.
+      </p>
+      <h4 id="debugging">Debugging</h4>
+      <figure>
+        <span>
+          <img
+            src="https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1638888858/EducationHub/photos/computer-bug.jpg"
+            style=""
+          />
+        </span>
+        <figcaption>
+          The first computer bug, a moth, was found inside a Harvard Mark II
+          computer in 1947.
+        </figcaption>
+      </figure>
+
+      <p>
+        <strong>Debugging</strong> is the process of finding and resolving
+        defects or problems within the program.
+      </p>
+      <p>
+        A <strong>debugger</strong> is a computer program that is used to test
+        and debug other programs. IDEs usually include a debugger.
+      </p>
+      <ul>
+        <li>Step through code</li>
+        <li>Set breakpoints</li>
+        <li>Inspect variables</li>
+        <li>Watch expressions</li>
+      </ul>
+      <h4 id="version-control-integration">Version Control Integration</h4>
+      <p>
+        <strong>Version control</strong> is a system that records changes to a
+        file or set of files over time so that you can recall specific versions
+        later.
+      </p>
+      <p><strong>Git</strong> is a popular version control system.</p>
+    </div>
+  </body>
+</html>
