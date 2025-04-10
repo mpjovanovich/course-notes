@@ -13,9 +13,11 @@ course: SDEV140
       - [The Exception Object](#the-exception-object)
     - [Types of Exceptions](#types-of-exceptions)
   - [Validation](#validation)
-    - [Data Type Validation](#data-type-validation)
-    - [Data Range Validation](#data-range-validation)
-    - [Data Format Validation](#data-format-validation)
+    - [Validating with Try / Except](#validating-with-try--except)
+    - [Looping Until Valid Input](#looping-until-valid-input)
+      - [Data Type Validation](#data-type-validation)
+      - [Range Validation](#range-validation)
+      - [Categorical Validation](#categorical-validation)
 
 /~
 
@@ -122,13 +124,11 @@ except FileNotFoundError:
 
 ## Validation
 
-- **Data Type Validation**: Ensuring that data is the correct type
-- **Data Range Validation**: Ensuring that data is within a certain range
-- **Data Format Validation**: Ensuring that data is in the correct format
+Validation is the process of ensuring that the data that was entered is correct.
 
-### Data Type Validation
+### Validating with Try / Except
 
-- Use exception handling with built-in conversion function
+- Handle the ValueError exception
   - e.g. `int()`, `float()`, `str()`, `bool()`, etc.
 
 ```python
@@ -139,35 +139,54 @@ except ValueError:
     print("Invalid number.")
 ```
 
-### Data Range Validation
+### Looping Until Valid Input
 
-- Use a conditional statement
+Most of the time we want to continue to prompt the user for input until they provide valid input. We can do that with a `while` loop.
+
+#### Data Type Validation
+
+```python
+## Get a number from a user - don't let them
+## pass until they did:
+number = 0
+
+## We will loop indefinitely until we explicitly quit
+## the loop with "break"
+while True:
+    try:
+        ## This will go to the except block if the input
+        ## is not a number.
+        number = float(input('Enter an int: '))
+
+        ## If we made it here then we know the number is valid,
+        ## so break out of the loop.
+        break
+    except ValueError:
+        ## Let the user know they messed up, then go back to
+        ## the top of the loop
+        print('Must enter an integer.')
+
+## We have a valid number, and can now continue the program
+print(number)
+```
+
+#### Range Validation
 
 ```python
 number = int(input("Enter a number between 1 and 10: "))
-if number < 1 or number > 10:
+
+while number < 1 or number > 10:
     ## Handle invalid input
     print("Invalid number.")
+    number = int(input("Enter a number between 1 and 10: "))
 ```
+
+#### Categorical Validation
 
 ```python
 pet_type = input("Enter a pet type for sitting service (dog, cat): ")
-if pet_type != "dog" and pet_type != "cat":
+while pet_type != "dog" and pet_type != "cat":
     ## Handle invalid input
     print("Invalid pet type.")
-```
-
-### Data Format Validation
-
-- Use a conditional statement, regular expression, or exception handling
-  - e.g. `mm/dd/yyyy`, `mm/dd/yy`, `mm-dd-yyyy`, `mm-dd-yy`, etc.
-
-```python
-date = input("Enter a date in the format mm/dd/yyyy: ")
-if len(date) != 10 or date[2] != "/" or date[5] != "/":
-    ## Handle invalid input
-    print("Invalid date.")
-else:
-    ## Convert to a date object
-    date = datetime.strptime(date, "%m/%d/%Y")
+    pet_type = input("Enter a pet type for sitting service (dog, cat): ")
 ```
