@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Evolution of Computing</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#evolution-of-computing">Evolution of Computing</a>
+            <ul>
+              <li><a href="#early-computing">Early Computing</a></li>
+              <li><a href="#transitors">Transitors</a></li>
+              <li><a href="#moores-law">Moore&#39;s Law</a></li>
+              <li><a href="#continued-growth">Continued Growth?</a></li>
+              <li>
+                <a href="#kurzweils-commentaries"
+                  >Kurzweil&#39;s Commentaries</a
+                >
+              </li>
+              <li>
+                <a href="#alternatives-to-von-neumann-architecture"
+                  >Alternatives to Von Neumann Architecture</a
+                >
+              </li>
+              <li>
+                <a href="#alternatives-to-transistor-based-computing"
+                  >Alternatives to Transistor Based Computing</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="evolution-of-computing">Evolution of Computing</h1>
+      <h2 id="early-computing">Early Computing</h2>
+      <p>
+        Early computers were mechanical. They used gears, levers, and other
+        mechanical components to perform calculations. The most famous example
+        is the Babbage Difference Engine.
+      </p>
+      <p>
+        Later, vacuum tubes were used to build electronic computers. These were
+        large, slow, and unreliable.
+      </p>
+      <h2 id="transitors">Transitors</h2>
+      <figure>
+        <span>
+          <img
+            src="https://www.watelectronics.com/wp-content/uploads/NOT-Gate-Using-Transistor.png"
+            style=""
+          />
+        </span>
+        <figcaption>NOT Gate Using Transistor</figcaption>
+      </figure>
+
+      <p>
+        Transistors were invented in 1947. They are the basis of modern
+        computing.
+      </p>
+      <p>
+        A <strong>transistor</strong> is a switch that can be turned on or off
+        by applying a small voltage. They form the subcomponents of logic gates.
+      </p>
+      <p>
+        An <strong>integrated circuit</strong>, or is a collection of
+        transistors and other components on a single chip. These are often
+        referred to as &quot;chips&quot; or &quot;microchips&quot;.
+      </p>
+      <h2 id="moores-law">Moore's Law</h2>
+      <figure>
+        <span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Moore%27s_Law_Transistor_Count_1970-2020.png/1024px-Moore%27s_Law_Transistor_Count_1970-2020.png"
+            style=""
+          />
+        </span>
+      </figure>
+
+      <p>
+        Moore&#39;s Law is an observation made by Gordon Moore, co-founder of
+        Intel, in 1965. It states that:
+      </p>
+      <blockquote>
+        <p>
+          The number of transistors on a microchip doubles approximately every
+          two years.
+        </p>
+      </blockquote>
+      <p>
+        Note the specifics - it&#39;s all about how many transistors can be
+        packed onto a chip (density of transisitors).
+      </p>
+      <ul>
+        <li>
+          Does this translate to a linear increase in performance every year?
+        </li>
+      </ul>
+      <h2 id="continued-growth">Continued Growth?</h2>
+      <ul>
+        <li>
+          There is currently a debate about whether Moore&#39;s Law can
+          continue.
+        </li>
+        <li>
+          After a certain point, the size of transistors will be so small that
+          quantum effects will start to interfere with their operation - you
+          can&#39;t pack the transistors any closer together.
+        </li>
+      </ul>
+      <h2 id="kurzweils-commentaries">Kurzweil's Commentaries</h2>
+      <figure>
+        <span>
+          <img
+            src="https://till.com/articles/MooresLaw/images/kurzweil_120years.png"
+            style=""
+          />
+        </span>
+      </figure>
+
+      <p>
+        Ray Kurzweil has observed more generally that the rate of change in
+        technology is itself accelerating. This is a more general observation
+        than Moore&#39;s Law, which is specific to transistors.
+      </p>
+      <p>
+        Above we look at how much we can compute with a dollar over time. The
+        curve is mildly exponential (curved up), not linear (straight).
+      </p>
+      <p>
+        Kurzweil and others believe that as long as there is a demand for more
+        computing power, the technology will continue to evolve to meet that
+        demand.
+      </p>
+      <h2 id="alternatives-to-von-neumann-architecture">
+        Alternatives to Von Neumann Architecture
+      </h2>
+      <p><strong>GPU&#39;s</strong></p>
+      <ul>
+        <li>Originally designed for rendering graphics.</li>
+        <li>Optimized for processing arrays and matrices.</li>
+        <li>Can perform many calculations in parallel.</li>
+        <li>
+          This works well for machine learning and other specialized
+          applications.
+        </li>
+        <li>Most supercomputers use GPU&#39;s.</li>
+      </ul>
+      <p><strong>Specialized Processors</strong></p>
+      <ul>
+        <li>
+          Other entrants are now tweaking the design of the processor to
+          optimize for specific tasks.
+        </li>
+        <li>This is mostly done to support AI / machine learning.</li>
+        <li>
+          Special chips designed to do machine learning <em>inference</em> (E.g.
+          on your phone)
+        </li>
+        <li>
+          Special chips to do machine learning <em>training</em> (at large
+          scales in computing facilities)
+        </li>
+        <li>Special processors for small devices</li>
+      </ul>
+      <h2 id="alternatives-to-transistor-based-computing">
+        Alternatives to Transistor Based Computing
+      </h2>
+      <p><strong>Quantum Computing</strong></p>
+      <ul>
+        <li>Currently experimental, large, and expensive.</li>
+        <li>
+          Quantum computers use quantum bits, or qubits, which can be in
+          multiple states at once.
+        </li>
+        <li>Not restricted to binary (0 or 1) like classical computers.</li>
+        <li>
+          Used in research and specialized applications to do this kind of
+          things that supercomputers are used for.
+        </li>
+      </ul>
+      <p><strong>Organic Computing</strong></p>
+      <ul>
+        <li>Currently experimental.</li>
+        <li>Computers made from organic materials.</li>
+        <li>Information is encoded in the structure of the material itself.</li>
+      </ul>
+    </div>
+  </body>
+</html>

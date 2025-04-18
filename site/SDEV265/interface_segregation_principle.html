@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV265: Interface Segregation Principle</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#interface-segregation-principle"
+            >Interface Segregation Principle</a
+          >
+          <ul>
+            <li><a href="#example">Example</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="interface-segregation-principle">
+        Interface Segregation Principle
+      </h1>
+      <p>
+        &quot;Clients should not be forced to depend upon interfaces that they
+        do not use.&quot;
+      </p>
+      <p>Clients = classes that use the interface.</p>
+      <p>
+        Keep interfaces lean - kind of like Single Responsibility Principle for
+        interfaces.
+      </p>
+      <h2 id="example">Example</h2>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> abc</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Sendable</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">abc</span><span style="color:#C18401;--shiki-dark:#ABB2BF">.</span><span style="color:#383A42;--shiki-dark:#D19A66">ABC</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">    @abstractmethod</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> email_document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        pass</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">    @abstractmethod</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> fax_document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        pass</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> EStatement</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Sendable</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # This makes sense here</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> email_document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        # Do email things</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # This does not make sense for an e-statement, but we are forced to implement it</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> fax_document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        raise</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> NotImplementedError</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">'This document cannot be faxed.'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+      <p>How would we fix this?</p>
+      <ul>
+        <li>Split the interface into two separate interfaces</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Emailable</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">abc</span><span style="color:#C18401;--shiki-dark:#ABB2BF">.</span><span style="color:#383A42;--shiki-dark:#D19A66">ABC</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">    @abstractmethod</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> email_document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        pass</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Faxable</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">abc</span><span style="color:#C18401;--shiki-dark:#ABB2BF">.</span><span style="color:#383A42;--shiki-dark:#D19A66">ABC</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">    @abstractmethod</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> fax_document</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        pass</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># No need to implement the Faxable interface</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> EStatement</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Emailable</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # ...</span></span></code></pre>
+    </div>
+  </body>
+</html>
