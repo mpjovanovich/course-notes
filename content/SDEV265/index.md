@@ -181,6 +181,10 @@ Intro to Assignments:
 - Iter 1 - Release and Deployment
 - Iter 1 - Release Notes
 
+## Module 0X: Project Code and Architectural Review
+
+- [Review of Project](project_review.html)
+
 <!-- TODO: Test Driven Development, Unit testing demos -->
 
 <!--
