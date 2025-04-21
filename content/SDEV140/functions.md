@@ -15,7 +15,7 @@ course: SDEV140
   - [Parameters vs. Arguments](#parameters-vs-arguments)
     - [Parameters](#parameters)
     - [Arguments](#arguments)
-  - [Walkthrough](#walkthrough)
+  - [Walkthrough: Creating an HTML Report](#walkthrough-creating-an-html-report)
   - [Refactoring](#refactoring)
 
 /~
@@ -232,19 +232,19 @@ activity = "jumping"
 do_something(activity)
 ```
 
-## Walkthrough
+## Walkthrough: Creating an HTML Report
 
 ~.focusContent.demo
 
 **Let's try a few functions:**
 
-- A simple `print_header` function for a report (no arguments)
+In this demo we will create a program that prompts the user for a list of numbers, then prints an HTML document that displays the numbers in a list.
+
+- A simple `create_html_document` function (no arguments)
 - Wrap some text in an HTML `<p>` tag
-- Wrap some text in a tag provided as a parameter
-- Calculate the sum of a list of numbers
-- Find the index of an item in a list
-- Print items in a list formatted in a specific way
-- Get user input as integer
+- Wrap some text in any tag, provided as a parameter
+- Take a list of strings and create an html `<ul>` of list items
+- Get user input as integer, loop until valid input
 
 /~
 

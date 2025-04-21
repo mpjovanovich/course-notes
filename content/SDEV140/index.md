@@ -30,7 +30,11 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- Post grading tests in advance?
+- Project scaffolding milestone due Sunday
+- Chapter 4 quiz due Sunday
+- Thursday's lecture will be asynchronous; check course announcements for details
+  - Posted as a video recording
+  - _There will be a lab due on Sunday for this_
 
 ## Module 00: Course Introduction
 
