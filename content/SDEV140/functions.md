@@ -240,6 +240,19 @@ do_something(activity)
 
 In this demo we will create a program that prompts the user for a list of numbers, then prints an HTML document that displays the numbers in a list.
 
+For reference, a minimal valid HTML5 document looks like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+```
+
 - A simple `create_html_document` function (no arguments)
 - Wrap some text in an HTML `<p>` tag
 - Wrap some text in any tag, provided as a parameter

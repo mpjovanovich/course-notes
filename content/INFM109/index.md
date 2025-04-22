@@ -13,6 +13,7 @@ showBreadcrumb: false
   - [Module 02: Hardware](#module-02-hardware)
   - [Module 03: Software](#module-03-software)
   - [Module 05: Information Systems](#module-05-information-systems)
+  - [Module 06: Networking and Storage](#module-06-networking-and-storage)
 
 /~
 
@@ -57,3 +58,11 @@ Overview of course
 - [Types of Data](types_of_data.html)
 - [Data Hierarchy and Modeling](data_hierarchy_modeling.html)
 - [Database Storage](database_storage.html)
+
+## Module 06: Networking and Storage
+
+<!-- - [Virtualization](virtualization.html) -->
+
+- Virtualization: Covered in class with Azure demo and in class assignment
+- [XaaS](xaas.html)
+- ... networking ...
