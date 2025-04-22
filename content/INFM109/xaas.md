@@ -214,7 +214,7 @@ A better question would be: "Who currently has ownership of my data?"
     </span>
 </figure>
 
-~/focusContent.exercise
+~.focusContent.exercise
 
 Amazon has invested heavily in Internet and data hosting infrastructure. Let's take a closer look:
 
@@ -223,7 +223,7 @@ Watch the video below. As you are watching:
 - Make a list; anytime you hear something that Amazon has done to improve their web hosting infrastructure, write it down!
 - Submit your list as today's discussion assignment.
 
-/\* _Remote students - if you want to mute and watch on your local computer while we watch here you can do so, but you must watch it right now while we watch it here._
+_Remote students - if you want to mute and watch on your local computer while we watch here you can do so, but you must watch it right now while we watch it here._
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/q6WlzHLxNKI?si=s3O90sle546EI6Sm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
