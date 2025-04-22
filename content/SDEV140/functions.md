@@ -238,26 +238,37 @@ do_something(activity)
 
 **Let's try a few functions:**
 
-In this demo we will create a program that prompts the user for a list of numbers, then prints an HTML document that displays the numbers in a list.
-
-For reference, a minimal valid HTML5 document looks like this:
+In this demo we will create a program that prints an HTML document that displays the items in a list. The end result of the report should look something like this:
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-  </head>
-  <body></body>
-</html>
+<head>
+  <title>My Report</title>
+</head>
+<body>
+  <h1>My Report</h1>
+  <p>Available items as of today:</p>
+  <ul>
+    <li>Apples</li>
+    <li>Oranges</li>
+    <li>Pears</li>
+  </ul>
+</body>
 ```
 
-- A simple `create_html_document` function (no arguments)
-- Wrap some text in an HTML `<p>` tag
-- Wrap some text in any tag, provided as a parameter
-- Take a list of strings and create an html `<ul>` of list items
-- Get user input as integer, loop until valid input
+\* _Note: our HTML will have to be mashed into one line so that we can use f-strings_
+
+Functions:
+
+- Start with `create_html_report` function - the main function that creates the HTML document
+- Pass in the title as a parameter and add to the HTML
+- Create a `create_html_element` function to wrap text in a tag
+  - Pass description to create_html_report
+  - Use to create h1 and p tags
+- Create a `create_ul` function to create an unordered list
+  - Pass in the list of items
+  - Loop through the list and create a list item for each element
+
+<!-- - Get user input as integer, loop until valid input -->
 
 /~
 
@@ -301,6 +312,10 @@ print()
 ```
 
 /~
+
+### Useful Function Hint
+
+Get user input as float / integer, loop until valid input...
 
 <!-- ## Function Composition
 
