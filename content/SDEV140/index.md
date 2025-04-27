@@ -19,6 +19,7 @@ showBreadcrumb: false
   - [Module 07: File I/O and File Parsing](#module-07-file-io-and-file-parsing)
   - [Module 08: Object Oriented Programming](#module-08-object-oriented-programming)
   - [Module 09: Event Driven Programming](#module-09-event-driven-programming)
+  - [Module 10: Developing with AI](#module-10-developing-with-ai)
 
 /~
 
@@ -172,51 +173,6 @@ Lab: Definite Loops
 
 [Event Driven Programming](event_driven_programming.html)
 
-## Module 10: Coding with AI
+## Module 10: Developing with AI
 
-<!--
-
-Prompt Driven Development:
-
-Demo: [Cannonball Application](cannonball.txt)
-
-Now that you know the fundamentals of coding, start using AI to help you write code.
-
-- Don't ask for the entire program at once.
-  - Try to come up with a "shell" program, ask AI if you're on the right track
-  - Tell it to give you only the piece that you want; work incrementally
-  - Commit changes to git after each step; AI can often change your code in places that you might not catch.
-- Ask it to explain the code that it writes.
-- Ask if code follows good coding practices.
-- Test thoroughly
-
-**_Don't accept AI suggestions without review!_**
-
-Exercise:
-
-... write some program using prompts ...
-
-Essential Skills for the Modern Software Developer:
-
-- **Communicating** with people.
-  - Clients / stakeholders
-  - Team members
-- **Communicating** with AI models
-  - Prompting
-  - Tech literacy and _vocabulary_
-- **Learning** at a rapid pace
-  - Technology half life currently ~18 months
-  - New skill sets
-  - New technologies
-  - New tools
-- **Redefining** your role
-  - Traditional "titles" are becoming obsolete
-  - Pick out unchanging interests and strengths and define yourself by those; this way your situation might change, but your identity doesn't
-
-Final Course Takeaways:
-
-- Be a **_problem solver_**, not a **_programmer_**
-- Start using AI, but don't skip out on learning how to read and write code.
-- Stay optimistic, and keep building things!
-
--->
+[Developing with AI](developing_with_ai.html)
