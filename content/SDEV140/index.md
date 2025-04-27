@@ -176,9 +176,9 @@ Lab: Definite Loops
 
 <!--
 
-Demo: cannonball application
-
 Prompt Driven Development:
+
+Demo: [Cannonball Application](cannonball.txt)
 
 Now that you know the fundamentals of coding, start using AI to help you write code.
 
@@ -191,6 +191,10 @@ Now that you know the fundamentals of coding, start using AI to help you write c
 - Test thoroughly
 
 **_Don't accept AI suggestions without review!_**
+
+Exercise:
+
+... write some program using prompts ...
 
 Essential Skills for the Modern Software Developer:
 
