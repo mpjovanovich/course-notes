@@ -1,11 +1,11 @@
 ---
-title: Networking
+title: Networking Communication Patterns
 course: INFM109
 ---
 
 ~.toc
 
-- [Networking](#networking)
+- [Networking Communication Patterns](#networking-communication-patterns)
   - [Communication Timing Patterns](#communication-timing-patterns)
     - [Synchronous](#synchronous)
       - [Definition](#definition)
@@ -41,10 +41,11 @@ course: INFM109
       - [Definition](#definition-7)
       - [Characteristics](#characteristics-7)
       - [Examples](#examples-7)
+  - [Protocols - Super Short Introduction](#protocols---super-short-introduction)
 
 /~
 
-# Networking
+# Networking Communication Patterns
 
 ## Communication Timing Patterns
 
@@ -145,6 +146,8 @@ A model where each device (peer) can act as both a client and a server, sharing 
 - Chat applications (e.g. Discord)
 
 ## Data Exchange Patterns
+
+Assuming the server has some data that the client needs, there are four main patterns for how the client can get that data:
 
 | Pattern           | Initiator | Connection Type      | Timing     | Use Cases                        |
 | ----------------- | --------- | -------------------- | ---------- | -------------------------------- |
@@ -256,6 +259,18 @@ The client repeatedly requests (polls) the server at regular intervals to check 
 - Email clients checking for new mail
 - Applications checking for software updates
 - Chat apps without real-time updates
+
+## Protocols - Super Short Introduction
+
+Protocols are standardized rules for communication.
+
+In each of the above patterns, the client / server may send messages back and forth to coordinate the transfer of the **payload** (the actual data being transferred).
+
+- Rules for how to establish a connection (handshake)
+- Rules for how to break the connection (teardown)
+- Address of the sender and receiver
+- Type / format of payload (html, image, video, etc.)
+- Data about the payload (size, compression, encryption, etc.)
 
 <!--
 
