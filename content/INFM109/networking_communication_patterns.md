@@ -309,6 +309,10 @@ Data Length (character count of the payload)
 Checksum (md5 hash of the payload)
 ```
 
+**Diagram**
+
+[Paper Airplane Protocol - DrawIO](https://github.com/mpjovanovich-IvyTechDemos/diagrams/blob/main/PaperAirplaneProtocol.drawio)
+
 **Client**
 
 _Request_
