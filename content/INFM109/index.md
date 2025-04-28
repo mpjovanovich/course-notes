@@ -65,4 +65,4 @@ Overview of course
 
 - Virtualization: Covered in class with Azure demo and in class assignment
 - [XaaS](xaas.html)
-- ... networking ...
+- [Networking](networking.html)
