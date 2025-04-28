@@ -41,7 +41,7 @@ course: INFM109
       - [Definition](#definition-7)
       - [Characteristics](#characteristics-7)
       - [Examples](#examples-7)
-  - [Protocols - Super Short Introduction](#protocols---super-short-introduction)
+- [Protocols Introduction](#protocols-introduction)
 
 /~
 
@@ -260,7 +260,11 @@ The client repeatedly requests (polls) the server at regular intervals to check 
 - Applications checking for software updates
 - Chat apps without real-time updates
 
-## Protocols - Super Short Introduction
+---
+
+<!-- TODO: Move this -->
+
+# Protocols Introduction
 
 Protocols are standardized rules for communication.
 
@@ -271,6 +275,88 @@ In each of the above patterns, the client / server may send messages back and fo
 - Address of the sender and receiver
 - Type / format of payload (html, image, video, etc.)
 - Data about the payload (size, compression, encryption, etc.)
+
+~.focusContent.example
+
+ <figure>
+    <span>
+        <img src="https://www.lifewire.com/thmb/irn835md4Hf2FmoEbh1rdAVNjTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tcp-headers-f2c0881ea4c94e919794b7c0677ab90a.jpg" style="width: 80%;height: auto;">
+    </span>
+</figure>
+
+The TCP header format specifies how the computer should interpret the information. Each field has a set length, position, and purpose.
+
+If the standard was not followed exactly, the data would be misinterpreted.
+
+/~
+
+~.focusContent.example
+
+**Paper Airplane Protocol**
+
+You have developed a paper airplane mode of communication, that you would like to use to serve song lyrics to your friends.
+
+The server, a computer, is very literal. It uses an algorithm to understand the message that was sent, and responds using the same format.
+
+```
+Packet Number
+Sender Address
+Receiver Address
+Action
+Payload (text data to be transferred)
+Data Length (character count of the payload)
+Checksum (md5 hash of the payload)
+```
+
+**Client**
+
+_Request_
+
+```
+1
+Desk 4
+Desk 11
+Get Lyrics
+Beatles;Yellow Submarine;Yellow Submarine
+41
+666180b3e449222c2241b2afe32bfca3
+```
+
+**Server**
+
+_Response_
+
+```
+1
+Desk 11
+Desk 4
+Data Transfer
+In the time that I
+18
+9eceaa495884413082c94280d965738e
+```
+
+```
+2
+Desk 11
+Desk 4
+Data Transfer
+was born, lived a man
+21
+690c8054749a1cb7fb448c5804613dc3
+```
+
+```
+3
+Desk 11
+Desk 4
+Data Transfer
+in a submarine. ^ENDMESSAGE^
+28
+0582957562b0492f8ad2aa0807ea1154
+```
+
+/~
 
 <!--
 
