@@ -42,6 +42,7 @@ course: INFM109
       - [Characteristics](#characteristics-7)
       - [Examples](#examples-7)
 - [Protocols Introduction](#protocols-introduction)
+- [The OSI Model](#the-osi-model)
 
 /~
 
@@ -357,6 +358,18 @@ in a submarine. ^ENDMESSAGE^
 ```
 
 /~
+
+# The OSI Model
+
+<figure>
+    <span>
+        <img src="https://miro.medium.com/v2/resize:fit:1400/1*-hQHFX-UjlruHDf9Je0lXg.png" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
+Each layer of the model encapsulates information from the layer beneath it, and adds information relevant to the layer above it.
+
+This makes a "sandwich" of information, with the outermost layer being the application layer, and the innermost layer being the physical layer.
 
 <!--
 
