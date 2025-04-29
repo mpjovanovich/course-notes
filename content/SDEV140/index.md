@@ -31,11 +31,13 @@ showBreadcrumb: false
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
 </figure>
 
-- Project scaffolding milestone due Sunday
-- Chapter 4 quiz due Sunday
-- Thursday's lecture will be asynchronous; check course announcements for details
-  - Posted as a video recording
-  - _There will be a lab due on Sunday for this_
+- Final project
+  - Code review times posted
+  - Review feedback from previous milestones; make sure requirements are met!
+  - Reminder: Failure to sufficiently demonstrate evidence of personal work on Milestone 3 will lead to a zero for Milestone 4.
+  - Hints: Appropriate data structures? Indexing into a string or list? Do you need ASCII?
+- Labs for today and next lecture are recorded.
+  - Open lab time by request.
 
 ## Module 00: Course Introduction
 
