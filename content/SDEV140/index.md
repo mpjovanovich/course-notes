@@ -34,7 +34,9 @@ showBreadcrumb: false
 - Final project
   - Code review times posted
   - Review feedback from previous milestones; make sure requirements are met!
+  - Tip for requirements and planning: make a list of each test that you will have to run to _verify_ that the final program meets expectations. Use these tests to guide your development, and check when done.
   - Reminder: Failure to sufficiently demonstrate evidence of personal work on Milestone 3 will lead to a zero for Milestone 4.
+  - Rubric change for M4: must have two functions
   - Hints: Appropriate data structures? Indexing into a string or list? Do you need ASCII?
 - Labs for today and next lecture are recorded.
   - Open lab time by request.
