@@ -69,3 +69,5 @@ Overview of course
 - [Networking Communication Patterns](networking_communication_patterns.html)
 
 ## Module 07: Cyber and Digital Security
+
+- [Cyber and Digital Security](cybersecurity.html)
