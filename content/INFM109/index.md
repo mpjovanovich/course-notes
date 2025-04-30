@@ -14,6 +14,7 @@ showBreadcrumb: false
   - [Module 03: Software](#module-03-software)
   - [Module 05: Information Systems](#module-05-information-systems)
   - [Module 06: Networking and Storage](#module-06-networking-and-storage)
+  - [Module 07: Cyber and Digital Security](#module-07-cyber-and-digital-security)
 
 /~
 
@@ -66,3 +67,5 @@ Overview of course
 - Virtualization: Covered in class with Azure demo and in class assignment
 - [XaaS](xaas.html)
 - [Networking Communication Patterns](networking_communication_patterns.html)
+
+## Module 07: Cyber and Digital Security

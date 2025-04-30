@@ -1,10 +1,9 @@
 ---
-title: INFM 109 - M06
+title: Cyber and Digital Security
+course: INFM109
 ---
 
-> A computing professional should… \
-> 1.1 Contribute to society and to human well-being, acknowledging that all people are stakeholders in computing. \
-> -- ACM Code of Ethics and Professional Conduct
+~.toc
 
 - [Secure Information Systems](#secure-information-systems)
   - [New Challenges to Ensure Secure Information Systems](#new-challenges-to-ensure-secure-information-systems)
@@ -44,15 +43,7 @@ title: INFM 109 - M06
   - [Data Collection and Privacy Concerns](#data-collection-and-privacy-concerns)
     - [Government Data Collection](#government-data-collection)
 
-## Announcements
-
-- ...
-
-## Agenda
-
-- Review final paper
-- Lecture
-- Discussion
+/~
 
 # Secure Information Systems
 
