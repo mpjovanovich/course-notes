@@ -59,7 +59,15 @@ Now that you know the fundamentals of coding, start using AI to help you write c
 - Ask if code follows good coding practices.
 - Test thoroughly
 
+~.focusContent.lookout
+
 **_Don't accept AI suggestions without review!_**
+
+I personally use AI nearly every time I develop, and it has never produced an answer that perfectly fits my needs.
+
+More importantly - it will sometimes introduce security vulnerabilities or bad practices.
+
+/~
 
 ~.focusContent.exercise
 
