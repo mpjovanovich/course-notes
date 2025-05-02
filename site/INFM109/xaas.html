@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFM109: XaaS</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#xaas">XaaS</a>
+            <ul>
+              <li><a href="#the-cloud">The Cloud</a></li>
+              <li>
+                <a href="#saas-software-as-a-service"
+                  >SaaS (Software as a Service)</a
+                >
+                <ul>
+                  <li><a href="#what-is-saas">What is SaaS?</a></li>
+                  <li>
+                    <a href="#perpetual-vs-subscription-software-licenses"
+                      >Perpetual vs Subscription Software Licenses</a
+                    >
+                  </li>
+                  <li><a href="#saas-examples">SaaS Examples</a></li>
+                  <li>
+                    <a href="#thin-vs-thick-client">Thin vs Thick Client</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#paas-platform-as-a-service"
+                  >PaaS (Platform as a Service)</a
+                >
+                <ul>
+                  <li><a href="#what-is-paas">What is PaaS?</a></li>
+                  <li><a href="#paas-examples">PaaS Examples</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#iaas-infrastructure-as-a-service"
+                  >IaaS (Infrastructure as a Service)</a
+                >
+                <ul>
+                  <li><a href="#what-is-iaas">What is IaaS?</a></li>
+                  <li><a href="#iaas-examples">IaaS Examples</a></li>
+                  <li><a href="#case-study-aws">Case Study: AWS</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="xaas">XaaS</h1>
+      <p>
+        &quot;XaaS&quot; is an acronym for &quot;Anything as a Service&quot;.
+        These service based models represent a shift in how software is
+        delivered and consumed.
+      </p>
+      <p>We will look at a few examples of XaaS in this module.</p>
+      <h2 id="the-cloud">The Cloud</h2>
+      <p>
+        The cloud is a model for delivering computing services over the
+        Internet.
+      </p>
+      <figure>
+        <span>
+          <img
+            src="https://www.hpe.com/content/dam/hpe/shared-publishing/images-norend/screenshots/Cloud-computing-infographic-4-3.jpg"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <ul>
+        <li>Compute services are not tied to any physical hardware</li>
+        <li>
+          Compute resources are allocated dynamically; &quot;checked out&quot;
+          from a pool of available resources
+        </li>
+        <li>
+          Users pay for what they use, typically on a subscription or as-needed
+          basis
+        </li>
+      </ul>
+      <h2 id="saas-software-as-a-service">SaaS (Software as a Service)</h2>
+      <h3 id="what-is-saas">What is SaaS?</h3>
+      <p>
+        <strong>Software as a Service</strong> is a model where software is
+        delivered to the user as a service.
+      </p>
+      <p>In the past:</p>
+      <ul>
+        <li>Software downloaded and installed on computer</li>
+        <li>Only option was purchase perpetual software license</li>
+      </ul>
+      <div class="focusContent note">
+        <h3 id="perpetual-vs-subscription-software-licenses">
+          Perpetual vs Subscription Software Licenses
+        </h3>
+        <p>
+          <strong>Perpetual licenses</strong> are purchased for a fixed price
+          and the software is owned by the user.
+        </p>
+        <p>
+          <strong>Subscription licenses</strong> are purchased on a recurring
+          basis and the software is not owned by the user. Examples may include
+          annual or monthly subscriptions.
+        </p>
+        <p>
+          <strong>Pay-as-you-go licenses</strong> are another option and are
+          purchased on a usage basis.
+        </p>
+      </div>
+
+      <p>With SaaS:</p>
+      <ul>
+        <li>Software is hosted in the cloud</li>
+        <li>Software is accessed via the Internet</li>
+        <li>Software updates are automatically applied</li>
+      </ul>
+      <p>Who uses SaaS?</p>
+      <ul>
+        <li>Organizations</li>
+        <li>Individual consumers</li>
+      </ul>
+      <h3 id="saas-examples">SaaS Examples</h3>
+      <ul>
+        <li>Microsoft Office 365</li>
+        <li>Google Docs</li>
+        <li>Netflix</li>
+        <li>Spotify</li>
+      </ul>
+      <div class="focusContent exercise">
+        <h3 id="thin-vs-thick-client">Thin vs Thick Client</h3>
+        <figure>
+          <span>
+            <img
+              src="https://valto.co.uk/wp-content/uploads/2022/10/office-365-apps.jpg"
+              style="width: 80%; height: auto"
+            />
+          </span>
+        </figure>
+
+        <p>Many software vendors offer two versions of their software:</p>
+        <ul>
+          <li>
+            <strong>Thin client</strong> - Software that is delivered to the
+            user via the Internet
+          </li>
+          <li>
+            <strong>Thick client</strong> - Software that is downloaded and
+            installed on the user&#39;s computer or mobile device
+          </li>
+        </ul>
+        <p>A couple of examples include Microsoft Office and Spotify.</p>
+        <p>SaaS can refer to either thin or thick clients.</p>
+        <p><strong>Critical Thinking Exercise:</strong></p>
+        <p>
+          For the two examples above, why might a user choose one (thin or
+          thick) over the other? Consider:
+        </p>
+        <ul>
+          <li>Collaboration capabilities</li>
+          <li>Offline access capabilities</li>
+          <li>Network bandwidth and latency</li>
+          <li>Compute constraints</li>
+        </ul>
+      </div>
+
+      <h2 id="paas-platform-as-a-service">PaaS (Platform as a Service)</h2>
+      <h3 id="what-is-paas">What is PaaS?</h3>
+      <p>
+        From
+        <a href="https://cloud.google.com/learn/what-is-paas"
+          >Google: What is PaaS?</a
+        >:
+      </p>
+      <blockquote>
+        <p>
+          Platform as a Service (PaaS) is a complete cloud environment that
+          includes everything developers need to build, run, and manage
+          applications—from servers and operating systems to all the networking,
+          storage, middleware, tools, and more.
+        </p>
+      </blockquote>
+      <p>
+        From
+        <a
+          href="https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-paas"
+          >Microsoft: What is PaaS?</a
+        >:
+      </p>
+      <blockquote>
+        <p>
+          Platform as a service (PaaS) is a cloud computing model that provides
+          developers with a platform to build, deploy, and manage applications
+          without worrying about the underlying infrastructure. It allows
+          developers to focus on writing code, while the cloud provider handles
+          the infrastructure, maintenance, and scalability.
+        </p>
+        <p>
+          PaaS includes everything needed for application development, including
+          operating systems, runtime environments, databases, development tools,
+          middleware, and hosting and scaling capabilities.
+        </p>
+      </blockquote>
+      <p>With Paas:</p>
+      <ul>
+        <li>Focus is on Software Development</li>
+        <li>
+          Cloud provider handles the infrastructure, maintenance, and
+          scalability
+        </li>
+      </ul>
+      <p>Who uses PaaS and what for?</p>
+      <p><strong>Development Teams:</strong></p>
+      <ul>
+        <li>Building and testing web applications</li>
+        <li>Developing and testing mobile apps</li>
+        <li>Creating custom software solutions</li>
+      </ul>
+      <p><strong>Operations Teams:</strong></p>
+      <ul>
+        <li>Managing deployment environments</li>
+        <li>Configuring and scaling infrastructure</li>
+        <li>Maintaining application platforms</li>
+      </ul>
+      <div class="focusContent note">
+        <p>
+          PaaS is designed for technical professionals, not end-users of
+          software applications.
+        </p>
+        <p>
+          With PaaS, users don&#39;t typically &quot;log in&quot; to a machine.
+          Instead, they use the platform to build, test, and deploy their
+          applications automatically.
+        </p>
+      </div>
+
+      <h3 id="paas-examples">PaaS Examples</h3>
+      <p>The &quot;big three&quot; cloud providers offer PaaS:</p>
+      <ul>
+        <li>
+          <a href="https://aws.amazon.com/elasticbeanstalk/"
+            >AWS Elastic Beanstalk</a
+          >
+        </li>
+        <li>
+          <a href="https://cloud.google.com/appengine">Google App Engine</a>
+        </li>
+        <li>
+          <a href="https://azure.microsoft.com/en-us/services/app-service/"
+            >Azure App Service</a
+          >
+        </li>
+      </ul>
+      <h2 id="iaas-infrastructure-as-a-service">
+        IaaS (Infrastructure as a Service)
+      </h2>
+      <h3 id="what-is-iaas">What is IaaS?</h3>
+      <p>
+        From
+        <a href="https://cloud.google.com/learn/what-is-iaas"
+          >Google: What is IaaS?</a
+        >:
+      </p>
+      <blockquote>
+        <p>
+          IaaS, or Infrastructure as a Service, is a cloud computing model that
+          provides on-demand access to computing resources such as servers,
+          storage, networking, and virtualization.
+        </p>
+      </blockquote>
+      <p>
+        From
+        <a
+          href="https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-iaas"
+          >Microsoft: What is IaaS?</a
+        >:
+      </p>
+      <blockquote>
+        <p>
+          IaaS is a cloud computing model that delivers on-demand servers,
+          storage, and networking, allowing businesses to rent resources, scale
+          flexibly, and reduce hardware costs.
+        </p>
+      </blockquote>
+      <p>With IaaS you can rent:</p>
+      <ul>
+        <li>Virtual servers</li>
+        <li>Virtual storage</li>
+        <li>Virtual networking resources</li>
+        <li>Virtual machines</li>
+      </ul>
+      <p>Main benefits are:</p>
+      <ul>
+        <li>Flexibility</li>
+        <li>Scalability</li>
+        <li>Cost-effectiveness</li>
+        <li>Fault tolerance / high availability</li>
+      </ul>
+      <div class="focusContent note">
+        <p><strong>Where is my data stored?</strong></p>
+        <p>
+          As with all XaaS models, the user doesn&#39;t know or need to know
+          anything about the underlying infrastructure.
+        </p>
+        <p>
+          The cloud provider may have many data centers around the world, and
+          abstracts the user from the physical location and hardware of the
+          infrastructure.
+        </p>
+        <p>
+          A better question would be: &quot;Who currently has ownership of my
+          data?&quot;
+        </p>
+      </div>
+
+      <h3 id="iaas-examples">IaaS Examples</h3>
+      <ul>
+        <li><a href="https://aws.amazon.com/ec2/">AWS EC2</a></li>
+        <li>
+          <a href="https://cloud.google.com/compute">Google Compute Engine</a>
+        </li>
+        <li>
+          <a href="https://azure.microsoft.com/en-us/services/virtual-machines/"
+            >Azure Virtual Machines</a
+          >
+        </li>
+      </ul>
+      <h3 id="case-study-aws">Case Study: AWS</h3>
+      <figure>
+        <span>
+          <img
+            src="https://pbs.twimg.com/media/GT7EZwzXUAELtWe?format=jpg&name=4096x4096"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <div class="focusContent exercise">
+        <p>
+          Amazon has invested heavily in Internet and data hosting
+          infrastructure. Let&#39;s take a closer look:
+        </p>
+        <p>Watch the video below. As you are watching:</p>
+        <ul>
+          <li>
+            Make a list; anytime you hear something that Amazon has done to
+            improve their web hosting infrastructure, write it down!
+          </li>
+          <li>Submit your list as today&#39;s discussion assignment.</li>
+        </ul>
+        <p>
+          <em
+            >Remote students - if you want to mute and watch on your local
+            computer while we watch here you can do so, but you must watch it
+            right now while we watch it here.</em
+          >
+        </p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/q6WlzHLxNKI?si=s3O90sle546EI6Sm"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+
+        <ul>
+          <li>Afterward we will review the list.</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
