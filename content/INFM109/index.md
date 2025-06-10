@@ -10,6 +10,7 @@ showBreadcrumb: false
   - [Announcements](#announcements)
   - [Module 00: Course Introduction](#module-00-course-introduction)
   - [Module 01: Digital Citizenry \& The Internet](#module-01-digital-citizenry--the-internet)
+  - [Module 0X: AI in the Tech Industry](#module-0x-ai-in-the-tech-industry)
   - [Module 02: Hardware](#module-02-hardware)
   - [Module 03: Software](#module-03-software)
   - [Module 05: Information Systems](#module-05-information-systems)
@@ -22,7 +23,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Sign up for exams! Last reminder.
+- ...
 
 ## Module 00: Course Introduction
 
@@ -31,14 +32,22 @@ Overview of course
 - Syllabus and policy review (policy assignment)
 - Review course structure and resources
 - Make sure you can access the textbook
-
-[Review: Computer Orientation](../common/computer_orientation.html?course=INFM109)
+- [Review: Computer Orientation](../common/computer_orientation.html?course=INFM109)
+- Break, prep for discussion.
 
 ## Module 01: Digital Citizenry & The Internet
 
-- [Timelines: Digital Evolution](timelines_digital_evolution.html)
 - Discussion: Digital Communication Patterns
+- [Timelines: Digital Evolution](timelines_digital_evolution.html)
 - [The Internet](internet.html)
+
+## Module 0X: AI in the Tech Industry
+
+- [What is AI?](what_is_ai.html)
+- [Large Language Models](large_language_models.html)
+- [Prompt Engineering](prompt_engineering.html)
+- [Agentic AI](agentic_ai.html)
+- TODO: Assignment - prompt engineering, AI as a research tool
 
 ## Module 02: Hardware
 
@@ -47,7 +56,6 @@ Overview of course
 
 ## Module 03: Software
 
-- Take a moment to sign up for exams
 - [Application Software](application_software.html)
 - Discussion: Location Data Case Studies
 - Intro to Assignments
