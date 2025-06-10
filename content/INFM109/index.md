@@ -33,6 +33,7 @@ Overview of course
 - Review course structure and resources
 - Make sure you can access the textbook
 - [Review: Computer Orientation](../common/computer_orientation.html?course=INFM109)
+- Icebreaker: If you could live on a colony on Mars, would you? One way or two way trip (minimum 10 years)?
 - Break, prep for discussion.
 
 ## Module 01: Digital Citizenry & The Internet
@@ -47,7 +48,7 @@ Overview of course
 - [Large Language Models](large_language_models.html)
 - [Prompt Engineering](prompt_engineering.html)
 - [Agentic AI](agentic_ai.html)
-- TODO: Assignment - prompt engineering, AI as a research tool
+- TODO: Assignment - prompt engineering, exploring AI models, AI as a research tool
 
 ## Module 02: Hardware
 
