@@ -75,19 +75,19 @@ Traditional chatbots can only respond with text. Agentic AI systems can:
 
 Current trends indicate that multi-agent systems will be more common in the future. As an example, a company might build an agent pipeline like this:
 
-1. Email Classifier Agent
+**1. Email Classifier Agent**
 
 - Checks incoming customer emails
 - Classifies them as "customer support" or "sales"
 - Routes to appropriate specialized agent
 
-2. Customer Support Agent
+**2. Customer Support Agent**
 
 - Checks company knowledge base
 - Generates initial response
 - Forwards to Quality Assurance Agent
 
-3. Quality Assurance Agent
+**3. Quality Assurance Agent**
 
 - Reviews the proposed solution
 - Checks for:
