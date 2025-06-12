@@ -7,16 +7,12 @@ course: INFM109
 
 - [Agentic AI](#agentic-ai)
   - [Beyond Chat](#beyond-chat)
-  - [Safety Considerations](#safety-considerations)
-    - [What to Verify](#what-to-verify)
-    - [Best Practices for Safety](#best-practices-for-safety)
-  - [Current Landscape](#current-landscape)
-    - [Available Platforms](#available-platforms)
+    - [Computer Access and Tool Integration](#computer-access-and-tool-integration)
     - [Emerging Capabilities](#emerging-capabilities)
+    - [Best Practices for Tool Use](#best-practices-for-tool-use)
   - [Future Implications](#future-implications)
     - [Professional Impact](#professional-impact)
-    - [Societal Considerations](#societal-considerations)
-  - [Preparing for an AI-Integrated Future](#preparing-for-an-ai-integrated-future)
+    - [Preparing for an AI-Integrated Future](#preparing-for-an-ai-integrated-future)
 
 /~
 
@@ -25,6 +21,8 @@ course: INFM109
 **Agentic AI** refers to AI systems that can take actions beyond just generating text responses. These systems can use tools, access files, browse the web, and execute code to complete complex tasks.
 
 ## Beyond Chat
+
+### Computer Access and Tool Integration
 
 Traditional chatbots can only respond with text. Agentic AI systems can:
 
@@ -52,80 +50,6 @@ Traditional chatbots can only respond with text. Agentic AI systems can:
 - Access specialized software and APIs
 - Integrate with productivity tools (calendars, email, etc.)
 - Control other applications and services
-
-## Safety Considerations
-
-With expanded capabilities comes increased responsibility and risk.
-
-### What to Verify
-
-**Information Accuracy**:
-
-- AI can still hallucinate facts, even when using tools
-- Cross-reference important information from multiple sources
-- Be especially careful with recent events or specialized knowledge
-
-**Web Sources**:
-
-- AI may access unreliable websites
-- Check the credibility of sources AI cites
-- Look for authoritative, well-established sources
-
-**File Operations**:
-
-- Review files before sharing or submitting
-- Check calculations and data analysis
-- Ensure privacy-sensitive information is handled appropriately
-
-### Best Practices for Safety
-
-**Verification Steps**:
-
-1. Always review AI-generated content before using it
-2. Check sources and citations independently
-3. Test code in safe environments before production use
-4. Validate calculations and analysis
-
-**Privacy Protection**:
-
-- Don't share sensitive personal information
-- Be cautious with proprietary business data
-- Understand what data the AI system retains
-- Use appropriate privacy settings
-
-**Human Oversight**:
-
-- Maintain final decision-making authority
-- Don't blindly follow AI recommendations
-- Use AI as a tool to augment, not replace, human judgment. Critical thinking skills are weakened when not exercised.
-
-## Current Landscape
-
-### Available Platforms
-
-**Claude (Anthropic)**:
-
-- Web search and file analysis
-- Code execution capabilities
-- Large context window for complex tasks
-
-**ChatGPT Plus (OpenAI)**:
-
-- Web browsing and real-time information
-- Code interpreter for data analysis
-- Plugin ecosystem for specialized tools
-
-**Google Gemini**:
-
-- Integration with Google Workspace
-- Real-time web information
-- Multimodal capabilities (text, image, etc.)
-
-**Microsoft Copilot**:
-
-- Integration with Office applications
-- Web search and current events
-- Embedded in Windows and Edge browser
 
 ### Emerging Capabilities
 
@@ -178,9 +102,42 @@ Each of these "agents" is an AI program that can be built independently of the o
 
 /~
 
+### Best Practices for Tool Use
+
+**Diligence and Awareness**:
+
+- Always review AI-generated content before using it
+- Always know what information the AI system has access to
+- Always know what the AI system is capable of doing (e.g. executing programs)
+
+**Verification Steps**:
+
+- Check sources and citations independently
+- Validate calculations and analysis
+- Test generated code in safe environments before production use
+
+**Privacy Protection**:
+
+- Make sure provided information does not contain sensitive personal information
+- Be cautious with proprietary business data
+- Understand what data the AI system retains
+- Use appropriate privacy settings
+
+**Human Oversight**:
+
+- Maintain final decision-making authority
+- Don't blindly follow AI recommendations
+- Use AI as a tool to augment, not replace, human judgment. Critical thinking skills are weakened when not exercised.
+
 ## Future Implications
 
 ### Professional Impact
+
+<figure>
+    <span>
+        <img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F74672ad2-9703-42ac-acbe-8e0cd409d5f1_551x453.jpeg" style="width: 80%;height: auto;">
+    </span>
+</figure>
 
 **Job Augmentation**:
 
@@ -188,56 +145,27 @@ Each of these "agents" is an AI program that can be built independently of the o
 - New skills in AI collaboration will become valuable
 - Focus will shift to creative and strategic thinking
 
-**New Roles**:
-
-- AI prompt engineers and trainers
-- AI safety and ethics specialists
-- Human-AI interaction designers
-
 **Industry Changes**:
 
 - Faster prototyping and development cycles
 - More personalized customer experiences
 - Automated routine tasks across industries
 
-### Societal Considerations
-
-**Benefits**:
-
-- Increased productivity and efficiency
-- Better access to information and services
-- Assistance for people with disabilities
-- Scientific and medical breakthroughs
-
-**Challenges**:
-
-- Need for new regulations and standards
-- Concerns about job displacement
-- Privacy and security issues
-- Risk of over-dependence on AI systems
-
-**Ethical Questions**:
-
-- How much autonomy should AI systems have?
-- Who is responsible when AI makes mistakes?
-- How do we ensure AI systems are fair and unbiased?
-- What happens if AI systems become too powerful?
-
-## Preparing for an AI-Integrated Future
+### Preparing for an AI-Integrated Future
 
 **Skills to Develop**:
 
-- Critical thinking and verification skills
 - Understanding of AI capabilities and limitations
 - Effective communication with AI systems
-- Ethics and responsible AI usage
+- Critical thinking and verification skills
 
 **Mindset Shifts**:
 
 - View AI as a collaborative tool, not a replacement
 - Maintain healthy skepticism while embracing capabilities
 - Focus on uniquely human skills: creativity, empathy, complex reasoning
-- Stay curious and adaptable as technology evolves
+- Focus less on job titles and more on skillsets
+- Stay curious, flexible, and adaptable
 
 **Practical Steps**:
 
