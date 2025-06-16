@@ -185,11 +185,17 @@ Shows states of a system and how it transitions between them.
 - States
 - Transitions
 
-<p class="demo">Walkthrough:</p>
+~.focusContent.exercise
 
-State diagram for a light with two switches - one at each end of a hallway.
+User signup, registration, and login workflow:
 
-- Assume light is off with both switches in the off position (initial state).
+<figure>
+    <span>
+        <img src="images/user_account_state.svg" style="width: 80%;height: auto;">
+    </span>
+</figure>
+
+/~
 
 ### Activity Diagram
 
