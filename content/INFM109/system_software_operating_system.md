@@ -114,7 +114,7 @@ Key characteristics:
 
 <figure>
     <span>
-        <img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1920,h_1080/https://assets.ubuntu.com/v1/d4ea8bb8-ubuntu-budgie-2410.png" style="width: 80%;height: auto;">
+        <img src="https://www.openlogic.com/sites/default/files/inline-images/image%205.jpg" style="width: 80%;height: auto;">
     </span>
 </figure>
 
