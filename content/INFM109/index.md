@@ -68,6 +68,7 @@ Part II:
 Part I:
 
 - [Hardware](hardware.html)
+- Discussion: Hardware Trends
 
 Part II (short lecture):
 
