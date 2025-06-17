@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV265: Data Passing and APIs</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#data-passing-and-apis">Data Passing and APIs</a>
+          <ul>
+            <li>
+              <a href="#application-programming-interface-api"
+                >Application Programming Interface (API)</a
+              >
+            </li>
+            <li><a href="#web-services">Web Services</a></li>
+            <li><a href="#demos">Demos</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="data-passing-and-apis">Data Passing and APIs</h1>
+      <h2 id="application-programming-interface-api">
+        Application Programming Interface (API)
+      </h2>
+      <p>
+        An <strong>API</strong> is a set of rules and protocols that allow one
+        software application to interact with another.
+      </p>
+      <p>A function signature is a type of API.</p>
+      <p>Can be used to:</p>
+      <ul>
+        <li>Access web services</li>
+        <li>Access databases</li>
+        <li>Access hardware</li>
+        <li>Access software libraries</li>
+      </ul>
+      <h2 id="web-services">Web Services</h2>
+      <p>Web services are a type of API that is accessed over the internet.</p>
+      <p>
+        Your application sends a request to a web service (someone else&#39;s
+        application) and receives a response.
+      </p>
+      <p>Common use cases:</p>
+      <ul>
+        <li>Data exchange between systems</li>
+        <li>Payment processing</li>
+        <li>Weather data</li>
+        <li>Geolocation</li>
+      </ul>
+      <h2 id="demos">Demos</h2>
+      <p>
+        <a
+          href="https://developers.google.com/maps/documentation/address-validation/requests-validate-address"
+          >Google Address Validation Service</a
+        >
+      </p>
+      <p>
+        *You will need a Google Maps API key to run this demo on your own.
+        It&#39;s free but they require a credit card on file.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="color:#986801;--shiki-dark:#D19A66"> -X</span><span style="color:#50A14F;--shiki-dark:#98C379"> POST</span><span style="color:#986801;--shiki-dark:#D19A66"> -d</span><span style="color:#50A14F;--shiki-dark:#98C379"> '{</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">  "address": {</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">    "regionCode": "US",</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">    "postalCode": "47905",</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">    "addressLines": ["3101 S Creasy Ln"]</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">&#x3C;!--DOTMARK_DIV&#x3C;/div></span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">}'</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">-H </span><span style="color:#50A14F;--shiki-dark:#98C379">'Content-Type: application/json'</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">"https://addressvalidation.googleapis.com/v1:validateAddress?key=</span><span style="color:#E45649;--shiki-dark:#E06C75">$GOOGLE_MAPS_API_KEY</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">> </span><span style="color:#50A14F;--shiki-dark:#98C379">api_result.json</span></span></code></pre>
+    </div>
+  </body>
+</html>

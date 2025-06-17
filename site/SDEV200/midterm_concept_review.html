@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV200: Mid-term Review of Concepts</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#mid-term-review-of-concepts"
+              >Mid-term Review of Concepts</a
+            >
+            <ul>
+              <li><a href="#code-formatting">Code Formatting</a></li>
+              <li>
+                <a href="#application-structure">Application Structure</a>
+              </li>
+              <li>
+                <a href="#classes-and-program-flow">Classes and Program Flow</a>
+              </li>
+              <li><a href="#development-tests">Development Tests</a></li>
+              <li>
+                <a href="#best-practices-by-example"
+                  >Best Practices by Example</a
+                >
+              </li>
+              <li>
+                <a href="#closing-announcements">Closing Announcements</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="mid-term-review-of-concepts">Mid-term Review of Concepts</h1>
+      <h2 id="code-formatting">Code Formatting</h2>
+      <p>Review: How to autoformat code</p>
+      <h2 id="application-structure">Application Structure</h2>
+      <ul>
+        <li>Scripts vs applications</li>
+        <li>Any non-trivial application should be in its own directory</li>
+      </ul>
+      <h2 id="classes-and-program-flow">Classes and Program Flow</h2>
+      <ul>
+        <li>
+          <p>Relationship between Main and supporting classes</p>
+          <ul>
+            <li>
+              Classes:
+              <ul>
+                <li>Encapsulate some logic that &quot;goes together&quot;</li>
+                <li>Bundled units of code to handle related functionality.</li>
+                <li>
+                  Some are more object-like. Others are &quot;utility
+                  classes&quot;.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Main class = program flow of execution logic. Used only to start
+              the program.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="development-tests">Development Tests</h2>
+      <ul>
+        <li>
+          We&#39;re not using unit tests formally, but we should still be
+          writing development tests.
+        </li>
+        <li>Writing small functions makes testing easier.</li>
+        <li>We then write functions to test other functions.</li>
+        <li>
+          At minimum, make sure outcomes are as expected for:
+          <ul>
+            <li>Expected results of logical paths through code</li>
+            <li>Error handling</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="bringing-it-all-together---walkthrough">
+        Bringing It All Together - Walkthrough
+      </h2>
+      <ul>
+        <li>
+          Walkthrough sln to book exercise 20.11 (with tests!)
+          <ul>
+            <li>
+              <a
+                href="https://github.com/mpjovanovich/java-developer-testing-examples"
+                >Java Developer Testing Examples</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="closing-announcements">Closing Announcements</h2>
+      <ul>
+        <li>
+          <p>
+            Allow resubmits for M04 and forward assignments through Friday
+            night.
+          </p>
+        </li>
+        <li>
+          <p>Review &quot;Finalized&quot; final project requirements</p>
+          <ul>
+            <li>How to add collaborator on GitHub</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
