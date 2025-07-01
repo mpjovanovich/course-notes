@@ -114,7 +114,7 @@ Key characteristics:
 
 <figure>
     <span>
-        <img src="https://www.openlogic.com/sites/default/files/inline-images/image%205.jpg" style="width: 80%;height: auto;">
+        <img src="https://www.openlogic.com/sites/default/files/inline-images/image.png" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -265,11 +265,17 @@ This security system is crucial because malicious programs often try to exploit 
 
 ### Multitasking OS
 
+<figure>
+    <span>
+        <img src="https://martin-thoma.com/images/2021/05/parallel-interleaved.png" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
 Early operating systems were **single-tasking** - they could only run one program at a time. A program may take two minutes to run, so the user would have to wait two minutes for the program to finish before they could run another program.
 
 _Solution:_
 
-**Multitasking** is when the OS switches between programs quickly, giving each program a small slice of CPU time to run.
+**Multitasking** is when the OS switches between programs quickly, giving each program a small slice of CPU time to run. This is also called **time-sharing**.
 
 **Scheduling** is the process of deciding which program should run next.
 
@@ -277,13 +283,23 @@ This rapid switching between programs is called **context switching**.
 
 All of this happens so fast that it creates the illusion that multiple programs are running simultaneously, even if there is only one CPU.
 
+~.focusContent.example
+
+#### Interleaved Execution
+
+**Iterleaved execution** is a term that describes the way that the OS switches between programs quickly. It works on a system of **interrupts**.
+
+Just like a student working on homework might be interrupted by a phone call, a program might be interrupted by an interrupt signal from the OS. This tells it that it's time to switch to another task.
+
+/~
+
 ~.focusContent.lookout
 
 #### Multitasking vs Parallel Processing
 
-**Parallel Processing** is when the OS runs multiple programs at the same time. True parallelism is different from multitasking, which is about switching between programs quickly.
+**Parallel Processing** is when the OS runs multiple programs at the same time. True parallelism is different from multitasking - with parallelism multiple operations may be happening at any given point in time within the computer.
 
-All modern operating systems can now handle both multitasking and parallel processing. They do this by using multiple CPUs, and multiple cores within a single CPU. Each core can run a different program at the same time.
+All modern operating systems can now handle both multitasking and parallel processing. They do this by using multiple CPUs, and multiple cores within a single CPU. Each core might run a different program at the same time.
 
 /~
 
@@ -337,10 +353,12 @@ This allows you to:
 - Organize data more effectively
 - Separate system files from user data
 
-_Exercise:_
+_Daily Quiz:_
 
 For Windows user, open the Disk Management tool and view the partitions.
 
 For MacOS user, open the Disk Utility tool and view the partitions.
+
+Submit a screenshot of what you see.
 
 /~

@@ -85,6 +85,9 @@ Part I:
 Part II:
 
 - [System Software and the Operating System](system_software_operating_system.html)
+- Break lecture into two parts
+- Discussion: Case Studies in Location Tracking
+- Daily Quiz
 - Intro to Assignments
 
 ## Module 04: Program and Web Development
