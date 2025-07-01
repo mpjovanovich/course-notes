@@ -353,6 +353,8 @@ This allows you to:
 - Organize data more effectively
 - Separate system files from user data
 
+/~
+
 _Daily Quiz:_
 
 For Windows user, open the Disk Management tool and view the partitions.
@@ -360,5 +362,3 @@ For Windows user, open the Disk Management tool and view the partitions.
 For MacOS user, open the Disk Utility tool and view the partitions.
 
 Submit a screenshot of what you see.
-
-/~

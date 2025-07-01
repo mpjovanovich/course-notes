@@ -101,6 +101,16 @@ h6 {
   margin: $spacer * 5 0 $spacer 0;
 }
 
+// Remove top margin for the first header that is a direct child of focusContent
+.focusContent > h1:first-of-type,
+.focusContent > h2:first-of-type,
+.focusContent > h3:first-of-type,
+.focusContent > h4:first-of-type,
+.focusContent > h5:first-of-type,
+.focusContent > h6:first-of-type {
+  margin-top: 0;
+}
+
 h1 {
   padding: $spacer * 2 $spacer;
   margin: $spacer 0;
