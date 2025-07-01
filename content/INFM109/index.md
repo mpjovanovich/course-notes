@@ -21,12 +21,10 @@ showBreadcrumb: false
 
 ## Announcements
 
-- We will meet again in person and Zoom July 1
-  - **No class** Th, June 19
-  - **Async (Recorded) class** T, June 24
-  - **Async (Recorded) class** Th, June 26
-  - Confirm: we do have class on July 3; this will have an in-class exercise
-- Remote students: _Sign up for exams as soon as possible_
+- We do have class on July 3
+- Exams next Tuesday:
+  - Lafayette students come in to lecture room
+  - Remote students schedule for Ivy Tech testing center
 
 ## Module 00: Course Introduction
 
