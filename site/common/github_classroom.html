@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GitHub Classroom</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#github-classroom">GitHub Classroom</a>
+            <ul>
+              <li>
+                <a href="#accepting-assignments">Accepting Assignments</a>
+              </li>
+              <li>
+                <a href="#submitting-assignments">Submitting Assignments</a>
+              </li>
+              <li>
+                <a href="#finding-your-repository-organizations"
+                  >Finding Your Repository (Organizations)</a
+                >
+              </li>
+              <li>
+                <a href="#viewing-instructor-feedback"
+                  >Viewing Instructor Feedback</a
+                >
+                <ul>
+                  <li><a href="#github-web">GitHub Web</a></li>
+                  <li><a href="#vs-code-extension">VS Code Extension</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="github-classroom">GitHub Classroom</h1>
+      <p>
+        GitHub Classroom allows you to keep track of repositories that are
+        created by your instructor for the course.
+      </p>
+      <h2 id="accepting-assignments">Accepting Assignments</h2>
+      <ol>
+        <li>
+          <p>
+            Assignments will be provided via a link in the course Canvas page
+            for the &quot;Lab&quot; assignments. Once you&#39;ve clicked the
+            link, find your name in the list and click the green &quot;Accept
+            this assignment&quot; button.
+          </p>
+        </li>
+        <li>
+          <p>
+            From there you can follow the blue link to the repository that was
+            created for you.
+          </p>
+        </li>
+        <li>
+          <p>
+            Click the green &quot;Code&quot; button and make sure you are on the
+            &quot;Local&quot; tab.
+          </p>
+        </li>
+        <li><p>Copy the URL for the repository.</p></li>
+        <li>
+          <p>
+            Clone the repository to your local machine. Make sure that you are
+            in the directory where you want to clone the repository before
+            executing the clone command.
+          </p>
+        </li>
+      </ol>
+      <figure>
+        <img
+          src="images/github_clone.png"
+          alt="GitHub Clone"
+          style="width: 80%; height: auto"
+        />
+      </figure>
+
+      <h2 id="submitting-assignments">Submitting Assignments</h2>
+      <p>
+        To submit assignments you will simply push your changes to the remote
+        repository.
+      </p>
+      <p>
+        Whatever shows up in the repository is what will be graded, so if you
+        are unsure if your changes are submitted you can log into GitHub and
+        check the repository.
+      </p>
+      <p>You do not need to do anything in Canvas to submit assignments.</p>
+      <h2 id="finding-your-repository-organizations">
+        Finding Your Repository (Organizations)
+      </h2>
+      <p>
+        Repositories for the class will not show up in your list of personal
+        repositories. To view them:
+      </p>
+      <ol>
+        <li>
+          Click on your avatar (circle with a pixel image) in the top right
+          corner.
+        </li>
+      </ol>
+      <figure>
+        <img
+          src="images/github_avatar.png"
+          alt="GitHub Avatar"
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <ol start="2">
+        <li>Click on &quot;Your organizations&quot;.</li>
+      </ol>
+      <figure>
+        <img
+          src="images/github_organization.png"
+          alt="GitHub Organizations"
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <ol start="3">
+        <li><p>Choose &quot;ivy-tech-mjovanovich&quot;.</p></li>
+        <li><p>Scroll down to the &quot;Repositories&quot; section.</p></li>
+      </ol>
+      <p>
+        You will see repositories listed with the name of the assignment
+        followed by your username. You may click these links to view your
+        repository.
+      </p>
+      <h2 id="viewing-instructor-feedback">Viewing Instructor Feedback</h2>
+      <h3 id="github-web">GitHub Web</h3>
+      <p>
+        Instructor feedback is given in the form of a
+        <strong>pull request</strong>. To view it:
+      </p>
+      <ol>
+        <li>Click on the &quot;Pull requests&quot; tab.</li>
+      </ol>
+      <figure>
+        <img
+          src="images/github_pull_requests.png"
+          alt="GitHub Pull Requests"
+          style="width: 80%; height: auto"
+        />
+      </figure>
+
+      <ol start="2">
+        <li>Click the &quot;Feedback&quot; link.</li>
+      </ol>
+      <p>
+        You will see any comments, and possibly recommended changes in the
+        following format:
+      </p>
+      <figure>
+        <img
+          src="images/github_feedback1.png"
+          alt="GitHub Feedback"
+          style="width: 80%; height: auto"
+        />
+      </figure>
+
+      <h3 id="vs-code-extension">VS Code Extension</h3>
+      <figure>
+        <img
+          src="images/vs_code_github_pull_requests_extension.png"
+          alt="VS Code GitHub Pull Requests Extension"
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <p>
+        Optionally, you can install the &quot;GitHub Pull Requests&quot;
+        extension for VS Code. This will allow you to view pull request comments
+        directly within VS Code, which may make it easier to interpret.
+      </p>
+      <p>
+        You can install the extension from the Extensions Marketplace in VS Code
+        (left sidebar, click the Extensions icon).
+      </p>
+      <p>
+        To view comments, click on the &quot;Comments&quot; tab of the bottom
+        toolbar (the one that has the terminal in it).
+      </p>
+      <figure>
+        <img
+          src="images/vs_code_github_pull_requests_comments.png"
+          alt="VS Code GitHub Pull Requests Comments"
+          style="width: 80%; height: auto"
+        />
+      </figure>
+    </div>
+  </body>
+</html>

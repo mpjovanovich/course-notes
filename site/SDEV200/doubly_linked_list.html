@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV200: Doubly Linked List</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li><a href="#doubly-linked-list">Doubly Linked List</a></li>
+        </ul>
+      </div>
+
+      <h1 id="doubly-linked-list">Doubly Linked List</h1>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> DoublyLinkedList</span><span style="color:#C18401;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#C18401;--shiki-dark:#E5C07B">T</span><span style="color:#C18401;--shiki-dark:#ABB2BF">></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // /////////////////////////////////////////</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Nested Node class</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // /////////////////////////////////////////</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // We nest this class inside the DoublyLinkedList class</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // because no other class needs to access this class.</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Node</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // The actual value of the node</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        T</span><span style="color:#E45649;--shiki-dark:#E06C75"> data</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Next node in the list</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Node</span><span style="color:#E45649;--shiki-dark:#E06C75"> next</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Node</span><span style="color:#E45649;--shiki-dark:#E06C75"> previous</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Constructor</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">        Node</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">T</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> data</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            this</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">data</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> data;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            this</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">next</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            this</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">previous</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // /////////////////////////////////////////</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Class variables</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // /////////////////////////////////////////</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    private</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Node</span><span style="color:#E45649;--shiki-dark:#E06C75"> head</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    private</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Node</span><span style="color:#E45649;--shiki-dark:#E06C75"> tail</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // /////////////////////////////////////////</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Constructor</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // /////////////////////////////////////////</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> DoublyLinkedList</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        this</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">head</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        this</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">tail</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // /////////////////////////////////////////</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Public methods</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // /////////////////////////////////////////</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Add to the end of the list</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">T</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> data</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Node</span><span style="color:#E45649;--shiki-dark:#E06C75"> newNode</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Node</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(data);</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (head </span><span style="color:#383A42;--shiki-dark:#56B6C2">==</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">            head </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> newNode;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">            tail </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> newNode;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        } </span><span style="color:#A626A4;--shiki-dark:#C678DD">else</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Set the next node of the tail node to the new node</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            newNode</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">previous</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> tail;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            tail</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">next</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> newNode;</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Update the tail to be the new node</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">            tail </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> newNode;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Get item at index</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#C18401;--shiki-dark:#E5C07B"> T</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> get</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">int</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> index</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> getNode</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(index).</span><span style="color:#E45649;--shiki-dark:#E5C07B">data</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Remove item at index</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> remove</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">int</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> index</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (index </span><span style="color:#383A42;--shiki-dark:#56B6C2">==</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">            Node</span><span style="color:#E45649;--shiki-dark:#E06C75"> toRemove</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> head;</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Update head to point to the next (second) node</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">            head </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#E45649;--shiki-dark:#E5C07B"> head</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">next</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Mark the node to remove as null</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            toRemove</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">next</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        } </span><span style="color:#A626A4;--shiki-dark:#C678DD">else</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Get the three nodes that need to be modified</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">            Node</span><span style="color:#E45649;--shiki-dark:#E06C75"> toRemove</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> getNode</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(index);</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">            Node</span><span style="color:#E45649;--shiki-dark:#E06C75"> previous</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E5C07B"> toRemove</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">previous</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">            Node</span><span style="color:#E45649;--shiki-dark:#E06C75"> next</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E5C07B"> toRemove</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">next</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Update the next pointer of the previous node to point to the</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // node after the one we want to remove</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            previous</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">next</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E5C07B"> toRemove</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">next</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Update the previous pointer of the next node to point to the</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // node before the one we want to remove</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            next</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">previous</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> previous;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">            // Mark the node to remove as null</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            toRemove</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">next</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> printList</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Node</span><span style="color:#E45649;--shiki-dark:#E06C75"> current</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> head;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        while</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (current </span><span style="color:#383A42;--shiki-dark:#56B6C2">!=</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E5C07B">current</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">data</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">            current </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#E45649;--shiki-dark:#E5C07B"> current</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">next</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // /////////////////////////////////////////</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Private methods</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // /////////////////////////////////////////</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Get node at index</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    private</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Node</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> getNode</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">int</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> index</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Node</span><span style="color:#E45649;--shiki-dark:#E06C75"> current</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> head;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        for</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#A626A4;--shiki-dark:#C678DD">int</span><span style="color:#E45649;--shiki-dark:#E06C75"> i</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">; i </span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> index; i++) {</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">            current </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#E45649;--shiki-dark:#E5C07B"> current</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">next</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> current;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> DoublyLinkedListTest</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[] </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">args</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        DoublyLinkedList</span><span style="color:#E45649;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#C18401;--shiki-dark:#E5C07B">Integer</span><span style="color:#E45649;--shiki-dark:#ABB2BF">> </span><span style="color:#E45649;--shiki-dark:#E06C75">list</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#C18401;--shiki-dark:#E5C07B"> DoublyLinkedList</span><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#C18401;--shiki-dark:#E5C07B">Integer</span><span style="color:#383A42;--shiki-dark:#ABB2BF">>();</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        list</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        list</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        list</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">3</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        list</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">remove</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        list</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">printList</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+    </div>
+  </body>
+</html>

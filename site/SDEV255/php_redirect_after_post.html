@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV255: PHP - Redirect After POST</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#the-redirect-after-post-rap-pattern"
+            >The Redirect After POST (RAP) Pattern</a
+          >
+          <ul>
+            <li><a href="#pattern">Pattern</a></li>
+            <li><a href="#benefits">Benefits:</a></li>
+            <li><a href="#example">Example</a></li>
+            <li><a href="#pages">Pages</a></li>
+            <li><a href="#flow">Flow</a></li>
+            <li><a href="#code">Code</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="the-redirect-after-post-rap-pattern">
+        The Redirect After POST (RAP) Pattern
+      </h1>
+      <h2 id="pattern">Pattern</h2>
+      <ol>
+        <li>User submits form.</li>
+        <li>Server processes form data.</li>
+        <li>Server issues redirect response.</li>
+        <li>User browser makes GET request to redirect URL.</li>
+        <li>Server responds with result page.</li>
+      </ol>
+      <h2 id="benefits">Benefits:</h2>
+      <ul>
+        <li>Prevents duplicate form submissions if page refreshed.</li>
+        <li>Clean URL in browser address bar.</li>
+        <li>Separates form processing from form presentation.</li>
+      </ul>
+      <h2 id="example">Example</h2>
+      <h2 id="pages">Pages</h2>
+      <p>We will use three pages:</p>
+      <ol>
+        <li><code>index.php</code> - Form page.</li>
+        <li><code>process.php</code> - Process form data.</li>
+        <li><code>result.php</code> - Display result.</li>
+      </ol>
+      <h2 id="flow">Flow</h2>
+      <ul>
+        <li>From form page, submit to process page.</li>
+        <li>If errors, redirect back to form page with error message.</li>
+        <li>If no errors, redirect to result page.</li>
+      </ul>
+      <h2 id="code">Code</h2>
+      <p><strong>index.php</strong></p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Display validation errors if any were set.</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#0184BC;--shiki-dark:#56B6C2">isset</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E06C75">$_GET</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'error'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">])) {</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        echo</span><span style="color:#E45649;--shiki-dark:#E06C75"> $_GET</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'error'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">];</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#986801;--shiki-dark:#ABB2BF">form</span><span style="color:#986801;--shiki-dark:#ABB2BF"> action</span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"result.php"</span><span style="color:#986801;--shiki-dark:#ABB2BF"> method</span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"POST"</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">  &#x3C;</span><span style="color:#986801;--shiki-dark:#ABB2BF">input</span><span style="color:#986801;--shiki-dark:#ABB2BF"> type</span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"text"</span><span style="color:#986801;--shiki-dark:#ABB2BF"> name</span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"name"</span><span style="color:#383A42;--shiki-dark:#56B6C2"> /></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">  &#x3C;</span><span style="color:#986801;--shiki-dark:#ABB2BF">input</span><span style="color:#986801;--shiki-dark:#ABB2BF"> type</span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"submit"</span><span style="color:#986801;--shiki-dark:#ABB2BF"> value</span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"Submit"</span><span style="color:#383A42;--shiki-dark:#56B6C2"> /></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">form</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+      <p><strong>process.php</strong></p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">/* *****************************************************************</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> * REDIRECT TO FORM IF NOT POST</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">* *****************************************************************/</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Users should not be able to access this page directly (via GET)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#E45649;--shiki-dark:#E06C75">$_SERVER</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'REQUEST_METHOD'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">] </span><span style="color:#383A42;--shiki-dark:#56B6C2">!==</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'POST'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    header</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">'Location: index.php'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    exit</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">/* *****************************************************************</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> * DO VALIDATION</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">* *****************************************************************/</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$error</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> ''</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// We can check for errors in many ways - for this example we'll</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// assume that we've populated this error variable with a string if</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// there is an error...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">/* *****************************************************************</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> * REDIRECT TO FORM IF ERRORS</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">* *****************************************************************/</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#E45649;--shiki-dark:#E06C75">$error</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    header</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">'Location: index.php?error='</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> .</span><span style="color:#E45649;--shiki-dark:#E06C75"> $error</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    exit</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">/* *****************************************************************</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> * PROCEED TO RESULT PAGE</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">* *****************************************************************/</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">header</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">'Location: result.php?name='</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> .</span><span style="color:#E45649;--shiki-dark:#E06C75"> $_POST</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'name'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">]);</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">exit</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <p><strong>result.php</strong></p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#986801;--shiki-dark:#ABB2BF">h1</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">SUCCESS</span><span style="color:#383A42;--shiki-dark:#56B6C2">!&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">h1</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#986801;--shiki-dark:#ABB2BF">p</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#ABB2BF">  Welcome</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">  &#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> echo</span><span style="color:#E45649;--shiki-dark:#E06C75"> $_GET</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'name'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">]; </span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">p</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+    </div>
+  </body>
+</html>

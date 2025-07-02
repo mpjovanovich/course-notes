@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV265: Software Testing Hierarchy</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#software-testing-hierarchy">Software Testing Hierarchy</a>
+            <ul>
+              <li>
+                <a href="#unit-testing">Unit Testing</a>
+                <ul>
+                  <li>
+                    <a href="#what-does-a-unit-test-look-like"
+                      >What does a unit test look like?</a
+                    >
+                  </li>
+                  <li><a href="#faking-and-mocking">Faking and Mocking</a></li>
+                </ul>
+              </li>
+              <li><a href="#integration-testing">Integration Testing</a></li>
+              <li>
+                <a href="#end-to-end-e2e-testing">End-to-End (E2E) testing</a>
+              </li>
+              <li><a href="#summary">Summary</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="software-testing-hierarchy">Software Testing Hierarchy</h1>
+      <figure>
+        <span>
+          <img
+            src="https://miro.medium.com/v2/resize:fit:1400/1*dmf_61WDjpNFKL3G2NLQwQ.png"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <h2 id="unit-testing">Unit Testing</h2>
+      <p>
+        <strong>Unit testing</strong> is the process of testing individual units
+        of code in isolation. Typically:
+      </p>
+      <ul>
+        <li>Classes</li>
+        <li>Methods / functions</li>
+      </ul>
+      <p>Key points:</p>
+      <ul>
+        <li>Developers write the tests.</li>
+        <li>
+          Tests indicate whether a unit of code is working as expected for a
+          specific case.
+        </li>
+      </ul>
+      <p>Advantages:</p>
+      <ul>
+        <li>Early detection of defects.</li>
+        <li>Can refactor without fear of breaking existing functionality.</li>
+        <li>Increased code quality.</li>
+      </ul>
+      <p>Disadvantages:</p>
+      <ul>
+        <li>*Requires more time to write tests up front.</li>
+        <li>May involve training for team members.</li>
+      </ul>
+      <h3 id="what-does-a-unit-test-look-like">
+        What does a unit test look like?
+      </h3>
+      <p>
+        Unit tests follow the pattern of
+        <strong>Arrange-Act-Assert</strong> (AAA).
+      </p>
+      <ul>
+        <li>
+          <strong>Arrange</strong> - Set up the test data in a controlled state.
+        </li>
+        <li><strong>Act</strong> - Call the function or method under test.</li>
+        <li><strong>Assert</strong> - Verify the expected outcome.</li>
+      </ul>
+      <p>
+        The goal is to make the test self-documenting and deterministic. We
+        always want the test to be in the same state before and after the test.
+      </p>
+      <div class="focusContent example">
+        <p>Let&#39;s write a simple tax calculator application.</p>
+        <p>You may have to install pytest to run the tests.</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">pip</span><span style="color:#50A14F;--shiki-dark:#98C379"> install</span><span style="color:#50A14F;--shiki-dark:#98C379"> pytest</span></span></code></pre>
+        <p>We will:</p>
+        <ul>
+          <li>Walk through the current tests.</li>
+          <li>
+            Figure out which other tests we should write, focusing on
+            requirements and edge cases.
+          </li>
+          <li>Write the tests.</li>
+          <li>Refactor the code.</li>
+        </ul>
+        <p><strong>Method Under Test:</strong> <em>tax_utility.py</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> calculate_total_price</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">base_price</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> float</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> tax_rate</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> float</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) -> </span><span style="color:#0184BC;--shiki-dark:#56B6C2">float</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">    """</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">    Calculate the total price including tax.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">    Args:</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">        base_price: The price before tax</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">        tax_rate: The tax rate as a decimal (e.g., 0.1 for 10%)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">    Returns:</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">        The total price including tax</span></span>
+<span class="line"><span style="color:#50A14F;--shiki-dark:#98C379">    """</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> base_price </span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#A626A4;--shiki-dark:#C678DD"> or</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> tax_rate </span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        raise</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> ValueError</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Base price and tax rate must be non-negative"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> base_price </span><span style="color:#383A42;--shiki-dark:#56B6C2">*</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#986801;--shiki-dark:#D19A66">1</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> tax_rate)</span></span></code></pre>
+        <p><strong>Unit tests:</strong> <em>test_tax_utility.py</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> pytest</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">from</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> tax_utility </span><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> calculate_total_price</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> test_calculate_total_price_with_tax</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Arrange</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    base_price </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 100.00</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    tax_rate </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0.1</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    expected_total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 110.00</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Act</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    actual_total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> calculate_total_price</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(base_price, tax_rate)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Assert</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Note: pytest.approx is used to handle floating point precision issues</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    assert</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> actual_total </span><span style="color:#383A42;--shiki-dark:#56B6C2">==</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> pytest.</span><span style="color:#383A42;--shiki-dark:#61AFEF">approx</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(expected_total)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> test_calculate_total_price_with_zero_tax</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Arrange</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    base_price </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 50.00</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    tax_rate </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0.0</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    expected_total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 50.00</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Act</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    actual_total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> calculate_total_price</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(base_price, tax_rate)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Assert</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    assert</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> expected_total </span><span style="color:#383A42;--shiki-dark:#56B6C2">==</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> actual_total</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> test_negative_price_raises_error</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Arrange</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    base_price </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#56B6C2"> -</span><span style="color:#986801;--shiki-dark:#D19A66">100.00</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    tax_rate </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0.1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Act &#x26; Assert</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    with</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> pytest.</span><span style="color:#383A42;--shiki-dark:#61AFEF">raises</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">ValueError</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">        calculate_total_price</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(base_price, tax_rate)</span></span></code></pre>
+      </div>
+
+      <h3 id="faking-and-mocking">Faking and Mocking</h3>
+      <p>
+        In order to control the state of the system we can provide fake inputs
+        and outputs at various points within the system. This is often referred
+        to as
+        <strong>faking</strong> or <strong>mocking</strong>.
+      </p>
+      <p>We might use this to:</p>
+      <ul>
+        <li>Return a fake dataset from a database.</li>
+        <li>Return a fake response from an external API.</li>
+        <li>Return a fake file from a file system.</li>
+        <li>Return a fake time from the system.</li>
+      </ul>
+      <div class="focusContent lookout">
+        <p>
+          Without faking inputs, the system sometimes cannot be in a controlled
+          state.
+        </p>
+        <p>
+          In this example we have some code that interfaces with a weather
+          service. The results coming from the weather service are not under our
+          control, so for our tests we will need to fake them.
+        </p>
+        <p><em>weather.py</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">from</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> typing </span><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> WeatherService</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> get_temperature</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> city</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> str</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) -> Optional[</span><span style="color:#0184BC;--shiki-dark:#56B6C2">float</span><span style="color:#383A42;--shiki-dark:#ABB2BF">]:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        # In reality, this would make an API call to a weather service</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        # Could be slow, fail, or cost money</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        pass</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> should_wear_sunscreen</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">temperature</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> float</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) -> </span><span style="color:#0184BC;--shiki-dark:#56B6C2">bool</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> temperature </span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#D19A66"> 75</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> plan_beach_day</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">city</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> str</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> weather_service</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#986801;--shiki-dark:#ABB2BF"> WeatherService</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) -> </span><span style="color:#0184BC;--shiki-dark:#56B6C2">bool</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    temp </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> weather_service.</span><span style="color:#383A42;--shiki-dark:#61AFEF">get_temperature</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(city)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> temp </span><span style="color:#A626A4;--shiki-dark:#C678DD">is</span><span style="color:#986801;--shiki-dark:#D19A66"> None</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#986801;--shiki-dark:#D19A66"> False</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    return</span><span style="color:#383A42;--shiki-dark:#61AFEF"> should_wear_sunscreen</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(temp)</span></span></code></pre>
+        <p><em>test_weather.py</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">from</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> unittest.mock </span><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Mock</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> test_plan_beach_day</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # ###################################</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Arrange</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # ###################################</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Create a mock (fake object)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    mock_weather </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> Mock</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Configure the mock to return the value 80 when get_temperature is called</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    mock_weather.get_temperature.return_value </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 80</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # ###################################</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Act</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # ###################################</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # "mock_weather" is not a real WeatherService - it's just a fake object</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # that we've created to behave like a WeatherService.</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    result </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> plan_beach_day</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Miami"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, mock_weather)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # ###################################</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Assert</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # ###################################</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # The result of the test should be True because our fake WeatherService</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # returned a temperature of 80.</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    assert</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> result </span><span style="color:#383A42;--shiki-dark:#56B6C2">==</span><span style="color:#986801;--shiki-dark:#D19A66"> True</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Our fake WeatherService should have been called with the argument "Miami"</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # exactly once, so we check that here.</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    mock_weather.get_temperature.</span><span style="color:#383A42;--shiki-dark:#61AFEF">assert_called_once_with</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Miami"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+        <p>
+          Fakes and mocks can also increase the speed of the tests by avoiding
+          the overhead of setting up and tearing down the real system. In this
+          case, we don&#39;t need to make a call over the network. This saves
+          time when running hundreds of tests.
+        </p>
+      </div>
+
+      <h2 id="integration-testing">Integration Testing</h2>
+      <ul>
+        <li>
+          Tests how components or modules (larger units) work together to
+          perform some functionality.
+        </li>
+        <li>Verifies interfaces between components function correctly</li>
+        <li>
+          Identify defects that arise when the system is &quot;put
+          together&quot; (e.g. several classes working together)
+        </li>
+      </ul>
+      <h2 id="end-to-end-e2e-testing">End-to-End (E2E) testing</h2>
+      <ul>
+        <li>Tests the application flow from start to finish</li>
+        <li>Simulates real user scenarios, &quot;user stories&quot;</li>
+        <li>Tests all layers of the application</li>
+        <li>
+          Examples:
+          <ul>
+            <li>User registration flow</li>
+            <li>Purchase workflow</li>
+            <li>Data processing pipeline</li>
+          </ul>
+        </li>
+        <li>Can be automated or manual</li>
+      </ul>
+      <h2 id="summary">Summary</h2>
+      <p>Revisiting the testing pyramid from above:</p>
+      <p><strong>Unit tests</strong>: Fast to write, fast to run, low cost</p>
+      <p>
+        <strong>Integration tests</strong>: Slower to write, slower to run,
+        higher cost
+      </p>
+      <p>
+        <strong>E2E tests</strong>: Slowest to write, slowest to run, highest
+        cost
+      </p>
+      <p>All are important to ensure a robust application.</p>
+      <div class="focusContent example">
+        <p>For an example e-commerce system:</p>
+        <ul>
+          <li>Unit test: Testing the price calculation function</li>
+          <li>
+            Integration test: Testing if the order service can save to the
+            database AND notify the inventory service
+          </li>
+          <li>
+            End-to-end test: Testing the entire purchase flow from user login to
+            order confirmation
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
