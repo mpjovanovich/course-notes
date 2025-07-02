@@ -21,10 +21,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- We do have class on July 3
-- Exams next Tuesday:
-  - Lafayette students come in to lecture room
-  - Remote students schedule for Ivy Tech testing center
+- ...
 
 ## Module 00: Course Introduction
 
@@ -90,13 +87,12 @@ Part II:
 
 ## Module 04: Program and Web Development
 
-Part I:
-
-- TODO: Brief SDLC overview
-- TODO: Explanation of HTML, CSS, and JavaScript
-- Break
-- Create a GitHub account if you don't have one
-- Walkthrough: Assignment, Creating a Static Website
+- [Software Development Life Cycle (SDLC)](../SDEV120/sdlc.html?course=INFM109)
+- Brief overview of HTML, CSS, and JavaScript
+  - One page app: create some elements; style them; add text change on mouseover via JavaScript
+- Guided Assignment: Exploring Web Technologies
+- Break: Create a GitHub account if you don't have one
+- Guided Assigment: Creating a Static Website
 
 <!-- ## Module 05: Information Systems
 
