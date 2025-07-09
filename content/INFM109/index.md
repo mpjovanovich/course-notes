@@ -93,15 +93,17 @@ Part II:
 - Guided Assignment: Exploring Web Technologies
 - Break: Create a GitHub account if you don't have one
 - Guided Assigment: Creating a Static Website
+- Intro to Assignments
 
-<!-- ## Module 05: Information Systems
+## Module 05: Information Systems
 
 - [Types of Data](types_of_data.html)
 - [Data Hierarchy and Modeling](data_hierarchy_modeling.html)
 - [Database Storage](database_storage.html)
 - In-class exercise: [Student Study App Software](https://github.com/mpjovanovich-IvyTechDemos/student-study-app)
+- Intro to Assignments
 
-## Module 06: Networking and Storage
+<!-- ## Module 06: Networking and Storage
 
 - TODO: [Virtualization](virtualization.html)
 - Virtualization: Covered in class with Azure demo and in class assignment
