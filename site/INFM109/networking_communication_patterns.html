@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFM109: Networking Communication Patterns</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#networking-communication-patterns"
+              >Networking Communication Patterns</a
+            >
+            <ul>
+              <li>
+                <a href="#communication-timing-patterns"
+                  >Communication Timing Patterns</a
+                >
+                <ul>
+                  <li>
+                    <a href="#synchronous">Synchronous</a>
+                    <ul>
+                      <li><a href="#definition">Definition</a></li>
+                      <li><a href="#characteristics">Characteristics</a></li>
+                      <li><a href="#examples">Examples</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#asynchronous">Asynchronous</a>
+                    <ul>
+                      <li><a href="#definition-1">Definition</a></li>
+                      <li><a href="#characteristics-1">Characteristics</a></li>
+                      <li><a href="#examples-1">Examples</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#communication-models">Communication Models</a>
+                <ul>
+                  <li>
+                    <a href="#client-server">Client-Server</a>
+                    <ul>
+                      <li><a href="#definition-2">Definition</a></li>
+                      <li><a href="#characteristics-2">Characteristics</a></li>
+                      <li><a href="#examples-2">Examples</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#peer-to-peer-p2p">Peer-to-Peer (P2P)</a>
+                    <ul>
+                      <li><a href="#definition-3">Definition</a></li>
+                      <li><a href="#characteristics-3">Characteristics</a></li>
+                      <li><a href="#examples-3">Examples</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#data-exchange-patterns">Data Exchange Patterns</a>
+                <ul>
+                  <li>
+                    <a href="#persistent-connection">Persistent Connection</a>
+                    <ul>
+                      <li><a href="#definition-4">Definition</a></li>
+                      <li><a href="#characteristics-4">Characteristics</a></li>
+                      <li><a href="#examples-4">Examples</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#push">Push</a>
+                    <ul>
+                      <li><a href="#definition-5">Definition</a></li>
+                      <li><a href="#characteristics-5">Characteristics</a></li>
+                      <li><a href="#examples-5">Examples</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#pull">Pull</a>
+                    <ul>
+                      <li><a href="#definition-6">Definition</a></li>
+                      <li><a href="#characteristics-6">Characteristics</a></li>
+                      <li><a href="#examples-6">Examples</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#polling">Polling</a>
+                    <ul>
+                      <li><a href="#definition-7">Definition</a></li>
+                      <li><a href="#characteristics-7">Characteristics</a></li>
+                      <li><a href="#examples-7">Examples</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#protocols-introduction">Protocols Introduction</a></li>
+          <li><a href="#the-osi-model">The OSI Model</a></li>
+        </ul>
+      </div>
+
+      <h1 id="networking-communication-patterns">
+        Networking Communication Patterns
+      </h1>
+      <h2 id="communication-timing-patterns">Communication Timing Patterns</h2>
+      <h3 id="synchronous">Synchronous</h3>
+      <figure>
+        <span>
+          <img
+            src="https://lifehacker.com/imagery/articles/01HF2GHSHNMHE0PKCW32DH0BCG/hero-image.jpg"
+            style="width: 60%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <h4 id="definition">Definition</h4>
+      <p>
+        A pattern where both parties communicate in real-time with minimal
+        delay.
+      </p>
+      <h4 id="characteristics">Characteristics</h4>
+      <ul>
+        <li>The connection is alive for the duration of the conversation.</li>
+        <li>
+          Both parties are &quot;waiting&quot; for the other to respond; they do
+          not do other work while waiting.
+        </li>
+      </ul>
+      <h4 id="examples">Examples</h4>
+      <ul>
+        <li>Phone calls</li>
+        <li>Video conferencing</li>
+        <li>Some chat systems</li>
+      </ul>
+      <h3 id="asynchronous">Asynchronous</h3>
+      <figure>
+        <span>
+          <img
+            src="https://www.rd.com/wp-content/uploads/2024/06/Scam-Text-Messages-GettyImages-2.png"
+            style="width: 60%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <h4 id="definition">Definition</h4>
+      <p>
+        Parties do not need to be available at the same time; messages can be
+        stored and retrieved later.
+      </p>
+      <h4 id="characteristics">Characteristics</h4>
+      <ul>
+        <li>
+          The connection is not alive for the duration of the conversation.
+        </li>
+        <li>Messages can be stored and retrieved later.</li>
+      </ul>
+      <h4 id="examples">Examples</h4>
+      <ul>
+        <li>Email</li>
+        <li>SMS (text messages)</li>
+      </ul>
+      <h2 id="communication-models">Communication Models</h2>
+      <h3 id="client-server">Client-Server</h3>
+      <figure>
+        <span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1200px-Client-server-model.svg.png"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <h4 id="definition">Definition</h4>
+      <p>
+        A model where one device (the client) requests resources or services
+        from another device (the server).
+      </p>
+      <h4 id="characteristics">Characteristics</h4>
+      <ul>
+        <li>Many clients may connect to one server</li>
+        <li>Clients initiate requests; servers respond</li>
+        <li>Centralized control (server manages resources)</li>
+        <li>May be async or sync</li>
+      </ul>
+      <h4 id="examples">Examples</h4>
+      <ul>
+        <li>Web browsing (browser = client, web server = server)</li>
+        <li>Email</li>
+        <li>File downloads</li>
+      </ul>
+      <h3 id="peer-to-peer-p2p">Peer-to-Peer (P2P)</h3>
+      <figure>
+        <span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/9e/P2P_network.svg"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <h4 id="definition">Definition</h4>
+      <p>
+        A model where each device (peer) can act as both a client and a server,
+        sharing resources directly.
+      </p>
+      <h4 id="characteristics">Characteristics</h4>
+      <ul>
+        <li>No central server</li>
+        <li>Peers connect directly to each other</li>
+        <li>May be async or sync</li>
+      </ul>
+      <h4 id="examples">Examples</h4>
+      <ul>
+        <li>File sharing (e.g. BitTorrent)</li>
+        <li>Video conferencing (e.g. Zoom)</li>
+        <li>Chat applications (e.g. Discord)</li>
+      </ul>
+      <h2 id="data-exchange-patterns">Data Exchange Patterns</h2>
+      <p>
+        Assuming the server has some data that the client needs, there are four
+        main patterns for how the client can get that data:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Pattern</th>
+            <th>Initiator</th>
+            <th>Connection Type</th>
+            <th>Timing</th>
+            <th>Use Cases</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Active Connection</td>
+            <td>Both</td>
+            <td>Persistent</td>
+            <td>Sync/Async</td>
+            <td>Chat, streaming, online gaming</td>
+          </tr>
+          <tr>
+            <td>Push</td>
+            <td>Server</td>
+            <td>Persistent/On-demand</td>
+            <td>Async</td>
+            <td>Push notifications, live updates</td>
+          </tr>
+          <tr>
+            <td>Pull</td>
+            <td>Client</td>
+            <td>On-demand</td>
+            <td>Async</td>
+            <td>Web browsing, API requests</td>
+          </tr>
+          <tr>
+            <td>Polling</td>
+            <td>Client</td>
+            <td>Repeated</td>
+            <td>Async</td>
+            <td>Email checking, software updates</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="persistent-connection">Persistent Connection</h3>
+      <figure>
+        <span>
+          <img
+            src="https://images.ctfassets.net/cpumif18y1gd/3eKQDniB5cF9tuAtyRuAfN/3929339d8379f3ebd396452352eba415/wordpress-imported-image-26125.jpg"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <h4 id="definition">Definition</h4>
+      <p>
+        A connection that remains open for the duration of the communication,
+        allowing data to be exchanged at any time.
+      </p>
+      <h4 id="characteristics">Characteristics</h4>
+      <ul>
+        <li>The connection stays alive for the entire session.</li>
+        <li>Can support multiple messages in both directions.</li>
+        <li>
+          May be synchronous or asynchronous, depending on implementation.
+        </li>
+        <li>Enables real-time or near-real-time communication.</li>
+      </ul>
+      <h4 id="examples">Examples</h4>
+      <ul>
+        <li>Real-time chat applications (e.g., instant messaging)</li>
+        <li>Streaming media (e.g., video/audio streaming)</li>
+        <li>Online gaming</li>
+        <li>WebSockets</li>
+      </ul>
+      <h3 id="push">Push</h3>
+      <figure>
+        <span>
+          <img
+            src="https://lifehacker.com/imagery/articles/01HF2GNNPXP4RDFPR5J5M7KNEN/hero-image.fill.size_1200x675.png"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <h4 id="definition">Definition</h4>
+      <p>
+        The server sends (pushes) data to the client as soon as it becomes
+        available, without the client needing to request it each time.
+      </p>
+      <h4 id="characteristics">Characteristics</h4>
+      <ul>
+        <li>The server initiates data transfer to the client.</li>
+        <li>The client passively receives updates.</li>
+        <li>Typically asynchronous communication.</li>
+        <li>Efficient for timely updates.</li>
+      </ul>
+      <h4 id="examples">Examples</h4>
+      <ul>
+        <li>Mobile app push notifications</li>
+        <li>Server-sent events (SSE) in web applications</li>
+        <li>Live sports score updates</li>
+        <li>Weather alerts</li>
+        <li>Phone lockscreen &quot;widgets&quot;</li>
+      </ul>
+      <h3 id="pull">Pull</h3>
+      <figure>
+        <span>
+          <img
+            src="https://www.wikihow.com/images/thumb/6/61/Refresh-a-Page-Step-2-Version-2.jpg/v4-460px-Refresh-a-Page-Step-2-Version-2.jpg"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <h4 id="definition">Definition</h4>
+      <p>
+        The client requests (pulls) data from the server whenever it needs
+        information.
+      </p>
+      <h4 id="characteristics">Characteristics</h4>
+      <ul>
+        <li>The client initiates each data request.</li>
+        <li>The server responds only when requested.</li>
+        <li>Asynchronous communication.</li>
+        <li>Suitable for on-demand data access.</li>
+      </ul>
+      <h4 id="examples">Examples</h4>
+      <ul>
+        <li>Web browsing (loading a webpage)</li>
+        <li>API requests (fetching data from a server)</li>
+        <li>Downloading files</li>
+      </ul>
+      <h3 id="polling">Polling</h3>
+      <figure>
+        <span>
+          <img
+            src="https://winblogs.thesourcemediaassets.com/sites/2/2019/04/e72f421e5e0cd1ad79bb4dde65111ba4.jpg"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <h4 id="definition">Definition</h4>
+      <p>
+        The client repeatedly requests (polls) the server at regular intervals
+        to check if new data is available.
+      </p>
+      <h4 id="characteristics">Characteristics</h4>
+      <ul>
+        <li>
+          The client sends requests on a schedule (e.g., every few seconds).
+        </li>
+        <li>The server responds with new data if available.</li>
+        <li>Automated, repeated form of pull.</li>
+        <li>Asynchronous communication.</li>
+        <li>Can be less efficient due to repeated requests.</li>
+      </ul>
+      <h4 id="examples">Examples</h4>
+      <ul>
+        <li>Email clients checking for new mail</li>
+        <li>Applications checking for software updates</li>
+        <li>Chat apps without real-time updates</li>
+      </ul>
+      <hr />
+      <!-- TODO: Move this -->
+
+      <h1 id="protocols-introduction">Protocols Introduction</h1>
+      <p>Protocols are standardized rules for communication.</p>
+      <p>
+        In each of the above patterns, the client / server may send messages
+        back and forth to coordinate the transfer of the
+        <strong>payload</strong> (the actual data being transferred).
+      </p>
+      <ul>
+        <li>Rules for how to establish a connection (handshake)</li>
+        <li>Rules for how to break the connection (teardown)</li>
+        <li>Address of the sender and receiver</li>
+        <li>Type / format of payload (html, image, video, etc.)</li>
+        <li>Data about the payload (size, compression, encryption, etc.)</li>
+      </ul>
+      <div class="focusContent example">
+        <figure>
+          <span>
+            <img
+              src="https://www.lifewire.com/thmb/irn835md4Hf2FmoEbh1rdAVNjTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tcp-headers-f2c0881ea4c94e919794b7c0677ab90a.jpg"
+              style="width: 80%; height: auto"
+            />
+          </span>
+        </figure>
+
+        <p>
+          The TCP header format specifies how the computer should interpret the
+          information. Each field has a set length, position, and purpose.
+        </p>
+        <p>
+          If the standard was not followed exactly, the data would be
+          misinterpreted.
+        </p>
+      </div>
+
+      <div class="focusContent example">
+        <p><strong>Paper Airplane Protocol</strong></p>
+        <p>
+          You have developed a paper airplane mode of communication, that you
+          would like to use to serve song lyrics to your friends.
+        </p>
+        <p>
+          The server, a computer, is very literal. It uses an algorithm to
+          understand the message that was sent, and responds using the same
+          format.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>Packet Number</span></span>
+<span class="line"><span>Sender Address</span></span>
+<span class="line"><span>Receiver Address</span></span>
+<span class="line"><span>Action</span></span>
+<span class="line"><span>Payload (text data to be transferred)</span></span>
+<span class="line"><span>Data Length (character count of the payload)</span></span>
+<span class="line"><span>Checksum (md5 hash of the payload)</span></span></code></pre>
+        <p><strong>Diagram</strong></p>
+        <p>
+          <a
+            href="https://github.com/mpjovanovich-IvyTechDemos/diagrams/blob/main/PaperAirplaneProtocol.drawio"
+            >Paper Airplane Protocol - DrawIO</a
+          >
+        </p>
+        <p><strong>Client</strong></p>
+        <p><em>Request</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>1</span></span>
+<span class="line"><span>Desk 4</span></span>
+<span class="line"><span>Desk 11</span></span>
+<span class="line"><span>Get Lyrics</span></span>
+<span class="line"><span>Beatles;Yellow Submarine;Yellow Submarine</span></span>
+<span class="line"><span>41</span></span>
+<span class="line"><span>666180b3e449222c2241b2afe32bfca3</span></span></code></pre>
+        <p><strong>Server</strong></p>
+        <p><em>Response</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>1</span></span>
+<span class="line"><span>Desk 11</span></span>
+<span class="line"><span>Desk 4</span></span>
+<span class="line"><span>Data Transfer</span></span>
+<span class="line"><span>In the time that I</span></span>
+<span class="line"><span>18</span></span>
+<span class="line"><span>9eceaa495884413082c94280d965738e</span></span></code></pre>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>2</span></span>
+<span class="line"><span>Desk 11</span></span>
+<span class="line"><span>Desk 4</span></span>
+<span class="line"><span>Data Transfer</span></span>
+<span class="line"><span>was born, lived a man</span></span>
+<span class="line"><span>21</span></span>
+<span class="line"><span>690c8054749a1cb7fb448c5804613dc3</span></span></code></pre>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>3</span></span>
+<span class="line"><span>Desk 11</span></span>
+<span class="line"><span>Desk 4</span></span>
+<span class="line"><span>Data Transfer</span></span>
+<span class="line"><span>in a submarine. ^ENDMESSAGE^</span></span>
+<span class="line"><span>28</span></span>
+<span class="line"><span>0582957562b0492f8ad2aa0807ea1154</span></span></code></pre>
+      </div>
+
+      <h1 id="the-osi-model">The OSI Model</h1>
+      <figure>
+        <span>
+          <img
+            src="https://miro.medium.com/v2/resize:fit:1400/1*-hQHFX-UjlruHDf9Je0lXg.png"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        Each layer of the model encapsulates information from the layer beneath
+        it, and adds information relevant to the layer above it.
+      </p>
+      <p>
+        This makes a &quot;sandwich&quot; of information, with the outermost
+        layer being the application layer, and the innermost layer being the
+        physical layer.
+      </p>
+      <!--
+
+........TODO........
+
+## Protocols
+
+## The OSI Model - A Conceptual Framework
+
+- Overview of the 7-layer OSI model
+- Practical significance of each layer:
+  - Physical layer
+  - Data Link layer
+  - Network layer
+  - Transport layer
+  - Session layer
+  - Presentation layer
+  - Application layer
+- **Packet encapsulation explained**
+  - How data is wrapped at each layer
+  - Headers and payload concepts
+
+## Practical Networking Protocols
+
+- **Protocol comparison** (reference table 9-8/9-9)
+- **When and why to use different protocols**
+- Key protocols overview:
+  - IP (Internet Protocol)
+  - TCP vs UDP
+  - HTTP/HTTPS
+  - DNS
+  - **Bluetooth**
+    - Use cases and limitations
+
+## IPv4 vs IPv6
+
+- **IPv4 vs IPv6 detailed comparison**
+  - Address space limitations and solutions
+  - Header differences and improvements
+  - Transition mechanisms
+  - Adoption challenges -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Evolution of Programming</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#evolution-of-programming-languages"
+              >Evolution of Programming Languages</a
+            >
+            <ul>
+              <li><a href="#first-generation">First Generation</a></li>
+              <li><a href="#second-generation">Second Generation</a></li>
+              <li><a href="#third-generation">Third Generation</a></li>
+              <li>
+                <a href="#4th-and-5th-generations">4th and 5th Generations</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#compiled-vs-interpreted-code"
+              >Compiled vs Interpreted Code</a
+            >
+            <ul>
+              <li>
+                <a href="#compiled-code">Compiled Code</a>
+                <ul>
+                  <li><a href="#advantages">Advantages</a></li>
+                  <li><a href="#disadvantages">Disadvantages</a></li>
+                  <li><a href="#examples">Examples</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#interpreted-code">Interpreted Code</a>
+                <ul>
+                  <li><a href="#advantages-1">Advantages</a></li>
+                  <li><a href="#disadvantages-1">Disadvantages</a></li>
+                  <li><a href="#examples-1">Examples</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#language-history-and-trends"
+              >Language History and Trends</a
+            >
+            <ul>
+              <li><a href="#timeline">Timeline</a></li>
+              <li><a href="#popularity-metrics">Popularity Metrics</a></li>
+              <li><a href="#application-domains">Application Domains</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="evolution-of-programming-languages">
+        Evolution of Programming Languages
+      </h1>
+      <figure>
+        <span>
+          <img src="images/js_kid.png" style="width: 40%" />
+        </span>
+      </figure>
+
+      <h2 id="first-generation">First Generation</h2>
+      <ul>
+        <li><strong>Machine code</strong> = binary code</li>
+        <li>What the processor understands</li>
+        <li>
+          People don&#39;t write machine code, but everything that runs on a
+          computer is first converted to machine code.
+        </li>
+      </ul>
+      <h2 id="second-generation">Second Generation</h2>
+      <ul>
+        <li><strong>Assembly language</strong></li>
+        <li>
+          Primitive instructions that reflect what the processor can do
+          <ul>
+            <li>
+              See:
+              <a href="https://en.wikipedia.org/wiki/X86_instruction_listings"
+                >x86 instruction listings</a
+              >
+            </li>
+            <li>ADD = add two numbers</li>
+            <li>MOV = move data from one place to another</li>
+            <li>JMP = jump to another line of code</li>
+            <li>...</li>
+          </ul>
+        </li>
+        <li>
+          Still used in very simple computers or at low levels, e.g.:
+          <ul>
+            <li>Embedded systems (e.g., IoT devices, cars, microwaves, ...)</li>
+            <li>Microcontrollers</li>
+            <li>Some operating systems</li>
+          </ul>
+        </li>
+        <li>Is compiled to machine code</li>
+      </ul>
+      <h2 id="third-generation">Third Generation</h2>
+      <ul>
+        <li><strong>Compiled or interpreted code</strong></li>
+        <li>&quot;Human readable&quot; code, like Python</li>
+        <li>Is compiled or interpreted to machine code</li>
+      </ul>
+      <h2 id="4th-and-5th-generations">4th and 5th Generations</h2>
+      <figure>
+        <span>
+          <img
+            src="https://cdn.mos.cms.futurecdn.net/GHDrjPSJR4PzcmjwCRkhD3.jpg"
+            style="width: 40%"
+          />
+        </span>
+        <figcaption>Us. Professional coders.</figcaption>
+      </figure>
+
+      <p>
+        There are technically 4th and 5th generation languages, but the
+        distinction is less clear. They&#39;re typically defined as less
+        instruction-oriented and more problem-oriented.
+      </p>
+      <p>
+        Don&#39;t worry about them. They&#39;re for analysts and engineers who
+        don&#39;t know how to code.
+      </p>
+      <h1 id="compiled-vs-interpreted-code">Compiled vs Interpreted Code</h1>
+      <p>
+        All code must be converted to machine code before it can be run. The
+        difference is in when and how this conversion happens.
+      </p>
+      <h2 id="compiled-code">Compiled Code</h2>
+      <p>
+        A <strong>compiler</strong> is a program that translates code written in
+        a high-level language to a lower level language ahead of time. Compiled
+        languages cannot be run until the compiler has translated the whole
+        program into machine code.
+      </p>
+      <ul>
+        <li>
+          Takes the actual text of the program and converts it into instructions
+          that the processor can execute.
+        </li>
+        <li>
+          Output is either a file that is directly executable or a library that
+          can be used by other programs.
+        </li>
+      </ul>
+      <h3 id="advantages">Advantages</h3>
+      <ul>
+        <li>
+          Faster and more efficient execution (since it knows what to expect
+          ahead of time)
+        </li>
+        <li>Can catch errors before the program is run</li>
+        <li>Can be optimized for specific hardware</li>
+        <li>Can be distributed without the source code</li>
+      </ul>
+      <h3 id="disadvantages">Disadvantages</h3>
+      <ul>
+        <li>More complex development process</li>
+      </ul>
+      <h3 id="examples">Examples</h3>
+      <ul>
+        <li>C, C++, Rust, Go, Swift, Java, C#...</li>
+      </ul>
+      <div class="focusContent demo">
+        <ul>
+          <li>Compile a C program with gcc</li>
+          <li>Run a Python program line by line</li>
+        </ul>
+      </div>
+
+      <h2 id="interpreted-code">Interpreted Code</h2>
+      <p>
+        An <strong>interpreter</strong> is a program that reads code and
+        executes it line by line at <strong>runtime</strong>.
+      </p>
+      <ul>
+        <li>
+          Picks off a statement, translates it to machine code, and runs it.
+        </li>
+        <li>Then does the next statement, and so on.</li>
+      </ul>
+      <h3 id="advantages">Advantages</h3>
+      <ul>
+        <li>
+          Fast to develop b/c you don&#39;t have an intermediate compilation
+          step.
+        </li>
+        <li>Less complexity in the development process.</li>
+        <li>Often easier to debug.</li>
+      </ul>
+      <h3 id="disadvantages">Disadvantages</h3>
+      <ul>
+        <li>Slow execution</li>
+        <li>Less efficient use of system resources</li>
+        <li>
+          Can&#39;t catch errors until the program is run; e.g. Python code
+          broken on line 12 won&#39;t be caught until... we hit line 12. This
+          leads to buggy releases.
+        </li>
+      </ul>
+      <h3 id="examples">Examples</h3>
+      <p>Python, Ruby, JavaScript, PHP, Perl, ...</p>
+      <h1 id="language-history-and-trends">Language History and Trends</h1>
+      <h2 id="timeline">Timeline</h2>
+      <figure>
+        <span>
+          <img
+            src="https://i0.wp.com/javaconceptoftheday.com/wp-content/uploads/2019/07/TimelineOfProgrammingLanguages.png?ssl=1"
+            style=""
+          />
+        </span>
+      </figure>
+
+      <p>
+        <a
+          href="https://javaconceptoftheday.com/history-of-programming-languages/"
+          >https://javaconceptoftheday.com/history-of-programming-languages/</a
+        >
+      </p>
+      <h2 id="popularity-metrics">Popularity Metrics</h2>
+      <figure>
+        <span>
+          <img
+            src="https://redmonk.com/kfitzpatrick/files/2021/03/rankings-over-time-2021-01.png"
+            style=""
+          />
+        </span>
+      </figure>
+
+      <p>
+        <a
+          href="https://redmonk.com/kfitzpatrick/2021/03/02/redmonk-top-20-languages-over-time-january-2021/"
+          >https://redmonk.com/kfitzpatrick/2021/03/02/redmonk-top-20-languages-over-time-january-2021/</a
+        >
+      </p>
+      <figure>
+        <span>
+          <img
+            src="https://redmonk.com/sogrady/files/2021/03/lang.rank_.0121.wm_.png"
+            style=""
+          />
+        </span>
+      </figure>
+
+      <hr />
+      <p>
+        <a href="https://redmonk.com/sogrady/2021/03/01/language-rankings-1-21/"
+          >https://redmonk.com/sogrady/2021/03/01/language-rankings-1-21/</a
+        >
+      </p>
+      <figure>
+        <span>
+          <img
+            src="https://www.devjobsscanner.com/assets/blog/most-demanded-languages/ranking-total-jobs.svg"
+            style=""
+          />
+        </span>
+      </figure>
+
+      <p>
+        <a
+          href="https://www.devjobsscanner.com/blog/top-8-most-demanded-programming-languages/"
+          >https://www.devjobsscanner.com/blog/top-8-most-demanded-programming-languages/</a
+        >
+      </p>
+      <figure>
+        <span>
+          <img
+            src="https://www.devjobsscanner.com/assets/blog/most-demanded-languages/number-jobs-by-month.svg"
+            style=""
+          />
+        </span>
+      </figure>
+
+      <p>
+        <a
+          href="https://www.devjobsscanner.com/blog/top-8-most-demanded-programming-languages/"
+          >https://www.devjobsscanner.com/blog/top-8-most-demanded-programming-languages/</a
+        >
+      </p>
+      <hr />
+      <figure>
+        <span>
+          <img
+            src="https://www.researchgate.net/profile/Christos-Chrysoulas/publication/353521212/figure/fig1/AS:11431281082208313@1662015718842/Programming-Languages-popularity-over-time-GitHub.ppm"
+            style="width: 80%"
+          />
+        </span>
+      </figure>
+
+      <figure>
+        <span>
+          <img
+            src="https://www.researchgate.net/profile/Christos-Chrysoulas/publication/353521212/figure/fig2/AS:11431281082271996@1662015718925/Programming-Languages-popularity-over-time-StackOverflow.ppm"
+            style="width: 80%"
+          />
+        </span>
+      </figure>
+
+      <p>
+        <a
+          href="https://www.researchgate.net/publication/353521212_Programming_Languages_A_Usage-based_Statistical_Analysis_and_Visualization"
+          >https://www.researchgate.net/publication/353521212_Programming_Languages_A_Usage-based_Statistical_Analysis_and_Visualization</a
+        >
+      </p>
+      <hr />
+      <div class="focusContent exercise">
+        <p>Critical Thinking Exercise:</p>
+        <p><strong>What do the above data tell us?.</strong></p>
+        <ul>
+          <li>Be mindful of timeliness of source data.</li>
+          <li>What&#39;s actually on the axes of these graphs?</li>
+          <li>Why might some languages show up more on a particular graph?</li>
+        </ul>
+        <p><strong>When considering a language to learn:</strong></p>
+        <ul>
+          <li>
+            <em
+              >Be mindful of demand for a particular language in your area
+              (lookin&#39; at you C#, JavaScript/TypeScript, HTML/CSS).</em
+            >
+          </li>
+          <li>Check job listings. Make informal inquiries. Job shadow.</li>
+        </ul>
+        <h2 id="application-domains">Application Domains</h2>
+        <p>In no particular order:</p>
+        <ul>
+          <li>
+            <strong>Web Development</strong>: HTML, CSS, JavaScript, PHP,
+            Python, Ruby, Java, C#, SQL
+          </li>
+          <li>
+            <strong>Mobile Development</strong>: Java, Swift, Kotlin, C#,
+            JavaScript
+          </li>
+          <li>
+            <strong>Desktop Development</strong>: C++, C#, Java, Python, Swift,
+            Rust
+          </li>
+          <li>
+            <strong>Game Development</strong>: C++, C#, Java, JavaScript, Rust
+          </li>
+          <li><strong>Data Science</strong>: Python, R, SQL</li>
+          <li><strong>Scripting</strong>: Python, Bash, PowerShell</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
