@@ -100,7 +100,7 @@ Part II:
 - [Types of Data](types_of_data.html)
 - [Data Hierarchy and Modeling](data_hierarchy_modeling.html)
 - [Database Storage](database_storage.html)
-- In-class exercise: [Student Study App Software](https://github.com/mpjovanovich-IvyTechDemos/student-study-app)
+- Guided Assignment: [Student Study App Software](https://github.com/mpjovanovich-IvyTechDemos/student-study-app)
 - Intro to Assignments
 
 <!-- ## Module 06: Networking and Storage
