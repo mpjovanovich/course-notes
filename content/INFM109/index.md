@@ -108,8 +108,9 @@ Part II:
 Part I:
 
 - [XaaS](xaas.html)
-- TODO: [Virtualization](virtualization.html)
-- Virtualization: Covered in class with Azure demo and in class assignment
+- [Virtualization](virtualization.html)
+  <!-- - Virtualization: Covered in class with Azure demo and in class assignment? -->
+  <!-- - TODO: [Cloud Computing](cloud_computing.html) -->
 
 Part II:
 
