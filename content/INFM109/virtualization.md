@@ -50,7 +50,7 @@ With virtualization, a single physical machine can host multiple "virtual machin
 
 <figure>
     <span>
-        <img src="images/virtualization_model2.svg" style="width: 60%;height: auto;">
+        <img src="images/virtualization_model2.svg" style="width: 100%;height: auto;">
     </span>
 </figure>
 
