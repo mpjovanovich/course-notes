@@ -21,7 +21,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- ...
+- Final assignment milestone due dates are posted.
 
 ## Module 00: Course Introduction
 
@@ -103,13 +103,22 @@ Part II:
 - Guided Assignment: [Student Study App Software](https://github.com/mpjovanovich-IvyTechDemos/student-study-app)
 - Intro to Assignments
 
-<!-- ## Module 06: Networking and Storage
+## Module 06: Networking and Storage
 
+Part I:
+
+- [XaaS](xaas.html)
 - TODO: [Virtualization](virtualization.html)
 - Virtualization: Covered in class with Azure demo and in class assignment
-- [XaaS](xaas.html)
+
+Part II:
+
 - [Networking Communication Patterns](networking_communication_patterns.html)
+
+<!--
 
 ## Module 07: Cyber and Digital Security
 
-- [Cyber and Digital Security](cybersecurity.html) -->
+- [Cyber and Digital Security](cybersecurity.html)
+
+-->
