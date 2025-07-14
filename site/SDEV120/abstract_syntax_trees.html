@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Abstract Syntax Trees</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#tree-structures">Tree Structures</a>
+            <ul>
+              <li><a href="#tree-terminology">Tree Terminology</a></li>
+              <li><a href="#tree-traversal">Tree Traversal</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#abstract-syntax-trees">Abstract Syntax Trees</a>
+            <ul>
+              <li><a href="#basic-syntax-tree">Basic Syntax Tree</a></li>
+              <li>
+                <a href="#variables-in-syntax-trees"
+                  >Variables in Syntax Trees</a
+                >
+              </li>
+              <li>
+                <a href="#expanding-function-calls">Expanding Function Calls</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#function-composition">Function Composition</a>
+            <ul>
+              <li>
+                <a href="#arithmetic-function-composition"
+                  >Arithmetic Function Composition</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#functions-with-multiple-arguments"
+              >Functions with Multiple Arguments</a
+            >
+          </li>
+          <li>
+            <a href="#boolean-logic-in-syntax-trees"
+              >Boolean Logic in Syntax Trees</a
+            >
+          </li>
+          <li><a href="#for-the-homework">For the Homework</a></li>
+        </ul>
+      </div>
+
+      <h2 id="tree-structures">Tree Structures</h2>
+      <p>
+        A <strong>tree structure</strong> is a data structure that represents a
+        hierarchy of elements. They are used in many areas of computer science.
+      </p>
+      <p>
+        In the previous lecture we discussed expressions. Computers need an
+        algorithm to evaluate expressions. One way to do this is with a tree
+        structure.
+      </p>
+      <h3 id="tree-terminology">Tree Terminology</h3>
+      <ul>
+        <li><strong>Node</strong>: Any single element in a tree.</li>
+        <li><strong>Root</strong>: The top node in a tree.</li>
+        <li><strong>Parent</strong>: A node that has children.</li>
+        <li><strong>Child</strong>: A node that has a parent.</li>
+        <li><strong>Leaf</strong>: A node that has no children.</li>
+      </ul>
+      <h3 id="tree-traversal">Tree Traversal</h3>
+      <p>
+        There are many algorithms for determining the order in which to visit
+        nodes in a tree.
+      </p>
+      <p>
+        We will use a <strong>post-order</strong> traversal for syntax trees:
+      </p>
+      <!-- ```
+Let VISIT(node) be:
+
+BEGIN
+    IF the current node is a leaf THEN:
+        Return the value
+    ELSE:
+        IF the current node is a unary operator THEN:
+            VISIT(child)
+            Apply the operator
+            Return the value
+        ELSE:
+            VISIT(left child)
+            VISIT(right child)
+            Apply the operator
+            Return the value
+        END IF
+    END IF
+END
+
+VISIT(root)
+``` -->
+
+      <p>
+        <img
+          src="https://files.codingninjas.in/article_images/iterative-postorder-traversal-of-binary-tree-0-1635320121.jpg"
+          alt="post-order tree traversal"
+        />
+      </p>
+      <p>In the graphic above, visits are shown in blue, evaluations in red.</p>
+      <p>
+        Each leaf node (A, C, E, H) would be some operand, and each internal
+        node (B, D, F, G, I) would be some operator.
+      </p>
+      <h2 id="abstract-syntax-trees">Abstract Syntax Trees</h2>
+      <p>
+        An <strong>abstract syntax tree</strong> is a visual representation of
+        the syntax of a programming language for some expression.
+      </p>
+      <h3 id="basic-syntax-tree">Basic Syntax Tree</h3>
+      <p>
+        Below is a syntax tree containing literals and operators for the
+        expression:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>(7 + 3) * (5 - 2)</span></span></code></pre>
+      <figure>
+        <span>
+          <img src="images/parse_tree.png" style="" />
+        </span>
+      </figure>
+
+      <div class="focusContent example">
+        <p>Draw the syntax tree for the following expressions:</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>1) 5 + 3 * 2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2) (5 + 3) * 2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3)  10 / 2 / 2 - 1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4)  10 / (2 / 2) - 1</span></span></code></pre>
+      </div>
+
+      <h3 id="variables-in-syntax-trees">Variables in Syntax Trees</h3>
+      <p>
+        If a syntax tree includes variables, we treat them just like literals.
+      </p>
+      <div class="focusContent example">
+        <ol>
+          <li>Draw the syntax tree for the expression:</li>
+        </ol>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>(7 + x) * (y - 2)</span></span></code></pre>
+        <ol start="2">
+          <li>
+            Evaluate the expression for <code>x = 3</code> and
+            <code>y = 5</code> by plugging in the values.
+          </li>
+        </ol>
+      </div>
+
+      <h3 id="expanding-function-calls">Expanding Function Calls</h3>
+      <p>
+        We may need to substitute the function call with its definition within
+        the tree. We just drop it in place.
+      </p>
+      <div class="focusContent example">
+        <p>Given the function:</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>f(x) = x / 2</span></span></code></pre>
+        <p>Find the syntax tree for the following expressions:</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>1) 10 * f(4) + 3</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2) 10 * f(y) + 3</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3) f(2) * f(3)</span></span></code></pre>
+      </div>
+
+      <h2 id="function-composition">Function Composition</h2>
+      <p>
+        <strong>Function Composition</strong> is the process of combining two or
+        more functions to produce a new function.
+      </p>
+      <h3 id="arithmetic-function-composition">
+        Arithmetic Function Composition
+      </h3>
+      <p>Given the functions:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>f(x) = x + 1</span></span>
+<span class="line"><span>g(x) = x * 2</span></span></code></pre>
+      <p>An example of function composition is <code>f(g(x))</code>.</p>
+      <div class="focusContent example">
+        <p>Given the functions:</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>f(x) = x + 1</span></span>
+<span class="line"><span>g(x) = x * 2</span></span></code></pre>
+        <ol>
+          <li>
+            <p>Draw the syntax tree for <code>f( g(3) )</code>.</p>
+          </li>
+          <li><p>Evaluate the expression.</p></li>
+        </ol>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>f( g( 3 ) )</span></span>
+<span class="line"><span>  = f( 3 * 2 )</span></span>
+<span class="line"><span>  = f( 6 )</span></span>
+<span class="line"><span>  = 6 + 1</span></span>
+<span class="line"><span>  = 7</span></span></code></pre>
+      </div>
+
+      <div class="focusContent example">
+        <p>Given the functions:</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>f(x) = x + 1</span></span>
+<span class="line"><span>g(x) = x * 2</span></span></code></pre>
+        <p>Evaluate the following expressions:</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>1) g( f(3) )</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2) f( f(2) )</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3) f( f( f(6) + 1 ) + 2 ) + 3</span></span></code></pre>
+      </div>
+
+      <h2 id="functions-with-multiple-arguments">
+        Functions with Multiple Arguments
+      </h2>
+      <p>
+        Functions can take multiple arguments. In this case, we plug in the
+        values for each argument in the order they are given.
+      </p>
+      <div class="focusContent example">
+        <p>Given the function:</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>f(x, y) = x + y + 1</span></span></code></pre>
+        <p>Evaluate the following expressions:</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>1) f(3, 4)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2) f(1, 2)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3) f(3, f(2, 1))</span></span></code></pre>
+      </div>
+
+      <h2 id="boolean-logic-in-syntax-trees">Boolean Logic in Syntax Trees</h2>
+      <p>
+        We can drop in True and False values into our syntax trees along with
+        logical connectives.
+      </p>
+      <p>They work the same as we&#39;ve seen so far.</p>
+      <div class="focusContent example">
+        <p>
+          Draw the syntax tree for the following expressions, evaluating them as
+          you go:
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>1) True and False or False</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2) True and (False or False)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3) not True</span></span></code></pre>
+      </div>
+
+      <h2 id="for-the-homework">For the Homework</h2>
+      <ul>
+        <li>Use draw.io to make syntax trees</li>
+        <li>
+          Make sure to double check what the question is asking you to do!
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

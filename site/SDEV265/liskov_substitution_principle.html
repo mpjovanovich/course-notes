@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV265: Listov Substitution Principle</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#liskov-substitution-principle"
+            >Liskov Substitution Principle</a
+          >
+          <ul>
+            <li><a href="#example-1">Example 1</a></li>
+            <li><a href="#example-2">Example 2</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="liskov-substitution-principle">Liskov Substitution Principle</h1>
+      <p>
+        &quot;Functions that use pointers or references to base classes must be
+        able to use objects of derived classes without knowing it.&quot;
+      </p>
+      <p>
+        In other words, a subclass should be able to replace its superclass
+        without breaking the program. We should not violate expectations about:
+      </p>
+      <ul>
+        <li>Return types</li>
+        <li>Exceptions</li>
+        <li>Preconditions</li>
+        <li>Postconditions</li>
+      </ul>
+      <h2 id="example-1">Example 1</h2>
+      <p>Poor class design: badly implemented method override</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Superclass</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> StampCollection</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> __init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> stamps</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.stamps </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamps</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Return stamp if found, else return None</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> find_stamp</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> stamp_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        for</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamp </span><span style="color:#A626A4;--shiki-dark:#C678DD">in</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.stamps:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">            if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamp </span><span style="color:#383A42;--shiki-dark:#56B6C2">==</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamp_name:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">                return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamp</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#986801;--shiki-dark:#D19A66"> None</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Subclass</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> HolidayStampCollection</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">StampCollection</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    default_holiday_stamp </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Happy Holidays!"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> __init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> stamps</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        super</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#0184BC;--shiki-dark:#56B6C2">__init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(stamps)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Bad:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Return stamp if found, else return default holiday stamp</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> find_stamp</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> stamp_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        for</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamp </span><span style="color:#A626A4;--shiki-dark:#C678DD">in</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.stamps:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">            if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamp </span><span style="color:#383A42;--shiki-dark:#56B6C2">==</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamp_name:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">                return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamp</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        # This breaks the Liskov Substitution Principle by violating the</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        # expectations of the superclass about what to do if the stamp is not</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        # found.</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.default_holiday_stamp</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Our program</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> get_renamed_stamp</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">stamp_collection</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#986801;--shiki-dark:#ABB2BF"> StampCollection</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> stamp_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> str</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">                      new_stamp_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> str</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    stamp </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamp_collection.</span><span style="color:#383A42;--shiki-dark:#61AFEF">find_stamp</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(stamp_name)</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # We should raise an error if the stamp is not found</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamp </span><span style="color:#383A42;--shiki-dark:#56B6C2">==</span><span style="color:#986801;--shiki-dark:#D19A66"> None</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        raise</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> ValueError</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Stamp not found"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    stamp </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> new_stamp_name</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> stamp</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    holiday_stamps </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> HolidayStampCollection</span><span style="color:#383A42;--shiki-dark:#ABB2BF">([</span><span style="color:#50A14F;--shiki-dark:#98C379">"Christmas"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"New Year's"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Valentine's Day"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">])</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    stamps </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> StampCollection</span><span style="color:#383A42;--shiki-dark:#ABB2BF">([</span><span style="color:#50A14F;--shiki-dark:#98C379">"Train"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Flag"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Nostalgic Child"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">])</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    try</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#61AFEF">get_renamed_stamp</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(stamps, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Boat"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Ship"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">))</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    except</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> ValueError</span><span style="color:#A626A4;--shiki-dark:#C678DD"> as</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> e:</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(e)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    try</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        # We should have failed, but instead it acted as if it found "X-day" and renamed it to "Y-day"</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#61AFEF">get_renamed_stamp</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(holiday_stamps, </span><span style="color:#50A14F;--shiki-dark:#98C379">"X-day"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Y-day"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">))</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    except</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> ValueError</span><span style="color:#A626A4;--shiki-dark:#C678DD"> as</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> e:</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(e)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
+      <p>How to fix?</p>
+      <ul>
+        <li>
+          Don&#39;t override the method in the subclass unless guaranteed to
+          behave the same as superclass.
+        </li>
+      </ul>
+      <h2 id="example-2">Example 2</h2>
+      <p>Poor class design: &quot;one size fits all&quot; base class</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Superclass</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Account</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> __init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> balance</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> int</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.balance </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> balance</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # This doesn't make sense for all accounts, so it should not be here</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> get_reward_balance</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#986801;--shiki-dark:#D19A66"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Subclass</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> SilverAccount</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Account</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> __init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> balance</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> int</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> reward_points</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> int</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        super</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#0184BC;--shiki-dark:#56B6C2">__init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(balance)</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.reward_points </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> reward_points</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> get_reward_balance</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.balance </span><span style="color:#383A42;--shiki-dark:#56B6C2">*</span><span style="color:#986801;--shiki-dark:#D19A66"> 0.03</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Subclass</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> GoldAccount</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Account</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> __init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> balance</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> int</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> reward_points</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> int</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        super</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#0184BC;--shiki-dark:#56B6C2">__init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(balance)</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.reward_points </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> reward_points</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> get_reward_balance</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.balance </span><span style="color:#383A42;--shiki-dark:#56B6C2">*</span><span style="color:#986801;--shiki-dark:#D19A66"> 0.05</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Our Program</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># This function should be able to work with any Account object</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> apply_reward</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">account</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#986801;--shiki-dark:#ABB2BF"> Account</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    reward </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> account.</span><span style="color:#383A42;--shiki-dark:#61AFEF">get_reward_balance</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Will fail for basic_account - reward will be None</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    account.balance </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> account.balance </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> reward</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # For debugging</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">"New balance: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">account.balance</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    gold_account </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> GoldAccount</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">100</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">50</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    silver_account </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> SilverAccount</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">100</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">50</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    basic_account </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> Account</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">100</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">    apply_reward</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(gold_account)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">    apply_reward</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(silver_account)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">    apply_reward</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(basic_account)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
+      <p>How would we fix this?</p>
+      <ul>
+        <li>
+          We could move the <code>get_reward_balance</code> method to each of
+          the subclasses, or better yet...
+        </li>
+        <li>
+          Move the <code>get_reward_balance</code> method to a separate
+          interface or abstract base class.
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> abc</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Python way to define interfaces</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> RewardsAccount</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">abc</span><span style="color:#C18401;--shiki-dark:#ABB2BF">.</span><span style="color:#383A42;--shiki-dark:#D19A66">ABC</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">    @abc</span><span style="color:#4078F2;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">abstractmethod</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> get_reward_balance</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        pass</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> SilverAccount</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Account</span><span style="color:#C18401;--shiki-dark:#ABB2BF">, </span><span style="color:#C18401;--shiki-dark:#E5C07B">RewardsAccount</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # ...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> apply_reward</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">account</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#986801;--shiki-dark:#ABB2BF"> RewardsAccount</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # ...</span></span></code></pre>
+    </div>
+  </body>
+</html>

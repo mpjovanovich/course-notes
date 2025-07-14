@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFM109: Information and Data</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#information-and-data">Information and Data</a>
+            <ul>
+              <li>
+                <a href="#data-classifications">Data Classifications</a>
+                <ul>
+                  <li>
+                    <a href="#qualitative-vs-quantitative"
+                      >Qualitative vs Quantitative</a
+                    >
+                    <ul>
+                      <li><a href="#qualitative-data">Qualitative Data</a></li>
+                      <li>
+                        <a href="#quantitative-data">Quantitative Data</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#types-of-data">Types of Data</a>
+                    <ul>
+                      <li><a href="#continuous-data">Continuous Data</a></li>
+                      <li><a href="#discrete-data">Discrete Data</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#categorical-nominal-data"
+                      >Categorical (Nominal) Data</a
+                    >
+                  </li>
+                  <li><a href="#ordinal-data">Ordinal Data</a></li>
+                  <li><a href="#daily-self-quiz">Daily (Self) Quiz</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="information-and-data">Information and Data</h1>
+      <p>
+        <strong>Data</strong> is the raw facts and figures that are collected
+        and stored in a database.
+      </p>
+      <p>
+        <strong>Information</strong> is the processed data that is used to make
+        decisions and solve problems.
+      </p>
+      <h2 id="data-classifications">Data Classifications</h2>
+      <h3 id="qualitative-vs-quantitative">Qualitative vs Quantitative</h3>
+      <h4 id="qualitative-data">Qualitative Data</h4>
+      <ul>
+        <li>Non-numerical data</li>
+        <li>Cannot be easily measured and expressed in numbers</li>
+        <li>
+          Examples:
+          <ul>
+            <li>&quot;Describe an experience when...&quot;</li>
+            <li>&quot;How hilly is the terrain in your area?&quot;</li>
+          </ul>
+        </li>
+        <li>Difficult to do analysis on qualitative data</li>
+      </ul>
+      <h4 id="quantitative-data">Quantitative Data</h4>
+      <ul>
+        <li>Numerical data</li>
+        <li>Can be measured and expressed in numbers</li>
+        <li>
+          Examples:
+          <ul>
+            <li>Height</li>
+            <li>Weight</li>
+          </ul>
+        </li>
+        <li>Many methods of analysis can be applied to quantitative data</li>
+      </ul>
+      <div class="focusContent example">
+        <p>
+          We can &quot;hack&quot; the qualitative data using techniques like
+          <strong>scaling</strong>: assigning discrete values to the data. This
+          allows us to use the data in quantitative analysis.
+        </p>
+        <p>
+          You may have heard of the <strong>Likert scale</strong>, which is a
+          common way to collect qualitative data.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>Strongly Disagree (1)</span></span>
+<span class="line"><span>Disagree (2)</span></span>
+<span class="line"><span>Neutral (3)</span></span>
+<span class="line"><span>Agree (4)</span></span>
+<span class="line"><span>Strongly Agree (5)</span></span></code></pre>
+        <p>
+          A scientist named Daniel Kahneman won a Nobel Prize for his work on
+          how people make decisions. Much of his work showed that ranking scales
+          (like the Likert scale) and some simple statistical methods can be
+          more accurate than expert judgement.
+        </p>
+      </div>
+
+      <h3 id="types-of-data">Types of Data</h3>
+      <h4 id="continuous-data">Continuous Data</h4>
+      <ul>
+        <li>Can take any value within a range</li>
+        <li>Can be measured to arbitrary precision</li>
+        <li>
+          Examples:
+          <ul>
+            <li>Height (1.75m, 1.751m, 1.7512m, etc.)</li>
+            <li>Weight</li>
+            <li>Temperature</li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="discrete-data">Discrete Data</h4>
+      <ul>
+        <li>Takes on specific values (usually whole numbers)</li>
+        <li>Countable values with gaps between them</li>
+        <li>
+          Examples:
+          <ul>
+            <li>Number of students in a class (1, 2, 3, 4, 5, etc.)</li>
+            <li>Number of cars sold</li>
+          </ul>
+        </li>
+      </ul>
+      <h3 id="categorical-nominal-data">Categorical (Nominal) Data</h3>
+      <ul>
+        <li>Data that can be labeled or categorized</li>
+        <li>No inherent order between categories</li>
+        <li>
+          Examples:
+          <ul>
+            <li>Colors (red, blue, green)</li>
+            <li>Gender (male, female)</li>
+            <li>Blood type (A, B, AB, O)</li>
+            <li>State of residence (IN, IL, KY, etc.)</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="focusContent example">
+        <p>
+          Categorical data can be represented numerically and used in
+          quantitative analysis. One way to do this is by &quot;one-hot
+          encoding&quot; vectors.
+        </p>
+        <p>Let&#39;s look at a couple of examples:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Red</th>
+              <th>Blue</th>
+              <th>Green</th>
+              <th>Dog</th>
+              <th>Cat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          If a &quot;feature&quot; is present, it is represented by a 1. If it
+          is not present, it is represented by a 0.
+        </p>
+        <p>
+          The first row represents a red dog. The second row represents a blue
+          cat.
+        </p>
+        <p>This technique is widely used in machine learning (AI) models.</p>
+      </div>
+
+      <h3 id="ordinal-data">Ordinal Data</h3>
+      <ul>
+        <li>
+          Categories that have a natural order/ranking
+          <ul>
+            <li>first, second, third ... last</li>
+            <li>best, next best, next best ... worst</li>
+          </ul>
+        </li>
+        <li>
+          Examples:
+          <ul>
+            <li>
+              Education level (High School, Bachelor&#39;s, Master&#39;s, PhD)
+            </li>
+            <li>Customer satisfaction (1-5 stars)</li>
+            <li>T-shirt sizes (S, M, L, XL)</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="focusContent exercise">
+        <h3 id="daily-self-quiz">Daily (Self) Quiz</h3>
+        <ol>
+          <li>
+            <p>
+              Which type of data would &quot;Letter Grades (A, B, C, D, F)&quot;
+              be classified as?
+            </p>
+            <details>
+              <summary>Answer</summary>
+              Ordinal data - the grades have a natural order
+            </details>
+          </li>
+          <li>
+            <p>
+              Is &quot;Number of children in a family&quot; continuous or
+              discrete data?
+            </p>
+            <details>
+              <summary>Answer</summary>
+              Discrete data - you can only have whole numbers of children
+            </details>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>
