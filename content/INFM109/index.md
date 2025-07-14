@@ -14,6 +14,8 @@ showBreadcrumb: false
   - [Module 02: Hardware](#module-02-hardware)
   - [Module 03: Software](#module-03-software)
   - [Module 04: Program and Web Development](#module-04-program-and-web-development)
+  - [Module 05: Information Systems](#module-05-information-systems)
+  - [Module 06: Networking and Storage](#module-06-networking-and-storage)
 
 /~
 
@@ -107,10 +109,9 @@ Part II:
 
 Part I:
 
-- [XaaS](xaas.html)
 - [Virtualization](virtualization.html)
-  <!-- - Virtualization: Covered in class with Azure demo and in class assignment? -->
-  <!-- - TODO: [Cloud Computing](cloud_computing.html) -->
+- [XaaS](xaas.html)
+  - Discussion / Exercise: Amazon Web Services (AWS) Video
 
 Part II:
 

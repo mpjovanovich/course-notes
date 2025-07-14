@@ -1,5 +1,5 @@
 ---
-title: The Internet
+title: Information and Data
 course: INFM109
 ---
 
