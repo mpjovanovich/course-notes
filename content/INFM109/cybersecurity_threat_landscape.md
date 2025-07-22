@@ -86,6 +86,10 @@ Not all bots are malicious:
 - Content filtering and categorization
 - Automated content scraping and aggregation
 
+/~
+
+~.focusContent.demo
+
 **Demo: Job Posting Aggregator**
 
 In this example we will create a script that finds Python related jobs from a live website.
