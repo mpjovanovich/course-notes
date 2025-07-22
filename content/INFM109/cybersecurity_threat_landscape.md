@@ -9,7 +9,6 @@ course: INFM109
   - [Types of Cyberattacks](#types-of-cyberattacks)
     - [Malware](#malware)
     - [Ransomware](#ransomware)
-      - [High Profile Examples](#high-profile-examples)
     - [Distributed Denial of Service (DDoS)](#distributed-denial-of-service-ddos)
     - [Phishing](#phishing)
     - [Man in the Middle Attack](#man-in-the-middle-attack)
@@ -49,7 +48,9 @@ Key characteristics:
 - Can halt essential operations for organizations
 - Because of operational impact, ransom is often paid
 
-#### High Profile Examples
+~.focusContent.example
+
+**High Profile Examples**
 
 - **Colonial Pipeline (2021)**
 
@@ -61,6 +62,8 @@ Key characteristics:
 - **University of California at San Francisco (2020)**
   - School of medicine systems compromised
   - Paid $1.14 million in ransom to restore operations
+
+/~
 
 ### Distributed Denial of Service (DDoS)
 
