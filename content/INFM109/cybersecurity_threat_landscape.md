@@ -250,7 +250,11 @@ mail($to, $subject, $message, $headers);
 ?>
 ```
 
-**Key Takeaway:** This demonstrates why you should never trust email addresses alone as proof of sender identity.
+**Key Takeaway:** This demonstrates why you should never trust email addresses alone as proof of sender identity. If in doubt:
+
+- Hover over the email address to see the actual email address
+- Hover over links to see the actual URL
+- Examine the source code of the page to see the actual content
 
 /~
 
