@@ -3,6 +3,28 @@ title: Cybersecurity Threat Landscape
 course: INFM109
 ---
 
+~.toc
+
+- [Cybersecurity Threat Landscape](#cybersecurity-threat-landscape)
+  - [Types of Cyberattacks](#types-of-cyberattacks)
+    - [Malware](#malware)
+    - [Ransomware](#ransomware)
+      - [High Profile Examples](#high-profile-examples)
+    - [Distributed Denial of Service (DDoS)](#distributed-denial-of-service-ddos)
+    - [Phishing](#phishing)
+    - [Man in the Middle Attack](#man-in-the-middle-attack)
+    - [Code Injection](#code-injection)
+    - [Demo: How to Scam Users 101](#demo-how-to-scam-users-101)
+  - [Modern Attack Complexity](#modern-attack-complexity)
+    - [System Interconnectedness](#system-interconnectedness)
+  - [AI-Enabled Attacks](#ai-enabled-attacks)
+    - [Automated Social Engineering](#automated-social-engineering)
+    - [Deepfakes and Impersonation](#deepfakes-and-impersonation)
+    - [AI-Powered Reconnaissance](#ai-powered-reconnaissance)
+    - [Exploitation of AI Services](#exploitation-of-ai-services)
+
+/~
+
 # Cybersecurity Threat Landscape
 
 ## Types of Cyberattacks

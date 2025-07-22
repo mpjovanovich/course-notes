@@ -1,7 +1,23 @@
 ---
 title: Cyberattack Motivations and Impact
-course: INFM109
+course: I   NFM109
 ---
+
+~.toc
+
+- [Cyberattack Motivations and Impact](#cyberattack-motivations-and-impact)
+  - [Threat Actors](#threat-actors)
+    - [Organized Cybercriminal Groups](#organized-cybercriminal-groups)
+    - [Nation-State Actors](#nation-state-actors)
+    - [Insider Threats](#insider-threats)
+    - [Script Kiddies and Opportunists](#script-kiddies-and-opportunists)
+  - [Attack Motivations](#attack-motivations)
+    - [Financial Gain](#financial-gain)
+    - [Espionage and Intelligence](#espionage-and-intelligence)
+    - [Disruption and Destruction](#disruption-and-destruction)
+    - [Activism and Ideology](#activism-and-ideology)
+
+/~
 
 # Cyberattack Motivations and Impact
 
