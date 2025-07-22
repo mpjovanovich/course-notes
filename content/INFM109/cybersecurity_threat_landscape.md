@@ -83,8 +83,8 @@ Not all bots are malicious:
 
 - Search engine crawlers
 - Website monitoring and archiving
-- Automated customer service assistants
 - Content filtering and categorization
+- Automated content scraping and aggregation
 
 **Demo: Job Posting Aggregator**
 
