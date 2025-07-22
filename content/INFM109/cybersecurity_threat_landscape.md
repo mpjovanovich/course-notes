@@ -21,6 +21,8 @@ course: INFM109
     - [Deepfakes and Impersonation](#deepfakes-and-impersonation)
     - [AI-Powered Reconnaissance](#ai-powered-reconnaissance)
     - [Exploitation of AI Services](#exploitation-of-ai-services)
+      - [Jailbreaking](#jailbreaking)
+      - [Prompt Injection](#prompt-injection)
 
 /~
 
@@ -337,7 +339,7 @@ Automated tools that can:
 
 More frequently, applications are connected to AI services such as OpenAI (ChatGPT). Saavy attackers can manipulate these services to extract information or create fake content.
 
-_Jailbreaking_
+#### Jailbreaking
 
 A **jailbreak** is a technique that allows an attacker to bypass the security mechanisms of an AI service. Even if the "main" AI vendors such as ChatGPT protect against jailbreaking attacks, attackers can still bypass security for companies that use AI services.
 
@@ -367,7 +369,7 @@ In the screenshots below, a crescendo attack was used to trick ChatGPT into givi
 
 /~
 
-_Prompt Injection_
+#### Prompt Injection
 
 Most AI services offer safety mechanisms to ignore directly malicious requests. Many software systems now allow files to be uploaded to AI services, which the AI then uses for its responses.
 
