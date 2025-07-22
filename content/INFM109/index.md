@@ -16,6 +16,7 @@ showBreadcrumb: false
   - [Module 04: Program and Web Development](#module-04-program-and-web-development)
   - [Module 05: Information Systems](#module-05-information-systems)
   - [Module 06: Networking and Storage](#module-06-networking-and-storage)
+  - [Module 07: Cyber and Digital Security](#module-07-cyber-and-digital-security)
 
 /~
 
@@ -117,10 +118,14 @@ Part II:
 
 - [Networking Communication Patterns](networking_communication_patterns.html)
 
-<!--
-
 ## Module 07: Cyber and Digital Security
 
-- [Cyber and Digital Security](cybersecurity.html)
+Part I:
 
--->
+- [Cyberattack Motivations and Impact](cyberattack_motivations_impact.html)
+- [Cybersecurity Threat Landscape](cybersecurity_threat_landscape.html)
+
+Part II:
+
+  <!-- - [Cybersecurity Organizational Challenges](cybersecurity_organizational_challenges.html) -->
+  <!-- - [Cyber Defense Strategies](cyber_defense_strategies.html) -->
