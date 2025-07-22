@@ -88,7 +88,9 @@ Not all bots are malicious:
 
 **Demo: Job Posting Aggregator**
 
-In this example we will create a script that scrapes a job posting website and prints out the job titles, companies, and locations.
+In this example we will create a script that finds Python related jobs from a live website.
+
+The original source of the data is: [https://realpython.github.io/fake-jobs/](https://realpython.github.io/fake-jobs/)
 
 ```python
 import requests
