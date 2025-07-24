@@ -1,10 +1,28 @@
-## Modern Organizational Challenges
+---
+title: Cybersecurity Organizational Challenges
+course: INFM109
+---
 
-### Bring Your Own Device (BYOD)
+- [Modern Organizational Challenges](#modern-organizational-challenges)
+  - [Bring Your Own Device (BYOD)](#bring-your-own-device-byod)
+    - [Pros of BYOD:](#pros-of-byod)
+    - [Cons of BYOD:](#cons-of-byod)
+  - [Remote Work Security](#remote-work-security)
+- [Real-World Impact and Consequences](#real-world-impact-and-consequences)
+  - [Financial Impact](#financial-impact)
+  - [Operational Disruption](#operational-disruption)
+    - [Case Study: Colonial Pipeline (2021)](#case-study-colonial-pipeline-2021)
+    - [Case Study: University of California San Francisco (2020)](#case-study-university-of-california-san-francisco-2020)
+  - [Reputation and Trust](#reputation-and-trust)
+  - [Key Takeaways](#key-takeaways)
+
+# Modern Organizational Challenges
+
+## Bring Your Own Device (BYOD)
 
 **Bring Your Own Device (BYOD)** = employees use their personal devices to access company data and applications.
 
-#### Pros of BYOD:
+### Pros of BYOD:
 
 **For Employees:**
 
@@ -18,7 +36,7 @@
 - Can reduce training needs
 - Can attract and retain talent due to workplace flexibility
 
-#### Cons of BYOD:
+### Cons of BYOD:
 
 **Security Risks:**
 
@@ -31,7 +49,7 @@
 - Difficult to enforce security policies on personal devices
 - Data may remain on personal devices after employment ends
 
-### Remote Work Security
+## Remote Work Security
 
 The shift to remote and hybrid work models has created new security challenges:
 
@@ -40,9 +58,9 @@ The shift to remote and hybrid work models has created new security challenges:
 - **Shared devices**: Family members using work devices
 - **Video conference security**: Unauthorized access to meetings ("Zoombombing")
 
-## Real-World Impact and Consequences
+# Real-World Impact and Consequences
 
-### Financial Impact
+## Financial Impact
 
 Cyberattacks can cause severe financial damage to organizations:
 
@@ -60,9 +78,9 @@ Cyberattacks can cause severe financial damage to organizations:
 - Increased insurance premiums
 - Investment in additional security measures
 
-### Operational Disruption
+## Operational Disruption
 
-#### Case Study: Colonial Pipeline (2021)
+### Case Study: Colonial Pipeline (2021)
 
 - **Attack type**: Ransomware (DarkSide group)
 - **Impact**: Shut down pipeline operations for 5 days
@@ -73,7 +91,7 @@ Cyberattacks can cause severe financial damage to organizations:
   - Disruption to other industries dependent on fuel
 - **Resolution**: Company paid approximately $4.4 million in ransom
 
-#### Case Study: University of California San Francisco (2020)
+### Case Study: University of California San Francisco (2020)
 
 - **Attack type**: Ransomware (Netwalker group)
 - **Target**: UCSF School of Medicine
@@ -83,7 +101,7 @@ Cyberattacks can cause severe financial damage to organizations:
   - Potential loss of years of medical research
 - **Resolution**: University paid $1.14 million in ransom
 
-### Reputation and Trust
+## Reputation and Trust
 
 Long-term damage to organizational reputation can be more costly than immediate financial losses:
 

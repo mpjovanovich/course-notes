@@ -3,11 +3,37 @@ title: Cyber Defense Strategies
 course: INFM109
 ---
 
+- [Cyberdefense Strategies](#cyberdefense-strategies)
+  - [Security Principles](#security-principles)
+    - [Shift Left](#shift-left)
+      - [What does "shift left" look like for different IT professions?](#what-does-shift-left-look-like-for-different-it-professions)
+    - [Principle of Least Privilege](#principle-of-least-privilege)
+  - [Technical Controls](#technical-controls)
+    - [Hashing and Encryption](#hashing-and-encryption)
+      - [Key Differences Between Hashing and Encryption](#key-differences-between-hashing-and-encryption)
+      - [Hashing](#hashing)
+      - [Encryption](#encryption)
+    - [User and Group Permissions](#user-and-group-permissions)
+      - [Basic permission types:](#basic-permission-types)
+      - [Permission planning questions:](#permission-planning-questions)
+  - [Active Threat Monitoring](#active-threat-monitoring)
+    - [Threat Intelligence](#threat-intelligence)
+      - [Types of threat intelligence:](#types-of-threat-intelligence)
+    - [Using CISA Resources](#using-cisa-resources)
+  - [Implementing a Comprehensive Defense Strategy](#implementing-a-comprehensive-defense-strategy)
+    - [Layered Security (Defense in Depth)](#layered-security-defense-in-depth)
+    - [Security Monitoring and Incident Response](#security-monitoring-and-incident-response)
+      - [Key monitoring activities:](#key-monitoring-activities)
+    - [Building a Security Culture](#building-a-security-culture)
+  - [Key Takeaways](#key-takeaways)
+
 # Cyberdefense Strategies
 
 ## Security Principles
 
 ### Shift Left
+
+TODO: Insert image showing why it's called "shift left"
 
 **Basic concept**: Security should not be an afterthought; it should be considered at the very start of all IT-related activities.
 
@@ -22,55 +48,97 @@ The term "shift left" refers to moving security considerations earlier in any pr
 - Use automated security testing tools
 - Follow secure coding practices from project start
 
+~.focusContent.demo
+
+TODO: github security alerts demo
+
+/~
+
 **System administrators**:
 
 - Design security into system architecture
 - Implement security controls during initial setup
 - Plan for security monitoring from day one
 
+~.focusContent.note
+
+You may hear the term **application architecture** in the context of a software system. This refers to how all of the pieces that make up the overall application fit together.
+
+Some examples of incorporating security at the system architecture level include:
+
+- Minimizing the **attack surface** of the applicaition by...
+  - Only _exposing_ (opening up for public Internet communication) parts of the application that need to be open to the public.
+- Minimizing the **blast radius** by...
+  - Using short lived _tokens_ for authentication, so that any attacker who somehow obtains a compromised authentication token only has a short window to launch an attack.
+
+/~
+
 **Business analysts**:
 
+- Communicate with the teams building software to ensure that security best practices are understood.
 - Include security requirements in initial project specifications
 - Consider security implications during business process design
-- Plan for security compliance from project inception
 
 ### Principle of Least Privilege
 
 **Principle of Least Privilege** = Users and systems should be given only the minimum levels of access needed to perform their job functions.
 
-#### Benefits of least privilege:
+Examples:
 
-**Prevent damage from ignorant users:**
-
-- Reduces accidental system modifications
-- Limits exposure to social engineering attacks
-- Minimizes impact of user errors
-
-**Limit damage from compromised accounts:**
-
-- If credentials are stolen, attacker access is limited
-- Reduces potential for lateral movement through systems
-- Contains damage from insider threats
-
-#### Implementation examples:
-
-**Database access:**
-
-- Should the Database Administrator (DBA) be able to access/view sensitive user information?
-- Should a regular user be able to delete database tables?
-- Should a marketing employee have access to financial records?
-
-**System administration:**
-
-- Should developers have admin rights on production servers?
-- Should help desk staff have the ability to modify user permissions?
-- Should temporary contractors have the same access as full-time employees?
+- Role Based Authentication (RBAC) TODO: double check this acronym...
+- UI should not make visible functionality that users of a particular role don't need to see.
+- _Protected pages_ should show as "not found" to unauthenticated users, or reroute to login page.
+- Database admin vs read/write vs readonly user
 
 ## Technical Controls
 
 ### Hashing and Encryption
 
 Two fundamental cryptographic technologies that serve different purposes in cybersecurity.
+
+#### Key Differences Between Hashing and Encryption
+
+| Aspect            | Hashing          | Encryption              |
+| ----------------- | ---------------- | ----------------------- |
+| **Purpose**       | Verify integrity | Protect confidentiality |
+| **Reversible**    | No               | Yes (with key)          |
+| **Output length** | Fixed            | Variable                |
+| **Key required**  | No               | Yes                     |
+
+#### Hashing
+
+**Purpose**: Verify the integrity of data (ensure it hasn't been changed).
+
+**How it works**: Converts data into a fixed-length string (hash) that uniquely represents the original data. The process cannot be reversed.
+
+**Use cases**:
+
+- Storing passwords securely
+- Verifying file integrity
+- Digital signatures
+- Detecting unauthorized changes to data
+
+~.focusContent.demo
+
+**Hashing Demonstration**
+
+```bash
+# Create two files with very similar content
+echo "This is unencrypted data." > file1.txt
+echo "this is unencrypted data." > file2.txt
+
+# Generate MD5 hashes - note how different they are
+md5sum file1.txt
+md5sum file2.txt
+
+# Show that even identical files produce identical hashes
+cp file1.txt file1_copy.txt
+md5sum file1.txt file1_copy.txt
+```
+
+**Key takeaway**: Even tiny changes in data produce completely different hashes, making it easy to detect if data has been modified.
+
+/~
 
 #### Encryption
 
@@ -111,49 +179,7 @@ cat confidential.txt
 
 /~
 
-#### Hashing
-
-**Purpose**: Verify the integrity of data (ensure it hasn't been changed).
-
-**How it works**: Converts data into a fixed-length string (hash) that uniquely represents the original data. The process cannot be reversed.
-
-**Use cases**:
-
-- Storing passwords securely
-- Verifying file integrity
-- Digital signatures
-- Detecting unauthorized changes to data
-
-~.focusContent.demo
-
-**Hashing Demonstration**
-
-```bash
-# Create two files with very similar content
-echo "This is unencrypted data." > file1.txt
-echo "this is unencrypted data." > file2.txt
-
-# Generate MD5 hashes - note how different they are
-md5sum file1.txt
-md5sum file2.txt
-
-# Show that even identical files produce identical hashes
-cp file1.txt file1_copy.txt
-md5sum file1.txt file1_copy.txt
-```
-
-**Key takeaway**: Even tiny changes in data produce completely different hashes, making it easy to detect if data has been modified.
-
-/~
-
-#### Key Differences Between Hashing and Encryption
-
-| Aspect            | Hashing          | Encryption              |
-| ----------------- | ---------------- | ----------------------- |
-| **Purpose**       | Verify integrity | Protect confidentiality |
-| **Reversible**    | No               | Yes (with key)          |
-| **Output length** | Fixed            | Variable                |
-| **Key required**  | No               | Yes                     |
+TODO: possible JSON web tokens demo - how does token based login work
 
 ### User and Group Permissions
 
