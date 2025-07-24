@@ -6,6 +6,7 @@ course: INFM109
 - [Cyberdefense Strategies](#cyberdefense-strategies)
   - [Security Principles](#security-principles)
     - [Shift Left](#shift-left)
+    - [Building a Security Culture](#building-a-security-culture)
       - [What does "shift left" look like for different IT professions?](#what-does-shift-left-look-like-for-different-it-professions)
     - [Principle of Least Privilege](#principle-of-least-privilege)
   - [Technical Controls](#technical-controls)
@@ -13,6 +14,7 @@ course: INFM109
       - [Key Differences Between Hashing and Encryption](#key-differences-between-hashing-and-encryption)
       - [Hashing](#hashing)
       - [Encryption](#encryption)
+      - [Digital Signatures](#digital-signatures)
     - [User and Group Permissions](#user-and-group-permissions)
       - [Basic permission types:](#basic-permission-types)
   - [Active Threat Monitoring](#active-threat-monitoring)
@@ -22,7 +24,6 @@ course: INFM109
     - [Layered Security (Defense in Depth)](#layered-security-defense-in-depth)
     - [Security Monitoring and Incident Response](#security-monitoring-and-incident-response)
       - [Key monitoring activities:](#key-monitoring-activities)
-    - [Building a Security Culture](#building-a-security-culture)
   - [Key Takeaways](#key-takeaways)
 
 # Cyberdefense Strategies
@@ -39,6 +40,15 @@ course: INFM109
 **Basic concept**: Security should not be an afterthought; it should be considered at the very start of all IT-related activities.
 
 The term "shift left" refers to moving security considerations earlier in any process - whether that's software development, system design, or business planning.
+
+### Building a Security Culture
+
+Technology alone cannot provide complete protection. Organizations must also focus on:
+
+**Security awareness training**: Regular education about current threats and best practices
+**Clear policies**: Well-defined security policies that are communicated and enforced
+**Incident reporting**: Encouraging employees to report suspicious activities
+**Continuous improvement**: Regular review and update of security practices
 
 #### What does "shift left" look like for different IT professions?
 
@@ -182,7 +192,73 @@ cat confidential.txt
 
 /~
 
-TODO: possible JSON web tokens demo - how does token based login work
+#### Digital Signatures
+
+**Digital signatures** are a way to verify the authenticity of data - whether the data was created by the person or entity that claims to have created it.
+
+**Tokens** are a way to pass data between the client (web browser) and server (web application). The token is essentially a message that has a tampering detection mechanism built in.
+
+Imagine that you have a website that requires a login. Here's how it works:
+
+1. User logs in with username and password
+2. Server creates a token with user information (like roles and permissions)
+3. Server **signs** the token (creates a hash using its own secret key)
+4. Client stores the token and sends it back to the server every time that it requests a page from the site
+5. Server verifies the signature to ensure the token hasn't been tampered with
+
+The server might then, as with Role Based Access Control, check the token to see if the user has the appropriate permissions to access the requested page.
+
+**Key point**: Only the server with the secret key can create a valid signature and check whether its original contents have been tampered with.
+
+~.focusContent.exercise
+
+**Daily Quiz 1: JSON Web Tokens**
+
+In this exercise we will visit [jwt.io](https://jwt.io). We will create a JWT token and see how tampering detection works.
+
+1. On the "JWT Encoder" tab, enter the following information into the "Payload" area:
+
+```json
+{
+  "id": "123",
+  "name": "Awesome User",
+  "admin": false
+}
+```
+
+Copy the text from the "JSON WEB TOKEN" area on the right. This is the signed token that was generated with the server's secret key in the "SECRET" area.
+
+2. On the "JWT Decoder" tab, paste the token you copied in the previous step into the text area. You should see the three fields from step 1.
+
+What this is showing is that the client can send this token to the server, and it can both reassemble the original information and tell that nothing has been changed. We see the message "Signature Verified".
+
+<figure>
+  <img src="images/jwt_verified.png" alt="JWT Verified" />
+</figure>
+
+_Take a screenshot of this section._
+
+3. Now let's try to tamper with the token. Even though the text from the original token isn't human readable by default, it's very easy to see the information in plaintext using tools like [this one](https://emn178.github.io/online-tools/base64_decode.html).
+
+The snippet below is an altered version of the original token that sets the `admin` field to `true`. This represents a malicious user trying to gain elevated privileges.
+
+Copy and paste this into the "JSON WEB TOKEN" area on the "JWT Decoder" tab.
+
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMyIsIm5hbWUiOiJBd2Vzb21lIFVzZXIiLCJhZG1pbiI6dHJ1ZX0._tStqR0CWzn2KzGKA-NGyJGIN92dasCzQoarfR4mEnE
+```
+
+Note that the "DECODED PAYLOAD" section shows the tampered information; however the "Signature Verified" message is now "Invalid Signature".
+
+This is because the web server again uses its secret key to verify the signature. It can tell that the information, when hashed with its secret key, does not match the signature in the token. Even a tiny change to the data creates a completely different hash, just like we saw in our earlier hashing demonstration.
+
+<figure>
+  <img src="images/jwt_tampered.png" alt="JWT Tampered" />
+</figure>
+
+_Take a screenshot of this section._
+
+/~
 
 ### User and Group Permissions
 
@@ -242,7 +318,7 @@ The [**Cybersecurity and Infrastructure Security Agency (CISA)**](https://www.ci
 
 ~.focusContent.exercise
 
-**Daily Quiz: CISA Advisory Analysis**
+**Daily Quiz 2: CISA Advisory Analysis**
 
 Do this on your own, then we will discuss the answers together.
 
@@ -288,15 +364,6 @@ Effective cybersecurity requires multiple layers of protection:
 - **Vulnerability scanning**: Regular checks for known security weaknesses
 - **Threat hunting**: Proactive searching for signs of compromise
 - **Security metrics**: Track security performance and improvement over time
-
-### Building a Security Culture
-
-Technology alone cannot provide complete protection. Organizations must also focus on:
-
-**Security awareness training**: Regular education about current threats and best practices
-**Clear policies**: Well-defined security policies that are communicated and enforced
-**Incident reporting**: Encouraging employees to report suspicious activities
-**Continuous improvement**: Regular review and update of security practices
 
 ## Key Takeaways
 
