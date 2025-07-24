@@ -15,10 +15,8 @@ course: INFM109
       - [Encryption](#encryption)
     - [User and Group Permissions](#user-and-group-permissions)
       - [Basic permission types:](#basic-permission-types)
-      - [Permission planning questions:](#permission-planning-questions)
   - [Active Threat Monitoring](#active-threat-monitoring)
     - [Threat Intelligence](#threat-intelligence)
-      - [Types of threat intelligence:](#types-of-threat-intelligence)
     - [Using CISA Resources](#using-cisa-resources)
   - [Implementing a Comprehensive Defense Strategy](#implementing-a-comprehensive-defense-strategy)
     - [Layered Security (Defense in Depth)](#layered-security-defense-in-depth)
@@ -33,7 +31,10 @@ course: INFM109
 
 ### Shift Left
 
-TODO: Insert image showing why it's called "shift left"
+<figure>
+  <img src="https://www.softwaretestingmaterial.com/wp-content/uploads/2019/08/Shift-Left-Testing.webp" alt="Shift Left" />
+  <figcaption>Note: this image focuses on the term "testing" but we're talking about all types of security activities at each of these stages.</figcaption>
+</figure>
 
 **Basic concept**: Security should not be an afterthought; it should be considered at the very start of all IT-related activities.
 
@@ -50,7 +51,11 @@ The term "shift left" refers to moving security considerations earlier in any pr
 
 ~.focusContent.demo
 
-TODO: github security alerts demo
+Let's take a look at the security alerts for this application:
+
+[Game of Life Application](https://mpj-game-of-life.web.app/)
+
+[Related Security Alerts](https://github.com/mpjovanovich/life_react/security/dependabot)
 
 /~
 
@@ -85,7 +90,7 @@ Some examples of incorporating security at the system architecture level include
 
 Examples:
 
-- Role Based Authentication (RBAC) TODO: double check this acronym...
+- _Role Based Access Control (RBAC)_
 - UI should not make visible functionality that users of a particular role don't need to see.
 - _Protected pages_ should show as "not found" to unauthenticated users, or reroute to login page.
 - Database admin vs read/write vs readonly user
@@ -98,12 +103,10 @@ Two fundamental cryptographic technologies that serve different purposes in cybe
 
 #### Key Differences Between Hashing and Encryption
 
-| Aspect            | Hashing          | Encryption              |
-| ----------------- | ---------------- | ----------------------- |
-| **Purpose**       | Verify integrity | Protect confidentiality |
-| **Reversible**    | No               | Yes (with key)          |
-| **Output length** | Fixed            | Variable                |
-| **Key required**  | No               | Yes                     |
+| Aspect         | Hashing          | Encryption              |
+| -------------- | ---------------- | ----------------------- |
+| **Purpose**    | Verify integrity | Protect confidentiality |
+| **Reversible** | No               | Yes (with key)          |
 
 #### Hashing
 
@@ -124,8 +127,8 @@ Two fundamental cryptographic technologies that serve different purposes in cybe
 
 ```bash
 # Create two files with very similar content
-echo "This is unencrypted data." > file1.txt
-echo "this is unencrypted data." > file2.txt
+echo "Data to be hashed." > file1.txt
+echo "data to be hashed." > file2.txt
 
 # Generate MD5 hashes - note how different they are
 md5sum file1.txt
@@ -159,7 +162,7 @@ md5sum file1.txt file1_copy.txt
 
 ```bash
 # Create a sample file
-echo "This is confidential company data." > confidential.txt
+echo "This is confidential data." > confidential.txt
 
 # Encrypt the file using GPG
 gpg -c confidential.txt
@@ -191,9 +194,19 @@ File and directory permissions are a fundamental security control that determine
 - **Write (w)**: Modify file contents or create/delete files in directory
 - **Execute (x)**: Run a file as a program or enter a directory
 
+When might we want to make a file read-only? Read/write? Executable?
+
 ~.focusContent.demo
 
 **Permissions Demonstration**
+
+The Linux permissions model breaks the permission for each file into three parts:
+
+- Owner (first number)
+- Group (second number)
+- Other (third number)
+
+Windows also has the concept of "read-only" files. We can check if a file is read-only by right clicking on it and selecting "properties".
 
 ```bash
 # Create a sample file and check its permissions
@@ -201,14 +214,14 @@ echo "Sensitive company information" > sensitive.txt
 ls -l sensitive.txt
 
 # Make the file read-only for everyone
-chmod 444 sensitive.txt
+chmod r--r--r-- sensitive.txt
 ls -l sensitive.txt
 
 # Try to modify the file - this should fail
 echo "Additional data" >> sensitive.txt
 
 # Restore write permissions to demonstrate the concept
-chmod 644 sensitive.txt
+chmod rw-r--r-- sensitive.txt
 echo "Additional data" >> sensitive.txt
 cat sensitive.txt
 ```
@@ -217,25 +230,11 @@ cat sensitive.txt
 
 /~
 
-#### Permission planning questions:
-
-- Who needs access to this data?
-- What level of access do they need?
-- Should access be temporary or permanent?
-- How will we monitor and audit access?
-
 ## Active Threat Monitoring
 
 ### Threat Intelligence
 
 **Threat intelligence** = Evidence-based knowledge about current and emerging security threats, including their context, mechanisms, indicators, implications, and action-oriented advice.
-
-#### Types of threat intelligence:
-
-**Strategic**: High-level information about threat landscape trends
-**Tactical**: Information about threat actor tactics, techniques, and procedures
-**Operational**: Information about specific ongoing campaigns
-**Technical**: Specific indicators of compromise (IoCs) like IP addresses, file hashes
 
 ### Using CISA Resources
 
@@ -244,6 +243,8 @@ The [**Cybersecurity and Infrastructure Security Agency (CISA)**](https://www.ci
 ~.focusContent.exercise
 
 **Daily Quiz: CISA Advisory Analysis**
+
+Do this on your own, then we will discuss the answers together.
 
 Analyze the following advisory: [ICS-25-196-03](https://www.cisa.gov/news-events/ics-advisories/icsa-25-196-03)
 
