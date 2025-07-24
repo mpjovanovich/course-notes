@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Propositional Logic - Order of Operations</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#order-of-operations">Order of Operations</a>
+            <ul>
+              <li>
+                <a href="#arithmetic-order-of-operations"
+                  >Arithmetic Order of Operations</a
+                >
+                <ul>
+                  <li><a href="#modulus">Modulus</a></li>
+                  <li><a href="#practice-problems">Practice Problems</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#logical-order-of-operations"
+                  >Logical Order of Operations</a
+                >
+                <ul>
+                  <li><a href="#practice-problems-1">Practice Problems</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="order-of-operations">Order of Operations</h1>
+      <h2 id="arithmetic-order-of-operations">
+        Arithmetic Order of Operations
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th align="center">Precedence</th>
+            <th align="left">Operator</th>
+            <th align="left">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="center">1</td>
+            <td align="left">()</td>
+            <td align="left">Parentheses</td>
+          </tr>
+          <tr>
+            <td align="center">2</td>
+            <td align="left">^</td>
+            <td align="left">Exponent</td>
+          </tr>
+          <tr>
+            <td align="center">3</td>
+            <td align="left">*</td>
+            <td align="left">Multiplication</td>
+          </tr>
+          <tr>
+            <td align="center">3</td>
+            <td align="left">/</td>
+            <td align="left">Division</td>
+          </tr>
+          <tr>
+            <td align="center">3</td>
+            <td align="left">%</td>
+            <td align="left">Modulus</td>
+          </tr>
+          <tr>
+            <td align="center">4</td>
+            <td align="left">+</td>
+            <td align="left">Addition</td>
+          </tr>
+          <tr>
+            <td align="center">4</td>
+            <td align="left">-</td>
+            <td align="left">Subtraction</td>
+          </tr>
+          <tr>
+            <td align="center">5</td>
+            <td align="left">=</td>
+            <td align="left">Assignment</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Order of operations:</p>
+      <ul>
+        <li>
+          Expressions in brackets evaluate before the outside of the brackets
+        </li>
+        <li>Operators with higher precedence evaluate first</li>
+        <li>Expressions evaluate left to right</li>
+      </ul>
+      <h3 id="modulus">Modulus</h3>
+      <p>
+        The <strong>modulus</strong> operator returns the remainder of a
+        division operation.
+      </p>
+      <p>
+        <strong><em>Examples:</em></strong>
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>4 % 2   = 2, R0 = 0</span></span>
+<span class="line"><span>5 % 2   = 2, R1 = 1</span></span>
+<span class="line"><span>11 % 9  = 1, R2 = 2</span></span>
+<span class="line"><span>1 % 7   = 0, R1 = 1</span></span></code></pre>
+      <h3 id="practice-problems">Practice Problems</h3>
+      <details>
+        <summary>Solve: 100 - 25 * 3 / 5</summary>
+        <div>
+          <p>100 - ((25 * 3) / 5)</p>
+          <p>100 - (75 / 5)</p>
+          <p>100 - 15</p>
+          <p>85</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Solve: 32 / 4 + 12 / 6 - 9 % 2</summary>
+        <div>
+          <p>(32 / 4) + (12 / 6) - (9 % 2)</p>
+          <p>8 + 2 - 1</p>
+          <p>9</p>
+        </div>
+      </details>
+
+      <h2 id="logical-order-of-operations">Logical Order of Operations</h2>
+      <table>
+        <thead>
+          <tr>
+            <th align="center">Precedence</th>
+            <th align="left">Operator</th>
+            <th align="left">Operation</th>
+            <th align="left">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="center">1</td>
+            <td align="left">()</td>
+            <td align="left">Parentheses</td>
+            <td align="left">Grouping</td>
+          </tr>
+          <tr>
+            <td align="center">2</td>
+            <td align="left">¬</td>
+            <td align="left">Negation</td>
+            <td align="left">NOT</td>
+          </tr>
+          <tr>
+            <td align="center">3</td>
+            <td align="left">∧</td>
+            <td align="left">Conjunction</td>
+            <td align="left">AND</td>
+          </tr>
+          <tr>
+            <td align="center">4</td>
+            <td align="left">∨</td>
+            <td align="left">Disjunction</td>
+            <td align="left">OR</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="practice-problems">Practice Problems</h3>
+      <p>For the following values of x, y, and z:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>x = True, y = True, z = True</span></span>
+<span class="line"><span>x = False, y = False, z = False</span></span>
+<span class="line"><span>x = True, y = True, z = False</span></span></code></pre>
+      <p>Plug in the values and evaluate the following expressions:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>1. x ∧ y ∧ z</span></span>
+<span class="line"><span>2. x ∨ y ∧ z</span></span>
+<span class="line"><span>3. ( x ∨ y ) ∧ z</span></span>
+<span class="line"><span>4. ¬x ∧ y</span></span>
+<span class="line"><span>5. ¬( x ∧ y )</span></span>
+<span class="line"><span>6. ¬( x ∨ y )</span></span></code></pre>
+    </div>
+  </body>
+</html>

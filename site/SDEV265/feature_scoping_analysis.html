@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV265: Feature Scoping and Analysis</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#feature-scoping-and-analysis"
+              >Feature Scoping and Analysis</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="feature-scoping-and-analysis">Feature Scoping and Analysis</h1>
+      <p>
+        Software features aren&#39;t built in isolation. Before writing code,
+        developers benefit from up front analysis - even for the most seemingly
+        simple projects.
+      </p>
+      <div class="focusContent note">
+        <p>
+          More than likely, all of us will build software for someone else at
+          some point in our career.
+        </p>
+        <p>
+          It may not seem like software development is about business, but if
+          hired to build a product, it&#39;s our ethical responsibility to
+          understand the business impact of the features we&#39;re building to
+          the best of our ability.
+        </p>
+        <p>
+          Don&#39;t be afraid to ask &quot;non-technical&quot; questions that
+          will help you put requirements in context! This will lead to better
+          software, and happier customers.
+        </p>
+      </div>
+
+      <h2 id="key-questions-for-analysis">Key Questions for Analysis</h2>
+      <p>When scoping features, ask:</p>
+      <ul>
+        <li>What problem does this solve?</li>
+        <li>Who are the stakeholders?</li>
+        <li>What are the must-have vs. nice-to-have components?</li>
+        <li>What could go wrong?</li>
+        <li>What are the maintenance implications?</li>
+        <li>How will we measure success?</li>
+      </ul>
+      <h2 id="impact-assessment">Impact Assessment</h2>
+      <ul>
+        <li>User value: Who benefits and how?</li>
+        <li>
+          Business impact:
+          <ul>
+            <li>Revenue</li>
+            <li>Cost savings</li>
+            <li>Competitive advantage</li>
+          </ul>
+        </li>
+        <li>
+          Technical impact:
+          <ul>
+            <li>System architecture</li>
+            <li>Performance</li>
+            <li>Scalability</li>
+          </ul>
+        </li>
+        <li>
+          Operational impact:
+          <ul>
+            <li>Deployment</li>
+            <li>Monitoring, support needs</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="dependencies-and-prerequisites">
+        Dependencies and Prerequisites
+      </h2>
+      <ul>
+        <li>
+          Technical dependencies:
+          <ul>
+            <li>Libraries</li>
+            <li>APIs</li>
+            <li>Services</li>
+          </ul>
+        </li>
+        <li>
+          Data requirements:
+          <ul>
+            <li>Schema changes</li>
+            <li>Migrations</li>
+            <li>New data flows</li>
+          </ul>
+        </li>
+        <li>
+          Infrastructure needs:
+          <ul>
+            <li>Compute resources</li>
+            <li>Storage</li>
+            <li>Networking</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="implementation-complexity">Implementation Complexity</h2>
+      <ul>
+        <li>
+          Development effort:
+          <ul>
+            <li>New vs. familiar technologies</li>
+          </ul>
+        </li>
+        <li>
+          Testing requirements:
+          <ul>
+            <li>Unit tests</li>
+            <li>Integration tests</li>
+            <li>User acceptance</li>
+          </ul>
+        </li>
+        <li>
+          Security considerations:
+          <ul>
+            <li>Authentication</li>
+            <li>Authorization</li>
+            <li>Data privacy</li>
+          </ul>
+        </li>
+        <li>
+          Documentation needs:
+          <ul>
+            <li>API docs</li>
+            <li>User guides</li>
+            <li>Deployment instructions</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="cross-cutting-concerns">Cross-cutting Concerns</h2>
+      <ul>
+        <li>Logging</li>
+        <li>Monitoring</li>
+        <li>Backup/recovery</li>
+        <li>Compliance requirements</li>
+        <li>Accessibility needs</li>
+      </ul>
+      <h2 id="maintenance-implications">Maintenance Implications</h2>
+      <ul>
+        <li>Future extensibility</li>
+        <li>Technical debt</li>
+        <li>Upgrade paths</li>
+        <li>Support burden</li>
+      </ul>
+      <div class="focusContent example">
+        <p><strong>Case Study: User Authentication</strong></p>
+        <p>
+          Initial request: &quot;Add user login to our web application&quot;
+        </p>
+        <p><em>Surface requirements:</em></p>
+        <ul>
+          <li>Login form</li>
+          <li>Password storage</li>
+          <li>Session management</li>
+        </ul>
+        <p><em>Hidden complexity:</em></p>
+        <ul>
+          <li>Password policy enforcement</li>
+          <li>Password reset flow</li>
+          <li>Account lockout protection</li>
+          <li>Session management</li>
+          <li>Authentication based page redirects</li>
+          <li>Multi-factor authentication</li>
+          <li>Security logging</li>
+          <li>Multi-device login handling</li>
+          <li>Database schema changes</li>
+          <li>...</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

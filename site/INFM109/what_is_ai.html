@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFM109: What is AI?</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#what-is-ai">What is AI?</a>
+            <ul>
+              <li>
+                <a href="#ai-vs-human-intelligence">AI vs Human Intelligence</a>
+              </li>
+              <li><a href="#ai-in-daily-life">AI in Daily Life</a></li>
+              <li>
+                <a href="#classical-vs-modern-ai-a-paradigm-shift"
+                  >Classical vs Modern AI: A Paradigm Shift</a
+                >
+                <ul>
+                  <li><a href="#classical-ai">Classical AI</a></li>
+                  <li><a href="#modern-ai">Modern AI</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#machine-learning">Machine Learning</a>
+                <ul>
+                  <li>
+                    <a href="#supervised-learning">Supervised Learning</a>
+                  </li>
+                  <li>
+                    <a href="#artificial-neural-networks"
+                      >Artificial Neural Networks</a
+                    >
+                    <ul>
+                      <li><a href="#training">Training</a></li>
+                      <li><a href="#inference">Inference</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="what-is-ai">What is AI?</h1>
+      <figure>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg"
+          alt=""
+          style=""
+        />
+        <figcaption>
+          <span class="attr"
+            >--Magritte, The Treachery of Images ("This is not a pipe")</span
+          >
+        </figcaption>
+      </figure>
+
+      <p>
+        <strong>Artificial Intelligence</strong> is the simulation of human
+        intelligence processes by machines, especially computer systems.
+      </p>
+      <p>
+        It has been around for a long time, but has recently become more
+        capable, and is seeing more widespread use.
+      </p>
+      <h2 id="ai-vs-human-intelligence">AI vs Human Intelligence</h2>
+      <p>AI excels at:</p>
+      <ul>
+        <li>Processing large amounts of data quickly</li>
+        <li>Finding patterns humans might miss</li>
+        <li>Performing repetitive tasks consistently</li>
+      </ul>
+      <p>AI struggles with:</p>
+      <ul>
+        <li>Common sense reasoning</li>
+        <li>Understanding context like humans do</li>
+        <li>Creative problem solving in new situations</li>
+      </ul>
+      <h2 id="ai-in-daily-life">AI in Daily Life</h2>
+      <figure>
+        <span>
+          <img src="images/dog_search.png" style="width: 100%; height: auto" />
+        </span>
+      </figure>
+
+      <p><strong>Smartphones</strong></p>
+      <ul>
+        <li>Predictive text and autocorrect</li>
+        <li>Voice assistants (Siri, Google Assistant)</li>
+        <li>
+          Camera features (object framing and recognition, search in photo
+          gallery)
+        </li>
+      </ul>
+      <p><strong>Social Media</strong></p>
+      <ul>
+        <li>News feed algorithms</li>
+        <li>Friend suggestions</li>
+        <li>Content recommendations</li>
+      </ul>
+      <p><strong>Entertainment</strong></p>
+      <ul>
+        <li>Netflix/Spotify recommendations</li>
+        <li>Video game AI opponents</li>
+      </ul>
+      <p><strong>Navigation</strong></p>
+      <ul>
+        <li>GPS route optimization</li>
+        <li>Traffic prediction</li>
+      </ul>
+      <p><strong>Shopping</strong></p>
+      <ul>
+        <li>Product recommendations</li>
+        <li>Fraud detection</li>
+      </ul>
+      <h2 id="classical-vs-modern-ai-a-paradigm-shift">
+        Classical vs Modern AI: A Paradigm Shift
+      </h2>
+      <p>
+        The AI we use today is fundamentally different from earlier AI systems.
+        This represents one of the most significant paradigm shifts in computing
+        history.
+      </p>
+      <h3 id="classical-ai">Classical AI</h3>
+      <p><strong>Approach</strong>: Rule-based and heuristic systems</p>
+      <p>Classical AI systems were programmed with explicit rules:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>- "If patient's blood pressure > 140/90, then flag for hypertension review"</span></span>
+<span class="line"><span>- "If credit card transaction amount > $1000, then trigger fraud detection review"</span></span></code></pre>
+      <p>
+        These are called <strong>expert systems</strong>. These types of systems
+        are still used today. They are important when we need a
+        <strong>deterministic</strong> system, with no uncertainty in the
+        output.
+      </p>
+      <div class="focusContent example">
+        <figure>
+          <span>
+            <img
+              src="https://inside-machinelearning.com/wp-content/uploads/2022/09/DecisionTree.jpg"
+              style="width: 80%; height: auto"
+            />
+          </span>
+        </figure>
+
+        <p>
+          Here is a &quot;recommender&quot; system that might suggest products
+          based on the current weather in the user&#39;s location. These
+          decicion branches would be picked by a human.
+        </p>
+      </div>
+
+      <h3 id="modern-ai">Modern AI</h3>
+      <p><strong>Approach</strong>: Data-driven learning systems</p>
+      <p>
+        Modern AI systems learn patterns from data rather than following
+        explicit rules. This allows them to handle complex, uncertain situations
+        that would be difficult to program with traditional rules.
+      </p>
+      <h2 id="machine-learning">Machine Learning</h2>
+      <p>
+        <strong>Machine Learning</strong> allows computer systems to learn from
+        data, <em>without being explicitly programmed</em>.
+      </p>
+      <div class="focusContent note">
+        <p><strong>Key Insight: Learning vs Programming</strong></p>
+        <p>
+          The fundamental difference between classical and modern AI is how they
+          acquire their capabilities:
+        </p>
+        <ul>
+          <li>Classical AI: Explicitly programmed with rules by humans</li>
+          <li>Modern AI: Learns patterns from data through training</li>
+        </ul>
+        <p>
+          This shift from programming to learning is what makes modern AI so
+          powerful and flexible.
+        </p>
+      </div>
+
+      <h3 id="supervised-learning">Supervised Learning</h3>
+      <ul>
+        <li>
+          Supervised learning is a type of machine learning where the model is
+          trained on a labeled dataset
+        </li>
+        <li>
+          The model learns to map inputs to outputs based on the correctly
+          labeled data
+        </li>
+        <li>
+          Inputs are called &quot;features&quot; or <strong>parameters</strong>
+        </li>
+        <li>
+          The model is then used to predict the output for new inputs that it
+          has not seen before
+        </li>
+      </ul>
+      <h3 id="artificial-neural-networks">Artificial Neural Networks</h3>
+      <figure>
+        <img
+          src="https://www.cusabio.com/statics/images/Structure-Neuron.jpg"
+          alt="Structure of a biological neuron"
+          style=""
+        />
+      </figure>
+
+      <p>
+        <strong>Artificial Neural Networks</strong> are a type of
+        <em>supervised learning</em> model inspired by the human brain.
+      </p>
+      <p>
+        These have been around since the 1950&#39;s, but only recently have they
+        become practical due to the availability of data and compute volume.
+      </p>
+      <h4 id="training">Training</h4>
+      <figure>
+        <span>
+          <img
+            src="https://media.licdn.com/dms/image/v2/D5622AQEBHjAgykk3Wg/feedshare-shrink_800/B56ZS_7JGbHQAo-/0/1738386740593?e=2147483647&v=beta&t=DBVDk9YkanakFwUItC8Z1DD-Al2331Uw246sVFhwLdE"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        The process of creating a neural network model is called the
+        <strong>training</strong> process. This is where the learning happens.
+      </p>
+      <p>
+        In this phase the model is given a set of input/output pairs, and it
+        learns to map the inputs (e.g. picture of a cat) to the outputs (e.g.
+        &quot;cat&quot;).
+      </p>
+      <p>
+        After the model has been trained, it is released to the public, e.g.
+        ChatGPT. These models do not learn after this point.
+      </p>
+      <div class="focusContent note">
+        <p><strong>Key Insights:</strong></p>
+        <ul>
+          <li>
+            The model learns by itself through trial and error, using labeled
+            data to adjust its weights until it can make accurate predictions.
+          </li>
+        </ul>
+        <p>~/</p>
+        <h4 id="inference">Inference</h4>
+        <figure>
+          <img
+            src="https://miro.medium.com/v2/resize:fit:2000/1*ui3IvoiVYBFtaU0auj63ew.gif"
+            alt=""
+            style="width: 80%; height: auto"
+          />
+        </figure>
+
+        <figure>
+          <img
+            src="https://www.quantib.com/hs-fs/hubfs/assets/pillar%20pages/The%20ultimate%20guide%20to%20AI%20in%20radiology/images/Pillar%20page%20-%20figure%2010-2.png?width=1022&name=Pillar%20page%20-%20figure%2010-2.png"
+            alt=""
+            style="width: 80%; height: auto"
+          />
+        </figure>
+
+        <p>
+          By the time a model is released to the public, it is completely done
+          learning.
+        </p>
+        <p>
+          The process of using the model to make predictions is called
+          <strong>inference</strong>.
+        </p>
+        <div class="focusContent note">
+          <p><strong>Key Insight: Generalization</strong></p>
+          <p>
+            The distinguishing feature of neural networks is the ability to
+            &quot;understand&quot; data that it has not seen before.
+          </p>
+          <ul>
+            <li>
+              Image classification (medical diagnosis, self-driving cars, photo
+              gallery search)
+              <ul>
+                <li>
+                  Model has never seen <em>your</em> cat, but it knows it&#39;s
+                  a cat
+                </li>
+              </ul>
+            </li>
+            <li>
+              Speech recognition (voice assistants, dictation software)
+              <ul>
+                <li>
+                  Model has never heard <em>your</em> voice, but it knows your
+                  words
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            This ability to generalize from training data to new situations is
+            what makes neural networks so powerful.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

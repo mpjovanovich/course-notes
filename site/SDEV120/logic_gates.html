@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Logic Gates</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#logic-gates">Logic Gates</a>
+            <ul>
+              <li><a href="#foundations">Foundations</a></li>
+              <li><a href="#basic-gates">Basic Gates</a></li>
+              <li>
+                <a href="#circuits">Circuits</a>
+                <ul>
+                  <li>
+                    <a href="#comparing-values">Comparing Values</a>
+                    <ul>
+                      <li>
+                        <a href="#one-bit-magnitude-comparator"
+                          >One bit magnitude comparator:</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#keeping-values-in-memory"
+                      >Keeping Values in Memory</a
+                    >
+                    <ul>
+                      <li>
+                        <a href="#sr-set-reset-latch">SR (Set-Reset) Latch</a>
+                      </li>
+                      <li>
+                        <a href="#demo-building-an-arm-and-click-camera"
+                          >Demo: Building an Arm and Click Camera</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#synchronizing-information"
+                      >Synchronizing Information</a
+                    >
+                    <ul>
+                      <li><a href="#the-clock">The Clock</a></li>
+                      <li><a href="#sr-flip-flop">SR Flip-Flop</a></li>
+                      <li>
+                        <a href="#demo-building-a-hold-activated-button"
+                          >Demo: Building a Hold Activated Button</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="logic-gates">Logic Gates</h1>
+      <p>
+        For an excellent logic gate sandbox, see:
+        <a href="https://logic.ly/demo">Logic.ly</a>.
+      </p>
+      <h2 id="foundations">Foundations</h2>
+      <figure>
+        <img
+          src="https://www.electronicshub.org/wp-content/uploads/2019/03/Analog-Circuits-and-Digital-Circuits-Digital-Signals.jpg"
+          alt=""
+          style="width: 30%; height: auto"
+        />
+      </figure>
+
+      <ul>
+        <li>
+          <p>
+            Computers recognize only two states, based on the presence or
+            absence of an electrical signal.
+          </p>
+          <ul>
+            <li>High voltage = 1 = true</li>
+            <li>Low voltage = 0 = false</li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            A <strong>logic gate</strong> is a device that performs a logical
+            operation on one or more binary inputs and produces a single binary
+            output.
+          </p>
+        </li>
+      </ul>
+      <h2 id="basic-gates">Basic Gates</h2>
+      <p>
+        The logical connectives that we&#39;ve learned so far have corresponding
+        logic gates.
+      </p>
+      <p>
+        The truth table for each gate matches the truth table for the
+        corresponding logical connective.
+      </p>
+      <div class="focusContent demo">
+        <p>
+          Let&#39;s try out some basic gates in
+          <a href="https://logic.ly/demo">Logic.ly</a>.
+        </p>
+        <figure>
+          <img
+            src="images/basic_logic_gates.png"
+            alt=""
+            style="width: 100%; height: auto"
+          />
+        </figure>
+      </div>
+
+      <h2 id="circuits">Circuits</h2>
+      <p>We can combine logic gates to create <strong>circuits</strong>.</p>
+      <p>These circuits can do things like:</p>
+      <ul>
+        <li>Arithmetic (addition, subtraction, etc.)</li>
+        <li>Comparison (greater than, less than, equal)</li>
+        <li>Memory storage</li>
+        <li>...</li>
+      </ul>
+      <h3 id="comparing-values">Comparing Values</h3>
+      <p>
+        A <strong>magnitude comparator</strong> is a type of combinational
+        circuit that compares two numbers.
+      </p>
+      <h4 id="one-bit-magnitude-comparator">One bit magnitude comparator:</h4>
+      <figure>
+        <img
+          src="images/one_bit_magnitude_comparator.png"
+          alt=""
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <p>
+        <a
+          href="https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/one_bit_magnitude_comparer.logicly"
+          >One Bit Magnitude Comparator - Logicly</a
+        >
+      </p>
+      <div class="focusContent exercise">
+        <p>Assume that A = 1, B = 1.</p>
+        <p>For each output:</p>
+        <p>a) Translate the circuit into a boolean expression.</p>
+        <p>b) Plug the above values into the circuit and solve.</p>
+        <p>
+          <em>Hint:</em> Remember your truth tables and the fact that 1 = true
+          and 0 = false.
+        </p>
+        <details>
+          <summary>Output: A < B</summary>
+
+          <p><strong>a)</strong> ¬A ∧ B</p>
+          <p><strong>b)</strong> 0 ∧ 1 = False</p>
+        </details>
+
+        <details>
+          <summary>Output: A > B</summary>
+
+          <p><strong>a)</strong> A ∧ ¬B</p>
+          <p><strong>b)</strong> 1 ∧ 0 = False</p>
+        </details>
+
+        <details>
+          <summary>Output: A = B</summary>
+
+          <p><strong>a)</strong></p>
+          <ul>
+            <li>¬( ¬A ∧ B ∨ A ∧ ¬B )</li>
+            <li>A ∨ ¬B ∧ ¬A ∨ B</li>
+          </ul>
+          <p><strong>b)</strong></p>
+          <ul>
+            <li>1 ∨ (0 ∧ 0) ∨ 1</li>
+            <li>1 ∨ 0 ∨ 1 = True</li>
+          </ul>
+        </details>
+      </div>
+
+      <h3 id="keeping-values-in-memory">Keeping Values in Memory</h3>
+      <h4 id="sr-set-reset-latch">SR (Set-Reset) Latch</h4>
+      <p>
+        The <strong>SR latch</strong> is a simple form of flip-flop that can
+        store one bit of information as memory so that it isn&#39;t lost when
+        the clock signal changes.
+      </p>
+      <p>
+        When in the <strong>hold</strong> state, the outputs remain the same.
+      </p>
+      <p>
+        They will only change when either the <strong>set</strong> or
+        <strong>reset</strong> input is activated.
+      </p>
+      <p><em>Circuit:</em></p>
+      <p>
+        <a
+          href="https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/set_reset_latch.logicly"
+          >SR Latch - Logicly</a
+        >
+      </p>
+      <h4 id="demo-building-an-arm-and-click-camera">
+        Demo: Building an Arm and Click Camera
+      </h4>
+      <div class="focusContent demo">
+        <p><em>Scenario:</em></p>
+        <p>
+          In this demo, we&#39;ll build a system that requires the user to arm a
+          camera before taking a picture.
+        </p>
+        <p>The camera has three buttons:</p>
+        <ul>
+          <li><strong>Photo</strong> - Takes a picture</li>
+          <li><strong>Arm</strong> - Arms the camera</li>
+          <li><strong>Reset</strong> - Resets the camera to unarmed</li>
+        </ul>
+        <p><em>Components</em></p>
+        <ul>
+          <li>
+            An SR latch will store the &quot;armed&quot; state of the camera.
+          </li>
+          <li>
+            We will combine the SR latch with the photo button via an AND gate
+            to allow the camera to take a picture only when armed.
+          </li>
+          <li>
+            The reset button will be connected to the SR latch to clear the
+            memory and disarm the camera.
+          </li>
+        </ul>
+        <p><em>Circuit:</em></p>
+        <p>
+          <a
+            href="https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/arm_click_camera.logicly"
+            >Arm and Click Camera</a
+          >
+        </p>
+      </div>
+
+      <h3 id="synchronizing-information">Synchronizing Information</h3>
+      <p>
+        In digital circuits, we need to be precise about when information is
+        updated.
+      </p>
+      <h4 id="the-clock">The Clock</h4>
+      <figure>
+        <img
+          src="https://www.cyberphysics.co.uk/graphics/diagrams/electronics/clockPulse.png"
+          alt=""
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <p>
+        The <strong>clock</strong> is a special signal that is used to
+        synchronize the operations of a computer. For now, we just need to know:
+      </p>
+      <ul>
+        <li>The clock pulses electrical signals at regular intervals.</li>
+        <li>
+          A high signal is called a <strong>rising edge</strong>. This indicates
+          &quot;true&quot;, or 1.
+        </li>
+        <li>
+          A low signal is called a <strong>falling edge</strong>. This indicates
+          &quot;false&quot;, or 0.
+        </li>
+        <li>
+          One up and down pulse (taken together) is called a
+          <strong>clock cycle</strong>.
+        </li>
+      </ul>
+      <h4 id="sr-flip-flop">SR Flip-Flop</h4>
+      <p>
+        The <strong>SR flip-flop</strong> extends the SR latch by adding a clock
+        signal.
+      </p>
+      <p>
+        This signal allows the flip-flop to store information only when the
+        clock signal changes.
+      </p>
+      <p><em>Inputs / Outputs:</em></p>
+      <ul>
+        <li>C = Clock signal</li>
+        <li>S = Set signal</li>
+        <li>R = Reset signal</li>
+        <li>Q = Output</li>
+      </ul>
+      <p><em>Truth Table:</em></p>
+      <p>
+        Same as above, except now the output can only change on a rising edge
+        (uptick) of the clock signal.
+      </p>
+      <p><em>Circuit:</em></p>
+      <p>
+        <a
+          href="https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/set_reset_flip_flop.logicly"
+          >SR Flip-Flop - Logicly</a
+        >
+      </p>
+      <h4 id="demo-building-a-hold-activated-button">
+        Demo: Building a Hold Activated Button
+      </h4>
+      <div class="focusContent demo">
+        <p><em>Scenario:</em></p>
+        <p>
+          In this demo, we&#39;ll build a system that requires the user to hold
+          a button (S) for a full clock cycle before a light turns on.
+        </p>
+        <p>
+          We will measure the time using the system clock (C). If the button is
+          held for one clock cycle (rise and fall edge), the light will turn on.
+        </p>
+        <p>
+          There is a reset button (R) that can be used to turn off the light.
+        </p>
+        <p><em>Components:</em></p>
+        <ul>
+          <li>
+            The &quot;on&quot; button and a rising clock signal will set a
+            memory bit using SR flip-flop.
+          </li>
+          <li>
+            The &quot;on&quot; button and a falling clock signal will set a
+            memory bit using another SR flip-flop.
+          </li>
+          <li>
+            We will use an AND gate to combine the two signals and turn on the
+            light.
+          </li>
+          <li>
+            We will hook up the reset button to the two SR latches to clear
+            memory and turn off the light.
+          </li>
+        </ul>
+        <p><em>Circuit:</em></p>
+        <p>
+          <a
+            href="https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/hold_button.logicly"
+            >Hold Button</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

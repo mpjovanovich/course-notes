@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV140: Developing with AI</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#developing-with-ai">Developing with AI</a>
+            <ul>
+              <li>
+                <a href="#prompt-driven-development"
+                  >Prompt Driven Development</a
+                >
+                <ul>
+                  <li>
+                    <a href="#demo-cannonball-application"
+                      >Demo: Cannonball Application</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#web-ides-vs-ide-integration"
+                  >Web IDEs vs IDE Integration</a
+                >
+              </li>
+              <li>
+                <a href="#tips-for-prompting">Tips for Prompting</a>
+                <ul>
+                  <li><a href="#exercise">Exercise:</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#essential-skills-for-the-modern-software-developer"
+                  >Essential Skills for the Modern Software Developer</a
+                >
+              </li>
+              <li>
+                <a href="#final-course-takeaways">Final Course Takeaways</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="developing-with-ai">Developing with AI</h1>
+      <h2 id="prompt-driven-development">Prompt Driven Development</h2>
+      <div class="focusContent demo">
+        <h3 id="demo-cannonball-application">Demo: Cannonball Application</h3>
+        <p><a href="cannonball.txt">Cursor: Cannonball Application</a></p>
+      </div>
+
+      <h2 id="web-ides-vs-ide-integration">Web IDEs vs IDE Integration</h2>
+      <p>
+        <strong>Web interfaces</strong> like ChatGPT or Claude are useful to
+        generate snippets or ask questions about techniques:
+      </p>
+      <ul>
+        <li>
+          I&#39;m trying to build a program that...
+          <ul>
+            <li>What technologies are best suited for this?</li>
+          </ul>
+        </li>
+        <li>
+          Can you help me understand best practices for... (e.g.)
+          <ul>
+            <li>Error handling</li>
+            <li>Unit testing</li>
+            <li>Security</li>
+          </ul>
+        </li>
+        <li>
+          Can you show me an example of [X programming problem] solved with [Y
+          technology]?
+        </li>
+      </ul>
+      <p>
+        AI <strong>IDE Integration</strong> is better for writing code
+        iteratively:
+      </p>
+      <ul>
+        <li>Ask AI about your specific codebase / solution</li>
+        <li>Ask to generate some functionality</li>
+        <li>Ask about errors coming from your codebase</li>
+        <li>Ask about best practices for your codebase</li>
+      </ul>
+      <h2 id="tips-for-prompting">Tips for Prompting</h2>
+      <p>
+        Now that you know the fundamentals of coding, start using AI to help you
+        write code.
+      </p>
+      <ul>
+        <li>
+          Don&#39;t ask for the entire program at once.
+          <ul>
+            <li>
+              Try to come up with a &quot;shell&quot; program, ask AI if
+              you&#39;re on the right track
+            </li>
+            <li>
+              Tell it to give you only the piece that you want; work
+              incrementally
+            </li>
+            <li>
+              Commit changes to git after each step; AI can often change your
+              code in places that you might not catch.
+            </li>
+          </ul>
+        </li>
+        <li>Ask it to explain the code that it writes.</li>
+        <li>Ask if code follows good coding practices.</li>
+        <li>Test thoroughly</li>
+      </ul>
+      <div class="focusContent lookout">
+        <p>
+          <strong
+            ><em>Don&#39;t accept AI suggestions without review!</em></strong
+          >
+        </p>
+        <p>
+          I personally use AI nearly every time I develop, and it has never
+          produced an answer that perfectly fits my needs.
+        </p>
+        <p>
+          More importantly - it will sometimes introduce security
+          vulnerabilities or bad practices.
+        </p>
+      </div>
+
+      <div class="focusContent exercise">
+        <h3 id="exercise">Exercise:</h3>
+        <p>
+          In this exercise you will use AI to help you write a
+          &quot;flashcard&quot; style software terminology program that helps
+          you understand terminology that is appropriate for students who have
+          completed an &quot;Introduction to Programming&quot; course. The
+          program does not need a GUI (unless you want to make one). You may use
+          any technologies you want.
+        </p>
+        <p>
+          This is the only guidance you will receive. How you choose to
+          implement it is up to you.
+        </p>
+      </div>
+
+      <h2 id="essential-skills-for-the-modern-software-developer">
+        Essential Skills for the Modern Software Developer
+      </h2>
+      <ul>
+        <li>
+          <strong>Communicating</strong> with people.
+          <ul>
+            <li>Clients / stakeholders</li>
+            <li>Team members</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Communicating</strong> with AI models
+          <ul>
+            <li>Prompting</li>
+            <li>Tech literacy and <em>vocabulary</em></li>
+          </ul>
+        </li>
+        <li>
+          <strong>Learning</strong> at a rapid pace
+          <ul>
+            <li>Technology half life currently ~18 months</li>
+            <li>New skill sets</li>
+            <li>New technologies</li>
+            <li>New tools</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Redefining</strong> your role
+          <ul>
+            <li>Traditional &quot;titles&quot; are becoming obsolete</li>
+            <li>
+              Pick out unchanging interests and strengths and define yourself by
+              those; this way your situation might change, but your identity
+              doesn&#39;t
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="final-course-takeaways">Final Course Takeaways</h2>
+      <ul>
+        <li>
+          Be a <strong><em>problem solver</em></strong
+          >, not a <strong><em>programmer</em></strong>
+        </li>
+        <li>
+          Start using AI, but don&#39;t skip out on learning how to read and
+          write code.
+        </li>
+        <li>Stay optimistic, and keep building things!</li>
+      </ul>
+    </div>
+  </body>
+</html>

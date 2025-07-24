@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV153: M03</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#using-images-effectively">Using Images Effectively</a>
+          <ul>
+            <li>
+              <a href="#raster-vs-vector">Raster vs Vector</a>
+              <ul>
+                <li>
+                  <a href="#raster">Raster</a>
+                  <ul>
+                    <li><a href="#editing-programs">Editing Programs</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#vector">Vector</a>
+                  <ul>
+                    <li><a href="#editing-programs-1">Editing Programs</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#web-image-formats">Web Image Formats</a>
+              <ul>
+                <li><a href="#quick-reference">Quick Reference</a></li>
+                <li>
+                  <a href="#classics">Classics</a>
+                  <ul>
+                    <li><a href="#svg">SVG</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#new-players">New Players</a>
+                  <ul>
+                    <li><a href="#webp">WebP</a></li>
+                    <li><a href="#avif">AVIF</a></li>
+                  </ul>
+                </li>
+                <li><a href="#what-should-i-use">What Should I use?</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#html-media-elements">HTML Media Elements</a></li>
+        <li><a href="#favicon">Favicon</a></li>
+        <li>
+          <a href="#escaping-reserved-characters"
+            >Escaping Reserved Characters</a
+          >
+        </li>
+        <li><a href="#css-rounded-corners">CSS Rounded Corners</a></li>
+      </ul>
+      <h2 id="announcements">Announcements</h2>
+      <ul>
+        <li>...</li>
+      </ul>
+      <h2 id="agenda">Agenda</h2>
+      <ul>
+        <li>
+          Lecture
+          <ul>
+            <li>
+              Ref:
+              <a
+                href="https://docs.google.com/document/d/1RiTDd3gVu5q0h6CZwzXB0zUTfFAw-TgWhf7RcsFW2V8/edit"
+                >https://docs.google.com/document/d/1RiTDd3gVu5q0h6CZwzXB0zUTfFAw-TgWhf7RcsFW2V8/edit</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="using-images-effectively">Using Images Effectively</h1>
+      <h2 id="raster-vs-vector">Raster vs Vector</h2>
+      <h3 id="raster">Raster</h3>
+      <ul>
+        <li>Made up of pixels: &quot;picture elements&quot;</li>
+        <li>Resolution dependent</li>
+        <li>Can downsample well (shrink) but not upsample (grow)</li>
+      </ul>
+      <p>TODO: finish section - see old doc for now</p>
+      <h4 id="editing-programs">Editing Programs</h4>
+      <ul>
+        <li><a href="https://www.gimp.org/">GIMP</a></li>
+        <li>
+          <a href="https://www.adobe.com/products/photoshop.html">Photoshop</a>
+        </li>
+        <li><a href="https://www.getpaint.net/">Paint.NET</a></li>
+        <li><a href="https://pixlr.com/">Pixlr</a></li>
+      </ul>
+      <h3 id="vector">Vector</h3>
+      <ul>
+        <li>Made up of shapes</li>
+        <li>Resolution independent</li>
+        <li>Data is stored as mathematical equations</li>
+        <li>Can scale either way</li>
+      </ul>
+      <h4 id="editing-programs">Editing Programs</h4>
+      <ul>
+        <li><a href="https://inkscape.org/">Inkscape</a></li>
+        <li>
+          <a href="https://www.adobe.com/products/illustrator.html"
+            >Illustrator</a
+          >
+        </li>
+        <li><a href="https://vectr.com/">Vectr</a></li>
+      </ul>
+      <h2 id="web-image-formats">Web Image Formats</h2>
+      <h3 id="quick-reference">Quick Reference</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Lossy</th>
+            <th>Lossless</th>
+            <th>Transparency</th>
+            <th>Animation</th>
+            <th>Vector</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GIF</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>JPEG</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>PNG</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>SVG</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>WebP</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>AVIF*</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="classics">Classics</h3>
+      <p>TODO: finish section - see old doc for now</p>
+      <h4 id="svg">SVG</h4>
+      <ul>
+        <li>Can either be defined inline or in a separate file.</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">&#x3C;!-- Inline SVG --></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">svg</span><span style="color:#986801;--shiki-dark:#D19A66"> width</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"100"</span><span style="color:#986801;--shiki-dark:#D19A66"> height</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"100"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">circle</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    cx</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"50"</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    cy</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"50"</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    r</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"40"</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    stroke</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"green"</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    stroke-width</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"4"</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    fill</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"yellow"</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  /></span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  &#x3C;!-- This text will show if the browser doesn't support SVG --></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  Sorry, your browser does not support inline SVG.</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">svg</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span></code></pre>
+      <h3 id="new-players">New Players</h3>
+      <h4 id="webp">WebP</h4>
+      <ul>
+        <li>
+          <a href="https://developers.google.com/speed/webp">WebP</a> is a lossy
+          and lossless image format developed by Google.
+        </li>
+        <li>
+          Supported by all major browsers: Chrome, Firefox, Edge, Safari, and
+          Opera.
+        </li>
+      </ul>
+      <h4 id="avif">AVIF</h4>
+      <ul>
+        <li>Designed to supercede WebP, JPEG, PNG, GIF</li>
+        <li>
+          Really good compression
+          <ul>
+            <li>
+              <a href="https://www.ctrl.blog/entry/webp-avif-comparison.html"
+                >Comparing AVIF vs WebP file sizes at the same DSSIM</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          Supported by most major browsers, but not all
+          <ul>
+            <li><a href="https://caniuse.com/avif">Can I Use AVIF?</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h3 id="what-should-i-use">What Should I use?</h3>
+      <ul>
+        <li>
+          Photographs
+          <ul>
+            <li>WebP</li>
+            <li>
+              AVIF* with a fallback for high optimization; otherwise stick with
+              WebP until wider support.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Illustrations / Transparency
+          <ul>
+            <li>WebP</li>
+            <li>PNG works, but can&#39;t be compressed.</li>
+          </ul>
+        </li>
+        <li>
+          Upwards Scalability
+          <ul>
+            <li>SVG, but only for vector graphics.</li>
+            <li>
+              No raster (pixel) graphics can be scaled up without loss of
+              quality.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="html-media-elements">HTML Media Elements</h1>
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure"
+            >MDN: <code>&lt;figure&gt;</code></a
+          >
+          <ul>
+            <li>
+              Wraps a figure (image, diagram, code snippet, etc.) with an
+              optional caption.
+            </li>
+            <li>Nice for formatting images and captions together.</li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption"
+            >MDN: <code>&lt;figcaption&gt;</code></a
+          >
+          <ul>
+            <li>Contains a caption for a figure.</li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture"
+            >MDN: <code>&lt;picture&gt;</code></a
+          >
+          <ul>
+            <li>
+              Allows you to specify multiple sources for an image based on media
+              query.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source"
+            >MDN: <code>&lt;source&gt;</code></a
+          >
+          <ul>
+            <li>
+              Specifies a media resource for the
+              <code>&lt;picture&gt;</code> element.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"
+            >MDN: <code>&lt;img&gt;</code></a
+          >
+          <ul>
+            <li>Specifies an image.</li>
+            <li>
+              <strong>lazy loading</strong> = only load the image when it&#39;s
+              visible on the screen
+              <ul>
+                <li>
+                  <pre
+                    class="shiki shiki-themes one-light one-dark-pro"
+                    style="
+                      background-color: #fafafa;
+                      --shiki-dark-bg: #282c34;
+                      color: #383a42;
+                      --shiki-dark: #abb2bf;
+                    "
+                    tabindex="0"
+                  ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">img</span><span style="color:#986801;--shiki-dark:#D19A66"> src</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"image.png"</span><span style="color:#986801;--shiki-dark:#D19A66"> alt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"..."</span><span style="color:#986801;--shiki-dark:#D19A66"> loading</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"lazy"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> /></span></span></code></pre>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map"
+            >MDN: <code>&lt;map&gt;</code></a
+          >
+          <ul>
+            <li>Specifies an image map (clickable areas on an image).</li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area"
+            >MDN: <code>&lt;area&gt;</code></a
+          >
+          <ul>
+            <li>Specifies an area inside an image map.</li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"
+            >MDN: <code>&lt;iframe&gt;</code></a
+          >
+          <ul>
+            <li>Specifies an inline frame (embeds another HTML page).</li>
+            <li>e.g. Google Maps</li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed"
+            >MDN: <code>&lt;embed&gt;</code></a
+          >
+          <ul>
+            <li>
+              Specifies a container for an external application or interactive
+              content (e.g. a plugin).
+            </li>
+            <li>e.g. YouTube video</li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio"
+            >MDN: <code>&lt;audio&gt;</code></a
+          >
+          <ul>
+            <li>Specifies audio content.</li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video"
+            >MDN: <code>&lt;video&gt;</code></a
+          >
+          <ul>
+            <li>Specifies video content.</li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track"
+            >MDN: <code>&lt;track&gt;</code></a
+          >
+          <ul>
+            <li>
+              Specifies text tracks for <code>&lt;audio&gt;</code> and
+              <code>&lt;video&gt;</code> elements.
+            </li>
+            <li>e.g. subtitles, captions, descriptions, chapters, metadata</li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas"
+            >MDN: <code>&lt;canvas&gt;</code></a
+          >
+          <ul>
+            <li>Specifies a container for graphics.</li>
+            <li>
+              Used with JavaScript to draw graphics, animations, games, etc.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="favicon">Favicon</h1>
+      <ul>
+        <li>
+          The icon that appears in the browser tab, bookmarks, history, etc.
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#adding_custom_icons_to_your_site"
+            >MDN: How to Add a Favicon</a
+          >
+          <ul>
+            <li>
+              <pre
+                class="shiki shiki-themes one-light one-dark-pro"
+                style="
+                  background-color: #fafafa;
+                  --shiki-dark-bg: #282c34;
+                  color: #383a42;
+                  --shiki-dark: #abb2bf;
+                "
+                tabindex="0"
+              ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">link</span><span style="color:#986801;--shiki-dark:#D19A66"> rel</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"icon"</span><span style="color:#986801;--shiki-dark:#D19A66"> href</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"favicon.ico"</span><span style="color:#986801;--shiki-dark:#D19A66"> type</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"image/x-icon"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> /></span></span></code></pre>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://realfavicongenerator.net/">Favicon Generator</a>
+        </li>
+        <li>
+          Note: Any image you choose will end up looking significantly different
+          when scaled down to 16x16 pixels.
+          <ul>
+            <li>Pick something with high contrast and simple shapes.</li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="escaping-reserved-characters">Escaping Reserved Characters</h1>
+      <p>
+        <a
+          href="https://success.appen.com/hc/en-us/articles/201855899-Guide-to-Using-HTML-Tags-Characters-in-Labels"
+          >Guide to: Using HTML Tags/Characters in Labels</a
+        >
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Character</th>
+            <th>Name</th>
+            <th>Escape Sequence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Tab</code></td>
+            <td>Tab</td>
+            <td><code>&amp;Tab;</code></td>
+          </tr>
+          <tr>
+            <td><code>New Line</code></td>
+            <td>New Line</td>
+            <td><code>&amp;NewLine;</code></td>
+          </tr>
+          <tr>
+            <td><code> </code></td>
+            <td>Space</td>
+            <td><code>&amp;nbsp;</code></td>
+          </tr>
+          <tr>
+            <td><code>&quot;</code></td>
+            <td>Double Quote</td>
+            <td><code>&amp;quot;</code></td>
+          </tr>
+          <tr>
+            <td><code>&amp;</code></td>
+            <td>Ampersand</td>
+            <td><code>&amp;amp;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;</code></td>
+            <td>Less-than</td>
+            <td><code>&amp;lt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&gt;</code></td>
+            <td>Greater-than</td>
+            <td><code>&amp;gt;</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <h1 id="css-rounded-corners">CSS Rounded Corners</h1>
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"
+            >MDN: <code>border-radius</code></a
+          >
+        </li>
+        <li>
+          <a href="https://css-tricks.com/almanac/properties/b/border-radius/"
+            >CSS-Tricks: <code>border-radius</code></a
+          >
+        </li>
+        <li>
+          <a href="https://css-tricks.com/examples/ShapesOfCSS/"
+            >CSS-Tricks: <code>border-radius</code> Generator</a
+          >
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">/* All corners */</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">border-radius</span><span style="color:#A626A4;--shiki-dark:#C678DD">: 10px;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">/* Individual corners */</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">border-top-left-radius</span><span style="color:#A626A4;--shiki-dark:#C678DD">: 10px;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">border-top-right-radius</span><span style="color:#A626A4;--shiki-dark:#C678DD">: 10px;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">border-bottom-right-radius</span><span style="color:#A626A4;--shiki-dark:#C678DD">: 10px;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">border-bottom-left-radius</span><span style="color:#A626A4;--shiki-dark:#C678DD">: 10px;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">/* Elliptical corners */</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">border-radius</span><span style="color:#A626A4;--shiki-dark:#C678DD">: 10px 20px 30px 40px;</span></span></code></pre>
+    </div>
+  </body>
+</html>
