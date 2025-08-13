@@ -38,13 +38,13 @@ fi
 # Checkout the site branch
 git checkout site
 
+if [ "$deploy_mode" == "full" ]; then
+    rm -rf site/*
+fi
+
 # Copy the output to the site directory
 if [ -d output ]; then
     cp -r output/* site/
-fi
-
-if [ "$deploy_mode" == "full" ]; then
-    rm -rf site/*
 fi
 
 if [ -s deploy/remove.file ]; then
