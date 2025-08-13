@@ -8,5 +8,7 @@ export const config = {
     content: "./content/",
     output: "./output/",
     assets: "./assets/",
+    addFile: "./deploy/add.file",
+    removeFile: "./deploy/remove.file",
   },
-};
+} as const;

@@ -3,5 +3,5 @@ node_modules/
 output/
 test_output/
 site/
-deploy/add.files
-deploy/remove.files
+deploy/add.file
+deploy/remove.file
