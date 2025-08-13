@@ -43,6 +43,10 @@ if [ -d output ]; then
     cp -r output/* site/
 fi
 
+if [ "$deploy_mode" == "full" ]; then
+    rm -rf site/*
+fi
+
 if [ -s deploy/remove.file ]; then
     while read -r file; do
         # Rename content/ dir to site/
