@@ -43,11 +43,16 @@ if [ -d output ]; then
     cp -r output/* site/
 fi
 
-# If there are any removed files, remove them from the site directory
 if [ -s deploy/remove.file ]; then
     while read -r file; do
         # Rename content/ dir to site/
         site_file="${file/content/site}"
+
+        # Change .md extension to .html if present
+        if [[ "$site_file" == *.md ]]; then
+            site_file="${site_file%.md}.html"
+        fi
+
         rm -rf "$site_file"
     done < deploy/remove.file
 fi
