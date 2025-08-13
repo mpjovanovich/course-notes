@@ -52,8 +52,8 @@ fi
 # # Update the deploy version
 # echo $(git rev-parse HEAD) > deploy/deploy.version
 
-# Update the deploy version
-echo $(git rev-parse HEAD) > deploy/deploy.version
+# # Update the deploy version
+# echo $(git rev-parse HEAD) > deploy/deploy.version
 
 # # Commit the changes
 # git add .
