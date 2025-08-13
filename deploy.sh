@@ -39,7 +39,9 @@ fi
 git checkout site
 
 # Copy the output to the site directory
-cp -r output/* site/
+if [ -d output ]; then
+    cp -r output/* site/
+fi
 
 # If there are any removed files, remove them from the site directory
 if [ -s deploy/remove.file ]; then
