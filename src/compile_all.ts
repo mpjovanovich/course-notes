@@ -1,26 +1,20 @@
+import { parseDotmark } from "@mpjovanovich/dotmark";
 import fs from "fs-extra";
 import path from "path";
 import prettier from "prettier";
-import { parseDotmark } from "@mpjovanovich/dotmark";
+import { compileAssets, compileBootstrap } from "./compileUtility.js";
 import { config } from "./config.js";
-
-/* **********************************
- * Constants and Types
- * ********************************** */
-
-type Frontmatter = { [key: string]: string };
-
-const prettierOptions = {
-  parser: "html",
-  printWidth: 80,
-  tabWidth: 2,
-};
+import {
+  extractFrontmatter,
+  getSiteHtml,
+  PRETTIER_OPTIONS,
+} from "./parseUtility.js";
 
 /* **********************************
  * Functions
  * ********************************** */
 
-async function compileMarkdownToHtml(
+async function compileMarkdownFileToHtml(
   markdownFilePath: string,
   outputFilePath: string,
   outputFileDepth: number
@@ -29,93 +23,8 @@ async function compileMarkdownToHtml(
   let { frontmatter, content } = extractFrontmatter(markdown);
   let html = await parseDotmark(content);
   html = getSiteHtml(html, outputFileDepth, frontmatter);
-  html = await prettier.format(html, prettierOptions);
+  html = await prettier.format(html, PRETTIER_OPTIONS);
   await fs.writeFile(outputFilePath, html);
-}
-
-function extractFrontmatter(markdown: string): {
-  frontmatter: Frontmatter;
-  content: string;
-} {
-  const frontmatter: Frontmatter = {};
-  let content = markdown;
-
-  const frontmatterRegex = /^---\s*[\s\S]+?---/;
-  const match = markdown.match(frontmatterRegex);
-  if (match) {
-    // Extract the content of the frontmatter, excluding the delimiters
-    const frontmatterContent = match[0].replace(/---/g, "").trim();
-
-    // Split the content into lines and then into key-value pairs
-    frontmatterContent.split("\n").forEach((line) => {
-      const [key, value] = line.split(":").map((part) => part.trim());
-      if (key && value) {
-        frontmatter[key] = value;
-      }
-    });
-
-    // Remove the frontmatter from the content
-    content = markdown.replace(frontmatterRegex, "").trim();
-  }
-
-  return { frontmatter, content };
-}
-
-function getSiteHtml(
-  html: string,
-  outputFileDepth: number,
-  frontmatter?: Frontmatter
-): string {
-  let title = "";
-  if (frontmatter?.course) {
-    title = frontmatter.course + ": ";
-  }
-  if (frontmatter?.title) {
-    title += frontmatter.title;
-  }
-
-  html = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" >
-        <title>${title}</title>
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="./${"../".repeat(outputFileDepth)}assets/images/favicon-32x32.png"
-        >
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="./${"../".repeat(outputFileDepth)}assets/images/favicon-16x16.png"
-        >
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-            rel="stylesheet"
-        >
-        <script src="./${"../".repeat(outputFileDepth)}assets/scripts/code_snippets.js" defer></script>
-        <script src="./${"../".repeat(outputFileDepth)}assets/scripts/focus_content.js" defer></script>
-        <script src="./${"../".repeat(outputFileDepth)}assets/scripts/table_of_contents.js" defer></script>
-
-        <!-- Bootstrap / Sass -->
-        <link rel="stylesheet" href="./${"../".repeat(outputFileDepth)}assets/css/${config.paths.sassFile}">
-        <link rel="stylesheet" href="./${"../".repeat(outputFileDepth)}assets/css/bootstrap-icons.css">
-        <script src="./${"../".repeat(outputFileDepth)}assets/scripts/${config.paths.bootstrapJsFile}" defer></script>
-    </head>
-    <body class="bg-light">
-        <div class="content-wrapper">
-            ${html}
-        </div>
-    </body>
-    </html>
-  `;
-  return html;
 }
 
 async function processDirectory(
@@ -152,7 +61,7 @@ async function processDirectory(
           await fs.mkdir(path.dirname(htmlFilePath), { recursive: true });
 
           // Process the markdown file
-          await compileMarkdownToHtml(
+          await compileMarkdownFileToHtml(
             markdownFilePath,
             htmlFilePath,
             outputFileDepth
@@ -175,46 +84,6 @@ async function processDirectory(
  * Main
  * ********************************** */
 
-// Copy Bootstrap JS
-const bootstrapSourceFile = path.join(
-  config.paths.bootstrapJsDir,
-  config.paths.bootstrapJsFile
-);
-const bootstrapDestFile = path.join(
-  config.paths.output,
-  config.paths.assets,
-  "scripts",
-  config.paths.bootstrapJsFile
-);
-await fs.copy(bootstrapSourceFile, bootstrapDestFile);
-
-// Copy Bootstrap Icons CSS
-const bootstrapIconsSource = path.join(
-  config.paths.bootstrapFontsDir,
-  "bootstrap-icons.min.css"
-);
-const bootstrapIconsDest = path.join(
-  config.paths.output,
-  config.paths.assets,
-  "css",
-  "bootstrap-icons.css"
-);
-await fs.copy(bootstrapIconsSource, bootstrapIconsDest);
-
-// Copy Bootstrap Icons fonts directory
-const bootstrapIconsFontSource = path.join(
-  config.paths.bootstrapFontsDir,
-  "fonts"
-);
-const bootstrapIconsFontDest = path.join(
-  config.paths.output,
-  config.paths.assets,
-  "css/fonts"
-);
-await fs.copy(bootstrapIconsFontSource, bootstrapIconsFontDest);
-
-// Add static assets to the output directory
-await fs.copy(config.paths.assets, config.paths.output + "assets");
-
-// Process the files
+await compileBootstrap();
+await compileAssets();
 await processDirectory(config.paths.content, 0);

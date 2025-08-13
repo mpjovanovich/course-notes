@@ -8,3 +8,6 @@ git push origin main
 # Find modified files since last deploy
 git diff --name-only --diff-filter=AM $(cat deploy/deploy.version)..HEAD -- content/ > deploy/add.files
 git diff --name-only --diff-filter=D $(cat deploy/deploy.version)..HEAD -- content/ > deploy/remove.files
+
+# Compile the new files
+node dist/compile.js $(cat deploy/add.files)
