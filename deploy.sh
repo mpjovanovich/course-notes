@@ -19,7 +19,7 @@ npm run build
 # Must be done before rest of script
 # Could be dont manually, but this just makes it easier so that there's a one line deploy command
 git add .
-git commit -m "Pre-deploy commit"
+git commit -m "Deploy commit"
 git push origin main 
 
 if [ "$deploy_mode" == "full" ]; then
@@ -35,3 +35,13 @@ if [ "$deploy_mode" == "partial" ]; then
     node dist/compile.js
 fi
 
+# Checkout the site branch
+git checkout site
+
+# Copy the output to the site directory
+cp -r output/* site/
+
+# Commit the changes
+git add .
+git commit -m "Deploy commit"
+git push origin site
