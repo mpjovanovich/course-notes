@@ -35,27 +35,24 @@ if [ "$deploy_mode" == "partial" ]; then
     node dist/compile.js
 fi
 
-# # Checkout the site branch
-# git checkout site
+# Checkout the site branch
+git checkout site
 
-# # Copy the output to the site directory
-# cp -r output/* site/
+# Copy the output to the site directory
+cp -r output/* site/
 
-# # Commit the changes
-# git add .
-# git commit -m "Deploy commit"
-# git push origin site
+# Commit the changes
+git add .
+git commit -m "Deploy commit"
+git push origin site
 
-# # Switch back to main branch
-# git checkout main
+# Switch back to main branch
+git checkout main
 
-# # Update the deploy version
-# echo $(git rev-parse HEAD) > deploy/deploy.version
+# Update the deploy version
+echo $(git rev-parse HEAD) > deploy/deploy.version
 
-# # Update the deploy version
-# echo $(git rev-parse HEAD) > deploy/deploy.version
-
-# # Commit the changes
-# git add .
-# git commit -m "Post-deploy commit"
-# git push origin main
+# Commit the changes
+git add .
+git commit -m "Post-deploy commit"
+git push origin main
