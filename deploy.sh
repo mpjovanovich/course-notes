@@ -35,13 +35,13 @@ if [ "$deploy_mode" == "partial" ]; then
     node dist/compile.js
 fi
 
-# Checkout the site branch
-git checkout site
+# # Checkout the site branch
+# git checkout site
 
-# Copy the output to the site directory
-cp -r output/* site/
+# # Copy the output to the site directory
+# cp -r output/* site/
 
-# Commit the changes
-git add .
-git commit -m "Deploy commit"
-git push origin site
+# # Commit the changes
+# git add .
+# git commit -m "Deploy commit"
+# git push origin site
