@@ -1,3 +1,7 @@
+import { parseDotmark } from "@mpjovanovich/dotmark";
+import fs from "fs-extra";
+import path from "path";
+import prettier from "prettier";
 import { config } from "./config.js";
 
 /* **********************************
@@ -12,7 +16,26 @@ export const PRETTIER_OPTIONS = {
   tabWidth: 2,
 } as const;
 
-export function extractFrontmatter(markdown: string): {
+async function compileMarkdownFileToHtml(
+  markdownFilePath: string,
+  outputFilePath: string,
+  outputFileDepth: number
+): Promise<void> {
+  if (!markdownFilePath.endsWith(".md")) {
+    // Copy the file to the output directory
+    await fs.copy(markdownFilePath, outputFilePath);
+    return;
+  }
+
+  let markdown = await fs.readFile(markdownFilePath, "utf-8");
+  let { frontmatter, content } = extractFrontmatter(markdown);
+  let html = await parseDotmark(content);
+  html = getSiteHtml(html, outputFileDepth, frontmatter);
+  html = await prettier.format(html, PRETTIER_OPTIONS);
+  await fs.writeFile(outputFilePath, html);
+}
+
+function extractFrontmatter(markdown: string): {
   frontmatter: Frontmatter;
   content: string;
 } {
@@ -40,7 +63,11 @@ export function extractFrontmatter(markdown: string): {
   return { frontmatter, content };
 }
 
-export function getSiteHtml(
+function getFileDepth(filePath: string): number {
+  return filePath.split("/").length - 2;
+}
+
+function getSiteHtml(
   html: string,
   outputFileDepth: number,
   frontmatter?: Frontmatter
@@ -95,4 +122,17 @@ export function getSiteHtml(
     </html>
   `;
   return html;
+}
+
+export async function processFile(filePath: string): Promise<void> {
+  let outputFilePath = filePath.replace("content/", "output/");
+  await fs.mkdir(path.dirname(outputFilePath), { recursive: true });
+
+  if (filePath.endsWith(".md")) {
+    outputFilePath = outputFilePath.replace(/\.md$/, ".html");
+    const depth = getFileDepth(filePath);
+    await compileMarkdownFileToHtml(filePath, outputFilePath, depth);
+  } else {
+    await fs.copy(filePath, outputFilePath);
+  }
 }
