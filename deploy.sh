@@ -35,24 +35,32 @@ if [ "$deploy_mode" == "partial" ]; then
     node dist/compile.js
 fi
 
-# Checkout the site branch
-git checkout site
+# # Checkout the site branch
+# git checkout site
 
-# Copy the output to the site directory
-cp -r output/* site/
+# # Copy the output to the site directory
+# cp -r output/* site/
 
-# Commit the changes
-git add .
-git commit -m "Deploy commit"
-git push origin site
+# If there are any removed files, remove them from the site directory
+if [ -s deploy/remove.file ]; then
+    while read -r file; do
+        # rm -rf "site/$file"
+        echo "Removing $file"
+    done < deploy/remove.file
+fi
 
-# Switch back to main branch
-git checkout main
+# # Commit the changes
+# git add .
+# git commit -m "Deploy commit"
+# git push origin site
 
-# Update the deploy version
-echo $(git rev-parse HEAD) > deploy/deploy.version
+# # Switch back to main branch
+# git checkout main
 
-# Commit the changes
-git add .
-git commit -m "Post-deploy commit"
-git push origin main
+# # Update the deploy version
+# echo $(git rev-parse HEAD) > deploy/deploy.version
+
+# # Commit the changes
+# git add .
+# git commit -m "Post-deploy commit"
+# git push origin main
