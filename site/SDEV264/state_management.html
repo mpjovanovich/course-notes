@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV264: Basic State Management</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#basic-state-management">Basic State Management</a>
+          <ul>
+            <li><a href="#data-binding">Data Binding</a></li>
+            <li><a href="#one-way-data-binding">One-way Data Binding</a></li>
+            <li><a href="#two-way-data-binding">Two-way Data Binding</a></li>
+            <li><a href="#state-hooks">State Hooks</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="basic-state-management">Basic State Management</h1>
+      <p>
+        <strong>State</strong> is the set of data that describes the application
+        at a point in time; like a snapshot.
+      </p>
+      <p>Examples of state:</p>
+      <ul>
+        <li>Current text in a text input</li>
+        <li>Current user that is logged in</li>
+        <li>Validity of a form field (maybe show a red border if invalid)</li>
+        <li>Whether a modal window is open or closed</li>
+      </ul>
+      <h2 id="data-binding">Data Binding</h2>
+      <p>
+        <strong>Data binding</strong> is the process of connecting data to a
+        view.
+      </p>
+      <h2 id="one-way-data-binding">One-way Data Binding</h2>
+      <ul>
+        <li>The default behavior in React</li>
+        <li>Data flows from parent to child.</li>
+        <li>Child can read data, but not change (mutate) it.</li>
+      </ul>
+      <p>Example:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Imports not shown</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// The App component is the parent.</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// The TextInput component is the child.</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// TextInput cannot change the value of the text variable.</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> App</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> () </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    let</span><span style="color:#383A42;--shiki-dark:#E06C75"> text</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'Hey.'</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="color:#C18401;--shiki-dark:#E5C07B">TextInput</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> value</span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#C678DD">{</span><span style="color:#383A42;--shiki-dark:#E06C75">text</span><span style="color:#383A42;--shiki-dark:#C678DD">}</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> /></span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span></code></pre>
+      <h2 id="two-way-data-binding">Two-way Data Binding</h2>
+      <ul>
+        <li>Developer must implement</li>
+        <li>
+          Data flows in both directions: parent to child and child to parent
+        </li>
+        <li>Parent and child can change data</li>
+      </ul>
+      <h2 id="state-hooks">State Hooks</h2>
+      <p>
+        <strong>State hooks</strong> are used to create stateful components in
+        React.
+      </p>
+      <ul>
+        <li>Imported from the <code>react</code> library</li>
+        <li>
+          <code>useState</code> function returns an array with two elements:
+          <ul>
+            <li>A variable to hold the state</li>
+            <li>A function to update the state (a setter function)</li>
+          </ul>
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Other imports not shown</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> { </span><span style="color:#E45649;--shiki-dark:#E06C75">useState</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> } </span><span style="color:#A626A4;--shiki-dark:#C678DD">from</span><span style="color:#50A14F;--shiki-dark:#98C379"> "react"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> App</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> () </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // By convention we cell the setter "set[VariableName]"</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  const</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [</span><span style="color:#986801;--shiki-dark:#E5C07B">text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#E5C07B">setText</span><span style="color:#383A42;--shiki-dark:#ABB2BF">] </span><span style="color:#0184BC;--shiki-dark:#56B6C2">=</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> useState</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Hey."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // Will be called when the "ChangeText" event is triggered</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  const</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> handleChangeText</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">text</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> string</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">    setText</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> &#x3C;</span><span style="color:#C18401;--shiki-dark:#E5C07B">TextInput</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> value</span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#C678DD">{</span><span style="color:#383A42;--shiki-dark:#E06C75">text</span><span style="color:#383A42;--shiki-dark:#C678DD">}</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> onChangeText</span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#C678DD">{</span><span style="color:#383A42;--shiki-dark:#E06C75">handleChangeText</span><span style="color:#383A42;--shiki-dark:#C678DD">}</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> />;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">};</span></span></code></pre>
+      <p><strong>Other Examples:</strong></p>
+      <p>
+        <a href="https://snack.expo.dev/@mpjovanovich/two-way-data-binding"
+          >Snack: Two-way Data Binding</a
+        >
+      </p>
+      <p>
+        <a href="https://snack.expo.dev/@mpjovanovich/state-playground"
+          >Snack: State Playground</a
+        >
+      </p>
+    </div>
+  </body>
+</html>

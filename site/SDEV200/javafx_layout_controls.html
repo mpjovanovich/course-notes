@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV200: Data Types</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#javafx-layout-and-controls">JavaFX Layout and Controls</a>
+            <ul>
+              <li><a href="#scene">Scene</a></li>
+              <li><a href="#container-classes">Container Classes</a></li>
+              <li><a href="#basic-controls">Basic Controls</a></li>
+              <li><a href="#styling">Styling</a></li>
+              <li><a href="#example">Example</a></li>
+              <li><a href="#nesting-controls">Nesting Controls</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="javafx-layout-and-controls">JavaFX Layout and Controls</h1>
+      <p>
+        JavaFX works by arranging controls in a scene, which is then displayed
+        in a window.
+      </p>
+      <p>These controls are arranged in a hierarchy of container classes.</p>
+      <h2 id="scene">Scene</h2>
+      <p>
+        The scene is the root of the JavaFX application. It contains all the
+        controls and the layout of the application.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">Scene</span><span style="color:#E45649;--shiki-dark:#E06C75"> scene </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Scene</span><span style="color:#383A42;--shiki-dark:#E06C75">(root</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;--shiki-dark:#D19A66"> 800</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;--shiki-dark:#D19A66"> 600</span><span style="color:#383A42;--shiki-dark:#E06C75">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <h2 id="container-classes">Container Classes</h2>
+      <p>
+        JavaFX offers several container classes that allow you to arrange and
+        manage UI components.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Container Class</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>VBox</code></td>
+            <td>A container that arranges components in a vertical column.</td>
+          </tr>
+          <tr>
+            <td><code>HBox</code></td>
+            <td>A container that arranges components in a horizontal row.</td>
+          </tr>
+          <tr>
+            <td><code>StackPane</code></td>
+            <td>
+              A basic container that allows you to place components on top of
+              each other.
+            </td>
+          </tr>
+          <tr>
+            <td><code>BorderPane</code></td>
+            <td>
+              A container that divides the available space into five regions:
+              top, bottom, left, right, and center.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="basic-controls">Basic Controls</h2>
+      <p>Input controls are used to get input from the user.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Input Control</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Button</code></td>
+            <td>A button that can be clicked.</td>
+          </tr>
+          <tr>
+            <td><code>Label</code></td>
+            <td>A label that displays text.</td>
+          </tr>
+          <tr>
+            <td><code>TextField</code></td>
+            <td>A single-line text input field.</td>
+          </tr>
+          <tr>
+            <td><code>CheckBox</code></td>
+            <td>A checkbox that can be checked or unchecked.</td>
+          </tr>
+          <tr>
+            <td><code>ComboBox</code></td>
+            <td>A dropdown list of items.</td>
+          </tr>
+          <tr>
+            <td><code>ImageView</code></td>
+            <td>A control that displays an image.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Input controls are typically prefixed to indicate their type.</p>
+      <h2 id="styling">Styling</h2>
+      <p>
+        JavaFX provides a CSS-like styling system to customize the appearance of
+        controls.
+      </p>
+      <p>
+        This can be set in an external CSS file or inline in the JavaFX code.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Inline styling</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">Button</span><span style="color:#E45649;--shiki-dark:#E06C75"> button </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Button</span><span style="color:#383A42;--shiki-dark:#E06C75">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Click me"</span><span style="color:#383A42;--shiki-dark:#E06C75">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">button</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setStyle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"-fx-background-color: #42a5f5;"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <h2 id="example">Example</h2>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.application.Application</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.scene.Scene</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.scene.control.Button</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.scene.control.Label</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.scene.layout.VBox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#C18401;--shiki-dark:#E5C07B"> javafx.stage.Stage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Main</span><span style="color:#A626A4;--shiki-dark:#C678DD"> extends</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Application</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    @</span><span style="color:#A626A4;--shiki-dark:#E5C07B">Override</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> start</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Stage</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> primaryStage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Create controls</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Label</span><span style="color:#E45649;--shiki-dark:#E06C75"> lblWelcome</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Label</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Welcome to JavaFX!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        lblWelcome</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setStyle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"-fx-font-weight: bold;"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Button</span><span style="color:#E45649;--shiki-dark:#E06C75"> btnClickMe</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Button</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Click Me"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        btnClickMe</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setStyle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"-fx-background-color: black; -fx-text-fill: white;"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Create VBox container</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        VBox</span><span style="color:#E45649;--shiki-dark:#E06C75"> vbox</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> VBox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">); </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 10px spacing</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        vbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setStyle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"-fx-padding: 20;"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">); </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Padding around VBox</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Add child controls to vbox</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        vbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getChildren</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(lblWelcome);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        vbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getChildren</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(btnClickMe);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Add the VBox to a Scene. It will be the root node in the scene</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Scene</span><span style="color:#E45649;--shiki-dark:#E06C75"> scene</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Scene</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(vbox, </span><span style="color:#986801;--shiki-dark:#D19A66">300</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">200</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Set the controls needed to "start" the application</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        primaryStage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setTitle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Simple App"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        primaryStage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">setScene</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(scene);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        primaryStage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">show</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[] </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">args</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">        launch</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(args);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <h2 id="nesting-controls">Nesting Controls</h2>
+      <p>
+        Controls can be nested within other controls. The controls form a
+        hierarchy, starting with the root node.
+      </p>
+      <p>We can utilize this to create more complex layouts.</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Create four label controls</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">Label</span><span style="color:#E45649;--shiki-dark:#E06C75"> lblFirst </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Label</span><span style="color:#383A42;--shiki-dark:#E06C75">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"First"</span><span style="color:#383A42;--shiki-dark:#E06C75">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">Label</span><span style="color:#E45649;--shiki-dark:#E06C75"> lblSecond </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Label</span><span style="color:#383A42;--shiki-dark:#E06C75">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Second"</span><span style="color:#383A42;--shiki-dark:#E06C75">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">Label</span><span style="color:#E45649;--shiki-dark:#E06C75"> lblThird </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Label</span><span style="color:#383A42;--shiki-dark:#E06C75">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Third"</span><span style="color:#383A42;--shiki-dark:#E06C75">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">Label</span><span style="color:#E45649;--shiki-dark:#E06C75"> lblFourth </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Label</span><span style="color:#383A42;--shiki-dark:#E06C75">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Fourth"</span><span style="color:#383A42;--shiki-dark:#E06C75">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Add the labels to the HBox (to make a row)</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">hbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getChildren</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(lblFirst);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">hbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getChildren</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(lblSecond);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Create a HBox container</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">HBox</span><span style="color:#E45649;--shiki-dark:#E06C75"> hbox </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> HBox</span><span style="color:#383A42;--shiki-dark:#E06C75">(</span><span style="color:#986801;--shiki-dark:#D19A66">10</span><span style="color:#383A42;--shiki-dark:#E06C75">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">hbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getChildren</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(lblSecond);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">hbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getChildren</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(lblThird);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Create a VBox container</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">VBox</span><span style="color:#E45649;--shiki-dark:#E06C75"> vbox </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> VBox</span><span style="color:#383A42;--shiki-dark:#E06C75">(</span><span style="color:#986801;--shiki-dark:#D19A66">10</span><span style="color:#383A42;--shiki-dark:#E06C75">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">vbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getChildren</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(lblFirst);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">vbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getChildren</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(hbox);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">vbox</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getChildren</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#4078F2;--shiki-dark:#61AFEF">add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(lblFourth);</span></span></code></pre>
+    </div>
+  </body>
+</html>

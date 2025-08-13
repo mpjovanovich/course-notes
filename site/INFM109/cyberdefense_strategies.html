@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFM109: Cyber Defense Strategies</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#cyberdefense-strategies">Cyberdefense Strategies</a>
+          <ul>
+            <li>
+              <a href="#security-principles">Security Principles</a>
+              <ul>
+                <li><a href="#shift-left">Shift Left</a></li>
+                <li>
+                  <a href="#building-a-security-culture"
+                    >Building a Security Culture</a
+                  >
+                  <ul>
+                    <li>
+                      <a
+                        href="#what-does-shift-left-look-like-for-different-it-professions"
+                        >What does &quot;shift left&quot; look like for
+                        different IT professions?</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#principle-of-least-privilege"
+                    >Principle of Least Privilege</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#technical-controls">Technical Controls</a>
+              <ul>
+                <li>
+                  <a href="#hashing-and-encryption">Hashing and Encryption</a>
+                  <ul>
+                    <li>
+                      <a href="#key-differences-between-hashing-and-encryption"
+                        >Key Differences Between Hashing and Encryption</a
+                      >
+                    </li>
+                    <li><a href="#hashing">Hashing</a></li>
+                    <li><a href="#encryption">Encryption</a></li>
+                    <li>
+                      <a href="#digital-signatures">Digital Signatures</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#user-and-group-permissions"
+                    >User and Group Permissions</a
+                  >
+                  <ul>
+                    <li>
+                      <a href="#basic-permission-types"
+                        >Basic permission types:</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#active-threat-monitoring">Active Threat Monitoring</a>
+              <ul>
+                <li><a href="#threat-intelligence">Threat Intelligence</a></li>
+                <li>
+                  <a href="#using-cisa-resources">Using CISA Resources</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#implementing-a-comprehensive-defense-strategy"
+                >Implementing a Comprehensive Defense Strategy</a
+              >
+              <ul>
+                <li>
+                  <a href="#layered-security-defense-in-depth"
+                    >Layered Security (Defense in Depth)</a
+                  >
+                </li>
+                <li>
+                  <a href="#security-monitoring-and-incident-response"
+                    >Security Monitoring and Incident Response</a
+                  >
+                  <ul>
+                    <li>
+                      <a href="#key-monitoring-activities"
+                        >Key monitoring activities:</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#key-takeaways">Key Takeaways</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="cyberdefense-strategies">Cyberdefense Strategies</h1>
+      <h2 id="security-principles">Security Principles</h2>
+      <h3 id="shift-left">Shift Left</h3>
+      <figure>
+        <img
+          src="https://www.softwaretestingmaterial.com/wp-content/uploads/2019/08/Shift-Left-Testing.webp"
+          alt="Shift Left"
+        />
+        <figcaption>
+          Note: this image focuses on the term "testing" but we're talking about
+          all types of security activities at each of these stages.
+        </figcaption>
+      </figure>
+
+      <p>
+        <strong>Basic concept</strong>: Security should not be an afterthought;
+        it should be considered at the very start of all IT-related activities.
+      </p>
+      <p>
+        The term &quot;shift left&quot; refers to moving security considerations
+        earlier in any process - whether that&#39;s software development, system
+        design, or business planning.
+      </p>
+      <h3 id="building-a-security-culture">Building a Security Culture</h3>
+      <p>
+        Technology alone cannot provide complete protection. Organizations must
+        also focus on:
+      </p>
+      <p>
+        <strong>Security awareness training</strong>: Regular education about
+        current threats and best practices <strong>Clear policies</strong>:
+        Well-defined security policies that are communicated and enforced
+        <strong>Incident reporting</strong>: Encouraging employees to report
+        suspicious activities <strong>Continuous improvement</strong>: Regular
+        review and update of security practices
+      </p>
+      <h4 id="what-does-shift-left-look-like-for-different-it-professions">
+        What does "shift left" look like for different IT professions?
+      </h4>
+      <p><strong>Software developers</strong>:</p>
+      <ul>
+        <li>
+          According to NIST: The cost of correcting a software vulnerability
+          during the development phase is approximately 30-60 times less than
+          the cost of fixing the vulnerability after the program has gone to
+          production
+        </li>
+        <li>Implement security reviews during code development</li>
+        <li>Use automated security testing tools</li>
+        <li>Follow secure coding practices from project start</li>
+      </ul>
+      <div class="focusContent demo">
+        <p>
+          Let&#39;s take a look at the security alerts for this application:
+        </p>
+        <p>
+          <a href="https://mpj-game-of-life.web.app/"
+            >Game of Life Application</a
+          >
+        </p>
+        <p>
+          <a
+            href="https://github.com/mpjovanovich/life_react/security/dependabot"
+            >Related Security Alerts</a
+          >
+        </p>
+      </div>
+
+      <p><strong>System administrators</strong>:</p>
+      <ul>
+        <li>Design security into system architecture</li>
+        <li>Implement security controls during initial setup</li>
+        <li>Plan for security monitoring from day one</li>
+      </ul>
+      <div class="focusContent note">
+        <p>
+          You may hear the term <strong>application architecture</strong> in the
+          context of a software system. This refers to how all of the pieces
+          that make up the overall application fit together.
+        </p>
+        <p>
+          Some examples of incorporating security at the system architecture
+          level include:
+        </p>
+        <ul>
+          <li>
+            Minimizing the <strong>attack surface</strong> of the applicaition
+            by...
+            <ul>
+              <li>
+                Only <em>exposing</em> (opening up for public Internet
+                communication) parts of the application that need to be open to
+                the public.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Minimizing the <strong>blast radius</strong> by...
+            <ul>
+              <li>
+                Using short lived <em>tokens</em> for authentication, so that
+                any attacker who somehow obtains a compromised authentication
+                token only has a short window to launch an attack.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <p><strong>Business analysts</strong>:</p>
+      <ul>
+        <li>
+          Communicate with the teams building software to ensure that security
+          best practices are understood.
+        </li>
+        <li>Include security requirements in initial project specifications</li>
+        <li>Consider security implications during business process design</li>
+      </ul>
+      <h3 id="principle-of-least-privilege">Principle of Least Privilege</h3>
+      <p>
+        <strong>Principle of Least Privilege</strong> = Users and systems should
+        be given only the minimum levels of access needed to perform their job
+        functions.
+      </p>
+      <p>Examples:</p>
+      <ul>
+        <li><em>Role Based Access Control (RBAC)</em></li>
+        <li>
+          UI should not make visible functionality that users of a particular
+          role don&#39;t need to see.
+        </li>
+        <li>
+          <em>Protected pages</em> should show as &quot;not found&quot; to
+          unauthenticated users, or reroute to login page.
+        </li>
+        <li>Database admin vs read/write vs readonly user</li>
+      </ul>
+      <h2 id="technical-controls">Technical Controls</h2>
+      <h3 id="hashing-and-encryption">Hashing and Encryption</h3>
+      <p>
+        Two fundamental cryptographic technologies that serve different purposes
+        in cybersecurity.
+      </p>
+      <h4 id="key-differences-between-hashing-and-encryption">
+        Key Differences Between Hashing and Encryption
+      </h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>Hashing</th>
+            <th>Encryption</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Purpose</strong></td>
+            <td>Verify integrity</td>
+            <td>Protect confidentiality</td>
+          </tr>
+          <tr>
+            <td><strong>Reversible</strong></td>
+            <td>No</td>
+            <td>Yes (with key)</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4 id="hashing">Hashing</h4>
+      <p>
+        <strong>Purpose</strong>: Verify the integrity of data (ensure it
+        hasn&#39;t been changed).
+      </p>
+      <p>
+        <strong>How it works</strong>: Converts data into a fixed-length string
+        (hash) that uniquely represents the original data. The process cannot be
+        reversed.
+      </p>
+      <p><strong>Use cases</strong>:</p>
+      <ul>
+        <li>Storing passwords securely</li>
+        <li>Verifying file integrity</li>
+        <li>Digital signatures</li>
+        <li>Detecting unauthorized changes to data</li>
+      </ul>
+      <div class="focusContent demo">
+        <p><strong>Hashing Demonstration</strong></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Create two files with very similar content</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Data to be hashed."</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> > </span><span style="color:#50A14F;--shiki-dark:#98C379">file1.txt</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="color:#50A14F;--shiki-dark:#98C379"> "data to be hashed."</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> > </span><span style="color:#50A14F;--shiki-dark:#98C379">file2.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Generate MD5 hashes - note how different they are</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">md5sum</span><span style="color:#50A14F;--shiki-dark:#98C379"> file1.txt</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">md5sum</span><span style="color:#50A14F;--shiki-dark:#98C379"> file2.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Show that even identical files produce identical hashes</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">cp</span><span style="color:#50A14F;--shiki-dark:#98C379"> file1.txt</span><span style="color:#50A14F;--shiki-dark:#98C379"> file1_copy.txt</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">md5sum</span><span style="color:#50A14F;--shiki-dark:#98C379"> file1.txt</span><span style="color:#50A14F;--shiki-dark:#98C379"> file1_copy.txt</span></span></code></pre>
+        <p>
+          <strong>Key takeaway</strong>: Even tiny changes in data produce
+          completely different hashes, making it easy to detect if data has been
+          modified.
+        </p>
+      </div>
+
+      <h4 id="encryption">Encryption</h4>
+      <p>
+        <strong>Purpose</strong>: Protect data from unauthorized viewers during
+        storage or transmission.
+      </p>
+      <p>
+        <strong>How it works</strong>: Converts readable data (plaintext) into
+        unreadable data (ciphertext) using a key. The process can be reversed
+        with the correct key.
+      </p>
+      <p><strong>Use cases</strong>:</p>
+      <ul>
+        <li>Protecting sensitive files on disk</li>
+        <li>Securing data transmitted over networks</li>
+        <li>Protecting backups and archives</li>
+        <li>Securing communications (email, messaging)</li>
+      </ul>
+      <div class="focusContent demo">
+        <p><strong>Encryption Demonstration</strong></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Create a sample file</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="color:#50A14F;--shiki-dark:#98C379"> "This is confidential data."</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> > </span><span style="color:#50A14F;--shiki-dark:#98C379">confidential.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Encrypt the file using GPG</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">gpg</span><span style="color:#986801;--shiki-dark:#D19A66"> -c</span><span style="color:#50A14F;--shiki-dark:#98C379"> confidential.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Remove the original unencrypted file</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">rm</span><span style="color:#50A14F;--shiki-dark:#98C379"> confidential.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Show that the encrypted file is unreadable</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">cat</span><span style="color:#50A14F;--shiki-dark:#98C379"> confidential.txt.gpg</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Decrypt the file back to readable format</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">gpg</span><span style="color:#986801;--shiki-dark:#D19A66"> -o</span><span style="color:#50A14F;--shiki-dark:#98C379"> confidential.txt</span><span style="color:#986801;--shiki-dark:#D19A66"> -d</span><span style="color:#50A14F;--shiki-dark:#98C379"> confidential.txt.gpg</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">cat</span><span style="color:#50A14F;--shiki-dark:#98C379"> confidential.txt</span></span></code></pre>
+        <p>
+          <strong>Key takeaway</strong>: Encryption makes data unreadable
+          without the proper key, but it&#39;s reversible.
+        </p>
+      </div>
+
+      <h4 id="digital-signatures">Digital Signatures</h4>
+      <p>
+        <strong>Digital signatures</strong> are a way to verify the authenticity
+        of data - whether the data was created by the person or entity that
+        claims to have created it.
+      </p>
+      <p>
+        <strong>Tokens</strong> are a way to pass data between the client (web
+        browser) and server (web application). The token is essentially a
+        message that has a tampering detection mechanism built in.
+      </p>
+      <p>
+        Imagine that you have a website that requires a login. Here&#39;s how it
+        works:
+      </p>
+      <ol>
+        <li>User logs in with username and password</li>
+        <li>
+          Server creates a token with user information (like roles and
+          permissions)
+        </li>
+        <li>
+          Server <strong>signs</strong> the token (creates a hash using its own
+          secret key)
+        </li>
+        <li>
+          Client stores the token and sends it back to the server every time
+          that it requests a page from the site
+        </li>
+        <li>
+          Server verifies the signature to ensure the token hasn&#39;t been
+          tampered with
+        </li>
+      </ol>
+      <p>
+        The server might then, as with Role Based Access Control, check the
+        token to see if the user has the appropriate permissions to access the
+        requested page.
+      </p>
+      <p>
+        <strong>Key point</strong>: Only the server with the secret key can
+        create a valid signature and check whether its original contents have
+        been tampered with.
+      </p>
+      <div class="focusContent exercise">
+        <p><strong>Daily Quiz 1: JSON Web Tokens</strong></p>
+        <p>
+          In this exercise we will visit <a href="https://jwt.io">jwt.io</a>. We
+          will create a JWT token and see how tampering detection works.
+        </p>
+        <ol>
+          <li>
+            On the &quot;JWT Encoder&quot; tab, enter the following information
+            into the &quot;Payload&quot; area:
+          </li>
+        </ol>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "id"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"123"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Awesome User"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "admin"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#0184BC;--shiki-dark:#D19A66">false</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+        <p>
+          Copy the text from the &quot;JSON WEB TOKEN&quot; area on the right.
+          This is the signed token that was generated with the server&#39;s
+          secret key in the &quot;SECRET&quot; area.
+        </p>
+        <ol start="2">
+          <li>
+            On the &quot;JWT Decoder&quot; tab, paste the token you copied in
+            the previous step into the text area. You should see the three
+            fields from step 1.
+          </li>
+        </ol>
+        <p>
+          What this is showing is that the client can send this token to the
+          server, and it can both reassemble the original information and tell
+          that nothing has been changed. We see the message &quot;Signature
+          Verified&quot;.
+        </p>
+        <figure>
+          <img src="images/jwt_verified.png" alt="JWT Verified" />
+        </figure>
+
+        <p><em>Take a screenshot of this section.</em></p>
+        <ol start="3">
+          <li>
+            Now let&#39;s try to tamper with the token. Even though the text
+            from the original token isn&#39;t human readable by default,
+            it&#39;s very easy to see the information in plaintext using tools
+            like
+            <a href="https://emn178.github.io/online-tools/base64_decode.html"
+              >this one</a
+            >.
+          </li>
+        </ol>
+        <p>
+          The snippet below is an altered version of the original token that
+          sets the
+          <code>admin</code> field to <code>true</code>. This represents a
+          malicious user trying to gain elevated privileges.
+        </p>
+        <p>
+          Copy and paste this into the &quot;JSON WEB TOKEN&quot; area on the
+          &quot;JWT Decoder&quot; tab.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMyIsIm5hbWUiOiJBd2Vzb21lIFVzZXIiLCJhZG1pbiI6dHJ1ZX0._tStqR0CWzn2KzGKA-NGyJGIN92dasCzQoarfR4mEnE</span></span></code></pre>
+        <p>
+          Note that the &quot;DECODED PAYLOAD&quot; section shows the tampered
+          information; however the &quot;Signature Verified&quot; message is now
+          &quot;Invalid Signature&quot;.
+        </p>
+        <p>
+          This is because the web server again uses its secret key to verify the
+          signature. It can tell that the information, when hashed with its
+          secret key, does not match the signature in the token. Even a tiny
+          change to the data creates a completely different hash, just like we
+          saw in our earlier hashing demonstration.
+        </p>
+        <figure>
+          <img src="images/jwt_tampered.png" alt="JWT Tampered" />
+        </figure>
+
+        <p><em>Take a screenshot of this section.</em></p>
+      </div>
+
+      <h3 id="user-and-group-permissions">User and Group Permissions</h3>
+      <p>
+        File and directory permissions are a fundamental security control that
+        determines who can access what resources.
+      </p>
+      <h4 id="basic-permission-types">Basic permission types:</h4>
+      <ul>
+        <li>
+          <strong>Read (r)</strong>: View file contents or list directory
+          contents
+        </li>
+        <li>
+          <strong>Write (w)</strong>: Modify file contents or create/delete
+          files in directory
+        </li>
+        <li>
+          <strong>Execute (x)</strong>: Run a file as a program or enter a
+          directory
+        </li>
+      </ul>
+      <p>
+        When might we want to make a file read-only? Read/write? Executable?
+      </p>
+      <div class="focusContent demo">
+        <p><strong>Permissions Demonstration</strong></p>
+        <p>
+          The Linux permissions model breaks the permission for each file into
+          three parts:
+        </p>
+        <ul>
+          <li>Owner (first number)</li>
+          <li>Group (second number)</li>
+          <li>Other (third number)</li>
+        </ul>
+        <p>
+          Windows also has the concept of &quot;read-only&quot; files. We can
+          check if a file is read-only by right clicking on it and selecting
+          &quot;properties&quot;.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Create a sample file and check its permissions</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Sensitive company information"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> > </span><span style="color:#50A14F;--shiki-dark:#98C379">sensitive.txt</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ls</span><span style="color:#986801;--shiki-dark:#D19A66"> -l</span><span style="color:#50A14F;--shiki-dark:#98C379"> sensitive.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Make the file read-only for everyone</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">chmod</span><span style="color:#50A14F;--shiki-dark:#98C379"> r--r--r--</span><span style="color:#50A14F;--shiki-dark:#98C379"> sensitive.txt</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ls</span><span style="color:#986801;--shiki-dark:#D19A66"> -l</span><span style="color:#50A14F;--shiki-dark:#98C379"> sensitive.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Try to modify the file - this should fail</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Additional data"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> >> </span><span style="color:#50A14F;--shiki-dark:#98C379">sensitive.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Restore write permissions to demonstrate the concept</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">chmod</span><span style="color:#50A14F;--shiki-dark:#98C379"> rw-r--r--</span><span style="color:#50A14F;--shiki-dark:#98C379"> sensitive.txt</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Additional data"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> >> </span><span style="color:#50A14F;--shiki-dark:#98C379">sensitive.txt</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">cat</span><span style="color:#50A14F;--shiki-dark:#98C379"> sensitive.txt</span></span></code></pre>
+        <p>
+          <strong>Key takeaway</strong>: Proper permissions prevent unauthorized
+          access and modifications to critical files.
+        </p>
+      </div>
+
+      <h2 id="active-threat-monitoring">Active Threat Monitoring</h2>
+      <h3 id="threat-intelligence">Threat Intelligence</h3>
+      <p>
+        <strong>Threat intelligence</strong> = Evidence-based knowledge about
+        current and emerging security threats, including their context,
+        mechanisms, indicators, implications, and action-oriented advice.
+      </p>
+      <h3 id="using-cisa-resources">Using CISA Resources</h3>
+      <p>
+        The
+        <a href="https://www.cisa.gov/news-events/cybersecurity-advisories"
+          ><strong
+            >Cybersecurity and Infrastructure Security Agency (CISA)</strong
+          ></a
+        >
+        provides free threat intelligence and security advisories to help
+        organizations stay informed about current threats.
+      </p>
+      <div class="focusContent exercise">
+        <p><strong>Daily Quiz 2: CISA Advisory Analysis</strong></p>
+        <p>Do this on your own, then we will discuss the answers together.</p>
+        <p>
+          Analyze the following advisory:
+          <a
+            href="https://www.cisa.gov/news-events/ics-advisories/icsa-25-196-03"
+            >ICS-25-196-03</a
+          >
+        </p>
+        <ol>
+          <li>
+            <p>
+              <strong>Device/System Type</strong>: What kind of device or system
+              is targeted by this vulnerability? (e.g., personal computing
+              devices, corporate computing systems, industrial control systems,
+              etc.)
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Vulnerability Description</strong>: What is the actual
+              vulnerability (the problem with the software/device)?
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Exploit Difficulty</strong>: Which part(s) of the advisory
+              tell us how difficult it would be for an attacker to exploit this
+              vulnerability?
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Attack Consequences</strong>: What are the potential
+              consequences if this vulnerability is successfully exploited?
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Mitigation Strategy</strong>: What is one mitigation
+              strategy listed that could defend against this attack?
+            </p>
+          </li>
+        </ol>
+      </div>
+
+      <h2 id="implementing-a-comprehensive-defense-strategy">
+        Implementing a Comprehensive Defense Strategy
+      </h2>
+      <h3 id="layered-security-defense-in-depth">
+        Layered Security (Defense in Depth)
+      </h3>
+      <p>Effective cybersecurity requires multiple layers of protection:</p>
+      <p>
+        <strong>Physical layer</strong>: Secure facilities, locked server rooms,
+        badge access <strong>Network layer</strong>: Firewalls, intrusion
+        detection systems, network segmentation <strong>System layer</strong>:
+        Antivirus software, system hardening, patch management
+        <strong>Application layer</strong>: Secure coding, input validation,
+        application firewalls <strong>Data layer</strong>: Encryption, access
+        controls, data classification <strong>Human layer</strong>: Security
+        training, awareness programs, clear policies
+      </p>
+      <h3 id="security-monitoring-and-incident-response">
+        Security Monitoring and Incident Response
+      </h3>
+      <p><strong>Continuous monitoring</strong> is essential because:</p>
+      <ul>
+        <li>New threats emerge daily</li>
+        <li>Attack techniques constantly evolve</li>
+        <li>Systems and configurations change over time</li>
+        <li>Early detection reduces impact</li>
+      </ul>
+      <h4 id="key-monitoring-activities">Key monitoring activities:</h4>
+      <ul>
+        <li>
+          <strong>Log analysis</strong>: Review system and security logs for
+          suspicious activity
+        </li>
+        <li>
+          <strong>Vulnerability scanning</strong>: Regular checks for known
+          security weaknesses
+        </li>
+        <li>
+          <strong>Threat hunting</strong>: Proactive searching for signs of
+          compromise
+        </li>
+        <li>
+          <strong>Security metrics</strong>: Track security performance and
+          improvement over time
+        </li>
+      </ul>
+      <h2 id="key-takeaways">Key Takeaways</h2>
+      <p>Effective cybersecurity defense requires:</p>
+      <ul>
+        <li>
+          <strong>Early integration</strong>: Implement security from the
+          beginning (shift left)
+        </li>
+        <li>
+          <strong>Appropriate access</strong>: Give users only the access they
+          need (least privilege)
+        </li>
+        <li>
+          <strong>Strong technical controls</strong>: Use encryption, hashing,
+          and permissions appropriately
+        </li>
+        <li>
+          <strong>Active monitoring</strong>: Stay informed about current
+          threats and vulnerabilities
+        </li>
+        <li>
+          <strong>Layered approach</strong>: Implement multiple complementary
+          security measures
+        </li>
+        <li>
+          <strong>Organizational commitment</strong>: Build security into
+          company culture and processes
+        </li>
+      </ul>
+      <p>
+        Remember: Security is not a destination but an ongoing process that
+        requires constant attention, adaptation, and improvement.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV200: Class Diagrams</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#class-diagrams">Class Diagrams</a>
+            <ul>
+              <li>
+                <a href="#class-diagram-components">Class Diagram Components</a>
+                <ul>
+                  <li><a href="#basics">Basics</a></li>
+                  <li><a href="#relationships">Relationships</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="class-diagrams">Class Diagrams</h1>
+      <p>
+        A <strong>class diagram</strong> is a UML diagram that represents the
+        classes in a program and the relationships between them.
+      </p>
+      <p>
+        We will use a free online tool called <em>draw.io</em> to create class
+        diagrams.
+      </p>
+      <p><em>Link to Software</em></p>
+      <p><a href="https://app.diagrams.net/">draw.io</a></p>
+      <p><em>Link to Instructions</em></p>
+      <p>
+        <a href="https://drawio-app.com/blog/uml-class-diagrams-in-draw-io/"
+          >UML class diagrams in draw.io</a
+        >
+      </p>
+      <h2 id="class-diagram-components">Class Diagram Components</h2>
+      <h3 id="basics">Basics</h3>
+      <figure>
+        <img
+          src="https://drawio-app.com/wp-content/uploads/2018/01/Class-Diagram-Habit-Tracker-app.png"
+          alt=""
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <ul>
+        <li>
+          Each class is denoted by a rectangle, with the class name at the top.
+        </li>
+        <li>
+          Properties are listed inside the rectangle, and are denoted by a name
+          and data type.
+        </li>
+        <li>
+          Methods are listed inside the rectangle, and are denoted by a name,
+          return type, and parameters.
+        </li>
+      </ul>
+      <p>
+        The level of detail is dependent on the audience for the diagram. You
+        may also wish to include access modifiers, getters and setters, etc.
+      </p>
+      <h3 id="relationships">Relationships</h3>
+      <p>
+        A fully flushed out class diagram also shows the relationships between
+        the classes.
+      </p>
+      <p>
+        The <strong>cardinality</strong> of a relationship is the number of
+        instances of one class that can be associated with one instance of
+        another class.
+      </p>
+      <p>
+        The cardinality between one class and another appears as text on the
+        edge between the two classes, and may be interpreted as:
+      </p>
+      <p>
+        &quot;Every instance of the source class may be associated with ___ to
+        ___ instances of the target class.&quot;
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Cardinality</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0..1</td>
+            <td>Zero to one</td>
+          </tr>
+          <tr>
+            <td>1..1</td>
+            <td>One to one</td>
+          </tr>
+          <tr>
+            <td>0..*</td>
+            <td>Zero to many</td>
+          </tr>
+          <tr>
+            <td>1..*</td>
+            <td>One to many</td>
+          </tr>
+          <tr>
+            <td>*..*</td>
+            <td>Many to many</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>In the diagram above we see that:</p>
+      <ul>
+        <li>Every User may be associated with zero to one Coach.</li>
+        <li>Every Coach may me associated with zero to many Users.</li>
+        <li>etc.</li>
+      </ul>
+      <div class="focusContent note">
+        <p>
+          You may notice that this diagram is similar to an
+          <strong>Entity Relationship Diagram</strong> (ERD). The two are
+          similar in many ways, but serve slightly different purposes.
+        </p>
+        <p>
+          An ERD is designed specifically to represent the relationships between
+          entities in a database. These don&#39;t always match directly with
+          properties within a class.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

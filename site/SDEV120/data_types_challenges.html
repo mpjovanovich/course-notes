@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Data Type Challenges and Limitations</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#data-type-challenges-and-limitations"
+              >Data Type Challenges and Limitations</a
+            >
+            <ul>
+              <li><a href="#truncation">Truncation</a></li>
+              <li><a href="#rounding-errors">Rounding Errors</a></li>
+              <li><a href="#overflow">Overflow</a></li>
+              <li><a href="#underflow">Underflow</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="data-type-challenges-and-limitations">
+        Data Type Challenges and Limitations
+      </h1>
+      <h2 id="truncation">Truncation</h2>
+      <p>
+        <strong>Truncation</strong> occurs when a number is cut off to fit
+        within the available bits.
+      </p>
+      <p>This can be due to:</p>
+      <ul>
+        <li>
+          We can accurately represent the number, but not with the amount of
+          bits in the data type.
+        </li>
+        <li>
+          We can&#39;t accurately represent the number at all. E.g.
+          <ul>
+            <li>
+              Sqaure root of 2 can&#39;t be represented exactly (irrational
+              numbers)
+            </li>
+            <li>
+              1/3 can&#39;t be represented exactly in decimal or binary
+              (repeating decimal)
+            </li>
+            <li>*1/10 can&#39;t be represented exactly in binary.</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="focusContent example">
+        <p>
+          <em
+            >Binary can only represent numbers that are a sum of powers of
+            2!</em
+          >
+        </p>
+        <p>
+          Positions to the right of the decimal point are negative powers of 2
+        </p>
+        <p>Remember that negative exponents are fractions:</p>
+        <ul>
+          <li>2<sup>-1</sup> = 1/2<sup>1</sup> = 1/2</li>
+          <li>2<sup>-2</sup> = 1/2<sup>2</sup> = 1/4</li>
+          <li>2<sup>-3</sup> = 1/2<sup>3</sup> = 1/8</li>
+          <li>...</li>
+        </ul>
+        <p><strong>Binary 1/2</strong></p>
+        <p>(0.1)<sub>2</sub> = 1/2.</p>
+        <p><strong>Binary 1/4</strong></p>
+        <p>(0.01)<sub>2</sub> = 1/4.</p>
+      </div>
+
+      <div class="focusContent demo">
+        <p><em>Case Study: Binary arithmetic errors</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Print 0.3 (base 10)</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">0.1</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#986801;--shiki-dark:#D19A66"> 0.2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Print 0.1 (base 10) with 50 decimal places</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">'</span><span style="color:#986801;--shiki-dark:#D19A66">{0.1</span><span style="color:#A626A4;--shiki-dark:#C678DD">:.50f</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+      </div>
+
+      <div class="focusContent demo">
+        <p><em>Case Study: Compounding truncation errors</em></p>
+        <p>
+          You are a programmer at a large corporation. You&#39;re asked to write
+          a report calculating the tax for all purchases in the month of
+          January. You write two versions of the code:
+        </p>
+        <p><strong>Version 1</strong></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#383A42;--shiki-dark:#D19A66">TAX_RATE</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 0.3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Loop and sum a bunch of numbers, multiplying by 0.1 each time:</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># We're pretending that "i" is the cost of some item</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">for</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#A626A4;--shiki-dark:#C678DD">in</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> range</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">10000</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Calculate the tax for each item</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    item_tax </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#383A42;--shiki-dark:#56B6C2">*</span><span style="color:#383A42;--shiki-dark:#D19A66"> TAX_RATE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Add the tax to the total</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> total </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> item_tax</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Print the total</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">'Total: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">total</span><span style="color:#A626A4;--shiki-dark:#C678DD">:.10f</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+        <p><strong>Version 2</strong></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#383A42;--shiki-dark:#D19A66">TAX_RATE</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 0.3</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># We're again pretending that "i" is the cost of some item</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">for</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#A626A4;--shiki-dark:#C678DD">in</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> range</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">10000</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Add the cost of the item to the total cost</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> total </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Calculate the tax</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> total </span><span style="color:#383A42;--shiki-dark:#56B6C2">*</span><span style="color:#383A42;--shiki-dark:#D19A66"> TAX_RATE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Print the total</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">'Total: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">total</span><span style="color:#A626A4;--shiki-dark:#C678DD">:.10f</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+        <p>
+          Version 1 calculates the tax for each item and adds it to the total.
+          Version 2 adds the cost of each item to the total and then calculates
+          the tax at the end.
+        </p>
+        <p>Does the output of the two programs match? Why or why not?</p>
+      </div>
+
+      <p><strong>Real Life Consequences</strong></p>
+      <p>
+        Depending on what type of application you are writing, truncation errors
+        can be more or less serious. For a simple web app to help users track a
+        habit, it doesn&#39;t matter if numbers are off by a small fraction.
+      </p>
+      <p>In other cases errors can be more serious.</p>
+      <div class="focusContent example">
+        <p>
+          <a
+            href="https://barrgroup.com/blog/lethal-software-defects-patriot-missile-failure"
+            >Case Study: Patriot Missile Failure</a
+          >
+        </p>
+        <blockquote>
+          <p>
+            During the Gulf War, twenty-eight U.S. soldiers were killed and
+            almost one hundred others were wounded when a nearby Patriot missile
+            defense system failed to properly track a Scud missile launched from
+            Iraq. The cause of the failure was later found to be a programming
+            error in the computer embedded in the Patriot’s weapons control
+            system.
+          </p>
+        </blockquote>
+        <blockquote>
+          <p>
+            Time is kept continuously by the system&#39;s internal clock in
+            tenths of seconds but is expressed as an integer... To predict where
+            the Scud will next appear, time ... must be expressed as [a] real
+            number.
+          </p>
+        </blockquote>
+        <blockquote>
+          <p>
+            Because of the way the Patriot computer performs its calculations
+            and the fact that its registers [memory slots] are only 24 bits
+            long, the conversion of time from an integer to a real number cannot
+            be any more precise than 24 [bits].
+          </p>
+        </blockquote>
+        <blockquote>
+          <p>
+            The GAO reports that the problem was an accumulating linear error of
+            .003433 seconds per 1 hour of uptime
+          </p>
+        </blockquote>
+        <blockquote>
+          <p>
+            Specifically, after about 20 hours, the inaccurate time calculation
+            becomes sufficiently large to cause the radar to look in the wrong
+            place for the target. Consequently, the system fails to track and
+            intercept the Scud
+          </p>
+        </blockquote>
+      </div>
+
+      <h2 id="rounding-errors">Rounding Errors</h2>
+      <p>
+        When rounding is done at intermediate steps in a calculation, the final
+        result may be off by a small amount.
+      </p>
+      <p><em>Case Study: Intermediate Rounding Errors</em></p>
+      <p>
+        You are a scientist working on a physics project. In your final report
+        you will need an output rounded to two decimal places. You write two
+        versions of the code:
+      </p>
+      <p><strong>Version 1</strong></p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">i </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#D19A66">PI</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 0.13159</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">while</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#986801;--shiki-dark:#D19A66"> 1000</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Add PI to the total</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> total </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#383A42;--shiki-dark:#D19A66"> PI</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Round to 2 decimal places</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> round</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(total, </span><span style="color:#986801;--shiki-dark:#D19A66">2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Increment i to keep the loop going</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    i </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(total)</span></span></code></pre>
+      <p><strong>Version 2</strong></p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">i </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#D19A66">PI</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 0.13159</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">while</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#986801;--shiki-dark:#D19A66"> 1000</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Add PI to the total</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> total </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#383A42;--shiki-dark:#D19A66"> PI</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Increment i to keep the loop going</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    i </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Round to 2 decimal places</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">total </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> round</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(total, </span><span style="color:#986801;--shiki-dark:#D19A66">2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(total)</span></span></code></pre>
+      <p>
+        Version 1 rounds the total at each step, while Version 2 rounds the
+        total at the end.
+      </p>
+      <p>
+        Do the two versions of the program produce the same output? Why or why
+        not?
+      </p>
+      <h2 id="overflow">Overflow</h2>
+      <p>
+        <strong>Overflow</strong> is when a value exceeds the maximum
+        representable value of a data type.
+      </p>
+      <p>
+        If I have an 8-bit unsigned integer and I try to add 1 to 255, I will
+        get an exception, or the value will wrap around to 0.
+      </p>
+      <p>
+        <em
+          >We can&#39;t reproduce this in Python because it will automatically
+          handle overflow.</em
+        >
+      </p>
+      <h2 id="underflow">Underflow</h2>
+      <p>
+        <strong>Underflow</strong> is when a value is closer to zero than the
+        smallest representable value that a data type can hold.
+      </p>
+      <p>
+        If I have a floating point number and end up with a result that is
+        something like 0.000000...0001, I may lose precision.
+      </p>
+      <p>
+        <em
+          >We can&#39;t reproduce this in Python because it will automatically
+          handle underflow.</em
+        >
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basic Shell Commands</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#terminal-emulators">Terminal Emulators</a>
+            <ul>
+              <li><a href="#native-shells">Native Shells</a></li>
+              <li><a href="#vs-code-terminal">VS Code Terminal</a></li>
+              <li>
+                <a href="#navigation">Navigation</a>
+                <ul>
+                  <li><a href="#absolute-paths">Absolute Paths</a></li>
+                  <li><a href="#relative-paths">Relative Paths</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#shell-commands">Shell Commands</a>
+            <ul>
+              <li>
+                <a href="#utility-commands">Utility Commands</a>
+                <ul>
+                  <li><a href="#clear-the-terminal">Clear the Terminal</a></li>
+                  <li><a href="#exit-the-terminal">Exit the Terminal</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#directory-traversal">Directory Traversal</a>
+                <ul>
+                  <li>
+                    <a href="#print-which-directory-you-are-in"
+                      >Print Which Directory You Are In</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#list-the-contents-of-a-directory"
+                      >List the Contents of a Directory</a
+                    >
+                  </li>
+                  <li><a href="#change-directory">Change Directory</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#file-manipulation">File Manipulation</a>
+                <ul>
+                  <li>
+                    <a href="#create-a-new-folder">Create a New Folder</a>
+                  </li>
+                  <li><a href="#remove-a-directory">Remove a Directory</a></li>
+                  <li><a href="#create-a-new-file">Create a New File</a></li>
+                  <li><a href="#copy-a-file">Copy a File</a></li>
+                  <li><a href="#move-a-file">Move a File</a></li>
+                  <li><a href="#rename-a-file">Rename a File</a></li>
+                  <li><a href="#delete-a-file">Delete a File</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#what-should-i-be-able-to-do"
+                  >What Should I Be Able to Do?</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="terminal-emulators">Terminal Emulators</h1>
+      <ul>
+        <li>
+          <p>
+            A <strong>terminal</strong> is a program that allows you to interact
+            with the operating system.
+          </p>
+        </li>
+        <li>
+          <p>A <strong>shell</strong> is a program that interprets commands.</p>
+        </li>
+      </ul>
+      <p>
+        The combination of a terminal and a shell is called a
+        <strong>terminal emulator</strong>.
+      </p>
+      <h2 id="native-shells">Native Shells</h2>
+      <p>Each operating system has a default shell:</p>
+      <ul>
+        <li>
+          <p>
+            <strong>bash</strong> (Bourne Again SHell, but just call it bash):
+            Unix-based systems (Linux and Mac)
+          </p>
+        </li>
+        <li>
+          <p><strong>zsh</strong> (Z SHell): Mac</p>
+        </li>
+        <li>
+          <p><strong>PowerShell</strong>: Windows</p>
+        </li>
+      </ul>
+      <h2 id="vs-code-terminal">VS Code Terminal</h2>
+      <p>
+        Visual Studio Code has an integrated terminal. If you&#39;ve close the
+        terminal you can always get back to it from the top bar by clicking View
+        &gt; Terminal.
+      </p>
+      <p>You can see what shell you are using on the Terminal tab:</p>
+      <figure>
+        <img
+          src="images/vs_code_terminal.png"
+          alt="VS Code Terminal"
+          style="width: 86%; height: auto"
+        />
+      </figure>
+
+      <p>
+        You can change the shell in VS Code using the dropdown arrow next to the
+        plus sign:
+      </p>
+      <figure>
+        <img
+          src="images/vs_code_terminal_change_shell.png"
+          alt="VS Code Terminal Change Shell"
+        />
+      </figure>
+
+      <h2 id="navigation">Navigation</h2>
+      <p>A side note on navigation is necessary here...</p>
+      <h3 id="absolute-paths">Absolute Paths</h3>
+      <p>
+        Absolute paths start at the <strong>root directory</strong>. This is the
+        top-most directory in the file system.
+      </p>
+      <ul>
+        <li>On Windows, this is <code>C:\</code></li>
+        <li>On Mac and Linux, this is <code>/</code></li>
+      </ul>
+      <p>Absolute Path Examples:</p>
+      <ul>
+        <li><code>C:\Users\John\Documents\test.txt</code></li>
+        <li><code>/home/john/Documents/test.txt</code></li>
+      </ul>
+      <h3 id="relative-paths">Relative Paths</h3>
+      <p>Relative paths start at the current directory.</p>
+      <p>Relative paths start at:</p>
+      <ul>
+        <li>
+          The working directory from the terminal if we&#39;re in the terminal.
+        </li>
+        <li>The current directory of a file if we&#39;re coding.</li>
+      </ul>
+      <p>Relative Path Examples:</p>
+      <ul>
+        <li><code>Documents\test.txt</code></li>
+        <li><code>SomeFolder/OtherFolder/test.txt</code></li>
+      </ul>
+      <h1 id="shell-commands">Shell Commands</h1>
+      <p>
+        We will use bash commands for all examples, because many cloud platforms
+        and virtual environments use Unix-based systems.
+      </p>
+      <p>
+        You can also use bash commands on Windows after you have installed Git
+        via
+        <strong>git bash</strong>. This also works in VS Code&#39;s integrated
+        terminal.
+      </p>
+      <p>
+        Some may work in other terminals such as <code>zsh</code> or
+        <code>PowerShell</code>, but this is not guaranteed.
+      </p>
+      <p>
+        <strong
+          ><em
+            >*Don&#39;t run commands blindly. Make sure you understand what they
+            do before running them. You can wipe your entire system clean with
+            one short command.</em
+          ></strong
+        >
+      </p>
+      <h3 id="utility-commands">Utility Commands</h3>
+      <h4 id="clear-the-terminal">Clear the Terminal</h4>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># clear = Clear the Terminal</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">clear</span></span></code></pre>
+      <h4 id="exit-the-terminal">Exit the Terminal</h4>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># exit = Exit the Terminal</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">exit</span></span></code></pre>
+      <h3 id="directory-traversal">Directory Traversal</h3>
+      <h4 id="print-which-directory-you-are-in">
+        Print Which Directory You Are In
+      </h4>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># pwd = Print Working Directory</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">pwd</span></span></code></pre>
+      <h4 id="list-the-contents-of-a-directory">
+        List the Contents of a Directory
+      </h4>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># ls = List</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ls</span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">                      # List the current directory</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ls</span><span style="color:#986801;--shiki-dark:#D19A66"> -l</span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">                   # List the current directory in long format</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ls</span><span style="color:#986801;--shiki-dark:#D19A66"> -a</span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">                   # List the current directory, including hidden files</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ls</span><span style="color:#50A14F;--shiki-dark:#98C379"> /home/john/Documents</span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> # List the contents of a specific directory</span></span></code></pre>
+      <h4 id="change-directory">Change Directory</h4>
+      <p>
+        <code>.</code> is the current directory. <code>..</code> is the parent
+        directory relative to the current directory.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># cd = Change Directory</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="color:#50A14F;--shiki-dark:#98C379"> ..</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="color:#50A14F;--shiki-dark:#98C379"> ../images</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="color:#50A14F;--shiki-dark:#98C379"> /home/john/Documents</span></span></code></pre>
+      <h2 id="file-manipulation">File Manipulation</h2>
+      <h3 id="create-a-new-folder">Create a New Folder</h3>
+      <p>Will be created in the current directory in this case.</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># mkdir = Make Directory</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">mkdir</span><span style="color:#50A14F;--shiki-dark:#98C379"> test</span></span></code></pre>
+      <h3 id="remove-a-directory">Remove a Directory</h3>
+      <p>
+        *Be sure to back up any files prior to removing them! It&#39;s better to
+        be safe than sorry. You can always delete them later.
+      </p>
+      <p>If it&#39;s empty:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># rmdir = Remove Directory</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Must be empty</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">rmdir</span><span style="color:#50A14F;--shiki-dark:#98C379"> test</span></span></code></pre>
+      <p>If it&#39;s not empty:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># rm -r = Remove Directory Recursively (Along with All Folders and Files Inside It</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># You've been warned...</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">rm</span><span style="color:#986801;--shiki-dark:#D19A66"> -r</span><span style="color:#50A14F;--shiki-dark:#98C379"> test</span></span></code></pre>
+      <h3 id="create-a-new-file">Create a New File</h3>
+      <p>
+        Will be created in the current directory in this case. Can also be used
+        to set a file&#39;s &quot;last modified&quot; timestamp.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">touch</span><span style="color:#50A14F;--shiki-dark:#98C379"> test.txt</span></span></code></pre>
+      <h3 id="copy-a-file">Copy a File</h3>
+      <p>
+        First argument is the source file, second argument is the destination
+        file. Will overwrite if the destination file already exists.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># cp = Copy</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">cp</span><span style="color:#50A14F;--shiki-dark:#98C379"> test.txt</span><span style="color:#50A14F;--shiki-dark:#98C379"> test2.txt</span></span></code></pre>
+      <h3 id="move-a-file">Move a File</h3>
+      <p>
+        First argument is the source file, second argument is the destination
+        file.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># mv = Move</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">mv</span><span style="color:#50A14F;--shiki-dark:#98C379"> test.txt</span><span style="color:#50A14F;--shiki-dark:#98C379"> ../test.txt</span></span></code></pre>
+      <h3 id="rename-a-file">Rename a File</h3>
+      <p>
+        First argument is the old name, second argument is the new name. Will
+        overwrite if the destination file already exists.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># mv = Move (but also used for renaming files)</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">mv</span><span style="color:#50A14F;--shiki-dark:#98C379"> test.txt</span><span style="color:#50A14F;--shiki-dark:#98C379"> test2.txt</span></span></code></pre>
+      <h3 id="delete-a-file">Delete a File</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># rm = Remove</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">rm</span><span style="color:#50A14F;--shiki-dark:#98C379"> test.txt</span></span></code></pre>
+      <h2 id="what-should-i-be-able-to-do">What Should I Be Able to Do?</h2>
+      <ul>
+        <li>Print the current directory.</li>
+        <li>List the contents of a directory.</li>
+        <li>Switch directories using relative and absolute paths.</li>
+        <li>Create a new folder.</li>
+        <li>Create a new file.</li>
+        <li>Copy a file.</li>
+        <li>Rename a file.</li>
+        <li>Move a file.</li>
+        <li>Delete a file.</li>
+      </ul>
+    </div>
+  </body>
+</html>

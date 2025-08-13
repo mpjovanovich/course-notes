@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV200: Exceptions</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#exceptions">Exceptions</a>
+            <ul>
+              <li><a href="#try--catch-blocks">Try / Catch Blocks</a></li>
+              <li><a href="#the-exception-object">The Exception Object</a></li>
+              <li><a href="#exception-types">Exception Types</a></li>
+              <li><a href="#try-with-resources">Try-With-Resources</a></li>
+              <li>
+                <a href="#propagating-exceptions">Propagating Exceptions</a>
+              </li>
+              <li>
+                <a href="#validating-vs-exception-handling"
+                  >Validating vs Exception Handling</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="exceptions">Exceptions</h1>
+      <p>In Java, errors are handled via <strong>exceptions</strong>.</p>
+      <p>
+        Exceptions are objects that represent and contain information about
+        errors.
+      </p>
+      <p>Exceptions are <strong>thrown</strong> when an error occurs.</p>
+      <h2 id="try--catch-blocks">Try / Catch Blocks</h2>
+      <p>
+        Any code may be wrapped in a <strong>try block</strong>. If an exception
+        is thrown within the try block, the program will jump to the
+        corresponding <strong>catch block</strong> for the exception type.
+      </p>
+      <p>
+        This is used to handle errors gracefully, rather than crashing the
+        program.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">try</span><span style="color:#383A42;--shiki-dark:#E06C75"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Your code here</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">} </span><span style="color:#A626A4;--shiki-dark:#C678DD">catch</span><span style="color:#383A42;--shiki-dark:#E06C75"> (</span><span style="color:#C18401;--shiki-dark:#E5C07B">Exception</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> e</span><span style="color:#383A42;--shiki-dark:#E06C75">) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Handle the error gracefully</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">}</span></span></code></pre>
+      <p>
+        The <code>Exception</code> class is the base class for all exceptions.
+        It will catch any exception that is thrown.
+      </p>
+      <h2 id="the-exception-object">The Exception Object</h2>
+      <p>
+        The exception object contains information about the error, including:
+      </p>
+      <ul>
+        <li>The type of error</li>
+        <li>The message</li>
+        <li>The stack trace</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">try</span><span style="color:#383A42;--shiki-dark:#E06C75"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // This will be executed</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Print 1"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Will throw an exception</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    long</span><span style="color:#E45649;--shiki-dark:#E06C75"> x </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#56B6C2"> /</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // This will not be executed</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Print 2"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">} </span><span style="color:#A626A4;--shiki-dark:#C678DD">catch</span><span style="color:#383A42;--shiki-dark:#E06C75"> (</span><span style="color:#C18401;--shiki-dark:#E5C07B">Exception</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> e</span><span style="color:#383A42;--shiki-dark:#E06C75">) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // e.getMessage() returns the error message in a readable format</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Error: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#E45649;--shiki-dark:#E5C07B"> e</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getMessage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">());</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">}</span></span></code></pre>
+      <h2 id="exception-types">Exception Types</h2>
+      <p>
+        It is often preferable to catch specific types of errors rather than
+        using the
+        <code>Exception</code> class as a blanket approach.
+      </p>
+      <p>To do so we use subclasses of the <code>Exception</code> class.</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">try</span><span style="color:#383A42;--shiki-dark:#E06C75"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // User provides a filename to open</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">    File</span><span style="color:#E45649;--shiki-dark:#E06C75"> file </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> File</span><span style="color:#383A42;--shiki-dark:#E06C75">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"user_data.txt"</span><span style="color:#383A42;--shiki-dark:#E06C75">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">    Scanner</span><span style="color:#E45649;--shiki-dark:#E06C75"> scanner </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Scanner</span><span style="color:#383A42;--shiki-dark:#E06C75">(file)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Process file contents...</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">} </span><span style="color:#A626A4;--shiki-dark:#C678DD">catch</span><span style="color:#383A42;--shiki-dark:#E06C75"> (</span><span style="color:#C18401;--shiki-dark:#E5C07B">FileNotFoundException</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> e</span><span style="color:#383A42;--shiki-dark:#E06C75">) {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Could not find the file. Please check the filename and try again."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">}</span></span></code></pre>
+      <h2 id="try-with-resources">Try-With-Resources</h2>
+      <p>
+        Some resources (like files or database connections) need to be properly
+        closed when we&#39;re done using them. We can use a try-with-resources
+        block to automatically close these resources, even if an error occurs.
+      </p>
+      <p>
+        This is similar to the <code>with</code> statement you may have seen in
+        other languages like Python and C#.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">try</span><span style="color:#383A42;--shiki-dark:#E06C75"> (</span><span style="color:#C18401;--shiki-dark:#E5C07B">Scanner</span><span style="color:#E45649;--shiki-dark:#E06C75"> scanner </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Scanner</span><span style="color:#383A42;--shiki-dark:#E06C75">(</span><span style="color:#E45649;--shiki-dark:#E5C07B">System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">in</span><span style="color:#383A42;--shiki-dark:#E06C75">)) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Pretend we had code that threw an exception here...</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Our scanner will still be closed</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    long</span><span style="color:#E45649;--shiki-dark:#E06C75"> x </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#56B6C2"> /</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter some text: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">    String</span><span style="color:#E45649;--shiki-dark:#E06C75"> text </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#E45649;--shiki-dark:#E5C07B"> scanner</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">nextLine</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">} </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// May or may not handle exceptions here with a catch block</span></span></code></pre>
+      <h2 id="propagating-exceptions">Propagating Exceptions</h2>
+      <p>When an exception is thrown, the program:</p>
+      <ul>
+        <li>
+          Checks the current method for a catch block that can handle this type
+          of error.
+        </li>
+        <li>
+          If it doesn&#39;t find one, it moves up the call stack to the method
+          that called this one, and so on.
+        </li>
+        <li>
+          If it doesn&#39;t find a catch block, the program will terminate.
+        </li>
+      </ul>
+      <p>
+        This process of moving up through the methods looking for error handling
+        is called <strong>propagating</strong> the exception.
+      </p>
+      <div class="focusContent lookout">
+        <p>
+          If a method throws an exception, or if it calls a method that throws
+          an exception, we must declare the exception in the method signature.
+        </p>
+      </div>
+
+      <div class="focusContent demo">
+        <p>
+          Let&#39;s take a look at propagation, and how to interpret the stack
+          trace.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Test</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[] </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">args</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        try</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">            methodA</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        } </span><span style="color:#A626A4;--shiki-dark:#C678DD">catch</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#C18401;--shiki-dark:#E5C07B">Exception</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> e</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Exception caught in main:"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">            e</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">printStackTrace</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> methodA</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#A626A4;--shiki-dark:#C678DD"> throws</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Exception</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Entering methodA"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">        methodB</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Exiting methodA"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">); </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// This won't execute</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> methodB</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#A626A4;--shiki-dark:#C678DD"> throws</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Exception</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Entering methodB"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">        methodC</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Exiting methodB"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">); </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// This won't execute</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> methodC</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#A626A4;--shiki-dark:#C678DD"> throws</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Exception</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Entering methodC"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        throw</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Exception</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Something went wrong in methodC!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      </div>
+
+      <h2 id="validating-vs-exception-handling">
+        Validating vs Exception Handling
+      </h2>
+      <p>
+        When possible, prefer <strong>validating</strong> input over using
+        exception handling.
+      </p>
+      <div class="focusContent example">
+        <p>Assume a simple &quot;divide two numbers&quot; program.</p>
+        <p>
+          We could use exception handling to handle the divide by zero error.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">try</span><span style="color:#383A42;--shiki-dark:#E06C75"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    long</span><span style="color:#E45649;--shiki-dark:#E06C75"> x </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#56B6C2"> /</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">} </span><span style="color:#A626A4;--shiki-dark:#C678DD">catch</span><span style="color:#383A42;--shiki-dark:#E06C75"> (</span><span style="color:#C18401;--shiki-dark:#E5C07B">ArithmeticException</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> ae</span><span style="color:#383A42;--shiki-dark:#E06C75">) {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Error: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#E45649;--shiki-dark:#E5C07B"> ae</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">getMessage</span><span style="color:#383A42;--shiki-dark:#ABB2BF">());</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">}</span></span></code></pre>
+        <p>
+          ... but it would be better to validate the input before attempting the
+          division.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">long</span><span style="color:#E45649;--shiki-dark:#E06C75"> numerator </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">long</span><span style="color:#E45649;--shiki-dark:#E06C75"> denominator </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#E06C75"> (denominator </span><span style="color:#383A42;--shiki-dark:#56B6C2">==</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#E06C75">) {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">    System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Error: Denominator cannot be zero."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">} </span><span style="color:#A626A4;--shiki-dark:#C678DD">else</span><span style="color:#383A42;--shiki-dark:#E06C75"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    long</span><span style="color:#E45649;--shiki-dark:#E06C75"> x </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#E06C75"> numerator </span><span style="color:#383A42;--shiki-dark:#56B6C2">/</span><span style="color:#383A42;--shiki-dark:#E06C75"> denominator</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">}</span></span></code></pre>
+      </div>
+    </div>
+  </body>
+</html>

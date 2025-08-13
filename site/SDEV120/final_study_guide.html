@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Final Study Guide</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li><a href="#not-covered">Not Covered</a></li>
+          <li>
+            <a href="#covered">Covered</a>
+            <ul>
+              <li>
+                <a href="#m04-intro-to-programming"
+                  >M04: Intro to Programming</a
+                >
+                <ul>
+                  <li>
+                    <a href="#coding-environments">Coding Environments</a>
+                  </li>
+                  <li>
+                    <a href="#input-output-and-comments-in-python"
+                      >Input, Output, and Comments in Python</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#variables-and-constants"
+                      >Variables and Constants</a
+                    >
+                  </li>
+                  <li><a href="#data-types">Data Types</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#m07-selection-structures"
+                  >M07: Selection Structures</a
+                >
+              </li>
+              <li><a href="#m08-repetition">M08: Repetition</a></li>
+              <li><a href="#decisions-and-loops">Decisions and Loops</a></li>
+              <li>
+                <a href="#m09-data-representation-and-encoding"
+                  >M09: Data Representation and Encoding</a
+                >
+                <ul>
+                  <li>
+                    <a href="#intro-to-computer-numbering-systems"
+                      >Intro to Computer Numbering Systems</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#converting-between-bases"
+                      >Converting Between Bases</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#applications-for-binary-and-hexadecimal"
+                      >Applications for Binary and Hexadecimal</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#metric-system-for-computing"
+                      >Metric System for Computing</a
+                    >
+                  </li>
+                  <li><a href="#numeric-data-types">Numeric Data Types</a></li>
+                  <li><a href="#text-data-types">Text Data Types</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#m10-programming-paradigms"
+                  >M10: Programming Paradigms</a
+                >
+                <ul>
+                  <li>
+                    <a href="#turing-and-computability"
+                      >Turing and Computability</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#von-neumann-architecture"
+                      >Von Neumann Architecture</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#evolution-of-computing">Evolution of Computing</a>
+                  </li>
+                  <li>
+                    <a href="#evolution-of-programming"
+                      >Evolution of Programming</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h2 id="not-covered">Not Covered</h2>
+      <p>Overflow topics</p>
+      <h2 id="covered">Covered</h2>
+      <h3 id="m04-intro-to-programming">M04: Intro to Programming</h3>
+      <h4 id="coding-environments">Coding Environments</h4>
+      <ul>
+        <li>
+          How is an <strong>IDE</strong> different from a
+          <strong>text editor</strong>?
+        </li>
+        <li>What does it mean to <strong>debug</strong> code?</li>
+        <li>
+          What is a <strong>debugger</strong>? This is more specific than the
+          concept of debugging. It&#39;s a tool that helps you debug code,
+          typically by setting <strong>breakpoints</strong> and stepping through
+          code.
+        </li>
+      </ul>
+      <h4 id="input-output-and-comments-in-python">
+        Input, Output, and Comments in Python
+      </h4>
+      <ul>
+        <li>Know what code comments are used for in general</li>
+        <li>Know how to write comments in Python</li>
+        <li>Know how to use the <code>input()</code> function</li>
+        <li>Know how to use the <code>print()</code> function</li>
+      </ul>
+      <h4 id="variables-and-constants">Variables and Constants</h4>
+      <ul>
+        <li>What is a <strong>variable</strong>?</li>
+        <li>What is a <strong>constant</strong>?</li>
+        <li>
+          What naming conventions should you follow for variables and constants?
+          <ul>
+            <li>
+              <strong>Camel Case</strong>, <strong>Pascal Case</strong>,
+              <strong>snake case</strong> / <strong>underscore case</strong>
+            </li>
+            <li>
+              Best practices for descriptive variable names (which of these
+              names is better...)
+            </li>
+          </ul>
+        </li>
+        <li>
+          Know the words <strong>declare</strong>, <strong>initialize</strong>,
+          and <strong>assign</strong> in the context of variables
+        </li>
+      </ul>
+      <h4 id="data-types">Data Types</h4>
+      <ul>
+        <li>Given some variable value, match it to the correct data type</li>
+      </ul>
+      <h3 id="m07-selection-structures">M07: Selection Structures</h3>
+      <ul>
+        <li>Single vs dual alternative decisions; what is the difference?</li>
+        <li>
+          Is an &quot;else&quot; condition (dual alternative) always necessary?
+        </li>
+        <li>When do we hit an &quot;else&quot; condition?</li>
+        <li>
+          Given a decision (Python or flowchart), determine what will print.
+        </li>
+        <li>
+          <em
+            >You do not need to know fallthrough decisions, &quot;elif&quot;</em
+          >
+        </li>
+      </ul>
+      <h3 id="m08-repetition">M08: Repetition</h3>
+      <ul>
+        <li>Why use loops?</li>
+        <li>What is an <strong>iteration</strong>?</li>
+        <li>
+          What does it mean to <strong>increment</strong> or
+          <strong>decrement</strong> a value?
+        </li>
+        <li>
+          What is an <strong>infinite loop</strong>? Given some snippet of code,
+          determine if it will run forever.
+        </li>
+        <li>
+          What is an <strong>off-by-one error</strong>? Given some snippet of
+          code, determine what needs to go in the loop condition to get the
+          desired output.
+        </li>
+      </ul>
+      <h3 id="decisions-and-loops">Decisions and Loops</h3>
+      <ul>
+        <li>
+          What is <strong>nested</strong> structure?
+          <ul>
+            <li>
+              Given a nested decision (Python or flowchart), determine what will
+              print.
+            </li>
+            <li>
+              Given a nested loop (Python or flowchart), determine what will
+              print.
+            </li>
+            <li>
+              In a nested loop know terminology for
+              <strong>outer loop</strong> and <strong>inner loop</strong>.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3 id="m09-data-representation-and-encoding">
+        M09: Data Representation and Encoding
+      </h3>
+      <h4 id="intro-to-computer-numbering-systems">
+        Intro to Computer Numbering Systems
+      </h4>
+      <ul>
+        <li>
+          Which numbering systems are most commonly used in computing and why?
+        </li>
+        <li>
+          What are the symbols for the following numbering systems?
+          <ul>
+            <li>Binary</li>
+            <li>Decimal</li>
+            <li>Hexadecimal</li>
+          </ul>
+        </li>
+        <li>
+          How do I know which base I&#39;m looking at?
+          <ul>
+            <li>Subscript (primarily decimal and binary)</li>
+            <li>Prefix (primarily hex)</li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="converting-between-bases">Converting Between Bases</h4>
+      <ul>
+        <li>
+          Convert
+          <ul>
+            <li>Binary to decimal</li>
+            <li>Hex to binary</li>
+          </ul>
+        </li>
+        <li>Add two binary numbers</li>
+      </ul>
+      <h4 id="applications-for-binary-and-hexadecimal">
+        Applications for Binary and Hexadecimal
+      </h4>
+      <ul>
+        <li>How are hexadecimal numbers used to represent colors?</li>
+        <li>
+          How can we tell that an IPv6 address represents more values than an
+          IPv4 address?
+        </li>
+        <li>How do <strong>bitwise operators</strong> work?</li>
+        <li>What is a <strong>bitmask</strong>?</li>
+        <li>
+          What is a <strong>bit array</strong>?
+          <ul>
+            <li>
+              Given a binary number, a bit array, and a bitwise operator,
+              determine the output.
+            </li>
+            <li>
+              You don&#39;t have to know the symbols for bitwise operators, a
+              description will be given to you.
+            </li>
+            <li>
+              E.g. &quot;Given the binary number 1010 perform a bitwise XOR with
+              1100.&quot;
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="metric-system-for-computing">Metric System for Computing</h4>
+      <ul>
+        <li>
+          <p>&quot;-bi&quot; vs &quot;-lo&quot; prefixes = binary vs decimal</p>
+        </li>
+        <li>
+          <p>
+            Know all of the prefixes and their ordering in the binary chart.
+            This needs to be memorized.
+          </p>
+        </li>
+        <li>
+          <p>Know how to convert between binary metric units.</p>
+          <ul>
+            <li>&quot;Convert 1 ??B to ??B&quot;</li>
+            <li>Always change by a factor of 2^10, 1024...</li>
+            <li>Except for bytes - 8 bits in a byte</li>
+          </ul>
+        </li>
+        <li>
+          <p>Know the domains in which decimal or binary prefixes are used.</p>
+          <ul>
+            <li>Memory sizes = binary</li>
+            <li>Data transfer rates = decimal</li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="numeric-data-types">Numeric Data Types</h4>
+      <ul>
+        <li>
+          What is the difference between <strong>signed</strong> and
+          <strong>unsigned</strong> numbers?
+        </li>
+        <li>
+          &quot;How many values can be represented by a [?]-bit unsigned
+          integer? Provide your answer as a power of 2.&quot;
+        </li>
+        <li>Can computer data types accurately represent all numbers?</li>
+      </ul>
+      <h4 id="text-data-types">Text Data Types</h4>
+      <ul>
+        <li>How are characters represented in a computer?</li>
+        <li>How is ASCII different from Unicode?</li>
+        <li>Why would you use one over the other?</li>
+      </ul>
+      <h3 id="m10-programming-paradigms">M10: Programming Paradigms</h3>
+      <h4 id="turing-and-computability">Turing and Computability</h4>
+      <ul>
+        <li>
+          What is a <strong>Turing machine</strong>? You don&#39;t need to know
+          how to use it.
+        </li>
+        <li>
+          Why was Turing&#39;s work on computability important for the
+          development of computers?:
+          <ul>
+            <li>
+              Turing&#39;s work formalized the concept of algorithmic
+              computation in a way that could be implemented by a machine.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="von-neumann-architecture">Von Neumann Architecture</h4>
+      <ul>
+        <li>
+          What major issues did the Von Neumann architecture solve (what was the
+          problem with previous architectures)?
+        </li>
+        <li>
+          Major takeaways of VN Arch:
+          <ul>
+            <li>
+              Every program must be loaded into <strong>memory</strong> (not
+              storage / disc) before it can be executed.
+            </li>
+            <li>
+              Every instruction and piece of data must be loaded into the
+              <strong>CPU</strong> before it can be executed.
+            </li>
+            <li>
+              The CPU has its own memory, called <strong>registers</strong>.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="evolution-of-computing">Evolution of Computing</h4>
+      <ul>
+        <li>What is a <strong>transistor</strong>?</li>
+        <li>
+          An <strong>integrated circuit</strong>, or <strong>chip</strong>, is
+          made up of <strong>transistors</strong>.
+        </li>
+        <li>What does <strong>Moore&#39;s Law</strong> say?</li>
+      </ul>
+      <h4 id="evolution-of-programming">Evolution of Programming</h4>
+      <ul>
+        <li>
+          Difference betwen 1st, 2nd, 3rd generation programming languages.
+        </li>
+        <li>
+          Machine code = binary code; everything must be converted to machine
+          code before it can run
+        </li>
+        <li>
+          Assembly language = primitive instructions that reflect what the
+          processor can do
+        </li>
+        <li>Compiled = translated to machine code ahead of time</li>
+        <li>Interpreted = translated to machine code as it runs</li>
+      </ul>
+    </div>
+  </body>
+</html>

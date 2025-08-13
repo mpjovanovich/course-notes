@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Numeric Data Types</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#numeric-data-types">Numeric Data Types</a>
+            <ul>
+              <li>
+                <a href="#integer">Integer</a>
+                <ul>
+                  <li><a href="#example-usage">Example Usage</a></li>
+                  <li><a href="#size-and-range">Size and Range</a></li>
+                  <li><a href="#unsigned-integers">Unsigned Integers</a></li>
+                  <li><a href="#signed-integers">Signed Integers</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#floating-point">Floating Point</a>
+                <ul>
+                  <li><a href="#example-usage-1">Example Usage</a></li>
+                  <li><a href="#size-and-range-1">Size and Range</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="numeric-data-types">Numeric Data Types</h1>
+      <figure>
+        <img
+          src="https://imgs.xkcd.com/comics/large_number_formats.png"
+          alt=""
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <p>
+        When a program runs, it needs memory to store its data. Different types
+        of data (like numbers or text) need different amounts of memory. We call
+        these different types &quot;data types&quot;.
+      </p>
+      <p>
+        Python makes coding easier by figuring out the data type for you
+        automatically. For example:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">age </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 42</span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        # Python sees this is a number</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">name </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379"> "John"</span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">   # Python sees this is text</span></span></code></pre>
+      <p>
+        Other languages like C# require you to specify the data type. For
+        example:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Tell C# this is a regular-sized number (int)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">int</span><span style="color:#383A42;--shiki-dark:#E06C75"> age</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 42</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Tell C# this is a big number (long)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">long</span><span style="color:#383A42;--shiki-dark:#E06C75"> distance</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 1000000000000</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <p>
+        What&#39;s the difference between these number types? Why do we need
+        different sizes? Let&#39;s explore how computers store numbers and why
+        these differet types are available to us.
+      </p>
+      <h2 id="integer">Integer</h2>
+      <p><strong>Integers</strong> are <strong>whole numbers</strong>.</p>
+      <h3 id="size-and-range">Size and Range</h3>
+      <p>We will refer to this table of ranges throughout the discussion...</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th align="right">Number of Bits</th>
+            <th align="right">Range (Exponents)</th>
+            <th align="right">Range (Friendly)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8-bit unsigned</td>
+            <td align="right">8</td>
+            <td align="right">0 to 2<sup>8</sup> - 1</td>
+            <td align="right">0 to 255</td>
+          </tr>
+          <tr>
+            <td>8-bit signed</td>
+            <td align="right">8</td>
+            <td align="right">-2<sup>7</sup> to 2<sup>7</sup>-1</td>
+            <td align="right">-128 to 127</td>
+          </tr>
+          <tr>
+            <td>16-bit unsigned</td>
+            <td align="right">16</td>
+            <td align="right">0 to 2<sup>16</sup> - 1</td>
+            <td align="right">0 to 65,535</td>
+          </tr>
+          <tr>
+            <td>16-bit signed</td>
+            <td align="right">16</td>
+            <td align="right">-2<sup>15</sup> to 2<sup>15</sup>-1</td>
+            <td align="right">-32,768 to 32,767</td>
+          </tr>
+          <tr>
+            <td>32-bit unsigned</td>
+            <td align="right">32</td>
+            <td align="right">0 to 2<sup>32</sup> - 1</td>
+            <td align="right">0 to 4,294,967,295</td>
+          </tr>
+          <tr>
+            <td>32-bit signed</td>
+            <td align="right">32</td>
+            <td align="right">-2<sup>31</sup> to 2<sup>31</sup>-1</td>
+            <td align="right">-2,147,483,648 to 2,147,483,647</td>
+          </tr>
+          <tr>
+            <td>64-bit unsigned</td>
+            <td align="right">64</td>
+            <td align="right">0 to 2<sup>64</sup> - 1</td>
+            <td align="right">0 to 18,446,744,073,709,551,615</td>
+          </tr>
+          <tr>
+            <td>64-bit signed</td>
+            <td align="right">64</td>
+            <td align="right">-2<sup>63</sup> to 2<sup>63</sup>-1</td>
+            <td align="right">
+              -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="unsigned-integers">Unsigned Integers</h3>
+      <p><strong>Unsigned integers</strong> are positive whole numbers.</p>
+      <p>
+        We have 2<sup>n</sup> possible values, where n is the number of bits in
+        the data type.
+      </p>
+      <p>
+        An 8-bit unsigned integer can represent 2<sup>8</sup> = 256 values, 0 to
+        255.
+      </p>
+      <div class="focusContent exercise mathTable hideHeaderRow">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+        <details>
+          <summary>
+            What does the above 8 bit unsigned integer represent?
+          </summary>
+          <div>
+            <p>128 + 1 = 129</p>
+          </div>
+        </details>
+      </div>
+
+      <h3 id="signed-integers">Signed Integers</h3>
+      <p><strong>Signed integers</strong> can be positive or negative.</p>
+      <p>
+        They use a <strong>sign bit</strong> to indicate the sign of the number.
+        If the sign bit is 0, the number is positive. If the sign bit is 1, the
+        number is negative.
+      </p>
+      <ul>
+        <li>
+          We lose one possible value because we have to represent the sign.
+        </li>
+        <li>The value range is now centered around 0.</li>
+      </ul>
+      <div class="focusContent exercise mathTable hideHeaderRow">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+        <details>
+          <summary>What does the above 8 bit signed integer represent?</summary>
+          <div>
+            <p>
+              -1. The sign bit is 1, so the remaining portion (00000001) is
+              negative.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <h2 id="floating-point">Floating Point</h2>
+      <p>
+        <strong>Floating point</strong> numbers are numbers that may have a
+        fractional part (not whole numbers).
+      </p>
+      <p>
+        As with integers, the number of bits used to represent a floating point
+        number determines the <strong>precision</strong> of the number. The
+        decimal point &quot;floats&quot; to the left or right to accommodate the
+        value.
+      </p>
+      <h2 id="implementation-details">Implementation Details</h2>
+      <figure>
+        <img
+          src="https://www.baseclass.io/newsletter/floating-point-numbers/layout.png"
+          alt=""
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <p>
+        Floating point numbers are represented in computer memory using three
+        parts, with a fixed number of bits for each part:
+      </p>
+      <ul>
+        <li><strong>Sign Bit</strong>: 0 for positive, 1 for negative</li>
+        <li><strong>Mantissa</strong>: the base value</li>
+        <li>
+          <strong>Exponent</strong>: we will multiply the mantissa by 2 raised
+          to the power of this exponent
+        </li>
+      </ul>
+      <div class="focusContent example">
+        <p>
+          Deconstruct the following 16-bit floating point number, assuming a
+          sign bit, 5 bit exponent, and 10 bit mantissa:
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>0001001011000000</span></span></code></pre>
+        <table>
+          <thead>
+            <tr>
+              <th>Sign</th>
+              <th>Exponent</th>
+              <th>Mantissa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>00010</td>
+              <td>0101100000</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Picking apart the pieces:</p>
+        <ul>
+          <li>Sign: 0 (positive)</li>
+          <li>Exponent: 00010<sub>(2)</sub> = 2</li>
+          <li>
+            Mantissa: 1.1011000000<sub>(2)</sub>.
+            <em>*We implicitly add a 1 to the front of the mantissa.</em>
+          </li>
+        </ul>
+        <p>So we now have:</p>
+        <ul>
+          <li>1.1011000000<sub>(2)</sub> x 2<sup> 2</sup></li>
+        </ul>
+        <p>
+          Because we&#39;re in base 2 we can simply move the decimal point 2
+          places to the right:
+        </p>
+        <ul>
+          <li>110.11000000<sub>(2)</sub></li>
+          <li>
+            Our starting number was the floating point representation of the
+            decimal number 6.75
+          </li>
+        </ul>
+        <p>
+          /<em
+            >Note: this is not the actual IEEE standard for floating point
+            numbers; we did some simplification.</em
+          >/
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV265: Home</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#sdev-265">SDEV 265</a>
+            <ul>
+              <li><a href="#announcements">Announcements</a></li>
+              <li>
+                <a href="#m01-sdlc-source-control">M01: SDLC; Source Control</a>
+                <ul>
+                  <li><a href="#day-1">Day 1</a></li>
+                  <li><a href="#day-2">Day 2</a></li>
+                  <li><a href="#day-3">Day 3</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#m02-software-evolution-project-management-project-planning"
+                  >M02: Software Evolution; Project Management; Project
+                  Planning</a
+                >
+                <ul>
+                  <li><a href="#day-1-1">Day 1</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#m03-requirements-engineering-agile-development"
+                  >M03: Requirements Engineering; Agile Development</a
+                >
+                <ul>
+                  <li><a href="#day-1-2">Day 1</a></li>
+                  <li><a href="#day-2-1">Day 2</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#m04-software-testing-reliability"
+                  >M04: Software Testing; Reliability</a
+                >
+                <ul>
+                  <li><a href="#day-1-3">Day 1</a></li>
+                  <li><a href="#day-2-2">Day 2</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="sdev-265">SDEV 265</h1>
+      <hr />
+      <blockquote>
+        I chanced upon an ancient cache of code: <br />
+        a stack of printouts, tall as any man, <br />
+        that in decaying boxes had been stowed. <br />
+        Ten thousand crumbling pages long it ran. <br />
+        Abandoned in the blackness to erode, <br />
+        what steered a ship through blackness to the moon. <br />
+        The language is unused in this late year. <br />
+        The target hardware, likewise, lies in ruin. <br />
+        Entombed within one lone procedure’s scope, <br />
+        a line of code and then these words appear: <br />
+        <br />
+        <tt># TEMPORARY, I HOPE HOPE HOPE</tt> <br />
+        <br />
+        The code beside persisting to the last&mdash;<br />
+        as permanent as aught upon this sphere&mdash;<br />
+        while overhead, a vacant moon flies past. <br />
+      </blockquote>
+
+      <p>
+        --
+        <a href="http://thecodelesscode.com/case/234"
+          >http://thecodelesscode.com/case/234</a
+        >
+      </p>
+      <hr />
+      <h2 id="announcements">Announcements</h2>
+      <ul>
+        <li>House bill to move forward next year</li>
+        <li>Note on terminology</li>
+        <li>Legal and ownership of product</li>
+      </ul>
+      <h2 id="m01-sdlc-source-control">M01: SDLC; Source Control</h2>
+      <p>Lecture Topics:</p>
+      <ul>
+        <li>
+          <a href="../common/git_resoures.html?course=SDEV265">Git Resources</a>
+        </li>
+        <li>
+          <a href="../common/basic_shell_commands.html?course=SDEV265"
+            >Shell Commands</a
+          >
+        </li>
+        <li><a href="../common/github.html?course=SDEV265">GitHub</a></li>
+        <li>
+          <a href="../common/installing_git.html?course=SDEV265"
+            >Installing Git</a
+          >
+        </li>
+        <li>
+          <a href="../common/git_version_control.html?course=SDEV265"
+            >Version Control via Git</a
+          >
+        </li>
+        <li>
+          <a href="software_engineering.html">Intro to Software Engineering</a>
+        </li>
+        <li>
+          <a href="../SDEV120/sdlc.html?course=SDEV265"
+            >Software Development Life Cycle (SDLC)</a
+          >
+        </li>
+        <li>
+          <a href="version_control_strategies.html"
+            >Version Control Strategies</a
+          >
+        </li>
+      </ul>
+      <!--
+- [Software Development Life Cycle (SDLC)](../common/sdlc.html?course=SDEV265)
+Git: branch, branching strategies, merge, merge conflicts
+-->
+
+      <p>Discussions:</p>
+      <ul>
+        <li>
+          Software ethics (<a
+            href="https://ethics.acm.org/code-of-ethics/software-engineering-code/"
+            >https://ethics.acm.org/code-of-ethics/software-engineering-code/</a
+          >)
+          <ul>
+            <li>What are some possible violations for each point?</li>
+            <li>What are some best practices for each point?</li>
+          </ul>
+        </li>
+      </ul>
+      <h3 id="day-1">Day 1</h3>
+      <p>
+        We will still have discussions, but they will not be graded - they will
+        be instructor led.
+      </p>
+      <ul>
+        <li>Course Overview</li>
+        <li>
+          <a href="intro_to_course.html">Tips to be successful in this class</a>
+        </li>
+        <li>Demo previous projects</li>
+        <li>Introductions</li>
+        <li>Lecture</li>
+        <li>Discussion: ethics</li>
+        <li>Assignment: VC Assignment 1</li>
+        <li>Assignment: Project proposals</li>
+      </ul>
+      <h3 id="day-2">Day 2</h3>
+      <ul>
+        <li>Project pitches and voting (DUE TODAY)</li>
+        <li>Technical discussion on project proposals</li>
+        <li>Sponsored project speaker (12:30pm)</li>
+        <li>Lecture</li>
+        <li>Assignment: Company formation, website, communication policy</li>
+        <li>Groups break out</li>
+      </ul>
+      <h3 id="day-3">Day 3</h3>
+      <ul>
+        <li>Lecture</li>
+        <li>Assignment: VC Assignment 2</li>
+        <li>Project implementation brainstorming / planning</li>
+      </ul>
+      <h2 id="m02-software-evolution-project-management-project-planning">
+        M02: Software Evolution; Project Management; Project Planning
+      </h2>
+      <p>Lecture Topics:</p>
+      <ul>
+        <li><a href="software_evolution.html">Software Evolution</a></li>
+        <li>
+          <a href="configuration_management.html">Configuration Management</a>
+        </li>
+        <li><a href="feasibility.html">Feasibility</a></li>
+        <li>
+          <a href="feature_scoping_analysis.html"
+            >Feature Scoping and Analysis</a
+          >
+        </li>
+      </ul>
+      <h3 id="day-1">Day 1</h3>
+      <ul>
+        <li>Lecture</li>
+        <li>
+          <a href="discussions/prioritization_frameworks.html"
+            >Discussion: Prioritizating Requirements</a
+          >
+          <ul>
+            <li>30(?) minute recess to do some information gathering</li>
+            <li>Come back and discuss</li>
+          </ul>
+        </li>
+        <li>Assignment: System Component Diagram</li>
+      </ul>
+      <h2 id="m03-requirements-engineering-agile-development">
+        M03: Requirements Engineering; Agile Development
+      </h2>
+      <p>Lecture topics:</p>
+      <ul>
+        <li>
+          <a href="requirements_elicitation.html">Requirements Elicitation</a>
+        </li>
+        <li>
+          <a href="requirements_specification.html"
+            >Requirements Specification</a
+          >
+        </li>
+        <li>
+          <a href="requirements_validation.html">Requirements Validation</a>
+        </li>
+        <li><a href="agile_planning.html">Agile Planning</a></li>
+      </ul>
+      <h3 id="day-1">Day 1</h3>
+      <ul>
+        <li>Lecture</li>
+        <li>Client requirements meeting</li>
+      </ul>
+      <h3 id="day-2">Day 2</h3>
+      <p>Walkthrough: Agile Development Tools, GH Projects</p>
+      <p>Intro to Assignments:</p>
+      <ul>
+        <li>Iter 1 - Requirements documentation</li>
+        <li>*Spring 25: Add instructor as write-collaborator</li>
+      </ul>
+      <h2 id="m04-software-testing-reliability">
+        M04: Software Testing; Reliability
+      </h2>
+      <p>Lecture topics:</p>
+      <ul>
+        <li>
+          <a href="software_testing_approaches.html"
+            >Software Testing Approaches</a
+          >
+        </li>
+        <li>
+          <a href="software_testing_hierarchy.html"
+            >Software Testing Hierarchy</a
+          >
+        </li>
+        <li>
+          <a href="performance_testing_profiling.html"
+            >Performance Testing and Profiling</a
+          >
+        </li>
+        <li><a href="risk_analysis.html">Risk Analysis</a></li>
+        <li>
+          <a href="quality_assurance_reliability.html"
+            >Quality Assurance and Reliability</a
+          >
+        </li>
+      </ul>
+      <!-- - [Software Testing Overview](software_testing_overview.html)
+- [Development Testing](development_testing.html)
+- [Release Testing](release_testing.html)
+- [User Testing](user_testing.html)
+- [Software Testing Review](software_testing_review.html) -->
+
+      <h3 id="day-1">Day 1</h3>
+      <ul>
+        <li>Lecture</li>
+        <li>Client requirements meeting</li>
+        <li>Work session</li>
+      </ul>
+      <h3 id="day-2">Day 2</h3>
+      <ul>
+        <li>Lecture</li>
+        <li>Intro assignments</li>
+        <li>Help session if needed</li>
+      </ul>
+      <p>Intro to Assignments:</p>
+      <ul>
+        <li>Iter 1 - Release and Deployment</li>
+        <li>Iter 1 - Release Notes</li>
+      </ul>
+      <h2 id="module-0x-project-code-and-architectural-review">
+        Module 0X: Project Code and Architectural Review
+      </h2>
+      <ul>
+        <li><a href="project_review.html">Review of Project</a></li>
+      </ul>
+      <!-- TODO: Test Driven Development, Unit testing demos -->
+
+      <!--
+
+
+Intro to Assignments:
+
+- Midterm Career Development and Review
+
+### Day 8
+
+Performance Review and Career Development
+
+
+Intro to Assignments:
+
+- Iteration 1 Release
+
+### Day 10
+
+TODO: Test Driven Development
+
+Intro to Assignments:
+
+- Iteration 2 Requirements Documentation
+- Professional Development Seminar
+- Performance Testing and Profiling
+
+### Day 11
+
+Professor out
+
+### Day 12
+
+Professor out
+
+## M05: Data and Process Modeling
+
+### Day 13
+
+Review: [UML](../SDEV120/uml.html?course=SDEV265)
+
+[Types of Data](types_of_data.html)
+
+[Data Passing and APIs](data_passing_apis.html)
+
+[Data Hierarchies](data_hierarchies.html)
+
+[Data Modeling and Mapping](data_modeling_mapping.html)
+
+## M06: Modular Design and SOLID Programming
+
+### Day 14
+
+
+[Modular Design](modular_design.html)
+
+[Software Architectural Patterns](software_architectural_patterns.html)
+
+[SOLID Programming Principles](solid.html)
+
+- [Single Responsibility Principle](single_responsibility_principle.html)
+
+- [Open/Closed Principle](open_closed_principle.html)
+
+- [Liskov Substitution Principle](liskov_substitution_principle.html)
+
+- [Interface Segregation Principle](interface_segregation_principle.html)
+
+- [Dependency Inversion Principle](dependency_inversion_principle.html)
+
+## M07: Distributed Architectures
+
+### Day 15
+
+[Distributed Systems](distributed_systems.html)
+
+[Software Communication Patterns](software_communication_patterns.html)
+
+...
+
+Build Tools and Automation Assignment
+
+-->
+    </div>
+  </body>
+</html>
