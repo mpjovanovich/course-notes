@@ -19,7 +19,7 @@ npm run build
 # Must be done before rest of script
 # Could be dont manually, but this just makes it easier so that there's a one line deploy command
 git add .
-git commit -m "Deploy commit"
+git commit -m "Pre-deploy commit"
 git push origin main 
 
 if [ "$deploy_mode" == "full" ]; then
@@ -45,3 +45,17 @@ fi
 # git add .
 # git commit -m "Deploy commit"
 # git push origin site
+
+# # Switch back to main branch
+# git checkout main
+
+# # Update the deploy version
+# echo $(git rev-parse HEAD) > deploy/deploy.version
+
+# Update the deploy version
+echo $(git rev-parse HEAD) > deploy/deploy.version
+
+# # Commit the changes
+# git add .
+# git commit -m "Post-deploy commit"
+# git push origin main
