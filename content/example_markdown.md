@@ -77,5 +77,3 @@ _This is italicized text._
 | Table Head 1 | Table Head 2 |
 | :----------- | :----------- |
 | Content 1    | Content 2    |
-
-test2
