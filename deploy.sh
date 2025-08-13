@@ -44,8 +44,10 @@ fi
 # If there are any removed files, remove them from the site directory
 if [ -s deploy/remove.file ]; then
     while read -r file; do
-        # rm -rf "site/$file"
-        echo "Removing $file"
+        # Transform content/ to site/
+        site_file="${file/content/site}"
+        # rm -rf "$site_file"
+        echo "Removing $site_file"
     done < deploy/remove.file
 fi
 
