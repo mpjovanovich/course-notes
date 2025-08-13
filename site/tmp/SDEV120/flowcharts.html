@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV120: Flowcharts</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#flowcharts">Flowcharts</a>
+            <ul>
+              <li>
+                <a href="#flowchart-symbols">Flowchart Symbols</a>
+                <ul>
+                  <li><a href="#terminator">Terminator</a></li>
+                  <li><a href="#flow-arrow">Flow Arrow</a></li>
+                  <li><a href="#process">Process</a></li>
+                  <li><a href="#decision">Decision</a></li>
+                  <li><a href="#input--output">Input / Output</a></li>
+                  <li><a href="#data-store">Data Store</a></li>
+                </ul>
+              </li>
+              <li><a href="#example">Example</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="flowcharts">Flowcharts</h1>
+      <figure>
+        <img
+          src="https://imgs.xkcd.com/comics/flow_charts.png"
+          alt=""
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <p>A flowchart is a visual representation of a process.</p>
+      <p>
+        Flowchart symbols are standardized, the way the text is written is not.
+      </p>
+      <h2 id="flowchart-symbols">Flowchart Symbols</h2>
+      <h3 id="terminator">Terminator</h3>
+      <figure>
+        <img
+          src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-01.svg"
+          alt=""
+          style="width: 60%; height: auto"
+        />
+      </figure>
+
+      <ul>
+        <li>Oval or rounded rectangle.</li>
+        <li>Indicates the start or end of a process.</li>
+      </ul>
+      <h3 id="flow-arrow">Flow Arrow</h3>
+      <figure>
+        <img
+          src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-06.svg"
+          alt=""
+          style="width: 60%; height: auto"
+        />
+      </figure>
+
+      <ul>
+        <li>Arrow connecting two symbols.</li>
+        <li>Indicates the flow of the process.</li>
+      </ul>
+      <h3 id="process">Process</h3>
+      <figure>
+        <img
+          src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-02.svg"
+          alt=""
+          style="width: 60%; height: auto"
+        />
+      </figure>
+
+      <ul>
+        <li>Rectangle.</li>
+        <li>Represents a process, action, or operation.</li>
+        <li>Also represents assignment of a value.</li>
+        <li>Typically contains a verb.</li>
+        <li>
+          Examples:
+          <ul>
+            <li>&quot;Calculate total&quot;</li>
+            <li>&quot;Print invoice&quot;</li>
+            <li>&quot;Add new customer&quot;</li>
+            <li>&quot;Set balance = 0&quot;</li>
+            <li>&quot;balance = 0&quot;</li>
+            <li>&quot;balance := 0&quot;</li>
+          </ul>
+        </li>
+      </ul>
+      <h3 id="decision">Decision</h3>
+      <figure>
+        <img
+          src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-11.svg"
+          alt=""
+          style="width: 60%; height: auto"
+        />
+      </figure>
+
+      <ul>
+        <li>Represents a decision point.</li>
+        <li>
+          Branches to different parts of the flowchart based on a condition.
+        </li>
+        <li>
+          Branches are labeled
+          <ul>
+            <li>&quot;Yes&quot; or &quot;No&quot;</li>
+            <li>&quot;True&quot; or &quot;False&quot;</li>
+          </ul>
+        </li>
+        <li>
+          Possible ways to express a decision:
+          <ul>
+            <li>&quot;Is the customer a member?&quot;</li>
+            <li>&quot;Customer is member?&quot;</li>
+            <li>&quot;Is the balance over $1000?&quot;</li>
+            <li>&quot;Balance &gt; $1000?&quot;</li>
+          </ul>
+        </li>
+      </ul>
+      <h3 id="input--output">Input / Output</h3>
+      <figure>
+        <img
+          src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-04.svg"
+          alt=""
+          style="width: 60%; height: auto"
+        />
+      </figure>
+
+      <ul>
+        <li>Represents input or output.</li>
+        <li>
+          May have arrow pointing to or from the symbol.
+          <ul>
+            <li>Arrow connecting on the left side is input.</li>
+            <li>Arrow stemming from the right side is output.</li>
+          </ul>
+        </li>
+        <li>Input can be a variable assignment.</li>
+      </ul>
+      <p><em>Input Example:</em></p>
+      <ul>
+        <li>&quot;input customer name&quot;</li>
+        <li>&quot;enter customer name&quot;</li>
+        <li>&quot;-&gt; customer name&quot;</li>
+        <li>&quot;customer name&quot;</li>
+      </ul>
+      <p><em>Output Example:</em></p>
+      <ul>
+        <li>&quot;print total&quot;</li>
+        <li>&quot;display total&quot;</li>
+        <li>&quot;output total&quot;</li>
+      </ul>
+      <h3 id="data-store">Data Store</h3>
+      <figure>
+        <img
+          src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-05.svg"
+          alt=""
+          style="width: 60%; height: auto"
+        />
+      </figure>
+
+      <ul>
+        <li>Cylinder</li>
+        <li>
+          Represents a data store
+          <ul>
+            <li>Database</li>
+            <li>File</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="example">Example</h2>
+      <div class="focusContent exercise">
+        <p>
+          <em
+            >Flowchart our previous algorithm for &quot;have a good or bad
+            day&quot; algorithm</em
+          >
+        </p>
+        <p>
+          We will do this together using <a href="https://draw.io">draw.io</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

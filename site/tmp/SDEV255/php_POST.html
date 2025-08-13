@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV255: PHP - POST</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#post">POST</a>
+          <ul>
+            <li>
+              <a href="#post-vs-get">POST (vs GET)</a>
+              <ul>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#data-format">Data Format</a></li>
+                <li>
+                  <a href="#summary-which-to-use">Summary: Which to Use?</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#verifying-that-a-form-was-submitted"
+                >Verifying that a Form was Submitted</a
+              >
+            </li>
+            <li><a href="#php-post-array">PHP POST Array</a></li>
+            <li>
+              <a href="#verifying-that-a-form-was-submitted-1"
+                >Verifying that a Form was Submitted</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="post">POST</h1>
+      <p>
+        A POST request is used to send data to a server to create or update a
+        resource.
+      </p>
+      <h2 id="post-vs-get">POST (vs GET)</h2>
+      <h3 id="security">Security</h3>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>GET</th>
+            <th>POST</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Variables in URL</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Caching</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Encryption with HTTPS</td>
+            <td>No</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="data-format">Data Format</h3>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>GET</th>
+            <th>POST</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data Size Limit</td>
+            <td>2048 characters</td>
+            <td>No limit</td>
+          </tr>
+          <tr>
+            <td>Data Type</td>
+            <td>Text only</td>
+            <td>Text or binary</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="summary-which-to-use">Summary: Which to Use?</h3>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>GET</th>
+            <th>POST</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data Retrieval</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Persistent URLs</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Presentation Changes</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Sensitive Data</td>
+            <td>No</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>File Uploads</td>
+            <td>No</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Application Changes</td>
+            <td>No</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><em>GET</em></p>
+      <ul>
+        <li>
+          Data retrieval
+          <ul>
+            <li>Searching</li>
+            <li>Navigating</li>
+          </ul>
+        </li>
+        <li>
+          Persistent URLs
+          <ul>
+            <li>Bookmarks</li>
+            <li>Sharing</li>
+          </ul>
+        </li>
+        <li>
+          Change presentation (Safe operations)
+          <ul>
+            <li>Sorting</li>
+            <li>Filtering</li>
+            <li>Pagination</li>
+          </ul>
+        </li>
+      </ul>
+      <p><em>POST</em></p>
+      <ul>
+        <li>
+          Data creation or modification
+          <ul>
+            <li>Form submissions</li>
+            <li>File uploads</li>
+          </ul>
+        </li>
+        <li>
+          Change application state (Unsafe operations)
+          <ul>
+            <li>Database updates</li>
+            <li>File management</li>
+            <li>Email</li>
+            <li>Authentication</li>
+            <li>Session management</li>
+            <li>Logging</li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="verifying-that-a-form-was-submitted">
+        Verifying that a Form was Submitted
+      </h2>
+      <ul>
+        <li>
+          Use <code>$_SERVER[&#39;REQUEST_METHOD&#39;]</code> to verify the
+          request method.
+        </li>
+        <li>
+          This ensures that the form is only processed when the form is
+          submitted.
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#E45649;--shiki-dark:#E06C75">$_SERVER</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'REQUEST_METHOD'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">] </span><span style="color:#383A42;--shiki-dark:#56B6C2">===</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'POST'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // We will only get here if the form was submitted.</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+      <h2 id="php-post-array">PHP POST Array</h2>
+      <p>
+        PHP automatically creates an associative array called
+        <code>$_POST</code> that contains the form data. The array keys are the
+        <code>name</code> attributes of the form elements.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF">php</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#E45649;--shiki-dark:#E06C75">$_SERVER</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'REQUEST_METHOD'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">] </span><span style="color:#383A42;--shiki-dark:#56B6C2">===</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'POST'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    echo</span><span style="color:#E45649;--shiki-dark:#E06C75"> $_POST</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'name'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">] </span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#383A42;--shiki-dark:#56B6C2"> &#x3C;</span><span style="color:#986801;--shiki-dark:#D19A66">br</span><span style="color:#383A42;--shiki-dark:#56B6C2"> /></span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    echo</span><span style="color:#E45649;--shiki-dark:#E06C75"> $_POST</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'age'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">] </span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#383A42;--shiki-dark:#56B6C2"> &#x3C;</span><span style="color:#986801;--shiki-dark:#D19A66">br</span><span style="color:#383A42;--shiki-dark:#56B6C2"> /></span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">form</span><span style="color:#986801;--shiki-dark:#D19A66"> action</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"process.php"</span><span style="color:#986801;--shiki-dark:#D19A66"> method</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"POST"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">input</span><span style="color:#986801;--shiki-dark:#D19A66"> type</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"text"</span><span style="color:#986801;--shiki-dark:#D19A66"> name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> /></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">input</span><span style="color:#986801;--shiki-dark:#D19A66"> type</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"text"</span><span style="color:#986801;--shiki-dark:#D19A66"> name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"age"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> /></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="color:#E45649;--shiki-dark:#E06C75">input</span><span style="color:#986801;--shiki-dark:#D19A66"> type</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"submit"</span><span style="color:#986801;--shiki-dark:#D19A66"> value</span><span style="color:#383A42;--shiki-dark:#ABB2BF">=</span><span style="color:#50A14F;--shiki-dark:#98C379">"Submit"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> /></span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">&#x3C;/</span><span style="color:#E45649;--shiki-dark:#E06C75">form</span><span style="color:#383A42;--shiki-dark:#ABB2BF">></span></span></code></pre>
+      <h2 id="verifying-that-a-form-was-submitted">
+        Verifying that a Form was Submitted
+      </h2>
+      <ul>
+        <li>
+          Use <code>$_SERVER[&#39;REQUEST_METHOD&#39;]</code> to verify the
+          request method.
+        </li>
+        <li>
+          This ensures that the form is only processed when the form is
+          submitted.
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#E45649;--shiki-dark:#E06C75">$_SERVER</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#50A14F;--shiki-dark:#98C379">'REQUEST_METHOD'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">] </span><span style="color:#383A42;--shiki-dark:#56B6C2">===</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'POST'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // We will only get here if the form was submitted.</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV265: Configuration Management</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#configuration-management">Configuration Management</a>
+          <ul>
+            <li><a href="#versioning">Versioning</a></li>
+          </ul>
+        </li>
+        <li><a href="#source-control">Source Control</a></li>
+      </ul>
+      <h1 id="configuration-management">Configuration Management</h1>
+      <h2 id="versioning">Versioning</h2>
+      <p>
+        Applications are often composed of multiple components that are
+        developed independently.
+      </p>
+      <p>
+        When another package is used in a project, it is called a
+        <strong>dependency</strong>.
+      </p>
+      <p>
+        Versioning becomes especially important when using a dependency from a
+        <strong>third-party</strong> (someone else).
+      </p>
+      <h3 id="semantic-versioning">Semantic Versioning</h3>
+      <p>
+        <strong>Semanting Versioning</strong> is a scheme that is used to
+        communicate the changes in a package.
+      </p>
+      <p>
+        A version number is a three-part number: <code>MAJOR.MINOR.PATCH</code>
+      </p>
+      <ul>
+        <li><code>MAJOR</code>: Breaking changes</li>
+        <li><code>MINOR</code>: New features</li>
+        <li><code>PATCH</code>: Bug fixes</li>
+      </ul>
+      <p>See: <a href="https://semver.org/">Semantic Versioning</a></p>
+      <div class="focusContent example">
+        <p>Let&#39;s see what Mozilla has bee up to lately:</p>
+        <p>
+          <a href="https://www.mozilla.org/en-US/firefox/releases/"
+            >Firefox Release Notes</a
+          >
+        </p>
+      </div>
+
+      <div class="focusContent example">
+        <p><strong>Case Study: Our Course Notes</strong></p>
+        <p>
+          The course notes for this course are compiled from markdown source
+          files. I use a tool called <code>dotmark</code> to add additional
+          functionality to markdown compiliation process.
+        </p>
+        <p>
+          This tool is <strong>decoupled</strong> from the course notes - it is
+          an independent application in itself.
+        </p>
+        <ul>
+          <li>
+            <p>
+              The <code>dotmark</code> tool is a node
+              <strong>package</strong> that is published on npm
+            </p>
+            <ul>
+              <li>
+                <a href="https://www.npmjs.com/package/@mpjovanovich/dotmark"
+                  >dotmark</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              The course notes website compiler has a
+              <strong>dependency</strong> on the <code>dotmark</code> package
+            </p>
+            <ul>
+              <li>
+                <a href="https://github.com/mpjovanovich/course-notes"
+                  >Course Notes Repository</a
+                >
+              </li>
+              <li>See the <code>package.json</code> file</li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          If I were to make breaking API changes to the
+          <code>dotmark</code> package, my course notes would continue to work -
+          but only until I update the <code>dotmark</code> package in my
+          project.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

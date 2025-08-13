@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV200: Abstract Classes and Methods</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#abstract-classes-and-methods"
+              >Abstract Classes and Methods</a
+            >
+            <ul>
+              <li>
+                <a href="#abstract-class-example">Abstract Class Example</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="abstract-classes-and-methods">Abstract Classes and Methods</h1>
+      <p>
+        <strong>Abstract classes</strong> are classes that cannot be
+        instantiated (created using the <code>new</code> keyword).
+      </p>
+      <p>
+        <strong>Abstract methods</strong> are methods that do not have a body.
+        They are meant to be implemented by subclasses.
+      </p>
+      <h2 id="abstract-class-example">Abstract Class Example</h2>
+      <p>Take note of the following:</p>
+      <ul>
+        <li>
+          The <code>Quadrilateral</code> class is abstract because it has an
+          abstract method.
+        </li>
+        <li>
+          We are not meant to create instances of the
+          <code>Quadrilateral</code> class directly.
+        </li>
+        <li>
+          The <code>Square</code> and <code>Trapezoid</code> classes are
+          subclasses of <code>Quadrilateral</code>.
+        </li>
+        <li>
+          These classes must implement the abstract method from the superclass.
+          <ul>
+            <li>
+              Try removing the <code>area</code> method from the
+              <code>Square</code> class and see what happens.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Class must be abstract because it has an abstract method</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// We are not meant to create instances of this class directly</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">abstract</span><span style="color:#A626A4;--shiki-dark:#C678DD"> class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Quadrilateral</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Protected attributes</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    protected</span><span style="color:#A626A4;--shiki-dark:#C678DD"> double</span><span style="color:#E45649;--shiki-dark:#E06C75"> side1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    protected</span><span style="color:#A626A4;--shiki-dark:#C678DD"> double</span><span style="color:#E45649;--shiki-dark:#E06C75"> side2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    protected</span><span style="color:#A626A4;--shiki-dark:#C678DD"> double</span><span style="color:#E45649;--shiki-dark:#E06C75"> side3</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    protected</span><span style="color:#A626A4;--shiki-dark:#C678DD"> double</span><span style="color:#E45649;--shiki-dark:#E06C75"> side4</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    protected</span><span style="color:#C18401;--shiki-dark:#E5C07B"> String</span><span style="color:#E45649;--shiki-dark:#E06C75"> name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Protected constructor - only accessible within the class and subclasses</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    protected</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Quadrilateral</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#A626A4;--shiki-dark:#C678DD">double</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> side1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#A626A4;--shiki-dark:#C678DD">double</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> side2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#A626A4;--shiki-dark:#C678DD">double</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> side3</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#A626A4;--shiki-dark:#C678DD">double</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> side4</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        this</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">name</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> name;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        this</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">side1</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> side1;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        this</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">side2</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> side2;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        this</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">side3</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> side3;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        this</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">side4</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> side4;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> double</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> perimeter</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> side1 </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> side2 </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> side3 </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> side4;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> printDescription</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"I am a "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> name </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#50A14F;--shiki-dark:#98C379"> "."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Abstract method - must be implemented by any subclass</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // We want all quadrilaterals to offer this functionality, but the formula is different for each type</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    abstract</span><span style="color:#A626A4;--shiki-dark:#C678DD"> double</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> area</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Square</span><span style="color:#A626A4;--shiki-dark:#C678DD"> extends</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Quadrilateral</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Square</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">double</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> side</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        super</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Square"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, side, side, side, side);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Square's implementation of the abstract method</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> double</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> area</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> side1 </span><span style="color:#383A42;--shiki-dark:#56B6C2">*</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> side1;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Trapezoid</span><span style="color:#A626A4;--shiki-dark:#C678DD"> extends</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Quadrilateral</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // This class also has its own height property</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    private</span><span style="color:#A626A4;--shiki-dark:#C678DD"> double</span><span style="color:#E45649;--shiki-dark:#E06C75"> height</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Trapezoid</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">double</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> base1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#A626A4;--shiki-dark:#C678DD">double</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> base2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#A626A4;--shiki-dark:#C678DD">double</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> side1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#A626A4;--shiki-dark:#C678DD">double</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> side2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#A626A4;--shiki-dark:#C678DD">double</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic"> height</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        super</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Trapezoid"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, base1, base2, side1, side2);</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        this</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">height</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> height;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Trapezoid's implementation of the abstract method</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> double</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> area</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (side1 </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> side2) </span><span style="color:#383A42;--shiki-dark:#56B6C2">*</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> height </span><span style="color:#383A42;--shiki-dark:#56B6C2">/</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Test</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    public</span><span style="color:#A626A4;--shiki-dark:#C678DD"> static</span><span style="color:#A626A4;--shiki-dark:#C678DD"> void</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">String</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[] </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">args</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        // Create instances of derived classes</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Square</span><span style="color:#E45649;--shiki-dark:#E06C75"> s</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Square</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#C18401;--shiki-dark:#E5C07B">        Trapezoid</span><span style="color:#E45649;--shiki-dark:#E06C75"> t</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#A626A4;--shiki-dark:#C678DD"> new</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Trapezoid</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">6</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">4</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        s</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">printDescription</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Square area: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#E45649;--shiki-dark:#E5C07B"> s</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">area</span><span style="color:#383A42;--shiki-dark:#ABB2BF">());</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Square perimeter: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#E45649;--shiki-dark:#E5C07B"> s</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">perimeter</span><span style="color:#383A42;--shiki-dark:#ABB2BF">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        t</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">printDescription</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Trapezoid area: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#E45649;--shiki-dark:#E5C07B"> t</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">area</span><span style="color:#383A42;--shiki-dark:#ABB2BF">());</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        System</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E5C07B">out</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">println</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Trapezoid perimeter: "</span><span style="color:#383A42;--shiki-dark:#56B6C2"> +</span><span style="color:#E45649;--shiki-dark:#E5C07B"> t</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">perimeter</span><span style="color:#383A42;--shiki-dark:#ABB2BF">());</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+    </div>
+  </body>
+</html>

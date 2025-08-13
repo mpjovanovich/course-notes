@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV265: Software Testing Approaches</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#software-testing-approaches"
+              >Software Testing Approaches</a
+            >
+            <ul>
+              <li>
+                <a href="#black-box-vs-white-box-testing"
+                  >Black-box vs white-box testing</a
+                >
+              </li>
+              <li>
+                <a href="#test-driven-development-tdd"
+                  >Test-Driven-Development (TDD)</a
+                >
+              </li>
+              <li>
+                <a href="#behavior-driven-development-bdd"
+                  >Behavior-Driven-Development (BDD)</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="software-testing-approaches">Software Testing Approaches</h1>
+      <h2 id="black-box-vs-white-box-testing">
+        Black-box vs white-box testing
+      </h2>
+      <figure>
+        <span>
+          <img
+            src="https://www.boardinfinity.com/blog/content/images/2023/04/Copy-of-Copy-of-Copy-of-Copy-of-Untitled-Design.png"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p><strong>Black-box Testing:</strong></p>
+      <ul>
+        <li>
+          Tester (human or machine) has no knowledge of internal code structure
+        </li>
+        <li>Tests based on requirements and specifications</li>
+        <li>Focus on inputs and expected outputs</li>
+        <li>Examples: functional testing, acceptance testing</li>
+      </ul>
+      <p><strong>White-box Testing:</strong></p>
+      <ul>
+        <li>Tester has knowledge of internal code structure</li>
+        <li>Tests based on code coverage and paths</li>
+        <li>Focus on internal logic and code paths</li>
+        <li>Examples: unit testing, code coverage analysis</li>
+      </ul>
+      <div class="focusContent exercise">
+        <p><strong>Happy Paths, Edge Cases, and Error Handling</strong></p>
+        <p>
+          As a novice developer, it may be difficult to learn formal unit
+          testing and its associated tools. This doesn&#39;t mean that you
+          can&#39;t test your code!
+        </p>
+        <p>
+          As the developer, you can see the paths of execution that the code
+          might take and identify the edge cases.
+        </p>
+        <p>
+          Each time you introduce a new logical branch, you should at minimum
+          perform a manual test to ensure that the branch produces a sensible
+          result. Once you start to become more confident in your code, you can
+          start to save your tests, and even write some automated tests.
+        </p>
+        <p>When testing you want to consider:</p>
+        <ul>
+          <li>
+            <strong>Happy paths</strong> - The normal, expected behavior of the
+            code.
+          </li>
+          <li>
+            <strong>Edge cases</strong> - The code&#39;s behavior at the
+            boundaries of the input space.
+          </li>
+          <li>
+            <strong>Error handling</strong> - The code&#39;s behavior when it
+            encounters errors.
+          </li>
+        </ul>
+        <p>
+          A helpful way to think about what to test is to group similar inputs
+          that should behave the same way. Common groups include:
+        </p>
+        <ul>
+          <li>Data types: null, boolean, string, number, list, set, etc.</li>
+          <li>Numbers: positive, negative, zero</li>
+          <li>Text: empty, single character, many characters</li>
+          <li>Lists/Sets: empty, single item, many items</li>
+          <li>
+            Categorical: one from each category (admin vs non-admin, etc.)
+          </li>
+        </ul>
+        <p>Let&#39;s look at an example:</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> age </span><span style="color:#383A42;--shiki-dark:#56B6C2">>=</span><span style="color:#986801;--shiki-dark:#D19A66"> 18</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    return</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Can vote"</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">else</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    return</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Cannot vote"</span></span></code></pre>
+        <p>
+          What are the happy paths, edge cases, and error conditions that we
+          might check for in this code?
+        </p>
+      </div>
+
+      <h2 id="test-driven-development-tdd">Test-Driven-Development (TDD)</h2>
+      <p>Typically applied to low level system behavior.</p>
+      <ul>
+        <li>Development methodology where tests are written before code</li>
+        <li>Helps ensure code meets requirements</li>
+        <li>Promotes better design and maintainable code</li>
+      </ul>
+      <div class="focusContent note">
+        <p>When writing the test we follow the pattern of:</p>
+        <ul>
+          <li>
+            <strong>Red</strong> - Write a test that fails before implementing
+            the code.
+          </li>
+          <li>
+            <strong>Green</strong> - Write the code to make the test pass.
+          </li>
+          <li>
+            <strong>Refactor</strong> - Refactor the code to make it better.
+          </li>
+        </ul>
+      </div>
+
+      <div class="focusContent exercise">
+        <p><strong>Ticket Price Calculator</strong></p>
+        <p>
+          The local movie theater needs a function to calculate ticket prices.
+          Here are their requirements:
+        </p>
+        <ul>
+          <li>The theater offers regular shows and matinee shows</li>
+          <li>Regular shows cost $12.00</li>
+          <li>Matinee shows cost $8.00</li>
+          <li>
+            The theater offers age-based discounts:
+            <ul>
+              <li>Children 3 and under get in free</li>
+              <li>Children 4-12 get half off</li>
+              <li>Adults (13-64) pay full price</li>
+              <li>Seniors (65+) get 20% off</li>
+            </ul>
+          </li>
+          <li>The system should not accept negative ages</li>
+        </ul>
+        <p>
+          What test cases should we write to confirm that the function behaves
+          as expected?
+        </p>
+        <p>TODO: Let&#39;s implement this after we cover unit testing!</p>
+      </div>
+
+      <h2 id="behavior-driven-development-bdd">
+        Behavior-Driven-Development (BDD)
+      </h2>
+      <p>Typically applied to high level system behavior.</p>
+      <ul>
+        <li>
+          Extension of TDD focusing on business value provided by the system
+        </li>
+        <li>
+          Collaboration between the people building the system and the people
+          who will use the system
+        </li>
+        <li>Tests written in natural language</li>
+        <li>Focuses on system behavior rather than implementation</li>
+      </ul>
+      <div class="focusContent lookout">
+        <p><strong>Imperative vs Declarative</strong></p>
+        <ul>
+          <li><strong>Imperative:</strong> How to do something</li>
+          <li><strong>Declarative:</strong> What something should do</li>
+        </ul>
+        <p>
+          In BDD, we use the declarative style to describe the behavior of the
+          system.
+        </p>
+        <p><em>Bad example (Imperative):</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">Feature</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> Subscribers see different articles based on their subscription level</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">Scenario</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> Free subscribers see only the free articles</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  Given </span><span style="color:#383A42;--shiki-dark:#ABB2BF">users with a free subscription can access </span><span style="color:#50A14F;--shiki-dark:#98C379">"FreeArticle1"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> but not </span><span style="color:#50A14F;--shiki-dark:#98C379">"PaidArticle1"</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  When </span><span style="color:#383A42;--shiki-dark:#ABB2BF">I type </span><span style="color:#50A14F;--shiki-dark:#98C379">"freeFrieda@example.com"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> in the email field</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  And </span><span style="color:#383A42;--shiki-dark:#ABB2BF">I type </span><span style="color:#50A14F;--shiki-dark:#98C379">"validPassword123"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> in the password field</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  And </span><span style="color:#383A42;--shiki-dark:#ABB2BF">I press the </span><span style="color:#50A14F;--shiki-dark:#98C379">"Submit"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> button</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  Then </span><span style="color:#383A42;--shiki-dark:#ABB2BF">I see </span><span style="color:#50A14F;--shiki-dark:#98C379">"FreeArticle1"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> on the home page</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  And </span><span style="color:#383A42;--shiki-dark:#ABB2BF">I do not see </span><span style="color:#50A14F;--shiki-dark:#98C379">"PaidArticle1"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> on the home page</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">Scenario</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> Subscriber with a paid subscription can access "FreeArticle1" and "PaidArticle1"</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  Given </span><span style="color:#383A42;--shiki-dark:#ABB2BF">I am on the login page</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  When </span><span style="color:#383A42;--shiki-dark:#ABB2BF">I type </span><span style="color:#50A14F;--shiki-dark:#98C379">"paidPattya@example.com"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> in the email field</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  And </span><span style="color:#383A42;--shiki-dark:#ABB2BF">I type </span><span style="color:#50A14F;--shiki-dark:#98C379">"validPassword123"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> in the password field</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  And </span><span style="color:#383A42;--shiki-dark:#ABB2BF">I press the </span><span style="color:#50A14F;--shiki-dark:#98C379">"Submit"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> button</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  Then </span><span style="color:#383A42;--shiki-dark:#ABB2BF">I see </span><span style="color:#50A14F;--shiki-dark:#98C379">"FreeArticle1"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> and </span><span style="color:#50A14F;--shiki-dark:#98C379">"PaidArticle1"</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> on the home page</span></span></code></pre>
+        <p><em>Good example (Declarative):</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">Feature</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> Subscribers see different articles based on their subscription level</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">Scenario</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> Free subscribers see only the free articles</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  Given </span><span style="color:#383A42;--shiki-dark:#ABB2BF">Free Frieda has a free subscription</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  When </span><span style="color:#383A42;--shiki-dark:#ABB2BF">Free Frieda logs in with her valid credentials</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  Then </span><span style="color:#383A42;--shiki-dark:#ABB2BF">she sees a Free article</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">Scenario</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> Subscriber with a paid subscription can access both free and paid articles</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  Given </span><span style="color:#383A42;--shiki-dark:#ABB2BF">Paid Patty has a basic-level paid subscription</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  When </span><span style="color:#383A42;--shiki-dark:#ABB2BF">Paid Patty logs in with her valid credentials</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  Then </span><span style="color:#383A42;--shiki-dark:#ABB2BF">she sees a Free article and a Paid article</span></span></code></pre>
+      </div>
+    </div>
+  </body>
+</html>

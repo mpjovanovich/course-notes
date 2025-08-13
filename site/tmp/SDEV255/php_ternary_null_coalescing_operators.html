@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV255: PHP - Ternary If, Null Coalescing</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li><a href="#ternary-if">Ternary If</a></li>
+        <li><a href="#null-coalescing">Null Coalescing</a></li>
+        <li>
+          <a href="#comparison-of-techniques">Comparison of Techniques</a>
+        </li>
+      </ul>
+      <h1 id="ternary-if">Ternary If</h1>
+      <ul>
+        <li><strong>Ternary</strong> = 3 parts</li>
+        <li>A shorthand for simple if / else statements.</li>
+        <li>Used to assign a value to a variable based on a condition.</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$var</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#986801;--shiki-dark:#ABB2BF">condition</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#986801;--shiki-dark:#ABB2BF"> value_if_true</span><span style="color:#383A42;--shiki-dark:#C678DD"> :</span><span style="color:#986801;--shiki-dark:#ABB2BF"> value_if_false</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <p>This is the same as:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#986801;--shiki-dark:#ABB2BF">condition</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    $var</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#ABB2BF"> value_if_true</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">} </span><span style="color:#A626A4;--shiki-dark:#C678DD">else</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    $var</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#ABB2BF"> value_if_false</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+      <p class="demo">Examples</p>
+
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$x</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 4</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$even</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#986801;--shiki-dark:#ABB2BF">x</span><span style="color:#383A42;--shiki-dark:#56B6C2"> %</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span><span style="color:#383A42;--shiki-dark:#56B6C2"> ==</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'true'</span><span style="color:#383A42;--shiki-dark:#C678DD"> :</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'false'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="color:#E45649;--shiki-dark:#E06C75"> $even</span><span style="color:#383A42;--shiki-dark:#ABB2BF">; </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// true</span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$x</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$even</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#986801;--shiki-dark:#ABB2BF">x</span><span style="color:#383A42;--shiki-dark:#56B6C2"> %</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span><span style="color:#383A42;--shiki-dark:#56B6C2"> ==</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'true'</span><span style="color:#383A42;--shiki-dark:#C678DD"> :</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'false'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="color:#E45649;--shiki-dark:#E06C75"> $even</span><span style="color:#383A42;--shiki-dark:#ABB2BF">; </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// false</span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Skip the variable assignment and just echo the result</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$x</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#986801;--shiki-dark:#ABB2BF">x</span><span style="color:#383A42;--shiki-dark:#56B6C2"> %</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span><span style="color:#383A42;--shiki-dark:#56B6C2"> ==</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'true'</span><span style="color:#383A42;--shiki-dark:#C678DD"> :</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'false'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">; </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// false</span></span></code></pre>
+      <h1 id="null-coalescing">Null Coalescing</h1>
+      <ul>
+        <li>Used to assign a value to a variable if it is not null.</li>
+        <li>If variable is null the value after the ?? is assigned.</li>
+        <li>
+          Useful when getting values from a form or database that may or may not
+          be present.
+        </li>
+      </ul>
+      <p class="demo">Examples</p>
+
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E06C75"> $userVar</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> ?? </span><span style="color:#50A14F;--shiki-dark:#98C379">'default'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="color:#E45649;--shiki-dark:#E06C75"> $userVar</span><span style="color:#383A42;--shiki-dark:#ABB2BF">; </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// default</span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'some value'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E06C75"> $userVar</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> ?? </span><span style="color:#50A14F;--shiki-dark:#98C379">'default'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="color:#E45649;--shiki-dark:#E06C75"> $userVar</span><span style="color:#383A42;--shiki-dark:#ABB2BF">; </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// some value</span></span></code></pre>
+      <h1 id="comparison-of-techniques">Comparison of Techniques</h1>
+      <p>Basic If:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#E45649;--shiki-dark:#E06C75">$userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> ===</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    $userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'default'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#986801;--shiki-dark:#ABB2BF">div</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#ABB2BF">DOTMARK_DIV</span><span style="color:#383A42;--shiki-dark:#ABB2BF">--</span><span style="color:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+      <p>Ternary If:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#E45649;--shiki-dark:#E06C75">$userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> ===</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#383A42;--shiki-dark:#C678DD">?</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'default'</span><span style="color:#383A42;--shiki-dark:#C678DD"> :</span><span style="color:#E45649;--shiki-dark:#E06C75"> $userVar</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <p>Null Coalescing:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> null</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">$userVar</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#E45649;--shiki-dark:#E06C75"> $userVar</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> ?? </span><span style="color:#50A14F;--shiki-dark:#98C379">'default'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+    </div>
+  </body>
+</html>

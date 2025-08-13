@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV264: Arrow Functions</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <ul>
+        <li>
+          <a href="#arrow-functions">Arrow Functions</a>
+          <ul>
+            <li>
+              <a href="#how-to-write-an-arrow-function"
+                >How to Write an Arrow Function</a
+              >
+            </li>
+            <li><a href="#examples">Examples</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h1 id="arrow-functions">Arrow Functions</h1>
+      <p>
+        Arrow functions are a shorthand way of writing functions in JavaScript
+        and TypeScript. They are similar to <strong>lambda functions</strong>.
+      </p>
+      <p>
+        This can be useful when writing a function that is only used once, or
+        writing a function that is very short.
+      </p>
+      <h2 id="how-to-write-an-arrow-function">
+        How to Write an Arrow Function
+      </h2>
+      <p>We can write a standard function as an arrow function by:</p>
+      <ul>
+        <li>
+          Putting the <strong>function signature</strong> (parameter names /
+          data types, return data type) on the left side of the
+          <code>=&gt;</code> operator
+        </li>
+        <li>
+          Putting the <strong>function body</strong> on the right side of the
+          <code>=&gt;</code> operator
+        </li>
+        <li>Assigning the function to a variable</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> functionName</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">param1</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#C18401;--shiki-dark:#E5C07B"> dataType</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">param2</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#C18401;--shiki-dark:#E5C07B"> dataType</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#C18401;--shiki-dark:#E5C07B"> returnType</span><span style="color:#A626A4;--shiki-dark:#C678DD"> =></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // function body</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">};</span></span></code></pre>
+      <h2 id="examples">Examples</h2>
+      <p>Function with one argument and a return value:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Standard function</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">function</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> addOne</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">x</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  return</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Arrow function</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> addOne</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">x</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#A626A4;--shiki-dark:#C678DD"> =></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  return</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Call the function</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> result</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> addOne</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <p>Function with multiple arguments and a return value:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Standard function</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">function</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">x</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">y</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  return</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#E06C75"> y</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Arrow function</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> add</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">x</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">y</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> number</span><span style="color:#A626A4;--shiki-dark:#C678DD"> =></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  return</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#E06C75"> y</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Call the function</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> result</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> add</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">3</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <p>Function with no arguments and no return value (void function):</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Standard function</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">function</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> printSomething</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> void</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">  console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"I will be printed."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Arrow function</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> printSomething</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> ()</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> void</span><span style="color:#A626A4;--shiki-dark:#C678DD"> =></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">  console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"I will be printed."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Call the function</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">printSomething</span><span style="color:#383A42;--shiki-dark:#ABB2BF">();</span></span></code></pre>
+    </div>
+  </body>
+</html>
