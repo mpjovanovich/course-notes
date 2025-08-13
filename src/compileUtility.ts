@@ -4,6 +4,7 @@ import { config } from "./config.js";
 
 export async function compileAssets() {
   // Add static assets to the output directory
+  // await fs.mkdir(config.paths.output + "assets", { recursive: true });
   await fs.copy(config.paths.assets, config.paths.output + "assets");
 }
 
