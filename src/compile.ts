@@ -11,4 +11,5 @@ async function compile(files: string[]) {
 const addFiles = (await fs.readFile(config.paths.addFile, "utf8"))
   .split(/\r?\n/)
   .filter(Boolean);
+
 await compile(addFiles);
