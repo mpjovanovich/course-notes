@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "dist/compile.js",
   "scripts": {
-    "deploy": "rm -rf output && deploy/compile.sh && deploy/deploy.sh",
+    "deploy": "rm -rf output && npm run build:ts && deploy/compile.sh && deploy/deploy.sh",
     "deploy:all": "npm run build && deploy/deploy.sh",
     "build": "npm run clean && npm run create:dirs && npm run build:sass && npm run build:ts && node dist/compile_all.js",
     "clean": "rm -rf output && rm -rf dist rm -rf deploy/add.files && rm -rf deploy/remove.files",
