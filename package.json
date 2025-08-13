@@ -4,12 +4,10 @@
   "version": "1.0.0",
   "main": "dist/compile.js",
   "scripts": {
-    "_build": "npm run clean && npm run create:dirs && npm run build:sass && npm run build:ts && node dist/compile_all.js",
     "clean": "rm -rf output && rm -rf dist rm -rf deploy/add.files && rm -rf deploy/remove.files",
-    "_create:dirs": "mkdir -p output/assets/css output/assets/scripts",
+    "build": "tsc --project tsconfig.json",
     "build:sass": "sass scss/main.scss:output/assets/css/styles.css --style compressed --no-source-map",
     "build:sass:dev": "rm -rf output/assets/css && sass scss/main.scss:output/assets/css/styles.css --watch",
-    "build:ts": "tsc --project tsconfig.json",
     "quicktest": "node --loader ts-node/esm src/test.ts"
   },
   "keywords": [],

@@ -13,7 +13,7 @@ fi
 npm run clean
 
 # Build Node project
-npm run build:ts
+npm run build
 
 # Commit local changes
 # Must be done before rest of script
