@@ -24,7 +24,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Final assignment milestone due dates are posted.
+- Welcome to INFM109!
 
 ## Module 00: Course Introduction
 
