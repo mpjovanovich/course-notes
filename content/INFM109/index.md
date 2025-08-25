@@ -38,14 +38,14 @@ Overview of course
   - Preferred first name
   - Home campus
   - What's something you wish you had more time to do or learn about?
+- Break
 
 ## Module 01: Digital Citizenry & The Internet
 
 Part I:
 
 - [Timelines: Digital Evolution](timelines_digital_evolution.html)
-- Break, prep for discussion.
-- Discussion:
+- Discussion: Milestones in the Technology Industry
 
 Part II:
 
