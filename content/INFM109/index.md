@@ -30,19 +30,22 @@ showBreadcrumb: false
 
 Overview of course
 
-- Syllabus and policy review (policy assignment)
 - Review course structure and resources
 - Make sure you can access the textbook
+- Check-in: Course Policy Review
 - [Review: Computer Orientation](../common/computer_orientation.html?course=INFM109)
-- Icebreaker: If you could live on a colony on Mars, would you? One way or two way trip (minimum 10 years)?
-- Break, prep for discussion.
+- Icebreaker:
+  - Preferred first name
+  - Home campus
+  - What's something you wish you had more time to do or learn about?
 
 ## Module 01: Digital Citizenry & The Internet
 
 Part I:
 
-- Discussion: Digital Communication Patterns
 - [Timelines: Digital Evolution](timelines_digital_evolution.html)
+- Break, prep for discussion.
+- Discussion:
 
 Part II:
 
