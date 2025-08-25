@@ -24,6 +24,7 @@ git push origin main
 
 if [ "$deploy_mode" == "full" ]; then
     node dist/compile_all.js
+    npm run build:sass
 fi
 
 if [ "$deploy_mode" == "partial" ]; then
