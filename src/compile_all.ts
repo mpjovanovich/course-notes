@@ -34,6 +34,6 @@ async function processDirectory(directoryPath: string): Promise<void> {
  * Main
  * ********************************** */
 
-await compileBootstrap();
 await compileAssets();
+await compileBootstrap();
 await processDirectory(config.paths.content);

@@ -1,0 +1,359 @@
+/* 
+* CSS RESET
+*/
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* 
+* GENERAL STYLES
+*/
+body {
+  background-color: white;
+  color: #202124;
+  font-size: 18px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.75em;
+  padding: 4rem 6rem;
+}
+
+body > p,
+body > ol,
+body > ul {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a,
+a:visited {
+  color: #3498db;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #2980b9;
+}
+
+blockquote {
+  text-align: left;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+  margin: 1.5em 2em;
+  padding: 0.5em 40px;
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+}
+
+blockquote p {
+  margin: 1rem 0;
+}
+
+details {
+  margin: 20px 0;
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  background-color: #555;
+  box-shadow: 0 0.1rem 1rem -0.5rem rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+details[open] > summary:before {
+  transform: rotate(90deg);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details > div {
+  padding: 1rem 1rem 0;
+}
+
+summary {
+  font-size: 1rem;
+  padding: 1rem;
+  display: block;
+  color: white;
+  background-color: #3f3f3f;
+  padding-left: 2.2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+summary:before {
+  content: "";
+  border-width: 0.4rem;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  top: 1.4rem;
+  left: 1rem;
+  transform: rotate(0);
+  transform-origin: 0.2rem 50%;
+  transition: 0.25s transform ease;
+}
+
+figure {
+  /* margin: 2rem auto; */
+  margin: 2rem;
+  padding: 8px;
+  height: fit-content;
+  width: fit-content;
+}
+
+figcaption {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arimo, Helvetica, sans-serif;
+  padding: 1.4rem 1rem;
+  margin: 3em 0 1em 0;
+}
+
+h1 {
+  padding: 2rem 1rem;
+  background-color: #408080;
+  color: #fff;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+h2 {
+  background-color: #eee;
+  font-weight: normal;
+}
+
+h3 {
+  border-color: #ddd;
+  border-style: solid;
+  border-width: 3px 0 0 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+hr {
+  background-color: #eee;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+}
+
+li {
+  margin: 0.8rem 0;
+}
+
+ol,
+ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+pre {
+  padding: 0.5rem;
+  line-height: 1.5;
+  overflow-x: scroll;
+}
+
+pre,
+code {
+  background-color: #fafafa;
+  font-family: "Courier New", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+table {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  margin: 40px 5%;
+}
+
+table thead th {
+  font-family: Arimo, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  background-color: #e0e0e0;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  text-align: inherit;
+  padding: 0.75rem;
+  vertical-align: bottom;
+}
+
+table td {
+  font-family: Arimo, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  background-color: #f6f6f6;
+  text-align: left;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  vertical-align: top;
+  min-width: 5rem;
+}
+
+tbody tr {
+  border-top: 2px solid #dee2e6;
+}
+
+.attr {
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+/* 
+* GENERIC CLASSES
+*/
+.center {
+  text-align: center;
+  margin: auto 0;
+}
+
+.left {
+  text-align: left;
+  margin: auto 20px;
+}
+
+.top-space {
+  margin-top: 2rem;
+}
+
+.top-space-more {
+  margin-top: 4rem;
+}
+
+/* 
+* HEADING AND TABLE OF CONTENTS
+*/
+h1.breadcrumb {
+  font-size: 1.2rem;
+  border-width: 0;
+  background-color: #408080;
+  padding: 30px;
+  margin: 0;
+  text-align: left;
+}
+
+h1.breadcrumb a,
+h1.breadcrumb a:visited,
+h1.breadcrumb a:focus,
+h1.breadcrumb a:active,
+h1.breadcrumb a:hover {
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* This should be the table of contents. If we forget a TOC it will cause stying issues, 
+so there should always be a TOC */
+.toc > ul {
+  border: 2px solid #ddd;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+/* 
+* CUSTOM COMPONENTS
+*/
+.focusContentTitle {
+  color: #408080;
+  font-weight: bold;
+}
+
+.focusContent {
+  border: 3px solid #408080;
+  border-radius: 8px;
+  padding: 0 20px;
+  margin-top: 3rem;
+}
+
+/* TO COME WITH NEXT MACRO VERSION */
+.focus {
+  border: 2px solid;
+  padding: 10px;
+}
+
+/* Fun unicode symbols: 💡, 👀, 🔧, 🔍, 📝 */
+.focus::before {
+  color: blue;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}
+/* A more involved live demo that I will do */
+.demo::before {
+  content: "💡 Demo";
+}
+/* Normal in class lecture examples done by me. */
+.example::before {
+  content: "🔍 Example";
+}
+/* Something the student should attempt */
+.exercise::before {
+  content: "📝 Exercise";
+}
+/* Common mistake */
+.lookout::before {
+  content: "👀 Common Mistake";
+}
+
+/* 
+* MEDIA QUERIES
+*/
+
+/* Small devices */
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+  }
+}
+
+/* Medium devices */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    padding: 0.5rem 1rem;
+  }
+}
