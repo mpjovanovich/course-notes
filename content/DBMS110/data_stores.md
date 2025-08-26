@@ -9,11 +9,11 @@ course: DBMS110
   - [Text Files](#text-files)
   - [Delimited Files](#delimited-files)
   - [Spreadsheets](#spreadsheets)
-  - [Databases](#databases)
-    - [Database Management Systems (DBMS)](#database-management-systems-dbms)
-    - [Interfacing with a DBMS](#interfacing-with-a-dbms)
-      - [CLI (Command Line Interface)](#cli-command-line-interface)
-      - [GUI (Graphical User Interface)](#gui-graphical-user-interface)
+- [Databases](#databases)
+  - [Database Management Systems (DBMS)](#database-management-systems-dbms)
+  - [Interfacing with a DBMS](#interfacing-with-a-dbms)
+    - [CLI (Command Line Interface)](#cli-command-line-interface)
+    - [GUI (Graphical User Interface)](#gui-graphical-user-interface)
 
 /~
 
@@ -139,13 +139,15 @@ Spreadsheets are saved in **binary** format, which means they are not human-read
 
 /~
 
-## Databases
+# Databases
+
+Databases are the main type of data store we will be working with in this course.
 
 A **database** is an organized collection of related data. There is no common "file format" for a database; it is an abstract concept. In practice, databases are implemented in a variety of ways.
 
 When using the term "database" we are typically referring to one that is managed by a database management system (DBMS).
 
-### Database Management Systems (DBMS)
+## Database Management Systems (DBMS)
 
 Once a data store reaches a certain size, it becomes infeasible to manually manage it.
 
@@ -157,11 +159,11 @@ A **database management system (DBMS)** is software that allows you to create, m
 | **Query Processor**     | Processes queries to the database.                                |
 | **Transaction Manager** | Manages transactions to the database.                             |
 
-### Interfacing with a DBMS
+## Interfacing with a DBMS
 
 Depending on a person's role they may interact with the DBMS using the CLI or a GUI.
 
-#### CLI (Command Line Interface)
+### CLI (Command Line Interface)
 
 The **CLI (Command Line Interface)** is a text-based interface that allows you to interact with the DBMS using commands. This is done via a terminal window.
 
@@ -180,7 +182,7 @@ show databases;
 use database_name;
 ```
 
-#### GUI (Graphical User Interface)
+### GUI (Graphical User Interface)
 
 <figure>
     <span>
