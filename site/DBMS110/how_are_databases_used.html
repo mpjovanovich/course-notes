@@ -35,11 +35,114 @@
     <div class="content-wrapper">
       <div class="toc">
         <ul>
-          <li><a href="#how-are-databases-used">How are Databases Used?</a></li>
+          <li>
+            <a href="#how-are-databases-used">How are Databases Used?</a>
+            <ul>
+              <li><a href="#end-users">End Users</a></li>
+              <li><a href="#analysts">Analysts</a></li>
+              <li><a href="#software-developers">Software Developers</a></li>
+              <li>
+                <a href="#database-administrators-dba"
+                  >Database Administrators (DBA)</a
+                >
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
 
       <h1 id="how-are-databases-used">How are Databases Used?</h1>
+      <h2 id="end-users">End Users</h2>
+      <p>
+        In the context of software, an <strong>end user</strong> is a person who
+        consumes the output of a software application. End users may be
+        responsible for both inputs and outputs to the system, but this is not
+        done by directly interfacing with the database.
+      </p>
+      <p>
+        End users will typically use software written by a software developer to
+        add or retrieve data from the database.
+      </p>
+      <h2 id="analysts">Analysts</h2>
+      <figure>
+        <span>
+          <img
+            src="https://imgs.xkcd.com/comics/data_trap_2x.png"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        This example shows the results of a query from the
+        <code>employees</code> table. The report has been created using a
+        spreadsheet application, but the underlying data is stored in a
+        database.
+      </p>
+      <p>
+        The term <strong>analyst</strong> is used broadly in the world of IT and
+        business, and it is not always clear what it means (e.g. in a job
+        posting). It may refere to someone who:
+      </p>
+      <ul>
+        <li>Interfaces directly with the database to run queries</li>
+        <li>Uses software or a dashboard to make decisions based on data</li>
+        <li>Develops reports or reporting tools to support decision-making</li>
+      </ul>
+      <h2 id="software-developers">Software Developers</h2>
+      <figure>
+        <span>
+          <img
+            src="https://www.idera.com/wp-content/uploads/2024/10/blog-sql-script.jpg"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        A <strong>software developer</strong> will almost certainly need to know
+        how to work with databases. Developers may be responsible for:
+      </p>
+      <ul>
+        <li>Creating or modifying a database schema (table)</li>
+        <li>
+          Writing code that allows the software application to &quot;talk
+          to&quot; the database.
+        </li>
+        <li>Creating or modifying views and stored procedures</li>
+        <li>Creating queries that the application or analysts can consume</li>
+      </ul>
+      <h2 id="database-administrators-dba">Database Administrators (DBA)</h2>
+      <figure>
+        <span>
+          <img
+            src="https://www.globalts.com/images/easyblog_shared/August_2021/8-9-21/b2ap3_large_162947308_server_room_400.jpg"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        A <strong>database administrator (DBA)</strong> is a person who is
+        responsible for the management and maintenance of a database. This role
+        is more common in large organizations, where the database is too large
+        and complex for a software development team to manage and maintain.
+      </p>
+      <p>DBAs are often involved in:</p>
+      <ul>
+        <li>Performance tuning</li>
+        <li>Schema design</li>
+        <li>Scaling, clustering, replication, and partitioning</li>
+        <li>Data backup and recovery</li>
+        <li>Database migration</li>
+        <li>Security administration</li>
+      </ul>
+      <p>
+        DBAs often focus on the &quot;under the hood&quot; parts of the database
+        (how the database itself is functioning), while software developers
+        focus on the &quot;front end&quot; parts of the software application
+        (how the application interacts with the database).
+      </p>
     </div>
   </body>
 </html>

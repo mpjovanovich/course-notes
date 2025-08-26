@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Database Vendors</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#database-systems">Database Systems</a>
+            <ul>
+              <li>
+                <a href="#database-systems-comparison"
+                  >Database Systems Comparison</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="database-systems">Database Systems</h1>
+      <p>
+        We noted earlier that there is no common &quot;file format&quot; for a
+        database. Many different companies and groups have created their own
+        database formats.
+      </p>
+      <p>Some are <strong>proprietary</strong> (closed source)</p>
+      <ul>
+        <li>&quot;Owned&quot; by an organization</li>
+        <li>May or may not be free to use</li>
+        <li>Code is not visible to the public</li>
+        <li>Cannot be modified and redistributed</li>
+      </ul>
+      <p>Others are <strong>open source</strong>:</p>
+      <ul>
+        <li>Free to use</li>
+        <li>Code is visible to the public</li>
+        <li>Can be modified and redistributed</li>
+      </ul>
+      <p>
+        Regardless, almost all database vendors will offer a community edition
+        that is free to use.
+      </p>
+      <h2 id="database-systems-comparison">Database Systems Comparison</h2>
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          justify-content: center;
+        "
+      >
+        <img
+          src="https://cdn.iconscout.com/icon/free/png-256/free-oracle-icon-svg-png-download-226044.png"
+          style="width: 100px; height: auto"
+        />
+
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpYBbpX-K6Z5fMZ2LqhkQ9hHvFcleFbbe3rMMQ70Q7pjBz4AlQtOAGWQrYi6IXNC_Z7b0"
+          style="width: 100px; height: auto"
+        />
+
+        <img
+          src="https://d2m06gn7cjwia2.cloudfront.net/mysql.png"
+          style="width: 100px; height: auto"
+        />
+
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKjswtjSoQfpK5IsPv2wuRf5t_gLyyri8zSHgxNJSvJewwc8f596jiHVB-ZZq9taRLdVU"
+          style="width: 100px; height: auto"
+        />
+
+        <img
+          src="https://logospng.org/download/sqlite/sqlite-256.png"
+          style="width: 100px; height: auto"
+        />
+
+        <img
+          src="https://miro.medium.com/v2/1*XR69xeq43LgKB0T_LjZqwQ.png"
+          style="width: 100px; height: auto"
+        />
+
+        <img
+          src="https://nakatech.com/wp-content/uploads/2021/11/redis-256x256-1175053.png"
+          style="width: 100px; height: auto"
+        />
+      </div>
+
+      <p>Below are some of the most common database systems.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>System</th>
+            <th>Company/Organization</th>
+            <th>Type</th>
+            <th>License Model</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Oracle Database</td>
+            <td>Oracle Corporation</td>
+            <td>Relational</td>
+            <td>Proprietary</td>
+          </tr>
+          <tr>
+            <td>SQL Server</td>
+            <td>Microsoft</td>
+            <td>Relational</td>
+            <td>Proprietary</td>
+          </tr>
+          <tr>
+            <td>MySQL</td>
+            <td>Oracle Corporation</td>
+            <td>Relational</td>
+            <td>Open Source*</td>
+          </tr>
+          <tr>
+            <td>PostgreSQL</td>
+            <td>PostgreSQL Global Development Group</td>
+            <td>Relational</td>
+            <td>Open Source</td>
+          </tr>
+          <tr>
+            <td>SQLite</td>
+            <td>Public Domain</td>
+            <td>Relational</td>
+            <td>Public Domain</td>
+          </tr>
+          <tr>
+            <td>MongoDB</td>
+            <td>MongoDB Inc.</td>
+            <td>Document</td>
+            <td>Open Source*</td>
+          </tr>
+          <tr>
+            <td>Redis</td>
+            <td>Redis Ltd.</td>
+            <td>Key-Value</td>
+            <td>Open Source*</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>*Offers both open-source and commercial licenses</p>
+    </div>
+  </body>
+</html>
