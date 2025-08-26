@@ -29,7 +29,7 @@ fi
 
 if [ "$deploy_mode" == "partial" ]; then
     # Find modified files since last deploy
-    git diff --name-only --diff-filter=AM $(cat deploy/deploy.version)..HEAD -- content/ > deploy/add.file
+    git diff --name-only --diff-filter=AMR $(cat deploy/deploy.version)..HEAD -- content/ > deploy/add.file
     git diff --name-only --diff-filter=D $(cat deploy/deploy.version)..HEAD -- content/ > deploy/remove.file
 
     # Compile the new files
