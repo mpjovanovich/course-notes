@@ -3,6 +3,8 @@ title: Cybersecurity Organizational Challenges
 course: INFM109
 ---
 
+~.toc
+
 - [Modern Organizational Challenges](#modern-organizational-challenges)
   - [Bring Your Own Device (BYOD)](#bring-your-own-device-byod)
     - [Pros of BYOD:](#pros-of-byod)
@@ -15,6 +17,8 @@ course: INFM109
     - [Case Study: University of California San Francisco (2020)](#case-study-university-of-california-san-francisco-2020)
   - [Reputation and Trust](#reputation-and-trust)
   - [Key Takeaways](#key-takeaways)
+
+/~
 
 # Modern Organizational Challenges
 

@@ -127,10 +127,11 @@ Part II:
 Part I:
 
 <!-- For next course run; merge organizational challenges with motivations and impact -->
+<!-- Split Cybersecurity Thread Landscape into sections -->
+<!-- Split Cyber Defense Strategies into sections -->
 
 - [Cybersecurity Organizational Challenges](cybersecurity_organizational_challenges.html)
 - [Cyberattack Motivations and Impact](cyberattack_motivations_impact.html)
-
 - [Cybersecurity Threat Landscape](cybersecurity_threat_landscape.html)
 
 Part II:

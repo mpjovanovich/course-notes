@@ -16,11 +16,11 @@ course: INFM109
     - [Demo: How to Scam Users 101](#demo-how-to-scam-users-101)
   - [Modern Attack Complexity](#modern-attack-complexity)
     - [System Interconnectedness](#system-interconnectedness)
-  - [AI-Enabled Attacks](#ai-enabled-attacks)
+  - [Attacking with AI](#attacking-with-ai)
     - [Automated Social Engineering](#automated-social-engineering)
     - [Deepfakes and Impersonation](#deepfakes-and-impersonation)
     - [AI-Powered Reconnaissance](#ai-powered-reconnaissance)
-    - [Exploitation of AI Services](#exploitation-of-ai-services)
+    - [Attacking AI Powered Applications](#attacking-ai-powered-applications)
       - [Jailbreaking](#jailbreaking)
       - [Prompt Injection](#prompt-injection)
 
@@ -161,6 +161,12 @@ Common scenarios:
     </span>
 </figure>
 
+<figure>
+    <span>
+        <img src="https://cwe.mitre.org/data/images/CWE-269-Diagram.png" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
 Attacker inserts malicious code into a website link or server that uses databases. This may execute a script in the user's browser or extract or delete data from the database.
 
 Software developers must defend against this by validating user input and sanitizing data.
@@ -168,6 +174,12 @@ Software developers must defend against this by validating user input and saniti
 ### Demo: How to Scam Users 101
 
 ~.focusContent.exercise
+
+<figure>
+    <span>
+        <img src="https://cwe.mitre.org/data/images/CWE-79-Diagram.png" style="width: 100%;height: auto;">
+    </span>
+</figure>
 
 In this exercise we will walk through the process of tricking a user into visiting a sketchy website. We will learn to think like an attacker in order to better understand how to defend against them.
 
@@ -278,11 +290,9 @@ Modern IT environments include:
 
 **Key principle**: Each new device or service connected to the network is a potential entry point for an attacker.
 
-## AI-Enabled Attacks
+## Attacking with AI
 
-As AI becomes more prevalent in business operations, attackers are also leveraging artificial intelligence to enhance their capabilities.
-
-Techniques that were already around are now cheap, more powerful, and more difficult to detect.
+AI has made traditional attack vectors cheaper, more powerful, and more difficult to detect.
 
 ### Automated Social Engineering
 
@@ -335,9 +345,9 @@ Automated tools that can:
 - Identify high-value targets within organizations
 - Adapt attack strategies based on defensive responses
 
-### Exploitation of AI Services
+### Attacking AI Powered Applications
 
-More frequently, applications are connected to AI services such as OpenAI (ChatGPT). Saavy attackers can manipulate these services to extract information or create fake content.
+Applications are now more frequently connected to AI services such as OpenAI (ChatGPT). Saavy attackers can manipulate these services to extract information or create fake content.
 
 #### Jailbreaking
 
@@ -393,7 +403,7 @@ In the screenshots below, prompt injection was used to trick an automated car sa
     </span>
 </figure>
 
-We can try this ourselves. Try saving the following html document as `hidden-text.html` and opening it in a browser.
+We can try this ourselves. Try saving the following html document as `vulnerable-site.html` and opening it in a browser.
 
 ```html
 <p>This is visible text</p>

@@ -3,6 +3,8 @@ title: Cyber Defense Strategies
 course: INFM109
 ---
 
+~.toc
+
 - [Cyberdefense Strategies](#cyberdefense-strategies)
   - [Security Principles](#security-principles)
     - [Shift Left](#shift-left)
@@ -25,6 +27,8 @@ course: INFM109
     - [Security Monitoring and Incident Response](#security-monitoring-and-incident-response)
       - [Key monitoring activities:](#key-monitoring-activities)
   - [Key Takeaways](#key-takeaways)
+
+/~
 
 # Cyberdefense Strategies
 
@@ -65,7 +69,9 @@ Let's take a look at the security alerts for this application:
 
 [Game of Life Application](https://mpj-game-of-life.web.app/)
 
-[Related Security Alerts](https://github.com/mpjovanovich/life_react/security/dependabot)
+[Related Security Alerts](https://github.com/mpjovanovich/life_react/security/dependabot/16)
+
+\*Note: Only instructor can see this - has to be logged in.
 
 /~
 
