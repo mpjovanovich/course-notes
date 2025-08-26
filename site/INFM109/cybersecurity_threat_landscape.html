@@ -75,7 +75,7 @@
                 </ul>
               </li>
               <li>
-                <a href="#ai-enabled-attacks">AI-Enabled Attacks</a>
+                <a href="#attacking-with-ai">Attacking with AI</a>
                 <ul>
                   <li>
                     <a href="#automated-social-engineering"
@@ -93,8 +93,8 @@
                     >
                   </li>
                   <li>
-                    <a href="#exploitation-of-ai-services"
-                      >Exploitation of AI Services</a
+                    <a href="#attacking-ai-powered-applications"
+                      >Attacking AI Powered Applications</a
                     >
                     <ul>
                       <li><a href="#jailbreaking">Jailbreaking</a></li>
@@ -277,6 +277,15 @@
         </span>
       </figure>
 
+      <figure>
+        <span>
+          <img
+            src="https://cwe.mitre.org/data/images/CWE-269-Diagram.png"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
       <p>
         Attacker inserts malicious code into a website link or server that uses
         databases. This may execute a script in the user&#39;s browser or
@@ -288,6 +297,15 @@
       </p>
       <h3 id="demo-how-to-scam-users-101">Demo: How to Scam Users 101</h3>
       <div class="focusContent exercise">
+        <figure>
+          <span>
+            <img
+              src="https://cwe.mitre.org/data/images/CWE-79-Diagram.png"
+              style="width: 100%; height: auto"
+            />
+          </span>
+        </figure>
+
         <p>
           In this exercise we will walk through the process of tricking a user
           into visiting a sketchy website. We will learn to think like an
@@ -479,14 +497,10 @@
         <strong>Key principle</strong>: Each new device or service connected to
         the network is a potential entry point for an attacker.
       </p>
-      <h2 id="ai-enabled-attacks">AI-Enabled Attacks</h2>
+      <h2 id="attacking-with-ai">Attacking with AI</h2>
       <p>
-        As AI becomes more prevalent in business operations, attackers are also
-        leveraging artificial intelligence to enhance their capabilities.
-      </p>
-      <p>
-        Techniques that were already around are now cheap, more powerful, and
-        more difficult to detect.
+        AI has made traditional attack vectors cheaper, more powerful, and more
+        difficult to detect.
       </p>
       <h3 id="automated-social-engineering">Automated Social Engineering</h3>
       <p>
@@ -554,9 +568,11 @@
         <li>Identify high-value targets within organizations</li>
         <li>Adapt attack strategies based on defensive responses</li>
       </ul>
-      <h3 id="exploitation-of-ai-services">Exploitation of AI Services</h3>
+      <h3 id="attacking-ai-powered-applications">
+        Attacking AI Powered Applications
+      </h3>
       <p>
-        More frequently, applications are connected to AI services such as
+        Applications are now more frequently connected to AI services such as
         OpenAI (ChatGPT). Saavy attackers can manipulate these services to
         extract information or create fake content.
       </p>
@@ -639,7 +655,7 @@
 
         <p>
           We can try this ourselves. Try saving the following html document as
-          <code>hidden-text.html</code> and opening it in a browser.
+          <code>vulnerable-site.html</code> and opening it in a browser.
         </p>
         <pre
           class="shiki shiki-themes one-light one-dark-pro"
