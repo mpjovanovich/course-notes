@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Data and Information</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#data-and-information">Data and Information</a>
+            <ul>
+              <li><a href="#information-vs-data">Information vs Data</a></li>
+              <li><a href="#information-systems">Information Systems</a></li>
+              <li><a href="#how-data-is-used">How Data is Used</a></li>
+              <li><a href="#types-of-data">Types of Data</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="data-and-information">Data and Information</h1>
+      <h2 id="information-vs-data">Information vs Data</h2>
+      <p>
+        When contrasted with information, data is best thought of as
+        <strong>raw data</strong> - it is not processed in any way. It is simply
+        the underlying &quot;pieces&quot; that make up information.
+      </p>
+      <p>
+        <strong>Information</strong> is the processed data. It is the data that
+        has been organized and interpreted in a way that is meaningful to
+        someone.
+      </p>
+      <div class="focusContent example">
+        <p>
+          Take the statement &quot;Ivy Tech currently has 1000 SDEV
+          students.&quot; This is information.
+        </p>
+        <p>The data that makes up this information is:</p>
+        <ul>
+          <li>
+            &quot;Student A is enrolled in the Fall 2025 semester in the SDEV
+            program.&quot;
+          </li>
+          <li>
+            &quot;Student B is enrolled in the Fall 2025 semester in the SDEV
+            program.&quot;
+          </li>
+          <li>...</li>
+        </ul>
+        <p>Or to look at this in even more detail:</p>
+        <ul>
+          <li>&quot;Student A is an Ivy Tech student.&quot;</li>
+          <li>&quot;Student A is enrolled in the Fall 2025 semester.&quot;</li>
+          <li>&quot;Student A is enrolled in the SDEV program.&quot;</li>
+        </ul>
+        <p>
+          As we take the data points and relate them to each other, we can begin
+          to form information.
+        </p>
+      </div>
+
+      <h2 id="information-systems">Information Systems</h2>
+      <p>
+        An <strong>information system</strong> is a system that collects,
+        stores, and processes data to create information. It&#39;s simply a way
+        to draw a boundary around some context.
+      </p>
+      <p>
+        These information systems often encompasa a <strong>domain</strong> - a
+        specific area of interest.
+      </p>
+      <p>Examples might be:</p>
+      <ul>
+        <li>A government agency (e.g. IRS)</li>
+        <li>A retail store (e.g. Walmart)</li>
+        <li>
+          A college
+          <ul>
+            <li>A department within the college (e.g. Human Resources)</li>
+            <li>
+              A school within the college (e.g. School of Business and
+              Information Technology)
+            </li>
+          </ul>
+        </li>
+        <li>..</li>
+      </ul>
+      <h2 id="how-data-is-used">How Data is Used</h2>
+      <p>
+        We will talk much about databases in the course, but for now let&#39;s
+        talk about how data comes into and flows through an information system.
+      </p>
+      <p>
+        There are three main operations that data goes through in an information
+        system:
+      </p>
+      <ul>
+        <li>
+          <strong>Input</strong> - Data is collected from a source and
+          <em>added</em> to the information system, or existing data is
+          <em>updated</em>.
+        </li>
+        <li>
+          <strong>Processing</strong> - Data is <em>transformed</em> into
+          information.
+        </li>
+        <li>
+          <strong>Output</strong> - Information is <em>presented</em> to the
+          user.
+        </li>
+      </ul>
+      <div class="focusContent exercise">
+        <p>
+          It&#39;s often easier to think backwards from the output. Think of
+          some information systems:
+        </p>
+        <ul>
+          <li>
+            How do you see the output (usually on your computer or device
+            somewhere)?
+          </li>
+          <li>Where did the data in this system initially come from?</li>
+          <li>
+            How might it have been processed / transformed to get to the output?
+          </li>
+        </ul>
+      </div>
+
+      <h2 id="types-of-data">Types of Data</h2>
+    </div>
+  </body>
+</html>
