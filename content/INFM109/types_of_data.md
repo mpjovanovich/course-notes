@@ -61,7 +61,9 @@ Agree (4)
 Strongly Agree (5)
 ```
 
-A scientist named Daniel Kahneman won a Nobel Prize for his work on how people make decisions. Much of his work showed that ranking scales (like the Likert scale) and some simple statistical methods can be more accurate than expert judgement.
+You may even see smiley face scales used in this way.
+
+_Where have you seen Likert scales in the real world?_
 
 /~
 

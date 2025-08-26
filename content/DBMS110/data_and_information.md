@@ -74,6 +74,6 @@ It's often easier to think backwards from the output. Think of some information 
 - Where did the data in this system initially come from?
 - How might it have been processed / transformed to get to the output?
 
-/~
+\*Note: Information systems can take many forms. They may not be the traditional computer that you're used to!
 
-## Types of Data
+/~
