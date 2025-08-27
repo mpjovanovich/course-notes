@@ -18,8 +18,6 @@ showBreadcrumb: false
 
 - Welcome to DBMS110!
 
-## Module 00: Course Introduction
-
 Overview of course
 
 - Review course structure and resources
@@ -30,8 +28,25 @@ Overview of course
   - Office 365 link
   - Apps link (left side)
   - "Install apps" link (top right)
+
+## Module 01: Introduction to Databases
+
+Part I:
+
 - [Data and Information](data_and_information.html)
 - [Data Stores](data_stores.html)
 - [Database Vendors](database_vendors.html)
 - [How are Databases Used?](how_are_databases_used.html)
 - [Exercise: Data Journeys](exercise_data_journeys.html)
+
+Part II:
+
+- [The Data Hierarchy](data_hierarchy.html)
+- [Ways of Organizing Data](ways_of_organizing_data.html)
+- [Structured Query Language](structured_query_language.html)
+- Create the [Class Information Database](https://docs.google.com/spreadsheets/d/1Qx6dMUvW_Hgj6zc5hZ9N4_ri5CkM6emmIGkBSFhflOc/edit?usp=sharing.html)
+  - Change your name to your preferred name if you go by something other than what is listed
+  - Fill out your row
+  - Instructor will load this to a database and share the file with you
+- Install: [DB Browser for SQLite](https://sqlitebrowser.org/)
+  - Open the file for "SQL: Working with SQL Technologies" assignment
