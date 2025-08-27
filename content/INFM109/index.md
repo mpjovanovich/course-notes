@@ -50,7 +50,7 @@ Part I:
 Part II:
 
 - [The Internet](internet.html)
-- Exercise: Ethical vs Legal Technology Practices (Quadrant Analysis)
+- Assignment: Exploration of Ethical and Legal Tech Practices
 
 ## Module 0X: AI in the Tech Industry
 
