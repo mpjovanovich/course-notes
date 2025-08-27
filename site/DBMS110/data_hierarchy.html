@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: The Data Hierarchy</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#the-data-hierarchy">The Data Hierarchy</a>
+            <ul>
+              <li><a href="#database-relational">Database (Relational)</a></li>
+              <li><a href="#object-oriented">Object-Oriented</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="the-data-hierarchy">The Data Hierarchy</h1>
+      <p>
+        Data in an information system is organized into a hierarchy of levels of
+        detail.
+      </p>
+      <p>
+        Various terms are used, mostly interchangeably, to describe the levels
+        of detail within this hierarchy.
+      </p>
+      <h2 id="database-relational">Database (Relational)</h2>
+      <p>
+        These are the terms that we use to describe data in a
+        &quot;traditional&quot; relational database.
+      </p>
+      <p>
+        <strong
+          >Database &gt; Table (Entity) &gt; Record (Row) &gt; Field
+          (Column)</strong
+        >
+      </p>
+      <div class="firstColLabels">
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Database</td>
+              <td>A collection of related tables</td>
+            </tr>
+            <tr>
+              <td>Table (Relation)</td>
+              <td>A collection of records with the same structure</td>
+            </tr>
+            <tr>
+              <td>Record (Row)</td>
+              <td>A single instance of an entity</td>
+            </tr>
+            <tr>
+              <td>Field (Column)</td>
+              <td>A value describing an instance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        <em
+          >Instructor note: I have more commonly heard the terms outside of
+          parenthesis used. These are the terms that I will use.</em
+        >
+      </p>
+      <figure>
+        <img
+          src="images/information_hierarchy_relational.svg"
+          alt="Data Hierarchy (Relational)"
+        />
+      </figure>
+
+      <figure>
+        <h2 id="object-oriented">Object-Oriented</h2>
+        <p>
+          Some terms from object-oriented programming are used to describe data
+          in the data hierarchy. These terms are not used in relational
+          databases, but you will see them in certain file formats (like JSON
+          and XML), and in NoSQL databases.
+        </p>
+        <p>
+          <strong
+            >Package &gt; Class (Entity) &gt; Instance/Object &gt;
+            Attribute/Property</strong
+          >
+        </p>
+        <div class="firstColLabels">
+          <table>
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Package</td>
+                <td>A group of related classes</td>
+              </tr>
+              <tr>
+                <td>Class</td>
+                <td>A blueprint or template for creating objects</td>
+              </tr>
+              <tr>
+                <td>Instance/Object</td>
+                <td>A specific occurrence of a class</td>
+              </tr>
+              <tr>
+                <td>Attribute/Property</td>
+                <td>A value describing an instance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          *<em
+            >Package is not a focus in this course, but is the closest correlate
+            to database.</em
+          >
+        </p>
+        <figure>
+          <img
+            src="https://www.drawio.com/assets/img/blog/class-diagram-example.png"
+            alt="Data Hierarchy (Object-Oriented)"
+          />
+        </figure>
+      </figure>
+    </div>
+  </body>
+</html>
