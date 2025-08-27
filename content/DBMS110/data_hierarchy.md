@@ -61,4 +61,6 @@ Some terms from object-oriented programming are used to describe data in the dat
 
 \*_Package is not a focus in this course, but is the closest correlate to database._
 
-TODO: Add a diagram of the object-oriented data hierarchy
+<figure>
+  <img src="https://www.drawio.com/assets/img/blog/class-diagram-example.png" alt="Data Hierarchy (Object-Oriented)" />
+</figure>
