@@ -9,6 +9,7 @@ showBreadcrumb: false
 - [DBMS110](#dbms110)
   - [Announcements](#announcements)
   - [Module 00: Course Introduction](#module-00-course-introduction)
+  - [Module 01: Introduction to Databases](#module-01-introduction-to-databases)
 
 /~
 
@@ -16,9 +17,10 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Welcome to DBMS110!
+- Remote students: sign up for exams
+- Warmup exercise: see announcements
 
-Overview of course
+## Module 00: Course Introduction
 
 - Review course structure and resources
 - Make sure you can access the textbook
