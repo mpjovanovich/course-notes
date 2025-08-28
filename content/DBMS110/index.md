@@ -44,7 +44,6 @@ Part I:
 Part II:
 
 - [The Data Hierarchy](data_hierarchy.html)
-- [Ways of Organizing Data](ways_of_organizing_data.html)
 - [Structured Query Language](structured_query_language.html)
 - Create the [Class Information Database](https://docs.google.com/spreadsheets/d/1Qx6dMUvW_Hgj6zc5hZ9N4_ri5CkM6emmIGkBSFhflOc/edit?usp=sharing.html)
   - Change your name to your preferred name if you go by something other than what is listed
