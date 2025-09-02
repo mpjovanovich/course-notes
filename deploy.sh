@@ -38,6 +38,7 @@ fi
 
 # Checkout the site branch
 git checkout site
+git pull origin site
 
 if [ "$deploy_mode" == "full" ]; then
     rm -rf site/*
