@@ -10,6 +10,7 @@ showBreadcrumb: false
   - [Announcements](#announcements)
   - [Module 00: Course Introduction](#module-00-course-introduction)
   - [Module 01: Introduction to Databases](#module-01-introduction-to-databases)
+  - [Module 02: Fundamentals of Sets](#module-02-fundamentals-of-sets)
 
 /~
 
@@ -17,8 +18,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Remote students: sign up for exams
-- Warmup exercise: see announcements
+- Reading quiz not posted yet
 
 ## Module 00: Course Introduction
 
