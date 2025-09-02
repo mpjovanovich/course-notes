@@ -70,6 +70,8 @@ You don't need to know the details of what that means - just know that the range
 
 `1.7976931348623157×10<sup>308</sup>`
 
+/~
+
 ### TEXT
 
 The `TEXT` data type is used to store **strings** of **characters** (letters, numbers, symbols).
