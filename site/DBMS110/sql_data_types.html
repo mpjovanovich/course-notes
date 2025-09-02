@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: SQL Data Types</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#sql-data-types">SQL Data Types</a>
+            <ul>
+              <li>
+                <a href="#sqlite-data-types">SQLite Data Types</a>
+                <ul>
+                  <li><a href="#integer">INTEGER</a></li>
+                  <li><a href="#real">REAL</a></li>
+                  <li><a href="#text">TEXT</a></li>
+                  <li><a href="#blob">BLOB</a></li>
+                  <li><a href="#null">NULL</a></li>
+                  <li>
+                    <a href="#important-sqlite-note-on-booleans"
+                      >Important SQLite Note on Booleans</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#why-do-data-types-matter"
+                  >Why do Data Types Matter?</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="sql-data-types">SQL Data Types</h1>
+      <p>
+        ANSI SQL does not specify data types. Each dialect of SQL has its own
+        data types.
+      </p>
+      <p>
+        We are using SQLite for this course, so we will learn its data types.
+      </p>
+      <h2 id="sqlite-data-types">SQLite Data Types</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>INTEGER</td>
+            <td>Whole numbers</td>
+          </tr>
+          <tr>
+            <td>REAL</td>
+            <td>Floating point numbers</td>
+          </tr>
+          <tr>
+            <td>TEXT</td>
+            <td>Strings</td>
+          </tr>
+          <tr>
+            <td>BLOB</td>
+            <td>Binary data</td>
+          </tr>
+          <tr>
+            <td>NULL</td>
+            <td>Null value</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="integer">INTEGER</h3>
+      <p>
+        The <code>INTEGER</code> data types is used to store
+        <strong>whole number</strong> numberic data.
+      </p>
+      <p>
+        If you know that you will never need a fractional component to your
+        numbers, you should use the <code>INTEGER</code> data type. It has the
+        following advantages:
+      </p>
+      <ul>
+        <li>
+          It puts a natural constraint on the values that can be stored in the
+          database (no accidental 1.2 children in a family).
+        </li>
+        <li>
+          It generally takes up less space (uses fewer bits per number) in the
+          database than a <code>REAL</code> data type. This saves storage space.
+        </li>
+      </ul>
+      <div class="focusContent note">
+        <p><strong>Value Range</strong></p>
+        <p>
+          SQLite uses up to 64 bits to store integers, but may use less space
+          for smaller values. There is a min and max value for integers, but
+          they are very large. The range is:
+        </p>
+        <p>
+          <code
+            >-(2&lt;sup&gt;63&lt;/sup&gt;) to 2&lt;sup&gt;63&lt;/sup&gt; -
+            1</code
+          >
+        </p>
+        <p>or:</p>
+        <p>
+          <code>-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</code>
+        </p>
+      </div>
+
+      <h3 id="real">REAL</h3>
+      <p>
+        The <code>REAL</code> data types is used to store numeric data for
+        <strong>numbers that (may) have a fractional component</strong>.
+      </p>
+      <div class="focusContent note">
+        <p><strong>Value Range</strong></p>
+        <p>SQLite also uses 64 bits to store real numbers.</p>
+        <p>
+          You don&#39;t need to know the details of what that means - just know
+          that the range for this is very large. The max value is roughly:
+        </p>
+        <p><code>1.7976931348623157×10&lt;sup&gt;308&lt;/sup&gt;</code></p>
+        <h3 id="text">TEXT</h3>
+        <p>
+          The <code>TEXT</code> data type is used to store
+          <strong>strings</strong> of <strong>characters</strong> (letters,
+          numbers, symbols).
+        </p>
+        <div class="focusContent note">
+          <p><strong>Value Range</strong></p>
+          <p>
+            Many SQL dialects have the user define the string size. You may see
+            data types like <code>VARCHAR(255)</code> or <code>CHAR(255)</code>,
+            where the number in parentheses is the maximum number of characters
+            that can be stored, and any extra characters will be truncated (cut
+            off).
+          </p>
+          <p>
+            SQLite uses dynamic sizing for text data. It will figure out how the
+            optimal storage allocation size (how many bytes to use) for the text
+            data on its own.
+          </p>
+        </div>
+
+        <h3 id="blob">BLOB</h3>
+        <p>
+          The <code>BLOB</code> data type is used to store binary data. This is
+          useful for storing images, videos, or other binary file types.
+        </p>
+        <div class="focusContent example">
+          <p><strong>BLOB Example</strong></p>
+          <p>
+            Think of it as uploading a file to the database. A user&#39;s
+            profile picture may be stored as a BLOB.
+          </p>
+        </div>
+
+        <h3 id="null">NULL</h3>
+        <p>
+          The <code>NULL</code> data type is a special data type that indicates
+          that a value is not present. This is different from an empty string
+          (<code>&#39;&#39;</code>) or a zero (<code>0</code>).
+        </p>
+        <div class="focusContent example">
+          <p><strong>NULL Example</strong></p>
+          <p>
+            Take a look at the gradebook for the course and find an ungraded
+            assignment. You probably see a <code>-</code>, or something
+            similiar. This indicates a <code>NULL</code> value!
+          </p>
+          <p>
+            You don&#39;t have a zero grade - the grade just does not exist yet!
+            Databases use this special data type for exactly this reason.
+          </p>
+        </div>
+
+        <h3 id="important-sqlite-note-on-booleans">
+          Important SQLite Note on Booleans
+        </h3>
+        <p>
+          Most SQL dialects have a <code>BOOLEAN</code> (true/false) data type,
+          such as <code>BIT</code>, <code>BOOLEAN</code>, or <code>BOOL</code>.
+          SQLite does not have such a type.
+        </p>
+        <p>
+          Instead, this is handled by convention, using an integer value of
+          <code>0</code> or <code>1</code> to represent a boolean value.
+        </p>
+        <ul>
+          <li><code>0</code> is <code>FALSE</code></li>
+          <li><code>1</code> is <code>TRUE</code></li>
+        </ul>
+        <div class="focusContent example">
+          <p><strong>Booleans Example</strong></p>
+          <p>
+            Imagine you have a user table and need a field to mark the user as
+            an admin. In SQLite you would use an integer value of
+            <code>0</code> or <code>1</code> to represent a boolean value.
+          </p>
+          <pre
+            class="shiki shiki-themes one-light one-dark-pro"
+            style="
+              background-color: #fafafa;
+              --shiki-dark-bg: #282c34;
+              color: #383a42;
+              --shiki-dark: #abb2bf;
+            "
+            tabindex="0"
+          ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Select all admins</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> User </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> is_admin </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Select all non-admins</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> User </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> is_admin </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+        </div>
+
+        <h2 id="why-do-data-types-matter">Why do Data Types Matter?</h2>
+        <p>Data types matter for several reasons:</p>
+        <ul>
+          <li>
+            When designing the system you need to choose appropriate data types
+            for the data you will be storing.
+            <ul>
+              <li>Can the field ever have a fractional value?</li>
+              <li>Can the field ever by empty?</li>
+              <li>Is this text or binary data?</li>
+            </ul>
+          </li>
+          <li>
+            You may need to treat data types differently in SQL
+            <ul>
+              <li>Using quotes around strings</li>
+              <li>
+                Understanding the consequences of performing arithmetic on a
+                REAL and INTEGER data type (what will the result be?)
+              </li>
+              <li>
+                Using <code>IS NULL</code> for null values instead of
+                <code>= NULL</code>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

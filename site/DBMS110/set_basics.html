@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Set Basics</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#set-basics">Set Basics</a>
+            <ul>
+              <li><a href="#definition-of-a-set">Definition of a Set</a></li>
+              <li><a href="#the-null-set">The Null Set</a></li>
+              <li><a href="#subsets">Subsets</a></li>
+              <li><a href="#venn-diagrams">Venn Diagrams</a></li>
+              <li><a href="#relation-to-sql">Relation to SQL</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="set-basics">Set Basics</h1>
+      <h2 id="definition-of-a-set">Definition of a Set</h2>
+      <p>
+        A <strong>set</strong> is a collection of <strong>distinct</strong>,
+        <strong>unordered</strong> elements.
+      </p>
+      <p>An <strong>element</strong> is an item in a set.</p>
+      <p>Sets are denoted with <strong>curly braces</strong>.</p>
+      <p>
+        In math, we often give it a name with a capital letter, just like a
+        variable (which uses a lowercase letter).
+      </p>
+      <p>We might say:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Let A = { a, b, c }</span></span></code></pre>
+      <p>Because sets are unordered, this also means that:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>A = { b, c, a }</span></span>
+<span class="line"><span>A = { c, b, a }</span></span></code></pre>
+      <div class="focusContent exercise">
+        <p><strong>One word, to word, three words, set?</strong></p>
+        <p>Are the words in the above sentence a set?</p>
+      </div>
+
+      <div class="focusContent exercise">
+        <p><strong>Set Notation Practice</strong></p>
+        <p>Write the colors of the rainbow using set notation.</p>
+      </div>
+
+      <h2 id="the-null-set">The Null Set</h2>
+      <p>
+        The <strong>null set</strong> or <strong>empty set</strong> is the set
+        that contains no elements. It is denoted with the symbol <code>∅</code>.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Let A = {}</span></span></code></pre>
+      <p>
+        It might seem like it&#39;s of limited use, but it comes up very often
+        in math and computer science. Think of sets as possible solutions for a
+        problem.
+      </p>
+      <ul>
+        <li>What is the set of people swimming in the pond outside? = {}</li>
+        <li>What is the set of people who have wings? = {}</li>
+        <li>What is the set of numbers that are both even and odd? = {}</li>
+      </ul>
+      <h2 id="subsets">Subsets</h2>
+      <p>
+        A set B is a <strong>subset</strong> of a set A if every element of B is
+        also an element of A.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Let A = { a, b, c }</span></span>
+<span class="line"><span>Let B = { a, b, c, d, e }</span></span>
+<span class="line"><span>Therefore B is a subset of A.</span></span></code></pre>
+      <div class="focusContent note">
+        <p>
+          A <strong>proper subset</strong> is a subset that is not equal to the
+          set. This is almost always what we mean when we say &quot;subset&quot;
+          casually, but in formal math you must be aware that a set is also a
+          subset of itself.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>Let A = { a, b, c }</span></span>
+<span class="line"><span>Let B = { a, b, c }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Therefore B is a subset of A, but...</span></span>
+<span class="line"><span>B is not a proper subset of A.</span></span></code></pre>
+      </div>
+
+      <h2 id="venn-diagrams">Venn Diagrams</h2>
+      <p>
+        A <strong>Venn diagram</strong> is a visual representation of sets that
+        uses circles to represent the sets. It may or may not show the elements
+        inside the sets.
+      </p>
+      <div class="focusContent example">
+        <p><strong>Identifying parts of a Venn diagram</strong></p>
+        <p>Let&#39;s use a Venn diagram to find mammals and live in water.</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>Let A = animals that live in water</span></span>
+<span class="line"><span>Let B = animals that are mammals</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>A = { dolphin, whale, shark, octopus, squid, jellyfish }</span></span>
+<span class="line"><span>B = { fox, human, squirrel, dolphin, whale, lion }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Draw the Venn diagram and describe different parts.</span></span></code></pre>
+      </div>
+
+      <div class="focusContent example">
+        <p><strong>Identifying relationships in a Venn diagram</strong></p>
+        <p>
+          Let&#39;s use a Venn diagram to find colors that are primary colors.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>Let A = colors</span></span>
+<span class="line"><span>Let B = primary colors</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>A = { yellow, red, blue, purple, orange, black, white, green }</span></span>
+<span class="line"><span>B = { red, yellow, blue }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Draw the Venn diagram and describe the relationship between the sets.</span></span></code></pre>
+      </div>
+
+      <h2 id="relation-to-sql">Relation to SQL</h2>
+      <p>
+        We are studying sets because they are the foundation of SQL. Most tables
+        are sets. SQL is a way of using set operations to build a
+        <strong>result set</strong> that is the end result of a query. It may
+        use many intermediate sets along the way to build the result set.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Subset of colors</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Colors </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> name</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'red'</span></span></code></pre>
+      <div class="focusContent note">
+        <p><strong>But my tables have duplicates?</strong></p>
+        <p><em>SQL Tables</em></p>
+        <p>
+          Most tables are sets, but we may sometimes see tables that have
+          duplicate elements. We will learn how to
+          <strong>normalize</strong> them later to remove the duplicates.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
