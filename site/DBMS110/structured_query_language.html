@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Structured Query Language</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#structured-query-language-sql"
+              >Structured Query Language (SQL)</a
+            >
+            <ul>
+              <li>
+                <a href="#sql-syntax">SQL Syntax</a>
+                <ul>
+                  <li><a href="#comments">Comments</a></li>
+                  <li>
+                    <a href="#formatting-and-style">Formatting and Style</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#types-of-sql-statements">Types of SQL Statements</a>
+                <ul>
+                  <li>
+                    <a href="#data-definition-language-ddl"
+                      >Data Definition Language (DDL)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#data-manipulation-language-dml"
+                      >Data Manipulation Language (DML)</a
+                    >
+                  </li>
+                  <li><a href="#other-operations">Other Operations</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#ansi-sql">ANSI SQL</a>
+                <ul>
+                  <li><a href="#dialects-of-sql">Dialects of SQL</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="structured-query-language-sql">
+        Structured Query Language (SQL)
+      </h1>
+      <p>
+        <strong>Structured Query Language (SQL)</strong> is a language used to
+        interact with a relational database.
+      </p>
+      <h2 id="sql-syntax">SQL Syntax</h2>
+      <p>
+        SQL is a <strong>declarative language</strong>, meaning that you
+        describe what you want to do, rather than how to do it (this would be an
+        <em>imperative language</em>, like Python).
+      </p>
+      <p>
+        To comment in SQL, you can use <code>--</code> for a single line comment
+        or <code>/* */</code> for a multi-line comment.
+      </p>
+      <h3 id="comments">Comments</h3>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- This is a comment</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> SomeTable;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">/*</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">This is</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">a multi-line</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">comment</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">*/</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> SomeTable;</span></span></code></pre>
+      <h3 id="formatting-and-style">Formatting and Style</h3>
+      <p>
+        Whitespace is ignored in SQL, so pick a style and stick with it. As an
+        example, here are three different ways to write the same query:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Not advised unless it's a very simple query; full query not shown...</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> column1, column2, column3 </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> SomeTable </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> condition;</span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- A little more readable...</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    column1, column2, column3</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> SomeTable</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    JOIN</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> AnotherTable </span><span style="color:#A626A4;--shiki-dark:#C678DD">ON</span><span style="color:#986801;--shiki-dark:#D19A66"> SomeTable</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> AnotherTable</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">id</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> condition</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    AND</span><span style="color:#986801;--shiki-dark:#D19A66"> AnotherTable</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- This is what you will use in DBMS110</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    column1,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    column2,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    column3</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    SomeTable</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    JOIN</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> AnotherTable </span><span style="color:#A626A4;--shiki-dark:#C678DD">ON</span><span style="color:#986801;--shiki-dark:#D19A66"> SomeTable</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> AnotherTable</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">id</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    condition;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    AND</span><span style="color:#986801;--shiki-dark:#D19A66"> AnotherTable</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <div class="focusContent note">
+        <p><strong>Do I need a semicolon?</strong></p>
+        <p>
+          If you are only writing one SQL statement, the semicolon at the end
+          can be omitted. This is often done for ad-hoc queries in the GUI.
+        </p>
+        <p>For production code, you should use a semicolon.</p>
+      </div>
+
+      <h2 id="types-of-sql-statements">Types of SQL Statements</h2>
+      <p>
+        You might hear of SQL operations being grouped into the following
+        categories:
+      </p>
+      <h3 id="data-definition-language-ddl">Data Definition Language (DDL)</h3>
+      <p>
+        Used to create, modify, and delete database objects (tables are what
+        we&#39;re most interested in).
+      </p>
+      <h3 id="data-manipulation-language-dml">
+        Data Manipulation Language (DML)
+      </h3>
+      <p>Used to select, insert, update, and delete data in the database.</p>
+      <div class="focusContent note">
+        <p>
+          &quot;SELECT&quot; is now often put into its own category - Data Query
+          Language (DQL).
+        </p>
+      </div>
+
+      <h3 id="other-operations">Other Operations</h3>
+      <p>
+        SQL is also used to administer to the database itself. This includes
+        operations like:
+      </p>
+      <ul>
+        <li>Creating and dropping users</li>
+        <li>Granting and revoking permissions</li>
+        <li>Backing up and restoring the database</li>
+      </ul>
+      <h2 id="ansi-sql">ANSI SQL</h2>
+      <p>
+        The <strong>American National Standards Institute (ANSI)</strong> is a
+        group that standardizes many things.
+      </p>
+      <p>
+        As a fun exercise you can check out
+        <a
+          href="https://www.ansi.org/education/activities/standards-student-programs/k-12-students"
+          >ANSI’s Student-FRIENDLY STANDARDS RESOURCES</a
+        >
+        to see everything that they&#39;re involved in.
+      </p>
+      <p>What we need to know is that:</p>
+      <ul>
+        <li>
+          ANSI SQL is <em>the</em> base standard for something to qualify as
+          SQL.
+        </li>
+        <li>
+          It contains the core syntax and functionality that all SQL
+          implementations must support.
+        </li>
+        <li>
+          This means that any implementation of SQL <em>must</em> do everything
+          that ANSI SQL says that it does.
+        </li>
+      </ul>
+      <h3 id="dialects-of-sql">Dialects of SQL</h3>
+      <p>
+        This matters because there are many different implementations of SQL:
+      </p>
+      <ul>
+        <li>Transact-SQL (MS SQL Server)</li>
+        <li>MySQL</li>
+        <li>PostgreSQL</li>
+        <li>Oracle</li>
+        <li>SQLite</li>
+        <li>etc.</li>
+      </ul>
+      <p>
+        These are called <strong>dialects</strong> of SQL. The main differences
+        between dialects are additional features and functionality that are
+        added on top of the ANSI SQL standard.
+      </p>
+      <p>Here are a few specifics for various dialects:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Array operations (PostgreSQL)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#A626A4;--shiki-dark:#C678DD"> ARRAY</span><span style="color:#383A42;--shiki-dark:#E06C75">[1,2,3]</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> || </span><span style="color:#A626A4;--shiki-dark:#C678DD">ARRAY</span><span style="color:#383A42;--shiki-dark:#E06C75">[4,5,6]</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- LIMIT with OFFSET (non-standard syntax) (MySQL)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> users </span><span style="color:#A626A4;--shiki-dark:#C678DD">LIMIT</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;  </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Skip 10, take 5</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- TOP clause (T-SQL)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TOP</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> users;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Variable declarations (T-SQL)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">DECLARE</span><span style="color:#383A42;--shiki-dark:#E06C75"> @count</span><span style="color:#A626A4;--shiki-dark:#C678DD"> INT</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- || string concatenation operator (SQLite)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> first_name || </span><span style="color:#50A14F;--shiki-dark:#98C379">' '</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> || last_name </span><span style="color:#A626A4;--shiki-dark:#C678DD">AS</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> full_name </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> users;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Date functions... each has their own syntax</span></span></code></pre>
+      <p>
+        Different dialects often offer the same functionality (e.g. string
+        concatenation, date functions, etc.), but with different syntax.
+      </p>
+    </div>
+  </body>
+</html>
