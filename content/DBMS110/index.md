@@ -51,3 +51,5 @@ Part II:
   - Instructor will load this to a database and share the file with you
 - Install: [DB Browser for SQLite](https://sqlitebrowser.org/)
   - Open the file for "SQL: Working with SQL Technologies" assignment
+
+## Module 02: Fundamentals of Sets
