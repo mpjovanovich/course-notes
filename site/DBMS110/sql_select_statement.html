@@ -35,25 +35,290 @@
     <div class="content-wrapper">
       <div class="toc">
         <ul>
-          <li><a href="#sql-select-statement">SQL SELECT Statement</a></li>
+          <li>
+            <a href="#sql-select-statement">SQL SELECT Statement</a>
+            <ul>
+              <li>
+                <a href="#asterisk-all-columns">Asterisk (All Columns)</a>
+              </li>
+              <li><a href="#column-lists">Column Lists</a></li>
+              <li><a href="#distinct">DISTINCT</a></li>
+              <li>
+                <a href="#where-clause">WHERE Clause</a>
+                <ul>
+                  <li><a href="#operators">Operators</a></li>
+                </ul>
+              </li>
+              <li><a href="#order-by-clause">ORDER BY Clause</a></li>
+              <li><a href="#limit-clause">LIMIT Clause</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
 
       <h1 id="sql-select-statement">SQL SELECT Statement</h1>
-      <!--
+      <p>
+        The <code>SELECT</code> statement is used to retrieve data from the
+        database.
+      </p>
+      <h2 id="asterisk-all-columns">Asterisk (All Columns)</h2>
+      <p>
+        The asterisk (<code>*</code>) is used to select all columns from a
+        table.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> table_name;</span></span></code></pre>
+      <div class="focusContent note">
+        <p><strong>Ad-hoc Queries</strong></p>
+        <p>
+          The wildcard is not preferred for anything other than quick ad hoc
+          queries due to performance issues.
+        </p>
+        <p>
+          An <strong>ad-hoc query</strong> is a query that is only used once or
+          a few times to solve a problem. These are used by analysts to gain
+          insight into the data, and by techical uses to diagnose problems and
+          make adjustments to the system.
+        </p>
+        <p>
+          When writing SQL for an application or long-term use, you should
+          always specify the columns you want to select.
+        </p>
+      </div>
 
-- Overview
-- Wildcard (*)
-    - Why this is not preferred for anything other than quick ad hoc queries
-- Column lists
-- DISTINCT
-- WHERE
-    - AND / OR
-- ORDER BY
-- LIMIT
-- possibly nullability (IS NULL)
+      <h2 id="column-lists">Column Lists</h2>
+      <p>
+        You can specify the columns you want to select in the
+        <code>SELECT</code> statement. These may be selected in any order, not
+        necessarily the order they are defined in the table.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> column2, column3 </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> table_name;</span></span></code></pre>
+      <h2 id="distinct">DISTINCT</h2>
+      <p>
+        When selecting a result set, you may not want to see duplicate rows. You
+        can use the <code>DISTINCT</code> keyword to remove duplicate rows.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT DISTINCT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> column1, column2 </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> table_name;</span></span></code></pre>
+      <h2 id="where-clause">WHERE Clause</h2>
+      <p>
+        You can use the <code>WHERE</code> clause to filter the result set. This
+        produces a <strong>subset</strong> of the results.
+      </p>
+      <p>
+        The <code>WHERE</code> clause must include a
+        <strong>boolean expression</strong> - one that evaluates to
+        <code>TRUE</code> or <code>FALSE</code>.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Filter the entire animals table to only include reptiles</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Animals </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> family </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'reptile'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <h3 id="operators">Operators</h3>
+      <p>
+        Any of the below operators can be used in the <code>WHERE</code> clause
+        for filtering results.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Comparison Operator</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>=</td>
+            <td>Equal to</td>
+          </tr>
+          <tr>
+            <td>!=</td>
+            <td>Not equal to</td>
+          </tr>
+          <tr>
+            <td>&gt;</td>
+            <td>Greater than</td>
+          </tr>
+          <tr>
+            <td>&gt;=</td>
+            <td>Greater than or equal to</td>
+          </tr>
+          <tr>
+            <td>&lt;</td>
+            <td>Less than</td>
+          </tr>
+          <tr>
+            <td>&lt;=</td>
+            <td>Less than or equal to</td>
+          </tr>
+          <tr>
+            <td>LIKE</td>
+            <td>Matches a pattern</td>
+          </tr>
+          <tr>
+            <td>NOT LIKE</td>
+            <td>Does not match a pattern</td>
+          </tr>
+          <tr>
+            <td>IN</td>
+            <td>Is in a list</td>
+          </tr>
+          <tr>
+            <td>NOT IN</td>
+            <td>Is not in a list</td>
+          </tr>
+          <tr>
+            <td>IS NULL</td>
+            <td>Is null</td>
+          </tr>
+          <tr>
+            <td>IS NOT NULL</td>
+            <td>Is not null</td>
+          </tr>
+        </tbody>
+      </table>
+      <!--TODO: Clean this up -->
 
--->
+      <p>Examples:</p>
+      <ul>
+        <li>Compare a string to a string literal (equal and not equal)</li>
+        <li>
+          Compare a number to a number literal (using all numeric comparison
+          operators)
+        </li>
+        <li>
+          Compare dates using comparison operators (note good practice is to use
+          &#39;yyyyMMdd&#39; string format for date comparison b/c it&#39;s
+          universal)
+        </li>
+        <li>
+          Demonstrate the <code>LIKE</code> operator and wildcard character
+        </li>
+        <li>Demonstrate <code>IS NULL</code> and <code>IS NOT NULL</code></li>
+      </ul>
+      <div class="focusContent note">
+        <p><strong>Between Operator</strong></p>
+        <p>
+          Most SQL dialects have a <code>BETWEEN</code> operator. This is used
+          to filter results between two values. When using this you must be
+          aware of whether the start and end values are included or excluded in
+          the result set.
+        </p>
+        <p>
+          For this reason I recommend using the <code>&gt;=</code> and
+          <code>&lt;=</code> operators instead (or <code>&gt;=</code> and
+          <code>&lt;</code>).
+        </p>
+      </div>
+
+      <h2 id="order-by-clause">ORDER BY Clause</h2>
+      <p>
+        You can use the <code>ORDER BY</code> clause to sort the result set by
+        one or more columns:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> *</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> table_name</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">ORDER BY</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    column1 </span><span style="color:#A626A4;--shiki-dark:#C678DD">ASC</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    column2 </span><span style="color:#A626A4;--shiki-dark:#C678DD">ASC</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <p>
+        The default sort order is ascending (<code>ASC</code>). This keyword can
+        be ommitted if that is the desired sort order:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> *</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> table_name</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">ORDER BY</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    column1;</span></span></code></pre>
+      <p>
+        To reverse the sort order, you can use the <code>DESC</code> keyword:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> *</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> table_name</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">ORDER BY</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    column1 </span><span style="color:#A626A4;--shiki-dark:#C678DD">DESC</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <h2 id="limit-clause">LIMIT Clause</h2>
+      <p>
+        You can use the <code>LIMIT</code> clause to limit the number of rows
+        returned. When doing so you should have an <code>ORDER BY</code> clause
+        to ensure that the rows are returned in a consistent order.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Get the cities with the highest population</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    city,</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    population</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    cities</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">ORDER BY</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    population</span><span style="color:#A626A4;--shiki-dark:#C678DD"> DESC</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">LIMIT</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
     </div>
   </body>
 </html>
