@@ -75,7 +75,7 @@ WHERE
     AND AnotherTable.id = 1;
 ```
 
-~/focusContent.note
+~.focusContent.note
 
 **Do I need a semicolon?**
 
