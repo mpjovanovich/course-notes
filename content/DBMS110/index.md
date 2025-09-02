@@ -53,3 +53,6 @@ Part II:
   - Open the file for "SQL: Working with SQL Technologies" assignment
 
 ## Module 02: Fundamentals of Sets
+
+- [Set Basics](set_basics.html)
+- [SQL Data Types](sql_data_types.html)
