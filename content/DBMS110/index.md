@@ -56,3 +56,4 @@ Part II:
 
 - [Set Basics](set_basics.html)
 - [SQL Data Types](sql_data_types.html)
+- [SQL SELECT Statement](sql_select_statement.html)
