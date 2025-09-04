@@ -76,7 +76,7 @@ A set B is a **subset** of a set A if every element of B is also an element of A
 ```
 Let A = { a, b, c }
 Let B = { a, b, c, d, e }
-Therefore B is a subset of A.
+Therefore A is a subset of B.
 ```
 
 ~.focusContent.note
@@ -85,10 +85,10 @@ A **proper subset** is a subset that is not equal to the set. This is almost alw
 
 ```
 Let A = { a, b, c }
-Let B = { a, b, c }
+Let B = { b, c, a }
 
-Therefore B is a subset of A, but...
-B is not a proper subset of A.
+Therefore A is a subset of B, but...
+A is not a proper subset of B.
 ```
 
 /~

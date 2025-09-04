@@ -57,3 +57,28 @@ Part II:
 - [Set Basics](set_basics.html)
 - [SQL Data Types](sql_data_types.html)
 - [SQL SELECT Statement](sql_select_statement.html)
+
+## Module 03: Data Modeling and ERDs
+
+Part I:
+
+- [Entity Relationship Diagrams (ERDs)](entity_relationship_diagrams.html)
+- [Primary Keys and Foreign Keys](primary_keys_foreign_keys.html)
+<!--
+scenarios:
+  - COLLEGE COURSE DATABASE (v1): course, teacher, student
+  - PET SITTING SERVICE (v1): pet, sitter, client, appointment
+-->
+
+Part II:
+
+- [Natural and Surrogate Keys](natural_and_surrogate_keys.html)
+<!-- Example to motivate: what if we have two "fluffy" pet names? -->
+- [Cardinality](cardinality.html)
+- [Exercise: Domain Modeling](exercise_domain_modeling.html)
+<!--
+scenarios:
+  - COLLEGE COURSE DATABASE (v2, has surrogate keys): course, teacher, student
+  - PET SITTING SERVICE (v2, has surrogate keys): pet, sitter, client, appointment
+  - TODO as exercise: order history
+-->
