@@ -106,6 +106,36 @@ For this reason I recommend using the `>=` and `<=` operators instead (or `>=` a
 
 /~
 
+## LIKE Operator
+
+The `LIKE` operator is used to filter results based on a pattern. It uses the `%` wildcard character to match any characters (including zero).
+
+When you see the `%` wildcard character, it translates to "anything at all can go here".
+
+~.focusContent.example
+
+**Using the % wildcard character**
+
+Let's assume we have three records in a table for popsicle flavors:
+
+```
+blueberry
+mystery blue
+true blue raspberry
+```
+
+Let's say we want to find all records that start with the letter "a".
+
+```sql
+SELECT * FROM table_name WHERE column1 LIKE '%';
+
+SELECT * FROM table_name WHERE column1 LIKE '%pattern%';
+
+SELECT * FROM table_name WHERE column1 LIKE '%pattern%';
+```
+
+/~
+
 ## ORDER BY Clause
 
 You can use the `ORDER BY` clause to sort the result set by one or more columns:
