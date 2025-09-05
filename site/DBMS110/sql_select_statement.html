@@ -243,6 +243,54 @@
         </p>
       </div>
 
+      <h2 id="like-operator">LIKE Operator</h2>
+      <p>
+        The <code>LIKE</code> operator is used to filter results based on a
+        pattern. It uses the <code>%</code> wildcard character to match any
+        characters (including zero).
+      </p>
+      <p>
+        When you see the <code>%</code> wildcard character, it translates to
+        &quot;anything at all can go here&quot;.
+      </p>
+      <div class="focusContent example">
+        <p><strong>Using the % wildcard character</strong></p>
+        <p>
+          Let&#39;s assume we have three records in a table for popsicle
+          flavors:
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>blueberry</span></span>
+<span class="line"><span>mystery blue</span></span>
+<span class="line"><span>true blue raspberry</span></span></code></pre>
+        <p>
+          Let&#39;s say we want to find all records that start with the letter
+          &quot;a&quot;.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> table_name </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> column1 </span><span style="color:#A626A4;--shiki-dark:#C678DD">LIKE</span><span style="color:#50A14F;--shiki-dark:#98C379"> '%'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> table_name </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> column1 </span><span style="color:#A626A4;--shiki-dark:#C678DD">LIKE</span><span style="color:#50A14F;--shiki-dark:#98C379"> '%pattern%'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> * </span><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> table_name </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> column1 </span><span style="color:#A626A4;--shiki-dark:#C678DD">LIKE</span><span style="color:#50A14F;--shiki-dark:#98C379"> '%pattern%'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      </div>
+
       <h2 id="order-by-clause">ORDER BY Clause</h2>
       <p>
         You can use the <code>ORDER BY</code> clause to sort the result set by
