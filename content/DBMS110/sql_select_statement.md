@@ -11,6 +11,7 @@ course: DBMS110
   - [DISTINCT](#distinct)
   - [WHERE Clause](#where-clause)
     - [Operators](#operators)
+  - [LIKE Operator](#like-operator)
   - [ORDER BY Clause](#order-by-clause)
   - [LIMIT Clause](#limit-clause)
 
@@ -127,11 +128,26 @@ true blue raspberry
 Let's say we want to find all records that start with the letter "a".
 
 ```sql
-SELECT * FROM table_name WHERE column1 LIKE '%';
+-- Match everything that starts with "blue"
+-- Results:
+  -- blueberry
+SELECT * FROM flavors WHERE flavor LIKE 'blue%';
+```
 
-SELECT * FROM table_name WHERE column1 LIKE '%pattern%';
+```sql
+-- Match everything that ends with "blue"
+-- Results:
+  -- mystery blue
+SELECT * FROM flavors WHERE flavor LIKE '%blue';
+```
 
-SELECT * FROM table_name WHERE column1 LIKE '%pattern%';
+```sql
+-- Match everything that contains "blue" (anywhere)
+-- Results:
+  -- blueberry
+  -- mystery blue
+  -- true blue raspberry
+SELECT * FROM flavors WHERE flavor LIKE '%blue%';
 ```
 
 /~
