@@ -5,6 +5,11 @@ course: INFM109
 
 ~.toc
 
+- [Embedded AI](#embedded-ai)
+  - [Computer Access and Tool Integration](#computer-access-and-tool-integration)
+  - [Best Practices for Tool Use](#best-practices-for-tool-use)
+  - [Assignment: Using AI to Produce Data-Driven Artifacts](#assignment-using-ai-to-produce-data-driven-artifacts)
+
 /~
 
 # Embedded AI
@@ -56,6 +61,16 @@ Please create a data-driven graphic or table that shows how trust in self-drivin
 - Create data visualizations
 - Debug and test code
 
+~.focusContent.example
+
+**Editing Code with AI Tools**
+
+Let's demo some code editing with AI tools:
+
+https://github.com/mpjovanovich/ai-html-sandbox.git
+
+/~
+
 ## Best Practices for Tool Use
 
 **Diligence and Awareness**:
@@ -82,10 +97,23 @@ Please create a data-driven graphic or table that shows how trust in self-drivin
 - Don't blindly follow AI recommendations
 - Use AI as a tool to augment, not replace, human judgment. Critical thinking skills are weakened when not exercised.
 
+## Assignment: Using AI to Produce Data-Driven Artifacts
+
 ~.focusContent.exercise
 
-**Daily Check-In**
+TODO: Add Canvas assignment for this.
 
-...TODO: create a data-backed artifact using recent (search based) data...
+This assignment is due in class today.
+
+Using one of the following AI tools: [ChatGPT](https://chatgpt.com/), [Claude](https://claude.ai/), or [Gemini](https://gemini.google.com/):
+
+1.) Prompt an AI tool to ask about recent trends and changes related to a tech topic of your choice. You might consider asking about a career field that you are interested in.
+
+2.) Create a data-backed chart or graphic using AI tools that communicates the information that you found.
+
+_Deliverables:_
+
+- The prompt that you used for step 1. Put this in the text area of the assignment.
+- A screenshot of the chart or graphic that you created for step 2. Upload this file to the assignment.
 
 /~

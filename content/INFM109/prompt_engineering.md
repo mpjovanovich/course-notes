@@ -113,6 +113,14 @@ Create a Mermaid timeline diagram that shows major milestones in the evolution o
 
 /~
 
+~.focusContent.exercise
+
+**Daily Check-In**
+
+Using [Claude](https://claude.ai/): Create a markdown document that summarizes how AI is changing different fields within the tech industry. It should show three domains, each with three bullet points and a summary statement. Upload the document to the assignment.
+
+/~
+
 ### Use Examples
 
 Show the LLM what you want by providing examples in your prompt:
@@ -228,11 +236,3 @@ I'm getting ready to prompt an LLM to do a complex task. Can you please suggest 
 3. Identify what's missing or incorrect
 4. Refine the prompt
 5. Test again **_in a new chat_**
-
-~.focusContent.exercise
-
-**Daily Check-In**
-
-TODO...
-
-/~
