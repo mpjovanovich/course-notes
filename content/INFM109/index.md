@@ -24,7 +24,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Welcome to INFM109!
+- Resubmit ethics assignment if needed.
 
 ## Module 00: Course Introduction
 
@@ -62,8 +62,8 @@ Part I:
 Part II:
 
 - [Prompt Engineering](prompt_engineering.html)
-- [Agentic AI](agentic_ai.html)
-- TODO: Assignment - prompt engineering, exploring AI models, AI as a research tool
+- [Embedded AI](embedded_ai.html)
+- [Professional Impact of AI](professional_impact_of_ai.html)
 
 ## Module 02: Hardware
 
