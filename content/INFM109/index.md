@@ -64,6 +64,7 @@ Part II:
 - [Prompt Engineering](prompt_engineering.html)
 - [Embedded AI](embedded_ai.html)
 - [Professional Impact of AI](professional_impact_of_ai.html)
+- Assignment: Producing a Data-Driven Artifacts (Due in class today)
 
 ## Module 02: Hardware
 
@@ -89,7 +90,6 @@ Part II:
 - [System Software and the Operating System](system_software_operating_system.html)
 - Break lecture into two parts
 - Discussion: Case Studies in Location Tracking
-- Daily Quiz
 - Intro to Assignments
 
 ## Module 04: Program and Web Development
