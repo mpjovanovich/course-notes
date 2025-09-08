@@ -115,7 +115,7 @@ Create a Mermaid timeline diagram that shows major milestones in the evolution o
 
 ~.focusContent.exercise
 
-**Daily Check-In**
+**Check-In: Creating an AI Artifact**
 
 Using [Claude](https://claude.ai/): Create a markdown document that summarizes how AI is changing different fields within the tech industry. It should show three domains, each with three bullet points and a summary statement. Upload the document to the assignment.
 
