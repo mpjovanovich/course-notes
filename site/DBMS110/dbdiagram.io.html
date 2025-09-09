@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Using dbdiagram.io</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#using-dbdiagramio">Using dbdiagram.io</a>
+            <ul>
+              <li>
+                <a href="#understanding-the-markup-syntax"
+                  >Understanding the Markup Syntax</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="using-dbdiagramio">Using dbdiagram.io</h1>
+      <p>
+        We will use <a href="https://dbdiagram.io/">dbdiagram.io</a> to create
+        ERDs.
+      </p>
+      <p>This software uses a specialized markup language to create ERDs.</p>
+      <div class="focusContent note">
+        <p>
+          The markup language that we&#39;ll be using <em>is not SQL</em>, but
+          it does closely resemble the SQL create table syntax.
+        </p>
+      </div>
+
+      <h2 id="understanding-the-markup-syntax">
+        Understanding the Markup Syntax
+      </h2>
+      <p>Let&#39;s open this example in dbdiagram.io:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Table pet {</span></span>
+<span class="line"><span>  id integer</span></span>
+<span class="line"><span>  owner_id integer</span></span>
+<span class="line"><span>  name text</span></span>
+<span class="line"><span>  species text</span></span>
+<span class="line"><span>  weight integer</span></span>
+<span class="line"><span>}</span></span></code></pre>
+      <p>We will work toward this finalized version one step at a time:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Table pet {</span></span>
+<span class="line"><span>  id integer [not null, primary key]</span></span>
+<span class="line"><span>  owner_id integer [not null, ref: > owner.id]</span></span>
+<span class="line"><span>  name text [not null]</span></span>
+<span class="line"><span>  species text [not null]</span></span>
+<span class="line"><span>  weight integer [null]</span></span>
+<span class="line"><span>}</span></span></code></pre>
+      <ul>
+        <li>Start by creating the empty table structure.</li>
+        <li>Add in the attribues and data types.</li>
+        <li>
+          For each attribute, in square brackets, indicate NULL or NOT NULL
+          constraints.
+        </li>
+        <li>
+          Identify the primary key by adding a
+          <code>[primary key]</code> constraint inside square brackets. Use a
+          comma to separate multiple constraints.
+        </li>
+        <li>
+          Identify the foreign key by adding a
+          <code>[ref: ? referenced_table.referenced_column]</code> constraint
+          inside square brackets. Use a comma to separate multiple constraints.
+          Possible values for the <code>?</code> are:
+          <ul>
+            <li><code>&gt;</code>: one to many</li>
+            <li><code>&lt;</code>: many to one</li>
+            <li><code>-</code>: one to one</li>
+          </ul>
+        </li>
+        <li>
+          Refer to the documentation for more details:
+          <a href="https://dbml.dbdiagram.io/docs"
+            >https://dbml.dbdiagram.io/docs</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

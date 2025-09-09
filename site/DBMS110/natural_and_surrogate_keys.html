@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Natural and Surrogate Keys</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#natural-and-surrogate-keys">Natural and Surrogate Keys</a>
+            <ul>
+              <li>
+                <a href="#natural-keys">Natural Keys</a>
+                <ul>
+                  <li><a href="#compound-keys">Compound Keys</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#surrogate-keys">Surrogate Keys</a>
+                <ul>
+                  <li>
+                    <a href="#advantages-of-surrogate-keys"
+                      >Advantages of Surrogate Keys</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#mental-model-for-surrogate-keys"
+                      >Mental Model for Surrogate Keys</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="natural-and-surrogate-keys">Natural and Surrogate Keys</h1>
+      <p>
+        We learned that each record in a table must have a unique identifier
+        called the <strong>primary key</strong>. What we choose for that key has
+        consequences for the database system.
+      </p>
+      <h2 id="natural-keys">Natural Keys</h2>
+      <p>
+        A <strong>natural key</strong> is a key that is naturally present in the
+        data:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Entity</th>
+            <th>Natural Key</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>US Citizen</td>
+            <td>Social Security number</td>
+            <td>123-45-6789</td>
+          </tr>
+          <tr>
+            <td>College Course</td>
+            <td>Course code</td>
+            <td>DBMS 110</td>
+          </tr>
+          <tr>
+            <td>Customer</td>
+            <td>Email address</td>
+            <td><a href="mailto:dataLord@info.com">dataLord@info.com</a></td>
+          </tr>
+          <tr>
+            <td>Book</td>
+            <td>ISBN number</td>
+            <td>9780134214298</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="compound-keys">Compound Keys</h3>
+      <p>
+        For many entities, there is no single attribute that can uniquely
+        identify the entity. In these cases, we can use a
+        <strong>compound key</strong>, which is a combination of two or more
+        attributes.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Entity</th>
+            <th>Compound Key</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>County</td>
+            <td>County name and state</td>
+            <td>Hamilton, IN</td>
+          </tr>
+          <tr>
+            <td>Product</td>
+            <td>Product name and manufacturer</td>
+            <td>banana (organic), Dole Inc.</td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <td>Phone number and type</td>
+            <td>555-555-1234, home</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="focusContent note">
+        <p><strong>Cautionary Note</strong></p>
+        <p>
+          Compound keys in an entity often indicate that the entity is a good
+          candidate to be split into multiple entities. We will do this later
+          when we cover <strong>normalization</strong> techniques.
+        </p>
+        <p>
+          It&#39;s still good to know how to identify compound keys, as you will
+          often encounter data that is in this format.
+        </p>
+      </div>
+
+      <h2 id="surrogate-keys">Surrogate Keys</h2>
+      <p>
+        Many databases make use of surrogate keys. A
+        <strong>surrogate key</strong> is a key that is not naturally present in
+        the data. It is a field that is created by the database system to
+        uniquely identify an entity.
+      </p>
+      <p>
+        This is almost always in the form of an integer that simply increments
+        by 1 for each new entity. Many &quot;number&quot; or &quot;code&quot;
+        fields that you encounter in systems are really surrogate keys:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Entity</th>
+            <th>Surrogate Key</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product</td>
+            <td>Product ID</td>
+            <td>banana (organic), Dole Inc.</td>
+          </tr>
+          <tr>
+            <td>Employee</td>
+            <td>Employee ID</td>
+            <td>23885</td>
+          </tr>
+          <tr>
+            <td>Banking Check</td>
+            <td>Check number</td>
+            <td>2005</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="advantages-of-surrogate-keys">Advantages of Surrogate Keys</h3>
+      <ul>
+        <li>
+          <strong>Simplicity</strong>
+          <ul>
+            <li>Surrogate keys are simple to understand and use.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Data Integrity</strong>
+          <ul>
+            <li>Surrogate keys are guaranteed to be unique.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Performance</strong>
+          <ul>
+            <li>
+              Surrogate keys are often <em>indexed</em> by the database system
+              for quick lookups, which can improve performance.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3 id="mental-model-for-surrogate-keys">
+        Mental Model for Surrogate Keys
+      </h3>
+      <p>
+        Imagine you have the following two simplified entities, each using
+        &quot;id&quot; fields as surrogate keys.
+      </p>
+      <figure>
+        <img
+          src="images/pet_owner_simple_erd.svg"
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <p>You might think of it in the following way:</p>
+      <ul>
+        <li>&quot;Each owner has unique id and a name.&quot;</li>
+        <li>&quot;Each pet has unique id and a name.&quot;</li>
+        <li>
+          &quot;Each pet&#39;s owner_id field references (points to) the id of
+          the pet&#39;s owner.&quot;
+        </li>
+      </ul>
+      <div class="focusContent exercise">
+        <p><strong>Examining the Data</strong></p>
+        <p>Using the entities above, let&#39;s look at some possible data:</p>
+        <p><em>Owner</em></p>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>George Washington</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Crazy Susan</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Marie Curie</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><em>Pet</em></p>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>owner_id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Spot</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Fluffy</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Floppy</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Feathers</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Big Rex</td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+        <ol>
+          <li>Which pets belong to George Washington?</li>
+          <li>Which pets belong to Crazy Susan?</li>
+          <li>Which pets belong to Marie Curie?</li>
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>

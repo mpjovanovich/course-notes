@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Cardinality</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#cardinality">Cardinality</a>
+            <ul>
+              <li>
+                <a href="#cardinality-quantifiers">Cardinality Quantifiers</a>
+              </li>
+              <li><a href="#cardinality-notation">Cardinality Notation</a></li>
+              <li>
+                <a href="#connecting-entities-with-cardinality-notation"
+                  >Connecting Entities with Cardinality Notation</a
+                >
+              </li>
+              <li>
+                <a href="#describing-cardinality-in-practice"
+                  >Describing Cardinality in Practice</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="cardinality">Cardinality</h1>
+      <p>
+        We&#39;ve seen how entities can be related to other entities using
+        foreign keys.
+      </p>
+      <p>
+        <strong>Cardinality</strong> describes how many instances of one entity
+        can be associated with one instance of another entity.
+      </p>
+      <h2 id="cardinality-quantifiers">Cardinality Quantifiers</h2>
+      <p>The possible cardinality quantifiers are:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Cardinality Quantifier</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>Zero</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>One</td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>Many</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="cardinality-notation">Cardinality Notation</h2>
+      <p>These quantifiers may be combined together in the following format:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>[minimum possible]..[maximum possible]</span></span></code></pre>
+      <p><em>Examples:</em></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Cardinality</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0..1</td>
+            <td>Zero to one</td>
+          </tr>
+          <tr>
+            <td>1..1</td>
+            <td>One to one (exactly one)</td>
+          </tr>
+          <tr>
+            <td>0..*</td>
+            <td>Zero to many</td>
+          </tr>
+          <tr>
+            <td>1..*</td>
+            <td>One to many</td>
+          </tr>
+          <tr>
+            <td>*..*</td>
+            <td>Many to many</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="connecting-entities-with-cardinality-notation">
+        Connecting Entities with Cardinality Notation
+      </h2>
+      <p>
+        When connecting entities in an ERD, we add the cardinality notation next
+        to the entity that &quot;belongs&quot; to.
+      </p>
+      <p>
+        There will be one set of quantifiers for each of the the two connected
+        entities.
+      </p>
+      <div class="focusContent example">
+        <p><strong>Person to Driver&#39;s License</strong></p>
+        <p>TODO: create image in draw.io</p>
+        <p><strong>Author to Book</strong></p>
+        <p>TODO: create image in draw.io</p>
+      </div>
+
+      <h2 id="describing-cardinality-in-practice">
+        Describing Cardinality in Practice
+      </h2>
+      <p>
+        Even though the ERD may have more descriptive quantifiers for
+        cardinality, it is more common to use the following terms:
+      </p>
+      <ul>
+        <li>One to One</li>
+        <li>One to Many</li>
+        <li>Many to Many</li>
+      </ul>
+      <p>The &quot;zero&quot; possibility is implied or omitted.</p>
+      <div class="focusContent example">
+        <p><strong>One to One vs One to Many Scenarios</strong></p>
+        <p>
+          There is a <em>one to one</em> relationship between person and
+          driver&#39;s license:
+        </p>
+        <ul>
+          <li>A person can have zero or one driver&#39;s license.</li>
+          <li>
+            A driver&#39;s license can be associated with only one person.
+          </li>
+        </ul>
+        <p>
+          There is a <em>one to many</em> relationship between author and book:
+        </p>
+        <ul>
+          <li>An author may have written zero to many books.</li>
+          <li>A book can be written by only one author.</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
