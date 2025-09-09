@@ -11,6 +11,7 @@ showBreadcrumb: false
   - [Module 00: Course Introduction](#module-00-course-introduction)
   - [Module 01: Introduction to Databases](#module-01-introduction-to-databases)
   - [Module 02: Fundamentals of Sets](#module-02-fundamentals-of-sets)
+  - [Module 03: Data Modeling and ERDs](#module-03-data-modeling-and-erds)
 
 /~
 
@@ -18,7 +19,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Reading quiz not posted yet
+- ...
 
 ## Module 00: Course Introduction
 
@@ -64,6 +65,7 @@ Part I:
 
 - [Entity Relationship Diagrams (ERDs)](entity_relationship_diagrams.html)
 - [Primary Keys and Foreign Keys](primary_keys_foreign_keys.html)
+
 <!--
 scenarios:
   - COLLEGE COURSE DATABASE (v1): course, teacher, student
@@ -73,12 +75,12 @@ scenarios:
 Part II:
 
 - [Natural and Surrogate Keys](natural_and_surrogate_keys.html)
-<!-- Example to motivate: what if we have two "fluffy" pet names? -->
 - [Cardinality](cardinality.html)
-- [Exercise: Domain Modeling](exercise_domain_modeling.html)
+- [Using dbdiagram.io](dbdiagram.io.md)
+- In-Class Exercise: Model a Customer Order History System
+
 <!--
 scenarios:
   - COLLEGE COURSE DATABASE (v2, has surrogate keys): course, teacher, student
   - PET SITTING SERVICE (v2, has surrogate keys): pet, sitter, client, appointment
-  - TODO as exercise: order history
 -->
