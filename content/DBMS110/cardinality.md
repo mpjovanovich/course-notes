@@ -10,6 +10,7 @@ course: DBMS110
   - [Cardinality Notation](#cardinality-notation)
   - [Connecting Entities with Cardinality Notation](#connecting-entities-with-cardinality-notation)
   - [Describing Cardinality in Practice](#describing-cardinality-in-practice)
+  - [Crow's Foot Notation](#crows-foot-notation)
 
 /~
 
@@ -90,3 +91,13 @@ There is a _one to many_ relationship between author and book:
 - A book can be written by only one author.
 
 /~
+
+## Crow's Foot Notation
+
+An alternative to the `X..Y` notation is to use **Crow's Foot Notation**.
+
+This provides a quick visual way to identify the cardinalities in a relationship.
+
+<figure>
+  <img src="https://www.inf.usi.ch/faculty/soule/teaching/2014-spring/2014-03-07/images/crows-feet-notation.png" style="width: 80%;height: auto;">
+</figure>
