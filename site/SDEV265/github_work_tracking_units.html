@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV265: GitHub Tracking Units</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#github-tracking-units">GitHub Tracking Units</a>
+            <ul>
+              <li>
+                <a href="#user-stories">User Stories</a>
+                <ul>
+                  <li><a href="#attributes">Attributes</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#tasks">Tasks</a>
+                <ul>
+                  <li><a href="#attributes-1">Attributes</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="github-tracking-units">GitHub Tracking Units</h1>
+      <h2 id="user-stories">User Stories</h2>
+      <p>
+        <strong>Purpose:</strong> Define client focused requirements and
+        business value
+      </p>
+      <p>
+        <strong>GitHub Implementation:</strong> Parent GitHub Issue with
+        <code>type:story</code> label
+      </p>
+      <p><strong>Content Structure:</strong></p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">## Story</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">As a [user role], I want [functionality or action] so that [business value].</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">## Acceptance Criteria</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">-</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [ ] Criterion 1</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">-</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [ ] Criterion 2</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">-</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [ ] Criterion 3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">## Child Tasks</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">-</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [ ] #123 Task description</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">-</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [ ] #124 Task description</span></span></code></pre>
+      <p><strong>Characteristics:</strong></p>
+      <ul>
+        <li>Used for prioritization and work in progress tracking</li>
+        <li>
+          Contains acceptance criteria that may be used for stakeholder sign-off
+        </li>
+        <li>Stories may span sprints through their child tasks</li>
+      </ul>
+      <h3 id="attributes">Attributes</h3>
+      <p><strong>Label</strong>: story</p>
+      <p><strong>Status:</strong> Backlog, In Progress, Completed</p>
+      <h2 id="tasks">Tasks</h2>
+      <p><strong>Purpose:</strong> Define actionable development work items</p>
+      <p>
+        <strong>GitHub Implementation:</strong> Child GitHub Issue with
+        <code>type:task</code> label
+      </p>
+      <p><strong>Content Structure:</strong></p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75"># Task: </span><span style="color:#986801;--shiki-dark:#E06C75">[</span><span style="color:#4078F2;--shiki-dark:#61AFEF">Description</span><span style="color:#986801;--shiki-dark:#E06C75">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">[Brief description of the work to be done]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#986801;font-weight:bold;--shiki-dark:#D19A66;--shiki-dark-font-weight:inherit">**Parent Story:**</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> #123 (if applicable)</span></span></code></pre>
+      <p><strong>Characteristics:</strong></p>
+      <ul>
+        <li>
+          Can be standalone (no parent story) for bugs, refactoring, small
+          changes
+        </li>
+        <li>Developer responsible for determining completion criteria</li>
+      </ul>
+      <h3 id="attributes">Attributes</h3>
+      <p><strong>Label</strong>: task</p>
+      <p>
+        <strong>Status:</strong> Backlog, In Progress, Ready for Review,
+        Completed
+      </p>
+      <p><strong>Priority:</strong> Low, Medium, High</p>
+      <p><strong>Sprint</strong>: sprint-YY-##</p>
+    </div>
+  </body>
+</html>
