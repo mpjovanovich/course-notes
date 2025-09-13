@@ -76,7 +76,7 @@ Part II:
 
 - [Natural and Surrogate Keys](natural_and_surrogate_keys.html)
 - [Cardinality](cardinality.html)
-- [Using dbdiagram.io](dbdiagram.io.md)
+- [Using dbdiagram.io](dbdiagram.io.html)
 - In-Class Exercise: Model a Customer Order History System
 
 <!--

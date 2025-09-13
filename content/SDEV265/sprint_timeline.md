@@ -3,6 +3,17 @@ title: Sprint Timeline
 course: SDEV265
 ---
 
+~.toc
+
+- [Sprint Timeline Guidelines](#sprint-timeline-guidelines)
+  - [Sprint Transition Meeting](#sprint-transition-meeting)
+  - [Branch Transition / Release Cut (Monday)](#branch-transition--release-cut-monday)
+  - [Task Creation and Assignment (Post-Meeting)](#task-creation-and-assignment-post-meeting)
+  - [Professional Development Time](#professional-development-time)
+  - [Software Maintenance](#software-maintenance)
+
+/~
+
 # Sprint Timeline Guidelines
 
 This document provides some recommended **_guidelines_** that may help the team establish a productive rhythm through development cycles. It is not a rulebook.

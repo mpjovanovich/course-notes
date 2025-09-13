@@ -134,7 +134,8 @@ Lecture topics:
 - [Requirements Specification](requirements_specification.html)
 - [Requirements Validation](requirements_validation.html)
 - [Agile Planning](agile_planning.html)
-- Example Document: [Sprint Timeline](sprint_timeline.html)
+- Documentation: [Sprint Timeline](sprint_timeline.html)
+- Documentation: [GitHub Tracking Units](github_work_tracking_units.html)
 
 ### Day 1
 
