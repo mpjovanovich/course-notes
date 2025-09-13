@@ -48,6 +48,8 @@ As a [user role], I want [functionality or action] so that [business value].
 
 ### Attributes
 
+**Assignee:** Person responsible for "owning" the story; knowing its progression status.
+
 **Label**: story
 
 **Status:** Backlog, In Progress, Completed
@@ -74,6 +76,8 @@ As a [user role], I want [functionality or action] so that [business value].
 - Developer responsible for determining completion criteria
 
 ### Attributes
+
+**Assignee:** Developers assigned to the task for implementation and review.
 
 **Label**: task
 
