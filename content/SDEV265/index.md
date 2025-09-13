@@ -20,6 +20,7 @@ showBreadcrumb: false
   - [M04: Software Testing; Reliability](#m04-software-testing-reliability)
     - [Day 1](#day-1-3)
     - [Day 2](#day-2-2)
+  - [Module 0X: Project Code and Architectural Review](#module-0x-project-code-and-architectural-review)
 
 /~
 
@@ -133,6 +134,7 @@ Lecture topics:
 - [Requirements Specification](requirements_specification.html)
 - [Requirements Validation](requirements_validation.html)
 - [Agile Planning](agile_planning.html)
+- Example Document: [Sprint Timeline](sprint_timeline.html)
 
 ### Day 1
 
