@@ -126,7 +126,7 @@ This is why you can't use a capacitive stylus on a capacitive touchscreen.
 
 ~.focusContent.exercise
 
-**Quiz:**
+**Check-In:**
 
 List one device aside from computers, tables, and phones that uses touch as an input method.
 
@@ -336,16 +336,8 @@ Your health is important!
 
 ~.focusContent.exercise
 
-**Quiz:**
+**Check-In:**
 
 Think of one application where augmented reality is currently being used, or may be used in the future.
-
-**Case Study:**
-
-Read on your own.
-
-[Promising applications of non-invasive
-brain stimulation on military cognition
-enhancement: a long way to go](https://pmc.ncbi.nlm.nih.gov/articles/PMC10618962/pdf/gpsych-2023-101264.pdf)
 
 /~
