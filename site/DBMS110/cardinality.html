@@ -39,22 +39,15 @@
             <a href="#cardinality">Cardinality</a>
             <ul>
               <li>
-                <a href="#cardinality-quantifiers">Cardinality Quantifiers</a>
-              </li>
-              <li><a href="#cardinality-notation">Cardinality Notation</a></li>
-              <li>
                 <a href="#connecting-entities-with-cardinality-notation"
                   >Connecting Entities with Cardinality Notation</a
                 >
               </li>
               <li>
-                <a href="#describing-cardinality-in-practice"
-                  >Describing Cardinality in Practice</a
-                >
-              </li>
-              <li>
                 <a href="#crows-foot-notation">Crow&#39;s Foot Notation</a>
               </li>
+              <li><a href="#exercises">Exercises</a></li>
+              <li><a href="#shorthand-notation">Shorthand Notation</a></li>
             </ul>
           </li>
         </ul>
@@ -69,140 +62,128 @@
         <strong>Cardinality</strong> describes how many instances of one entity
         can be associated with one instance of another entity.
       </p>
-      <h2 id="cardinality-quantifiers">Cardinality Quantifiers</h2>
-      <p>The possible cardinality quantifiers are:</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Cardinality Quantifier</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0</td>
-            <td>Zero</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>One</td>
-          </tr>
-          <tr>
-            <td>*</td>
-            <td>Many</td>
-          </tr>
-        </tbody>
-      </table>
-      <h2 id="cardinality-notation">Cardinality Notation</h2>
-      <p>These quantifiers may be combined together in the following format:</p>
-      <pre
-        class="shiki shiki-themes one-light one-dark-pro"
-        style="
-          background-color: #fafafa;
-          --shiki-dark-bg: #282c34;
-          color: #383a42;
-          --shiki-dark: #abb2bf;
-        "
-        tabindex="0"
-      ><code><span class="line"><span>[minimum possible]..[maximum possible]</span></span></code></pre>
-      <p><em>Examples:</em></p>
-      <table>
-        <thead>
-          <tr>
-            <th>Cardinality</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>0..1</td>
-            <td>Zero to one</td>
-          </tr>
-          <tr>
-            <td>1..1</td>
-            <td>One to one (exactly one)</td>
-          </tr>
-          <tr>
-            <td>0..*</td>
-            <td>Zero to many</td>
-          </tr>
-          <tr>
-            <td>1..*</td>
-            <td>One to many</td>
-          </tr>
-          <tr>
-            <td>*..*</td>
-            <td>Many to many</td>
-          </tr>
-        </tbody>
-      </table>
       <h2 id="connecting-entities-with-cardinality-notation">
         Connecting Entities with Cardinality Notation
       </h2>
       <p>
-        When connecting entities in an ERD, we add the cardinality notation next
-        to the entity that &quot;belongs&quot; to.
+        Quantifiers are arranged in pairs to show minimum and maximum possible
+        values. Let&#39;s say we have the quantifiers 0 and 1.
       </p>
-      <p>
-        There will be one set of quantifiers for each of the the two connected
-        entities.
-      </p>
-      <div class="focusContent example">
-        <p><strong>Person to Driver&#39;s License</strong></p>
-        <p>TODO: create image in draw.io</p>
-        <p><strong>Author to Book</strong></p>
-        <p>TODO: create image in draw.io</p>
-      </div>
-
-      <h2 id="describing-cardinality-in-practice">
-        Describing Cardinality in Practice
-      </h2>
-      <p>
-        Even though the ERD may have more descriptive quantifiers for
-        cardinality, it is more common to use the following terms:
-      </p>
-      <ul>
-        <li>One to One</li>
-        <li>One to Many</li>
-        <li>Many to Many</li>
-      </ul>
-      <p>The &quot;zero&quot; possibility is implied or omitted.</p>
-      <div class="focusContent example">
-        <p><strong>One to One vs One to Many Scenarios</strong></p>
+      <p>This translates to:</p>
+      <blockquote>
         <p>
-          There is a <em>one to one</em> relationship between person and
-          driver&#39;s license:
+          For some entity X there may be at minimum 0 and at maximum 1 instance
+          of entity Y.
         </p>
-        <ul>
-          <li>A person can have zero or one driver&#39;s license.</li>
-          <li>
-            A driver&#39;s license can be associated with only one person.
-          </li>
-        </ul>
-        <p>
-          There is a <em>one to many</em> relationship between author and book:
-        </p>
-        <ul>
-          <li>An author may have written zero to many books.</li>
-          <li>A book can be written by only one author.</li>
-        </ul>
-      </div>
-
+      </blockquote>
       <h2 id="crows-foot-notation">Crow's Foot Notation</h2>
       <p>
-        An alternative to the <code>X..Y</code> notation is to use
-        <strong>Crow&#39;s Foot Notation</strong>.
+        <strong>Crow&#39;s Foot Notation</strong> provides a quick visual way to
+        identify the cardinalities in a relationship.
       </p>
       <p>
-        This provides a quick visual way to identify the cardinalities in a
-        relationship.
+        The symbol on the inside is the minimum value, and the symbol on the
+        outside is the maximum value.
       </p>
       <figure>
-        <img
-          src="https://www.inf.usi.ch/faculty/soule/teaching/2014-spring/2014-03-07/images/crows-feet-notation.png"
-          style="width: 80%; height: auto"
-        />
+        <img src="images/crows_foot.svg" style="width: 100%; height: auto" />
       </figure>
+
+      <div class="focusContent example">
+        <p><strong>Person to Vehicle</strong></p>
+        <p>
+          There will be a pair of quantifiers for each direction of the
+          relationship. These are placed at the edges of the relationship.
+        </p>
+        <figure>
+          <img
+            src="images/cardinality_example1.svg"
+            style="width: 40%; height: auto"
+          />
+        </figure>
+
+        <ul>
+          <li>
+            Each person is associated with at minimum zero and at most many
+            vehicles.
+          </li>
+          <li>
+            Each vehicle is associated with at minimum one and at most one
+            person.
+          </li>
+        </ul>
+      </div>
+
+      <h2 id="exercises">Exercises</h2>
+      <p>
+        Let&#39;s try drawing crow&#39;s foot notation for a couple of
+        exercises.
+      </p>
+      <div class="focusContent exercise">
+        <p><strong>Person to Driver&#39;s License</strong></p>
+        <blockquote>
+          <p>
+            A person can have at minimum zero and at most one driver&#39;s
+            license. A driver&#39;s license can be associated with at minimum
+            one and at most one person.
+          </p>
+        </blockquote>
+      </div>
+
+      <div class="focusContent exercise">
+        <p><strong>Author to Book</strong></p>
+        <blockquote>
+          <p>
+            An author can be associated with at minimum zero and at most many
+            books. A book can be associated with at minimum one and at most one
+            author.
+          </p>
+        </blockquote>
+      </div>
+
+      <h2 id="shorthand-notation">Shorthand Notation</h2>
+      <p>
+        ERDs should have the full descriptive quantifiers for cardinality;
+        however, it is common to use the following shorthand notations when
+        discussing a relationship:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Shorthand</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1:1</td>
+            <td>One to One</td>
+          </tr>
+          <tr>
+            <td>1:M</td>
+            <td>One to Many</td>
+          </tr>
+          <tr>
+            <td>M:N</td>
+            <td>Many to Many</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>In this shorthand, the minimum values are omitted.</p>
+      <div class="focusContent example">
+        <p><strong>1:1 vs 1:M Scenarios</strong></p>
+        <p>From our examples above:</p>
+        <p>
+          There is a 1:1 relationship between person and driver&#39;s license.
+          We ignore the fact that ther may be zero instances of driver&#39;s
+          license when casually describing the relationship.
+        </p>
+        <p>
+          There is a 1:M relationship between author and book. We ignore the
+          fact that there may be zero instances of book when casually describing
+          the relationship.
+        </p>
+      </div>
     </div>
   </body>
 </html>
