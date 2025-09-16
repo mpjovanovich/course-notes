@@ -76,7 +76,7 @@ Let's try drawing crow's foot notation for a couple of exercises.
 
 ## Shorthand Notation
 
-ERDs should have the full descriptive quantifiers for cardinality; however, it is common to use the following shorthand notations when discussing a relationship:
+ERDs should have the full descriptive quantifiers for cardinality; however, it is common to use the following shorthand notations when discussing a relationship at a high level:
 
 | Shorthand | Description  |
 | --------- | ------------ |
