@@ -38,7 +38,6 @@ These are associated with foreign keys in the tables (discussed in the previous 
 
 Relationships in an ERD must have the following characteristics:
 
-- Line from one entity to another
-- Line should connect from the foreign key of one entity to the primary key of the other entity
-- Cardinality indicator on the edge between the entities
-  - Often showed as crow's foot notation
+- Related entities are connected by a line (not all entities are related to all other entities)
+- Lines should connect from the foreign key of one entity to the primary key of the other entity
+- A cardinality indicator should be shown on the edge between the entities
