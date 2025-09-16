@@ -63,7 +63,7 @@ Part II:
 
 Part I:
 
-- [Primary Keys and Foreign Keys](primary_keys_foreign_keys.html)
+- [Primary Keys and Foreign Keys](primary_foreign_keys.html)
 - [Entity Relationship Diagrams (ERDs)](entity_relationship_diagrams.html)
 
 <!--
