@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Primary and Foreign Keys</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#primary-keys">Primary Keys</a>
+            <ul>
+              <li><a href="#compound-keys">Compound Keys</a></li>
+            </ul>
+          </li>
+          <li><a href="#foreign-keys">Foreign Keys</a></li>
+        </ul>
+      </div>
+
+      <h1 id="primary-keys">Primary Keys</h1>
+      <p>
+        A <strong>primary key</strong> is an attribute (or set of attributes)
+        that uniquely identifies an entity.
+      </p>
+      <div class="focusContent example">
+        <p><strong>Student Scores</strong></p>
+        <p>
+          Imagine that you&#39;re entering students into a table. You could use
+          the student&#39;s full name as the primary key, but what if there are
+          multiple students with the same name? Which score belongs to which
+          student?
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alfonzo Alca</td>
+              <td>85</td>
+            </tr>
+            <tr>
+              <td>Bobby Beebop</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>Jennifer Johen</td>
+              <td>95</td>
+            </tr>
+            <tr>
+              <td>Jennifer Johen</td>
+              <td>92</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          The &quot;full name&quot; attribute on the student entity is not
+          unique, so it cannot be used as a primary key. Instead, we can use the
+          student&#39;s ID number as the primary key.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Full Name</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>C0001</td>
+              <td>Alfonzo Alca</td>
+              <td>85</td>
+            </tr>
+            <tr>
+              <td>C0002</td>
+              <td>Bobby Beebop</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>C0003</td>
+              <td>Jennifer Johen</td>
+              <td>95</td>
+            </tr>
+            <tr>
+              <td>C0004</td>
+              <td>Jennifer Johen</td>
+              <td>92</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          When Jennifer signs up for her course, we know that it will use her
+          record in the system to sign up - not the other Jennifer.
+        </p>
+      </div>
+
+      <h3 id="compound-keys">Compound Keys</h3>
+      <p>
+        For many entities, there is no single attribute that can uniquely
+        identify the entity. In these cases, we can use a
+        <strong>compound key</strong>, which is a combination of two or more
+        attributes.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Entity</th>
+            <th>Compound Key</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>County</td>
+            <td>County name and state</td>
+            <td>Hamilton, IN</td>
+          </tr>
+          <tr>
+            <td>Product</td>
+            <td>Product name and manufacturer</td>
+            <td>banana (organic), Dole Inc.</td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <td>Phone number and type</td>
+            <td>555-555-1234, home</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="focusContent note">
+        <p><strong>Cautionary Note</strong></p>
+        <p>
+          Compound keys in an entity often indicate that the entity is a good
+          candidate to be split into multiple entities. We will do this later
+          when we cover <strong>normalization</strong> techniques.
+        </p>
+        <p>
+          It&#39;s still good to know how to identify compound keys, as you will
+          often encounter data that is in this format.
+        </p>
+      </div>
+
+      <h1 id="foreign-keys">Foreign Keys</h1>
+      <p>
+        A <strong>foreign key</strong> is an attribute (or set of attributes)
+        that references another entity.
+      </p>
+      <p>
+        These will &quot;point to&quot; the primary key of the other entity.
+      </p>
+      <div class="focusContent example">
+        <p><strong>Tying Students to Campuses</strong></p>
+        <p>
+          Let&#39;s make an entity to hold student data and another to hold
+          campus data.
+        </p>
+        <p>
+          In order to associate a student with a campus, we need to add a
+          foreign key to the student entity that references the campus that the
+          student is enrolled in. The primary key of the campus entity is the
+          campus code, so this is what will go in the foreign key for each
+          student record.
+        </p>
+        <p><em>Campus</em></p>
+        <table>
+          <thead>
+            <tr>
+              <th>Campus Code</th>
+              <th>Location</th>
+              <th>Year Opened</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>H04</td>
+              <td>Hamilton, IN</td>
+              <td>1990</td>
+            </tr>
+            <tr>
+              <td>I02</td>
+              <td>Indianapolis, IN</td>
+              <td>2000</td>
+            </tr>
+            <tr>
+              <td>K01</td>
+              <td>Kokomo, IN</td>
+              <td>2010</td>
+            </tr>
+            <tr>
+              <td>L03</td>
+              <td>Lafayette, IN</td>
+              <td>2020</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><em>Student</em></p>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Campus Code</th>
+              <th>Full Name</th>
+              <th>Date of Birth</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>C0002</td>
+              <td>I02</td>
+              <td>Bobby Beebop</td>
+              <td>1992-02-02</td>
+            </tr>
+            <tr>
+              <td>C0003</td>
+              <td>K01</td>
+              <td>Jennifer Johen</td>
+              <td>1994-03-03</td>
+            </tr>
+            <tr>
+              <td>C0001</td>
+              <td>L03</td>
+              <td>Alfonzo Alca</td>
+              <td>1990-01-01</td>
+            </tr>
+            <tr>
+              <td>C0004</td>
+              <td>L03</td>
+              <td>Jennifer Johen</td>
+              <td>1996-04-04</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Campus Code is a foreign key in the student table that
+          <em>references</em> the campus code in the campus table.
+        </p>
+        <p>
+          The point is that we keep campus information in its own table, and we
+          can follow relationships as needed.
+        </p>
+        <p>
+          If we want to know the year of the campus that Bobby Beebop is
+          enrolled in, we can:
+        </p>
+        <ul>
+          <li>Find Bobby Beebop&#39;s record in the student table</li>
+          <li>
+            Use the Campus Code &quot;I02&quot; to find the campus record in the
+            campus table
+          </li>
+          <li>
+            Use the Year Opened field to find the year the campus was opened
+          </li>
+        </ul>
+        <p>
+          <strong>Exercise:</strong> Which two students are enrolled at the
+          Lafayette campus?
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
