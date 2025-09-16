@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Entity Relationship Diagrams</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#entity-relationship-diagrams"
+              >Entity Relationship Diagrams</a
+            >
+            <ul>
+              <li><a href="#entities">Entities</a></li>
+              <li><a href="#relationships">Relationships</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="entity-relationship-diagrams">Entity Relationship Diagrams</h1>
+      <p>
+        An <strong>entity relationship diagram (ERD)</strong> is a diagram that
+        represents:
+      </p>
+      <ul>
+        <li>The <strong>entities</strong> in a database</li>
+        <li>The <strong>relationships</strong> between the entities</li>
+      </ul>
+      <h2 id="entities">Entities</h2>
+      <p>
+        An <strong>entity</strong> is a &quot;thing&quot; that we want to store
+        information about. It may be a concrete object (like a person or a car)
+        or an abstract concept (like a bank account or purchase information).
+      </p>
+      <p>Entities in an ERD must have the following characteristics:</p>
+      <ul>
+        <li>Rectangle shape</li>
+        <li>Entity name at the top</li>
+        <li>Attributes listed inside the rectangle</li>
+        <li>Data type of each attribute</li>
+        <li>
+          Primary key indicator (sometimes &quot;PK&quot;, underline, key icon)
+        </li>
+      </ul>
+      <h2 id="relationships">Relationships</h2>
+      <p>
+        A <strong>relationship</strong> is a connection between two entities. It
+        may be a one-to-one relationship, a one-to-many relationship, or a
+        many-to-many relationship.
+      </p>
+      <p>
+        These are associated with foreign keys in the tables (discussed in the
+        previous section).
+      </p>
+      <p>Relationships in an ERD must have the following characteristics:</p>
+      <ul>
+        <li>Line from one entity to another</li>
+        <li>
+          Line should connect from the foreign key of one entity to the primary
+          key of the other entity
+        </li>
+        <li>
+          Cardinality indicator on the edge between the entities
+          <ul>
+            <li>Can be described as &quot;X..Y&quot; notation</li>
+            <li>Can be crow&#39;s foot notation</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
