@@ -41,5 +41,4 @@ Relationships in an ERD must have the following characteristics:
 - Line from one entity to another
 - Line should connect from the foreign key of one entity to the primary key of the other entity
 - Cardinality indicator on the edge between the entities
-  - Can be described as "X..Y" notation
-  - Can be crow's foot notation
+  - Often showed as crow's foot notation
