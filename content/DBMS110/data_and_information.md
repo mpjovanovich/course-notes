@@ -9,7 +9,6 @@ course: DBMS110
   - [Information vs Data](#information-vs-data)
   - [Information Systems](#information-systems)
   - [How Data is Used](#how-data-is-used)
-  - [Types of Data](#types-of-data)
 
 /~
 
@@ -19,7 +18,7 @@ course: DBMS110
 
 When contrasted with information, data is best thought of as **raw data** - it is not processed in any way. It is simply the underlying "pieces" that make up information.
 
-**Information** is the processed data. It is the data that has been organized and interpreted in a way that is meaningful to someone.
+**Information** is data that has been organized and processed in a way that is meaningful to users.
 
 ~.focusContent.example
 
@@ -45,7 +44,7 @@ As we take the data points and relate them to each other, we can begin to form i
 
 An **information system** is a system that collects, stores, and processes data to create information. It's simply a way to draw a boundary around some context.
 
-These information systems often encompasa a **domain** - a specific area of interest.
+These information systems often encompass an **application domain** - a specific area of interest that the system is designed to support.
 
 Examples might be:
 

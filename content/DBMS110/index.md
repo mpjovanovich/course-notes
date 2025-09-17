@@ -37,7 +37,8 @@ showBreadcrumb: false
 Part I:
 
 - [Data and Information](data_and_information.html)
-- [Data Stores](data_stores.html)
+- [File Based Data Stores](file_based_data_stores.html)
+- [Databases](databases.html)
 - [Database Vendors](database_vendors.html)
 - [How are Databases Used?](how_are_databases_used.html)
 - [Exercise: Data Journeys](exercise_data_journeys.html)
