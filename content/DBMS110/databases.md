@@ -17,9 +17,9 @@ course: DBMS110
 
 Databases are the main type of data store we will be working with in this course.
 
-A **database** is an organized collection of related data. There is no common "file format" for a database; it is an abstract concept. In practice, databases are implemented in a variety of ways.
+A **database** is an organized collection of related data designed for efficient storage and retrieval.
 
-When using the term "database" we are typically referring to one that is managed by a database management system (DBMS).
+There is no common "file format" for a database. In practice, databases are implemented in a variety of ways. When using the term "database" we are typically referring to one that is managed by a database management system (DBMS).
 
 ## Database Management Systems (DBMS)
 
