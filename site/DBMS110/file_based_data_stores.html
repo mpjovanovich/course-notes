@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: File Based Data Stores</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#file-based-data-stores">File Based Data Stores</a>
+            <ul>
+              <li><a href="#text-files">Text Files</a></li>
+              <li><a href="#delimited-files">Delimited Files</a></li>
+              <li><a href="#spreadsheets">Spreadsheets</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="file-based-data-stores">File Based Data Stores</h1>
+      <p>
+        A <strong>data store</strong> is exactly what it sounds like - a way to
+        store data.
+      </p>
+      <p>
+        We will cover data modeling in later modules, but it is useful to know
+        the symbol for a <strong>data store</strong>:
+      </p>
+      <figure>
+        <span>
+          <img
+            src="https://img.favpng.com/14/18/20/computer-icons-database-symbol-icon-design-png-favpng-H1GjigGFYagZD6HXpQA72JcJB.jpg"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>Data stores come in many forms.</p>
+      <h2 id="text-files">Text Files</h2>
+      <ul>
+        <li>
+          Typically only contain raw text with no style or formatting
+          information.
+        </li>
+        <li>
+          May be structured in a variety of ways and have any (or no) file
+          extension.
+        </li>
+        <li>
+          Often used for simple key/value mappings and configuration
+          information.
+        </li>
+      </ul>
+      <p>
+        One example is an <code>.ini</code> file. You might see these used for
+        application settings, such as game save information:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">[player]</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#C678DD">char_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> =</span><span style="color:#383A42;--shiki-dark:#98C379"> MegaMage999</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#C678DD">level</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> =</span><span style="color:#383A42;--shiki-dark:#98C379"> 42</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#C678DD">class</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> =</span><span style="color:#383A42;--shiki-dark:#98C379"> Mage</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">[game_settings]</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#C678DD">server</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> =</span><span style="color:#383A42;--shiki-dark:#98C379"> play.gamestudio.com</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#C678DD">port</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> =</span><span style="color:#383A42;--shiki-dark:#98C379"> 25565</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#C678DD">save_file</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "world_save.dat"</span></span></code></pre>
+      <p>
+        Text files use <strong>ASCII</strong> (American Standard Code for
+        Information Interchange) or <strong>Unicode</strong> character encoding.
+        Each character is represented by a binary number. A lookup table is used
+        to convert the binary number to the character.
+      </p>
+      <div class="focusContent demo">
+        <p><strong>ASCII in Action</strong></p>
+        <p>
+          In this walkthrough, your instructor will take a look at the actual
+          binary underneath a text file, and we will see how it is converted to
+          the characters we see on the screen.
+        </p>
+        <ul>
+          <li>
+            Go to:
+            <a href="https://www.ascii-code.com/"
+              >https://www.ascii-code.com/</a
+            >
+          </li>
+          <li>Save a local text file, <code>demo.txt</code></li>
+          <li>
+            Use the command <code>xxd -b demo.txt</code> to view the binary
+          </li>
+          <li>
+            Note how each byte (8 bits) maps to a character in the ASCII table
+          </li>
+        </ul>
+        <p>
+          *<em
+            >Note: even though all computer information is stored in binary at
+            the lowest level, we still call files that contain text &quot;text
+            files&quot; to differentiate them from other binary files.</em
+          >
+        </p>
+      </div>
+
+      <h2 id="delimited-files">Delimited Files</h2>
+      <p>
+        Delimited files use a <strong>delimiter</strong> to separate the data -
+        usually a single <strong>character</strong> (e.g. <code>,</code>,
+        <code>;</code>, <code>|</code>, <code>\t</code>).
+      </p>
+      <p>
+        By far the most common delimiter is the comma (<code>,</code>), which is
+        why these files are often called <em>comma-separated values</em> (CSV)
+        files. These use the <code>.csv</code> file extension.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">char_name,</span><span style="color:#A626A4;--shiki-dark:#C678DD">level,</span><span style="color:#4078F2;--shiki-dark:#61AFEF">class</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">MegaMage999,</span><span style="color:#A626A4;--shiki-dark:#C678DD">42,</span><span style="color:#4078F2;--shiki-dark:#61AFEF">Mage</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">MiniMage,</span><span style="color:#A626A4;--shiki-dark:#C678DD">11,</span><span style="color:#4078F2;--shiki-dark:#61AFEF">Mage</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">PunyWarrior,</span><span style="color:#A626A4;--shiki-dark:#C678DD">1,</span><span style="color:#4078F2;--shiki-dark:#61AFEF">Warrior</span></span></code></pre>
+      <div class="focusContent exercise">
+        <p><strong>Opening Text Files</strong></p>
+        <p>
+          The <strong>file extension</strong> (part of the file name after the
+          last dot) is a form of <strong>metadata</strong> that tells both the
+          user and the operating system what type of file it is. Most operating
+          systems keep a mapping of file extensions to the programs that can
+          open them. This can be changed by the user, or the user can choose to
+          open a file with a different program.
+        </p>
+        <p>In this exercise we will:</p>
+        <ul>
+          <li>Open Notepad++</li>
+          <li>Paste the data above into a new file</li>
+          <li>Save the file as <code>characters.csv</code></li>
+          <li>Close Notepad++</li>
+          <li>Open the file in Microsoft Excel</li>
+        </ul>
+      </div>
+
+      <p>
+        To avoid clashes with data that have commas in them, it is often better
+        to use an infrequently used character as a delimiter, such as the tilde
+        (<code>~</code>) or pipe (<code>|</code>) character.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">char_name~level~class</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">MegaMage999~42~Mage</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">MiniMage~11~Mage</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">PunyWarrior~1~Warrior</span></span></code></pre>
+      <h2 id="spreadsheets">Spreadsheets</h2>
+      <figure>
+        <span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/768px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png?20190925171014"
+            style="width: 40%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        Spreadsheets are a type of file designed to store data in
+        <strong>tabular</strong> (table) form. These offer more capabilities
+        than simple text files, such as:
+      </p>
+      <ul>
+        <li>Formatting</li>
+        <li>Sorting</li>
+        <li>Filtering</li>
+        <li>Calculations</li>
+      </ul>
+      <p>
+        The most common spreadsheet programs are Microsoft Excel and Google
+        Sheets.
+      </p>
+      <div class="focusContent exercise">
+        <p><strong>Spreadsheet Basics</strong></p>
+        <p>
+          We saw earlier that Microsoft Excel can open CSV files. It cannot,
+          however, perform the data operations listed above without first
+          converting the data to a spreadsheet format.
+        </p>
+        <ul>
+          <li>
+            After opening the CSV file, you should see an option to convert the
+            CSV file to a spreadsheet. Do this now.
+          </li>
+          <li>Sort the data by level</li>
+          <li>Filter to only show the Mage class entries</li>
+          <li>Save the file as <code>characters.xlsx</code></li>
+          <li>Try opening the file in Notepad++ - what do you see?</li>
+        </ul>
+        <p>
+          Spreadsheets are saved in <strong>binary</strong> format, which means
+          they are not human-readable like CSV files.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

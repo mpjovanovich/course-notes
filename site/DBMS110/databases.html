@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Databases</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#databases">Databases</a>
+            <ul>
+              <li>
+                <a href="#database-management-systems-dbms"
+                  >Database Management Systems (DBMS)</a
+                >
+              </li>
+              <li>
+                <a href="#interfacing-with-a-dbms">Interfacing with a DBMS</a>
+                <ul>
+                  <li>
+                    <a href="#cli-command-line-interface"
+                      >CLI (Command Line Interface)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#gui-graphical-user-interface"
+                      >GUI (Graphical User Interface)</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="databases">Databases</h1>
+      <p>
+        Databases are the main type of data store we will be working with in
+        this course.
+      </p>
+      <p>
+        A <strong>database</strong> is an organized collection of related data
+        designed for efficient storage and retrieval.
+      </p>
+      <p>
+        There is no common &quot;file format&quot; for a database. In practice,
+        databases are implemented in a variety of ways. When using the term
+        &quot;database&quot; we are typically referring to one that is managed
+        by a database management system (DBMS).
+      </p>
+      <h2 id="database-management-systems-dbms">
+        Database Management Systems (DBMS)
+      </h2>
+      <p>
+        Once a data store reaches a certain size, it becomes infeasible to
+        manually manage it.
+      </p>
+      <p>
+        A <strong>database management system (DBMS)</strong> is software that
+        allows you to create, modify, query, and administer a database. This
+        software contains the core components of a database system, which are at
+        minimum:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Database Engine</strong></td>
+            <td>
+              Responsible for the storage, retrieval, and manipulation of data.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Query Processor</strong></td>
+            <td>Processes queries to the database.</td>
+          </tr>
+          <tr>
+            <td><strong>Transaction Manager</strong></td>
+            <td>Manages transactions to the database.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="interfacing-with-a-dbms">Interfacing with a DBMS</h2>
+      <p>
+        Depending on a person&#39;s role they may interact with the DBMS using
+        the CLI or a GUI.
+      </p>
+      <h3 id="cli-command-line-interface">CLI (Command Line Interface)</h3>
+      <p>
+        The <strong>CLI (Command Line Interface)</strong> is a text-based
+        interface that allows you to interact with the DBMS using commands. This
+        is done via a terminal window.
+      </p>
+      <p>
+        The advantage of the CLI is that it does not require graphical software
+        to be installed. Many servers that run a DBMS do not have graphics
+        hardware, so the CLI is the only way to interact with the DBMS.
+      </p>
+      <p>Some examples of CLI commands are shown below.</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Connect to the database</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">mysql</span><span style="color:#986801;--shiki-dark:#D19A66"> -u</span><span style="color:#50A14F;--shiki-dark:#98C379"> root</span><span style="color:#986801;--shiki-dark:#D19A66"> -p</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># List all databases</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">show</span><span style="color:#50A14F;--shiki-dark:#98C379"> databases</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Use a database</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">use</span><span style="color:#50A14F;--shiki-dark:#98C379"> database_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <h3 id="gui-graphical-user-interface">GUI (Graphical User Interface)</h3>
+      <figure>
+        <span>
+          <img
+            src="https://imgs.search.brave.com/Kyy9bn1eZ1gVC7JlXIN8xsaPCqeP16BUzkgegfqB51M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dHV0b3JpYWxzdGVh/Y2hlci5jb20vX25l/eHQvaW1hZ2U_dXJs/PS9pbWFnZXMvc3Fs/c2VydmVyL1NTTVMu/d2VicCZ3PTM4NDAm/cT03NQ"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        The <strong>GUI (Graphical User Interface)</strong> (pronounced
+        &quot;gooey&quot;) is a visual interface that allows you to interact
+        with the DBMS using a mouse and keyboard, like a traditional desktop
+        application.
+      </p>
+      <p>Most users who need to frequently run queries will use a GUI.</p>
+    </div>
+  </body>
+</html>
