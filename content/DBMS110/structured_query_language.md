@@ -119,9 +119,8 @@ As a fun exercise you can check out [ANSI’s Student-FRIENDLY STANDARDS RESOURC
 
 What we need to know is that:
 
-- ANSI SQL is _the_ base standard for something to qualify as SQL.
-- It contains the core syntax and functionality that all SQL implementations must support.
-- This means that any implementation of SQL _must_ do everything that ANSI SQL says that it does.
+- ANSI SQL forms the core foundational functionality that all SQL dialects include
+- It is typically a subset of the functionality that is available in a given dialect
 
 ### Dialects of SQL
 
