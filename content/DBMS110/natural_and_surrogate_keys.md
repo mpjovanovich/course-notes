@@ -20,7 +20,7 @@ We learned that each record in a table must have a unique identifier called the 
 
 ## Natural Keys
 
-A **natural key** is a key that is naturally present in the data:
+A **natural key** is a unique key that is already present from attributes in the entity:
 
 | Entity         | Natural Key            | Example           |
 | -------------- | ---------------------- | ----------------- |
@@ -51,7 +51,7 @@ It's still good to know how to identify compound keys, as you will often encount
 
 ## Surrogate Keys
 
-Many databases make use of surrogate keys. A **surrogate key** is a key that is not naturally present in the data. It is a field that is created by the database system to uniquely identify an entity.
+Many databases make use of surrogate keys. A **surrogate key** is an artificially created field used to uniquely identify an entity.
 
 This is almost always in the form of an integer that simply increments by 1 for each new entity. Many "number" or "code" fields that you encounter in systems are really surrogate keys:
 

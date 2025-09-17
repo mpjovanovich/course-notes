@@ -82,14 +82,14 @@ Part II (short lecture):
 Part I:
 
 - [Application Software](application_software.html)
+- Break and individual source search for discussions
 - Discussion: Location Data Case Studies
 - Intro to Assignments
 
 Part II:
 
+- TODO: Break lecture into two parts
 - [System Software and the Operating System](system_software_operating_system.html)
-- Break lecture into two parts
-- Discussion: Case Studies in Location Tracking
 - Intro to Assignments
 
 ## Module 04: Program and Web Development
