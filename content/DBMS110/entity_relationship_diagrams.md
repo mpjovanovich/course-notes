@@ -20,7 +20,7 @@ An **entity relationship diagram (ERD)** is a diagram that represents:
 
 ## Entities
 
-An **entity** is a "thing" that we want to store information about. It may be a concrete object (like a person or a car) or an abstract concept (like a bank account or purchase information).
+An **entity** is a real-world object or concept that we want to store data about. It may be a concrete object (like a person or a car) or an abstract concept (like a bank account or purchase information).
 
 Entities in an ERD must have the following characteristics:
 
