@@ -60,8 +60,8 @@ class Person
     {
         // Access the name property
         Console.WriteLine(this.name);
-/~
-/~
+    }
+}
 ```
 
 ## Pythonic Guidelines - Controlling Access
