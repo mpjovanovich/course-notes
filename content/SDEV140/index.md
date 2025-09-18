@@ -11,6 +11,11 @@ showBreadcrumb: false
   - [Module 00: Course Introduction](#module-00-course-introduction)
   - [Module 00: Review Items (if Needed)](#module-00-review-items-if-needed)
   - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
+    - [Software Setup](#software-setup)
+    - [Command Line (bash)](#command-line-bash)
+    - [Getting started with Python](#getting-started-with-python)
+    - [Submitting Projects - GitHub Classroom](#submitting-projects---github-classroom)
+    - [Intro to Labs](#intro-to-labs)
   - [Module 02: Selection Structures](#module-02-selection-structures)
   - [Module 03: Loops](#module-03-loops)
   - [Module 04: Lists and Dictionaries](#module-04-lists-and-dictionaries)
@@ -19,7 +24,6 @@ showBreadcrumb: false
   - [Module 07: File I/O and File Parsing](#module-07-file-io-and-file-parsing)
   - [Module 08: Object Oriented Programming](#module-08-object-oriented-programming)
   - [Module 09: Event Driven Programming](#module-09-event-driven-programming)
-  - [Module 10: Developing with AI](#module-10-developing-with-ai)
 
 /~
 
@@ -27,83 +31,77 @@ showBreadcrumb: false
 
 ## Announcements
 
-<figure>
+<!-- <figure>
  <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
-</figure>
+</figure> -->
 
-- Final project
-  - Code review times posted
-  - Review feedback from previous milestones; make sure requirements are met!
-  - Tip for requirements and planning: make a list of each test that you will have to run to _verify_ that the final program meets expectations. Use these tests to guide your development, and check when done.
-  - Reminder: Failure to sufficiently demonstrate evidence of personal work on Milestone 3 will lead to a zero for Milestone 4.
-  - Rubric change for M4: must have two functions
-  - Hints: Appropriate data structures? Indexing into a string or list? Do you need ASCII?
-- Labs for today and next lecture are recorded.
-  - Open lab time by request.
+- ...
 
 ## Module 00: Course Introduction
 
 Overview of course
 
-- Syllabus and policy review (policy assignment)
-- Review course content and schedule
-- Review course structure and resources
-- Make sure you can access the textbook
+Syllabus and policy review
 
-<!-- Set up file structure for the course on your machine
+Review course content and schedule
 
-- SDEV 140 folder (preferably not on C drive, and not in cloud folder)
-- Subfolder for each assignment -->
+Review course structure and resources
+
+Make sure you can access the textbook
 
 ## Module 00: Review Items (if Needed)
 
-- [Coding Punctuation](../common/coding_punctuation.html?course=SDEV140)
+[Coding Punctuation](../common/coding_punctuation.html?course=SDEV140)
 
 ## Module 01: Fundamentals of Coding
 
-- Set up file structure for the course on your machine
+<!-- - Set up file structure for the course on your machine
+  - Create an SDEV 140 folder (preferably not on C drive, and not in cloud folder)
+  - Create subfolder for each lab / assignment -->
 
-  - SDEV 140 folder (preferably not on C drive, and not in cloud folder)
-  - Subfolder for each lab / assignment
+### Software Setup
 
-- [Installing VS Code](../common/installing_vs_code.html?course=SDEV140)
+[Installing VS Code](../common/installing_vs_code.html?course=SDEV140)
 
-- [Installing Python](../common/installing_python.html?course=SDEV140)
+[Installing Python](../common/installing_python.html?course=SDEV140)
 
-- Create a GitHub account if you don't have one
+Create a GitHub account if you don't have one
 
-  - [GitHub](../common/github.html?course=SDEV140)
+[GitHub](../common/github.html?course=SDEV140)
 
-- [Installing Git](../common/installing_git.html?course=SDEV140)
+[Installing Git](../common/installing_git.html?course=SDEV140)
 
-- Set default terminal: `Ctrl + Shift + P` -> `Terminal: Select Default Profile` -> `Git Bash`
+Set default terminal in VS Code: `Ctrl + Shift + P` -> `Terminal: Select Default Profile` -> `Git Bash`
 
-Command Line (bash)
+### Command Line (bash)
 
-- [Command Line Basics](../common/basic_shell_commands.html?course=SDEV140)
+[Command Line Basics](../common/basic_shell_commands.html?course=SDEV140)
 
-- Exercise:
-  - Check which shell terminal is using
-  - Create and close new terminals
-  - Clear terminal
-  - Create course directory structure
-  - Open a working folder in VS Code
+Exercise:
 
-Getting started with Python
+- Check which shell terminal is using
+- Create and close new terminals
+- Clear terminal
+- Create course directory structure
+- Open a working folder in VS Code
 
-- [Review: Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
+### Getting started with Python
 
-- [Review: Input, Output, and Comments in Python](../SDEV120/input_output_comments_python.html?course=SDEV140)
+[Review: Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
 
-- [Review: Variables and Constants](../SDEV120/variables_and_constants.html?course=SDEV140)
+[Review: Input, Output, and Comments in Python](../SDEV120/input_output_comments_python.html?course=SDEV140)
 
-- [Review: Data Types](../SDEV120/data_types.html?course=SDEV140)
+[Review: Variables and Constants](../SDEV120/variables_and_constants.html?course=SDEV140)
 
-- [String Concatenation, Formatting, and Manipulation](string_manipulation.html)
+[Review: Data Types](../SDEV120/data_types.html?course=SDEV140)
 
-Submitting Projects - GitHub Classroom
+[String Concatenation, Formatting, and Manipulation](string_manipulation.html)
 
-- [GitHub Classroom](../common/github_classroom.html?course=SDEV140)
+### Submitting Projects - GitHub Classroom
+
+[GitHub Classroom](../common/github_classroom.html?course=SDEV140)
+
+### Intro to Labs
 
 Lab: Command Line and Debugging
 
@@ -125,7 +123,7 @@ Lab: Selection
 
 Lab: Indefinite Loops
 
-- Prep for lab: how to write a guessing game
+- Prep: write a guessing game using Python code
 
 [Definite Loops](definite_loops.html)
 
@@ -177,6 +175,6 @@ Lab: Definite Loops
 
 [Event Driven Programming](event_driven_programming.html)
 
-## Module 10: Developing with AI
+<!-- ## Module 10: Developing with AI
 
-[Developing with AI](developing_with_ai.html)
+[Developing with AI](developing_with_ai.html) -->
