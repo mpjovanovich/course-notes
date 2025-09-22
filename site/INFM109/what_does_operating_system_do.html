@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFM109: What does an Operating System Do?</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#what-does-an-operating-system-do"
+              >What does an Operating System Do?</a
+            >
+            <ul>
+              <li><a href="#process-management">Process Management</a></li>
+              <li>
+                <a href="#memory-management">Memory Management</a>
+                <ul>
+                  <li><a href="#paging">Paging</a></li>
+                  <li>
+                    <a href="#paging-and-swap-space">Paging and Swap Space</a>
+                  </li>
+                  <li><a href="#thrashing">Thrashing</a></li>
+                  <li><a href="#virtual-memory">Virtual Memory</a></li>
+                  <li><a href="#safe-memory-access">Safe Memory Access</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#multitasking-os">Multitasking OS</a>
+                <ul>
+                  <li>
+                    <a href="#interleaved-execution">Interleaved Execution</a>
+                  </li>
+                  <li>
+                    <a href="#multitasking-vs-parallel-processing"
+                      >Multitasking vs Parallel Processing</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#inputoutput-io">Input/Output (IO)</a></li>
+              <li>
+                <a href="#file-systems">File Systems</a>
+                <ul>
+                  <li><a href="#disk-partitioning">Disk Partitioning</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="what-does-an-operating-system-do">
+        What does an Operating System Do?
+      </h1>
+      <p>
+        The programs that we use directly are called
+        <strong>applications</strong>.
+      </p>
+      <p>
+        In contrast, operating system software runs in the
+        <strong>background</strong> - it is not directly used by the user. The
+        applications that we use can interact with the OS to use the
+        computer&#39;s resources.
+      </p>
+      <h2 id="process-management">Process Management</h2>
+      <p>
+        A <strong>process</strong> is a program in execution. We can see the
+        processes that the operating system is running by using system tools:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>OS</th>
+            <th>Tool</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Windows</td>
+            <td>Task Manager or Resource Monitor</td>
+          </tr>
+          <tr>
+            <td>MacOS</td>
+            <td>Activity Monitor</td>
+          </tr>
+          <tr>
+            <td>Linux</td>
+            <td><code>top</code> or <code>htop</code></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        This will show us both <strong>user processes</strong> (applications)
+        and <strong>system processes</strong> (OS components).
+      </p>
+      <h2 id="memory-management">Memory Management</h2>
+      <h3 id="paging">Paging</h3>
+      <figure>
+        <span>
+          <img
+            src="https://scaler.com/topics/images/contiguous-allocation-of-pages.webp"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        The data from running programs must first be loaded into
+        <strong>memory</strong> (RAM) before the CPU can use them, but we
+        don&#39;t need to load all of the program into memory at once.
+      </p>
+      <p>
+        <strong>Paging</strong> is a memory management technique that allows the
+        OS to load parts of a program into memory at different times:
+      </p>
+      <ul>
+        <li>
+          Programs are split into small, equal-sized chunks called
+          &quot;pages&quot;
+        </li>
+        <li>
+          Only the pages that are actively being used are loaded into memory
+        </li>
+        <li>
+          When a page is not actively being used but still belongs to a running
+          program, it can be moved to disk (called the
+          <strong>page file</strong> or <strong>swap file</strong>)
+        </li>
+      </ul>
+      <div class="focusContent example">
+        <h3 id="paging-and-swap-space">Paging and Swap Space</h3>
+        <figure>
+          <span>
+            <img
+              src="https://recoverhdd.com/wp-content/themes/soft/images/blog/swap-file/principle.gif"
+              style="width: 80%; height: auto"
+            />
+          </span>
+        </figure>
+
+        <p>
+          Paging works much like taking books from a shelf. If your program is
+          an encyclopedia, here&#39;s how the different storage components map
+          to real-world objects:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Computer Component</th>
+              <th>Real-World Analogy</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hard Drive</td>
+              <td>Bookcase</td>
+              <td>Long term storage for everything on the computer</td>
+            </tr>
+            <tr>
+              <td>Swap Space</td>
+              <td>Closest shelf within bookcase</td>
+              <td>Temporary storage for active program, but still on disc</td>
+            </tr>
+            <tr>
+              <td>RAM</td>
+              <td>Desk</td>
+              <td>Resources at hand for current process</td>
+            </tr>
+            <tr>
+              <td>CPU</td>
+              <td>You</td>
+              <td>Can only read one page at a time</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="focusContent lookout">
+        <h3 id="thrashing">Thrashing</h3>
+        <p>
+          Swapping pages between RAM and the swap file on disc is an expensive
+          operation!
+        </p>
+        <p>
+          When the program spends more time swapping pages than actually
+          running, it is said to be <strong>thrashing</strong>.
+        </p>
+        <p>A large swap file is not a substitute for more RAM!</p>
+      </div>
+
+      <h3 id="virtual-memory">Virtual Memory</h3>
+      <p>
+        In early computers, programs had to know exactly where their data was
+        physically stored in memory. This was a problem because one program
+        might accidentally overwrite another program&#39;s data.
+      </p>
+      <p>
+        <strong>Virtual memory</strong> creates a simple way for programs to
+        work with memory by separating two things:
+      </p>
+      <ol>
+        <li>
+          The memory addresses that programs use to access data (virtual
+          addresses)
+        </li>
+        <li>
+          The actual physical locations in RAM or on disk (physical addresses)
+        </li>
+      </ol>
+      <p>
+        Each program gets its own set of virtual addresses starting at zero and
+        going up in order. The operating system handles converting these virtual
+        addresses to real physical locations. This system:
+      </p>
+      <ul>
+        <li>
+          Lets programs work with memory without knowing where data actually is
+        </li>
+        <li>Prevents programs from accessing each other&#39;s memory space</li>
+        <li>Allows the OS to move data between RAM and disk as needed</li>
+        <li>Makes it possible to run programs even when RAM is limited</li>
+      </ul>
+      <p>
+        In other words, the OS acts as a middleman between the program and the
+        physical memory.
+      </p>
+      <div class="focusContent example">
+        <h3 id="safe-memory-access">Safe Memory Access</h3>
+        <figure>
+          <span>
+            <img
+              src="https://ih1.redbubble.net/image.4920882316.2019/raf,360x360,075,t,fafafa:ca443f4786.jpg"
+              style="width: 100%; height: auto"
+            />
+          </span>
+        </figure>
+
+        <p>
+          One of the most important jobs of the OS is to protect the memory of
+          one program from another. A user program cannot directly access memory
+          - it must request the OS to access memory on its behalf. This is done
+          through
+          <strong>system calls</strong>.
+        </p>
+        <p>
+          This security system is crucial because malicious programs often try
+          to exploit memory access. For example, many damaging computer viruses
+          work by attempting to bypass these protections to overwrite the memory
+          of other programs with their own code. If successful, they can inject
+          malicious instructions into running programs, potentially taking
+          control of the system.
+        </p>
+      </div>
+
+      <h2 id="multitasking-os">Multitasking OS</h2>
+      <figure>
+        <span>
+          <img
+            src="https://martin-thoma.com/images/2021/05/parallel-interleaved.png"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        Early operating systems were <strong>single-tasking</strong> - they
+        could only run one program at a time. A program may take two minutes to
+        run, so the user would have to wait two minutes for the program to
+        finish before they could run another program.
+      </p>
+      <p><em>Solution:</em></p>
+      <p>
+        <strong>Multitasking</strong> is when the OS switches between programs
+        quickly, giving each program a small slice of CPU time to run. This is
+        also called <strong>time-sharing</strong>.
+      </p>
+      <p>
+        <strong>Scheduling</strong> is the process of deciding which program
+        should run next.
+      </p>
+      <p>
+        This rapid switching between programs is called
+        <strong>context switching</strong>.
+      </p>
+      <p>
+        All of this happens so fast that it creates the illusion that multiple
+        programs are running simultaneously, even if there is only one CPU.
+      </p>
+      <div class="focusContent example">
+        <h3 id="interleaved-execution">Interleaved Execution</h3>
+        <p>
+          <strong>Iterleaved execution</strong> is a term that describes the way
+          that the OS switches between programs quickly. It works on a system of
+          <strong>interrupts</strong>.
+        </p>
+        <p>
+          Just like a student working on homework might be interrupted by a
+          phone call, a program might be interrupted by an interrupt signal from
+          the OS. This tells it that it&#39;s time to switch to another task.
+        </p>
+      </div>
+
+      <div class="focusContent lookout">
+        <h3 id="multitasking-vs-parallel-processing">
+          Multitasking vs Parallel Processing
+        </h3>
+        <p>
+          <strong>Parallel Processing</strong> is when the OS runs multiple
+          programs at the same time. True parallelism is different from
+          multitasking - with parallelism multiple operations may be happening
+          at any given point in time within the computer.
+        </p>
+        <p>
+          All modern operating systems can now handle both multitasking and
+          parallel processing. They do this by using multiple CPUs, and multiple
+          cores within a single CPU. Each core might run a different program at
+          the same time.
+        </p>
+      </div>
+
+      <h2 id="inputoutput-io">Input/Output (IO)</h2>
+      <p>The OS also manages the input and output devices.</p>
+      <p><em>Buffers</em></p>
+      <figure>
+        <span>
+          <img
+            src="https://iximiuz.com/nodejs-writable-streams-distilled/kdpv.gif"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        The OS can allocate <strong>buffers</strong> to store data that is being
+        transferred between the device and the computer. Buffers are temporary
+        &quot;waiting areas&quot; that help manage data flow between components
+        that operate at different speeds. They act much like a queue. For
+        example:
+      </p>
+      <ul>
+        <li>
+          When you type quickly on a keyboard, the keystrokes are stored in a
+          buffer until the computer is ready to process them
+        </li>
+        <li>
+          When you move your mouse, the cursor location is stored in a buffer
+          until the computer is ready to update the screen
+        </li>
+        <li>
+          When reading from a hard drive, data is stored in disk buffers to help
+          manage the speed difference between the fast CPU and slower disk
+        </li>
+      </ul>
+      <p><em>Device Drivers</em></p>
+      <p>
+        <strong>Device drivers</strong> are specialized programs that form a
+        layer between hardware and the operating system. These drivers
+        <em>translate</em> the OS&#39;s commands into hardware-specific
+        instructions, and the other way around.
+      </p>
+      <ul>
+        <li>
+          Applications don&#39;t need to know anything about specific hardware
+        </li>
+        <li>The OS can treat different devices in similar ways</li>
+        <li>Hardware can be updated without changing the OS or applications</li>
+      </ul>
+      <div class="focusContent example">
+        <p><strong>Device Drivers in Action</strong></p>
+        <p>
+          Think about all the different mice you might use - wireless,
+          trackball, even your laptop&#39;s touchpad. Each one works differently
+          internally, but the operating system treats them all the same way.
+        </p>
+        <p>
+          This is the magic of device drivers! Instead of your OS needing to
+          know about every single mouse design ever made, each mouse comes with
+          (or Windows finds) a small program called a driver that translates
+          between the mouse&#39;s specific way of working and the operating
+          system&#39;s standard way of handling input.
+        </p>
+      </div>
+
+      <h2 id="file-systems">File Systems</h2>
+      <p>
+        A <strong>file system</strong> is a way of organizing and storing files
+        on a computer.
+      </p>
+      <p>
+        When you look at Windows Explorer or MacOS Finder, you are seeing the
+        file system of the computer.
+      </p>
+      <div class="focusContent exercise">
+        <h3 id="disk-partitioning">Disk Partitioning</h3>
+        <figure>
+          <span>
+            <img
+              src="https://images.wondershare.com/recoverit/article/what-is-partition.jpg"
+              style="width: 100%; height: auto"
+            />
+          </span>
+        </figure>
+
+        <p>
+          A physical disk drive can be divided into multiple logical sections
+          called
+          <strong>partitions</strong>. Each partition functions as an
+          independent storage unit, appearing to the operating system as a
+          separate disk drive.
+        </p>
+        <p>This allows you to:</p>
+        <ul>
+          <li>Install multiple operating systems on a single physical disk</li>
+          <li>Organize data more effectively</li>
+          <li>Separate system files from user data</li>
+        </ul>
+      </div>
+
+      <p><em>Daily Check-in:</em></p>
+      <p>
+        For Windows user, open the Disk Management tool and view the partitions.
+      </p>
+      <p>For MacOS user, open the Disk Utility tool and view the partitions.</p>
+      <p>Submit a screenshot of what you see.</p>
+    </div>
+  </body>
+</html>
