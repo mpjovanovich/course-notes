@@ -24,7 +24,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Resubmit ethics assignment if needed.
+- ...
 
 ## Module 00: Course Introduction
 
@@ -88,8 +88,8 @@ Part I:
 
 Part II:
 
-- TODO: Break lecture into two parts
 - [System Software and the Operating System](system_software_operating_system.html)
+- [What does the Operating System Do?](what_does_operating_system_do.html)
 - Intro to Assignments
 
 ## Module 04: Program and Web Development
