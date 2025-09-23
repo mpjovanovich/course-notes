@@ -12,6 +12,7 @@ showBreadcrumb: false
   - [Module 01: Introduction to Databases](#module-01-introduction-to-databases)
   - [Module 02: Fundamentals of Sets](#module-02-fundamentals-of-sets)
   - [Module 03: Data Modeling and ERDs](#module-03-data-modeling-and-erds)
+  - [Module 04: Database Design and Normalization](#module-04-database-design-and-normalization)
 
 /~
 
@@ -19,7 +20,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- ...
+- Quizzes for previous modules posted
 
 ## Module 00: Course Introduction
 
@@ -85,3 +86,10 @@ scenarios:
   - COLLEGE COURSE DATABASE (v2, has surrogate keys): course, teacher, student
   - PET SITTING SERVICE (v2, has surrogate keys): pet, sitter, client, appointment
 -->
+
+## Module 04: Database Design and Normalization
+
+- [Data Integrity and Constraints](data_integrity_and_constraints.html)
+- [What is Normalization?](what_is_normalization.html)
+- [Normal Forms](normal_forms.html)
+- [SQL Create Table](sql_create_table.html)
