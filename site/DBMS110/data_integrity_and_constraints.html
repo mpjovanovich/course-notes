@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Data Integrity and Constraints</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#data-integrity-and-constraints"
+              >Data Integrity and Constraints</a
+            >
+            <ul>
+              <li>
+                <a href="#nullability-constraints">Nullability Constraints</a>
+              </li>
+              <li><a href="#unique-constraints">Unique Constraints</a></li>
+              <li>
+                <a href="#data-type-constraints">Data Type Constraints</a>
+              </li>
+              <li><a href="#domain-constraints">Domain Constraints</a></li>
+              <li>
+                <a href="#referential-integrity-constraints"
+                  >Referential Integrity Constraints</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="data-integrity-and-constraints">
+        Data Integrity and Constraints
+      </h1>
+      <p>
+        Data comes into a database in many ways: user facing software, automated
+        imports, manual data entry, etc.
+      </p>
+      <p>
+        <strong>Data Integrity</strong> refers to the <em>accuracy</em>,
+        <em>completeness</em>, and <em>consistency</em> of data.
+      </p>
+      <p>
+        <strong>Constraints</strong> are rules that are used to ensure data
+        integrity.
+      </p>
+      <p>
+        Software developers should design interfaces in such a way that
+        constraints are enforced wherever possible; however, the database itself
+        should also enforce constraints to ensure data integrity.
+      </p>
+      <h2 id="nullability-constraints">Nullability Constraints</h2>
+      <p>
+        When defining attributes we can specify whether the attribute is
+        required or optional.
+      </p>
+      <p>
+        For example, a &quot;middle name&quot; attribute might be optional, but
+        a &quot;first name&quot; or &quot;last name&quot; attribute is usually
+        required.
+      </p>
+      <p>
+        In the database, we can specify whether the attribute is required or
+        optional by using the <code>NOT NULL</code> constraint, which appears
+        after the data type.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">CREATE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TABLE</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  id </span><span style="color:#A626A4;--shiki-dark:#C678DD">integer</span><span style="color:#A626A4;--shiki-dark:#C678DD"> PRIMARY KEY</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  first_name </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NOT NULL</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  middle_name </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NULL</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  last_name </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NOT NULL</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <div class="focusContent lookout">
+        <p>
+          <strong
+            >Don&#39;t Forget the <code>NOT NULL</code> Constraint!</strong
+          >
+        </p>
+        <p>
+          In most SQL implementations, <code>NULL</code> is the default value -
+          if you do not specify a value, fields will be optional!
+        </p>
+      </div>
+
+      <h2 id="unique-constraints">Unique Constraints</h2>
+      <p>
+        A <strong>unique constraint</strong> is used to ensure that the values
+        in an attribute or set of attributes are unique.
+      </p>
+      <p>
+        We know that our primary key must be unique, but in many cases there are
+        other attributes that should be unique. This often happens when we are
+        using a surrogate key for an entity, but there are
+        <em>candidate keys</em> that could be used as a natural key instead.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">CREATE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TABLE</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Address</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  id </span><span style="color:#A626A4;--shiki-dark:#C678DD">integer</span><span style="color:#A626A4;--shiki-dark:#C678DD"> PRIMARY KEY</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  person_id </span><span style="color:#A626A4;--shiki-dark:#C678DD">integer</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  address_type </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  street </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  city </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  state</span><span style="color:#A626A4;--shiki-dark:#C678DD"> text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  zip </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  UNIQUE</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(person_id, address_type)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <p>
+        In this example a person can have a &quot;billing&quot; and
+        &quot;shipping&quot; address, but not two of either type.
+      </p>
+      <h2 id="data-type-constraints">Data Type Constraints</h2>
+      <p>
+        We must specify the data type of each attribute on an entity. This is
+        usually straightforward:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">CREATE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TABLE</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  id </span><span style="color:#A626A4;--shiki-dark:#C678DD">integer</span><span style="color:#A626A4;--shiki-dark:#C678DD"> PRIMARY KEY</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- id is a number, so use INTEGER</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  first_name </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- first name is a string, so use TEXT</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  last_name </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> -- last name is a string, so use TEXT</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <p>
+        There are some cases where you may need to investigate requirements
+        further to ensure proper data types are chosen.
+      </p>
+      <p>
+        In the implementation below, we might expect a ten digit zip code that
+        includes hyphens, so we&#39;d use TEXT instead of INTEGER.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">CREATE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TABLE</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Address</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  id </span><span style="color:#A626A4;--shiki-dark:#C678DD">integer</span><span style="color:#A626A4;--shiki-dark:#C678DD"> PRIMARY KEY</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  street </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  city </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  state</span><span style="color:#A626A4;--shiki-dark:#C678DD"> text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  zip </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <div class="focusContent note">
+        <p><strong>Which Data Type to Choose?</strong></p>
+        <p>
+          Recall that different database versions have different data types.
+        </p>
+        <p>
+          When creating an Entity Relationship Diagram (ERD), remember that the
+          diagram is a communication tool. It is up to you to decide which data
+          types are appropriate for the attributes.
+        </p>
+        <p>
+          You may choose to keep these types general, or you may choose to use
+          only data types supported by the database that you are using.
+        </p>
+      </div>
+
+      <h2 id="domain-constraints">Domain Constraints</h2>
+      <p>
+        In many cases we only want to allow certain values for an attribute.
+      </p>
+      <p>
+        <strong>Domain Constraints</strong> are used to specify the range of
+        values that an attribute can take.
+      </p>
+      <p><em>Examples:</em></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Domain Constraint</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gender</td>
+            <td>Male, Female, Other</td>
+          </tr>
+          <tr>
+            <td>State</td>
+            <td>
+              <a
+                href="https://en.wikipedia.org/wiki/List_of_U.S._state_and_territory_abbreviations"
+                >2 letter code for each state</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>0-120</td>
+          </tr>
+          <tr>
+            <td>Salary</td>
+            <td>Non-negative</td>
+          </tr>
+          <tr>
+            <td>Zip Code</td>
+            <td>5 digit zip code</td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <td>10 digit phone number</td>
+          </tr>
+          <tr>
+            <td>Email Address</td>
+            <td>Valid email address</td>
+          </tr>
+          <tr>
+            <td>Date of Birth</td>
+            <td>Valid date of birth</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Check constraints are a form of domain constraint used to ensure that
+        the values in an attribute or set of attributes meet a certain
+        condition. These are best used for simple constraints that can be
+        expressed in a single condition.
+      </p>
+      <p>
+        In SQL, these are placed after the attributes in the table definition.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">CREATE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TABLE</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Example</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  -- attributes</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  c_number </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  salary </span><span style="color:#A626A4;--shiki-dark:#C678DD">integer</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  phone </span><span style="color:#A626A4;--shiki-dark:#C678DD">text</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  -- check constraints</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  CHECK</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(c_number </span><span style="color:#A626A4;--shiki-dark:#C678DD">LIKE</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'C%'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">),</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  CHECK</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(salary </span><span style="color:#383A42;--shiki-dark:#56B6C2">>=</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">),</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  CHECK</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">length</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(phone) </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <h2 id="referential-integrity-constraints">
+        Referential Integrity Constraints
+      </h2>
+      <p>
+        <strong>Referential integrity constraints</strong> ensure that the
+        values in a foreign key attribute reference a valid primary key value in
+        the referenced table.
+      </p>
+      <p>In SQL, these are part of the foreign key definition.</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">CREATE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TABLE</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> Example</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  id </span><span style="color:#A626A4;--shiki-dark:#C678DD">integer</span><span style="color:#A626A4;--shiki-dark:#C678DD"> PRIMARY KEY</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  referenced_id </span><span style="color:#A626A4;--shiki-dark:#C678DD">integer</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  FOREIGN KEY</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (referenced_id) </span><span style="color:#A626A4;--shiki-dark:#C678DD">REFERENCES</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> ReferencedTable(id)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <p>
+        Foreign key integrity is enforced by the database system. This prevents
+        scenarios such as:
+      </p>
+      <ul>
+        <li>
+          Inserting a record into a table that points to a value that does not
+          exist in the referenced table.
+        </li>
+        <li>
+          Deleting a record from the referenced table that is referenced by any
+          record in the referencing table.
+        </li>
+      </ul>
+      <p>
+        This last scenario would create orphan records.
+        <strong>Orphan records</strong> are records that are not associated with
+        any other record in the database - their &quot;parent&quot; record has
+        been deleted.
+      </p>
+      <p><em>Examples:</em></p>
+      <p><strong>Campus Table</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Hamilton</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Indianapolis</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Kokomo</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Student Table</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>campus_id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Bobby Beebop Sr.</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Bobby Beebop Jr.</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Jennifer Johen</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Alfonzo Alca</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="focusContent exercise">
+        <p><strong>Thinking Through Referential Integrity</strong></p>
+        <p>
+          What happens if we to insert the following record into the student
+          table?
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">INSERT INTO</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Student (id, </span><span style="color:#A626A4;--shiki-dark:#C678DD">name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, campus_id) </span><span style="color:#A626A4;--shiki-dark:#C678DD">VALUES</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">'Crazy Susan'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">9</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+        <p>
+          What happens if we were to delete the following record from the campus
+          table?
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">DELETE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> FROM</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Campus </span><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> id </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      </div>
+    </div>
+  </body>
+</html>

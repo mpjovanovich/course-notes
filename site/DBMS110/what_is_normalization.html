@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: What is Normalization?</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#what-is-normalization">What is Normalization?</a>
+            <ul>
+              <li>
+                <a href="#motivation">Motivation</a>
+                <ul>
+                  <li>
+                    <a href="#the-problem-with-raw-data"
+                      >The Problem with Raw Data</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#the-benefits-of-normalization"
+                      >The Benefits of Normalization</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#analyzing-requirements-documents"
+                  >Analyzing Requirements Documents</a
+                >
+                <ul>
+                  <li><a href="#example1-data-dump">Example1: Data Dump</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#employee-data-export---messy-data-dump-example"
+              >Employee Data Export - Messy Data Dump Example</a
+            >
+            <ul>
+              <li><a href="#example2-invoice">Example2: Invoice</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="what-is-normalization">What is Normalization?</h1>
+      <p>
+        <strong>Normalization</strong> is a process of organizing data in a
+        database to reduce redundancy and improve data integrity.
+      </p>
+      <h2 id="motivation">Motivation</h2>
+      <h3 id="the-problem-with-raw-data">The Problem with Raw Data</h3>
+      <p>
+        Raw data often comes in a format that is not ideal for storing in a
+        database. This data might contain:
+      </p>
+      <p><em>Bad Data</em></p>
+      <ul>
+        <li>Unintentionally duplicated data</li>
+        <li>
+          Inconsistent verbiage (e.g. &quot;car&quot; vs &quot;vehicle&quot;)
+        </li>
+        <li>Inconsistent casing</li>
+        <li>Blanks and empty values</li>
+        <li>Typos and misspellings</li>
+      </ul>
+      <p><em>Processed or &quot;Grouped&quot; Data</em></p>
+      <ul>
+        <li>Derived / calculated data</li>
+        <li>Intentionally duplicated data</li>
+        <li>
+          Combined fields that could be further split into multiple fields (e.g.
+          &quot;Full Name&quot;)
+        </li>
+      </ul>
+      <h3 id="the-benefits-of-normalization">The Benefits of Normalization</h3>
+      <p>
+        Normalization helps to ensure that the data are consistent and accurate
+        so that:
+      </p>
+      <ul>
+        <li>Entities are structured logically and consistently</li>
+        <li>Attributes are defined and used consistently</li>
+        <li>SQL queries provide accurate and consistent results</li>
+        <li>Application logic is correct (no bugs from incorrect data)</li>
+      </ul>
+      <h2 id="analyzing-requirements-documents">
+        Analyzing Requirements Documents
+      </h2>
+      <p>
+        When building an information system we often start with reports or
+        physical documents that describe the data that we need to store.
+      </p>
+      <h3 id="example1-data-dump">Example1: Data Dump</h3>
+      <p>
+        Data that is <em>exported</em> from one system to be
+        <em>imported</em> into another system often comes in the form of a
+        &quot;bulk export&quot; or &quot;data dump&quot;. This data requires
+        cleaning before it can be used in the new system.
+      </p>
+      <h1 id="employee-data-export---messy-data-dump-example">
+        Employee Data Export - Messy Data Dump Example
+      </h1>
+      <table>
+        <thead>
+          <tr>
+            <th>employee_id</th>
+            <th>full_name</th>
+            <th>dept</th>
+            <th>hire_date</th>
+            <th>salary</th>
+            <th>phone</th>
+            <th>manager_name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>John Smith</td>
+            <td>IT</td>
+            <td>2020-01-15</td>
+            <td>$75,000</td>
+            <td>(555) 123-4567</td>
+            <td>Sarah Johnson</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Jane Doe</td>
+            <td>IT</td>
+            <td>2020-01-15</td>
+            <td>$75,000</td>
+            <td>555.123.4567</td>
+            <td>Sarah Johnson</td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>Mike Brown</td>
+            <td>IT</td>
+            <td>2019-03-22</td>
+            <td>$82,500.00</td>
+            <td>555-987-6543</td>
+            <td>Sarah Johnson</td>
+          </tr>
+          <tr>
+            <td>004</td>
+            <td>Sarah Johnson</td>
+            <td>HR</td>
+            <td>2018-07-10</td>
+            <td>$95,000</td>
+            <td>(555) 456-7890</td>
+            <td>NULL</td>
+          </tr>
+          <tr>
+            <td>005</td>
+            <td>Lisa Wilson</td>
+            <td>Finance</td>
+            <td>2022-02-14</td>
+            <td>$72,000</td>
+            <td>555 321 9876</td>
+            <td>Robert Davis</td>
+          </tr>
+          <tr>
+            <td>007</td>
+            <td>Robert Davis</td>
+            <td>Finance</td>
+            <td>2017-05-30</td>
+            <td>$105,000</td>
+            <td>(555) 654-3210</td>
+            <td>Sarah Johnson</td>
+          </tr>
+          <tr>
+            <td>008</td>
+            <td>Tom Anderson</td>
+            <td>IT</td>
+            <td>2021-08-12</td>
+            <td>$71,000</td>
+            <td>555-147-2583</td>
+            <td>unknown</td>
+          </tr>
+          <tr>
+            <td>009</td>
+            <td>Emily Clark</td>
+            <td>HR</td>
+            <td>2020-09-01</td>
+            <td>$69,500</td>
+            <td>(555) 789-0123</td>
+            <td>Sarah Johnson</td>
+          </tr>
+          <tr>
+            <td>010</td>
+            <td>David Lee</td>
+            <td>IT</td>
+            <td>2019-12-01</td>
+            <td>$78,000</td>
+            <td>555.258.1470</td>
+            <td>Mike Brown</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="focusContent exercise">
+        <p><strong>Cleaning Up Messy Data</strong></p>
+        <p>
+          Looking at the data above, what are some potential issues with the
+          data?
+        </p>
+        <p>Think about how the data will likely be put into a database.</p>
+      </div>
+
+      <h3 id="example2-invoice">Example2: Invoice</h3>
+      <p>
+        Reports often contain <strong>derived data</strong> - data that is
+        calculated or computed based on other data.
+      </p>
+      <figure>
+        <img
+          src="images/example_invoice.png"
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <div class="focusContent exercise">
+        <p><strong>Identifying Derived Data</strong></p>
+        <p>What entities can we start to identify in invoice above?</p>
+        <p>
+          Which data in the invoice could be derived (calculated) from other
+          data?
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
