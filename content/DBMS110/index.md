@@ -20,7 +20,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Quizzes for previous modules posted
+- ...
 
 ## Module 00: Course Introduction
 
@@ -89,7 +89,14 @@ scenarios:
 
 ## Module 04: Database Design and Normalization
 
+Part I:
+
 - [Data Integrity and Constraints](data_integrity_and_constraints.html)
 - [What is Normalization?](what_is_normalization.html)
+- Intro to Final Project
+
+Part II:
+
 - [Normal Forms](normal_forms.html)
-- [SQL Create Table](sql_create_table.html)
+- [Modeling M:N Relationships](modeling_m_n_relationships.html)
+<!-- - [SQL Create Table](sql_create_table.html) -->
