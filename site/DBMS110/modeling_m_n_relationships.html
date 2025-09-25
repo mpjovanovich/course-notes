@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Modeling M</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#modeling-many-to-many-mn-relationships"
+              >Modeling Many-to-Many (M:N) Relationships</a
+            >
+            <ul>
+              <li>
+                <a href="#process-for-modeling-mn-relationships"
+                  >Process for Modeling M:N Relationships</a
+                >
+              </li>
+              <li>
+                <a href="#example-author-to-book">Example: Author to Book</a>
+              </li>
+              <li><a href="#exercises">Exercises</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="modeling-many-to-many-mn-relationships">
+        Modeling Many-to-Many (M:N) Relationships
+      </h1>
+      <p>
+        When identifying entities and relationships at a high level, we often
+        encounter many-to-many (M:N) relationships.
+      </p>
+      <p>When designing a database, these deserve special attention.</p>
+      <div class="focusContent note">
+        <p>Review of cardinality shorthand notation:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Cardinality</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1:1</td>
+              <td>One-to-one</td>
+            </tr>
+            <tr>
+              <td>1:N</td>
+              <td>One-to-many</td>
+            </tr>
+            <tr>
+              <td>M:N</td>
+              <td>Many-to-many</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="process-for-modeling-mn-relationships">
+        Process for Modeling M:N Relationships
+      </h2>
+      <p>
+        When we encounter an M:N relationship, we need to create a new entity to
+        represent the relationship.
+      </p>
+      <p>This new entity is called an <strong>associative entity</strong>.</p>
+      <p>
+        Often times it simply contains foreign keys to the entities involved in
+        the relationship. It may also contain other attributes specific to an
+        occurace of the relationship.
+      </p>
+      <h2 id="example-author-to-book">Example: Author to Book</h2>
+      <p>
+        How can our database handle the case where an author can write multiple
+        books and a book can have multiple authors (co-authors)?
+      </p>
+      <p><em>Problem:</em></p>
+      <p>
+        This model will not work - how can we assign multiple authors to a book?
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Author (</span></span>
+<span class="line"><span>    [PK] Author ID,</span></span>
+<span class="line"><span>    Author Name</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Book (</span></span>
+<span class="line"><span>    [PK] Book ID,</span></span>
+<span class="line"><span>    [FK] Author ID,</span></span>
+<span class="line"><span>    Book Title</span></span>
+<span class="line"><span>)</span></span></code></pre>
+      <p><em>Solution:</em></p>
+      <p>
+        We need to create a new entity to represent the relationship between
+        authors and books.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Author (</span></span>
+<span class="line"><span>    [PK] Author ID,</span></span>
+<span class="line"><span>    Author Name</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>AuthorBook (</span></span>
+<span class="line"><span>    [PK, FK] Author ID,</span></span>
+<span class="line"><span>    [PK, FK] Book ID,</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Book (</span></span>
+<span class="line"><span>    [PK] Book ID,</span></span>
+<span class="line"><span>    Book Title</span></span>
+<span class="line"><span>)</span></span></code></pre>
+      <p>Here&#39;s an example of a co-authored book in our finished model:</p>
+      <p><strong>Author Table:</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Author ID</th>
+            <th>Author Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Bobby Beebop</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jenny Neejen</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>AuthorBook Table:</strong></p>
+      <p>Both authors have contributed to the book!</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Author ID</th>
+            <th>Book ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Book Table:</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Book ID</th>
+            <th>Book Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>The Book of Bop</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="exercises">Exercises</h2>
+      <p>Let&#39;s build a basic ERD for the following:</p>
+      <ul>
+        <li>Actor to Movie</li>
+        <li>Owner to Pet (update our pet sitting example)</li>
+      </ul>
+    </div>
+  </body>
+</html>

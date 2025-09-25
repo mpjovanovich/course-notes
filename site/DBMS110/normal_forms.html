@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Normal Forms</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#normal-forms">Normal Forms</a>
+            <ul>
+              <li>
+                <a href="#first-normal-form-1nf">First Normal Form (1NF)</a>
+              </li>
+              <li>
+                <a href="#second-normal-form-2nf">Second Normal Form (2NF)</a>
+              </li>
+              <li>
+                <a href="#third-normal-form-3nf">Third Normal Form (3NF)</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#summary-characteristics-of-normalized-data"
+              >Summary: Characteristics of Normalized Data</a
+            >
+            <ul>
+              <li>
+                <a href="#each-relation-represents-a-single-subject-or-concept"
+                  >Each Relation Represents a Single Subject or Concept</a
+                >
+              </li>
+              <li>
+                <a href="#each-attribute-is-atomic">Each Attribute is Atomic</a>
+              </li>
+              <li>
+                <a href="#each-attribute-is-related-only-to-the-primary-key"
+                  >Each Attribute is Related Only to the Primary Key</a
+                >
+              </li>
+              <li>
+                <a href="#each-attribute-exists-in-only-one-relation"
+                  >Each Attribute Exists in Only One Relation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#each-relation-has-no-anomalies-that-would-violate-its-integrity-or-consistency"
+                  >Each Relation has no Anomalies that Would Violate its
+                  Integrity or Consistency</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="normal-forms">Normal Forms</h1>
+      <p>
+        Normal forms are a way of categorizing the degree of normalization in a
+        system.
+      </p>
+      <h2 id="first-normal-form-1nf">First Normal Form (1NF)</h2>
+      <p>
+        First normal form has to do with creating a sensible table structure
+        from a data set that avoids redundancy. We usually do this when we start
+        with a &quot;flat&quot; data set that has no clear table structure.
+      </p>
+      <p><em>Definition:</em></p>
+      <p>A table is in first normal form if:</p>
+      <ul>
+        <li>Each table has a primary key identified.</li>
+        <li>Each table contains no repeated groups of data.</li>
+      </ul>
+      <p>
+        Repeated groups in this context refers to a record that contains more
+        than one value for some attribute.
+      </p>
+      <p>
+        We should also split any multi-valued attributes into multiple
+        single-valued attributes. <strong>Atomic</strong> attributes are
+        attributes that cannot be split into multiple attributes; they are the
+        smallest unit of data that is meaningful.
+      </p>
+      <p><em>Example:</em></p>
+      <p>
+        Here is an unnormalized table that associates employees with projects.
+        The primary key is the project number.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Project Number</th>
+            <th>Project Name</th>
+            <th>Employee ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Project A</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Project B</td>
+            <td>2, 3, 9</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Project C</td>
+            <td>3, 4</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Here is the same table in first normal form.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Project Number</th>
+            <th>Project Name</th>
+            <th>Employee ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Project A</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Project B</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Project B</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Project B</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Project C</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Project C</td>
+            <td>4</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><em>Example:</em></p>
+      <p>Splitting up &quot;Address&quot; into multiple attributes:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Address (</span></span>
+<span class="line"><span>    [PK] Address ID,</span></span>
+<span class="line"><span>    City,</span></span>
+<span class="line"><span>    State,</span></span>
+<span class="line"><span>    Zip Code,</span></span>
+<span class="line"><span>    Address Line 1,</span></span>
+<span class="line"><span>    Address Line 2</span></span>
+<span class="line"><span>)</span></span></code></pre>
+      <p>Splitting up &quot;Full Name&quot; into multiple attributes:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Person (</span></span>
+<span class="line"><span>    [PK] Person ID,</span></span>
+<span class="line"><span>    First Name,</span></span>
+<span class="line"><span>    Middle Name,</span></span>
+<span class="line"><span>    Last Name</span></span>
+<span class="line"><span>)</span></span></code></pre>
+      <h2 id="second-normal-form-2nf">Second Normal Form (2NF)</h2>
+      <p>
+        If a table is in first normal form and has a single-attribute primary
+        key, it is already in second normal form.
+      </p>
+      <p>
+        We convert from 1NF to 2NF if we have a composite primary key and the
+        table contains a partial dependency.
+      </p>
+      <p>
+        A <strong>partial dependency</strong> is an attribute that is dependent
+        on only part of the primary key (one of the attributes in the composite
+        key).
+      </p>
+      <p>
+        This often happens when we have a M:N relationship between two entities.
+      </p>
+      <p><em>Definition:</em></p>
+      <p>A table is in second normal form if:</p>
+      <ul>
+        <li>It is in first normal form.</li>
+        <li>It includes no partial dependencies.</li>
+      </ul>
+      <p><em>Example:</em></p>
+      <p>
+        In this example we are trackign employee work on projects. If we started
+        with this structure:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>ProjectAssignment (</span></span>
+<span class="line"><span>    [PK] Project Number,</span></span>
+<span class="line"><span>    [PK] Employee ID</span></span>
+<span class="line"><span>    Project Name,</span></span>
+<span class="line"><span>    Project Location,</span></span>
+<span class="line"><span>    Project Start Date,</span></span>
+<span class="line"><span>    Employee First Name,</span></span>
+<span class="line"><span>    Employee Last Name</span></span>
+<span class="line"><span>    Hours Worked on Project</span></span>
+<span class="line"><span>)</span></span></code></pre>
+      <p>We would convert it to this:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Project (</span></span>
+<span class="line"><span>    [PK] Project Number,</span></span>
+<span class="line"><span>    Project Name,</span></span>
+<span class="line"><span>    Project Location,</span></span>
+<span class="line"><span>    Project Start Date,</span></span>
+<span class="line"><span>    Project Category,</span></span>
+<span class="line"><span>    Project Category Hourly Rate</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Employee (</span></span>
+<span class="line"><span>    [PK] Employee ID,</span></span>
+<span class="line"><span>    Employee First Name,</span></span>
+<span class="line"><span>    Employee Last Name</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>-- Associative entity; connects Project and Employee</span></span>
+<span class="line"><span>Assignment (</span></span>
+<span class="line"><span>    [PK, FK] Project Number,</span></span>
+<span class="line"><span>    [PK, FK] Employee ID,</span></span>
+<span class="line"><span>    Hours Worked</span></span>
+<span class="line"><span>)</span></span></code></pre>
+      <h2 id="third-normal-form-3nf">Third Normal Form (3NF)</h2>
+      <p>
+        Third normal form ensures that all attributes in a table are related
+        only to the primary key.
+      </p>
+      <p>
+        Each attribute should have a <strong>functional dependency</strong> on
+        the primary key. Put simply, this means that each attribute directly
+        describes the &quot;thing&quot; that the primary key identifies.
+      </p>
+      <p>
+        A <strong>transitive dependency</strong> is an attribute that is
+        dependent on a non-primary key attribute. When we have these we need to
+        create a new table to hold the transitive dependency.
+      </p>
+      <p><em>Definition:</em></p>
+      <p>A table is in third normal form if:</p>
+      <ul>
+        <li>It is in second normal form.</li>
+        <li>It includes no transitive dependencies.</li>
+      </ul>
+      <p><em>Example:</em></p>
+      <p>
+        In our previous Project relation, we have a service charge that is
+        dependent on the project category - not the project itself.
+      </p>
+      <p>
+        Let&#39;s assume we have a &quot;User Interface Development&quot;
+        project category that has a service charge of $200 per hour. We now want
+        to update our charge to $220 per hour. With our previous table we&#39;d
+        have to update every row in the table:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Project (</span></span>
+<span class="line"><span>    [PK] Project Number,</span></span>
+<span class="line"><span>    Project Name,</span></span>
+<span class="line"><span>    Project Location,</span></span>
+<span class="line"><span>    Project Start Date,</span></span>
+<span class="line"><span>    Project Category,</span></span>
+<span class="line"><span>    Project Category Hourly Rate</span></span>
+<span class="line"><span>)</span></span></code></pre>
+      <p>
+        To fix it, we should split ProjectCategory into its own table and
+        reference it from the Project table via a foreign key.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Project (</span></span>
+<span class="line"><span>    [PK] Project Number,</span></span>
+<span class="line"><span>    Project Name,</span></span>
+<span class="line"><span>    Project Location,</span></span>
+<span class="line"><span>    Project Start Date,</span></span>
+<span class="line"><span>    [FK] Project Category Name</span></span>
+<span class="line"><span>)</span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>ProjectCategory (</span></span>
+<span class="line"><span>    [PK] Project Category Name,</span></span>
+<span class="line"><span>    Project Category Hourly Rate</span></span>
+<span class="line"><span>)</span></span></code></pre>
+      <p>
+        Now we an update the ProjectCategory table in one place, and any
+        associated projects will automatically &quot;see&quot; the new rate
+        because they are pointing to this table.
+      </p>
+      <h1 id="summary-characteristics-of-normalized-data">
+        Summary: Characteristics of Normalized Data
+      </h1>
+      <p>Normalized data has the following characteristics:</p>
+      <h2 id="each-relation-represents-a-single-subject-or-concept">
+        Each Relation Represents a Single Subject or Concept
+      </h2>
+      <p>Tables should represent only one &quot;thing&quot;.</p>
+      <p>
+        If the relation contains data about different subjects or concepts, it
+        is not normalized.
+      </p>
+      <h2 id="each-attribute-is-atomic">Each Attribute is Atomic</h2>
+      <p>
+        Each attribute should be the &quot;smallest unit&quot; of data that is
+        meaningful.
+      </p>
+      <p>
+        If the relation contains attributes that can be split into multiple
+        attributes, it is not normalized.
+      </p>
+      <h2 id="each-attribute-is-related-only-to-the-primary-key">
+        Each Attribute is Related Only to the Primary Key
+      </h2>
+      <p>
+        Attributes should depend only on the entire primary key of the relation
+        (functional dependency).
+      </p>
+      <p>
+        If the relation contains attributes that are not related to the entire
+        primary key, it is not normalized.
+      </p>
+      <h2 id="each-attribute-exists-in-only-one-relation">
+        Each Attribute Exists in Only One Relation
+      </h2>
+      <p>
+        If the attribute exists in multiple relations, it is not normalized.
+      </p>
+      <p>
+        Repeated data is often a sign that further normalization is possible.
+      </p>
+      <p>
+        *The exception is foreign keys, which are used to connect relations.
+      </p>
+      <h2
+        id="each-relation-has-no-anomalies-that-would-violate-its-integrity-or-consistency"
+      >
+        Each Relation has no Anomalies that Would Violate its Integrity or
+        Consistency
+      </h2>
+      <p>
+        Anomalies are situations where the data in the relation no longer makes
+        sense.
+      </p>
+      <p>
+        What this property means is that, once the data are properly normalized,
+        we can&#39;t do things like leave an orphaned record from a delete of a
+        parent record or an update of a foreign key value.
+      </p>
+      <p>Refer to the data integrity notes for a review of these concepts.</p>
+    </div>
+  </body>
+</html>
