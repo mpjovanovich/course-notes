@@ -9,6 +9,7 @@ course: DBMS110
   - [Process for Modeling M:N Relationships](#process-for-modeling-mn-relationships)
   - [Example: Author to Book](#example-author-to-book)
   - [Exercises](#exercises)
+  - [Full Walkthrough](#full-walkthrough)
 
 /~
 
@@ -110,3 +111,7 @@ Let's build a basic ERD for the following:
 
 - Actor to Movie
 - Owner to Pet (update our pet sitting example)
+
+## Full Walkthrough
+
+We're now ready to take our class database and fully normalize it.
