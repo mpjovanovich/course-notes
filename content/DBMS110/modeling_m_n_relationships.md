@@ -109,9 +109,19 @@ Both authors have contributed to the book!
 
 Let's build a basic ERD for the following:
 
-- Actor to Movie
-- Owner to Pet (update our pet sitting example)
+- Actor to Movie (a movie can have multiple actors, and an actor can be in multiple movies)
+
+  - Associative entity = Role (may have additional attributes such as character name)
+
+- Loan to Borrower (banking example - a loan can have multiple signers, and a borrower can have multiple loans)
+  - Associative entity = LoanBorrower (simple associative entity with just foreign keys)
 
 ## Full Walkthrough
 
 We're now ready to take our class database and fully normalize it.
+
+- Break up any multi-valued attributes
+- Identify entities and their associated primary keys
+- Identify relationships and their cardinalities
+- Create associative entities for M:N relationships
+- Map attributes to entities
