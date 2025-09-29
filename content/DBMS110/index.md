@@ -12,7 +12,9 @@ showBreadcrumb: false
   - [Module 01: Introduction to Databases](#module-01-introduction-to-databases)
   - [Module 02: Fundamentals of Sets](#module-02-fundamentals-of-sets)
   - [Module 03: Data Modeling and ERDs](#module-03-data-modeling-and-erds)
-  - [Module 04: Database Design and Normalization](#module-04-database-design-and-normalization)
+  - [Module 04: SQL CRUD Operations](#module-04-sql-crud-operations)
+  - [Module 05: Database Design and Normalization](#module-05-database-design-and-normalization)
+  - [Module 06: SQL JOINs and Relational Queries](#module-06-sql-joins-and-relational-queries)
 
 /~
 
@@ -87,7 +89,11 @@ scenarios:
   - PET SITTING SERVICE (v2, has surrogate keys): pet, sitter, client, appointment
 -->
 
-## Module 04: Database Design and Normalization
+## Module 04: SQL CRUD Operations
+
+... no notes - we covered this in class ...
+
+## Module 05: Database Design and Normalization
 
 Part I:
 
@@ -99,4 +105,9 @@ Part II:
 
 - [Normal Forms](normal_forms.html)
 - [Modeling M:N Relationships](modeling_m_n_relationships.html)
-<!-- - [SQL Create Table](sql_create_table.html) -->
+
+## Module 06: SQL JOINs and Relational Queries
+
+- [SQL Create Table](sql_create_table.html)
+- [SQL JOINs](sql_joins.html)
+- Intro SQL Assignments
