@@ -67,12 +67,11 @@ The markup below can be interpreted as:
 
 **_For each X instance of this entity, there can be Y instances of the connected entity._**
 
-| Cardinality | Description     |
-| ----------- | --------------- |
-| 0..1        | Zero or one     |
-| 1..1        | One to only one |
-| 1..N        | One to many     |
-| N..N        | Many to many    |
+| Cardinality | Description  |
+| ----------- | ------------ |
+| 1:1         | One-to-one   |
+| 1:N         | One-to-many  |
+| M:N         | Many-to-many |
 
 Together, these three components form a model of the data within the system.
 
