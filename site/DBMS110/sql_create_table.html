@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: SQL Create Table</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#sql-create-table">SQL Create Table</a>
+            <ul>
+              <li><a href="#create-table-syntax">Create Table Syntax</a></li>
+              <li>
+                <a href="#sql-table-constraints">SQL Table Constraints</a>
+              </li>
+              <li><a href="#sql-drop-table">SQL Drop Table</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="sql-create-table">SQL Create Table</h1>
+      <h2 id="create-table-syntax">Create Table Syntax</h2>
+      <p>
+        To create a table, we use the <code>CREATE TABLE</code> statement. This
+        example shows the minimal syntax required to create a table:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">CREATE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TABLE</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> MenuItem</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    name</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TEXT</span><span style="color:#A626A4;--shiki-dark:#C678DD"> PRIMARY KEY</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    description</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TEXT</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    price </span><span style="color:#A626A4;--shiki-dark:#C678DD">FLOAT</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <h2 id="sql-table-constraints">SQL Table Constraints</h2>
+      <p>
+        Each field may also contain constraints. These come after the data type.
+      </p>
+      <p>
+        The example above showed primary key constraint. We should also define
+        the following where they apply:
+      </p>
+      <ul>
+        <li><code>NOT NULL</code></li>
+        <li><code>UNIQUE</code></li>
+        <li><code>FOREIGN KEY</code></li>
+      </ul>
+      <p>
+        Let&#39;s look at another example. Comments are shown to indicate the
+        purpose of each constraint:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">CREATE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TABLE</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> MenuItem</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    -- Modified to use surrogate key</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    id </span><span style="color:#A626A4;--shiki-dark:#C678DD">INTEGER</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NOT NULL</span><span style="color:#A626A4;--shiki-dark:#C678DD"> PRIMARY KEY</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    -- Name should still be unique</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    name</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TEXT</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NOT NULL</span><span style="color:#A626A4;--shiki-dark:#C678DD"> UNIQUE</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    -- Description is optional</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    description</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NULL</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TEXT</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    -- Price is required</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    price </span><span style="color:#A626A4;--shiki-dark:#C678DD">NOT NULL</span><span style="color:#A626A4;--shiki-dark:#C678DD"> FLOAT</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <p>
+        While it is possible to define a foreign key constraint inline (next to
+        the column definition), it can be more readable to define them at the
+        end of the table definition.
+      </p>
+      <p>
+        Let&#39;s assume that we have a <code>MenuCategory</code> table with
+        entries like &quot;Starter&quot;, &quot;Entree&quot;, and
+        &quot;Dessert&quot;. We can add a foreign key as follows:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">CREATE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TABLE</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> MenuItem</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    id </span><span style="color:#A626A4;--shiki-dark:#C678DD">INTEGER</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NOT NULL</span><span style="color:#A626A4;--shiki-dark:#C678DD"> PRIMARY KEY</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    name</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TEXT</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NOT NULL</span><span style="color:#A626A4;--shiki-dark:#C678DD"> UNIQUE</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    description</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NULL</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TEXT</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    price </span><span style="color:#A626A4;--shiki-dark:#C678DD">NOT NULL</span><span style="color:#A626A4;--shiki-dark:#C678DD"> FLOAT</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    menu_category_id </span><span style="color:#A626A4;--shiki-dark:#C678DD">INTEGER</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NOT NULL</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    -- Foreign key constraint defined after all columns</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    FOREIGN KEY</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (menu_category_id) </span><span style="color:#A626A4;--shiki-dark:#C678DD">REFERENCES</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> MenuCategory(id)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <h2 id="sql-drop-table">SQL Drop Table</h2>
+      <p>To drop a table, we use the <code>DROP TABLE</code> statement:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">DROP</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TABLE</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> table_name;</span></span></code></pre>
+      <div class="focusContent note">
+        <p><strong>Modifying an Existing Table</strong></p>
+        <p>
+          It is possible to alter a table after it has been created. This is
+          usually done to:
+        </p>
+        <ul>
+          <li>Add or remove columns</li>
+          <li>Change the name of a column</li>
+          <li>Change a table constraint</li>
+        </ul>
+        <p>
+          We will not cover the syntax here, but you can find the SQLite
+          documentation online.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

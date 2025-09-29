@@ -216,13 +216,42 @@
       <h2 id="exercises">Exercises</h2>
       <p>Let&#39;s build a basic ERD for the following:</p>
       <ul>
-        <li>Actor to Movie</li>
-        <li>Owner to Pet (update our pet sitting example)</li>
+        <li>
+          <p>
+            Actor to Movie (a movie can have multiple actors, and an actor can
+            be in multiple movies)
+          </p>
+          <ul>
+            <li>
+              Associative entity = Role (may have additional attributes such as
+              character name)
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            Loan to Borrower (banking example - a loan can have multiple
+            signers, and a borrower can have multiple loans)
+          </p>
+          <ul>
+            <li>
+              Associative entity = LoanBorrower (simple associative entity with
+              just foreign keys)
+            </li>
+          </ul>
+        </li>
       </ul>
       <h2 id="full-walkthrough">Full Walkthrough</h2>
       <p>
         We&#39;re now ready to take our class database and fully normalize it.
       </p>
+      <ul>
+        <li>Break up any multi-valued attributes</li>
+        <li>Identify entities and their associated primary keys</li>
+        <li>Identify relationships and their cardinalities</li>
+        <li>Create associative entities for M:N relationships</li>
+        <li>Map attributes to entities</li>
+      </ul>
     </div>
   </body>
 </html>

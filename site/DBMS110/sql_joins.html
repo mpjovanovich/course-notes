@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: SQL Joins</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#sql-joins">SQL Joins</a>
+            <ul>
+              <li>
+                <a href="#inner-joins">Inner Joins</a>
+                <ul>
+                  <li><a href="#basic-syntax">Basic Syntax</a></li>
+                  <li>
+                    <a href="#selecting-specific-columns"
+                      >Selecting Specific Columns</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#filtering-and-ordering">Filtering and Ordering</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#using-table-aliases">Using Table Aliases</a></li>
+              <li><a href="#using-column-aliases">Using Column Aliases</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="sql-joins">SQL Joins</h1>
+      <p>
+        We&#39;ve seen how tables are related to each other using foreign keys.
+        We can use these keys in our SQL queries when we need to fetch data from
+        one table that is related to another table.
+      </p>
+      <p>
+        We&#39;ll use an online course management system for our examples. The
+        tables are:
+      </p>
+      <p>
+        <strong><em>Module</em></strong>
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>presentation_order</th>
+            <th>module_name</th>
+            <th>published</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>Introduction to Databases</td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>Fundamentals of Sets</td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>Data Modeling and ERDs</td>
+            <td>false</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <strong><em>Assignment</em></strong>
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>assignment_id</th>
+            <th>module_id</th>
+            <th>assignment_name</th>
+            <th>due_date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>Ch1 Knowledge Check</td>
+            <td>2025-08-31</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>1</td>
+            <td>Ch2-5 Knowledge Check</td>
+            <td>2025-08-31</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>1</td>
+            <td>Exercise: Data Journeys</td>
+            <td>2025-08-26</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>1</td>
+            <td>SQL: Working with SQL Technologies</td>
+            <td>2025-08-28</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>2</td>
+            <td>SQL: SELECT Basics</td>
+            <td>2025-09-14</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>3</td>
+            <td>Ch2-1, Ch2-3, Ch2-4 Knowledge Check</td>
+            <td>2025-09-28</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>3</td>
+            <td>Ch4 Knowledge Check</td>
+            <td>2025-09-28</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>3</td>
+            <td>ERD Basics</td>
+            <td>2025-09-14</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="focusContent exercise">
+        <p>
+          You can follow along using this SQL file:
+          <a href="sql_files/sql_join_init.sql">sql_join_init.sql</a>.
+        </p>
+        <p>
+          Create a database using DB Browser for SQLite and execute the SQL file
+          to create the tables.
+        </p>
+      </div>
+
+      <h2 id="inner-joins">Inner Joins</h2>
+      <h3 id="basic-syntax">Basic Syntax</h3>
+      <p>
+        There are several types of joins, but for this course we will only be
+        using
+        <em>inner joins</em>. These are the most common type.
+      </p>
+      <p>
+        To do a join, we use the <code>JOIN</code> keyword in the
+        <code>FROM</code> clause of a SQL statement.
+      </p>
+      <p>
+        The <code>ON</code> clause specifies the condition for the join - this
+        will connect the foreign key of one table to the primary key of the
+        other table.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Get all data from both tables</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    *</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    Module</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    JOIN</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Assignment </span><span style="color:#A626A4;--shiki-dark:#C678DD">ON</span><span style="color:#986801;--shiki-dark:#D19A66"> Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <h3 id="selecting-specific-columns">Selecting Specific Columns</h3>
+      <p>
+        Usually we only want specific columns from the tables. We can do this by
+        specifying the columns we want to select in the
+        <code>SELECT</code> clause.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Get only the module name and assignment name</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">assignment_name</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    Module</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    JOIN</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Assignment </span><span style="color:#A626A4;--shiki-dark:#C678DD">ON</span><span style="color:#986801;--shiki-dark:#D19A66"> Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <h3 id="filtering-and-ordering">Filtering and Ordering</h3>
+      <p>
+        Anything we have done before in our SELECT statements can be used in our
+        JOIN statements. This includes the <code>WHERE</code> clause,
+        <code>ORDER BY</code> clause, and <code>LIMIT</code> clause.
+      </p>
+      <p>
+        When using columns in these clauses, we need to specify the table name
+        and column name that we are referring to.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Get assignments only from published modules</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">assignment_name</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    Module</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    JOIN</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Assignment </span><span style="color:#A626A4;--shiki-dark:#C678DD">ON</span><span style="color:#986801;--shiki-dark:#D19A66"> Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">published</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- Get modules and assignment info for assignments that are due after</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">-- 2025-09-01, ordered most to least recent</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">assignment_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">due_date</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    Module</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    JOIN</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Assignment </span><span style="color:#A626A4;--shiki-dark:#C678DD">ON</span><span style="color:#986801;--shiki-dark:#D19A66"> Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">due_date</span><span style="color:#383A42;--shiki-dark:#56B6C2"> ></span><span style="color:#50A14F;--shiki-dark:#98C379"> '2025-09-01'</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">ORDER BY</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">due_date</span><span style="color:#A626A4;--shiki-dark:#C678DD"> DESC</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <h2 id="using-table-aliases">Using Table Aliases</h2>
+      <p>
+        An <strong>alias</strong> is a temporary name for a table or column that
+        only applies to the queryin which it is used. Table aliases can help
+        make our queries shorter, which is useful as queries get more complex or
+        when table names are long.
+      </p>
+      <p>
+        To declare an alias, we use the <code>AS</code> keyword. Anywhere else
+        in the query, we can use the alias instead of the table name.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    m</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    a</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">assignment_name</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    Module </span><span style="color:#A626A4;--shiki-dark:#C678DD">AS</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> m</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    JOIN</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Assignment </span><span style="color:#A626A4;--shiki-dark:#C678DD">AS</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> a </span><span style="color:#A626A4;--shiki-dark:#C678DD">ON</span><span style="color:#986801;--shiki-dark:#D19A66"> m</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> a</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    m</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">published</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <h2 id="using-column-aliases">Using Column Aliases</h2>
+      <p>
+        We can also use aliases for columns. This is useful when we want to
+        rename a column for readability or when we need to remove ambiguity for
+        a duplicate column name (e.g. two tables both have a &quot;name&quot;
+        column).
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    m</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_name</span><span style="color:#A626A4;--shiki-dark:#C678DD"> AS</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Module Name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    a</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">assignment_name</span><span style="color:#A626A4;--shiki-dark:#C678DD"> AS</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Assignment Name"</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    Module </span><span style="color:#A626A4;--shiki-dark:#C678DD">AS</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> m</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    JOIN</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Assignment </span><span style="color:#A626A4;--shiki-dark:#C678DD">AS</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> a </span><span style="color:#A626A4;--shiki-dark:#C678DD">ON</span><span style="color:#986801;--shiki-dark:#D19A66"> m</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> a</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    m</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">published</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+    </div>
+  </body>
+</html>
