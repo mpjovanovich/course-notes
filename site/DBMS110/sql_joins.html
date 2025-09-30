@@ -54,6 +54,7 @@
               </li>
               <li><a href="#using-table-aliases">Using Table Aliases</a></li>
               <li><a href="#using-column-aliases">Using Column Aliases</a></li>
+              <li><a href="#query-styles">Query Styles</a></li>
             </ul>
           </li>
         </ul>
@@ -331,6 +332,51 @@
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    JOIN</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Assignment </span><span style="color:#A626A4;--shiki-dark:#C678DD">AS</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> a </span><span style="color:#A626A4;--shiki-dark:#C678DD">ON</span><span style="color:#986801;--shiki-dark:#D19A66"> m</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> a</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span></span>
 <span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    m</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">published</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <h2 id="query-styles">Query Styles</h2>
+      <p>
+        In SQL there are many ways to write the same query. Which to use is a
+        matter of personal preference.
+      </p>
+      <p>
+        In the query below we show that the order in which the tables are joined
+        can be flipped, but still produce the same result - we fetch module and
+        assignment name for the &quot;Introduction to Databases&quot; module.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">assignment_name</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    Module</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    JOIN</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Assignment </span><span style="color:#A626A4;--shiki-dark:#C678DD">ON</span><span style="color:#986801;--shiki-dark:#D19A66"> Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_name</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'Introduction to Databases'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">SELECT</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">assignment_name</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">FROM</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    -- Order of join flipped</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    Assignment</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    JOIN</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> Module </span><span style="color:#A626A4;--shiki-dark:#C678DD">ON</span><span style="color:#986801;--shiki-dark:#D19A66"> Assignment</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_id</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">WHERE</span></span>
+<span class="line"><span style="color:#986801;--shiki-dark:#D19A66">    Module</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#986801;--shiki-dark:#D19A66">module_name</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'Introduction to Databases'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
     </div>
   </body>
 </html>
