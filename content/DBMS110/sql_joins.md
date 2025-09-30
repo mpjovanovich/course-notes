@@ -12,6 +12,7 @@ course: DBMS110
     - [Filtering and Ordering](#filtering-and-ordering)
   - [Using Table Aliases](#using-table-aliases)
   - [Using Column Aliases](#using-column-aliases)
+  - [Query Styles](#query-styles)
 
 /~
 
@@ -147,4 +148,33 @@ FROM
     JOIN Assignment AS a ON m.module_id = a.module_id
 WHERE
     m.published = 1;
+```
+
+## Query Styles
+
+In SQL there are many ways to write the same query. Which to use is a matter of personal preference.
+
+In the query below we show that the order in which the tables are joined can be flipped, but still produce the same result - we fetch module and assignment name for the "Introduction to Databases" module.
+
+```sql
+SELECT
+    Module.module_name,
+    Assignment.assignment_name
+FROM
+    Module
+    JOIN Assignment ON Module.module_id = Assignment.module_id
+WHERE
+    Module.module_name = 'Introduction to Databases';
+```
+
+```sql
+SELECT
+    Module.module_name,
+    Assignment.assignment_name
+FROM
+    -- Order of join flipped
+    Assignment
+    JOIN Module ON Assignment.module_id = Module.module_id
+WHERE
+    Module.module_name = 'Introduction to Databases';
 ```
