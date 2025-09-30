@@ -111,3 +111,4 @@ Part II:
 - [SQL Create Table](sql_create_table.html)
 - [SQL JOINs](sql_joins.html)
 - Intro SQL Assignments
+  - Note: Start with JOIN assignment; likely to be more difficult
