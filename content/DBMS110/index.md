@@ -15,6 +15,7 @@ showBreadcrumb: false
   - [Module 04: SQL CRUD Operations](#module-04-sql-crud-operations)
   - [Module 05: Database Design and Normalization](#module-05-database-design-and-normalization)
   - [Module 06: SQL JOINs and Relational Queries](#module-06-sql-joins-and-relational-queries)
+  - [Module 07: Unstructured Data and Relational Alternatives](#module-07-unstructured-data-and-relational-alternatives)
 
 /~
 
@@ -91,7 +92,7 @@ scenarios:
 
 ## Module 04: SQL CRUD Operations
 
-... no notes - we covered this in class ...
+... notes to be added; know syntax for SQL SELECT, INSERT, UPDATE, DELETE ...
 
 ## Module 05: Database Design and Normalization
 
@@ -112,3 +113,13 @@ Part II:
 - [SQL JOINs](sql_joins.html)
 - Intro SQL Assignments
   - Note: Start with JOIN assignment; likely to be more difficult
+
+## Module 07: Unstructured Data and Relational Alternatives
+
+Part I:
+
+- [Working with Unstructured Data](unstructured_data.html)
+- [XML](xml.html)
+- [JSON](json.html)
+
+Part II:
