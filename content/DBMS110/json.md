@@ -49,13 +49,11 @@ Objects may have "children" objects within them. Here is a "person" object with 
 
 ```json
 {
-  "person": {
-    "name": "Socrates",
-    "birthYear": -469,
-    "hobby": {
-      "name": "Philosophy",
-      "description": "Thinking about deep deep things."
-    }
+  "name": "Socrates",
+  "birthYear": -469,
+  "hobby": {
+    "name": "Philosophy",
+    "description": "Thinking about deep deep things."
   }
 }
 ```
@@ -71,8 +69,8 @@ We may need to represent a list of objects. We cannot have multiple properties w
 {
   "name": "Socrates",
   "birthYear": -469,
-  "name": "Socrates Jr.",
-  "birthYear": -489
+  "hobby": "Philosphy",
+  "hobby": "Golf"
 }
 ```
 
@@ -80,43 +78,32 @@ To fix this, we can use a list of objects called an _array_. Arrays are wrapped 
 
 ```json
 {
-  "people": [
-    {
-      "name": "Socrates",
-      "birthYear": -469
-    },
-    {
-      "name": "Socrates Jr.",
-      "birthYear": -489
-    }
-  ]
+  "name": "Socrates",
+  "birthYear": -469,
+  "hobbies": ["Philosphy", "Golf"]
 }
 ```
 
 _Complex Object_
 
-Let's combine what we've learned so far to create a more complex object. We want to allow Socrates to have multiple hobbies, so we'll nest an array of hobbies within the person object.
+Let's combine what we've learned so far to create a more complex object. This time our hobbies will be objects themselves, with a name and description attribute.
 
 ```json
 {
-  "person": [
+  "name": "Socrates",
+  "birthYear": -469,
+  "hobbies": [
     {
-      "name": "Socrates",
-      "birthYear": -469,
-      "hobbies": [
-        {
-          "name": "Philosophy",
-          "description": "Thinking about deep deep things."
-        },
-        {
-          "name": "Golf",
-          "description": "Hitting a small white ball with a stick, then walking around."
-        },
-        {
-          "name": "Music",
-          "description": "Listening to favorite jams on the harp."
-        }
-      ]
+      "name": "Philosophy",
+      "description": "Thinking about deep deep things."
+    },
+    {
+      "name": "Golf",
+      "description": "Hitting a small white ball with a stick, then walking around."
+    },
+    {
+      "name": "Music",
+      "description": "Listening to favorite jams on the harp."
     }
   ]
 }
