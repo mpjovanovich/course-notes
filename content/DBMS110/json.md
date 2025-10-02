@@ -132,6 +132,21 @@ The opposite is to **deserialize**, which decodes a string into a data structure
 
 **JSON Exercise**
 
-TODO: fun json exercise in web developer toolbar.
+In the JavaScript programming language we can convert a JSON object to a string with the `.stringify()` method. This is serialization.
+
+We can convert the string back to a JSON object with the `.parse()` method. This is deserialization.
+
+Let's start with this string: `{"name":"Socrates","birthYear":-469}`. This is a JSON string that is serialized in a "minified" format, with no extra whitespace. JSON is often saved in this minified format when it is ready to be sent over the internet in order to save bandwidth - the file size is smaller.
+
+Run the following code one line at a time in the Developer Tools console of your browser (hit the `F12` key). You can skip the commented lines that start with `//`.
+
+```javascript
+// Convert the string to a JSON object
+const socrates = JSON.parse('{"name":"Socrates","birthYear":-469}');
+
+// Print the properties of the JSON object to the console
+console.log(socrates.name);
+console.log(socrates.birthYear);
+```
 
 /~

@@ -121,5 +121,7 @@ Part I:
 - [Working with Unstructured Data](unstructured_data.html)
 - [XML](xml.html)
 - [JSON](json.html)
+- Intro to current module assignments
+- Intro to Final Project milestones
 
 Part II:
