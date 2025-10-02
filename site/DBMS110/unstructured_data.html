@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Working with Unstructured Data</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#structured-vs-unstructured-data"
+              >Structured vs Unstructured Data</a
+            >
+            <ul>
+              <li><a href="#structured-data">Structured Data</a></li>
+              <li><a href="#unstructured-data">Unstructured Data</a></li>
+              <li><a href="#semi-structured-data">Semi-Structured Data</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="structured-vs-unstructured-data">
+        Structured vs Unstructured Data
+      </h1>
+      <h2 id="structured-data">Structured Data</h2>
+      <p><em>Definition:</em></p>
+      <p>
+        <strong>Structured data</strong> is data that is organized in a
+        predefined format with a fixed schema.
+      </p>
+      <p>
+        A <strong>schema</strong> is a set of rules that define the structure of
+        the data. For a database this is the table structure. For other file
+        formats this may define
+      </p>
+      <ul>
+        <li>The order in which fields are arranged in the file</li>
+        <li>The attributes of each field</li>
+        <li>The data type of each field</li>
+        <li>Constraints on the data (length, precision, etc.)</li>
+      </ul>
+      <p><em>Examples:</em></p>
+      <p>Examples of structured data include:</p>
+      <ul>
+        <li>Relational databases</li>
+        <li>XML</li>
+        <li>JSON</li>
+        <li>Delimited files</li>
+      </ul>
+      <p>
+        In our SQL <code>CREATE TABLE</code> statements we define the schema for
+        the table:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">CREATE</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TABLE</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> users</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    id </span><span style="color:#A626A4;--shiki-dark:#C678DD">INTEGER</span><span style="color:#A626A4;--shiki-dark:#C678DD"> PRIMARY KEY</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    name</span><span style="color:#A626A4;--shiki-dark:#C678DD"> TEXT</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NOT NULL</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    email </span><span style="color:#A626A4;--shiki-dark:#C678DD">TEXT</span><span style="color:#A626A4;--shiki-dark:#C678DD"> NOT NULL</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      <p>
+        This gives us all of the information about the format and constraints
+        for the data in the table - its structure.
+      </p>
+      <h2 id="unstructured-data">Unstructured Data</h2>
+      <p><em>Definition:</em></p>
+      <p>
+        <strong>Unstructured data</strong> is data that has no inherent
+        structure or organization.
+      </p>
+      <p>
+        When we&#39;ve used the term &quot;raw data&quot; we were typically
+        referring to unstructured data. This doesn&#39;t necessarily mean that
+        it&#39;s messy - it just means that it does not adhere to a predefined
+        schema.
+      </p>
+      <p><em>Examples:</em></p>
+      <p>Examples of unstructured data include:</p>
+      <ul>
+        <li>Text files</li>
+        <li>Images</li>
+        <li>Videos</li>
+        <li>Audio</li>
+        <li>Business documents</li>
+        <li>Reports</li>
+      </ul>
+      <p>
+        A report may provide many data points, but they&#39;re not organized in
+        a way that a computer program can easily understand (<em>parse</em>) the
+        fields.
+      </p>
+      <figure>
+        <span>
+          <img
+            src="https://www.portland.gov/sites/default/files/styles/max_768w/public/2023/gbr_hes_profile-link.png?itok=uKj7VJcD"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <h2 id="semi-structured-data">Semi-Structured Data</h2>
+      <p><em>Definition:</em></p>
+      <p>
+        <strong>Semi-structured data</strong> is data that conforms to a defined
+        syntax or format but does not enforce a schema for the content within.
+      </p>
+      <p>
+        In other words, it has to follow the rules enough that it can be
+        understood by the computer, but the data that it contains can be
+        adjusted flexibly.
+      </p>
+      <p>
+        The English language is a good example of semi-structured data. You must
+        follow rules like grammar and punctuation, but the words and sentences
+        can be adjusted flexibly.
+      </p>
+      <p><em>Examples:</em></p>
+      <ul>
+        <li>XML</li>
+        <li>JSON</li>
+        <li>Delimited files</li>
+      </ul>
+      <div class="focusContent note">
+        <p>
+          <strong
+            >Why are These Formats Listed as Structured and
+            Semi-Structured?</strong
+          >
+        </p>
+        <p>
+          When the file formats above have a predefined schema, they are
+          considered structured data.
+        </p>
+        <p>
+          Other times they have only some or no &quot;rules&quot; to follow. In
+          this case they are considered semi-structured data.
+        </p>
+        <p>
+          As an example, if we have a CSV file with user information and
+          we&#39;ve all agreed that it must contain the fields <code>id</code>,
+          <code>name</code>, and <code>email</code>, in that specific order,
+          then it is considered structured data.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">id,</span><span style="color:#A626A4;--shiki-dark:#C678DD">name,</span><span style="color:#4078F2;--shiki-dark:#61AFEF">email</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">1,</span><span style="color:#A626A4;--shiki-dark:#C678DD">John Doe,</span><span style="color:#4078F2;--shiki-dark:#61AFEF">john.doe@example.com</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">2,</span><span style="color:#A626A4;--shiki-dark:#C678DD">Jane Smith,</span><span style="color:#4078F2;--shiki-dark:#61AFEF">jane.smith@example.com</span></span></code></pre>
+        <p>
+          If we have a CSV file with user information but we really don&#39;t
+          know or care about which fields are present, nullability, etc., then
+          it is considered semi-structured data.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">id,</span><span style="color:#A626A4;--shiki-dark:#C678DD">name,</span><span style="color:#4078F2;--shiki-dark:#61AFEF">date_of_birth</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">1,</span><span style="color:#A626A4;--shiki-dark:#C678DD">John Doe,</span><span style="color:#4078F2;--shiki-dark:#61AFEF">1990-01-01</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">2,</span><span style="color:#A626A4;--shiki-dark:#C678DD">Jane Smith,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">3,</span><span style="color:#A626A4;--shiki-dark:#C678DD">Socrates,</span><span style="color:#4078F2;--shiki-dark:#61AFEF">1970-01-01</span></span></code></pre>
+      </div>
+
+      <p>
+        We&#39;ll see examples of each of these types of data in the next few
+        sections.
+      </p>
+    </div>
+  </body>
+</html>

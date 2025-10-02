@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: JSON</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#json">JSON</a>
+            <ul>
+              <li>
+                <a href="#format">Format</a>
+                <ul>
+                  <li><a href="#examples">Examples</a></li>
+                  <li><a href="#serialization">Serialization</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="json">JSON</h1>
+      <p>
+        <strong>JSON</strong> stands for
+        <strong>JavaScript Object Notation</strong>.
+      </p>
+      <p>
+        It has &quot;JavaScript&quot; in the name because it originated in
+        JavaScript, but it is language independent, and has become a ubiquitous
+        data format.
+      </p>
+      <p>
+        JSON has in many ways replaced XML as the primary data format for data
+        exchange and storage.
+      </p>
+      <p>
+        Data that is imported, exported, and transferred between systems is
+        often in JSON format.
+      </p>
+      <h2 id="format">Format</h2>
+      <p>
+        Like XML, JSON is a human-readable hierarchical data format. It is
+        encoded as key-value pairs.
+      </p>
+      <p>
+        Keys must have double quotes around them (single quotes are not
+        allowed). These keys form the <em>properties</em> or
+        <em>attributes</em> of the object.
+      </p>
+      <p>Values only need quotes if they are strings.</p>
+      <h3 id="examples">Examples</h3>
+      <p><em>Basic Object</em></p>
+      <p>
+        Here is a single person object. JSON objects are wrapped in curly
+        braces.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Socrates"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "birthYear"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">-469</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <p><em>Object with a Nested Object</em></p>
+      <p>
+        Objects may have &quot;children&quot; objects within them. Here is a
+        &quot;person&quot; object with a &quot;hobby&quot; object nested within
+        it. This hobby object is a property of the person object.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "person"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Socrates"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    "birthYear"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">-469</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    "hobby"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Philosophy"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "description"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Thinking about deep deep things."</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <p>
+        Note how &quot;hobby&quot; is its own object - picture pulling it out of
+        the person object. It would work on its own. This is how we represent
+        hierarchical data in JSON.
+      </p>
+      <p><em>Lists of Objects</em></p>
+      <p>
+        We may need to represent a list of objects. We cannot have multiple
+        properties with the same name:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">/* No - does not work! */</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Socrates"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "birthYear"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">-469</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Socrates Jr."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "birthYear"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">-489</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <p>
+        To fix this, we can use a list of objects called an <em>array</em>.
+        Arrays are wrapped in square brackets:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "people"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: [</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Socrates"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "birthYear"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">-469</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    },</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Socrates Jr."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "birthYear"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">-489</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  ]</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <p><em>Complex Object</em></p>
+      <p>
+        Let&#39;s combine what we&#39;ve learned so far to create a more complex
+        object. We want to allow Socrates to have multiple hobbies, so we&#39;ll
+        nest an array of hobbies within the person object.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "person"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: [</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Socrates"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "birthYear"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">-469</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "hobbies"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: [</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">          "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Philosophy"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">          "description"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Thinking about deep deep things."</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        },</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">          "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Golf"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">          "description"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Hitting a small white ball with a stick, then walking around."</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        },</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">          "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Music"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">          "description"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Listening to favorite jams on the harp."</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">      ]</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  ]</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <h3 id="serialization">Serialization</h3>
+      <p>To <strong>serialize</strong> data means to encode it as a string.</p>
+      <p>
+        The opposite is to <strong>deserialize</strong>, which decodes a string
+        into a data structure.
+      </p>
+      <div class="focusContent exercise">
+        <p><strong>JSON Exercise</strong></p>
+        <p>
+          In the JavaScript programming language we can convert a JSON object to
+          a string with the <code>.stringify()</code> method. This is
+          serialization.
+        </p>
+        <p>
+          We can convert the string back to a JSON object with the
+          <code>.parse()</code> method. This is deserialization.
+        </p>
+        <p>
+          Let&#39;s start with this string:
+          <code
+            >{&quot;name&quot;:&quot;Socrates&quot;,&quot;birthYear&quot;:-469}</code
+          >. This is a JSON string that is serialized in a &quot;minified&quot;
+          format, with no extra whitespace. JSON is often saved in this minified
+          format when it is ready to be sent over the internet in order to save
+          bandwidth - the file size is smaller.
+        </p>
+        <p>
+          Run the following code one line at a time in the Developer Tools
+          console of your browser (hit the <code>F12</code> key). You can skip
+          the commented lines that start with <code>//</code>.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Convert the string to a JSON object</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> socrates</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#E5C07B"> JSON</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">parse</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">'{"name":"Socrates","birthYear":-469}'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Print the properties of the JSON object to the console</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E5C07B">socrates</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E06C75">name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E5C07B">socrates</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#E45649;--shiki-dark:#E06C75">birthYear</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+      </div>
+    </div>
+  </body>
+</html>
