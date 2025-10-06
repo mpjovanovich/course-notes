@@ -120,7 +120,10 @@ Part I:
 
 Part II:
 
+- Intro: Final Project and Assignments
 - [Networking Communication Patterns](networking_communication_patterns.html)
+- Break (individual research)
+- WiFi Discussion and Cloud Resource group assignments
 
 ## Module 07: Cyber and Digital Security
 
