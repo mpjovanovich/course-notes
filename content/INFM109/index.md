@@ -127,16 +127,12 @@ Part II:
 
 ## Module 07: Cyber and Digital Security
 
-Part I:
-
-<!-- For next course run; merge organizational challenges with motivations and impact -->
-<!-- Split Cybersecurity Thread Landscape into sections -->
-<!-- Split Cyber Defense Strategies into sections -->
+Part I (attack):
 
 - [Cybersecurity Organizational Challenges](cybersecurity_organizational_challenges.html)
 - [Cyberattack Motivations and Impact](cyberattack_motivations_impact.html)
 - [Cybersecurity Threat Landscape](cybersecurity_threat_landscape.html)
 
-Part II:
+Part II (defense):
 
 - [Cyber Defense Strategies](cyberdefense_strategies.html)
