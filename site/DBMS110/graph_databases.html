@@ -35,11 +35,61 @@
     <div class="content-wrapper">
       <div class="toc">
         <ul>
-          <li><a href="#graph-databases">Graph Databases</a></li>
+          <li>
+            <a href="#graph-databases">Graph Databases</a>
+            <ul>
+              <li><a href="#definition">Definition</a></li>
+              <li><a href="#example-databases">Example Databases</a></li>
+              <li><a href="#use-cases">Use Cases</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
 
       <h1 id="graph-databases">Graph Databases</h1>
+      <h2 id="definition">Definition</h2>
+      <p>
+        <strong>Graph databases</strong> store data in nodes (entities) and
+        edges (relationships between entities).
+      </p>
+      <p>
+        These are used to model <em>highly connected</em> data, where the edges
+        between entities are just as important as the entities themselves.
+      </p>
+      <p>Instead of tables, columns, and foreign keys, graph databases have:</p>
+      <p>
+        <strong>Nodes</strong>: Represent entities (people, products, locations)
+        <strong>Properties</strong>: Both nodes and edges can have properties
+        (attributes) <strong>Edges</strong>: Represent relationships between
+        nodes (knows, purchased, located_in)
+      </p>
+      <figure>
+        <img
+          src="https://miro.medium.com/v2/resize:fit:1400/1*C-wxpmuzTOTXRJ9QlaCx5g.png"
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <p>
+        Relationships are first class citizens in a graph database. They can be
+        queried independently of the nodes they connect. Some example queries
+        might be: &quot;Find all friends of friends&quot;. This would be very
+        hard to do in a relational database.
+      </p>
+      <h2 id="example-databases">Example Databases</h2>
+      <ul>
+        <li>Neo4j</li>
+        <li>Amazon Neptune</li>
+        <li>Azure Cosmos DB</li>
+        <li>...</li>
+      </ul>
+      <h2 id="use-cases">Use Cases</h2>
+      <ul>
+        <li>Search engines / knowledge bases</li>
+        <li>Social networks (Facebook, LinkedIn)</li>
+        <li>Recommendation systems (Amazon, Netflix)</li>
+        <li>Fraud detection (Fraud detection systems)</li>
+      </ul>
     </div>
   </body>
 </html>
