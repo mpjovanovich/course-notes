@@ -16,6 +16,7 @@ showBreadcrumb: false
   - [Module 05: Database Design and Normalization](#module-05-database-design-and-normalization)
   - [Module 06: SQL JOINs and Relational Queries](#module-06-sql-joins-and-relational-queries)
   - [Module 07: Unstructured Data and Relational Alternatives](#module-07-unstructured-data-and-relational-alternatives)
+  - [Module 08: Business Intelligence and Data Analytics](#module-08-business-intelligence-and-data-analytics)
 
 /~
 
@@ -125,3 +126,11 @@ Part I:
 - Intro to Final Project milestones
 
 Part II:
+
+- [Using SQL in Application Code](using_sql_in_application_code.html)
+- [NoSQL Databases](nosql_databases.html)
+- [Key-Value Databases](key_value_databases.html)
+
+## Module 08: Business Intelligence and Data Analytics
+
+distributed data systems
