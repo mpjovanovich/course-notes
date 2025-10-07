@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Key-Value Databases</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#key-value-databases">Key-Value Databases</a>
+            <ul>
+              <li><a href="#definition">Definition</a></li>
+              <li><a href="#example-databases">Example Databases</a></li>
+              <li>
+                <a href="#use-cases">Use Cases</a>
+                <ul>
+                  <li>
+                    <a href="#simple-read-and-write">Simple Read and Write</a>
+                  </li>
+                  <li>
+                    <a href="#high-speed-caching-layer"
+                      >High Speed Caching Layer</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="key-value-databases">Key-Value Databases</h1>
+      <h2 id="definition">Definition</h2>
+      <p><strong>Key-value databases</strong> store data in key-value pairs.</p>
+      <p>
+        If you have used a Python dictionary before (or from any other
+        programming language), you are familiar with the concept of a value that
+        is retreivable by a unique key; it&#39;s simply a lookup table.
+      </p>
+      <p>The values can be any data type that is supported by the database.</p>
+      <h2 id="example-databases">Example Databases</h2>
+      <figure>
+        <span>
+          <img
+            src="https://media.daily.dev/image/upload/s--hr1KV229--/f_auto/v1729434313/logos/redis.png"
+            style="width: 40%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <ul>
+        <li>Redis</li>
+        <li>DynamoDB</li>
+        <li>Couchbase</li>
+        <li>...</li>
+      </ul>
+      <h2 id="use-cases">Use Cases</h2>
+      <h3 id="simple-read-and-write">Simple Read and Write</h3>
+      <p>
+        Key-value databases are designed for extremely fast reads and writes
+        based on a key lookup. The database essentially &quot;saves&quot; any
+        value that&#39;s provided using the key as the name to find it with.
+        This makes them very flexible.
+      </p>
+      <div class="focusContent example">
+        <p><strong>Video View Counts</strong></p>
+        <p>
+          Imagine a web application like YouTube or TikTok. Your job is to keep
+          track of the number of views for each video. A key-value database is a
+          good fit for this use case, because:
+        </p>
+        <ul>
+          <li>
+            The data is fetched and updated frequently; every time a video is
+            played or someone loads the page
+          </li>
+          <li>
+            The data does not have complex relationships; it&#39;s simply a
+            count of views for a given video
+          </li>
+        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&quot;video_cat_eating_sandwich&quot;</td>
+              <td>134</td>
+            </tr>
+            <tr>
+              <td>&quot;video_cat_sleeping&quot;</td>
+              <td>242</td>
+            </tr>
+            <tr>
+              <td>&quot;video_cat_insulting_owner&quot;</td>
+              <td>999999</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          The application driving what appears on the screen is simply
+          retrieving the value for a given key.
+        </p>
+      </div>
+
+      <div class="focusContent example">
+        <p><strong>Recipe Ingredients</strong></p>
+        <p>
+          Since we can store any data type, we can use a key-value database to
+          store recipe information that has been serialized into a JSON string.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&quot;apple_pie&quot;</td>
+              <td>
+                <code
+                  >{&quot;category&quot;:&quot;desserts&quot;,&quot;ingredients&quot;:[&quot;banana&quot;,
+                  &quot;apple&quot;, &quot;orange&quot;]}</code
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>&quot;leek_soup&quot;</td>
+              <td>
+                <code
+                  >{&quot;category&quot;:&quot;soups&quot;,&quot;ingredients&quot;:[&quot;leek&quot;,
+                  &quot;water&quot;, &quot;salt&quot;]}</code
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          The application then just needs to fetch a recipe by key, and
+          deserialize the JSON string into a JavaScript object.
+        </p>
+        <p>
+          This way we don&#39;t have to create a rigid &quot;recipe&quot; table
+          in a relational database. If we want to add new properties to a
+          recipe, we can simply add them to the JSON string without needing to
+          modify a whole table schema.
+        </p>
+      </div>
+
+      <h3 id="high-speed-caching-layer">High Speed Caching Layer</h3>
+      <p>
+        Key-value databases are often used as a caching layer for relational
+        databases. This is because it is much faster to look up a query result
+        that has already been computed and stored in the key-value database than
+        it is to run the query again from scratch.
+      </p>
+      <p>
+        <em><strong>Cache Miss:</strong></em>
+      </p>
+      <p>
+        Related file:
+        <a href="files/cache_miss.excalidraw">cache_miss.excalidraw</a>
+      </p>
+      <figure>
+        <span>
+          <img src="images/cache_miss.svg" style="width: 100%; height: auto" />
+        </span>
+      </figure>
+
+      <p>
+        The first time the application requests the data, the key-value database
+        will not have the data in the cache.
+      </p>
+      <ol>
+        <li>
+          Application requests data from the key-value database for a given key,
+          &quot;user_profile{7}&quot;.
+        </li>
+        <li>
+          The key-value database does not have the data in the cache (a
+          &quot;cache miss&quot;).
+        </li>
+        <li>The application runs the query against the relational database.</li>
+        <li>
+          The application stores the data in the key-value database for future
+          requests.
+        </li>
+      </ol>
+      <p>
+        <em><strong>Cache Hit:</strong></em>
+      </p>
+      <p>
+        Related file:
+        <a href="files/cache_hit.excalidraw">cache_hit.excalidraw</a>
+      </p>
+      <figure>
+        <span>
+          <img src="images/cache_hit.svg" style="width: 100%; height: auto" />
+        </span>
+      </figure>
+
+      <ol>
+        <li>
+          Application requests data from the key-value database for a given key,
+          &quot;user_profile{7}&quot;.
+        </li>
+        <li>
+          The key-value database has the data (a &quot;cache hit&quot;), and
+          returns the value to the application.
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

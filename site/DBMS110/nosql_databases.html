@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: NoSQL Databases</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#nosql-databases">NoSQL Databases</a>
+            <ul>
+              <li>
+                <a href="#why-relational-databases"
+                  >Why Relational Databases?</a
+                >
+              </li>
+              <li><a href="#why-nosql">Why NoSQL?</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="nosql-databases">NoSQL Databases</h1>
+      <p>
+        <strong>NoSQL</strong> database is a term that generally refers to a
+        database that is not the traditional relational model. It does not mean
+        that SQL is not used. You may hear it referred to as &quot;not only
+        SQL&quot;.
+      </p>
+      <p>We will look at four types of NoSQL databases:</p>
+      <ul>
+        <li><a href="key_value_databases.html">Key-Value Databases</a></li>
+        <li><a href="document_databases.html">Document Databases</a></li>
+        <li>
+          <a href="column_store_databases.html">Column Store Databases</a>
+        </li>
+        <li><a href="graph_databases.html">Graph Databases</a></li>
+      </ul>
+      <h2 id="why-relational-databases">Why Relational Databases?</h2>
+      <p>
+        Relational databases remain the default choice for most applications
+        because they excel at maintaining data correctness and expressing
+        complex relationships.
+      </p>
+      <ul>
+        <li>
+          <strong>Data integrity</strong> - Built-in constraints ensure your
+          data stays accurate and consistent, preventing invalid states
+        </li>
+        <li>
+          <strong>Relationship model</strong> - JOINs naturally express how
+          entities connect, making complex queries straightforward
+        </li>
+        <li>
+          <strong>Structured data</strong> - Fixed schemas enforce data quality
+          and make the database self-documenting
+        </li>
+        <li>
+          <strong>Powerful querying</strong> - SQL provides a rich, standardized
+          language for analyzing and manipulating data
+        </li>
+        <li>
+          <strong>Proven reliability</strong> - Decades of maturity, tooling,
+          and expertise make relational databases a safe default
+        </li>
+      </ul>
+      <div class="focusContent lookout">
+        <p><strong>Stay Safe - Be a Skeptic</strong></p>
+        <p>
+          Start with relational databases unless you have a specific reason not
+          to.
+        </p>
+        <p>
+          There have been many technologies that were hyped and evangelized as
+          the &quot;next big thing&quot;. When these don&#39;t pan out,
+          developers who used them are left with code that needs to be migrated
+          to a more stable solution.
+        </p>
+        <p>
+          Consider NoSQL only when you&#39;ve identified a specific limitation
+          that matches your requirements. Make sure the implementation that you
+          choose has a strong community and is well-supported.
+        </p>
+      </div>
+
+      <h2 id="why-nosql">Why NoSQL?</h2>
+      <p>
+        NoSQL is a more recent development than relational databases, and it is
+        a response to some limitations of relational databases.
+      </p>
+      <p>Here are a few reasons why NoSQL databases emerged:</p>
+      <ul>
+        <li>
+          <strong>Extreme scaling</strong> - Horizontal scaling is impractical
+          with relational databases because JOINs break down when data is
+          distributed across servers
+        </li>
+        <li>
+          <strong>Flexible schemas</strong> - Modifying the schema of very large
+          tables is slow, resource-intensive, and blocks rapid iteration
+        </li>
+        <li>
+          <strong>Unnecessary strictness</strong> - Not every application needs
+          the strict data integrity guarantees that relational databases
+          enforce, and relaxing them enables better performance and scalability
+        </li>
+        <li>
+          <strong>Mismatched data models</strong> - Forcing a relational
+          structure on data that is not naturally relational adds unnecessary
+          complexity
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

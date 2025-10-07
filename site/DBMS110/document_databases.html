@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Document Databases</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#document-databases">Document Databases</a>
+            <ul>
+              <li><a href="#definition">Definition</a></li>
+              <li><a href="#example-databases">Example Databases</a></li>
+              <li>
+                <a href="#use-cases">Use Cases</a>
+                <ul>
+                  <li>
+                    <a href="#self-contained-data-structure"
+                      >Self-Contained Data Structure</a
+                    >
+                  </li>
+                  <li><a href="#hierarchical-data">Hierarchical Data</a></li>
+                  <li><a href="#flexible-data">Flexible Data</a></li>
+                  <li><a href="#distributed-data">Distributed Data</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="document-databases">Document Databases</h1>
+      <h2 id="definition">Definition</h2>
+      <p>
+        <strong>Document databases</strong> store data in documents -
+        self-contained units of data with a flexible structure. This is why JSON
+        is often used to represent documents in document databases.
+      </p>
+      <p>
+        In contrast to relational databases, which store data in highly
+        structured tables with strictly defined schemas (table and relationship
+        definitions), document databases may contain hierarchies within one
+        &quot;entity&quot;.
+      </p>
+      <h2 id="example-databases">Example Databases</h2>
+      <figure>
+        <span>
+          <img
+            src="https://api.civo.com/k3s-marketplace/mongodb.png"
+            style="width: 40%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <ul>
+        <li>MongoDB</li>
+        <li>Couchbase</li>
+        <li>Firebase</li>
+        <li>Elasticsearch</li>
+        <li>...</li>
+      </ul>
+      <h2 id="use-cases">Use Cases</h2>
+      <h3 id="self-contained-data-structure">Self-Contained Data Structure</h3>
+      <p>
+        Document databases are designed to encapsulate all of the data for an
+        entity rather than &quot;spreading it out&quot; across multiple tables.
+      </p>
+      <p>Imagine you have a &quot;pet&quot; entity:</p>
+      <p><code>Pet: { id, name, age, breed }</code>.</p>
+      <p>
+        You need a way to track the medications for the pet. In a relational
+        database, you would add a new table with a foreign key to the pet:
+      </p>
+      <p><code>Medications: { id, pet_id, medication_name }</code>.</p>
+      <p><em>Relational Model</em></p>
+      <figure>
+        <span>
+          <img src="images/pet_meds.png" style="width: 416px; height: 162px" />
+        </span>
+      </figure>
+
+      <p><em>Document Model</em></p>
+      <p>
+        In a document database, you can simply add a new property to the
+        document Here is an example pet document:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "id"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Spot"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "age"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "breed"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Lab"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "medications"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: [</span><span style="color:#50A14F;--shiki-dark:#98C379">"Bravecto"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Interceptor"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">]</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <p>
+        Notice how the document can contain hierarchies - the medications list
+        is a property of the pet document, not a separate table.
+      </p>
+      <div class="focusContent demo">
+        <p><strong>Firestore Cloud Console</strong></p>
+        <p>
+          In this demo your instructor will show you one implementation of a
+          document database - Google&#39;s Firestore database.
+        </p>
+        <p>
+          <em>Web Application:</em>
+          <a href="https://stepintopython.web.app/">Step Into Python</a>
+        </p>
+        <p>
+          Show how each exercise is a document in the database, and how
+          attributes map to the UI.
+        </p>
+        <p>
+          <em>Application code:</em>
+          <a
+            href="https://github.com/mpjovanovich/step-into-python/blob/main/src/App.tsx"
+            >App.tsx</a
+          >. See <code>fetchExercises()</code> function
+        </p>
+        <p>Show how a library call is used to fetch the exercises.</p>
+      </div>
+
+      <h3 id="hierarchical-data">Hierarchical Data</h3>
+      <p>As seen above, a document is a collection of attributes and values.</p>
+      <p>
+        Since attributes may have another object as a value, this allows for
+        hierarchical data to be stored in a document:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "id"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Spot"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "age"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "medications"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: [</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "id"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Bravecto"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "dates_taken"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: [</span><span style="color:#50A14F;--shiki-dark:#98C379">"2025-10-06"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"2025-11-01"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">]</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    },</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "id"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "name"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Interceptor"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      "renew_date"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"2025-12-01"</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  ]</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <h3 id="flexible-data">Flexible Data</h3>
+      <p>
+        Document databases are especially useful for data that is not well
+        defined, such as when:
+      </p>
+      <ul>
+        <li>We don&#39;t know which attributes will be present</li>
+        <li>
+          We don&#39;t know whether attributes will likely be added, changed, or
+          removed in the future
+        </li>
+      </ul>
+      <p>
+        In a relational database it&#39;s an expensive operation to modify the
+        table structure, and it runs a higher risk of breaking the application
+        and introducing bugs.
+      </p>
+      <h3 id="distributed-data">Distributed Data</h3>
+      <p>
+        When there is a large volume of data that needs to be available in
+        several regions, document databases can offer better performance than
+        relational databases due to their simpler architecture.
+      </p>
+    </div>
+  </body>
+</html>

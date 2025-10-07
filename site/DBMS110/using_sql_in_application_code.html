@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS110: Using SQL in Application Code</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#using-sql-in-application-code"
+              >Using SQL in Application Code</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="using-sql-in-application-code">Using SQL in Application Code</h1>
+      <p>
+        Up until now we have written SQL in dedicated programs designed for ad
+        hoc queries. However, most applications will need to use SQL in some
+        way.
+      </p>
+      <p>
+        Most programming languages have <strong>libraries</strong> that allow
+        you to connect to a database and execute SQL statements. This can be a
+        relational database or a NoSQL database.
+      </p>
+      <div class="focusContent example">
+        <p><strong>SQL in a Python Application</strong></p>
+        <p>
+          See the
+          <a href="https://github.com/mpjovanovich-IvyTechDemos/python-sql-demo"
+            >Python SQL Demo</a
+          >
+          for an example of how to use SQL in a Python application.
+        </p>
+        <p>
+          To run it you will need to have Python installed on your machine, and
+          install the <code>sqlite3</code> library with the following command:
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">pip</span><span style="color:#50A14F;--shiki-dark:#98C379"> install</span><span style="color:#50A14F;--shiki-dark:#98C379"> sqlite3</span></span></code></pre>
+      </div>
+
+      <p>We will see a NoSQL example in the next section.</p>
+    </div>
+  </body>
+</html>
