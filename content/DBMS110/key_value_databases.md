@@ -35,6 +35,7 @@ The values can be any data type that is supported by the database.
 - Redis
 - DynamoDB
 - Couchbase
+- ...
 
 ## Use Cases
 

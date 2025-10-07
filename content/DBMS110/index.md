@@ -128,8 +128,12 @@ Part I:
 Part II:
 
 - [Using SQL in Application Code](using_sql_in_application_code.html)
+  - \*Possibly move to next lecture
 - [NoSQL Databases](nosql_databases.html)
 - [Key-Value Databases](key_value_databases.html)
+- [Document Databases](document_databases.html)
+- [Column Store Databases](column_store_databases.html)
+- [Graph Databases](graph_databases.html)
 
 ## Module 08: Business Intelligence and Data Analytics
 
