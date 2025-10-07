@@ -131,8 +131,8 @@ Part II:
   - \*Possibly move to next lecture
 - [NoSQL Databases](nosql_databases.html)
 - [Key-Value Databases](key_value_databases.html)
-- [Document Databases](document_databases.html)
-- [Column Store Databases](column_store_databases.html)
+- [Document-Oriented Databases](document_databases.html)
+- [Wide-Column Databases](wide_column_databases.html)
 - [Graph Databases](graph_databases.html)
 
 ## Module 08: Business Intelligence and Data Analytics

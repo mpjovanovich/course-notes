@@ -1,11 +1,11 @@
 ---
-title: Document Databases
+title: Document-Oriented Databases
 course: DBMS110
 ---
 
 ~.toc
 
-- [Document Databases](#document-databases)
+- [Document-Oriented Databases](#document-oriented-databases)
   - [Definition](#definition)
   - [Example Databases](#example-databases)
   - [Use Cases](#use-cases)
@@ -16,11 +16,11 @@ course: DBMS110
 
 /~
 
-# Document Databases
+# Document-Oriented Databases
 
 ## Definition
 
-**Document databases** store data in documents - self-contained units of data with a flexible structure. This is why JSON is often used to represent documents in document databases.
+**Document-oriented databases** store data in documents - self-contained units of data with a flexible structure. This is why JSON is often used to represent documents in document databases.
 
 In contrast to relational databases, which store data in highly structured tables with strictly defined schemas (table and relationship definitions), document databases may contain hierarchies within one "entity".
 
