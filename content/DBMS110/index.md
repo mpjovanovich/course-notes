@@ -137,4 +137,9 @@ Part II:
 
 ## Module 08: Business Intelligence and Data Analytics
 
+- Intro Final Project Milestone 5.
+  - Demonstrate how to pick apart the details of narrative requirements
+- Intro Final Project Milestone 6.
+  - Practice with multi-table JOINs
+
 distributed data systems
