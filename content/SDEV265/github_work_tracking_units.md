@@ -33,11 +33,6 @@ As a [user role], I want [functionality or action] so that [business value].
 - [ ] Criterion 1
 - [ ] Criterion 2
 - [ ] Criterion 3
-
-## Child Tasks
-
-- [ ] #123 Task description
-- [ ] #124 Task description
 ```
 
 **Characteristics:**
@@ -64,16 +59,14 @@ As a [user role], I want [functionality or action] so that [business value].
 
 **Purpose:** Define actionable development work items
 
-**GitHub Implementation:** Child GitHub Issue with `type:task` label
+**GitHub Implementation:** Child GitHub Issue with `type:task` label. If this is related to implementing a User Story it should be created as a sub-issue from within the parent user story issue.
 
 **Content Structure:**
 
 ```markdown
-# Task: [Description]
+# Task
 
 [Brief description of the work to be done]
-
-**Parent Story:** #123 (if applicable)
 ```
 
 **Characteristics:**

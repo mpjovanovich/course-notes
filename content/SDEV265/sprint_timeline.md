@@ -1,5 +1,4 @@
----
-title: Sprint Timeline
+---title: Sprint Timeline
 course: SDEV265
 ---
 
@@ -59,10 +58,9 @@ Please communicate any major deviations from this protocol to those who need to 
 **Activities:**
 
 - Story owner pairs collaborate to analyze their assigned stories
-- Create child GitHub Issues for each development task
+- Create sub-task GitHub Issues for each User Story
 - Ensure tasks align with story acceptance criteria
 - Assign tasks to team members (may include themselves or others)
-- Link child issues to parent user story
 
 **Timing:** Begin after Sprint Transition Meeting; may continue throughout the week as needed
 
