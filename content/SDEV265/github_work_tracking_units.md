@@ -54,6 +54,10 @@ As a [user role], I want [functionality or action] so that [business value].
 
 **Status:** Backlog, In Progress, Completed
 
+**Priority:** NA
+
+**Sprint**: NA
+
 ## Tasks
 
 **Purpose:** Define actionable development work items
@@ -85,4 +89,4 @@ As a [user role], I want [functionality or action] so that [business value].
 
 **Priority:** Low, Medium, High
 
-**Sprint**: sprint-YY-##
+**Sprint**: SYYYY.## (e.g. 20205.01); assigned via "milestone" field
