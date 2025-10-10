@@ -56,7 +56,9 @@ As a [user role], I want [functionality or action] so that [business value].
 
 **Priority:** NA
 
-**Sprint**: NA
+**Level of Effort:** NA
+
+**Sprint**: SYYYY.## (e.g. 20205.01); assigned via "milestone" field. Must be updated if a user story spans sprints.
 
 ## Tasks
 
@@ -88,5 +90,7 @@ As a [user role], I want [functionality or action] so that [business value].
 **Status:** Backlog, In Progress, Ready for Review, Completed
 
 **Priority:** Low, Medium, High
+
+**Level of Effort:** Low, Medium, High
 
 **Sprint**: SYYYY.## (e.g. 20205.01); assigned via "milestone" field
