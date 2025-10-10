@@ -88,7 +88,8 @@ Please communicate any major deviations from this protocol to those who need to 
 **Activities:**
 
 - Quick improvements and small refactoring (< 1 hour, no tracking needed)
-- Larger technical debt projects (create maintenance stories/tasks)
+- Bug fixes (should have related task Issue)
+- Larger technical debt projects (should have related task Issue)
 - Knowledge sharing and documentation
 - Personal planning and prioritization
 
