@@ -17,7 +17,7 @@ course: SDEV265
 
 ## User Stories
 
-**Purpose:** Define client focused requirements and business value
+**Purpose:** Define client focused requirements and business value. To be used for acceptance testing.
 
 **GitHub Implementation:** Parent GitHub Issue with `type:story` label
 
@@ -57,7 +57,7 @@ As a [user role], I want [functionality or action] so that [business value].
 
 ## Tasks
 
-**Purpose:** Define actionable development work items
+**Purpose:** Define actionable development work items. These may be related to completing a user story or may be standalone bug fixes or action items.
 
 **GitHub Implementation:** Child GitHub Issue with `type:task` label. If this is related to implementing a User Story it should be created as a sub-issue from within the parent user story issue.
 
