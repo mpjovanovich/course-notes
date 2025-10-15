@@ -18,7 +18,7 @@ course: DBMS110
 
 # What is Normalization?
 
-**Normalization** is a process of organizing data in a database to reduce redundancy and improve data integrity.
+**Normalization** is the process of organizing data in a database to reduce redundancy and improve data integrity.
 
 ## Motivation
 
@@ -47,7 +47,7 @@ Normalization helps to ensure that the data are consistent and accurate so that:
 - Entities are structured logically and consistently
 - Attributes are defined and used consistently
 - SQL queries provide accurate and consistent results
-- Application logic is correct (no bugs from incorrect data)
+- Application logic is more likely to be correct (no bugs from incorrect data)
 
 ## Analyzing Requirements Documents
 

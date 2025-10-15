@@ -20,7 +20,7 @@ course: DBMS110
 
 ## Definition
 
-**Document-oriented databases** store data in documents - self-contained units of data with a flexible structure. This is why JSON is often used to represent documents in document databases.
+**Document-oriented databases** stores data as self-contained units of data with a flexible structure / schema. This is why JSON is often used to represent documents in document databases.
 
 In contrast to relational databases, which store data in highly structured tables with strictly defined schemas (table and relationship definitions), document databases may contain hierarchies within one "entity".
 

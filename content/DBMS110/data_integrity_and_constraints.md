@@ -51,7 +51,7 @@ In most SQL implementations, `NULL` is the default value - if you do not specify
 
 ## Unique Constraints
 
-A **unique constraint** is used to ensure that the values for an attribute or set of attributes within a table are unique. There may not be duplicate values for the field(s).
+A **`UNIQUE`** constraint is used to ensure that the values for an attribute or set of attributes within a table are unique. There may not be duplicate values for the field(s).
 
 We know that our primary key must be unique, but in many cases there are other attributes that should be unique. This often happens when we are using a surrogate key for an entity, but there are _candidate keys_ that could be used as a natural key instead.
 
