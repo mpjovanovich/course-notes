@@ -59,7 +59,7 @@
       <h2 id="user-stories">User Stories</h2>
       <p>
         <strong>Purpose:</strong> Define client focused requirements and
-        business value
+        business value. To be used for acceptance testing.
       </p>
       <p>
         <strong>GitHub Implementation:</strong> Parent GitHub Issue with
@@ -83,12 +83,7 @@
 <span class="line"></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">-</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [ ] Criterion 1</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">-</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [ ] Criterion 2</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">-</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [ ] Criterion 3</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">## Child Tasks</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">-</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [ ] #123 Task description</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">-</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [ ] #124 Task description</span></span></code></pre>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">-</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [ ] Criterion 3</span></span></code></pre>
       <p><strong>Characteristics:</strong></p>
       <ul>
         <li>Used for prioritization and work in progress tracking</li>
@@ -104,11 +99,24 @@
       </p>
       <p><strong>Label</strong>: story</p>
       <p><strong>Status:</strong> Backlog, In Progress, Completed</p>
+      <p><strong>Priority:</strong> NA</p>
+      <p><strong>Level of Effort:</strong> NA</p>
+      <p>
+        <strong>Sprint</strong>: SYYYY.## (e.g. 20205.01); assigned via
+        &quot;milestone&quot; field. Must be updated if a user story spans
+        sprints.
+      </p>
       <h2 id="tasks">Tasks</h2>
-      <p><strong>Purpose:</strong> Define actionable development work items</p>
+      <p>
+        <strong>Purpose:</strong> Define actionable development work items.
+        These may be related to completing a user story or may be standalone bug
+        fixes or action items.
+      </p>
       <p>
         <strong>GitHub Implementation:</strong> Child GitHub Issue with
-        <code>type:task</code> label
+        <code>type:task</code> label. If this is related to implementing a User
+        Story it should be created as a sub-issue from within the parent user
+        story issue.
       </p>
       <p><strong>Content Structure:</strong></p>
       <pre
@@ -120,11 +128,9 @@
           --shiki-dark: #abb2bf;
         "
         tabindex="0"
-      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75"># Task: </span><span style="color:#986801;--shiki-dark:#E06C75">[</span><span style="color:#4078F2;--shiki-dark:#61AFEF">Description</span><span style="color:#986801;--shiki-dark:#E06C75">]</span></span>
+      ><code><span class="line"><span style="color:#E45649;--shiki-dark:#E06C75"># Task</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">[Brief description of the work to be done]</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#986801;font-weight:bold;--shiki-dark:#D19A66;--shiki-dark-font-weight:inherit">**Parent Story:**</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> #123 (if applicable)</span></span></code></pre>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">[Brief description of the work to be done]</span></span></code></pre>
       <p><strong>Characteristics:</strong></p>
       <ul>
         <li>
@@ -144,7 +150,11 @@
         Completed
       </p>
       <p><strong>Priority:</strong> Low, Medium, High</p>
-      <p><strong>Sprint</strong>: sprint-YY-##</p>
+      <p><strong>Level of Effort:</strong> Low, Medium, High</p>
+      <p>
+        <strong>Sprint</strong>: SYYYY.## (e.g. 20205.01); assigned via
+        &quot;milestone&quot; field
+      </p>
     </div>
   </body>
 </html>
