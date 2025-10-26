@@ -33,63 +33,47 @@
   </head>
   <body class="bg-light">
     <div class="content-wrapper">
-      <ul>
-        <li><a href="#javascript">JavaScript?</a></li>
-        <li>
-          <a href="#where-do-i-write-javascript"
-            >Where do I Write JavaScript?</a
-          >
-        </li>
-        <li>
-          <a href="#the-console-and-debugging">The Console and Debugging</a>
-          <ul>
-            <li>
-              <a href="#developer-tools-and-the-console"
-                >Developer Tools and the Console</a
-              >
-              <ul>
-                <li><a href="#consolelog">console.log()</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#syntax-and-basic-concepts">Syntax and Basic Concepts</a>
-          <ul>
-            <li><a href="#comments">Comments</a></li>
-            <li><a href="#semicolons">Semicolons</a></li>
-            <li><a href="#curly-braces">Curly Braces</a></li>
-            <li><a href="#conventions">Conventions</a></li>
-            <li>
-              <a href="#variables-and-constants">Variables and Constants</a>
-              <ul>
-                <li><a href="#data-types">Data Types</a></li>
-                <li>
-                  <a href="#declaration-and-scope">Declaration and Scope</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#strings">Strings</a>
-              <ul>
-                <li><a href="#concatenation">Concatenation</a></li>
-                <li><a href="#template-literals">Template Literals</a></li>
-              </ul>
-            </li>
-            <li><a href="#arrays">Arrays</a></li>
-            <li><a href="#if-statements">If Statements</a></li>
-            <li>
-              <a href="#loops">Loops</a>
-              <ul>
-                <li><a href="#while">While</a></li>
-                <li><a href="#for">For</a></li>
-                <li><a href="#foreach">Foreach</a></li>
-              </ul>
-            </li>
-            <li><a href="#functions">Functions</a></li>
-          </ul>
-        </li>
-      </ul>
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#syntax-and-basic-concepts">Syntax and Basic Concepts</a>
+            <ul>
+              <li><a href="#comments">Comments</a></li>
+              <li><a href="#consolelog">console.log()</a></li>
+              <li><a href="#semicolons">Semicolons</a></li>
+              <li><a href="#curly-braces">Curly Braces</a></li>
+              <li>
+                <a href="#variables-and-constants">Variables and Constants</a>
+                <ul>
+                  <li><a href="#data-types">Data Types</a></li>
+                  <li>
+                    <a href="#declaration-and-scope">Declaration and Scope</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#strings">Strings</a>
+                <ul>
+                  <li><a href="#concatenation">Concatenation</a></li>
+                  <li><a href="#template-literals">Template Literals</a></li>
+                </ul>
+              </li>
+              <li><a href="#arrays">Arrays</a></li>
+              <li><a href="#if-statements">If Statements</a></li>
+              <li>
+                <a href="#loops">Loops</a>
+                <ul>
+                  <li><a href="#while">While</a></li>
+                  <li><a href="#for">For</a></li>
+                  <li><a href="#foreach">Foreach</a></li>
+                </ul>
+              </li>
+              <li><a href="#functions">Functions</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
       <figure>
         <img
           src="images/javascript_rotten_child.png"
@@ -98,36 +82,6 @@
         />
       </figure>
 
-      <h2 id="developer-tools-and-the-console">
-        Developer Tools and the Console
-      </h2>
-      <p><strong>Developer tools</strong> in browser, hit <code>F12</code>.</p>
-      <p>For playground and exploration:</p>
-      <ul>
-        <li>Go to &quot;Console&quot;</li>
-        <li>Switch to multiline editor mode (book-looking icon)</li>
-        <li>
-          You will need to refresh the page to reset any existing variables.
-        </li>
-      </ul>
-      <p>To debug existing code:</p>
-      <ul>
-        <li>Go to &quot;Debugger&quot;</li>
-        <li>Set breakpoints and step through as needed.</li>
-      </ul>
-      <h3 id="consolelog">console.log()</h3>
-      <p>Use <code>console.log()</code> to print values to the console.</p>
-      <pre
-        class="shiki shiki-themes one-light one-dark-pro"
-        style="
-          background-color: #fafafa;
-          --shiki-dark-bg: #282c34;
-          color: #383a42;
-          --shiki-dark: #abb2bf;
-        "
-        tabindex="0"
-      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> myVariable</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Hello, world!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">myVariable</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
       <h1 id="syntax-and-basic-concepts">Syntax and Basic Concepts</h1>
       <h2 id="comments">Comments</h2>
       <p>Code that is put in comments will not be executed.</p>
@@ -151,6 +105,19 @@
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">*/</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// This is a single-line comment.</span></span></code></pre>
+      <h2 id="consolelog">console.log()</h2>
+      <p>Use <code>console.log()</code> to print values to the console.</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> myVariable</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Hello, world!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">myVariable</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
       <h2 id="semicolons">Semicolons</h2>
       <figure>
         <img
