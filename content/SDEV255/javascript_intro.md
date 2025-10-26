@@ -87,14 +87,6 @@ let y = 6;
 let z = x + y;
 ```
 
-But... if you don't use them JS will try to add them for you when the code runs.
-
-This is called **automatic semicolon insertion (ASI)**.
-
-**_Prof note:_** my code editor (VS Code) will not let me omit semicolons in the notes, so we'll demo this without semicolons in class.
-
-**Takeaway**: Always use semicolons. Don't rely on ASI.
-
 ## Curly Braces
 
 JavaScript uses curly braces to denote blocks of code.
@@ -102,29 +94,13 @@ JavaScript uses curly braces to denote blocks of code.
 (Unlike Python, which uses indentation.)
 
 ```javascript
-// This is an arbitrary block of code just to prove the point.
-// We're normally talking about if statements, loops, functions, etc.
-{
-  let x = 5;
-/~
-print(x); // Error: x is not defined
+let x = 5;
+if (x > 0) {
+  console.log("x is positive");
+}
 ```
 
-## Conventions
-
-See [Google's JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
-
-No hard rules, but there are some common conventions. Usually:
-
-- camelCase for variable and function names.
-- All caps for constants.
-- Two spaces for indentation.
-- The `{` goes on the same line as the block that it belongs with.
-- 80 character line limit before wrapping.
-
-A **linter** is a tool that analyzes your code and reports any errors or warnings.
-
-Consider using a linter to help you follow conventions.
+We still want indentation to make the code more readable.
 
 ## Variables and Constants
 
@@ -217,6 +193,7 @@ let total = `The total is $${price * quantity}`;
 
 ```javascript
 let myArray = ["Bingo", "Rolly", "Spot"];
+console.log(myArray[0]); // Bingo
 ```
 
 ## If Statements
@@ -230,7 +207,7 @@ if (condition1) {
   // code to be executed if condition1 is false and condition2 is true
 } else {
   // code to be executed if both condition1 and condition2 are false
-/~
+}
 ```
 
 ## Loops
@@ -242,7 +219,7 @@ let i = 0;
 while (i < 10) {
   console.log(i);
   i++;
-/~
+}
 ```
 
 ### For
@@ -250,13 +227,15 @@ while (i < 10) {
 ```javascript
 for (let i = 0; i < 10; i++) {
   console.log(i);
-/~
+}
 ```
 
 ### Foreach
 
 ```javascript
 let myArray = ["Bingo", "Rolly", "Spot"];
+
+// Arrow function syntax
 myArray.forEach((item) => {
   console.log(item);
 });
@@ -268,16 +247,16 @@ Basic function syntax:
 
 ```javascript
 function myFunction() {
-  // code to be executed
-/~
+  console.log("Hello, JavaScript!");
+}
 ```
 
 With arguments:
 
 ```javascript
 function myFunction(arg1, arg2) {
-  // code to be executed
-/~
+  console.log(`You passed in ${arg1} and ${arg2}.`);
+}
 ```
 
 With return value:
@@ -286,5 +265,5 @@ With return value:
 function myFunction(arg1, arg2) {
   returnValue = arg1 + arg2;
   return returnValue;
-/~
+}
 ```

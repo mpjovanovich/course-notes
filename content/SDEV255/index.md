@@ -3,6 +3,8 @@ title: Home
 course: SDEV255
 ---
 
+~.toc
+
 - [Announcements](#announcements)
 - [Module 01](#module-01)
   - [Day 1](#day-1)
@@ -28,201 +30,31 @@ course: SDEV255
   - [Day 15](#day-15)
   - [Overflow Topics](#overflow-topics)
 
-# Announcements
+/~
+
+# SDEV 255
+
+## Announcements
 
 ![Empty](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1DRSnSPeoqsbaeBITkzKYK8rwadli-d-JcuREzOwcnx8-Zby_iVfQxargkOG1yv45TWg&usqp=CAU)
 
-- Have a great Spring Break!
-
-# Module 01
-
-## Day 1
-
-No class - MLK Day
-
-## Day 2
-
-[Computer Orientation](../common/computer_orientation.html?course=SDEV255)
-
-[Intro to Full Stack Development](intro_full_stack_development.html)
-
-[Development Tools and Git](../common/git.html?course=SDEV255)
-
-Review suggested workflow: VS Code, Live Server, Browser Dev Tools
-
-# Module 02
-
-## Day 3
-
-[JavaScript: Intro](javascript_intro.html)
-
-# Module 03
-
-## Day 4
-
-[JavaScript: Manipulating the DOM](javascript_manipulating_dom.html)
-
-[JavaScript: Events](javascript_events.html)
-
-# Module 04
-
-## Day 5
-
-[Understanding URLs](urls.html)
-
-Using and configuring XAMPP
-
-Accessing the book material
-
-[PHP: Intro, Syntax, and Data Types](php_intro.html)
-
-[PHP: Decisions and Loops](php_decisions_loops.html)
-
-[PHP: Functions](php_functions.html)
-
-# Module 05
-
-## Day 6
-
-[PHP: Classes and Objects](php_classes_objects.html)
-
-# Module 06
-
-## Day 7
-
-[PHP: Include and Require](php_include_require.html)
-
-[PHP: Ternary and Null Coalescing Operators](php_ternary_null_coalescing_operators.html)
-
-[PHP: Superglobals](php_superglobal_arrays.html)
-
-[PHP: GET](php_GET.html)
-
-## Day 8
-
-[Web Forms](../common/html_forms.html?course=SDEV255)
-
-[PHP: Exception Handling](php_exception_handling.html)
-
-# Module 07
-
-## Day 9
-
-[PHP: POST](php_POST.html)
-
-[PHP: Input Sanitization](php_input_sanitization.html)
-
-[PHP: Input Validation](php_input_validation.html)
-
-[PHP: Filter Functions](php_filter_functions.html)
-
-JS Async and Defer - https://i.stack.imgur.com/wfL82.png
-
-## Day 10
-
-Case Study: High DOP Multi-layer-cached Application for Forecasting and Data Migration
-
-<!--
-- Client needs end of day:
-    - Aggregation reports for meter usage by region
-    - Subset of data migrated to client data repository
-- Strategy 1: Calculation Level Caching
-    - During calc of forecast, an hourly time-zone mapping data structure for meter date range is used repeatedly
-    - Fetch once, cache for this meter for duration of forecast
-- Strategy 2: Application Level Caching
-    - Weather data (shared among multiple meters), cache it for all of them until...
-    - Pricing data (shared among multiple meters), cache it for all of them until...
-    - Retention policy:
-      - Weather changes (daily)
-      - Pricing changes (daily)
-      - Meter usage (monthly)
-- Strategy 3: Parallel processing
-    - Many instances of app running, each pulling off meters to forecast
-    - Put meters that share attributes, on the same application instance so they can share cache
-    - Use partitioning to spread the load within the shared database to avoid contention
-- Strategy 4: Incremental forecasting
-    - Weather data only really changes for next week or so
-    - Forecast requirement may be for several years
-    - Daily forecast for next week
-    - Weekend forecast for full range
--->
-
-[Client Side State Management](state_management.html)
-
-JSON
-
-## Day 11
-
-[Session Storage](sessions.html)
-
-[HTTP Headers](php_http_headers.html)
-
-[HTTP Status Codes](php_http_status_codes.html)
-
-[PHP: POST](php_POST.html)
-
-[PHP: Redirect After POST](php_redirect_after_post.html)
-
-## Day 12
-
-Intro Final Project
-
-Relational Database Management Systems (RDBMS)
-
-SQLLite (local database)
-
-SQL
-
-- DDL
-  - Create database
-  - Create table
-    - Data types
-    - Null constraints
-    - Primary key constraints
-  - Drop table
-- CRUD
-  - Create (INSERT)
-  - Read (SELECT)
-    - Filtering (WHERE)
-    - Sorting (ORDER BY)
-  - Update (UPDATE)
-  - Delete (DELETE)
-- Relations and Normalization
-  - Foreign keys
-  - [Flat (unnormalized)](examples/dog_schema_flat.csv)
-  - [Partially normalized](examples/dog_schema_partially_normalized.sql)
-  - [Fully normalized (3NF)](examples/dog_schema_partially_normalized.sql)
-
-## Day 13
-
-SQL Joins
-
-[Interfacing with a Database in PHP](php_database.html)
-
-## Day 14
-
-<!-- Populating Application Fields from a Database -->
-
-<!-- [Populating Application Fields from a Database](populating_fields.html) -->
-
-[SQL Prepared Statements](php_prepared_statements.html)
-
-<!-- Lab: Both of the above. Make this extremely simple. -->
-
-## Day 15
-
-Individual meetings
-
-## Overflow Topics
-
-<!-- [Function Chaining](function_chaining.html) -->
-
-[JSON](json.html)
-
-[Asyncronous JavaScript](javascript_async.html)
-
-[Javascript Fetch API](javascript_fetch.html)
-
-Tying it All Together: Full Stack Application Walkthrough
-
-<!-- Lab: See existing -->
+- ...
+
+## Module 00: Overview of Course Technologies
+
+- Intro to course
+  - Syllabus and policy review
+  - Introductions; tech background review
+  - Do we want a Discord server?
+- Create GitHub account if needed
+- First lab:
+  - GH Classrooms
+  - What are Codespaces?
+  - [JavaScript Intro](javascript_intro.html)
+  - Future labs may switch to prerecorded videos, allowing students to watch at their own pace. After lecture we'll have "open lab" time for questions on recorded content.
+
+For next time:
+
+- First lab due Wednesday, but there will be time for questions next lab.
+- Read the resources for the week
+- Practice JS. Try porting old Python assignments to JS.
