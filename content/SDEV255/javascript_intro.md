@@ -3,16 +3,13 @@ title: Intro to JavaScript
 course: SDEV255
 ---
 
-- [JavaScript?](#javascript)
-- [Where do I Write JavaScript?](#where-do-i-write-javascript)
-- [The Console and Debugging](#the-console-and-debugging)
-  - [Developer Tools and the Console](#developer-tools-and-the-console)
-    - [console.log()](#consolelog)
+~.toc
+
 - [Syntax and Basic Concepts](#syntax-and-basic-concepts)
   - [Comments](#comments)
+  - [console.log()](#consolelog)
   - [Semicolons](#semicolons)
   - [Curly Braces](#curly-braces)
-  - [Conventions](#conventions)
   - [Variables and Constants](#variables-and-constants)
     - [Data Types](#data-types)
     - [Declaration and Scope](#declaration-and-scope)
@@ -27,33 +24,11 @@ course: SDEV255
     - [Foreach](#foreach)
   - [Functions](#functions)
 
+/~
+
 <figure>
  <img src="images/javascript_rotten_child.png" alt="" style="width: 40%;height: auto;">
 </figure>
-
-## Developer Tools and the Console
-
-**Developer tools** in browser, hit `F12`.
-
-For playground and exploration:
-
-- Go to "Console"
-- Switch to multiline editor mode (book-looking icon)
-- You will need to refresh the page to reset any existing variables.
-
-To debug existing code:
-
-- Go to "Debugger"
-- Set breakpoints and step through as needed.
-
-### console.log()
-
-Use `console.log()` to print values to the console.
-
-```javascript
-const myVariable = "Hello, world!";
-console.log(myVariable);
-```
 
 # Syntax and Basic Concepts
 
@@ -71,6 +46,15 @@ Whoa!
 */
 
 // This is a single-line comment.
+```
+
+## console.log()
+
+Use `console.log()` to print values to the console.
+
+```javascript
+const myVariable = "Hello, world!";
+console.log(myVariable);
 ```
 
 ## Semicolons
