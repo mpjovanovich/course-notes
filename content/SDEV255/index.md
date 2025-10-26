@@ -24,7 +24,8 @@ course: SDEV255
 - Intro to course
   - Syllabus and policy review
   - Introductions; tech background review
-- Create GitHub account if needed
+  - Create GitHub account if needed
+- What is this course about?
 - First lab:
   - GH Classrooms
   - What are Codespaces?
@@ -36,4 +37,4 @@ For next time:
 
 - First lab due Wednesday, but there will be time for questions next lab.
 - Read the resources for the week
-- Practice JS. Try porting old Python assignments to JS.
+- Practice JS. Try porting old Python assignments to JS!
