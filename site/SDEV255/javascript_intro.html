@@ -176,21 +176,6 @@
       ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> y</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 6</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> z</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#E06C75"> y</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
-      <p>
-        But... if you don&#39;t use them JS will try to add them for you when
-        the code runs.
-      </p>
-      <p>
-        This is called <strong>automatic semicolon insertion (ASI)</strong>.
-      </p>
-      <p>
-        <strong><em>Prof note:</em></strong> my code editor (VS Code) will not
-        let me omit semicolons in the notes, so we&#39;ll demo this without
-        semicolons in class.
-      </p>
-      <p>
-        <strong>Takeaway</strong>: Always use semicolons. Don&#39;t rely on ASI.
-      </p>
       <h2 id="curly-braces">Curly Braces</h2>
       <p>JavaScript uses curly braces to denote blocks of code.</p>
       <p>(Unlike Python, which uses indentation.)</p>
@@ -203,35 +188,11 @@
           --shiki-dark: #abb2bf;
         "
         tabindex="0"
-      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// This is an arbitrary block of code just to prove the point.</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// We're normally talking about if statements, loops, functions, etc.</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  let</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span>
-<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">x</span><span style="color:#383A42;--shiki-dark:#ABB2BF">); </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Error: x is not defined</span></span></code></pre>
-      <h2 id="conventions">Conventions</h2>
-      <p>
-        See
-        <a href="https://google.github.io/styleguide/jsguide.html"
-          >Google&#39;s JavaScript Style Guide</a
-        >
-      </p>
-      <p>No hard rules, but there are some common conventions. Usually:</p>
-      <ul>
-        <li>camelCase for variable and function names.</li>
-        <li>All caps for constants.</li>
-        <li>Two spaces for indentation.</li>
-        <li>
-          The <code>{</code> goes on the same line as the block that it belongs
-          with.
-        </li>
-        <li>80 character line limit before wrapping.</li>
-      </ul>
-      <p>
-        A <strong>linter</strong> is a tool that analyzes your code and reports
-        any errors or warnings.
-      </p>
-      <p>Consider using a linter to help you follow conventions.</p>
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#383A42;--shiki-dark:#E06C75">x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> ></span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">  console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"x is positive"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <p>We still want indentation to make the code more readable.</p>
       <h2 id="variables-and-constants">Variables and Constants</h2>
       <h3 id="data-types">Data Types</h3>
       <p>JavaScript is a dynamically typed language.</p>
@@ -378,7 +339,8 @@
           --shiki-dark: #abb2bf;
         "
         tabindex="0"
-      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> myArray</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [</span><span style="color:#50A14F;--shiki-dark:#98C379">"Bingo"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Rolly"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Spot"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">];</span></span></code></pre>
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> myArray</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [</span><span style="color:#50A14F;--shiki-dark:#98C379">"Bingo"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Rolly"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Spot"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">];</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">myArray</span><span style="color:#383A42;--shiki-dark:#ABB2BF">[</span><span style="color:#986801;--shiki-dark:#D19A66">0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">]); </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Bingo</span></span></code></pre>
       <h2 id="if-statements">If Statements</h2>
       <p>If, else if, else:</p>
       <pre
@@ -396,7 +358,7 @@
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // code to be executed if condition1 is false and condition2 is true</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">} </span><span style="color:#A626A4;--shiki-dark:#C678DD">else</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // code to be executed if both condition1 and condition2 are false</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span></code></pre>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
       <h2 id="loops">Loops</h2>
       <h3 id="while">While</h3>
       <pre
@@ -412,7 +374,7 @@
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">while</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#383A42;--shiki-dark:#E06C75">i</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> &#x3C;</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">  console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">i</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">  i</span><span style="color:#0184BC;--shiki-dark:#56B6C2">++</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span></code></pre>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
       <h3 id="for">For</h3>
       <pre
         class="shiki shiki-themes one-light one-dark-pro"
@@ -425,7 +387,7 @@
         tabindex="0"
       ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">for</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> i</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">; </span><span style="color:#383A42;--shiki-dark:#E06C75">i</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> &#x3C;</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">; </span><span style="color:#383A42;--shiki-dark:#E06C75">i</span><span style="color:#0184BC;--shiki-dark:#56B6C2">++</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">  console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">i</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span></code></pre>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
       <h3 id="foreach">Foreach</h3>
       <pre
         class="shiki shiki-themes one-light one-dark-pro"
@@ -437,6 +399,8 @@
         "
         tabindex="0"
       ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> myArray</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [</span><span style="color:#50A14F;--shiki-dark:#98C379">"Bingo"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Rolly"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"Spot"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Arrow function syntax</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">myArray</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">forEach</span><span style="color:#383A42;--shiki-dark:#ABB2BF">((</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">item</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) </span><span style="color:#A626A4;--shiki-dark:#C678DD">=></span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">  console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">item</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">});</span></span></code></pre>
@@ -452,8 +416,8 @@
         "
         tabindex="0"
       ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">function</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> myFunction</span><span style="color:#383A42;--shiki-dark:#ABB2BF">() {</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // code to be executed</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span></code></pre>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">  console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Hello, JavaScript!"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
       <p>With arguments:</p>
       <pre
         class="shiki shiki-themes one-light one-dark-pro"
@@ -465,8 +429,8 @@
         "
         tabindex="0"
       ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">function</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> myFunction</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">arg1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">arg2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  // code to be executed</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span></code></pre>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">  console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">`You passed in </span><span style="color:#CA1243;--shiki-dark:#C678DD">${</span><span style="color:#383A42;--shiki-dark:#E06C75">arg1</span><span style="color:#CA1243;--shiki-dark:#C678DD">}</span><span style="color:#50A14F;--shiki-dark:#98C379"> and </span><span style="color:#CA1243;--shiki-dark:#C678DD">${</span><span style="color:#383A42;--shiki-dark:#E06C75">arg2</span><span style="color:#CA1243;--shiki-dark:#C678DD">}</span><span style="color:#50A14F;--shiki-dark:#98C379">.`</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
       <p>With return value:</p>
       <pre
         class="shiki shiki-themes one-light one-dark-pro"
@@ -480,7 +444,7 @@
       ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">function</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> myFunction</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">arg1</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">arg2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#E06C75">  returnValue</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#383A42;--shiki-dark:#E06C75"> arg1</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#E06C75"> arg2</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  return</span><span style="color:#383A42;--shiki-dark:#E06C75"> returnValue</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;!--</span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">&#x3C;/</span><span style="color:#383A42;--shiki-dark:#E06C75">div</span><span style="color:#0184BC;--shiki-dark:#56B6C2">></span><span style="color:#986801;--shiki-dark:#E5C07B">DOTMARK_DIV</span><span style="color:#0184BC;--shiki-dark:#56B6C2">--></span></span></code></pre>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
     </div>
   </body>
 </html>
