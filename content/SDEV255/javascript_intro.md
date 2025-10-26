@@ -26,10 +26,6 @@ course: SDEV255
 
 /~
 
-<figure>
- <img src="images/javascript_rotten_child.png" alt="" style="width: 40%;height: auto;">
-</figure>
-
 # Syntax and Basic Concepts
 
 ## Comments
