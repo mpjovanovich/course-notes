@@ -117,23 +117,38 @@ let r = 5;
 let area = PI * r * r;
 ```
 
-In older JS you may see `var` used instead of `let`. `var` is function-scoped, while `let` is block-scoped.
+~.focusContent.lookout
+
+**What about `var`?**
+
+In older JS you may see `var` used instead of `let`.
+
+- `var` is function-scoped: accessible within the function it is declared in, as well as anything within the function (even "parent" blocks).
 
 ```javascript
-var x = 5;
 if (true) {
   var x = 10;
 }
-console.log(x); // 10
+
+// 10
+console.log(x);
 ```
 
+- `let` is block-scoped: accessible within the block (parentheses) it is declared in, as well as anything nested within the block.
+
 ```javascript
-let x = 5;
 if (true) {
   let x = 10;
 }
-console.log(x); // 5
+
+// Error! "x" is not defined. Which is probably what we want
+// If we need the "x" outside of the if block, we should declare it outside of the if block.
+console.log(x);
 ```
+
+For modern JS, we should use `let` or `const` instead of `var`. They behave consistently with other programming languages.
+
+/~
 
 **Takeaway:** Use `const` for values that will not change, and `let` for values that will change.
 
