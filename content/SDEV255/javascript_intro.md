@@ -80,8 +80,6 @@ if (x > 0) {
 }
 ```
 
-test
-
 We still want indentation to make the code more readable.
 
 ## Variables and Constants
