@@ -80,6 +80,8 @@ if (x > 0) {
 }
 ```
 
+test
+
 We still want indentation to make the code more readable.
 
 ## Variables and Constants
@@ -123,7 +125,7 @@ In older JS you may see `var` used instead of `let`. `var` is function-scoped, w
 var x = 5;
 if (true) {
   var x = 10;
-/~
+}
 console.log(x); // 10
 ```
 
@@ -131,7 +133,7 @@ console.log(x); // 10
 let x = 5;
 if (true) {
   let x = 10;
-/~
+}
 console.log(x); // 5
 ```
 
