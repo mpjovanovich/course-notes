@@ -199,39 +199,66 @@
       ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> PI</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 3.14</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> r</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> area</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#E5C07B"> PI</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> *</span><span style="color:#383A42;--shiki-dark:#E06C75"> r</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> *</span><span style="color:#383A42;--shiki-dark:#E06C75"> r</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
-      <p>
-        In older JS you may see <code>var</code> used instead of
-        <code>let</code>. <code>var</code> is function-scoped, while
-        <code>let</code> is block-scoped.
-      </p>
-      <pre
-        class="shiki shiki-themes one-light one-dark-pro"
-        style="
-          background-color: #fafafa;
-          --shiki-dark-bg: #282c34;
-          color: #383a42;
-          --shiki-dark: #abb2bf;
-        "
-        tabindex="0"
-      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">var</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#986801;--shiki-dark:#D19A66">true</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+      <div class="focusContent lookout">
+        <p>
+          <strong>What about <code>var</code>?</strong>
+        </p>
+        <p>
+          In older JS you may see <code>var</code> used instead of
+          <code>let</code>.
+        </p>
+        <ul>
+          <li>
+            <code>var</code> is function-scoped: accessible within the function
+            it is declared in, as well as anything within the function (even
+            &quot;parent&quot; blocks).
+          </li>
+        </ul>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#986801;--shiki-dark:#D19A66">true</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  var</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">x</span><span style="color:#383A42;--shiki-dark:#ABB2BF">); </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 10</span></span></code></pre>
-      <pre
-        class="shiki shiki-themes one-light one-dark-pro"
-        style="
-          background-color: #fafafa;
-          --shiki-dark-bg: #282c34;
-          color: #383a42;
-          --shiki-dark: #abb2bf;
-        "
-        tabindex="0"
-      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">let</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#986801;--shiki-dark:#D19A66">true</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 10</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">x</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+        <ul>
+          <li>
+            <code>let</code> is block-scoped: accessible within the block
+            (parentheses) it is declared in, as well as anything nested within
+            the block.
+          </li>
+        </ul>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#986801;--shiki-dark:#D19A66">true</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">  let</span><span style="color:#383A42;--shiki-dark:#E06C75"> x</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">x</span><span style="color:#383A42;--shiki-dark:#ABB2BF">); </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// 5</span></span></code></pre>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// Error! "x" is not defined. Which is probably what we want</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">// If we need the "x" outside of the if block, we should declare it outside of the if block.</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#E5C07B">console</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#4078F2;--shiki-dark:#61AFEF">log</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">x</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span></code></pre>
+        <p>
+          For modern JS, we should use <code>let</code> or
+          <code>const</code> instead of <code>var</code>. They behave
+          consistently with other programming languages.
+        </p>
+      </div>
+
       <p>
         <strong>Takeaway:</strong> Use <code>const</code> for values that will
         not change, and <code>let</code> for values that will change.
