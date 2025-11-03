@@ -34,11 +34,12 @@ showBreadcrumb: false
  </figcaption>
 </figure>
 
-<!-- ## Announcements
+## Announcements
 
-- Walkthrough - first "Step Into Python" assignment. Common issues:
-  - If you don't see exercises after login, refresh the page
-  - If a button doesn't work, click it again -->
+- Is Darius a student?
+- Make sure you can access the textbook
+- Sign up for midterm and final exams
+  - Must be at an Ivy Tech testing center!
 
 ## Common Resources
 
