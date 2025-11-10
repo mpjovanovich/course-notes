@@ -267,6 +267,20 @@ VISIT(root)
       ><code><span class="line"><span>f(x) = x + 1</span></span>
 <span class="line"><span>g(x) = x * 2</span></span></code></pre>
       <p>An example of function composition is <code>f(g(x))</code>.</p>
+      <p>
+        We can use an AST for each function expression, then combine them into
+        larger expressions:
+      </p>
+      <figure>
+        <span>
+          <img src="images/function_composition_subtrees.png" style="" />
+        </span>
+      </figure>
+
+      <p>
+        With function composition, the &quot;x&quot; in one function will be
+        replaced by a whole function expression.
+      </p>
       <div class="focusContent example">
         <p>Given the functions:</p>
         <pre
@@ -282,9 +296,14 @@ VISIT(root)
 <span class="line"><span>g(x) = x * 2</span></span></code></pre>
         <ol>
           <li>
-            <p>Draw the syntax tree for <code>f( g(3) )</code>.</p>
+            <p>
+              Show the combined AST using the expressions for the two functions
+              above.
+            </p>
           </li>
-          <li><p>Evaluate the expression.</p></li>
+          <li>
+            <p>Evaluate the expression <code>f(g(3))</code>.</p>
+          </li>
         </ol>
         <pre
           class="shiki shiki-themes one-light one-dark-pro"
@@ -315,7 +334,15 @@ VISIT(root)
           tabindex="0"
         ><code><span class="line"><span>f(x) = x + 1</span></span>
 <span class="line"><span>g(x) = x * 2</span></span></code></pre>
-        <p>Evaluate the following expressions:</p>
+        <ol>
+          <li>
+            <p>
+              Show the combined ASTs using the expressions for the two functions
+              above.
+            </p>
+          </li>
+          <li><p>Evaluate the expressions:</p></li>
+        </ol>
         <pre
           class="shiki shiki-themes one-light one-dark-pro"
           style="
