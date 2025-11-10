@@ -158,6 +158,16 @@ g(x) = x * 2
 
 An example of function composition is `f(g(x))`.
 
+We can use an AST for each function expression, then combine them into larger expressions:
+
+<figure>
+    <span>
+        <img src="images/function_composition_subtrees.png" style="">
+    </span>
+</figure>
+
+With function composition, the "x" in one function will be replaced by a whole function expression.
+
 ~.focusContent.example
 
 Given the functions:
@@ -167,9 +177,9 @@ f(x) = x + 1
 g(x) = x * 2
 ```
 
-1. Draw the syntax tree for `f( g(3) )`.
+1. Show the combined AST using the expressions for the two functions above.
 
-2. Evaluate the expression.
+2. Evaluate the expression `f(g(3))`.
 
 ```
 f( g( 3 ) )
@@ -190,7 +200,9 @@ f(x) = x + 1
 g(x) = x * 2
 ```
 
-Evaluate the following expressions:
+1. Show the combined ASTs using the expressions for the two functions above.
+
+2. Evaluate the expressions:
 
 ```
 1) g( f(3) )
