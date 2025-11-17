@@ -36,7 +36,11 @@ showBreadcrumb: false
 
 ## Announcements
 
-- ...
+- Check your graded assignments for feedback
+- There is no lecture on Wednesday
+- Review most missed, p4 truth tables assignment
+- Flowcharting assignment is due tonight; let's do a quick review...
+- TODO after lecture: review for midterm
 
 ## Common Resources
 
