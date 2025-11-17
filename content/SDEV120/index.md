@@ -36,10 +36,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Is Darius a student?
-- Make sure you can access the textbook
-- Sign up for midterm and final exams
-  - Must be at an Ivy Tech testing center!
+- ...
 
 ## Common Resources
 
