@@ -40,6 +40,7 @@ showBreadcrumb: false
 - There is no lecture on Wednesday
 - Review most missed, p4 truth tables assignment
 - Flowcharting assignment is due tonight; let's do a quick review...
+  - Instructor will give informal walkthrough since midterm is approaching
 - TODO after lecture: review for midterm
 
 ## Common Resources
