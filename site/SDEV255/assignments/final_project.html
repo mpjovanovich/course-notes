@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../../assets/scripts/focus_content.js" defer></script>
+    <script src="./../../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../../assets/css/bootstrap-icons.css" />
+    <script src="./../../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <h1 id="final-project-item-assignment-application">
+        Final Project: Item Assignment Application
+      </h1>
+      <h2 id="overview">Overview</h2>
+      <p>
+        You will build a full-stack web application that allows administrators
+        to assign items to clients, and allows all users to view their assigned
+        items. This application demonstrates your ability to integrate
+        authentication, cookie management, server-side rendering, client-side
+        JavaScript, and database operations.
+      </p>
+      <h3 id="example-domains">Example Domains</h3>
+      <p>
+        You will customize the provided database schema to fit a domain of your
+        choice. Consider domains such as:
+      </p>
+      <ul>
+        <li>Patient Medication Tracker</li>
+        <li>Exercise Coach Assignment System</li>
+        <li>Employee Project Assignments</li>
+        <li>Site Inventory Management</li>
+        <li>Any other domain where items are assigned to users</li>
+      </ul>
+      <hr />
+      <h2 id="user-stories">User Stories</h2>
+      <h3 id="as-a-client-user">As a Client User</h3>
+      <ul>
+        <li>
+          I want to log in with my credentials so I can access my assigned items
+        </li>
+        <li>
+          I want to view all items assigned to me so I know what I&#39;m
+          responsible for
+        </li>
+        <li>I want to see appropriate error messages if my login fails</li>
+      </ul>
+      <h3 id="as-an-admin-user">As an Admin User</h3>
+      <ul>
+        <li>
+          I want to log in with my admin credentials so I can manage assignments
+        </li>
+        <li>
+          I want to view all clients and their assigned items so I can see the
+          current state of the system
+        </li>
+        <li>
+          I want to assign items to clients so they know what they&#39;re
+          responsible for
+        </li>
+        <li>
+          I want to see immediate feedback when I successfully assign an item
+        </li>
+        <li>
+          I want to see my own assigned items just like a regular client can
+        </li>
+      </ul>
+      <hr />
+      <h2 id="technical-requirements">Technical Requirements</h2>
+      <h3 id="technology-stack">Technology Stack</h3>
+      <ul>
+        <li><strong>Backend</strong>: Express.js with EJS templating</li>
+        <li>
+          <strong>Database</strong>: SQLite (initialization script provided)
+        </li>
+        <li><strong>Client-Side</strong>: Vanilla JavaScript with Fetch API</li>
+      </ul>
+      <p>
+        You should be able to leverage code from course labs to build this
+        application.
+      </p>
+      <hr />
+      <h2 id="database-schema">Database Schema</h2>
+      <p>
+        You will receive a complete database initialization script containing
+        three tables:
+      </p>
+      <ol>
+        <li>
+          <strong>User table</strong> - stores user credentials and role
+          information
+        </li>
+        <li>
+          <strong>Item table</strong> - stores the primary entities (items) that
+          can be assigned
+        </li>
+        <li>
+          <strong>Assignment table</strong> - associative entity linking users
+          to items
+        </li>
+      </ol>
+      <p>
+        <strong>Your Task</strong>: Rename tables and columns to match your
+        chosen domain while keeping the structure intact. All foreign key
+        constraints and relationships must remain functional.
+      </p>
+      <hr />
+      <h2 id="authentication--authorization">Authentication & Authorization</h2>
+      <h3 id="credentials">Credentials</h3>
+      <ul>
+        <li>
+          Use the instructor-provided hardcoded credentials (1 admin user, 3
+          client users)
+        </li>
+        <li>
+          Token secret will be provided
+          <ul>
+            <li>
+              <strong>Note</strong>: In production applications, secrets should
+              NEVER be committed to version control. This is for academic
+              purposes only.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3 id="session-management">Session Management</h3>
+      <ul>
+        <li>
+          Implement token-based authentication using JSON Web Tokens (JWTs)
+        </li>
+        <li>Store user ID and role in browser cookie</li>
+        <li><strong>Logout</strong>: No logout currently required.</li>
+      </ul>
+      <h3 id="role-based-access-control-page-level">
+        Role-Based Access Control (Page Level)
+      </h3>
+      <ul>
+        <li>Two roles: <code>admin</code> and <code>client</code></li>
+        <li>
+          All authenticated users initially land on <code>/my-items</code>
+        </li>
+        <li>
+          Conditionally render navigation link to
+          <code>/assign-items</code> only for admin users
+        </li>
+        <li>Protect routes as specified in the Routes section below</li>
+      </ul>
+      <hr />
+      <h2 id="routes--endpoints">Routes & Endpoints</h2>
+      <h3 id="get-login">`GET /login`</h3>
+      <p><strong>Description</strong>: Displays the login page</p>
+      <p><strong>Access</strong>: Public (unauthenticated users only)</p>
+      <p><strong>Response</strong>:</p>
+      <ul>
+        <li><strong>200 OK</strong>: Render login page with form</li>
+        <li>
+          <strong>Redirect to <code>/my-items</code></strong
+          >: If user is already authenticated
+        </li>
+      </ul>
+      <p><strong>Page Requirements</strong>:</p>
+      <ul>
+        <li>Login form with username and password fields</li>
+        <li>HTML5 client-side validation (required fields)</li>
+        <li>Error message display area (hidden by default)</li>
+      </ul>
+      <hr />
+      <h3 id="post-login">`POST /login`</h3>
+      <p>
+        <strong>Description</strong>: Processes login credentials and creates
+        session
+      </p>
+      <p><strong>Access</strong>: Public</p>
+      <p><strong>Request Format</strong>:</p>
+      <ul>
+        <li>Content-Type: <code>application/x-www-form-urlencoded</code></li>
+        <li>Body: <code>username</code> and <code>password</code> fields</li>
+        <li>Must use proper HTML encoding</li>
+      </ul>
+      <p><strong>Response</strong>:</p>
+      <ul>
+        <li>
+          <strong>302 Redirect to <code>/my-items</code></strong
+          >: On successful authentication
+        </li>
+        <li>
+          <strong>401 Unauthorized</strong>: Invalid credentials
+          <ul>
+            <li>
+              Re-render login page with error message: &quot;Invalid username or
+              password&quot;
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>400 Bad Request</strong>: Missing username or password
+          <ul>
+            <li>
+              Re-render login page with error message: &quot;Username and
+              password are required&quot;
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Implementation Notes</strong>:</p>
+      <ul>
+        <li>Use HTTP form submission (NOT Fetch API)</li>
+        <li>Perform server-side validation</li>
+        <li>
+          Compare credentials against instructor-provided hardcoded values
+        </li>
+      </ul>
+      <hr />
+      <h3 id="get-my-items">`GET /my-items`</h3>
+      <p>
+        <strong>Description</strong>: Displays all items assigned to the
+        logged-in user
+      </p>
+      <p>
+        <strong>Access</strong>: All authenticated users (both admin and client)
+      </p>
+      <p><strong>Response</strong>:</p>
+      <ul>
+        <li>
+          <strong>200 OK</strong>: Server-side rendered page displaying
+          user&#39;s assigned items
+        </li>
+        <li>
+          <strong>302 Redirect to <code>/login</code></strong
+          >: If not authenticated
+        </li>
+      </ul>
+      <p><strong>Page Requirements</strong>:</p>
+      <ul>
+        <li>
+          Display all items assigned to the logged-in user (public fields only)
+        </li>
+        <li>Use token to determine which user is logged in</li>
+        <li>Display items in a clear, readable format (list or table)</li>
+        <li>
+          Admin users see only their own assigned items on this page (admins
+          behave as regular users here)
+        </li>
+        <li>
+          Include header with conditional navigation (show &quot;Assign
+          Items&quot; link only for admin users)
+        </li>
+      </ul>
+      <p><strong>Data Display</strong>:</p>
+      <ul>
+        <li>
+          Show relevant item fields based on your domain (exclude sensitive data
+          if applicable)
+        </li>
+        <li>
+          If no items assigned, display appropriate message: &quot;No items
+          assigned to you yet&quot;
+        </li>
+      </ul>
+      <hr />
+      <h3 id="get-assign-items">`GET /assign-items`</h3>
+      <p>
+        <strong>Description</strong>: Displays all client-item assignments and
+        provides interface to create new assignments
+      </p>
+      <p><strong>Access</strong>: Admin users only</p>
+      <p><strong>Response</strong>:</p>
+      <ul>
+        <li>
+          <strong>200 OK</strong>: Server-side rendered page with assignment
+          interface
+        </li>
+        <li>
+          <strong>302 Redirect to <code>/login</code></strong
+          >: If not authenticated
+        </li>
+        <li>
+          <strong>302 Redirect to <code>/my-items</code></strong
+          >: If authenticated but not admin role
+        </li>
+      </ul>
+      <p><strong>Page Requirements</strong>:</p>
+      <ul>
+        <li>
+          Two-column table displaying all existing client-item assignment pairs
+          <ul>
+            <li>Column 1: Client name/identifier</li>
+            <li>Column 2: Assigned item name/identifier</li>
+            <li>
+              One row per assignment (if a client has 3 items, they appear in 3
+              rows)
+            </li>
+          </ul>
+        </li>
+        <li>
+          Assignment form with:
+          <ul>
+            <li>Dropdown to select a client (all clients listed)</li>
+            <li>Dropdown to select an item (all items listed)</li>
+            <li>Submit button</li>
+          </ul>
+        </li>
+        <li>Success/error message display area (hidden by default)</li>
+      </ul>
+      <p><strong>Client-Side Functionality</strong>:</p>
+      <ul>
+        <li>Form submission uses Fetch API (NOT traditional form submit)</li>
+        <li>
+          On successful assignment, append new row to table without page reload
+        </li>
+        <li>Show/hide success or error messages appropriately</li>
+      </ul>
+      <hr />
+      <h3 id="post-apiassignments">`POST /api/assignments`</h3>
+      <p>
+        <strong>Description</strong>: API endpoint to create a new client-item
+        assignment
+      </p>
+      <p>
+        <strong>Access</strong>: Authenticated users (no role-based restrictions
+        on API)
+      </p>
+      <p><strong>Request Format</strong>:</p>
+      <ul>
+        <li>Content-Type: <code>application/json</code></li>
+        <li>Body:</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "userId"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">123</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "itemId"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">456</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      <p><strong>Response</strong>:</p>
+      <ul>
+        <li>
+          <strong>201 Created</strong>: Assignment successfully created
+          <pre
+            class="shiki shiki-themes one-light one-dark-pro"
+            style="
+              background-color: #fafafa;
+              --shiki-dark-bg: #282c34;
+              color: #383a42;
+              --shiki-dark: #abb2bf;
+            "
+            tabindex="0"
+          ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "success"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#0184BC;--shiki-dark:#D19A66">true</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "assignment"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    "userId"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">123</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    "itemId"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#986801;--shiki-dark:#D19A66">456</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    "userName"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"John Doe"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    "itemName"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Item Description"</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  }</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+        </li>
+        <li>
+          <strong>400 Bad Request</strong>: Invalid input (missing fields,
+          non-numeric IDs)
+          <pre
+            class="shiki shiki-themes one-light one-dark-pro"
+            style="
+              background-color: #fafafa;
+              --shiki-dark-bg: #282c34;
+              color: #383a42;
+              --shiki-dark: #abb2bf;
+            "
+            tabindex="0"
+          ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "success"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#0184BC;--shiki-dark:#D19A66">false</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "error"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Invalid user ID or item ID"</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+        </li>
+        <li>
+          <strong>500 Internal Server Error</strong>: Database error (foreign
+          key constraint violation, etc.)
+          <pre
+            class="shiki shiki-themes one-light one-dark-pro"
+            style="
+              background-color: #fafafa;
+              --shiki-dark-bg: #282c34;
+              color: #383a42;
+              --shiki-dark: #abb2bf;
+            "
+            tabindex="0"
+          ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">{</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "success"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#0184BC;--shiki-dark:#D19A66">false</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  "error"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: </span><span style="color:#50A14F;--shiki-dark:#98C379">"Database error: unable to create assignment"</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+        </li>
+      </ul>
+      <p><strong>Implementation Notes</strong>:</p>
+      <ul>
+        <li>Insert into the associative entity (assignment) table</li>
+        <li>Handle database errors gracefully (e.g., invalid user/item IDs)</li>
+        <li>
+          No need to prevent duplicate assignments - let database constraints
+          handle this
+        </li>
+        <li>
+          Return enough information in success response for client-side table
+          update
+        </li>
+      </ul>
+      <hr />
+      <h2 id="view-requirements">View Requirements</h2>
+      <h3 id="ejs-templates">EJS Templates</h3>
+      <ul>
+        <li>
+          Create one EJS view file for each page: <code>login.ejs</code>,
+          <code>my-items.ejs</code>, <code>assign-items.ejs</code>
+        </li>
+        <li>
+          Create at least one EJS partial/component (recommended: header with
+          conditional navigation)
+        </li>
+        <li>
+          Use EJS to conditionally render content based on user role and data
+        </li>
+      </ul>
+      <h3 id="partialcomponent-example">Partial/Component Example</h3>
+      <p>A header partial that shows different navigation based on role:</p>
+      <ul>
+        <li>All users: Link to &quot;My Items&quot;</li>
+        <li>Admin users only: Link to &quot;Assign Items&quot;</li>
+      </ul>
+      <hr />
+      <h2 id="error-handling-requirements">Error Handling Requirements</h2>
+      <h3 id="client-side-error-display">Client-Side Error Display</h3>
+      <ul>
+        <li>Display user-friendly error messages (not raw error objects)</li>
+        <li>
+          Use show/hide of HTML elements rather than
+          <code>alert()</code> dialogs
+        </li>
+        <li>Clear previous error messages before showing new ones</li>
+      </ul>
+      <h3 id="server-side-error-handling">Server-Side Error Handling</h3>
+      <ul>
+        <li>Return appropriate HTTP status codes (400, 401, 404, 500)</li>
+        <li>Handle database errors without crashing the application</li>
+        <li>Log errors to console</li>
+      </ul>
+      <h3 id="specific-scenarios-to-handle">Specific Scenarios to Handle</h3>
+      <ol>
+        <li>Login with invalid credentials</li>
+        <li>Login with missing username or password</li>
+        <li>Accessing protected routes without authentication</li>
+        <li>Accessing admin routes as a client user</li>
+        <li>API requests with invalid IDs (non-existent user or item)</li>
+        <li>Database constraint violations (foreign key errors)</li>
+      </ol>
+      <p>
+        You should have a working application when you submit. Do not leave
+        unfinished or broken code in your submission.
+      </p>
+      <hr />
+      <h2 id="optional-enhancements-bonus-points">
+        Optional Enhancements (Bonus Points)
+      </h2>
+      <p>
+        If you complete the core requirements and have time, consider
+        implementing:
+      </p>
+      <ul>
+        <li>Logout functionality (clear session and redirect to login)</li>
+        <li>Encrypted password storage in the database</li>
+        <li>Sorting and/or filtering on the assignments table</li>
+        <li>API route protection (RBAC on POST endpoint)</li>
+        <li>Environment variables for configuration (using dotenv)</li>
+      </ul>
+    </div>
+  </body>
+</html>
