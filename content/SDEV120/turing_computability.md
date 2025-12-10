@@ -44,7 +44,7 @@ _Example:_
 
 - Let's say we have a program that we know prints ones and/or zeroes based on a set of rules and inputs. We want to know if the program will ever print a zero. If we give this set of rules and inputs to another program, can it determine if the first program will ever print a zero?
 
-Turing showed that there are some problems that are fundamentally unsolvable by any algorithm in finite time. This is known as the **Church-Turing Thesis**.
+Turing proved that the Halting Problem is undecidable, meaning no such general algorithm can exist. This result demonstrates that there are some problems that are fundamentally unsolvable by any algorithm.
 
 # The Turing Machine
 
