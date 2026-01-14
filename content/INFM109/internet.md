@@ -91,6 +91,16 @@ The term "server" is used in two main ways:
 
 /~
 
+## Internet Protocol Suite
+
+<figure>
+    <span>
+        <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/0*7GxX2NC7lEs0pK-_" style="width: 80%;height: auto;">
+    </span>
+</figure>
+
+Set of "rules" about how different layers of the Internet communicate.
+
 ## HTTP and HTTPS
 
 HTTP (Hypertext Transfer Protocol) and HTTPS (HTTP Secure) are the main protocols used for communication on the World Wide Web. They define how messages are formatted and transmitted between clients and servers.
@@ -124,20 +134,28 @@ Click any entry to see detailed information about that request and response.
 
 ## TCP/IP
 
-TCP/IP is the fundamental protocol suite of the Internet, consisting of two main parts:
+Imagine you sent a message to a friend using letters through regular post office mail, but you sent it one word at a time. You'd need a way to determine things like:
+
+- What's the address of the recipient?
+- What's the return address of the sender?
+- How many words are in the overall message?
+- Did any letters get lost in the mail?
+- Was the message corrupted or tampered with in transit?
+
+TCP/IP is the fundamental protocol suite of the Internet, and it helps to address these concerns.
 
 **TCP (Transmission Control Protocol)**
 
-Handles reliable delivery of data:
+Ensures data transmission between devices is reliable:
 
 - Breaks large messages into smaller packets
 - Makes sure all packets arrive correctly
-- Puts the packets back together in the right order
+- Puts the packets together in the right order
 - Requests retransmission of any lost packets
 
 **IP (Internet Protocol)**
 
-Handles addressing and routing:
+Handles addressing and routing of data:
 
 - Gives every device on the Internet a unique address (IP address)
 - Routes packets from sender to receiver across the network
@@ -159,7 +177,7 @@ ifconfig
 ipconfig
 ```
 
-You'll see both IPv4 (like 192.168.1.1) and newer IPv6 (like fe80::215:5dff:fe15:fcaf) addresses.
+You'll see both IPv4 (like `192.168.1.1`) and newer IPv6 (like `fe80::215:5dff:fe15:fcaf`) addresses.
 
 When you make a request to a website, your IP request is included in the request packet. This lets the server know where to send the response.
 
@@ -177,6 +195,18 @@ DNS exists because:
 - Domain names are easier for people to remember and type
 - Anyone can purchase a domain name for an annual fee.
 
+When you first access a website your computer must check a DNS server to get the IP address associated with that address.
+
+~.focusContent.demo
+
+**Where are DNS Servers?**
+
+We can see where some of the major DNS namespace servers are using sites like:
+
+[whatsmydns.net](https://www.whatsmydns.net/)
+
+/~
+
 ~.focusContent.exercise
 
 The `ping` command is used to check the connection to a server. It sends a series of packets to the server and measures the time it takes for them to return.
@@ -192,6 +222,18 @@ ping google.com
 
 /~
 
+~.focusContent.demo
+
+**Customizing the hosts file**
+
+In Windows you can modify your DNS entries by changing the _hosts_ file at:
+
+`C:\Windows\System32\drivers\etc`
+
+Let's try changing it so that "google.com" takes us to a different website.
+
+/~
+
 ## Putting it All Together: A Round Trip
 
 When you visit a website, here's what happens:
@@ -203,25 +245,6 @@ When you visit a website, here's what happens:
 5. Your browser receives and reassembles the packets, then displays the page
 
 The Internet is **decentralized** - packets can take different routes to their destination. If some network connections fail, packets will be automatically routed through working connections instead.
-
-## Demo: What do Websites Look Like from the Back End?
-
-~.focusContent.demo
-
-In this demo, we'll look at a real web server in action:
-
-- Using SSH to connect to a live web server
-- Starting and stopping the web server program
-- Seeing what happens when requests arrive
-- Making changes to the website and watching them go live
-
-This will give you a behind-the-scenes look at how websites actually run.
-
-```
-http://174.138.52.187:81
-```
-
-/~
 
 ## VPN, Proxy, and Private Browsing
 
