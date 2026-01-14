@@ -188,6 +188,20 @@
         </ol>
       </div>
 
+      <h2 id="internet-protocol-suite">Internet Protocol Suite</h2>
+      <figure>
+        <span>
+          <img
+            src="https://miro.medium.com/v2/resize:fit:4800/format:webp/0*7GxX2NC7lEs0pK-_"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        Set of &quot;rules&quot; about how different layers of the Internet
+        communicate.
+      </p>
       <h2 id="http-and-https">HTTP and HTTPS</h2>
       <p>
         HTTP (Hypertext Transfer Protocol) and HTTPS (HTTP Secure) are the main
@@ -235,19 +249,31 @@
 
       <h2 id="tcpip">TCP/IP</h2>
       <p>
-        TCP/IP is the fundamental protocol suite of the Internet, consisting of
-        two main parts:
+        Imagine you sent a message to a friend using letters through regular
+        post office mail, but you sent it one word at a time. You&#39;d need a
+        way to determine things like:
+      </p>
+      <ul>
+        <li>What&#39;s the address of the recipient?</li>
+        <li>What&#39;s the return address of the sender?</li>
+        <li>How many words are in the overall message?</li>
+        <li>Did any letters get lost in the mail?</li>
+        <li>Was the message corrupted or tampered with in transit?</li>
+      </ul>
+      <p>
+        TCP/IP is the fundamental protocol suite of the Internet, and it helps
+        to address these concerns.
       </p>
       <p><strong>TCP (Transmission Control Protocol)</strong></p>
-      <p>Handles reliable delivery of data:</p>
+      <p>Ensures data transmission between devices is reliable:</p>
       <ul>
         <li>Breaks large messages into smaller packets</li>
         <li>Makes sure all packets arrive correctly</li>
-        <li>Puts the packets back together in the right order</li>
+        <li>Puts the packets together in the right order</li>
         <li>Requests retransmission of any lost packets</li>
       </ul>
       <p><strong>IP (Internet Protocol)</strong></p>
-      <p>Handles addressing and routing:</p>
+      <p>Handles addressing and routing of data:</p>
       <ul>
         <li>
           Gives every device on the Internet a unique address (IP address)
@@ -285,8 +311,8 @@
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## PowerShell</span></span>
 <span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ipconfig</span></span></code></pre>
         <p>
-          You&#39;ll see both IPv4 (like 192.168.1.1) and newer IPv6 (like
-          fe80::215:5dff:fe15:fcaf) addresses.
+          You&#39;ll see both IPv4 (like <code>192.168.1.1</code>) and newer
+          IPv6 (like <code>fe80::215:5dff:fe15:fcaf</code>) addresses.
         </p>
         <p>
           When you make a request to a website, your IP request is included in
@@ -304,6 +330,19 @@
         <li>Domain names are easier for people to remember and type</li>
         <li>Anyone can purchase a domain name for an annual fee.</li>
       </ul>
+      <p>
+        When you first access a website your computer must check a DNS server to
+        get the IP address associated with that address.
+      </p>
+      <div class="focusContent demo">
+        <p><strong>Where are DNS Servers?</strong></p>
+        <p>
+          We can see where some of the major DNS namespace servers are using
+          sites like:
+        </p>
+        <p><a href="https://www.whatsmydns.net/">whatsmydns.net</a></p>
+      </div>
+
       <div class="focusContent exercise">
         <p>
           The <code>ping</code> command is used to check the connection to a
@@ -328,6 +367,19 @@
 <span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ping</span><span style="color:#50A14F;--shiki-dark:#98C379"> google.com</span></span></code></pre>
       </div>
 
+      <div class="focusContent demo">
+        <p><strong>Customizing the hosts file</strong></p>
+        <p>
+          In Windows you can modify your DNS entries by changing the
+          <em>hosts</em> file at:
+        </p>
+        <p><code>C:\Windows\System32\drivers\etc</code></p>
+        <p>
+          Let&#39;s try changing it so that &quot;google.com&quot; takes us to a
+          different website.
+        </p>
+      </div>
+
       <h2 id="putting-it-all-together-a-round-trip">
         Putting it All Together: A Round Trip
       </h2>
@@ -350,33 +402,6 @@
         packets will be automatically routed through working connections
         instead.
       </p>
-      <h2 id="demo-what-do-websites-look-like-from-the-back-end">
-        Demo: What do Websites Look Like from the Back End?
-      </h2>
-      <div class="focusContent demo">
-        <p>In this demo, we&#39;ll look at a real web server in action:</p>
-        <ul>
-          <li>Using SSH to connect to a live web server</li>
-          <li>Starting and stopping the web server program</li>
-          <li>Seeing what happens when requests arrive</li>
-          <li>Making changes to the website and watching them go live</li>
-        </ul>
-        <p>
-          This will give you a behind-the-scenes look at how websites actually
-          run.
-        </p>
-        <pre
-          class="shiki shiki-themes one-light one-dark-pro"
-          style="
-            background-color: #fafafa;
-            --shiki-dark-bg: #282c34;
-            color: #383a42;
-            --shiki-dark: #abb2bf;
-          "
-          tabindex="0"
-        ><code><span class="line"><span>http://174.138.52.187:81</span></span></code></pre>
-      </div>
-
       <h2 id="vpn-proxy-and-private-browsing">
         VPN, Proxy, and Private Browsing
       </h2>
