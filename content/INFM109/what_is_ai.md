@@ -170,6 +170,12 @@ After the model has been trained, it is released to the public, e.g. ChatGPT. Th
 
 - The model learns by itself through trial and error, using labeled data to adjust its weights until it can make accurate predictions.
 
+~.focusContent.demo
+
+...refer to excalidraw demo; this hasn't been ported to notes yet...
+
+/~
+
 /~
 
 #### Inference
