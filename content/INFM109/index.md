@@ -73,9 +73,25 @@ Part I:
 - [Hardware](hardware.html)
 - Discussion: Hardware Trends
 
-Part II (short lecture):
+Part II:
 
-- [Input and Output Technologies](input_output_technologies.html)
+- [Input and Output Technologies](input_output_technologies.html) (skim)
+- [Installing Git](../common/installing_git.md)
+- [Basic Shell Commands](../common/basic_shell_commands.md)
+- Exercise: making a backup script (see markdown)
+
+<!--
+#!/bin/bash
+
+# Create a backup directory with today's date
+backup_dir="backup_$(date +%Y%m%d)"
+mkdir "$backup_dir"
+
+# Copy all files to the backup directory
+cp *.txt "$backup_dir/"
+
+echo "Backup complete! Files copied to $backup_dir"
+-->
 
 ## Module 03: Software
 
