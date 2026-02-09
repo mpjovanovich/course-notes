@@ -72,12 +72,11 @@ Below are some examples of open source and proprietary software. We will use the
     </span>
 </figure>
 
-Owned by Microsoft. The most widely used desktop operating system in the world, especially in business and gaming.
+Owned by Microsoft.
 
 Key characteristics:
 
 - Works with almost any PC hardware
-- Familiar interface most people know
 - Strong focus on business and enterprise use
 
 ### MacOS
@@ -88,24 +87,21 @@ Key characteristics:
     </span>
 </figure>
 
-Owned by Apple. Only runs on Apple computers. Known for its design and ease of use, particularly popular with creative professionals.
+Owned by Apple. Only runs on Apple computers.
 
 Key characteristics:
 
 - Only works with Apple computers (their own custom hardware)
 - Seamless connection with iDevice ecosystem
-- Strong security features
-- Clean, consistent design across all programs
+- Strong use in "creative" industries and development
 
-### Unix / Linux
+### Linux
 
 <figure>
     <span>
-        <img src="https://www.openlogic.com/sites/default/files/inline-images/image.png" style="width: 80%;height: auto;">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/s2-1.jpg" style="width: 80%;height: auto;">
     </span>
 </figure>
-
-Unix is the foundation for many modern operating systems.
 
 ~.focusContent.note
 
@@ -132,7 +128,7 @@ Key characteristics:
 
 <figure>
     <span>
-        <img src="https://www.openlogic.com/sites/default/files/image/2024-03/Screenshot%202024-03-14%20at%2012.27.40%E2%80%AFPM.png" style="width: 80%;height: auto;">
+        <img src="https://www.openlogic.com/sites/default/files/inline-images/image.png" style="width: 80%;height: auto;">
     </span>
     <figcaption>
         <p>
