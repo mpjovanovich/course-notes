@@ -28,6 +28,20 @@ The programs that we use directly are called **applications**.
 
 In contrast, operating system software runs in the **background** - it is not directly used by the user. The applications that we use can interact with the OS to use the computer's resources.
 
+## Access to Hardware
+
+<figure>
+    <span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Priv_rings.svg/500px-Priv_rings.svg.png" style="height: auto;">
+    </span>
+</figure>
+
+Programs are said to run in either **user mode** or **kernel mode**.
+
+User mode programs have restricted privileges, and must request hardware access via system calls to the kernel. This allows user programs to be ignorant of the hardware on which they are running.
+
+The kernel acts as an intermediary to allocate resources.
+
 ## Process Management
 
 A **process** is a program in execution. We can see the processes that the operating system is running by using system tools:
