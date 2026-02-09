@@ -60,7 +60,7 @@ This will show us both **user processes** (applications) and **system processes*
 
 <figure>
     <span>
-        <img src="https://scaler.com/topics/images/contiguous-allocation-of-pages.webp" style="width: 80%;height: auto;">
+        <img src="images/virtual_memory.svg" style="width: 100%;height: auto;">
     </span>
 </figure>
 
