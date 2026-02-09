@@ -91,6 +91,26 @@
         applications that we use can interact with the OS to use the
         computer&#39;s resources.
       </p>
+      <h2 id="access-to-hardware">Access to Hardware</h2>
+      <figure>
+        <span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Priv_rings.svg/500px-Priv_rings.svg.png"
+            style="height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        Programs are said to run in either <strong>user mode</strong> or
+        <strong>kernel mode</strong>.
+      </p>
+      <p>
+        User mode programs have restricted privileges, and must request hardware
+        access via system calls to the kernel. This allows user programs to be
+        ignorant of the hardware on which they are running.
+      </p>
+      <p>The kernel acts as an intermediary to allocate resources.</p>
       <h2 id="process-management">Process Management</h2>
       <p>
         A <strong>process</strong> is a program in execution. We can see the
