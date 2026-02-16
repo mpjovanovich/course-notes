@@ -116,3 +116,13 @@ Your team has built a great software application - it has done so well that your
 Because your application is deployed in the cloud using virtualization, you can easily **scale up** the number of servers to handle the increased load - it's as simple as adding more copies of your application to more virtual servers.
 
 /~
+
+~.focusContent.demo
+
+**Provisioning a Virtual Machine**
+
+All of the major cloud providers offer a way to **provision** (create) your own virtual machines. These machines can then be **deallocated** (destroyed) when they are no longer needed.
+
+In this demo we will look at how to crete a VM using Microsoft Azure.
+
+/~
