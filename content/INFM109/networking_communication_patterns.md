@@ -201,6 +201,8 @@ The server sends (pushes) data to the client as soon as it becomes available, wi
 - The client passively receives updates.
 - Typically asynchronous communication.
 - Efficient for timely updates.
+- Good for broadcast (one to many) communication
+- Good for event driven communication
 
 #### Examples
 

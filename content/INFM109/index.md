@@ -24,7 +24,21 @@ showBreadcrumb: false
 
 ## Announcements
 
-- ...
+- I'm behind on grading - Sorry! Will catch up ASAP.
+- M03 for final project due **Tuesday night**
+- Wednesday's class will meet via Zoom only (tornado drill here)
+- NAAICS:
+  - Employers are looking for extracurricular proof of experience (portfolio, group activities)
+    - At least one "major" project done on own
+    - Group activities
+  - Employers continue to value organization, communication, and group work skills
+    - Time management
+    - Activity prioritization
+    - Written and oral skills (internal communication documents, discussions, presentations)
+  - Employers are looking for hirees that can show that they are adaptable, even hiring over these with more experience.
+  - Employer "knockout questions"
+    > How have you used AI in your previous work?
+    > How would you use AI in a way that contributes to this job position? Provide examples.
 
 ## Module 00: Course Introduction
 
@@ -123,10 +137,12 @@ Part I:
 
 Part II:
 
-- Intro: Final Project and Assignments
+- Announcements
 - [Networking Communication Patterns](networking_communication_patterns.html)
-- Break (individual research)
-- WiFi Discussion and Cloud Resource group assignments
+- Break
+  - Find a few points individually for WiFi discussion
+  - After break we will all do this together
+- Intro cloud resource assignment (do as individual assignment this term)
 
 ## Module 07: Cyber and Digital Security
 
