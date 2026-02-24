@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WiFi Channel Interference</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0e1a;
+    --surface: #111827;
+    --border: #1e2d45;
+    --ch-a: #00d4ff;
+    --ch-b: #ff6b35;
+    --overlap: #ff2d6b;
+    --text: #e2e8f0;
+    --muted: #64748b;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, var(--ch-a), var(--ch-b));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  header p {
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    margin-top: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 760px;
+  }
+
+  canvas {
+    width: 100%;
+    height: 220px;
+    display: block;
+    border-radius: 8px;
+    background: #070b14;
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .control-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-a { background: var(--ch-a); box-shadow: 0 0 8px var(--ch-a); }
+  .dot-b { background: var(--ch-b); box-shadow: 0 0 8px var(--ch-b); }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type=range].a {
+    background: linear-gradient(to right, var(--ch-a) 0%, var(--ch-a) var(--pct, 0%), var(--border) var(--pct, 0%));
+  }
+
+  input[type=range].b {
+    background: linear-gradient(to right, var(--ch-b) 0%, var(--ch-b) var(--pct, 0%), var(--border) var(--pct, 0%));
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--bg);
+    cursor: pointer;
+  }
+
+  input[type=range].a::-webkit-slider-thumb { background: var(--ch-a); box-shadow: 0 0 10px var(--ch-a); }
+  input[type=range].b::-webkit-slider-thumb { background: var(--ch-b); box-shadow: 0 0 10px var(--ch-b); }
+
+  .channel-val {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 0.4rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .val-a { color: var(--ch-a); }
+  .val-b { color: var(--ch-b); }
+
+  .freq-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .status {
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    line-height: 1.5;
+  }
+
+  .status.none {
+    background: #0d1f14;
+    border-color: #1a3a27;
+    color: #4ade80;
+  }
+
+  .status.adjacent {
+    background: #1f1200;
+    border-color: #3a2200;
+    color: #fbbf24;
+  }
+
+  .status.marginal {
+    background: #181200;
+    border-color: #2e2400;
+    color: #a3854a;
+  }
+
+  .status.co {
+    background: #1f0a14;
+    border-color: #3a1428;
+    color: var(--overlap);
+  }
+
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .legend-swatch {
+    width: 20px; height: 4px;
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>WiFi Channel Interference</h1>
+  <p>2.4 GHz Band · Channels 1–11 · 20 MHz Width</p>
+</header>
+
+<div class="card">
+  <canvas id="cv"></canvas>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--ch-a)"></div> Channel A</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--ch-b)"></div> Channel B</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--overlap)"></div> Overlap (interference)</div>
+  </div>
+
+  <div class="controls">
+    <div class="control-group">
+      <label><span class="dot dot-a"></span> Channel A</label>
+      <input type="range" class="a" id="sliderA" min="1" max="11" value="1">
+      <div class="channel-val val-a" id="valA">CH 1</div>
+      <div class="freq-label" id="freqA">2412 MHz</div>
+    </div>
+    <div class="control-group">
+      <label><span class="dot dot-b"></span> Channel B</label>
+      <input type="range" class="b" id="sliderB" min="1" max="11" value="6">
+      <div class="channel-val val-b" id="valB">CH 6</div>
+      <div class="freq-label" id="freqB">2437 MHz</div>
+    </div>
+  </div>
+
+  <div class="status none" id="status">✓ No interference — channels are spaced 5+ apart (non-overlapping)</div>
+</div>
+
+<script>
+const canvas = document.getElementById('cv');
+const ctx = canvas.getContext('2d');
+const sliderA = document.getElementById('sliderA');
+const sliderB = document.getElementById('sliderB');
+
+// Channel center frequencies in MHz
+function chFreq(ch) { return 2407 + ch * 5; }
+
+// Channel bandwidth = 20MHz
+const BW = 20;
+
+function draw() {
+  const W = canvas.clientWidth, H = canvas.clientHeight;
+  ctx.clearRect(0, 0, W, H);
+
+  const chA = +sliderA.value;
+  const chB = +sliderB.value;
+
+  // Spectrum range: 2400 to 2500 MHz
+  const freqMin = 2407, freqMax = 2472;
+  const freqRange = freqMax - freqMin;
+
+  function freqToX(f) { return ((f - freqMin) / freqRange) * W; }
+
+  // Draw gridlines and frequency labels
+  ctx.strokeStyle = '#1e2d45';
+  ctx.lineWidth = 1;
+  ctx.font = '11px JetBrains Mono, monospace';
+  ctx.fillStyle = '#2a3a55';
+  ctx.textAlign = 'center';
+  for (let f = 2400; f <= 2495; f += 5) {
+    const x = freqToX(f);
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, H);
+    ctx.stroke();
+  }
+
+  // Label non-overlapping channels
+  [1, 6, 11].forEach(ch => {
+    const x = freqToX(chFreq(ch));
+    ctx.fillStyle = '#2a3a55';
+    ctx.fillText(`ch${ch}`, x, H - 6);
+  });
+
+  const fA = chFreq(chA), fB = chFreq(chB);
+  const aL = fA - BW/2, aR = fA + BW/2;
+  const bL = fB - BW/2, bR = fB + BW/2;
+
+  const overlapL = Math.max(aL, bL);
+  const overlapR = Math.min(aR, bR);
+  const hasOverlap = overlapL < overlapR;
+
+  function drawChannel(freqCenter, color, alpha) {
+    const L = freqCenter - BW/2;
+    const R = freqCenter + BW/2;
+    const peakH = H * 0.72;
+    const baseY = H * 0.88;
+
+    ctx.beginPath();
+    ctx.moveTo(freqToX(L), baseY);
+    // Raised cosine shape
+    const steps = 60;
+    for (let i = 0; i <= steps; i++) {
+      const f = L + (R - L) * (i / steps);
+      const t = (f - freqCenter) / (BW / 2); // -1 to 1
+      const y = baseY - peakH * Math.pow(Math.cos(t * Math.PI / 2), 2);
+      ctx.lineTo(freqToX(f), y);
+    }
+    ctx.lineTo(freqToX(R), baseY);
+    ctx.closePath();
+
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+
+  // Draw both channels
+  drawChannel(fA, '#00d4ff', 0.25);
+  drawChannel(fB, '#ff6b35', 0.25);
+
+  // Draw overlap region with clipping
+  if (hasOverlap) {
+    ctx.save();
+    // Clip to overlap x range
+    ctx.beginPath();
+    ctx.rect(freqToX(overlapL), 0, freqToX(overlapR) - freqToX(overlapL), H);
+    ctx.clip();
+
+    drawChannel(fA, '#ff2d6b', 0.5);
+    drawChannel(fB, '#ff2d6b', 0.5);
+    ctx.restore();
+  }
+
+  // Channel center lines
+  function drawCenterLine(f, color) {
+    const x = freqToX(f);
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([4, 4]);
+    ctx.globalAlpha = 0.7;
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, H * 0.88);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  drawCenterLine(fA, '#00d4ff');
+  drawCenterLine(fB, '#ff6b35');
+
+  // Frequency axis line
+  ctx.strokeStyle = '#1e2d45';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([]);
+  ctx.beginPath();
+  ctx.moveTo(0, H * 0.88);
+  ctx.lineTo(W, H * 0.88);
+  ctx.stroke();
+
+  // Overlap bracket
+  if (hasOverlap) {
+    const ox1 = freqToX(overlapL), ox2 = freqToX(overlapR);
+    const mid = (ox1 + ox2) / 2;
+    const bY = H * 0.1;
+    ctx.strokeStyle = '#ff2d6b';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([3, 3]);
+    ctx.globalAlpha = 0.8;
+    ctx.beginPath();
+    ctx.moveTo(ox1, bY + 8); ctx.lineTo(ox1, bY);
+    ctx.lineTo(ox2, bY); ctx.lineTo(ox2, bY + 8);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.globalAlpha = 1;
+    const mhzOverlap = Math.round(overlapR - overlapL);
+    ctx.font = 'bold 11px JetBrains Mono, monospace';
+    ctx.fillStyle = '#ff2d6b';
+    ctx.textAlign = 'center';
+    ctx.fillText(`${mhzOverlap} MHz overlap`, mid, bY - 5);
+  }
+}
+
+function updateSliderFill(slider) {
+  const pct = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+  slider.style.setProperty('--pct', pct + '%');
+}
+
+function update() {
+  const chA = +sliderA.value, chB = +sliderB.value;
+
+  document.getElementById('valA').textContent = `CH ${chA}`;
+  document.getElementById('valB').textContent = `CH ${chB}`;
+  document.getElementById('freqA').textContent = `${chFreq(chA)} MHz`;
+  document.getElementById('freqB').textContent = `${chFreq(chB)} MHz`;
+
+  updateSliderFill(sliderA);
+  updateSliderFill(sliderB);
+
+  const diff = Math.abs(chA - chB);
+  const statusEl = document.getElementById('status');
+
+  if (diff === 0) {
+    statusEl.className = 'status co';
+    statusEl.textContent = '⚠ Co-channel interference — same channel. Devices share airtime via CSMA/CA, causing contention and reduced throughput.';
+  } else if (diff < 4) {
+    statusEl.className = 'status adjacent';
+    statusEl.textContent = '✗ Adjacent-channel interference — spectra overlap. CSMA/CA won\'t help here; corrupted frames and CRC failures result. Worse than co-channel.';
+  } else if (diff === 4) {
+    statusEl.className = 'status marginal';
+    statusEl.textContent = '~ Marginal — nominal band edges meet but do not overlap. Real-world spectral leakage still causes some interference. Best practice is 5 channels (25 MHz) of separation, not 4.';
+  } else {
+    statusEl.className = 'status none';
+    statusEl.textContent = '✓ No interference — 5+ channel separation meets best practice (e.g. 1, 6, 11). Both networks operate independently.';
+  }
+
+  draw();
+}
+
+function resize() {
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * window.devicePixelRatio;
+  canvas.height = rect.height * window.devicePixelRatio;
+  ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  draw();
+}
+
+sliderA.addEventListener('input', update);
+sliderB.addEventListener('input', update);
+window.addEventListener('resize', resize);
+
+resize();
+update();
+</script>
+</body>
+</html>
