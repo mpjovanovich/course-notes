@@ -142,11 +142,22 @@ Part II:
 - Break
   - Find a few points individually for WiFi discussion
   - After break we will all do this together
+- [WiFi App](demos/wifi-interference.html)
+
+  | Attribute                | 2.4 GHz                                                     | 5 GHz                                                |
+  | ------------------------ | ----------------------------------------------------------- | ---------------------------------------------------- |
+  | Bandwidth / throughput   | Relatively higher (but reduced by congestion)               | Relatively higher                                    |
+  | Wall penetration & range | Good                                                        | Worse                                                |
+  | Spectrum congestion      | More congestion / interference, leading to lower throughput | Less congestion / interference due to wider range    |
+  | Other devices in band    | Competes with microwaves, baby monitors, Bluetooth, etc.    | Does not compete with other devices in the same band |
+
 - Intro cloud resource assignment (do as individual assignment this term)
 
 ## Module 07: Cyber and Digital Security
 
 Part I (attack):
+
+Review not covered from previous: WiFi app and related table
 
 - [Cybersecurity Organizational Challenges](cybersecurity_organizational_challenges.html)
 - [Cyberattack Motivations and Impact](cyberattack_motivations_impact.html)
