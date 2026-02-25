@@ -169,7 +169,7 @@ Attacker inserts malicious code into a website link or server that uses database
 
 Software developers must defend against this by validating user input and sanitizing data.
 
-~/focusContent.demo
+~.focusContent.demo
 
 ### Demo: SQL Injection Attach
 
