@@ -149,6 +149,7 @@ Review not covered from previous: WiFi app and related table
 - [Cybersecurity Organizational Challenges](cybersecurity_organizational_challenges.html)
 - [Cyberattack Motivations and Impact](cyberattack_motivations_impact.html)
 - [Cybersecurity Threat Landscape](cybersecurity_threat_landscape.html)
+- [Attacking with AI](cybersecurity_attacking_with_ai.html)
 
 Part II (defense):
 

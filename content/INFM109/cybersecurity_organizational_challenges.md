@@ -5,120 +5,129 @@ course: INFM109
 
 ~.toc
 
-- [Modern Organizational Challenges](#modern-organizational-challenges)
-  - [Bring Your Own Device (BYOD)](#bring-your-own-device-byod)
-    - [Pros of BYOD:](#pros-of-byod)
-    - [Cons of BYOD:](#cons-of-byod)
-  - [Remote Work Security](#remote-work-security)
-- [Real-World Impact and Consequences](#real-world-impact-and-consequences)
-  - [Financial Impact](#financial-impact)
-  - [Operational Disruption](#operational-disruption)
-    - [Case Study: Colonial Pipeline (2021)](#case-study-colonial-pipeline-2021)
-    - [Case Study: University of California San Francisco (2020)](#case-study-university-of-california-san-francisco-2020)
-  - [Reputation and Trust](#reputation-and-trust)
-  - [Key Takeaways](#key-takeaways)
+- [Modern Organizational Security Challenges](#modern-organizational-security-challenges)
+  - [1. Increasing IT Complexity](#1-increasing-it-complexity)
+  - [2. Bring Your Own Device (BYOD)](#2-bring-your-own-device-byod)
+    - [Advantages](#advantages)
+    - [Security Risks](#security-risks)
+  - [3. Remote and Hybrid Work Security](#3-remote-and-hybrid-work-security)
+- [Organizational Impact of Cyberattacks](#organizational-impact-of-cyberattacks)
+  - [4. Financial Impact](#4-financial-impact)
+    - [Direct Costs](#direct-costs)
+    - [Indirect Costs](#indirect-costs)
+  - [5. Operational Disruption](#5-operational-disruption)
+  - [6. Reputational Damage](#6-reputational-damage)
+- [Key Takeaways](#key-takeaways)
 
 /~
 
-# Modern Organizational Challenges
+# Modern Organizational Security Challenges
 
-## Bring Your Own Device (BYOD)
+## 1. Increasing IT Complexity
 
-**Bring Your Own Device (BYOD)** = employees use their personal devices to access company data and applications.
+Modern organizations operate highly interconnected IT environments that expand the attack surface.
 
-### Pros of BYOD:
+**Common components:**
 
-**For Employees:**
+- Mobile devices
+- Cloud services
+- Social media platforms
+- Internet of Things (IoT) devices
+- Big data platforms
+- AI and machine learning systems
+- Blockchain applications
 
-- More familiar with their own devices
-- Reportedly more productive
-- Reportedly higher job satisfaction
+**Key Principle:**  
+Every connected device or service is a potential entry point for an attacker.
 
-**For Companies:**
+---
 
-- Can reduce IT support costs
-- Can reduce training needs
-- Can attract and retain talent due to workplace flexibility
+## 2. Bring Your Own Device (BYOD)
 
-### Cons of BYOD:
+**Bring Your Own Device (BYOD):** Employees use personal devices to access company data and systems.
 
-**Security Risks:**
+### Advantages
 
-- Employees may not keep devices updated with security patches
-- May not use strong passwords or authentication
-- May not use antivirus software
-- May not use proper network security (firewalls, VPNs)
-- May not use device encryption
-- Personal apps may introduce vulnerabilities
-- Difficult to enforce security policies on personal devices
-- Data may remain on personal devices after employment ends
+**For Employees**
 
-## Remote Work Security
+- Familiarity with personal devices
+- Increased productivity
+- Higher job satisfaction
 
-The shift to remote and hybrid work models has created new security challenges:
+**For Organizations**
 
-- **Home network security**: Employees connecting through potentially unsecured home networks
-- **Physical security**: Sensitive information displayed in unsecured locations
-- **Shared devices**: Family members using work devices
-- **Video conference security**: Unauthorized access to meetings ("Zoombombing")
+- Reduced IT hardware costs
+- Reduced training requirements
+- Improved recruitment and retention
 
-# Real-World Impact and Consequences
+### Security Risks
 
-## Financial Impact
+- Unpatched operating systems or applications
+- Weak passwords or lack of multi-factor authentication
+- Missing antivirus or endpoint protection
+- Insecure network configurations
+- Lack of device encryption
+- Vulnerable personal applications
+- Difficulty enforcing corporate security policies
+- Company data retained after employment ends
 
-Cyberattacks can cause severe financial damage to organizations:
+---
 
-**Direct costs:**
+## 3. Remote and Hybrid Work Security
+
+Remote work introduces additional security risks:
+
+- Home network vulnerabilities
+- Physical exposure of sensitive information
+- Shared use of work devices
+- Unsecured video conferencing sessions
+
+---
+
+# Organizational Impact of Cyberattacks
+
+## 4. Financial Impact
+
+### Direct Costs
 
 - Ransom payments
 - System recovery and restoration
 - Legal fees and regulatory fines
 - Incident response and investigation
 
-**Indirect costs:**
+### Indirect Costs
 
-- Lost productivity during downtime
-- Lost sales and customers
+- Lost productivity
+- Lost customers and revenue
 - Increased insurance premiums
-- Investment in additional security measures
+- Additional security investments
 
-## Operational Disruption
+---
 
-### Case Study: Colonial Pipeline (2021)
+## 5. Operational Disruption
 
-- **Attack type**: Ransomware (DarkSide group)
-- **Impact**: Shut down pipeline operations for 5 days
-- **Consequences**:
-  - Gasoline shortages across the Eastern United States
-  - Panic buying leading to long lines at gas stations
-  - Price increases for fuel
-  - Disruption to other industries dependent on fuel
-- **Resolution**: Company paid approximately $4.4 million in ransom
+The "direct" effect of the attack
 
-### Case Study: University of California San Francisco (2020)
+- Shutting down IT systems
+- Customers cannot use product
+- Physical damage
 
-- **Attack type**: Ransomware (Netwalker group)
-- **Target**: UCSF School of Medicine
-- **Impact**:
-  - Encryption of important research data
-  - Disruption to COVID-19 research during pandemic
-  - Potential loss of years of medical research
-- **Resolution**: University paid $1.14 million in ransom
+---
 
-## Reputation and Trust
+## 6. Reputational Damage
 
-Long-term damage to organizational reputation can be more costly than immediate financial losses:
+Cyberattacks can cause long-term harm beyond immediate financial loss:
 
-- **Customer trust**: Customers may avoid organizations with poor security records
-- **Partner relationships**: Other businesses may be reluctant to work with compromised organizations
-- **Regulatory scrutiny**: Increased oversight and potential penalties
-- **Talent retention**: Employees may lose confidence in the organization
+- Loss of customer trust
+- Strained business partnerships
+- Increased regulatory scrutiny
+- Reduced employee confidence
 
-## Key Takeaways
+---
 
-Understanding the threat landscape requires recognizing that:
+# Key Takeaways
 
-- **Threats are diverse**: Different types of attackers have different capabilities and motivations
-- **Organizations face new challenges**: BYOD, remote work, and system complexity create new vulnerabilities
-- **Impact extends beyond technology**: Cyberattacks affect finances, operations, and reputation
-- **Prevention is crucial**: The cost of prevention is typically much lower than the cost of recovery
+- Modern IT environments increase organizational exposure to attack.
+- BYOD and remote work create additional vulnerabilities.
+- Cyberattacks result in financial, operational, and reputational damage.
+- Preventive security measures are significantly less costly than recovery.
