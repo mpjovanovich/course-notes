@@ -24,22 +24,13 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Due dates reminders for remainder of course.
-- Intro Final Project Milestone 5.
-  - Demonstrate how to pick apart the details of narrative requirements
-- Intro Final Project Milestone 6.
-  - Practice with multi-table JOINs
+- ...
 
 ## Module 00: Course Introduction
 
 - Review course structure and resources
 - Make sure you can access the textbook
 - Install: [Notepad++](https://notepad-plus-plus.org/)
-- Install: Microsoft Office
-  - [MyIvy](https://my.ivytech.edu/myivy?id=tools_and_resources)
-  - Office 365 link
-  - Apps link (left side)
-  - "Install apps" link (top right)
 
 ## Module 01: Introduction to Databases
 
@@ -51,6 +42,7 @@ Part I:
 - [Database Vendors](database_vendors.html)
 - [How are Databases Used?](how_are_databases_used.html)
 - [Exercise: Data Journeys](exercise_data_journeys.html)
+  - Do one together as a class then groups break out to finish one on own
 
 Part II:
 
@@ -140,6 +132,5 @@ Part II:
 - [Graph Databases](graph_databases.html)
 
 ## Module 08: Business Intelligence and Data Analytics
-
 
 distributed data systems
