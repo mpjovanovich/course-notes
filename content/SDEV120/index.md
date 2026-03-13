@@ -111,9 +111,7 @@ J = Kna, B = Kni, G = Spy
 
 3)
 
-Assume Ely = T
-
-Ely = Kni, B = Spy, Ell = Knave
+Question has changed since last time; not sure...
 
 -->
 
@@ -213,18 +211,3 @@ Discussion: Analysis of a Programming Language
 ## Final Review
 
 [Final Study Guide](final_study_s25.html)
-
-## Overflow Topics
-
-[Overview of Artificial Intelligence](ai_overview.html)
-
-<!--
-
-TODO NEXT COURSE RUN
-
-- Add table classes to make binary and hex topics easier to understand.
-  - Positional notation / weights still not clear to many students.
-- Fix truth tables assignment again? Split into pieces.
-- Quiz for function composition and function basics. Many students still missed this.
-
--->

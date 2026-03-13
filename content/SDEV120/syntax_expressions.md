@@ -54,22 +54,6 @@ x = 5 # Synactically correct
 
 /~
 
-<!-- ## Literals and Variables
-
-The most basic components of code are literals and variables.
-
-- **Literals** are fixed values.
-- **Variables** (and constants) are placeholders for values.
-
-```python
-# Say "hello" using a string literal:
-print("hello")
-
-# Assign a string literal to a variable, then use it to say "hello":
-greeting = "hello"
-print(greeting)
-``` -->
-
 ## Operators
 
 Code is primarily made up of operators, operands, expressions, and statements.

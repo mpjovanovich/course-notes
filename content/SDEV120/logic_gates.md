@@ -23,7 +23,7 @@ course: SDEV120
 
 # Logic Gates
 
-For an excellent logic gate sandbox, see: [Logic.ly](https://logic.ly/demo).
+For an online logic gate sandbox, see: [Logic.ly](https://logic.ly/demo).
 
 ## Foundations
 
