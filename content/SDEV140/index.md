@@ -9,21 +9,20 @@ showBreadcrumb: false
 - [SDEV140](#sdev140)
   - [Announcements](#announcements)
   - [Module 00: Course Introduction](#module-00-course-introduction)
-  - [Module 00: Review Items (if Needed)](#module-00-review-items-if-needed)
   - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
-    - [Software Setup](#software-setup)
-    - [Command Line (bash)](#command-line-bash)
-    - [Getting started with Python](#getting-started-with-python)
-    - [Submitting Projects - GitHub Classroom](#submitting-projects---github-classroom)
-    - [Intro to Labs](#intro-to-labs)
-  - [Module 02: Selection Structures](#module-02-selection-structures)
-  - [Module 03: Loops](#module-03-loops)
-  - [Module 04: Lists and Dictionaries](#module-04-lists-and-dictionaries)
-  - [Module 05: Exceptions and Error Handling](#module-05-exceptions-and-error-handling)
-  - [Module 06: Functions and Modularity](#module-06-functions-and-modularity)
-  - [Module 07: File I/O and File Parsing](#module-07-file-io-and-file-parsing)
-  - [Module 08: Object Oriented Programming](#module-08-object-oriented-programming)
-  - [Module 09: Event Driven Programming](#module-09-event-driven-programming)
+    - [Day 1](#day-1)
+      - [Lecture](#lecture)
+      - [Exercise: Learning the Coding Environment](#exercise-learning-the-coding-environment)
+      - [Exercise: Input and Output](#exercise-input-and-output)
+  - [Module 02: Loops](#module-02-loops)
+    - [Day 1](#day-1-1)
+      - [Lecture](#lecture-1)
+      - [Exercise: Loops](#exercise-loops)
+      - [Lab: Indefinite Loops](#lab-indefinite-loops)
+    - [Day 2](#day-2)
+      - [Lecture](#lecture-2)
+      - [Exercise: Loops](#exercise-loops-1)
+      - [Lab: Definite Loops](#lab-definite-loops)
 
 /~
 
@@ -31,115 +30,103 @@ showBreadcrumb: false
 
 ## Announcements
 
-<!-- <figure>
- <img src="https://medievalists.gumlet.io/wp-content/uploads/2010/12/holy-grail.jpg" alt="" style="width: 80%;height: auto;">
-</figure> -->
-
 - ...
 
 ## Module 00: Course Introduction
 
-Overview of course
+Review SDEV 140 - A Professional's Guide
 
-Syllabus and policy review
+Complete SDEV 140 Entrance Survey
 
-Review course content and schedule
-
-Review course structure and resources
-
-Make sure you can access the textbook
-
-## Module 00: Review Items (if Needed)
-
-[Coding Punctuation](../common/coding_punctuation.html?course=SDEV140)
+Create Git account if needed
 
 ## Module 01: Fundamentals of Coding
 
-<!-- - Set up file structure for the course on your machine
-  - Create an SDEV 140 folder (preferably not on C drive, and not in cloud folder)
-  - Create subfolder for each lab / assignment -->
+### Day 1
 
-### Software Setup
+#### Lecture
 
-[Installing VS Code](../common/installing_vs_code.html?course=SDEV140)
+Basic syntax and concept review. If this is new to you, please review the notes on your own:
 
-[Installing Python](../common/installing_python.html?course=SDEV140)
-
-Create a GitHub account if you don't have one
-
-[GitHub](../common/github.html?course=SDEV140)
-
-[Installing Git](../common/installing_git.html?course=SDEV140)
-
-Set default terminal in VS Code: `Ctrl + Shift + P` -> `Terminal: Select Default Profile` -> `Git Bash`
-
-### Command Line (bash)
-
-[Command Line Basics](../common/basic_shell_commands.html?course=SDEV140)
-
-Exercise:
-
-- Check which shell terminal is using
-- Create and close new terminals
-- Clear terminal
-- Create course directory structure
-- Open a working folder in VS Code
-
-### Getting started with Python
-
-[Review: Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
-
-[Review: Input, Output, and Comments in Python](../SDEV120/input_output_comments_python.html?course=SDEV140)
-
-[Review: Variables and Constants](../SDEV120/variables_and_constants.html?course=SDEV140)
-
-[Review: Data Types](../SDEV120/data_types.html?course=SDEV140)
+- IO (input/print)
+  - [Review: Input, Output, and Comments in Python](../SDEV120/input_output_comments_python.html?course=SDEV140)
+- Debugging
+  - [Review: Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
+- Data types
+  - [Review: Data Types](../SDEV120/data_types.html?course=SDEV140)
+- Conditionals (if statements)
+  - [Review: Selection](../SDEV120/selection.html?course=SDEV140)
 
 [String Concatenation, Formatting, and Manipulation](string_manipulation.html)
 
-### Submitting Projects - GitHub Classroom
+Example: [micro:bit - Counter](https://github.com/mpjovanovich/micro-bit-playground/blob/main/counter.py)
 
-[GitHub Classroom](../common/github_classroom.html?course=SDEV140)
+#### Exercise: Learning the Coding Environment
 
-### Intro to Labs
+Do together, due at end of class. Boot up environment then 15 min break. Learn how to:
 
-Lab: Command Line and Debugging
+- Run the programs
+- Debug the programs with breakpoint
+- Use terminal for IO
+- Run tests
+- Commit / push to git
+- Verify that git has latest version of code
 
-Lab: Strings
+#### Exercise: Input and Output
 
-## Module 02: Selection Structures
+Do on your own. A completed attempt is due by next class. Since this is the first week, you will have time to ask questions and fix things next lecture.
 
-[Review: Syntax and Expressions](../SDEV120/syntax_expressions.html?course=SDEV140)
+## Module 02: Loops
 
-[Review: Selection Structures](../SDEV120/selection.html?course=SDEV140)
+### Day 1
 
-Lab: Selection
-
-## Module 03: Loops
+#### Lecture
 
 [Review: Indefinite Loops](../SDEV120/programming_with_loops.html?course=SDEV140)
 
 [Review: Step Values](step_values.html)
 
-Lab: Indefinite Loops
+#### Exercise: Loops
+
+Due Sunday. Do the first half.
+
+#### Lab: Indefinite Loops
+
+Due Sunday.
 
 - Prep: write a guessing game using Python code
+
+### Day 2
+
+#### Lecture
 
 [Definite Loops](definite_loops.html)
 
 [Nested Loops](nested_loops.html)
 
+- Example: [micro:bit - Techno Beats](https://github.com/mpjovanovich/micro-bit-playground/blob/main/techno_beets_loop.py)
+
 [Break and Continue](break_continue.html)
 
 [Optimizing Loop Performance](optimizing_loop_performance.html)
 
-Lab: Definite Loops
+#### Exercise: Loops
+
+Due Sunday. Do the second half.
+
+#### Lab: Definite Loops
+
+Due Sunday.
+
+<!-- https://github.com/mpjovanovich/micro-bit-playground/blob/main/techno_beets_loop.py -->
+
+<!--
 
 ## Module 04: Lists and Dictionaries
 
 [Arrays](arrays.html)
 
-<!-- [Multidimensional Arrays](multidimensional_arrays.html) ??? -->
+[Multidimensional Arrays](multidimensional_arrays.html)
 
 [Dictionaries](dictionaries.html)
 
@@ -175,6 +162,4 @@ Lab: Definite Loops
 
 [Event Driven Programming](event_driven_programming.html)
 
-<!-- ## Module 10: Developing with AI
-
-[Developing with AI](developing_with_ai.html) -->
+-->
