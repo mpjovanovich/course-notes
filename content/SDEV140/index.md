@@ -11,18 +11,9 @@ showBreadcrumb: false
   - [Module 00: Course Introduction](#module-00-course-introduction)
   - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
     - [Day 1](#day-1)
-      - [Lecture](#lecture)
-      - [Exercise: Learning the Coding Environment](#exercise-learning-the-coding-environment)
-      - [Exercise: Input and Output](#exercise-input-and-output)
   - [Module 02: Loops](#module-02-loops)
     - [Day 1](#day-1-1)
-      - [Lecture](#lecture-1)
-      - [Exercise: Loops](#exercise-loops)
-      - [Lab: Indefinite Loops](#lab-indefinite-loops)
     - [Day 2](#day-2)
-      - [Lecture](#lecture-2)
-      - [Exercise: Loops](#exercise-loops-1)
-      - [Lab: Definite Loops](#lab-definite-loops)
 
 /~
 
@@ -44,7 +35,7 @@ Create Git account if needed
 
 ### Day 1
 
-#### Lecture
+**Lecture**
 
 Basic syntax and concept review. If this is new to you, please review the notes on your own:
 
@@ -61,7 +52,7 @@ Basic syntax and concept review. If this is new to you, please review the notes 
 
 Example: [micro:bit - Counter](https://github.com/mpjovanovich/micro-bit-playground/blob/main/counter.py)
 
-#### Exercise: Learning the Coding Environment
+**Exercise: Learning the Coding Environment**
 
 Do together, due at end of class. Boot up environment then 15 min break. Learn how to:
 
@@ -72,7 +63,7 @@ Do together, due at end of class. Boot up environment then 15 min break. Learn h
 - Commit / push to git
 - Verify that git has latest version of code
 
-#### Exercise: Input and Output
+**Exercise: Input and Output**
 
 Do on your own. A completed attempt is due by next class. Since this is the first week, you will have time to ask questions and fix things next lecture.
 
@@ -80,17 +71,17 @@ Do on your own. A completed attempt is due by next class. Since this is the firs
 
 ### Day 1
 
-#### Lecture
+**Lecture**
 
 [Review: Indefinite Loops](../SDEV120/programming_with_loops.html?course=SDEV140)
 
 [Review: Step Values](step_values.html)
 
-#### Exercise: Loops
+**Exercise: Loops**
 
 Due Sunday. Do the first half.
 
-#### Lab: Indefinite Loops
+**Lab: Indefinite Loops**
 
 Due Sunday.
 
@@ -98,7 +89,7 @@ Due Sunday.
 
 ### Day 2
 
-#### Lecture
+**Lecture**
 
 [Definite Loops](definite_loops.html)
 
@@ -110,11 +101,11 @@ Due Sunday.
 
 [Optimizing Loop Performance](optimizing_loop_performance.html)
 
-#### Exercise: Loops
+**Exercise: Loops**
 
 Due Sunday. Do the second half.
 
-#### Lab: Definite Loops
+**Lab: Definite Loops**
 
 Due Sunday.
 
