@@ -22,13 +22,13 @@ course: SDEV140
 Basic syntax and concept review. If this is new to you, please review the notes on your own:
 
 - IO (input/print)
-  - [Review: Input, Output, and Comments in Python](../SDEV120/input_output_comments_python.html?course=SDEV140)
+  - [Review: Input, Output, and Comments in Python](../../SDEV120/input_output_comments_python.html?course=SDEV140)
 - Debugging
-  - [Review: Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV140)
+  - [Review: Debugging Python in VS Code](../../common/vs_code_debugging.html?course=SDEV140)
 - Data types
-  - [Review: Data Types](../SDEV120/data_types.html?course=SDEV140)
+  - [Review: Data Types](../../SDEV120/data_types.html?course=SDEV140)
 - Conditionals (if statements)
-  - [Review: Selection](../SDEV120/selection.html?course=SDEV140)
+  - [Review: Selection](../../SDEV120/selection.html?course=SDEV140)
 
 [String Concatenation, Formatting, and Manipulation](string_manipulation.html)
 
