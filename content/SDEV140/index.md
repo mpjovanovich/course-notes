@@ -1,19 +1,13 @@
 ---
 title: Home
 course: SDEV140
-showBreadcrumb: false
 ---
 
 ~.toc
 
 - [SDEV140](#sdev140)
   - [Announcements](#announcements)
-  - [Module 00: Course Introduction](#module-00-course-introduction)
-  - [Module 01: Fundamentals of Coding](#module-01-fundamentals-of-coding)
-    - [Day 1](#day-1)
-  - [Module 02: Loops](#module-02-loops)
-    - [Day 1](#day-1-1)
-    - [Day 2](#day-2)
+  - [Modules](#modules)
 
 /~
 
@@ -23,7 +17,15 @@ showBreadcrumb: false
 
 - ...
 
-## Module 00: Course Introduction
+## Modules
+
+[Module 00: Course Introduction](module/course_intro.html)
+
+[Module 01: Fundamentals of Coding](module/fundamentals_of_coding.html)
+
+[Module 02: Loops](module/loops.html)
+
+<!-- ## Module 00: Course Introduction
 
 Review SDEV 140 - A Professional's Guide
 
@@ -107,7 +109,7 @@ Due Sunday. Do the second half.
 
 **Lab: Definite Loops**
 
-Due Sunday.
+Due Sunday. -->
 
 <!-- https://github.com/mpjovanovich/micro-bit-playground/blob/main/techno_beets_loop.py -->
 
