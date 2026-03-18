@@ -24,7 +24,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- ...
+- Sign up for midterm and final exams ASAP.
 
 ## Module 00: Course Introduction
 
