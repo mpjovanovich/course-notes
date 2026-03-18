@@ -118,12 +118,69 @@ _Output Example:_
   - Database
   - File
 
-## Example
+## Examples and Exercises
+
+~.focusContent.demo
+
+_Determine if a number is even or odd and print the result_
+
+...
+
+/~
+
+~.focusContent.demo
+
+_Print every other number from 2-10 (2, 4, 6, 8, 10)_
+
+...
+
+/~
 
 ~.focusContent.exercise
 
-_Flowchart our previous algorithm for "have a good or bad day" algorithm_ 
+_Flowchart linear search algorithm_
 
-We will do this together using [draw.io](https://draw.io).
+We will do this together using [draw.io](https://draw.io) for the assignment today.
+
+```
+
+START
+    // Get the inputs
+    // In a realistic example, we may have the list coming from a file or database,
+    // and the user entering the target value.
+    GET list
+    GET target
+
+    // current_index represents the "spot" within the list that we are currently checking
+    SET current_index = 1
+    // Start by assuming the target is not found
+    SET found = false
+
+    WHILE current_index <= length of list:
+        IF the item at the current index is the target:
+            SET found = true
+        END IF
+
+        // Move to the next item in the list
+        ADD 1 to current_index
+    END WHILE
+
+    // Output the result
+    IF found is true:
+        PRINT "Found at index", current_index
+    ELSE:
+        PRINT "Not found"
+    END IF
+END
 
 /~
+
+
+~.focusContent.demo
+
+_Flowchart binary search algorithm_
+
+Instructor challenge...
+
+/~
+```
