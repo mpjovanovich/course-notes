@@ -172,15 +172,14 @@ START
         PRINT "Not found"
     END IF
 END
+```
 
 /~
-
 
 ~.focusContent.demo
 
 _Flowchart binary search algorithm_
 
-Instructor challenge...
+Instructor challenge... only if time.
 
 /~
-```
