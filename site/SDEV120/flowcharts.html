@@ -204,17 +204,74 @@
           </ul>
         </li>
       </ul>
-      <h2 id="example">Example</h2>
+      <h2 id="examples-and-exercises">Examples and Exercises</h2>
+      <div class="focusContent demo">
+        <p>
+          <em>Determine if a number is even or odd and print the result</em>
+        </p>
+        <p>...</p>
+      </div>
+
+      <div class="focusContent demo">
+        <p><em>Print every other number from 2-10 (2, 4, 6, 8, 10)</em></p>
+        <p>...</p>
+      </div>
+
       <div class="focusContent exercise">
+        <p><em>Flowchart linear search algorithm</em></p>
         <p>
-          <em
-            >Flowchart our previous algorithm for &quot;have a good or bad
-            day&quot; algorithm</em
-          >
+          We will do this together using
+          <a href="https://draw.io">draw.io</a> for the assignment today.
         </p>
-        <p>
-          We will do this together using <a href="https://draw.io">draw.io</a>.
-        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span></span></span>
+<span class="line"><span>START</span></span>
+<span class="line"><span>    // Get the inputs</span></span>
+<span class="line"><span>    // In a realistic example, we may have the list coming from a file or database,</span></span>
+<span class="line"><span>    // and the user entering the target value.</span></span>
+<span class="line"><span>    GET list</span></span>
+<span class="line"><span>    GET target</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    // current_index represents the "spot" within the list that we are currently checking</span></span>
+<span class="line"><span>    SET current_index = 1</span></span>
+<span class="line"><span>    // Start by assuming the target is not found</span></span>
+<span class="line"><span>    SET found = false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    WHILE current_index &#x3C;= length of list:</span></span>
+<span class="line"><span>        IF the item at the current index is the target:</span></span>
+<span class="line"><span>            SET found = true</span></span>
+<span class="line"><span>        END IF</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        // Move to the next item in the list</span></span>
+<span class="line"><span>        ADD 1 to current_index</span></span>
+<span class="line"><span>    END WHILE</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    // Output the result</span></span>
+<span class="line"><span>    IF found is true:</span></span>
+<span class="line"><span>        PRINT "Found at index", current_index</span></span>
+<span class="line"><span>    ELSE:</span></span>
+<span class="line"><span>        PRINT "Not found"</span></span>
+<span class="line"><span>    END IF</span></span>
+<span class="line"><span>END</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;!--DOTMARK_DIV&#x3C;/div></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;!--DOTMARK_DIV&#x3C;div class="focusContent demo"></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>_Flowchart binary search algorithm_</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Instructor challenge...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;!--DOTMARK_DIV&#x3C;/div></span></span></code></pre>
       </div>
     </div>
   </body>
