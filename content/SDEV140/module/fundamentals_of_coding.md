@@ -30,7 +30,7 @@ Basic syntax and concept review. If this is new to you, please review the notes 
 - Conditionals (if statements)
   - [Review: Selection](../../SDEV120/selection.html?course=SDEV140)
 
-[String Concatenation, Formatting, and Manipulation](string_manipulation.html)
+[String Concatenation, Formatting, and Manipulation](../string_manipulation.html)
 
 Example: [micro:bit - Counter](https://github.com/mpjovanovich/micro-bit-playground/blob/main/counter.py)
 
