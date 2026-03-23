@@ -39,15 +39,15 @@ Due Sunday.
 
 ### Lecture
 
-[Definite Loops](definite_loops.html)
+[Definite Loops](../definite_loops.html)
 
-[Nested Loops](nested_loops.html)
+[Nested Loops](../nested_loops.html)
 
 - Example: [micro:bit - Techno Beats](https://github.com/mpjovanovich/micro-bit-playground/blob/main/techno_beets_loop.py)
 
-[Break and Continue](break_continue.html)
+[Break and Continue](../break_continue.html)
 
-[Optimizing Loop Performance](optimizing_loop_performance.html)
+[Optimizing Loop Performance](../optimizing_loop_performance.html)
 
 ### Exercise: Loops
 
