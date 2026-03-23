@@ -48,11 +48,11 @@ If you know that you will never need a fractional component to your numbers, you
 
 SQLite uses up to 64 bits to store integers, but may use less space for smaller values. There is a min and max value for integers, but they are very large. The range is:
 
-`-(2<sup>63</sup>) to 2<sup>63</sup> - 1`
+-(2<sup>63</sup>) to 2<sup>63</sup> - 1
 
 or:
 
-`-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807`
+-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 
 /~
 
@@ -68,7 +68,7 @@ SQLite also uses 64 bits to store real numbers.
 
 You don't need to know the details of what that means - just know that the range for this is very large. The max value is roughly:
 
-`1.7976931348623157×10<sup>308</sup>`
+1.7976931348623157×10<sup>308</sup>
 
 /~
 
