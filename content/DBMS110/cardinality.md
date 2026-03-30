@@ -27,15 +27,15 @@ This translates to:
 
 > For some entity X there may be at minimum 0 and at maximum 1 instance of entity Y.
 
-## Crow's Foot Notation
+## Update:
 
-**Crow's Foot Notation** provides a quick visual way to identify the cardinalities in a relationship.
+https://creately.com/guides/cardinality-symbols/
 
-The symbol on the inside is the minimum value, and the symbol on the outside is the maximum value.
+Chen vs Crow's foot vs UML Notation...
 
-<figure>
-  <img src="images/crows_foot.svg" style="width: 100%;height: auto;">
-</figure>
+_Notes are not up to date - use this article as a primary source._
+
+## Examples and Exercises
 
 ~.focusContent.example
 
