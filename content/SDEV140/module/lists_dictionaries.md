@@ -5,15 +5,15 @@ course: SDEV140
 
 ~.toc
 
-- [Module 02: Loops](#module-02-loops)
+- [Module 03: Lists and Dictionaries](#module-03-lists-and-dictionaries)
   - [Day 1](#day-1)
     - [Lecture](#lecture)
-    - [Exercise: Loops](#exercise-loops)
-    - [Lab: Indefinite Loops](#lab-indefinite-loops)
+    - [Exercise: Lists](#exercise-lists)
+    - [Lab: Lists](#lab-lists)
   - [Day 2](#day-2)
     - [Lecture](#lecture-1)
-    - [Exercise: Loops](#exercise-loops-1)
-    - [Lab: Definite Loops](#lab-definite-loops)
+    - [Exercise: Dictionaries](#exercise-dictionaries)
+    - [Lab: Dictionaries](#lab-dictionaries)
 
 /~
 
@@ -24,8 +24,6 @@ course: SDEV140
 ### Lecture
 
 [Lists](../arrays.html)
-
-[Multidimensional Arrays](../multidimensional_arrays.html)
 
 ### Exercise: Lists
 
@@ -38,6 +36,12 @@ Due Sunday.
 ## Day 2
 
 ### Lecture
+
+Finish from previous notes: Parallel arrays
+
+[Multidimensional Arrays](../multidimensional_arrays.html)
+
+Possibly postpone until next week? Ask for student feedback.
 
 [Dictionaries](../dictionaries.html)
 

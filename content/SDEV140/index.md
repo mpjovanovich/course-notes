@@ -25,6 +25,8 @@ course: SDEV140
 
 [Module 02: Loops](module/loops.html)
 
+[Module 03: Lists and Dictionaries](module/lists_dictionaries.html)
+
 <!--
 
 ## Module 04: Lists and Dictionaries
