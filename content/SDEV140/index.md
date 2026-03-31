@@ -15,7 +15,7 @@ course: SDEV140
 
 ## Announcements
 
-- Class will be async (prerecorded) 3/26
+- First project is due Wednesday night, 4/8
 
 ## Modules
 
