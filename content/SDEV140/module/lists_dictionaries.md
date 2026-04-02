@@ -12,6 +12,7 @@ course: SDEV140
     - [Lab: Lists](#lab-lists)
   - [Day 2](#day-2)
     - [Lecture](#lecture-1)
+    - [Day 3](#day-3)
     - [Exercise: Dictionaries](#exercise-dictionaries)
     - [Lab: Dictionaries](#lab-dictionaries)
 
@@ -37,11 +38,15 @@ Due Sunday.
 
 ### Lecture
 
-Finish from previous notes: Parallel arrays
+[Parallel Arrays](../parallel_arrays.html)
+
+TODO add notes for: [Stack and Queue](../stack_queue.html)
 
 [Multidimensional Arrays](../multidimensional_arrays.html)
 
-Possibly postpone until next week? Ask for student feedback.
+No additional assignments for this day.
+
+### Day 3
 
 [Dictionaries](../dictionaries.html)
 

@@ -8,9 +8,9 @@ course: SDEV140
 - [Multidimensional Arrays](#multidimensional-arrays)
   - [When to Use Multidimensional Arrays](#when-to-use-multidimensional-arrays)
   - [Python - Lists of Lists](#python---lists-of-lists)
-  - [Accessing Values](#accessing-values)
-  - [Modifying Values](#modifying-values)
-  - [Practical Example - Tic Tac Toe](#practical-example---tic-tac-toe)
+  - [Accessing and Modifying Values](#accessing-and-modifying-values)
+  - [Example - Tic Tac Toe](#example---tic-tac-toe)
+  - [Example: Pet Database as List of Lists](#example-pet-database-as-list-of-lists)
 
 /~
 
