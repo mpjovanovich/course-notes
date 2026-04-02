@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDEV140: Parallel Arrays</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#parallel-arrays">Parallel Arrays</a>
+            <ul>
+              <li><a href="#definition">Definition</a></li>
+              <li><a href="#examples">Examples</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="parallel-arrays">Parallel Arrays</h1>
+      <h2 id="definition">Definition</h2>
+      <p>
+        <strong>Parallel arrays</strong> are a set of arrays that store related
+        information for a given index / position.
+      </p>
+      <p>
+        E.g.: Here are two arrays below - name and age. The parallel arrays give
+        the data a table structure. By looking at some index into the arrays we
+        can extract a “row” of data which are related.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th align="left">index</th>
+            <th align="center">name</th>
+            <th align="left">age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="left">0</td>
+            <td align="center">Terri Gourd</td>
+            <td align="left">23</td>
+          </tr>
+          <tr>
+            <td align="left">1</td>
+            <td align="center">Jonny Chocolate</td>
+            <td align="left">17</td>
+          </tr>
+          <tr>
+            <td align="left">2</td>
+            <td align="center">Sven Iglinsin</td>
+            <td align="left">34</td>
+          </tr>
+          <tr>
+            <td align="left">3</td>
+            <td align="center">The Q</td>
+            <td align="left">999999</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        This example had just two arrays, but there may be as many as needed.
+      </p>
+      <h2 id="examples">Examples</h2>
+      <div class="focusContent demo">
+        <p><strong>Enter Student Grades</strong></p>
+        <p>
+          Write a program that first prompts a user to enter the names of a
+          student then the student’s final grade. Do this until the user types
+          “done”. Print each student’s name and total score and exit the
+          program.
+        </p>
+        <p>
+          <a
+            href="https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV120_Computing_Logic/m06_enter_student_grades.py"
+            >enter_student_grades.py</a
+          >
+        </p>
+      </div>
+
+      <div class="focusContent demo">
+        <p><strong>Moving Average</strong></p>
+        <p>
+          Write a program that calculates the moving average of a list of
+          numbers. This means that after each number is entered, the average of
+          the numbers entered so far is calculated and displayed.
+        </p>
+        <p>
+          <a
+            href="https://github.com/mpjovanovich/ivy_tech/blob/main/SDEV140_Intro_Software_Development/moving_average_parallel_arrays.py"
+            >moving_average_parallel_arrays.py</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
