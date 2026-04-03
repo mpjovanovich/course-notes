@@ -27,6 +27,8 @@ course: SDEV140
 
 [Module 03: Lists and Dictionaries](module/lists_dictionaries.html)
 
+[Module 04: Exceptions and Error Handling](module/exceptions_error_handling.html)
+
 <!--
 
 ## Module 04: Lists and Dictionaries
