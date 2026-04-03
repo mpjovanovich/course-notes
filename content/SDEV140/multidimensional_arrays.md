@@ -16,7 +16,13 @@ course: SDEV140
 
 # Multidimensional Arrays
 
-- A multidimensional array is an array of arrays.
+<figure>
+    <span>
+        <img src="images/multidimensional_arrays.svg" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
+A multidimensional array is an "array of arrays" or "list of lists".
 
 ## When to Use Multidimensional Arrays
 

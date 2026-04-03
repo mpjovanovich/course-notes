@@ -26,6 +26,12 @@ course: SDEV140
 
 # Arrays
 
+<figure>
+    <span>
+        <img src="images/arrays.svg" style="width: 80%;height: auto;">
+    </span>
+</figure>
+
 ## Definitions
 
 - An array is a series or list of values in computer memory.
