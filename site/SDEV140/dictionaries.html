@@ -134,7 +134,12 @@
       </p>
       <h2 id="why-use-a-dictionary">Why use a Dictionary?</h2>
       <p>Dictionaries are useful for creating lookup tables.</p>
-      <p>They are a way to store related information.</p>
+      <p>
+        They are a way to store related information. In the previous notes we
+        used parallel arrays to store data that was related to each other. A
+        dictionary is a better alternative to store data that is associated with
+        a key:
+      </p>
       <table>
         <thead>
           <tr>
@@ -258,7 +263,7 @@
         tabindex="0"
       ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Modifying values</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">my_dict[</span><span style="color:#50A14F;--shiki-dark:#98C379">"age"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">] </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 25</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(my_dict[</span><span style="color:#50A14F;--shiki-dark:#98C379">"age"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">])   </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Output: 25</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(my_dict[</span><span style="color:#50A14F;--shiki-dark:#98C379">"age"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">])   </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Output: 25 Be sure that you understand this basic concept before moving forward.</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">my_dict[</span><span style="color:#50A14F;--shiki-dark:#98C379">"age"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">] </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 26</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(my_dict[</span><span style="color:#50A14F;--shiki-dark:#98C379">"age"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">])   </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Output: 26</span></span></code></pre>
       <h2 id="removing-key-value-pairs">Removing Key-Value Pairs</h2>
@@ -318,19 +323,8 @@
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Iterating through key-value pairs</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">for</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> key, value </span><span style="color:#A626A4;--shiki-dark:#C678DD">in</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> my_dict.</span><span style="color:#383A42;--shiki-dark:#61AFEF">items</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(key, value)</span></span></code></pre>
-      <h2 id="demos-accessing-values-in-a-dictionary---weather-forecast">
-        Demos: Accessing Values in a Dictionary - Weather Forecast
-      </h2>
-      <div class="focusContent lookout">
-        <p>
-          In the demos below we should really be checking if the key exists
-          before accessing it by using the <code>in</code> keyword, as shown in
-          the &quot;Checking if a Key Exists&quot; section above.
-        </p>
-        <p>This has been left out to keep the examples simple.</p>
-      </div>
-
-      <h3 id="version-1---normal-dictionary">Version 1 - Normal Dictionary:</h3>
+      <h2 id="demos-weather-forecast-data">Demos: Weather Forecast Data</h2>
+      <h3 id="version-1---simple-dictionary">Version 1 - Simple Dictionary:</h3>
       <p>
         In this version, temperatures are stored in a dictionary with a date as
         the key.
@@ -356,10 +350,36 @@
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Prompt user for a date</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">date </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter a date (YYYYMMDD): "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Print the temperature for the date</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">'</span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">date</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">temperatures[date]</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">°F'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
-      <h3 id="version-2---dictionary-of-arrays">
-        Version 2 - Dictionary of Arrays:
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Check if the date is in the dictionary - otherwise it will fail</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> date </span><span style="color:#A626A4;--shiki-dark:#C678DD">not</span><span style="color:#A626A4;--shiki-dark:#C678DD"> in</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> temperatures:</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Date not found in temperatures dictionary."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">else</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Print the temperature for the date</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">'</span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">date</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">temperatures[date]</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">°F'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+      <div class="focusContent lookout">
+        <p><strong>Is this complexity worth it?</strong></p>
+        <p>
+          Moving forward from this point we will begin to add complexity to the
+          &quot;normal&quot; use case of a dictionary - looking up a simple
+          value by key. Be sure that you understand this basic concept before
+          moving forward!
+        </p>
+        <p>
+          <em
+            >Software developers must be able to understand how to use nested
+            data structures to represent complex data.</em
+          >
+        </p>
+        <p>
+          However; when data gets too complex to understand in a nested
+          structure it is often a sign that we need to create better custom data
+          types (such as objects / classes) to represent the data. We will
+          explore this later in the course.
+        </p>
+      </div>
+
+      <h3 id="version-2---multidimensional-dictionary-of-arrays">
+        Version 2 - Multidimensional Dictionary of Arrays:
       </h3>
       <p>
         In this version, hourly temperatures are stored in an array with the
@@ -400,8 +420,8 @@
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Print the temperature for the date and hour.</span></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Pad the hour with zeros to 2 digits</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">'</span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">date</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">, </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">hour</span><span style="color:#A626A4;--shiki-dark:#C678DD">:02d</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">:00 </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">temperatures[date][</span><span style="color:#0184BC;--shiki-dark:#56B6C2">int</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(hour)]</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">°F'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
-      <h3 id="version-3---dictionary-of-dictionaries">
-        Version 3 - Dictionary of Dictionaries:
+      <h3 id="version-3---multidimensional-dictionary-of-dictionaries">
+        Version 3 - Multidimensional Dictionary of Dictionaries:
       </h3>
       <p>
         In this version, the outer dictionary is keyed by city, and the inner
