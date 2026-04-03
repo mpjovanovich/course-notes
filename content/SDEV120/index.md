@@ -147,6 +147,8 @@ Discussion: Data Structures - Choose Your Own Adventure
 
 [Midterm Review](midterm_study_s25.html)
 
+After class: Review Truth Tables solution for those that want to see it
+
 ## M06: Intro to Programming
 
 [Coding Punctuation](../common/coding_punctuation.html?course=SDEV120)
