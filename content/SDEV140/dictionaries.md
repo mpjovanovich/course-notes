@@ -44,7 +44,7 @@ Dictionaries are also known as **maps** and **hashmaps**.
 
 Dictionaries are useful for creating lookup tables.
 
-They are a way to store related information.
+They are a way to store related information. In the previous notes we used parallel arrays to store data that was related to each other. A dictionary is a better alternative to store data that is associated with a key:
 
 | Item   | Price |
 | ------ | ----- |
@@ -117,7 +117,7 @@ You can modify the existing values associated with a key. It works the same way 
 ```python
 # Modifying values
 my_dict["age"] = 25
-print(my_dict["age"])   # Output: 25
+print(my_dict["age"])   # Output: 25 Be sure that you understand this basic concept before moving forward.
 my_dict["age"] = 26
 print(my_dict["age"])   # Output: 26
 ```
@@ -159,17 +159,9 @@ for key, value in my_dict.items():
     print(key, value)
 ```
 
-## Demos: Accessing Values in a Dictionary - Weather Forecast
+## Demos: Weather Forecast Data
 
-~.focusContent.lookout
-
-In the demos below we should really be checking if the key exists before accessing it by using the `in` keyword, as shown in the "Checking if a Key Exists" section above.
-
-This has been left out to keep the examples simple.
-
-/~
-
-### Version 1 - Normal Dictionary:
+### Version 1 - Simple Dictionary:
 
 In this version, temperatures are stored in a dictionary with a date as the key.
 
@@ -186,11 +178,27 @@ temperatures = {
 ## Prompt user for a date
 date = input("Enter a date (YYYYMMDD): ")
 
-## Print the temperature for the date
-print(f'{date}: {temperatures[date]}°F')
+## Check if the date is in the dictionary - otherwise it will fail
+if date not in temperatures:
+    print("Date not found in temperatures dictionary.")
+else:
+    ## Print the temperature for the date
+    print(f'{date}: {temperatures[date]}°F')
 ```
 
-### Version 2 - Dictionary of Arrays:
+~.focusContent.lookout
+
+**Is this complexity worth it?**
+
+Moving forward from this point we will begin to add complexity to the "normal" use case of a dictionary - looking up a simple value by key. Be sure that you understand this basic concept before moving forward!
+
+_Software developers must be able to understand how to use nested data structures to represent complex data._
+
+However; when data gets too complex to understand in a nested structure it is often a sign that we need to create better custom data types (such as objects / classes) to represent the data. We will explore this later in the course.
+
+/~
+
+### Version 2 - Multidimensional Dictionary of Arrays:
 
 In this version, hourly temperatures are stored in an array with the date as the key and an array of temperatures as the value.
 
@@ -223,7 +231,7 @@ hour = int(input("Enter an hour (0-23): "))
 print(f'{date}, {hour:02d}:00 {temperatures[date][int(hour)]}°F')
 ```
 
-### Version 3 - Dictionary of Dictionaries:
+### Version 3 - Multidimensional Dictionary of Dictionaries:
 
 In this version, the outer dictionary is keyed by city, and the inner dictionary is keyed by date. Only the high temperature is stored.
 
