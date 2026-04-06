@@ -85,6 +85,12 @@ scenarios:
 
 - [CRUD](crud.html)
 
+...
+
+TODO: Lecure notes from transactions; link to diagram
+
+..
+
 ## Module 05: Database Design and Normalization
 
 Part I:
