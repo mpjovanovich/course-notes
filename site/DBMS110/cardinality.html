@@ -43,11 +43,11 @@
                   >Connecting Entities with Cardinality Notation</a
                 >
               </li>
-              <li>
-                <a href="#crows-foot-notation">Crow&#39;s Foot Notation</a>
-              </li>
-              <li><a href="#exercises">Exercises</a></li>
+              <li><a href="#update">Update:</a></li>
               <li><a href="#shorthand-notation">Shorthand Notation</a></li>
+              <li>
+                <a href="#examples-and-exercises">Examples and Exercises</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -83,64 +83,6 @@
         >
       </p>
       <p>Chen vs Crow&#39;s foot vs UML Notation...</p>
-      <p>
-        <em
-          >Notes are not up to date - use this article as a primary source.</em
-        >
-      </p>
-      <h2 id="examples-and-exercises">Examples and Exercises</h2>
-      <div class="focusContent example">
-        <p><strong>Person to Vehicle</strong></p>
-        <p>
-          There will be a pair of quantifiers for each direction of the
-          relationship. These are placed at the edges of the relationship.
-        </p>
-        <figure>
-          <img
-            src="images/cardinality_example1.svg"
-            style="width: 40%; height: auto"
-          />
-        </figure>
-
-        <ul>
-          <li>
-            Each person is associated with at minimum zero and at most many
-            vehicles.
-          </li>
-          <li>
-            Each vehicle is associated with at minimum one and at most one
-            person.
-          </li>
-        </ul>
-      </div>
-
-      <h2 id="exercises">Exercises</h2>
-      <p>
-        Let&#39;s try drawing crow&#39;s foot notation for a couple of
-        exercises.
-      </p>
-      <div class="focusContent exercise">
-        <p><strong>Person to Driver&#39;s License</strong></p>
-        <blockquote>
-          <p>
-            A person can have at minimum zero and at most one driver&#39;s
-            license. A driver&#39;s license can be associated with at minimum
-            one and at most one person.
-          </p>
-        </blockquote>
-      </div>
-
-      <div class="focusContent exercise">
-        <p><strong>Author to Book</strong></p>
-        <blockquote>
-          <p>
-            An author can be associated with at minimum zero and at most many
-            books. A book can be associated with at minimum one and at most one
-            author.
-          </p>
-        </blockquote>
-      </div>
-
       <h2 id="shorthand-notation">Shorthand Notation</h2>
       <p>
         ERDs should have the full descriptive quantifiers for cardinality;
@@ -170,19 +112,70 @@
         </tbody>
       </table>
       <p>In this shorthand, the minimum values are omitted.</p>
+      <h2 id="examples-and-exercises">Examples and Exercises</h2>
       <div class="focusContent example">
-        <p><strong>1:1 vs 1:M Scenarios</strong></p>
-        <p>From our examples above:</p>
+        <p><strong>Person to Vehicle</strong></p>
         <p>
-          There is a 1:1 relationship between person and driver&#39;s license.
-          We ignore the fact that ther may be zero instances of driver&#39;s
-          license when casually describing the relationship.
+          There will be a pair of quantifiers for each direction of the
+          relationship. These are placed at the edges of the relationship.
         </p>
+        <figure>
+          <img
+            src="images/cardinality_example1.svg"
+            style="width: 40%; height: auto"
+          />
+        </figure>
+
+        <ul>
+          <li>
+            Each person is associated with at minimum zero and at most many
+            vehicles.
+          </li>
+          <li>
+            Each vehicle is associated with at minimum one and at most one
+            person.
+          </li>
+        </ul>
+      </div>
+
+      <div class="focusContent exercise">
+        <p><strong>Person to Driver&#39;s License</strong></p>
+        <blockquote>
+          <p>
+            A person can have at minimum zero and at most one driver&#39;s
+            license. A driver&#39;s license can be associated with at minimum
+            one and at most one person.
+          </p>
+        </blockquote>
+      </div>
+
+      <div class="focusContent exercise">
+        <p><strong>Author to Book</strong></p>
+        <blockquote>
+          <p>
+            An author can be associated with at minimum zero and at most many
+            books. A book can be associated with at minimum one and at most one
+            author.
+          </p>
+        </blockquote>
+      </div>
+
+      <div class="focusContent exercise">
+        <p><strong>Pet Sitting Service v1</strong></p>
         <p>
-          There is a 1:M relationship between author and book. We ignore the
-          fact that there may be zero instances of book when casually describing
-          the relationship.
+          Identify the entities and fields in the given scenario, then create an
+          ERD:
         </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>You are creating a pet sitting application. Clients sign up and enter any pets they have into the system. A client can then selects an available sitter for a specific time to come and watch his or her pets.</span></span></code></pre>
       </div>
     </div>
   </body>
