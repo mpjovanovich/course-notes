@@ -7,9 +7,9 @@ course: DBMS110
 
 - [Cardinality](#cardinality)
   - [Connecting Entities with Cardinality Notation](#connecting-entities-with-cardinality-notation)
-  - [Crow's Foot Notation](#crows-foot-notation)
-  - [Exercises](#exercises)
+  - [Update:](#update)
   - [Shorthand Notation](#shorthand-notation)
+  - [Examples and Exercises](#examples-and-exercises)
 
 /~
 
@@ -33,7 +33,17 @@ https://creately.com/guides/cardinality-symbols/
 
 Chen vs Crow's foot vs UML Notation...
 
-_Notes are not up to date - use this article as a primary source._
+## Shorthand Notation
+
+ERDs should have the full descriptive quantifiers for cardinality; however, it is common to use the following shorthand notations when discussing a relationship at a high level:
+
+| Shorthand | Description  |
+| --------- | ------------ |
+| 1:1       | One to One   |
+| 1:M       | One to Many  |
+| M:N       | Many to Many |
+
+In this shorthand, the minimum values are omitted.
 
 ## Examples and Exercises
 
@@ -51,10 +61,6 @@ There will be a pair of quantifiers for each direction of the relationship. Thes
 - Each vehicle is associated with at minimum one and at most one person.
 
 /~
-
-## Exercises
-
-Let's try drawing crow's foot notation for a couple of exercises.
 
 ~.focusContent.exercise
 
@@ -74,26 +80,14 @@ Let's try drawing crow's foot notation for a couple of exercises.
 
 /~
 
-## Shorthand Notation
+~.focusContent.exercise
 
-ERDs should have the full descriptive quantifiers for cardinality; however, it is common to use the following shorthand notations when discussing a relationship at a high level:
+**Pet Sitting Service v1**
 
-| Shorthand | Description  |
-| --------- | ------------ |
-| 1:1       | One to One   |
-| 1:M       | One to Many  |
-| M:N       | Many to Many |
+Identify the entities and fields in the given scenario, then create an ERD:
 
-In this shorthand, the minimum values are omitted.
-
-~.focusContent.example
-
-**1:1 vs 1:M Scenarios**
-
-From our examples above:
-
-There is a 1:1 relationship between person and driver's license. We ignore the fact that ther may be zero instances of driver's license when casually describing the relationship.
-
-There is a 1:M relationship between author and book. We ignore the fact that there may be zero instances of book when casually describing the relationship.
+```
+You are creating a pet sitting application. Clients sign up and enter any pets they have into the system. A client can then selects an available sitter for a specific time to come and watch his or her pets.
+```
 
 /~

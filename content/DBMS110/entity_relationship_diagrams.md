@@ -41,3 +41,15 @@ Relationships in an ERD must have the following characteristics:
 - Related entities are connected by a line (not all entities are related to all other entities)
 - Lines should connect from the foreign key of one entity to the primary key of the other entity
 - A cardinality indicator should be shown on the edge between the entities
+
+~.focusContent.exercise
+
+**College Course Database v1**
+
+Create a simple ERD showing the relationships between the following entities:
+
+- Course
+- Teacher
+- Student
+
+/~

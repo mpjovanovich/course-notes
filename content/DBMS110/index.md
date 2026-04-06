@@ -67,17 +67,11 @@ Part I:
 
 - [Primary Keys and Foreign Keys](primary_foreign_keys.html)
 - [Entity Relationship Diagrams (ERDs)](entity_relationship_diagrams.html)
-
-<!--
-scenarios:
-  - COLLEGE COURSE DATABASE (v1): course, teacher, student
-  - PET SITTING SERVICE (v1): pet, sitter, client, appointment
--->
+- [Cardinality](cardinality.html)
 
 Part II:
 
 - [Natural and Surrogate Keys](natural_and_surrogate_keys.html)
-- [Cardinality](cardinality.html)
 - [Using dbdiagram.io](dbdiagram.io.html)
 - In-Class Exercise: Model a Customer Order History System
 
@@ -89,7 +83,7 @@ scenarios:
 
 ## Module 04: SQL CRUD Operations
 
-... notes to be added; know syntax for SQL SELECT, INSERT, UPDATE, DELETE ...
+- [CRUD](crud.html)
 
 ## Module 05: Database Design and Normalization
 
