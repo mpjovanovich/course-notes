@@ -365,56 +365,54 @@ for student, scores in grades.items():
         print(f"  {score}")
 ```
 
-### Version 3: Dictionary of Dictionaries
+## Demos: Building a Priority Queue using a Dictionary
 
 In this version we will store grades for each assignment category in a dictionary of dictionaries. We can then access the grades for a specific assignment category by indexing into the dictionary with the category name.
 
 We use a nested loop to get the grades for each assignment category.
 
 ```python
-## #####################################
-## Get grades
-## #####################################
+# ##########################################################
+# Part1: Write a program that prompts the user to enter a series
+# of tasks and an associated priority. It will store these in
+# a dictionary.
+# ##########################################################
 
-## Initialize final grades dictionary
-final_grades = {}
+# Initialize task dictionary.
+# Maps each priority to an empty list.
+# These lists will hold items for the given priority.
+tasks = {
+    1: [],
+    2: [],
+    3: [],
+}
 
-## Loop to get student names
+# Do the prompt loop to get tasks and priorities
 while True:
-    ## Get student name
-    student_name = input("Enter student name. Type 'quit' if done with students: ")
-    if student_name.lower() == "quit":
+    # Get the task
+    task = input("Enter task or 'q' to quit: ")
+    if task == 'q':
         break
 
-    # Initialize student's grades dictionary
-    student_grades = {}
+    # Get the priority
+    priority = int(input('Enter a priority (1,2,3): '))
 
-    ## Loop to get grades (by category)
-    while True:
-        category = input("Enter grade category. Type 'done' if done with categories: ")
-        if category.lower() == "done":
-            break
-        grade = float(input(f"Enter grade for {category}: "))
-        student_grades[category] = grade
+    # Add the task to the priority queue (dictionary)
+    task_list = tasks[priority]
+    task_list.append(task)
 
-    ## Add student and grades to final grades dictionary
-    final_grades[student_name] = student_grades
+# ##########################################################
+# Part 2: prompt user to get task of a given priority.
+# ##########################################################
+priority = int(input('Enter priority of the task that you would like: '))
 
-    ## Friendly message to let user know we are done with this student
-    print(f"GRADES COMPLETE FOR {student_name}.")
-    print('-' * 20)
+# Get the first entry that was put into the priority queue list for this
+# priority
+task_list = tasks[priority]
 
-## #####################################
-## Print grades
-## #####################################
-print()
-print("FINAL GRADES:")
-print("-" * 20)
-
-for student, categories in final_grades.items():
-    print(f"{student}:")
-
-    ## Categories is a dictionary, so iterate through it
-    for category, grade in categories.items():
-        print(f"  {category}: {grade}")
+if len(task_list) == 0:
+    print('No items.')
+else:
+    item = task_list.pop(0)
+    print(item)
 ```
