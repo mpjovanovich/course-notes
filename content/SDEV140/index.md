@@ -15,7 +15,9 @@ course: SDEV140
 
 ## Announcements
 
-- First project is due Wednesday night, 4/8
+- Review lab policy assignments
+- If you have a zero for an assignment for not following the video solution you may resubmit
+  - Email instructor requesting regrade
 
 ## Modules
 
