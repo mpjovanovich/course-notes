@@ -187,25 +187,33 @@
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">1</span><span style="color:#383A42;--shiki-dark:#56B6C2"> /</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">except</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> Exception</span><span style="color:#A626A4;--shiki-dark:#C678DD"> as</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> e:</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(e)</span></span></code></pre>
-      <h3 id="types-of-exceptions">Types of Exceptions</h3>
-      <p>We can choose to handle specific types of exceptions. Useful when:</p>
+      <h2 id="the-exception-class">The Exception Class</h2>
+      <p>
+        The <code>Exception</code> class shown above is a catch-all for every
+        possible exception. We should use this as a last resort to catch
+        unexpected exceptions. This allows us to do things like:
+      </p>
       <ul>
+        <li>Log the error</li>
+        <li>Display an error message to the user</li>
+        <li>Attempt to recover from the error</li>
+        <li>
+          Fail gracefully if necessary (don&#39;t &quot;crash&quot; the program)
+        </li>
+      </ul>
+      <h3 id="types-of-exceptions">Types of Exceptions</h3>
+      <p>
+        We can choose to handle more specific types of exceptions. This is
+        useful when:
+      </p>
+      <ul>
+        <li>We have an &quot;expected&quot; exception type for a scenario</li>
         <li>We want to handle different exceptions differently</li>
-        <li>We want to ignore certain exceptions</li>
         <li>
           We want to handle some exceptions and let others crash the program
         </li>
-        <li>
-          We want the program to <strong>fail gracefully</strong>
-          <ul>
-            <li>Close the program in a controlled manner</li>
-            <li>Take above actions before closing</li>
-            <li>
-              Release resources (e.g. close files, network connections, etc.)
-            </li>
-          </ul>
-        </li>
       </ul>
+      <p><strong>ZeroDivisionError</strong></p>
       <pre
         class="shiki shiki-themes one-light one-dark-pro"
         style="
@@ -218,22 +226,36 @@
       ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">try</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Will throw a ZeroDivisionError</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">1</span><span style="color:#383A42;--shiki-dark:#56B6C2"> /</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">except</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> ZeroDivisionError</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Cannot divide by zero."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+      <p><strong>ValueError</strong></p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">try</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Will throw a ValueError</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#0184BC;--shiki-dark:#56B6C2">int</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"abc"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">))</span></span>
-<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    x </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> int</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"abc"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">except</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> ValueError</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Invalid value."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+      <p><strong>FileNotFoundError</strong></p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">try</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Will throw a FileNotFoundError</span></span>
 <span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    file</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> open</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"does_not_exist.txt"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Will throw a NameError - no handler so program will crash</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(variable_does_not_exist)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">except</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> ZeroDivisionError</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Cannot divide by zero."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">except</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> ValueError</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Invalid value."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">except</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> FileNotFoundError</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"File not found."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
       <h2 id="validation">Validation</h2>
@@ -267,12 +289,11 @@
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">except</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> ValueError</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Handle invalid input</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Invalid number."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
-      <h3 id="looping-until-valid-input">Looping Until Valid Input</h3>
+      <h3 id="data-type-validation">Data Type Validation</h3>
       <p>
-        Most of the time we want to continue to prompt the user for input until
-        they provide valid input. We can do that with a <code>while</code> loop.
+        We can use an input validation loop to ensure that the user enters data
+        of a specific type.
       </p>
-      <h4 id="data-type-validation">Data Type Validation</h4>
       <pre
         class="shiki shiki-themes one-light one-dark-pro"
         style="
@@ -300,11 +321,11 @@
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    except</span><span style="color:#0184BC;--shiki-dark:#ABB2BF"> ValueError</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        ## Let the user know they messed up, then go back to</span></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        ## the top of the loop</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">'Must enter an integer.'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">'Input must be an integer.'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## We have a valid number, and can now continue the program</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(number)</span></span></code></pre>
-      <h4 id="range-validation">Range Validation</h4>
+      <h3 id="range-validation">Range Validation</h3>
       <pre
         class="shiki shiki-themes one-light one-dark-pro"
         style="
@@ -320,7 +341,7 @@
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Handle invalid input</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Invalid number."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    number </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> int</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#0184BC;--shiki-dark:#56B6C2">input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter a number between 1 and 10: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">))</span></span></code></pre>
-      <h4 id="categorical-validation">Categorical Validation</h4>
+      <h3 id="categorical-validation">Categorical Validation</h3>
       <pre
         class="shiki shiki-themes one-light one-dark-pro"
         style="
@@ -331,10 +352,61 @@
         "
         tabindex="0"
       ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">pet_type </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter a pet type for sitting service (dog, cat): "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">while</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> pet_type </span><span style="color:#383A42;--shiki-dark:#56B6C2">!=</span><span style="color:#50A14F;--shiki-dark:#98C379"> "dog"</span><span style="color:#A626A4;--shiki-dark:#C678DD"> and</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> pet_type </span><span style="color:#383A42;--shiki-dark:#56B6C2">!=</span><span style="color:#50A14F;--shiki-dark:#98C379"> "cat"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Handle invalid input</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Invalid pet type."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    pet_type </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter a pet type for sitting service (dog, cat): "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+      <p>A better way with a list:</p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">valid_pet_types </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> [</span><span style="color:#50A14F;--shiki-dark:#98C379">"dog"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"cat"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"bird"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"fish"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#50A14F;--shiki-dark:#98C379">"rabbit"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">]</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">pet_type </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter a pet type for sitting service: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">while</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> pet_type </span><span style="color:#A626A4;--shiki-dark:#C678DD">not</span><span style="color:#A626A4;--shiki-dark:#C678DD"> in</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> valid_pet_types:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Handle invalid input</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Invalid pet type."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    pet_type </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter a pet type for sitting service: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+      <h3 id="when-to-use-exceptions">When to use Exceptions</h3>
+      <p>
+        As a general rule - if you can validation without exceptions, do so.
+        Exceptions should be reserved for unexpected errors that are outside of
+        your control.
+      </p>
+      <div class="focusContent lookout">
+        <p>
+          Usually data type validation is not done with built in language
+          functions. Python is the exception to this rule. Be aware of this as
+          you transition to other languages.
+        </p>
+        <p><strong>Example in JavaScript</strong></p>
+        <p>
+          Try hitting F12 in your browser to open the browser&#39;s developer
+          tools, then paste this code into the console.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">const</span><span style="color:#986801;--shiki-dark:#E5C07B"> number</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> =</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> parseInt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#4078F2;--shiki-dark:#61AFEF">prompt</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter a number: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">));</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#4078F2;--shiki-dark:#61AFEF">isNaN</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#E06C75">number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)) {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  alert</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Invalid number."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">} </span><span style="color:#A626A4;--shiki-dark:#C678DD">else</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  alert</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Number: "</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> +</span><span style="color:#383A42;--shiki-dark:#E06C75"> number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">);</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
+      </div>
     </div>
   </body>
 </html>
