@@ -86,38 +86,49 @@ except Exception as e:
     print(e)
 ```
 
+## The Exception Class
+
+The `Exception` class shown above is a catch-all for every possible exception. We should use this as a last resort to catch unexpected exceptions. This allows us to do things like:
+
+- Log the error
+- Display an error message to the user
+- Attempt to recover from the error
+- Fail gracefully if necessary (don't "crash" the program)
+
 ### Types of Exceptions
 
-We can choose to handle specific types of exceptions. Useful when:
+We can choose to handle more specific types of exceptions. This is useful when:
 
+- We have an "expected" exception type for a scenario
 - We want to handle different exceptions differently
-- We want to ignore certain exceptions
 - We want to handle some exceptions and let others crash the program
-- We want the program to **fail gracefully**
-  - Close the program in a controlled manner
-  - Take above actions before closing
-  - Release resources (e.g. close files, network connections, etc.)
+
+**ZeroDivisionError**
 
 ```python
 try:
     ## Will throw a ZeroDivisionError
     print(1 / 0)
-
-    ## Will throw a ValueError
-    print(int("abc"))
-
-    ## Will throw a FileNotFoundError
-    file = open("does_not_exist.txt")
-
-    ## Will throw a NameError - no handler so program will crash
-    print(variable_does_not_exist)
-
 except ZeroDivisionError:
     print("Cannot divide by zero.")
+```
 
+**ValueError**
+
+```python
+try:
+    ## Will throw a ValueError
+    x = int("abc")
 except ValueError:
     print("Invalid value.")
+```
 
+**FileNotFoundError**
+
+```python
+try:
+    ## Will throw a FileNotFoundError
+    file = open("does_not_exist.txt")
 except FileNotFoundError:
     print("File not found.")
 ```
@@ -139,11 +150,9 @@ except ValueError:
     print("Invalid number.")
 ```
 
-### Looping Until Valid Input
+### Data Type Validation
 
-Most of the time we want to continue to prompt the user for input until they provide valid input. We can do that with a `while` loop.
-
-#### Data Type Validation
+We can use an input validation loop to ensure that the user enters data of a specific type.
 
 ```python
 ## Get a number from a user - don't let them
@@ -164,13 +173,13 @@ while True:
     except ValueError:
         ## Let the user know they messed up, then go back to
         ## the top of the loop
-        print('Must enter an integer.')
+        print('Input must be an integer.')
 
 ## We have a valid number, and can now continue the program
 print(number)
 ```
 
-#### Range Validation
+### Range Validation
 
 ```python
 number = int(input("Enter a number between 1 and 10: "))
@@ -181,12 +190,48 @@ while number < 1 or number > 10:
     number = int(input("Enter a number between 1 and 10: "))
 ```
 
-#### Categorical Validation
+### Categorical Validation
 
 ```python
 pet_type = input("Enter a pet type for sitting service (dog, cat): ")
+
 while pet_type != "dog" and pet_type != "cat":
     ## Handle invalid input
     print("Invalid pet type.")
     pet_type = input("Enter a pet type for sitting service (dog, cat): ")
 ```
+
+A better way with a list:
+
+```python
+valid_pet_types = ["dog", "cat", "bird", "fish", "rabbit"]
+pet_type = input("Enter a pet type for sitting service: ")
+
+while pet_type not in valid_pet_types:
+    ## Handle invalid input
+    print("Invalid pet type.")
+    pet_type = input("Enter a pet type for sitting service: ")
+```
+
+### When to use Exceptions
+
+As a general rule - if you can validation without exceptions, do so. Exceptions should be reserved for unexpected errors that are outside of your control.
+
+~.focusContent.lookout
+
+Usually data type validation is not done with built in language functions. Python is the exception to this rule. Be aware of this as you transition to other languages.
+
+**Example in JavaScript**
+
+Try hitting F12 in your browser to open the browser's developer tools, then paste this code into the console.
+
+```javascript
+const number = parseInt(prompt("Enter a number: "));
+if (isNaN(number)) {
+  alert("Invalid number.");
+} else {
+  alert("Number: " + number);
+}
+```
+
+/~

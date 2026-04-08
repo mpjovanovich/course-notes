@@ -232,6 +232,26 @@ activity = "jumping"
 do_something(activity)
 ```
 
+## Example: Creating an Input Validation Function
+
+In previous lectures we noted how to use try/except blocks to validate input. This is very verbose and often repetitive through the program, which makes it an ideal candidate for a function.
+
+```python
+# Define the function
+def get_float_input(prompt):
+    while True:
+        try:
+            val = float(input(prompt))
+            return val
+        except ValueError:
+            print("Invalid input. Must be a number.")
+
+# Call the function
+x = get_float_input("Enter first number: ")
+y = get_float_input("Enter second number: ")
+print(x + y)
+```
+
 ## Walkthrough: Creating an HTML Report
 
 ~.focusContent.demo
@@ -313,11 +333,14 @@ print()
 
 /~
 
-### Useful Function Hint
+<!--
 
-Get user input as float / integer, loop until valid input...
+TODO: day 2 content.
+Use nested function calls to show call stack.
+Brief not on default parameters.
+Brief note on methods vs functions - just enough to know that methods are called with the dot operator.
 
-<!-- ## Function Composition
+## Function Composition
 
 ### Nested Function Calls
 
@@ -331,7 +354,7 @@ def add_five(x):
 result = add_five(add_one(3))  # (3 + 1) + 5 = 9
 ```
 
-### Method Chaining
+### Methods and Method Chaining
 
 ```python
 text = "  Hello, World!  "
@@ -339,23 +362,6 @@ text = "  Hello, World!  "
 # convert to lowercase,
 # replace "world" with "Python"
 cleaned_text = text.strip().lower().replace("world", "Python")
-```
-
-
-## Named Arguments
-
-Up until now we have used **positional arguments** - the order of arguments determines how they're "plugged in".
-
-We can also pass **named arguments** to a function by name. Useful when function has many parameters.
-
-```python
-def greet( first_name, last_name ):
-    print(f"Hello, {first_name} {last_name}!")
-
-## All of these are equivalent
-greet( "Billy", "Billy" )
-greet( first_name="Billy", last_name="Billy" )
-greet( last_name="Bornsen", first_name="Billy" )
 ```
 
 ## Default Parameters
