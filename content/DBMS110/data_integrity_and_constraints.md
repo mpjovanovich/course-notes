@@ -22,7 +22,17 @@ Data comes into a database in many ways: user facing software, automated imports
 
 **Constraints** are rules that are used to ensure data integrity.
 
-Software developers should design interfaces in such a way that constraints are enforced wherever possible; however, the database itself should also enforce constraints to ensure data integrity.
+## Why Data Integrity?
+
+<figure>
+  <img src="images/single_source_of_truth.svg" alt="Database as single source of truth" />
+</figure>
+
+Data integrity allows the database to be a **single source of truth** for an information system.
+
+Software developers should design interfaces in such a way that constraints are enforced wherever possible; however, the database itself should also enforce constraints.
+
+Setting databases up this way allows flexibility in how data is later used and extracted.
 
 ## Nullability Constraints
 

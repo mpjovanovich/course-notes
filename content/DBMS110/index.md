@@ -95,18 +95,19 @@ TODO: Lecure notes from transactions; link to diagram
 
 Part I:
 
+- [SQL Create Table](sql_create_table.html)
 - [Data Integrity and Constraints](data_integrity_and_constraints.html)
 - [What is Normalization?](what_is_normalization.html)
-- Intro to Final Project
 
 Part II:
 
 - [Normal Forms](normal_forms.html)
 - [Modeling M:N Relationships](modeling_m_n_relationships.html)
+- In-Class Exercise: Normalize our class database from earlier
+- Intro to Final Project
 
 ## Module 06: SQL JOINs and Relational Queries
 
-- [SQL Create Table](sql_create_table.html)
 - [SQL JOINs](sql_joins.html)
 - Intro SQL Assignments
   - Note: Start with JOIN assignment; likely to be more difficult

@@ -40,8 +40,6 @@ _Instructor note: I have more commonly heard the terms outside of parenthesis us
   <img src="images/information_hierarchy_relational.svg" alt="Data Hierarchy (Relational)" />
 </figure>
 
-<figure>
-
 ## Object-Oriented
 
 Some terms from object-oriented programming are used to describe data in the data hierarchy. These terms are not used in relational databases, but you will see them in certain file formats (like JSON and XML), and in NoSQL databases.
