@@ -76,4 +76,6 @@ But students will likely hear this on job interviews, so we have to cover it.
 
 [Event Driven Programming](event_driven_programming.html)
 
+[find_pacman.py](https://github.com/mpjovanovich/micro-bit-playground/blob/main/find_pacman.py)
+
 -->
