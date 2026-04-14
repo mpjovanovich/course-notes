@@ -15,9 +15,7 @@ course: SDEV140
 
 ## Announcements
 
-- Review lab policy assignments
-- If you have a zero for an assignment for not following the video solution you may resubmit
-  - Email instructor requesting regrade
+- Review how to run tests locally for exercises
 
 ## Modules
 
