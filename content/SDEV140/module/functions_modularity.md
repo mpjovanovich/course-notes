@@ -37,7 +37,7 @@ Intro Project 2
 
 ### Lecture
 
-TODO: call stack; variable scope; more refactoring
+TODO: call stack; pass by value (consequences of this); variable scope
 
 Spring 2026: Review how to run tests locally for exercises
 

@@ -59,6 +59,9 @@ course: SDEV140
 
 ## Module 08: Object Oriented Programming
 
+Maybe deemphasize the "four pillars". Really I'd rather this be practical (e.g. pass by reference and unexpected behaviors).
+But students will likely hear this on job interviews, so we have to cover it.
+
 [OOP Basics](oop_basics.html)
 
 [Encapsulation](encapsulation.html)
