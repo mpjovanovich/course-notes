@@ -31,6 +31,8 @@ course: SDEV140
 
 [Module 04: Exceptions and Error Handling](module/exceptions_error_handling.html)
 
+[Module 05: Functions and Modularity](module/functions_modularity.html)
+
 <!--
 
 ## Module 04: Lists and Dictionaries
