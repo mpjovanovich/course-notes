@@ -166,18 +166,18 @@ To fix it, we should split ProjectCategory into its own table and reference it f
 
 ```
 Project (
-    [PK] Project Number,
-    Project Name,
-    Project Location,
-    Project Start Date,
-    [FK] Project Category Name
+    [PK] Number,
+    Name,
+    Location,
+    Start Date,
+    [FK] Category ID
 )
 ```
 
 ```
 ProjectCategory (
-    [PK] Project Category Name,
-    Project Category Hourly Rate
+    [PK] Name,
+    Hourly Rate
 )
 ```
 
