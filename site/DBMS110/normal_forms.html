@@ -114,31 +114,50 @@
       <p><em>Example:</em></p>
       <p>
         Here is an unnormalized table that associates employees with projects.
-        The primary key is the project number.
       </p>
       <table>
         <thead>
           <tr>
             <th>Project Number</th>
             <th>Project Name</th>
-            <th>Employee ID</th>
+            <th>Project Location</th>
+            <th>Project Category</th>
+            <th>Hourly Rate</th>
+            <th>Project Start Date</th>
+            <th>Employees</th>
+            <th>Hours Worked on Project</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>1</td>
             <td>Project A</td>
-            <td>1</td>
+            <td>Lafayette</td>
+            <td>Healthcare</td>
+            <td>$100</td>
+            <td>2026-01-01</td>
+            <td>Bill Walton, Ted Logan, Janet Baker</td>
+            <td>10, 15, 20</td>
           </tr>
           <tr>
             <td>2</td>
             <td>Project B</td>
-            <td>2, 3, 9</td>
+            <td>Indianapolis</td>
+            <td>Healthcare</td>
+            <td>$100</td>
+            <td>2026-02-01</td>
+            <td>Bill Walton, Ted Logan, Jill Smith</td>
+            <td>10, 15, 20</td>
           </tr>
           <tr>
             <td>3</td>
             <td>Project C</td>
-            <td>3, 4</td>
+            <td>Indianapolis</td>
+            <td>Education</td>
+            <td>$200</td>
+            <td>2026-02-14</td>
+            <td>Jill Smith, Janet Baker</td>
+            <td>10, 15</td>
           </tr>
         </tbody>
       </table>
@@ -147,78 +166,121 @@
         <thead>
           <tr>
             <th>Project Number</th>
-            <th>Project Name</th>
             <th>Employee ID</th>
+            <th>Employee First Name</th>
+            <th>Employee Last Name</th>
+            <th>Project Name</th>
+            <th>Project Location</th>
+            <th>Project Category</th>
+            <th>Hourly Rate</th>
+            <th>Project Start Date</th>
+            <th>Hours Worked on Project</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>1</td>
-            <td>Project A</td>
             <td>1</td>
+            <td>Bill</td>
+            <td>Walton</td>
+            <td>Project A</td>
+            <td>Lafayette</td>
+            <td>Healthcare</td>
+            <td>$100</td>
+            <td>2026-01-01</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>Ted</td>
+            <td>Logan</td>
+            <td>Project A</td>
+            <td>Lafayette</td>
+            <td>Healthcare</td>
+            <td>$100</td>
+            <td>2026-01-01</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>3</td>
+            <td>Janet</td>
+            <td>Baker</td>
+            <td>Project A</td>
+            <td>Lafayette</td>
+            <td>Healthcare</td>
+            <td>$100</td>
+            <td>2026-01-01</td>
+            <td>20</td>
           </tr>
           <tr>
             <td>2</td>
+            <td>1</td>
+            <td>Bill</td>
+            <td>Walton</td>
             <td>Project B</td>
-            <td>2</td>
+            <td>Indianapolis</td>
+            <td>Healthcare</td>
+            <td>$100</td>
+            <td>2026-02-01</td>
+            <td>10</td>
           </tr>
           <tr>
             <td>2</td>
+            <td>2</td>
+            <td>Ted</td>
+            <td>Logan</td>
             <td>Project B</td>
-            <td>3</td>
+            <td>Indianapolis</td>
+            <td>Healthcare</td>
+            <td>$100</td>
+            <td>2026-02-01</td>
+            <td>15</td>
           </tr>
           <tr>
             <td>2</td>
-            <td>Project B</td>
-            <td>9</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Project C</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Project C</td>
             <td>4</td>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>Project B</td>
+            <td>Indianapolis</td>
+            <td>Healthcare</td>
+            <td>$100</td>
+            <td>2026-02-01</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>Project C</td>
+            <td>Indianapolis</td>
+            <td>Education</td>
+            <td>$200</td>
+            <td>2026-02-14</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>Janet</td>
+            <td>Baker</td>
+            <td>Project C</td>
+            <td>Indianapolis</td>
+            <td>Education</td>
+            <td>$200</td>
+            <td>2026-02-14</td>
+            <td>15</td>
           </tr>
         </tbody>
       </table>
-      <p><em>Example:</em></p>
-      <p>Splitting up &quot;Address&quot; into multiple attributes:</p>
-      <pre
-        class="shiki shiki-themes one-light one-dark-pro"
-        style="
-          background-color: #fafafa;
-          --shiki-dark-bg: #282c34;
-          color: #383a42;
-          --shiki-dark: #abb2bf;
-        "
-        tabindex="0"
-      ><code><span class="line"><span>Address (</span></span>
-<span class="line"><span>    [PK] Address ID,</span></span>
-<span class="line"><span>    City,</span></span>
-<span class="line"><span>    State,</span></span>
-<span class="line"><span>    Zip Code,</span></span>
-<span class="line"><span>    Address Line 1,</span></span>
-<span class="line"><span>    Address Line 2</span></span>
-<span class="line"><span>)</span></span></code></pre>
-      <p>Splitting up &quot;Full Name&quot; into multiple attributes:</p>
-      <pre
-        class="shiki shiki-themes one-light one-dark-pro"
-        style="
-          background-color: #fafafa;
-          --shiki-dark-bg: #282c34;
-          color: #383a42;
-          --shiki-dark: #abb2bf;
-        "
-        tabindex="0"
-      ><code><span class="line"><span>Person (</span></span>
-<span class="line"><span>    [PK] Person ID,</span></span>
-<span class="line"><span>    First Name,</span></span>
-<span class="line"><span>    Middle Name,</span></span>
-<span class="line"><span>    Last Name</span></span>
-<span class="line"><span>)</span></span></code></pre>
+      <div class="focusContent exercise">
+        <p><strong>Identify the Primary Key</strong></p>
+        <p>What is the primary key for the above table?</p>
+      </div>
+
       <h2 id="second-normal-form-2nf">Second Normal Form (2NF)</h2>
       <p>
         If a table is in first normal form and has a single-attribute primary
@@ -243,10 +305,7 @@
         <li>It includes no partial dependencies.</li>
       </ul>
       <p><em>Example:</em></p>
-      <p>
-        In this example we are trackign employee work on projects. If we started
-        with this structure:
-      </p>
+      <p>If we started with this structure:</p>
       <pre
         class="shiki shiki-themes one-light one-dark-pro"
         style="
@@ -259,11 +318,13 @@
       ><code><span class="line"><span>ProjectAssignment (</span></span>
 <span class="line"><span>    [PK] Project Number,</span></span>
 <span class="line"><span>    [PK] Employee ID</span></span>
-<span class="line"><span>    Project Name,</span></span>
-<span class="line"><span>    Project Location,</span></span>
-<span class="line"><span>    Project Start Date,</span></span>
 <span class="line"><span>    Employee First Name,</span></span>
 <span class="line"><span>    Employee Last Name</span></span>
+<span class="line"><span>    Project Name,</span></span>
+<span class="line"><span>    Project Location,</span></span>
+<span class="line"><span>    Project Category,</span></span>
+<span class="line"><span>    Hourly Rate,</span></span>
+<span class="line"><span>    Project Start Date,</span></span>
 <span class="line"><span>    Hours Worked on Project</span></span>
 <span class="line"><span>)</span></span></code></pre>
       <p>We would convert it to this:</p>
