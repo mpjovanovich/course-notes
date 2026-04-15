@@ -39,50 +39,34 @@ We should also split any multi-valued attributes into multiple single-valued att
 
 _Example:_
 
-Here is an unnormalized table that associates employees with projects. The primary key is the project number.
+Here is an unnormalized table that associates employees with projects.
 
-| Project Number | Project Name | Employee ID |
-| -------------- | ------------ | ----------- |
-| 1              | Project A    | 1           |
-| 2              | Project B    | 2, 3, 9     |
-| 3              | Project C    | 3, 4        |
+| Project Number | Project Name | Project Location | Project Category | Hourly Rate | Project Start Date | Employees                           | Hours Worked on Project |
+| -------------- | ------------ | ---------------- | ---------------- | ----------- | ------------------ | ----------------------------------- | ----------------------- |
+| 1              | Project A    | Lafayette        | Healthcare       | $100        | 2026-01-01         | Bill Walton, Ted Logan, Janet Baker | 10, 15, 20              |
+| 2              | Project B    | Indianapolis     | Healthcare       | $100        | 2026-02-01         | Bill Walton, Ted Logan, Jill Smith  | 10, 15, 20              |
+| 3              | Project C    | Indianapolis     | Education        | $200        | 2026-02-14         | Jill Smith, Janet Baker             | 10, 15                  |
 
 Here is the same table in first normal form.
 
-| Project Number | Project Name | Employee ID |
-| -------------- | ------------ | ----------- |
-| 1              | Project A    | 1           |
-| 2              | Project B    | 2           |
-| 2              | Project B    | 3           |
-| 2              | Project B    | 9           |
-| 3              | Project C    | 3           |
-| 3              | Project C    | 4           |
+| Project Number | Employee ID | Employee First Name | Employee Last Name | Project Name | Project Location | Project Category | Hourly Rate | Project Start Date | Hours Worked on Project |
+| -------------- | ----------- | ------------------- | ------------------ | ------------ | ---------------- | ---------------- | ----------- | ------------------ | ----------------------- |
+| 1              | 1           | Bill                | Walton             | Project A    | Lafayette        | Healthcare       | $100        | 2026-01-01         | 10                      |
+| 1              | 2           | Ted                 | Logan              | Project A    | Lafayette        | Healthcare       | $100        | 2026-01-01         | 15                      |
+| 1              | 3           | Janet               | Baker              | Project A    | Lafayette        | Healthcare       | $100        | 2026-01-01         | 20                      |
+| 2              | 1           | Bill                | Walton             | Project B    | Indianapolis     | Healthcare       | $100        | 2026-02-01         | 10                      |
+| 2              | 2           | Ted                 | Logan              | Project B    | Indianapolis     | Healthcare       | $100        | 2026-02-01         | 15                      |
+| 2              | 4           | Jill                | Smith              | Project B    | Indianapolis     | Healthcare       | $100        | 2026-02-01         | 20                      |
+| 3              | 4           | Jill                | Smith              | Project C    | Indianapolis     | Education        | $200        | 2026-02-14         | 10                      |
+| 3              | 3           | Janet               | Baker              | Project C    | Indianapolis     | Education        | $200        | 2026-02-14         | 15                      |
 
-_Example:_
+~.focusContent.exercise
 
-Splitting up "Address" into multiple attributes:
+**Identify the Primary Key**
 
-```
-Address (
-    [PK] Address ID,
-    City,
-    State,
-    Zip Code,
-    Address Line 1,
-    Address Line 2
-)
-```
+What is the primary key for the above table?
 
-Splitting up "Full Name" into multiple attributes:
-
-```
-Person (
-    [PK] Person ID,
-    First Name,
-    Middle Name,
-    Last Name
-)
-```
+/~
 
 ## Second Normal Form (2NF)
 
@@ -103,17 +87,19 @@ A table is in second normal form if:
 
 _Example:_
 
-In this example we are trackign employee work on projects. If we started with this structure:
+If we started with this structure:
 
 ```
 ProjectAssignment (
     [PK] Project Number,
     [PK] Employee ID
-    Project Name,
-    Project Location,
-    Project Start Date,
     Employee First Name,
     Employee Last Name
+    Project Name,
+    Project Location,
+    Project Category,
+    Hourly Rate,
+    Project Start Date,
     Hours Worked on Project
 )
 ```
