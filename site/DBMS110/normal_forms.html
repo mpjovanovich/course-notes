@@ -421,11 +421,11 @@
         "
         tabindex="0"
       ><code><span class="line"><span>Project (</span></span>
-<span class="line"><span>    [PK] Project Number,</span></span>
-<span class="line"><span>    Project Name,</span></span>
-<span class="line"><span>    Project Location,</span></span>
-<span class="line"><span>    Project Start Date,</span></span>
-<span class="line"><span>    [FK] Project Category Name</span></span>
+<span class="line"><span>    [PK] Number,</span></span>
+<span class="line"><span>    Name,</span></span>
+<span class="line"><span>    Location,</span></span>
+<span class="line"><span>    Start Date,</span></span>
+<span class="line"><span>    [FK] Category ID</span></span>
 <span class="line"><span>)</span></span></code></pre>
       <pre
         class="shiki shiki-themes one-light one-dark-pro"
@@ -437,8 +437,8 @@
         "
         tabindex="0"
       ><code><span class="line"><span>ProjectCategory (</span></span>
-<span class="line"><span>    [PK] Project Category Name,</span></span>
-<span class="line"><span>    Project Category Hourly Rate</span></span>
+<span class="line"><span>    [PK] Name,</span></span>
+<span class="line"><span>    Hourly Rate</span></span>
 <span class="line"><span>)</span></span></code></pre>
       <p>
         Now we an update the ProjectCategory table in one place, and any
