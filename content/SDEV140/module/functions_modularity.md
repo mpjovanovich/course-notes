@@ -41,4 +41,6 @@ Intro Project 2
 
 Spring 2026: Review how to run tests locally for exercises
 
+Review function exercises to make sure we've covered all the topics.
+
 No additional assignments. Work on Project 2.
