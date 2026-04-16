@@ -46,9 +46,16 @@
           <li>
             <a href="#variable-scope">Variable Scope</a>
             <ul>
+              <li><a href="#local-scope">Local Scope</a></li>
+              <li>
+                <a href="#function-inputs-and-outputs"
+                  >Function Inputs and Outputs</a
+                >
+              </li>
               <li><a href="#global-scope">Global Scope</a></li>
-              <li><a href="#function-scope">Function Scope</a></li>
-              <li><a href="#scope-examples">Scope Examples</a></li>
+              <li>
+                <a href="#function-best-practices">Function Best Practices</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -64,10 +71,6 @@
       <h2 id="stack-data-structure">Stack Data Structure</h2>
       <p>
         A <strong>stack</strong> is a LIFO (last in, first out) data structure.
-      </p>
-      <p>
-        It&#39;s like laying down a stack of cards. You can only add or remove
-        cards from the top of the stack.
       </p>
       <figure>
         <span>
@@ -87,7 +90,8 @@
       <h2 id="stack-frames">Stack Frames</h2>
       <p>
         A <strong>stack frame</strong> is a data structure that contains all
-        relevant information that&#39;s needed to execute a function. It&#39;s
+        relevant information that&#39;s needed to execute a function, including
+        its variables. Each function gets its own isolated workspace -- it&#39;s
         much like a snapshot of all of the data about a function at a given
         point in time.
       </p>
@@ -104,11 +108,17 @@
         referring to it.
       </p>
       <h2 id="call-stack">Call Stack</h2>
+      <p>Programs are made up of functions that call other functions.</p>
       <p>
         When a program calls a function, a new stack frame is created for that
         function call and <strong>pushed</strong> onto the top of the call
         stack. The execution context is then switched to the new stack frame.
-        Each function operates as if it is its own program.
+      </p>
+      <p>
+        Each function operates as if it is its own mini-program, with its own
+        set of variables. When the function finishes, its stack frame is
+        <strong>popped</strong> off the stack, and all of its variables are
+        destroyed.
       </p>
       <p><em>Example:</em></p>
       <p>For the following program:</p>
@@ -121,16 +131,22 @@
           --shiki-dark: #abb2bf;
         "
         tabindex="0"
-      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> greet</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    message </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> f</span><span style="color:#50A14F;--shiki-dark:#98C379">"Hello, </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">name</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">!"</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> message</span></span>
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> is_even</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    number_is_even </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> number </span><span style="color:#383A42;--shiki-dark:#56B6C2">%</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span><span style="color:#383A42;--shiki-dark:#56B6C2"> ==</span><span style="color:#986801;--shiki-dark:#D19A66"> 0</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> number_is_even</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    user </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Alice"</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    result </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> greet</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(user)</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(result)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> describe_number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">value</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Call the helper function</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    even_result </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> is_even</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(value)</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">main</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Print formatted output</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    if</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> even_result:</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">value</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379"> is even."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    else</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">value</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379"> is odd."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># The program starts here</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">describe_number</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;--shiki-dark:#D19A66">8</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
       <p>The call stack would look like this:</p>
       <pre
         class="shiki shiki-themes one-light one-dark-pro"
@@ -141,8 +157,8 @@
           --shiki-dark: #abb2bf;
         "
         tabindex="0"
-      ><code><span class="line"><span>3. greet(name="Alice")     &#x3C;- Current execution context</span></span>
-<span class="line"><span>2. main()</span></span>
+      ><code><span class="line"><span>3. is_even       &#x3C;- Current execution context if we are inside is_even</span></span>
+<span class="line"><span>2. describe_number</span></span>
 <span class="line"><span>1. Global script</span></span></code></pre>
       <p>
         Let&#39;s try it in VS Code. Run the program, and then open the call
@@ -177,67 +193,20 @@
       <h1 id="variable-scope">Variable Scope</h1>
       <p>
         <strong>Scope</strong> is the region of a program where a variable is
-        accessible. In Python, there are two types of scope:
+        accessible.
       </p>
-      <ul>
-        <li>
-          <strong>Global scope</strong>: accessible everywhere in the program
-        </li>
-        <li>
-          <strong>Function scope</strong>: accessible only within the function
-          where it&#39;s defined
-        </li>
-      </ul>
-      <h2 id="global-scope">Global Scope</h2>
-      <p>
-        Variables defined outside of any function are called
-        <strong>global variables</strong>. They are accessible everywhere in the
-        program, even within functions.
-      </p>
-      <p>
-        In general, global variables should be used sparingly. You might use a
-        global variable if you have a read only constant value that is used in
-        many places in your program:
-      </p>
-      <pre
-        class="shiki shiki-themes one-light one-dark-pro"
-        style="
-          background-color: #fafafa;
-          --shiki-dark-bg: #282c34;
-          color: #383a42;
-          --shiki-dark: #abb2bf;
-        "
-        tabindex="0"
-      ><code><span class="line"><span style="color:#383A42;--shiki-dark:#D19A66">PROGRAM_CODE</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "SDEV140"</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Program code is used here...</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> print_student_record</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">student_id</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">"Student ID: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">student_id</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">, Program: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#D19A66">PROGRAM_CODE</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># and here...</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> print_course_info</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">"Course Code: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#D19A66">PROGRAM_CODE</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">print_student_record</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"A12345"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">print_course_info</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
-      <h2 id="function-scope">Function Scope</h2>
-      <p>
-        More typically, any variable that needs to be used within a function is
-        either:
-      </p>
+      <h2 id="local-scope">Local Scope</h2>
+      <p>Any variable that is used within a function is either:</p>
       <ul>
         <li>Passed in as a parameter</li>
         <li>Created within the function</li>
       </ul>
       <p>
         These variables are called <strong>local variables</strong>. They are
-        only accessible within the function where they are defined.
+        only accessible within the function where they are defined. This is
+        because they are part of the function&#39;s stack frame, and are
+        destroyed when the function returns.
       </p>
-      <p>
-        This is because they are part of the function&#39;s stack frame, and are
-        not accessible outside of that frame.
-      </p>
-      <h2 id="scope-examples">Scope Examples</h2>
       <div class="focusContent lookout">
         <p>
           Trying to access a local variable outside of its function will cause
@@ -263,19 +232,171 @@
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(name)</span></span></code></pre>
       </div>
 
+      <div class="focusContent example">
+        <p><strong>Exploring Variable Scope with the Debugger</strong></p>
+        <p>
+          Let&#39;s use VS Code&#39;s debugger to examine the call stack for the
+          &quot;is_even&quot; program above.
+        </p>
+      </div>
+
+      <h2 id="function-inputs-and-outputs">Function Inputs and Outputs</h2>
+      <p><em>Inputs</em></p>
+      <p>
+        Data flows into functions through <strong>parameters</strong>. These
+        parameters are <strong>passed by value</strong>, which means that the
+        function receives a copy of the value (not the original value). We will
+        see why this matters later.
+      </p>
+      <p>
+        If we want to modify the value of a variable that was passed in and
+        access it later, we do so by returning the modified value.
+      </p>
+      <div class="focusContent example">
+        <p><strong>Basic Input Example</strong></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> print_formatted_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">first_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> last_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    formatted </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> f</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">last_name</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">, </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">first_name</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(formatted)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">first </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter your first name: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">last </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter your last name: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">print_formatted_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(first, last)</span></span></code></pre>
+      </div>
+
+      <p><em>Outputs</em></p>
+      <p>Data flows out of functions through <strong>return values</strong>.</p>
+      <p>
+        If we want to return a value to the caller, we do so by using the
+        <code>return</code> keyword.
+      </p>
+      <div class="focusContent example">
+        <p><strong>Basic Output Example</strong></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> get_formatted_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">first_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> last_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    formatted </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> f</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">last_name</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">, </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">first_name</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Instead of using the value here, return it to the caller</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # and let them use it as they see fit.</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> formatted</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">first </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter your first name: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">last </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter your last name: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">formatted </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> get_formatted_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(first, last)</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">"Formatted name: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">formatted</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+      </div>
+
       <div class="focusContent lookout">
+        <p><strong>Void Functions</strong></p>
+        <p>
+          All functions return a value, even if that value is
+          <code>None</code> (in Python) or <code>void</code> (in most other
+          languages).
+        </p>
+        <p>
+          Functions that do not return a (useful) value are called
+          <strong>void functions</strong>. We can prove to ourselves that these
+          functions return <code>None</code> by assigning the result to a
+          variable and printing it.
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> print_formatted_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">first_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> last_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    formatted </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#A626A4;--shiki-dark:#C678DD"> f</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">last_name</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">, </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">first_name</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(formatted)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">first </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter your first name: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">last </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> input</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Enter your last name: "</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">result </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> print_formatted_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(first, last)</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(result)  </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># None</span></span></code></pre>
+        <p>
+          Some other languages require the use of a <code>void</code> keyword to
+          indicate that a function does not return a value, so it&#39;s worth
+          being aware of this concept.
+        </p>
+      </div>
+
+      <h2 id="global-scope">Global Scope</h2>
+      <p>
+        Variables defined outside of any function are called
+        <strong>global variables</strong>.
+      </p>
+      <p>
+        When Python encounters a variable name inside a function, it first
+        checks the function&#39;s local scope. If the variable is not found
+        locally, Python checks the global scope. This means that functions can
+        <strong>read</strong> global variables without them being passed as
+        parameters.
+      </p>
+      <p>
+        However, if a function <strong>assigns</strong> a value to a variable
+        name, Python treats it as a new local variable -- it will not modify the
+        global variable.
+      </p>
+      <p>
+        In general, global variables should be used sparingly. You might use a
+        global variable if you have a read-only constant that is used in many
+        places in your program:
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> print_student_record</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">student_id</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">"Student ID: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#ABB2BF">student_id</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">, Program: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#D19A66">PROGRAM_CODE</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> print_course_info</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">"Course Code: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#383A42;--shiki-dark:#D19A66">PROGRAM_CODE</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Global variable - other functions can "see" this</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#D19A66">PROGRAM_CODE</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#50A14F;--shiki-dark:#98C379"> "SDEV140"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">print_student_record</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"A12345"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">print_course_info</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
+      <div class="focusContent lookout">
+        <p><strong>Variable Masking</strong></p>
         <p>
           Updating a local variable will not affect the value of a variable that
-          was passed in.
+          was passed in, even if those variables have the same name. Using the
+          same variable name for different purposes is called
+          <strong>variable masking</strong>, and we should try to avoid this.
         </p>
         <p>
           <strong
             ><em
               >The function creates its own local variable, which is a copy of
-              the value passed in</em
+              the value passed in.</em
             ></strong
-          >. Updating this local variable does not affect the value of the
-          variable that was passed in.
+          >
+          Updating this local variable does not affect the value of the variable
+          that was passed in.
         </p>
         <p>
           Take a look at the Stack Trace in the VS Code debugger to see how this
@@ -291,8 +412,6 @@
           "
           tabindex="0"
         ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> update_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # This "name" is actually a completely new local variable with no connection</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # to the name variable in the outer scope</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    name </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> name.</span><span style="color:#383A42;--shiki-dark:#61AFEF">upper</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(name)  </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># ALICE</span></span>
 <span class="line"></span>
@@ -300,30 +419,27 @@
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(name)  </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Alice</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">update_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(name)</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(name)  </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Alice</span></span></code></pre>
+        <p>
+          This is a foundational concept in programming - make sure you
+          understand it well!
+        </p>
       </div>
 
-      <div class="focusContent example">
-        <p>
-          If we want to modify the value of a variable that was passed in and
-          access it later, we do so by returning the modified value.
-        </p>
-        <pre
-          class="shiki shiki-themes one-light one-dark-pro"
-          style="
-            background-color: #fafafa;
-            --shiki-dark-bg: #282c34;
-            color: #383a42;
-            --shiki-dark: #abb2bf;
-          "
-          tabindex="0"
-        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> update_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic">name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    name </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> name.</span><span style="color:#383A42;--shiki-dark:#61AFEF">upper</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    return</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> name</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">name </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379"> "Alice"</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">name </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> update_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(name)</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(name)  </span><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># ALICE</span></span></code></pre>
-      </div>
+      <h2 id="function-best-practices">Function Best Practices</h2>
+      <ul>
+        <li>
+          Functions should receive data through <strong>parameters</strong> and
+          return data through <strong>return values</strong>.
+        </li>
+        <li>
+          Avoid using global variables from within functions when possible -- it
+          makes code harder to understand and debug.
+        </li>
+        <li>
+          If you need a global variable, use it as a read-only constant (e.g.,
+          <code>PROGRAM_CODE = &quot;SDEV140&quot;</code>).
+        </li>
+      </ul>
     </div>
   </body>
 </html>
