@@ -31,6 +31,14 @@ course: SDEV140
 
 [Module 05: Functions and Modularity](module/functions_modularity.html)
 
+[Module 06: File IO and Document Parsing](module/file_io_document_parsing.html)
+
+[Module O7 Object Oriented Programming: ](module/oop_basics.html)
+
+[Module O8: GUI Development and Event Driven Programming](module/gui_development_event_driven_programming.html)
+
+[Module O9: Next Steps](module/next_steps.html)
+
 <!--
 
 ## Module 04: Lists and Dictionaries
