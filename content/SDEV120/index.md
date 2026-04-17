@@ -36,7 +36,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Remote students: Sign up for midterm and final ASAP. Time slots can sometimes fill.
+- Review flowchart assignment solutions
 
 ## Common Resources
 

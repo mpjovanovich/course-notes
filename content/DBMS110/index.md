@@ -109,8 +109,7 @@ Part II:
 ## Module 06: SQL JOINs and Relational Queries
 
 - [SQL JOINs](sql_joins.html)
-- Intro SQL Assignments
-  - Note: Start with JOIN assignment; likely to be more difficult
+- Intro SQL Assignment
 
 ## Module 07: Unstructured Data and Relational Alternatives
 
