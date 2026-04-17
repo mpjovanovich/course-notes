@@ -37,8 +37,10 @@ Intro Project 2
 
 ### Lecture
 
-TODO: call stack; pass by value (consequences of this); variable scope
+[Call Stack and Variable Scope](../stack_scope.html)
 
 Spring 2026: Review how to run tests locally for exercises
+
+Review function exercises to make sure we've covered all the topics.
 
 No additional assignments. Work on Project 2.
