@@ -9,9 +9,10 @@ course: SDEV140
   - [Access Modifiers](#access-modifiers)
   - [Pythonic Guidelines - Controlling Access](#pythonic-guidelines---controlling-access)
   - [Summary](#summary)
-- [Basics - Examples](#basics---examples)
+- [Examples](#examples)
   - [Example 1: Maintaining State](#example-1-maintaining-state)
-  - [Example 2: Objects as Properties](#example-2-objects-as-properties)
+  - [Example 2: Public API with Private Helpers](#example-2-public-api-with-private-helpers)
+  - [Exercise: Vet Clinic Application, v3](#exercise-vet-clinic-application-v3)
 
 /~
 
@@ -22,24 +23,27 @@ Primary purposes of **encapsulation** are to:
 - Bundle the data (properties) and methods (functions) that operate on the data into a single unit.
 - Prevent direct access to the data from outside the class.
 
-_Example_:
+The idea is to separate the **friendly public interface** (the **API** that users of the class interact with) from the **internal implementation details** that users shouldn't have to think about.
 
-- Class = `BankAccount`
-- Methods that users of class should see (friendly public interface / API):
+_Example_ - a `BankAccount` class:
+
+- Methods that users of the class _should_ see (public API):
   - `transfer_to_account()`
-- Methods that users of class should not see (internal "banky" implementation details):
-  - `_negotiate_routing_channel()`
-  - `_await_confirmation_code()`
-  - `_log_transaction()`
-  - `_send_confirmation_email()`
+- Methods that users of the class _should not_ see (internal "banky" implementation details):
+  - `negotiate_routing_channel()`
+  - `await_confirmation_code()`
+  - `log_transaction()`
+  - `send_confirmation_email()`
+
+We need a way to mark which members are part of the public API and which are internal. That's what access modifiers are for.
 
 ## Access Modifiers
-
-**_Note:_ We are discussing general OOP principles here. Python does not have access modifiers. It instead uses naming conventions to indicate access.**
 
 - We can control access to properties and methods using **access modifiers**.
   - Also called **visibility modifiers**.
 - Access modifiers are typically implemented as keywords that go before the property or method.
+
+The three most common access modifiers are:
 
 | Modifier  | Description                                          |
 | --------- | ---------------------------------------------------- |
@@ -56,7 +60,7 @@ class Person
     private string name;
 
     // Public method
-    public void DoSomething()
+    public void WriteName()
     {
         // Access the name property
         Console.WriteLine(this.name);
@@ -70,16 +74,24 @@ class Person
  <img src="https://miro.medium.com/v2/1*ls5qApmZPtUIV3Z_wll7Fw.png" alt="" style="width: 25%;height: auto;">
 </figure>
 
+~.focusContent.lookout
+
+**Convention over Configuration**
+
+Python does not have access modifiers, which are a foundational concept in OOP. It instead uses naming conventions to indicate access.
+
+Python's design philosophy trusts developers to make the right decisions. This is a tradeoff of the language: it allows for flexibility and quick development, but creates potential for code to be used in ways that were not intended.
+
+The C# example is given above so that you know what to look for as you progress to other languages.
+
+/~
+
 Per [PEP 8 - Designing for Inheritance](https://peps.python.org/pep-0008/#designing-for-inheritance)...
 
-- Pythonic way of implementing public:
-  - "Public attributes should have no leading underscores."
-- Pythonic way of implementing protected:
-  - "Use one leading underscore only for non-public methods and instance variables."
-- Pythonic way of implementing private:
-  - "If your class is intended to be subclassed, and you have attributes that you do not want subclasses to use, consider naming them with double leading underscores and no trailing underscores. This invokes Python’s name mangling algorithm, where the name of the class is mangled into the attribute name."
-  - Not nearly as common as public and protected.
-- "If in doubt, choose non-public."
+| Convention        | Example | Meaning                                         |
+| ----------------- | ------- | ----------------------------------------------- |
+| Single underscore | `_name` | Internal use only. Do not use outside the class |
+| No underscore     | `name`  | Public. Safe to use outside the class           |
 
 _Python Example_:
 
@@ -88,23 +100,12 @@ class Person:
     # Public property
     name = 'Bob'
 
-    # Protected property
+    # Internal ("private") property
     _age = 30
 
-    # Private property
-    __ssn = '123-45-6789'
-
-    # Public method
-    def do_something(self):
-        print(self.name)
-
-    # Protected method
-    def _do_something(self):
-        print(self._age)
-
-    # Private method
-    def __do_something(self):
-        print(self.__ssn)
+    # Internal method
+    def _increment_age(self):
+        self._age += 1
 ```
 
 ## Summary
@@ -115,11 +116,17 @@ Protected is what subclasses are meant to see.
 
 Private is what only the class itself is meant to see.
 
-# Basics - Examples
+# Examples
+
+Now that we know how to mark members as public, protected, or private, let's see encapsulation in action. The examples build from simplest to most complex:
+
+1. Hiding a **property** so it can't be changed directly.
+2. Hiding **helper methods** behind a clean public method.
 
 ## Example 1: Maintaining State
 
 - We can keep track of the state of an object using properties.
+- This example shows the most basic use of encapsulation: hide a property so outside code can't modify it directly, and expose a safe public interface (`deposit`, `withdraw`, `get_balance`) instead.
 
 ```python
 # Define the class:
@@ -130,27 +137,45 @@ class BankAccount:
         # so we make it non-public by prefixing it with an underscore.
         self._balance = initial_balance
 
-    # PUBLIC METHODS
+
+    # #########################################################
+    # PUBLIC METHODS - Stuff that the caller can "see"
+    # #########################################################
     def deposit(self, amount):
-        if amount > 0:
+        # Only update balance after confirming the deposit is valid
+        if self._validate_deposit(amount):
             self._balance += amount
             print(f"Deposited ${amount}. New balance: ${self._balance}")
-        else:
-            print("Invalid deposit amount. Please deposit a positive amount.")
 
-    def withdraw(self, amount) -> None:
-        if amount <= 0:
-            print("Invalid withdrawal amount. Amount must be greater than 0.")
-        elif amount > self._balance:
-            print("Insufficient funds.")
-        else:
+    def withdraw(self, amount):
+        # Only update balance after confirming the withdrawal is valid
+        if self._validate_withdrawal(amount):
             self._balance -= amount
             print(f"Withdrew ${amount}. New balance: ${self._balance}")
 
     # We still want the user to be able to view the balance - just not change it.
     # We can accomplish this by creating a getter method that returns the value of the balance property.
-    def get_balance(self) -> float:
+    def get_balance(self):
         return self._balance
+
+
+    # #########################################################
+    # INTERNAL ("PRIVATE") HELPER METHODS - caller should pretend these don't exist
+    # #########################################################
+    def _validate_deposit(self, amount):
+        if amount <= 0:
+            print("Invalid deposit amount. Please deposit a positive amount.")
+            return False
+        return True
+
+    def _validate_withdrawal(self, amount):
+        if amount <= 0:
+            print("Invalid withdrawal amount. Amount must be greater than 0.")
+            return False
+        elif amount > self._balance:
+            print("Insufficient funds.")
+            return False
+        return True
 
 # Use the class:
 account = BankAccount(initial_balance=1000)
@@ -161,72 +186,19 @@ account.withdraw(1000)  # Should fail due to insufficient funds
 print(f"Final balance: ${account.get_balance()}")
 ```
 
-## Example 2: Objects as Properties
+## Example 2: Public API with Private Helpers
 
-- We can use objects as properties of other objects.
+- Encapsulation also applies to methods, not just properties.
+- A single public method often does its job by calling several internal helper methods. Callers only need to know about the public one; the helpers are implementation details that can change freely without breaking outside code.
 
-```python
-# Define the class:
-class Person:
-    # CONSTRUCTOR
-    def __init__(
-        self,
-        first_name,
-        last_name,
-        father = None,
-        mother = None
-    ):
-        # Initialize properties to the values passed to the constructor
-        self.first_name = first_name
-        self.last_name = last_name
-        self.father = father
-        self.mother = mother
+## Exercise: Vet Clinic Application, v3
 
-        # Initialize children property as an empty list
-        self.children = []
+~.focusContent.exercise
 
-    # PUBLIC METHODS
-    def add_child(self, child):
-        self.children.append(child)
+**Adding Access Control to the Application**
 
-    def print_info(self):
-        # Print the name
-        father = 'N/A'
-        mother = 'N/A'
-        if self.father != None:
-            father = self.father._get_full_name()
-        if self.mother != None:
-            mother = self.mother._get_full_name()
-        print(
-            f"Name: {self._get_full_name()}, Father: {father}, Mother: {mother}"
-        )
+Let's extend our vet clinic application to add access control to the application.
 
-        # Print children
-        if len(self.children) > 0:
-            print("Begin Children:")
-            for child in self.children:
-                print("  ", end="")
-                child.print_info()
-            print("End Children")
+See the `v3-access-control` branch of the [example repository](https://github.com/mpjovanovich-IvyTechDemos/python_oop_vet_app/tree/v3-access-control)
 
-    # PROTECTED METHODS
-    def _get_full_name(self):
-        return self.first_name + " " + self.last_name
-
-# Create parents
-father = Person("John", "Doe")
-mother = Person("Jane", "Doe")
-
-# Create children
-child1 = Person("Bobby", "Beebop", father, mother)
-child2 = Person("Charles", "Beebop", father, mother)
-child3 = Person("Davey", "Beebop", father, mother)
-
-# Add children to father
-father.add_child(child1)
-father.add_child(child2)
-father.add_child(child3)
-
-# Print father's info
-father.print_info()
-```
+/~

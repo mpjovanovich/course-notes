@@ -14,6 +14,9 @@ course: SDEV140
   - [Accessing Properties and Methods](#accessing-properties-and-methods)
     - [The `self` Keyword](#the-self-keyword)
   - [Constructors](#constructors)
+  - [Exercises](#exercises)
+    - [Exercise: Vet Clinic Application, v1](#exercise-vet-clinic-application-v1)
+    - [Exercise: Vet Clinic Application, v2](#exercise-vet-clinic-application-v2)
 
 /~
 
@@ -42,14 +45,15 @@ course: SDEV140
 - We use the `class` keyword to create a class.
 
 ```python
-# Define the Person class
+# Define the Person class using the "class" keyword.
 class Person:
-    # Properties
+    # Properties usually go at the top of the class
     name = 'Bob'
+    age = 20
 
     # Methods
-    do_something():
-        pass
+    print_greeting():
+        print("Hi... this is all I can do right now.")
 ```
 
 ### Pythonic Guidelines - Class Names
@@ -89,10 +93,11 @@ person2 = Person()
 person1 = Person()
 
 # Call method
-person1.do_something()
+person1.print_greeting()
 
 # Access property
 print(person1.name)
+print(person1.age)
 ```
 
 ### The `self` Keyword
@@ -102,42 +107,75 @@ print(person1.name)
 - When calling a method, we do not need to pass `self` as an argument.
 
 ```python
-# Define the Person class
 class Person:
     name = 'Bob'
+    age = 20
 
-    def do_something(self):
-        # Access the name property of the current object
-        print(self.name)
+    # If we provide a method with the "self" keyword, it:
+    # - will be automatically called with the object as the first argument
+    # - will have access to its own properties and methods
+    def print_greeting(self):
+        print(f"Hi, my name is {self.name} and I am {self.age} years old.")
 
 # Create an instance of the Person class
 person1 = Person()
 
-# Call the do_something method
-# No need to pass any arguments.
-person1.do_something()
+# Call the print_greeting method
+# No need to pass any arguments for "self"
+person1.print_greeting()
 ```
 
 ## Constructors
 
 - A **constructor** is a special method that is called when an object is created.
 - The constructor is used to initialize the object.
-- In Python, the constructor is always called `__init__()`.
 - The constructor is optional.
+- In Python, the constructor is always called `__init__()`.
 - The first argument must be `self`.
-- Since it's a function, we can define and pass other parameters to initialize the object.
+- We use the constructor to initialize state (properties) of the object.
 
 ```python
-# Class definition
 class Person:
     # Constructor
-    def __init__(self, name) -> None:
+    def __init__(self, name, age):
         # Initialize the name property
         self.name = name
+        self.age = age
 
-    def do_something(self) -> None:
-        print(self.name)
+    def print_greeting(self):
+        print(f"Hi, my name is {self.name} and I am {self.age} years old.")
 
 # Create an instance of the Person class
-person1 = Person('Bob')
+person1 = Person('Bob', 20)
+person1.print_name()
+
+# Create a second person, passing in different values
+person2 = Person('Jane', 25)
+person2.print_greeting()
 ```
+
+## Exercises
+
+### Exercise: Vet Clinic Application, v1
+
+~.focusContent.exercise
+
+**Creating a Basic Visit Class**
+
+We will use the above example application as we move through OOP concepts. Let's flush out the very basics.
+
+See the main branch of the [example repository](https://github.com/mpjovanovich-IvyTechDemos/python_oop_vet_app)
+
+/~
+
+### Exercise: Vet Clinic Application, v2
+
+~.focusContent.exercise
+
+**Extending the Domain Model**
+
+Now build on v1 by adding `Pet` and `Note` classes. This makes the model more organized and closer to a real-world **domain model**.
+
+See the `v2-better-domain-model` branch of the [example repository](https://github.com/mpjovanovich-IvyTechDemos/python_oop_vet_app/tree/v2-better-domain-model)
+
+/~
