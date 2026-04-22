@@ -74,6 +74,21 @@
                 </ul>
               </li>
               <li><a href="#constructors">Constructors</a></li>
+              <li>
+                <a href="#exercises">Exercises</a>
+                <ul>
+                  <li>
+                    <a href="#exercise-vet-clinic-application-v1"
+                      >Exercise: Vet Clinic Application, v1</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#exercise-vet-clinic-application-v2"
+                      >Exercise: Vet Clinic Application, v2</a
+                    >
+                  </li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
@@ -147,14 +162,15 @@
           --shiki-dark: #abb2bf;
         "
         tabindex="0"
-      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Define the Person class</span></span>
+      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Define the Person class using the "class" keyword.</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Properties</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Properties usually go at the top of the class</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    name </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'Bob'</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    age </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 20</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Methods</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">    do_something</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        pass</span></span></code></pre>
+<span class="line"><span style="color:#383A42;--shiki-dark:#61AFEF">    print_greeting</span><span style="color:#383A42;--shiki-dark:#ABB2BF">():</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"Hi... this is all I can do right now."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
       <h3 id="pythonic-guidelines---class-names">
         Pythonic Guidelines - Class Names
       </h3>
@@ -245,10 +261,11 @@
       ><code><span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">person1 </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Call method</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">person1.</span><span style="color:#383A42;--shiki-dark:#61AFEF">do_something</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">person1.</span><span style="color:#383A42;--shiki-dark:#61AFEF">print_greeting</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Access property</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(person1.name)</span></span></code></pre>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(person1.name)</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(person1.age)</span></span></code></pre>
       <h3 id="the-self-keyword">The `self` Keyword</h3>
       <ul>
         <li>The <code>self</code> keyword refers to the current object.</li>
@@ -267,20 +284,22 @@
           --shiki-dark: #abb2bf;
         "
         tabindex="0"
-      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Define the Person class</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    name </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'Bob'</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    age </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#986801;--shiki-dark:#D19A66"> 20</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> do_something</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        # Access the name property of the current object</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E5C07B">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.name)</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # If we provide a method with the "self" keyword, it:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # - will be automatically called with the object as the first argument</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # - will have access to its own properties and methods</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> print_greeting</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">"Hi, my name is </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#E45649;--shiki-dark:#E5C07B">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.name</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379"> and I am </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#E45649;--shiki-dark:#E5C07B">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.age</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379"> years old."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Create an instance of the Person class</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">person1 </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Call the do_something method</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># No need to pass any arguments.</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">person1.</span><span style="color:#383A42;--shiki-dark:#61AFEF">do_something</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Call the print_greeting method</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># No need to pass any arguments for "self"</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">person1.</span><span style="color:#383A42;--shiki-dark:#61AFEF">print_greeting</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
       <h2 id="constructors">Constructors</h2>
       <ul>
         <li>
@@ -288,14 +307,13 @@
           an object is created.
         </li>
         <li>The constructor is used to initialize the object.</li>
+        <li>The constructor is optional.</li>
         <li>
           In Python, the constructor is always called <code>__init__()</code>.
         </li>
-        <li>The constructor is optional.</li>
         <li>The first argument must be <code>self</code>.</li>
         <li>
-          Since it&#39;s a function, we can define and pass other parameters to
-          initialize the object.
+          We use the constructor to initialize state (properties) of the object.
         </li>
       </ul>
       <pre
@@ -307,18 +325,60 @@
           --shiki-dark: #abb2bf;
         "
         tabindex="0"
-      ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Class definition</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+      ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # Constructor</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> __init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) -> </span><span style="color:#986801;--shiki-dark:#D19A66">None</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> __init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> age</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        # Initialize the name property</span></span>
 <span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.name </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> name</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.age </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> age</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> do_something</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">) -> </span><span style="color:#986801;--shiki-dark:#D19A66">None</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#E45649;--shiki-dark:#E5C07B">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.name)</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> print_greeting</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">"Hi, my name is </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#E45649;--shiki-dark:#E5C07B">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.name</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379"> and I am </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#E45649;--shiki-dark:#E5C07B">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.age</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379"> years old."</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Create an instance of the Person class</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">person1 </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">'Bob'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">person1 </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">'Bob'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">20</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">person1.</span><span style="color:#383A42;--shiki-dark:#61AFEF">print_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Create a second person, passing in different values</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">person2 </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> Person</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">'Jane'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">25</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">person2.</span><span style="color:#383A42;--shiki-dark:#61AFEF">print_greeting</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
+      <h2 id="exercises">Exercises</h2>
+      <h3 id="exercise-vet-clinic-application-v1">
+        Exercise: Vet Clinic Application, v1
+      </h3>
+      <div class="focusContent exercise">
+        <p><strong>Creating a Basic Visit Class</strong></p>
+        <p>
+          We will use the above example application as we move through OOP
+          concepts. Let&#39;s flush out the very basics.
+        </p>
+        <p>
+          See the main branch of the
+          <a
+            href="https://github.com/mpjovanovich-IvyTechDemos/python_oop_vet_app"
+            >example repository</a
+          >
+        </p>
+      </div>
+
+      <h3 id="exercise-vet-clinic-application-v2">
+        Exercise: Vet Clinic Application, v2
+      </h3>
+      <div class="focusContent exercise">
+        <p><strong>Extending the Domain Model</strong></p>
+        <p>
+          Now build on v1 by adding <code>Pet</code> and
+          <code>Note</code> classes. This makes the model more organized and
+          closer to a real-world <strong>domain model</strong>.
+        </p>
+        <p>
+          See the <code>v2-better-domain-model</code> branch of the
+          <a
+            href="https://github.com/mpjovanovich-IvyTechDemos/python_oop_vet_app/tree/v2-better-domain-model"
+            >example repository</a
+          >
+        </p>
+      </div>
     </div>
   </body>
 </html>
