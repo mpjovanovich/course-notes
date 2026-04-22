@@ -164,7 +164,7 @@ person2.print_greeting()
 
 We will use the above example application as we move through OOP concepts. Let's flush out the very basics.
 
-See the main branch of the [example repository](https://github.com/mpjovanovich-IvyTechDemos/python_oop_vet_app)
+See the `main` branch of the [example repository](https://github.com/mpjovanovich-IvyTechDemos/python_oop_vet_app)
 
 /~
 
