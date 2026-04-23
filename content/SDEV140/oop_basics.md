@@ -52,7 +52,7 @@ class Person:
     age = 20
 
     # Methods
-    print_greeting():
+    def print_greeting(self):
         print("Hi... this is all I can do right now.")
 ```
 

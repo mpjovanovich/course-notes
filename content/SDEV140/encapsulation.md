@@ -182,7 +182,7 @@ account = BankAccount(initial_balance=1000)
 print(f"Initial balance: ${account.get_balance()}")
 account.deposit(500)
 account.withdraw(200)
-account.withdraw(1000)  # Should fail due to insufficient funds
+account.withdraw(2000)  # Should fail due to insufficient funds
 print(f"Final balance: ${account.get_balance()}")
 ```
 
