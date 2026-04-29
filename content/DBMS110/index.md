@@ -133,4 +133,4 @@ Part II:
 
 ## Module 08: Business Intelligence and Data Analytics
 
-distributed data systems
+TODO: port previous notes

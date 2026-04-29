@@ -134,8 +134,4 @@ We discuss these instructions in more detail in the "Evolution of Programming" p
 
 See: [x86 instruction listings](https://en.wikipedia.org/wiki/X86_instruction_listings)
 
-_Slight correction to the video: the program counter is incremented immediately after the instruction is fetched, not after it is executed._
-
-_The "JUMP 1" instruction does not skip the execution cycle. It updates the program counter on its execution._
-
 /~

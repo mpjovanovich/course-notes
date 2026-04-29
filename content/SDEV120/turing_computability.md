@@ -36,9 +36,9 @@ Alan Turing lived in Britain during World War II. He was a mathematician and cry
 
 ## The Halting Problem
 
-Turing wasn't trying to build a computer in the modern sense. He was working on a math problem that had to do with logical propositions (the Entscheidungsproblem, or "decision problem").
+Turing wasn't trying to build a computer in the modern sense. He was working on a math problem posed by another mathematician named Hilbert, which asked whether there exists an algorithm that can determine if any logical statement is provable (the Entscheidungsproblem, or "decision problem").
 
-The **Halting Problem** asks: "Is there a general algorithm that can take another algorithm along with its input and determine whether the algorithm will halt (stop running) or run forever?"
+The **Halting Problem** asks: "Is there a general algorithm that can take any algorithm along with its input and determine whether the algorithm will halt (stop running) or run forever?"
 
 _Example:_
 
@@ -70,6 +70,20 @@ _Example:_
 - This machine prints an alternating sequence of zeroes and ones: 01010101...
 - Turing always leaves blank squares between the printed symbols.
 - In this example the "symbol" column in the table are all "None", but for meaningful programs they would be filled various symbols that are used to control the calculations.
+
+~.focusContent.exercise
+
+**Does this Turing machine halt?**
+
+Determine the output
+
+| m-config | symbol | operations | final m-config |
+| -------- | ------ | ---------- | -------------- |
+| b        | None   | P1, R      | c              |
+| c        | None   | P0, R      | d              |
+| d        | None   | P1         | h              |
+
+/~
 
 ## Consequences for Modern Computing
 
