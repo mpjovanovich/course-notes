@@ -39,18 +39,24 @@
             <a href="#abstraction">Abstraction</a>
             <ul>
               <li>
-                <a href="#interfaces">Interfaces</a>
-                <ul>
-                  <li><a href="#usage">Usage</a></li>
-                </ul>
+                <a href="#interface-vs-implementation"
+                  >Interface vs. Implementation</a
+                >
               </li>
               <li>
                 <a href="#abstract-classes-and-methods"
                   >Abstract Classes and Methods</a
                 >
-                <ul>
-                  <li><a href="#usage-1">Usage</a></li>
-                </ul>
+              </li>
+              <li>
+                <a href="#example-shape-as-an-abstract-base-class"
+                  >Example: Shape as an Abstract Base Class</a
+                >
+              </li>
+              <li>
+                <a href="#interfaces-in-other-languages"
+                  >Interfaces in Other Languages</a
+                >
               </li>
             </ul>
           </li>
@@ -58,113 +64,68 @@
       </div>
 
       <h1 id="abstraction">Abstraction</h1>
-      <p>Primary purposes of <strong>abstraction</strong> are to:</p>
+      <p>
+        Primary purpose of <strong>abstraction</strong> is to hide complexity of
+        some part of the system behind a simpler interface.
+      </p>
+      <h2 id="interface-vs-implementation">Interface vs. Implementation</h2>
       <ul>
-        <li>Hide the complexity of the system from the user.</li>
-        <li>Segregate interfaces from implementation.</li>
+        <li>
+          <strong>Interface</strong>: The set of public methods and properties
+          that a class provides.
+        </li>
+        <li>
+          <strong>Implementation</strong>: The actual code that performs the
+          operations.
+        </li>
       </ul>
-      <h2 id="interfaces">Interfaces</h2>
-      <p>
-        <strong>Interface</strong>: The set of public methods and properties
-        that a class provides.
-      </p>
-      <p>
-        <strong>Implementation</strong>: The actual code that performs the
-        operations.
-      </p>
       <p>
         An interface defines a <strong>contract</strong> between the class and
-        the outside world. The class promises to provide the methods and
-        properties defined in the interface.
+        the outside world. The class promises to provide every method listed in
+        the contract.
       </p>
-      <p>We may speak of interface as:</p>
-      <ul>
-        <li>
-          General sense: The set of methods and properties that a class
-          provides.
-        </li>
-        <li>
-          Specific sense: A language construct that defines a contract between
-          the class and the outside world (keyword <code>Interface</code>).
-        </li>
-      </ul>
-      <h3 id="usage">Usage</h3>
-      <p>A class may implement zero to many interfaces.</p>
-      <p>
-        <strong>A note on Python</strong>: Although most programming languages
-        do, Python does not have a built-in <code>Interface</code> keyword.
-        Instead, we use abstract classes and methods (discussed below) to define
-        interfaces.
-      </p>
-      <div class="focusContent example">
-        <p><em>Interface</em></p>
-        <pre
-          class="shiki shiki-themes one-light one-dark-pro"
-          style="
-            background-color: #fafafa;
-            --shiki-dark-bg: #282c34;
-            color: #383a42;
-            --shiki-dark: #abb2bf;
-          "
-          tabindex="0"
-        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">interface</span><span style="color:#C18401;--shiki-dark:#E5C07B"> IDatabase</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  connect</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> void</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  disconnect</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> void</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  execute_query</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">query</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> string</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> void</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-        <p><em>Implementation</em></p>
-        <pre
-          class="shiki shiki-themes one-light one-dark-pro"
-          style="
-            background-color: #fafafa;
-            --shiki-dark-bg: #282c34;
-            color: #383a42;
-            --shiki-dark: #abb2bf;
-          "
-          tabindex="0"
-        ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> MySQLDatabase</span><span style="color:#A626A4;--shiki-dark:#C678DD"> implements</span><span style="color:#C18401;--shiki-dark:#E5C07B"> IDatabase</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  connect</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> void</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Connect to MySQL database</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  disconnect</span><span style="color:#383A42;--shiki-dark:#ABB2BF">()</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> void</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Disconnect from MySQL database</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  }</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">  execute_query</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">query</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> string</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#0184BC;--shiki-dark:#E5C07B"> void</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    // Execute query on MySQL database</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  }</span></span>
-<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-      </div>
-
       <h2 id="abstract-classes-and-methods">Abstract Classes and Methods</h2>
-      <p><strong>Abstract</strong>: Cannot be directly instantiated or used.</p>
-      <p><strong>Concrete</strong>: Can be directly instantiated or used.</p>
+      <ul>
+        <li><strong>Abstract</strong>: Cannot be directly instantiated.</li>
+        <li><strong>Concrete</strong>: Can be directly instantiated.</li>
+      </ul>
+      <p>An <strong>abstract base class</strong> (ABC):</p>
       <ul>
         <li>
-          <p>Abstract base classes</p>
-          <ul>
-            <li>Are only used as a base class for other classes.</li>
-            <li>May contain abstract methods or properties.</li>
-            <li>May contain concrete methods or properties.</li>
-          </ul>
+          Is only used as a base class — you can&#39;t create an instance of it
+          directly.
         </li>
         <li>
-          <p>Abstract methods</p>
-          <ul>
-            <li>May only by defined in an abstract class.</li>
-            <li>
-              <em
-                >Must be implemented in a derived class by overriding them in
-                the derived class.</em
-              >
-            </li>
-          </ul>
+          May contain <strong>abstract methods</strong> (contract-only, no body)
+          <em>and</em> regular concrete methods.
         </li>
       </ul>
-      <h3 id="usage">Usage</h3>
+      <p>An <strong>abstract method</strong>:</p>
+      <ul>
+        <li>Is declared in the abstract class but has no body.</li>
+        <li>
+          <strong>Must be overridden</strong> in any concrete subclass. If a
+          subclass forgets, Python will refuse to instantiate it.
+        </li>
+      </ul>
       <p>
-        A class may (usually) inherit from one and only one abstract base class.
+        This is how we enforce a contract in Python: &quot;any class that claims
+        to be a <code>Shape</code> <strong>must</strong> provide
+        <code>area()</code> and <code>perimeter()</code>.&quot;
+      </p>
+      <h2 id="example-shape-as-an-abstract-base-class">
+        Example: Shape as an Abstract Base Class
+      </h2>
+      <p>
+        In the Inheritance note, <code>Shape</code> was a regular class — but
+        nothing forced subclasses to actually provide <code>area()</code> or
+        <code>perimeter()</code>. If we add a new subclass and forget, we
+        won&#39;t find out until something tries to call the missing method at
+        runtime.
+      </p>
+      <p>
+        Let&#39;s upgrade <code>Shape</code> to an abstract base class so the
+        contract is enforced.
       </p>
       <div class="focusContent example">
         <pre
@@ -178,16 +139,15 @@
           tabindex="0"
         ><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">from</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> abc </span><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#383A42;--shiki-dark:#D19A66"> ABC</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, abstractmethod</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## Abstract base class</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Shape</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#383A42;--shiki-dark:#D19A66">ABC</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> __init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
 <span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._name </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> name</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Concrete method</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> print_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        print</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#A626A4;--shiki-dark:#C678DD">f</span><span style="color:#50A14F;--shiki-dark:#98C379">"Name: </span><span style="color:#986801;--shiki-dark:#D19A66">{</span><span style="color:#E45649;--shiki-dark:#E5C07B">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._name</span><span style="color:#986801;--shiki-dark:#D19A66">}</span><span style="color:#50A14F;--shiki-dark:#98C379">"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Concrete method - subclasses inherit this as-is</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> get_name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._name</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Abstract methods - must be implemented in derived classes</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Abstract methods - subclasses MUST override these</span></span>
 <span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">    @abstractmethod</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> area</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        pass</span></span>
@@ -198,37 +158,33 @@
 <span class="line"></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Circle</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Shape</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> __init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> radius</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        ## Call parent class constructor</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        ## super = 'Shape'</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        super</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#0184BC;--shiki-dark:#56B6C2">__init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(name)</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._radius </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> radius</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        ## Private attributes</span></span>
-<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#383A42;--shiki-dark:#D19A66">__PI</span><span style="color:#383A42;--shiki-dark:#56B6C2"> =</span><span style="color:#986801;--shiki-dark:#D19A66"> 3.14159</span></span>
-<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.__radius </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> radius</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Override abstract methods</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> area</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#383A42;--shiki-dark:#D19A66">__PI</span><span style="color:#383A42;--shiki-dark:#56B6C2"> *</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.__radius </span><span style="color:#383A42;--shiki-dark:#56B6C2">**</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#986801;--shiki-dark:#D19A66"> 3.14159</span><span style="color:#383A42;--shiki-dark:#56B6C2"> *</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._radius </span><span style="color:#383A42;--shiki-dark:#56B6C2">**</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> perimeter</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span><span style="color:#383A42;--shiki-dark:#56B6C2"> *</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.</span><span style="color:#383A42;--shiki-dark:#D19A66">__PI</span><span style="color:#383A42;--shiki-dark:#56B6C2"> *</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.__radius</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span><span style="color:#383A42;--shiki-dark:#56B6C2"> *</span><span style="color:#986801;--shiki-dark:#D19A66"> 3.14159</span><span style="color:#383A42;--shiki-dark:#56B6C2"> *</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._radius</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">class</span><span style="color:#C18401;--shiki-dark:#E5C07B"> Rectangle</span><span style="color:#C18401;--shiki-dark:#ABB2BF">(</span><span style="color:#C18401;--shiki-dark:#E5C07B">Shape</span><span style="color:#C18401;--shiki-dark:#ABB2BF">)</span><span style="color:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#0184BC;--shiki-dark:#56B6C2"> __init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> name</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> width</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span><span style="color:#986801;font-style:inherit;--shiki-dark:#D19A66;--shiki-dark-font-style:italic"> height</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        ## Call parent class constructor</span></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        ## super = 'Shape'</span></span>
 <span class="line"><span style="color:#0184BC;--shiki-dark:#56B6C2">        super</span><span style="color:#383A42;--shiki-dark:#ABB2BF">().</span><span style="color:#0184BC;--shiki-dark:#56B6C2">__init__</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(name)</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._width </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> width</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._height </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> height</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">        ## Private attributes</span></span>
-<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.__width </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> width</span></span>
-<span class="line"><span style="color:#E45649;--shiki-dark:#E5C07B">        self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.__height </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> height</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    ## Override abstract methods</span></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> area</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.__width </span><span style="color:#383A42;--shiki-dark:#56B6C2">*</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.__height</span></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._width </span><span style="color:#383A42;--shiki-dark:#56B6C2">*</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._height</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">    def</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> perimeter</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#986801;font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">):</span></span>
-<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span><span style="color:#383A42;--shiki-dark:#56B6C2"> *</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#E45649;--shiki-dark:#E5C07B">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.__width </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">.__height)</span></span></code></pre>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">        return</span><span style="color:#986801;--shiki-dark:#D19A66"> 2</span><span style="color:#383A42;--shiki-dark:#56B6C2"> *</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="color:#E45649;--shiki-dark:#E5C07B">self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._width </span><span style="color:#383A42;--shiki-dark:#56B6C2">+</span><span style="color:#E45649;--shiki-dark:#E5C07B"> self</span><span style="color:#383A42;--shiki-dark:#ABB2BF">._height)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## This would raise TypeError - Shape is abstract:</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## s = Shape("Oops")</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## These work - Circle and Rectangle are concrete:</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">c </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> Circle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"My Circle"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">r </span><span style="color:#383A42;--shiki-dark:#56B6C2">=</span><span style="color:#383A42;--shiki-dark:#61AFEF"> Rectangle</span><span style="color:#383A42;--shiki-dark:#ABB2BF">(</span><span style="color:#50A14F;--shiki-dark:#98C379">"My Rectangle"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">5</span><span style="color:#383A42;--shiki-dark:#ABB2BF">, </span><span style="color:#986801;--shiki-dark:#D19A66">10</span><span style="color:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
       </div>
     </div>
   </body>

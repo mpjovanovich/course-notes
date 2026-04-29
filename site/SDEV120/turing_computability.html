@@ -103,14 +103,15 @@
       <h2 id="the-halting-problem">The Halting Problem</h2>
       <p>
         Turing wasn&#39;t trying to build a computer in the modern sense. He was
-        working on a math problem that had to do with logical propositions (the
-        Entscheidungsproblem, or &quot;decision problem&quot;).
+        working on a math problem posed by another mathematician named Hilbert,
+        which asked whether there exists an algorithm that can determine if any
+        logical statement is provable (the Entscheidungsproblem, or
+        &quot;decision problem&quot;).
       </p>
       <p>
         The <strong>Halting Problem</strong> asks: &quot;Is there a general
-        algorithm that can take another algorithm along with its input and
-        determine whether the algorithm will halt (stop running) or run
-        forever?&quot;
+        algorithm that can take any algorithm along with its input and determine
+        whether the algorithm will halt (stop running) or run forever?&quot;
       </p>
       <p><em>Example:</em></p>
       <ul>
@@ -168,6 +169,41 @@
           various symbols that are used to control the calculations.
         </li>
       </ul>
+      <div class="focusContent exercise">
+        <p><strong>Does this Turing machine halt?</strong></p>
+        <p>Determine the output</p>
+        <table>
+          <thead>
+            <tr>
+              <th>m-config</th>
+              <th>symbol</th>
+              <th>operations</th>
+              <th>final m-config</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>b</td>
+              <td>None</td>
+              <td>P1, R</td>
+              <td>c</td>
+            </tr>
+            <tr>
+              <td>c</td>
+              <td>None</td>
+              <td>P0, R</td>
+              <td>d</td>
+            </tr>
+            <tr>
+              <td>d</td>
+              <td>None</td>
+              <td>P1</td>
+              <td>h</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <h2 id="consequences-for-modern-computing">
         Consequences for Modern Computing
       </h2>
