@@ -6,7 +6,8 @@ course: SDEV140
 ~.toc
 
 - [Polymorphism](#polymorphism)
-    - [Usage](#usage)
+  - [The Payoff](#the-payoff)
+  - [Example: Functions that Accept Any Shape](#example-functions-that-accept-any-shape)
 
 /~
 
@@ -14,120 +15,42 @@ course: SDEV140
 
 **Polymorphism**: Allows objects of different classes to be treated as objects of a common superclass.
 
-Functions can accept an interface or base class as a parameter type, and accept any class that implements the interface or base class.
+In practice: a function can declare that it accepts a base class (or interface), and it will work with _any_ subclass — including subclasses that didn't exist yet when the function was written.
 
-### Usage
+## The Payoff
 
-~.focusContent.example
+Polymorphism is the reason we bother with inheritance and abstraction in the first place:
 
-```typescript
-interface IDatabase {
-  connect(): void;
-  disconnect(): void;
-  execute_query(query: string): void;
-}
-```
+1. **Inheritance** lets related classes share a common base.
+   // TODO: not sure if this is how we want to frame it...
+2. **Abstraction** (via an ABC or interface) guarantees every subclass provides the same set of methods.
+3. **Polymorphism** lets us write code that relies on that shared contract and doesn't care which specific subclass it got.
 
-Functions that might use the interface:
+## Example: Functions that Accept Any Shape
 
-- `fetch_setting(IDatabase db, string setting_name)`
-- `validate_credentials(IDatabase db, string username, string password)`
-
-/~
-
-~.focusContent.example
-
-```typescript
-interface IFile {
-  open(): void;
-  close(): void;
-  read(): string;
-  write(data: string): void;
-  delete(): void;
-}
-```
-
-Functions that might use the interface:
-
-- `copy_file(IFile source, IFile destination)`
-- `move_file(IFile source, IFile destination)`
-- `delete_file(IFile file)`
-
-/~
+We'll reuse the `Shape` ABC from the Abstraction note.
 
 ~.focusContent.example
 
 ```python
-from abc import ABC, abstractmethod
-
-## Abstract base class
-class Shape(ABC):
-    def __init__(self, name):
-        ## Protected attribute
-        self._name = name
-
-    ## Concrete method
-    def get_name(self):
-        return self._name
-
-    ## Abstract methods - must be implemented in derived classes
-    @abstractmethod
-    def area(self):
-        pass
-
-    @abstractmethod
-    def perimeter(self):
-        pass
-
-class Circle(Shape):
-    def __init__(self, name, radius):
-        ## Call parent class constructor
-        ## super = 'Shape'
-        super().__init__(name)
-
-        ## Private attributes
-        self.__PI = 3.14159
-        self.__radius = radius
-
-    ## Override abstract methods
-    def area(self):
-        return self.__PI * self.__radius ** 2
-
-    def perimeter(self):
-        return 2 * self.__PI * self.__radius
-
-class Rectangle(Shape):
-    def __init__(self, name, width, height):
-        ## Call parent class constructor
-        ## super = 'Shape'
-        super().__init__(name)
-
-        ## Private attributes
-        self.__width = width
-        self.__height = height
-
-    ## Override abstract methods
-    def area(self):
-        return self.__width * self.__height
-
-    def perimeter(self):
-        return 2 * (self.__width + self.__height)
-```
-
-```python
-## This is the key part to demonstrate polymorphism
-## Function that uses the Shape interface
-## Does not care if the object is a Circle or Rectangle
+## This function accepts ANY Shape subclass.
+## It doesn't know (or care) whether it got a Circle, a Rectangle,
+## or some Shape subclass that hasn't been written yet.
 def print_shape_info(shape: Shape):
     print(f"Name: {shape.get_name()}")
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
 
-c = Circle("Circle", 5)
-r = Rectangle("Rectangle", 5, 10)
+c = Circle("My Circle", 5)
+r = Rectangle("My Rectangle", 5, 10)
 
 print_shape_info(c)
 print_shape_info(r)
 ```
+
+Notice what this allows us to do:
+
+- `print_shape_info` works for `Circle` and `Rectangle`.
+- If we add a `Triangle(Shape)` tomorrow, `print_shape_info(t)` will work with **zero changes** to `print_shape_info` itself, as long as `Triangle` honors the `Shape` contract.
 
 /~

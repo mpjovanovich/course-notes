@@ -8,16 +8,17 @@ course: SDEV140
 - [Inheritance](#inheritance)
   - [Base Class](#base-class)
   - [Derived Class](#derived-class)
-  - [Why use a Derived Class?](#why-use-a-derived-class)
   - [Why use Inheritance?](#why-use-inheritance)
-  - [Inheritance Example](#inheritance-example)
+  - [Inheritance vs. Composition](#inheritance-vs-composition)
+  - [Example: Shape Hierarchy](#example-shape-hierarchy)
 
 /~
 
 # Inheritance
 
-- One of the "three pillars of OOP"
 - **Inheritance** is the idea of extending functionality from an existing class.
+- The derived class "_is a_" more specific version of the base class.
+  - A `Rectangle` _is a_ `Shape`. A `Circle` _is a_ `Shape`.
 
 ## Base Class
 
@@ -39,60 +40,81 @@ The class that inherits from another class is called the:
 
 Typically more specialized in terms of functionality.
 
-## Why use a Derived Class?
-
-- Override properties/methods from base class.
-- Add new properties/methods specific to derived class.
-
 ## Why use Inheritance?
 
-- Override properties/methods from base class.
-- Add new properties/methods specific to derived class.
+- **Reuse** common behavior defined once on the base class, instead of copy-pasting it into every related class.
+- **Specialize** the base class by overriding methods or adding new ones on the derived class.
+- **Group** related types so that other code can work with all of them the same way (we'll build on this when we get to polymorphism).
 
-## Inheritance Example
+## Inheritance vs. Composition
+
+~.focusContent.lookout
+
+**Don't reach for inheritance by default.**
+
+Before you extend a class, ask which relationship actually fits:
+
+- _is-a_ — a `Circle` **is a** `Shape`. → Inheritance is a fit.
+- _has-a_ — a `Car` **has an** `Engine`. → Prefer **composition**: make `Engine` a property of `Car` rather than a parent class of it.
+
+Deep inheritance hierarchies are a common source of hard-to-change code. When in doubt, favor composition.
+
+/~
+
+## Example: Shape Hierarchy
+
+We'll build a small `Shape` hierarchy here and keep extending it through the next two notes (Abstraction and Polymorphism).
 
 ~.focusContent.example
 
 ```python
-class Quadrilateral:
-    def __init__(self, side1, side2, side3, side4):
-        ## Protected attributes
-        self._side1 = side1
-        self._side2 = side2
-        self._side3 = side3
-        self._side4 = side4
+class Shape:
+    def __init__(self, name):
+        self._name = name
+
+    def get_name(self):
+        return self._name
+
+class Circle(Shape):
+    def __init__(self, name, radius):
+        ## Call the parent class constructor (super = 'Shape')
+        super().__init__(name)
+        self._radius = radius
+
+    def area(self):
+        return 3.14159 * self._radius ** 2
 
     def perimeter(self):
-        return self._side1 + self._side2 + self._side3 + self._side4
+        return 2 * 3.14159 * self._radius
 
-class Rectangle(Quadrilateral):
-    ## Call parent class constructor
-    ## super = 'Quadrilateral'
-    def __init__(self, width, height):
-        super().__init__(width, height, width, height)
-        self.__width = width
-        self.__height = height
+class Rectangle(Shape):
+    def __init__(self, name, width, height):
+        super().__init__(name)
+        self._width = width
+        self._height = height
 
     def area(self):
-        return self.__width * self.__height
+        return self._width * self._height
 
-class Square(Quadrilateral):
-    ## Call parent class constructor
-    ## super = 'Quadrilateral'
-    def __init__(self, side):
-        super().__init__(side, side, side, side)
+    def perimeter(self):
+        return 2 * (self._width + self._height)
 
-    def area(self):
-        return self._side1 ** 2
+c = Circle("My Circle", 5)
+r = Rectangle("My Rectangle", 5, 10)
 
-## Create instances of derived classes
-r = Rectangle(5, 10)
-s = Square(5)
+## Inherited from Shape
+print(c.get_name())
+print(r.get_name())
 
-print(f"Rectangle area: {r.area()}")
-print(f"Rectangle perimeter: {r.perimeter()}")
-print(f"Square area: {s.area()}")
-print(f"Square perimeter: {s.perimeter()}")
+## Defined on each subclass
+print(c.area())
+print(r.area())
 ```
+
+A few things to notice:
+
+- `super().__init__(name)` calls the parent's constructor, so we don't have to re-write the `_name` assignment in every subclass.
+- `get_name()` is defined **once** on `Shape` and is automatically available on `Circle` and `Rectangle` — that's the code reuse payoff.
+- `area()` and `perimeter()` are defined **separately** on each subclass, because a circle's area calculation has nothing to do with a rectangle's — that's the specialization payoff.
 
 /~

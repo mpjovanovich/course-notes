@@ -6,106 +6,61 @@ course: SDEV140
 ~.toc
 
 - [Abstraction](#abstraction)
-  - [Interfaces](#interfaces)
-    - [Usage](#usage)
+  - [Interface vs. Implementation](#interface-vs-implementation)
   - [Abstract Classes and Methods](#abstract-classes-and-methods)
-    - [Usage](#usage-1)
+  - [Example: Shape as an Abstract Base Class](#example-shape-as-an-abstract-base-class)
+  - [Interfaces in Other Languages](#interfaces-in-other-languages)
 
 /~
 
 # Abstraction
 
-Primary purposes of **abstraction** are to:
+Primary purpose of **abstraction** is to hide complexity of some part of the system behind a simpler interface.
 
-- Hide the complexity of the system from the user.
-- Segregate interfaces from implementation.
+## Interface vs. Implementation
 
-## Interfaces
+- **Interface**: The set of public methods and properties that a class provides.
+- **Implementation**: The actual code that performs the operations.
 
-**Interface**: The set of public methods and properties that a class provides.
-
-**Implementation**: The actual code that performs the operations.
-
-An interface defines a **contract** between the class and the outside world. The class promises to provide the methods and properties defined in the interface.
-
-We may speak of interface as:
-
-- General sense: The set of methods and properties that a class provides.
-- Specific sense: A language construct that defines a contract between the class and the outside world (keyword `Interface`).
-
-### Usage
-
-A class may implement zero to many interfaces.
-
-**A note on Python**: Although most programming languages do, Python does not have a built-in `Interface` keyword. Instead, we use abstract classes and methods (discussed below) to define interfaces.
-
-~.focusContent.example
-
-_Interface_
-
-```typescript
-interface IDatabase {
-  connect(): void;
-  disconnect(): void;
-  execute_query(query: string): void;
-}
-```
-
-_Implementation_
-
-```typescript
-class MySQLDatabase implements IDatabase {
-  connect(): void {
-    // Connect to MySQL database
-  }
-
-  disconnect(): void {
-    // Disconnect from MySQL database
-  }
-
-  execute_query(query: string): void {
-    // Execute query on MySQL database
-  }
-}
-```
-
-/~
+An interface defines a **contract** between the class and the outside world. The class promises to provide every method listed in the contract.
 
 ## Abstract Classes and Methods
 
-**Abstract**: Cannot be directly instantiated or used.
+- **Abstract**: Cannot be directly instantiated.
+- **Concrete**: Can be directly instantiated.
 
-**Concrete**: Can be directly instantiated or used.
+An **abstract base class** (ABC):
 
-- Abstract base classes
+- Is only used as a base class — you can't create an instance of it directly.
+- May contain **abstract methods** (contract-only, no body) _and_ regular concrete methods.
 
-  - Are only used as a base class for other classes.
-  - May contain abstract methods or properties.
-  - May contain concrete methods or properties.
+An **abstract method**:
 
-- Abstract methods
-  - May only by defined in an abstract class.
-  - _Must be implemented in a derived class by overriding them in the derived class._
+- Is declared in the abstract class but has no body.
+- **Must be overridden** in any concrete subclass. If a subclass forgets, Python will refuse to instantiate it.
 
-### Usage
+This is how we enforce a contract in Python: "any class that claims to be a `Shape` **must** provide `area()` and `perimeter()`."
 
-A class may (usually) inherit from one and only one abstract base class.
+## Example: Shape as an Abstract Base Class
+
+In the Inheritance note, `Shape` was a regular class — but nothing forced subclasses to actually provide `area()` or `perimeter()`. If we add a new subclass and forget, we won't find out until something tries to call the missing method at runtime.
+
+Let's upgrade `Shape` to an abstract base class so the contract is enforced.
 
 ~.focusContent.example
 
 ```python
 from abc import ABC, abstractmethod
 
-## Abstract base class
 class Shape(ABC):
     def __init__(self, name):
         self._name = name
 
-    ## Concrete method
-    def print_name(self):
-        print(f"Name: {self._name}")
+    ## Concrete method - subclasses inherit this as-is
+    def get_name(self):
+        return self._name
 
-    ## Abstract methods - must be implemented in derived classes
+    ## Abstract methods - subclasses MUST override these
     @abstractmethod
     def area(self):
         pass
@@ -116,37 +71,33 @@ class Shape(ABC):
 
 class Circle(Shape):
     def __init__(self, name, radius):
-        ## Call parent class constructor
-        ## super = 'Shape'
         super().__init__(name)
+        self._radius = radius
 
-        ## Private attributes
-        self.__PI = 3.14159
-        self.__radius = radius
-
-    ## Override abstract methods
     def area(self):
-        return self.__PI * self.__radius ** 2
+        return 3.14159 * self._radius ** 2
 
     def perimeter(self):
-        return 2 * self.__PI * self.__radius
+        return 2 * 3.14159 * self._radius
 
 class Rectangle(Shape):
     def __init__(self, name, width, height):
-        ## Call parent class constructor
-        ## super = 'Shape'
         super().__init__(name)
+        self._width = width
+        self._height = height
 
-        ## Private attributes
-        self.__width = width
-        self.__height = height
-
-    ## Override abstract methods
     def area(self):
-        return self.__width * self.__height
+        return self._width * self._height
 
     def perimeter(self):
-        return 2 * (self.__width + self.__height)
+        return 2 * (self._width + self._height)
+
+## This would raise TypeError - Shape is abstract:
+## s = Shape("Oops")
+
+## These work - Circle and Rectangle are concrete:
+c = Circle("My Circle", 5)
+r = Rectangle("My Rectangle", 5, 10)
 ```
 
 /~
