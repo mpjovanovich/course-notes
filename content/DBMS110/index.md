@@ -133,4 +133,8 @@ Part II:
 
 ## Module 08: Business Intelligence and Data Analytics
 
-TODO: port previous notes
+Part I:
+
+<!-- TODO: this nees slip and reorganized for next term -->
+
+- [Business Intelligence](business_intelligence.html)
