@@ -5,313 +5,140 @@ course: DBMS110
 
 ~.toc
 
-- [Business Intelligence](#business-intelligence)
+- [Data Access Patterns](#data-access-patterns)
+  - [Online Transaction Processing (OLTP)](#online-transaction-processing-oltp)
+    - [OLTP is designed for:](#oltp-is-designed-for)
+    - [OLTP is optimized for:](#oltp-is-optimized-for)
+    - [OLTP has the following properties:](#oltp-has-the-following-properties)
+  - [Online Analytical Processing (OLAP)](#online-analytical-processing-olap)
+    - [OLAP is designed for:](#olap-is-designed-for)
+    - [OLAP is optimized for:](#olap-is-optimized-for)
+    - [OLAP has the following properties:](#olap-has-the-following-properties)
+- [Extracting Value from Data](#extracting-value-from-data)
+  - [Data Lake](#data-lake)
+  - [Extract, Transform, Load (ETL)](#extract-transform-load-etl)
+  - [Data Mart](#data-mart)
 
 /~
 
-# Business Intelligence & Data Warehousing
+# Data Access Patterns
 
-## Core Throughline
+Data may be considered to follow an OLTP or OLAP pattern. These have very different requirements and purposes.
 
-> Every concept in BI exists because OLTP made a deliberate tradeoff optimized
-> for writes and concurrency — and analytics needs the **opposite tradeoff** at
-> every level: storage, modeling, querying, and presentation.
+## Online Transaction Processing (OLTP)
 
----
+What we've covered so far has been focused on OLTP.
 
-## 1. The Problem: Why OLTP Fails for Decision Support
+### OLTP is designed for:
 
-**Start here — no new vocabulary needed. Build on what students already know.**
+- Operational / line-of-business applications
+- Consumer facing applications
 
-OLTP is optimized for:
+### OLTP is optimized for:
 
-- Fast, concurrent, transactional **writes**
+- Fast, concurrent, transactional **writes** (insert, update, delete)
 - Normalized schema to eliminate redundancy
-- Current state only
+- Holds current state of the system
+- Protects data integrity!
 
-### The Three Failure Modes for Analytics
+### OLTP has the following properties:
 
-| Failure Mode       | OLTP Behavior              | Why It Breaks Analytics                                 |
-| ------------------ | -------------------------- | ------------------------------------------------------- |
-| **Time span**      | Holds current state only   | Can't query "sales trends over 5 years"                 |
-| **Granularity**    | Every row is a transaction | Aggregating millions of rows for a summary is expensive |
-| **Dimensionality** | Normalized → many joins    | A simple business question requires a complex query     |
+- Highly normalized
+- Highly consistent
 
-### Worked Example
+_In OLTP the schema designed to keep the data clean and consistent, and prevent data anomalies._
 
-> _"How did Product X perform by region last quarter, compared to the same
-> quarter last year?"_
+~.focusContent.note
 
-Walk through how many joins this requires on a normalized OLTP schema.
-This motivates everything that follows.
+Where OLTP fails for decision support:
 
----
+- Time span: Often holds current state only
+- Granularity: Uses many transactions (queries can "block" other queries, causing performance issues)
+- Dimensionality: Normalized → many joins (a simple business question requires a complex query)
 
-## 2. The Architectural Response: Data Warehouse
+/~
 
-**Reframe every characteristic as a deliberate inversion of OLTP.**
+## Online Analytical Processing (OLAP)
 
-| OLTP                   | Data Warehouse             |
-| ---------------------- | -------------------------- |
-| Write-optimized        | Read-optimized             |
-| Current state          | Time-variant (historical)  |
-| Normalized (3NF)       | Intentionally denormalized |
-| Volatile — rows update | Nonvolatile — append only  |
-| Application-oriented   | Subject-oriented           |
-| Row-level transactions | Bulk analytical queries    |
+OLAP often falls under the heading of "**Business Intelligence (BI)**".
 
-### Key Concepts
+### OLAP is designed for:
 
-- **ETL (Extract, Transform, Load):** The bridge between operational and
-  analytical systems. Operational data must be extracted, cleaned, and reshaped
-  before it is analytically useful.
+- Data exploration
+- Reporting
+- Dashboards
+- Analytics
+- ...
 
-  - Common ETL failure points: dirty data, naming conflicts, unit mismatches,
-    inconsistent encoding of the same entity across source systems.
+### OLAP is optimized for:
 
-- **Data Mart:** A scoped, single-subject warehouse subset. Same principles as
-  a warehouse, narrower domain. Useful when a department needs independent
-  decision support without full enterprise warehouse access.
+- Fast concurrent **reads**
+- Long-term storage
+- Support the needs of a specific business domain (e.g. sales, human resources, logistics, etc.)
 
-- **VLDB Considerations:** At analytical scale, performance techniques become
-  necessary:
-  - **Partitioning** — divide large tables by range or list (e.g., by year)
-  - **Replication** — duplicate data to distribute read load
-  - **Materialized views** — precomputed query results stored as tables
+### OLAP has the following properties:
 
----
+- Highly denormalized (tables may be "flat" and look more like the result of a specific SQL query)
+- May have calculated and/or derived attributes
+- May have many different "views" of the same underlying data
+- May have historical or archival data
+- Is designed "with the end user in mind"
 
-## 3. The Modeling Response: Deliberate Denormalization
+_In OLAP the schema is designed to answer a specific business question (or set of questions)._
 
-**Directly confronts what students know about normalization.**
+# Extracting Value from Data
 
-> In OLTP, denormalization is a **mistake**.
-> In a data warehouse, it is a **design goal**.
+<figure>
+  <img src="images/DataLake_DataMart.svg" style="width:100%;height:auto;">
+</figure>
 
-Why: joins are expensive at analytical scale. Read performance trumps write
-efficiency. The schema is designed around how analysts query, not how
-applications write.
+## Data Lake
 
-### Facts and Dimensions
+<figure>
+  <img src="https://media.striim.com/wp-content/uploads/2021/11/12093415/Data-Lake-pattern.webp" style="width:100%;height:auto;">
+</figure>
 
-The mental model shift: from rows-and-transactions to **facts and dimensions**.
+A **data lake** is a cheap scalable place for raw or lightly processed copies from many systems.
 
-- **Facts:** Numeric measurements — the things you measure.
+May contain:
 
-  - Examples: sales amount, units sold, call duration, page views
-  - Stored in a **fact table**; typically has many rows, few columns
+- Copy of OLTP data (backups, historical, archive data)
+  - Application data
+- Raw data from non-relational sources (e.g. JSON, XML, CSV, etc.)
+  - Logs, events, etc.
+- Unstructured data (e.g. images, videos, audio, etc.)
+  - Documents, emails, etc.
 
-- **Dimensions:** Categorical context — the things you analyze by.
-  - Examples: time, product, region, customer, sales rep
-  - Stored in **dimension tables**; fewer rows, many descriptive columns
+~.focusContent.note
 
-### Attribute Hierarchies
+**Schema-on-read** - unlike more refined points that come later in the system, in a data lake the schema is "raw" and not defined in advance. A schema can be created on the fly as data is consumed.
 
-Dimensions can be organized into hierarchies for navigation:
+/~
 
-```
-Time:     Year → Quarter → Month → Day
-Geography: Country → Region → State → Store
-Product:  Category → Subcategory → SKU
-```
+## Extract, Transform, Load (ETL)
 
-This is **not** a normalization violation in a warehouse context — it is a
-navigation structure that enables:
+An **ETL** process is a way to extract data from a source system and transform it into a format that is suitable for consumption.
 
-- **Roll-up:** Aggregate from detail to summary (daily → monthly)
-- **Drill-down:** Disaggregate from summary to detail (annual → quarterly)
+ETL processes are often used to "pipeline" data from a source system to a data warehouse.
 
-### The Data Cube
+- External system to data lake
+- Data lake to data warehouse / data mart
 
-The conceptual model for multidimensional analysis. Instead of thinking in
-tables, think in **axes of analysis**.
+The end goal of ETL is to make the data specific, useful, and accessible to the people who need it.
 
-- A three-dimensional cube: Product × Region × Time
-- Each cell holds an aggregated fact value (e.g., total sales)
-- **Slice:** Fix one dimension to isolate a 2D subset (e.g., Q3 only)
-- **Dice:** Filter multiple dimensions simultaneously
+## Data Mart
 
-### Sparsity
+<figure>
+  <img src="https://www.altexsoft.com/static/blog-post/2023/11/78d17009-7146-4138-90b0-e86c59666804.jpg" style="width:80%;height:auto;">
+  <figcaption>
+    Note: I have skipped the explanation of "data warehouse", which is just another intermediate aggregation point in the data pipeline.
+  </figcaption>
+</figure>
 
-Most cells in a real-world cube are empty — not every product sells in every
-region in every time period. Storage and query architecture must account for
-this.
+A **data mart** is a repository of data that is typically designed for use by a specific audience for analytical purposes.
 
----
+Data from a larger dataset is "reshaped" to fit the querying needs of a specific audience. This often involves denormalizing the data - shaping the data to answer a specific business question.
 
-## 4. The Query Response: OLAP and SQL Extensions
+By the time data is used for reporting or exploration, it might be a full copy, a filtered slice, or a blend of sources - depending on who needs it and what they're doing.
 
-**Ground the abstract in syntax students can actually write.**
-
-### OLTP vs. OLAP Query Patterns
-
-|                | OLTP                         | OLAP                        |
-| -------------- | ---------------------------- | --------------------------- |
-| Access pattern | Point lookups by primary key | Full or partial table scans |
-| Operation      | Insert / Update / Delete     | Aggregate / Group / Compare |
-| Rows touched   | A few                        | Millions                    |
-| Joins          | Many (normalized)            | Few (denormalized) or none  |
-
-### SQL Had to Evolve
-
-Standard SQL was not designed for OLAP-type queries. Extensions added:
-
-- **Window functions:** `OVER()`, `PARTITION BY`, `ORDER BY` within window
-  - `RANK()`, `DENSE_RANK()`, `ROW_NUMBER()`
-  - Running totals, moving averages
-- **`ROLLUP`:** Hierarchical subtotals along one dimension
-- **`CUBE`:** All possible aggregation combinations across dimensions
-- **Materialized views:** Precomputed aggregations stored as queryable tables
-
-### ROLAP vs. MOLAP
-
-|             | ROLAP                           | MOLAP                            |
-| ----------- | ------------------------------- | -------------------------------- |
-| Storage     | Relational database             | Native multidimensional (MDBMS)  |
-| Scalability | High — leverages existing RDBMS | Limited by cube size             |
-| Query speed | Slower for dense cubes          | Faster for dense cubes           |
-| Flexibility | High                            | Lower                            |
-| Best for    | Sparse data, large volumes      | Dense cubes, fast query response |
-
-**Decision basis:** Data volume, query frequency, sparsity, existing
-infrastructure investment.
-
----
-
-## 5. The Analytics Layer: From Reporting to Prediction
-
-**The warehouse is infrastructure. This layer produces knowledge.**
-
-### Explanatory Analytics
-
-- Describes **what happened**
-- Tools: dashboards, KPIs, metrics, reports
-- The data warehouse is the source
-- Goal: reduce the time between a business question and a reliable answer
-
-### Predictive Analytics
-
-- Models **what will happen**
-- Requires historical depth — impossible without a warehouse or equivalent
-- Characteristics: statistical models, machine learning, scored outputs
-- **Big Data impact:** Volume changes what models are trainable and at what cost
-
-### Data Mining
-
-Automated discovery of previously unknown patterns in data. Contrast with
-predictive analytics:
-
-|          | Data Mining                   | Predictive Analytics           |
-| -------- | ----------------------------- | ------------------------------ |
-| Approach | Exploratory, automated        | Hypothesis-driven, model-based |
-| Goal     | Find unknown patterns         | Forecast known outcomes        |
-| Output   | Rules, clusters, associations | Scored predictions             |
-
-#### The Four Phases of Data Mining
-
-1. **Data preparation** — cleaning, transforming, sampling
-2. **Data analysis and classification** — pattern detection, algorithm selection
-3. **Knowledge acquisition** — extracting rules, clusters, associations
-4. **Prognosis** — applying findings to new or future data
-
-#### Example Use Cases
-
-- Customer churn prediction
-- Market basket analysis (association rules)
-- Credit risk scoring
-- Anomaly / fraud detection
-
----
-
-## 6. The Presentation Layer: Data Visualization
-
-**Close with the human-facing output. All of the above is infrastructure.**
-
-### Why Tables Fail at Scale
-
-Tables fail analytically for the same reason OLTP fails for decision support:
-humans are not optimized to extract patterns from rows of numbers. Visualization
-reduces cognitive load and enables pattern recognition.
-
-> Data visualization is useful at **any** data scale — not only with Big Data.
-> Even small datasets benefit from the right visual representation.
-
-### Data Visualization as a Discipline
-
-Three intersecting fields:
-
-1. **Graphic design** — composition, hierarchy, layout
-2. **Statistics** — what to show and why
-3. **Perceptual psychology** — how humans actually read visual information
-
-### Five Graphical Characteristics Used to Highlight Data
-
-1. Position
-2. Size
-3. Shape
-4. Color
-5. Texture
-
-### Matching Visualization Type to Data and Question
-
-| Data Type / Question        | Visualization                          |
-| --------------------------- | -------------------------------------- |
-| Categorical comparison      | Bar chart, treemap                     |
-| Change over time            | Line chart                             |
-| Distribution                | Histogram, box plot                    |
-| Relationships / correlation | Scatter plot                           |
-| Geographic patterns         | Choropleth map                         |
-| Part-to-whole               | Pie chart (use sparingly), stacked bar |
-| Network relationships       | Network / graph diagram                |
-
-### The Delivery Layer
-
-- **Dashboard:** Consolidated view of KPIs and metrics for a role or decision
-- **Portal:** Broader BI delivery mechanism; may aggregate multiple dashboards
-- **Governance:** Who controls what gets displayed, to whom, and how
-
----
-
-## 7. The Modern Extension: Data Lake
-
-**Reframes the warehouse in a contemporary context.**
-
-|                   | Data Warehouse              | Data Lake                                 |
-| ----------------- | --------------------------- | ----------------------------------------- |
-| Schema            | Schema-on-write             | Schema-on-read                            |
-| Data types        | Structured only             | Structured, semi-structured, unstructured |
-| Processing        | ETL (transform before load) | ELT (transform after load, if at all)     |
-| Query reliability | High — enforced structure   | Variable — depends on governance          |
-| Best for          | Known analytical queries    | Exploratory analysis, ML, raw storage     |
-
-### The Failure Mode
-
-Without governance, a data lake becomes a **data swamp** — data is stored but
-not findable, trustable, or usable.
-
-### Governance and MDM
-
-- **Master Data Management (MDM):** Ensures consistent definitions of key
-  entities (customer, product, location) across systems
-- **Governance:** Policies for data quality, access, lineage, and stewardship
-- Both are required for either a warehouse or a lake to deliver reliable
-  analytical value
-
----
-
-## Key Terms Reference
-
-| Term                                            | Section |
-| ----------------------------------------------- | ------- |
-| ETL (Extract, Transform, Load)                  | 2       |
-| Data mart                                       | 2       |
-| Partitioning, replication, materialized view    | 2       |
-| Facts, dimensions, fact table, dimension tables | 3       |
-| Attribute hierarchy, roll-up, drill-down        | 3       |
-| Data cube, slice, dice, sparsity                | 3       |
-| OLAP, ROLAP, MOLAP, MDBMS                       | 4       |
-| Window functions, ROLLUP, CUBE                  | 4       |
-| Explanatory analytics, predictive analytics     | 5       |
-| Data mining, KPI, dashboard                     | 5–6     |
-| Data visualization, governance                  | 6       |
-| Data lake, MDM, schema-on-read                  | 7       |
+> The tradeoff is introducing redundancy in the data to make it more efficient to query.
