@@ -35,703 +35,259 @@
     <div class="content-wrapper">
       <div class="toc">
         <ul>
-          <li><a href="#business-intelligence">Business Intelligence</a></li>
+          <li>
+            <a href="#data-access-patterns">Data Access Patterns</a>
+            <ul>
+              <li>
+                <a href="#online-transaction-processing-oltp"
+                  >Online Transaction Processing (OLTP)</a
+                >
+                <ul>
+                  <li>
+                    <a href="#oltp-is-designed-for">OLTP is designed for:</a>
+                  </li>
+                  <li>
+                    <a href="#oltp-is-optimized-for">OLTP is optimized for:</a>
+                  </li>
+                  <li>
+                    <a href="#oltp-has-the-following-properties"
+                      >OLTP has the following properties:</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#online-analytical-processing-olap"
+                  >Online Analytical Processing (OLAP)</a
+                >
+                <ul>
+                  <li>
+                    <a href="#olap-is-designed-for">OLAP is designed for:</a>
+                  </li>
+                  <li>
+                    <a href="#olap-is-optimized-for">OLAP is optimized for:</a>
+                  </li>
+                  <li>
+                    <a href="#olap-has-the-following-properties"
+                      >OLAP has the following properties:</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#extracting-value-from-data">Extracting Value from Data</a>
+            <ul>
+              <li><a href="#data-lake">Data Lake</a></li>
+              <li>
+                <a href="#extract-transform-load-etl"
+                  >Extract, Transform, Load (ETL)</a
+                >
+              </li>
+              <li><a href="#data-mart">Data Mart</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
 
-      <h1 id="business-intelligence--data-warehousing">
-        Business Intelligence & Data Warehousing
-      </h1>
-      <h2 id="core-throughline">Core Throughline</h2>
-      <blockquote>
-        <p>
-          Every concept in BI exists because OLTP made a deliberate tradeoff
-          optimized for writes and concurrency — and analytics needs the
-          <strong>opposite tradeoff</strong> at every level: storage, modeling,
-          querying, and presentation.
-        </p>
-      </blockquote>
-      <hr />
-      <h2 id="1-the-problem-why-oltp-fails-for-decision-support">
-        1. The Problem: Why OLTP Fails for Decision Support
-      </h2>
+      <h1 id="data-access-patterns">Data Access Patterns</h1>
       <p>
-        <strong
-          >Start here — no new vocabulary needed. Build on what students already
-          know.</strong
-        >
+        Data may be considered to follow an OLTP or OLAP pattern. These have
+        very different requirements and purposes.
       </p>
-      <p>OLTP is optimized for:</p>
+      <h2 id="online-transaction-processing-oltp">
+        Online Transaction Processing (OLTP)
+      </h2>
+      <p>What we&#39;ve covered so far has been focused on OLTP.</p>
+      <h3 id="oltp-is-designed-for">OLTP is designed for:</h3>
       <ul>
-        <li>Fast, concurrent, transactional <strong>writes</strong></li>
+        <li>Operational / line-of-business applications</li>
+        <li>Consumer facing applications</li>
+      </ul>
+      <h3 id="oltp-is-optimized-for">OLTP is optimized for:</h3>
+      <ul>
+        <li>
+          Fast, concurrent, transactional <strong>writes</strong> (insert,
+          update, delete)
+        </li>
         <li>Normalized schema to eliminate redundancy</li>
-        <li>Current state only</li>
+        <li>Holds current state of the system</li>
+        <li>Protects data integrity!</li>
       </ul>
-      <h3 id="the-three-failure-modes-for-analytics">
-        The Three Failure Modes for Analytics
+      <h3 id="oltp-has-the-following-properties">
+        OLTP has the following properties:
       </h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Failure Mode</th>
-            <th>OLTP Behavior</th>
-            <th>Why It Breaks Analytics</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Time span</strong></td>
-            <td>Holds current state only</td>
-            <td>Can&#39;t query &quot;sales trends over 5 years&quot;</td>
-          </tr>
-          <tr>
-            <td><strong>Granularity</strong></td>
-            <td>Every row is a transaction</td>
-            <td>Aggregating millions of rows for a summary is expensive</td>
-          </tr>
-          <tr>
-            <td><strong>Dimensionality</strong></td>
-            <td>Normalized → many joins</td>
-            <td>A simple business question requires a complex query</td>
-          </tr>
-        </tbody>
-      </table>
-      <h3 id="worked-example">Worked Example</h3>
-      <blockquote>
+      <ul>
+        <li>Highly normalized</li>
+        <li>Highly consistent</li>
+      </ul>
+      <p>
+        <em
+          >In OLTP the schema designed to keep the data clean and consistent,
+          and prevent data anomalies.</em
+        >
+      </p>
+      <div class="focusContent note">
+        <p>Where OLTP fails for decision support:</p>
+        <ul>
+          <li>Time span: Often holds current state only</li>
+          <li>
+            Granularity: Uses many transactions (queries can &quot;block&quot;
+            other queries, causing performance issues)
+          </li>
+          <li>
+            Dimensionality: Normalized → many joins (a simple business question
+            requires a complex query)
+          </li>
+        </ul>
+      </div>
+
+      <h2 id="online-analytical-processing-olap">
+        Online Analytical Processing (OLAP)
+      </h2>
+      <p>
+        OLAP often falls under the heading of &quot;<strong
+          >Business Intelligence (BI)</strong
+        >&quot;.
+      </p>
+      <h3 id="olap-is-designed-for">OLAP is designed for:</h3>
+      <ul>
+        <li>Data exploration</li>
+        <li>Reporting</li>
+        <li>Dashboards</li>
+        <li>Analytics</li>
+        <li>...</li>
+      </ul>
+      <h3 id="olap-is-optimized-for">OLAP is optimized for:</h3>
+      <ul>
+        <li>Fast concurrent <strong>reads</strong></li>
+        <li>Long-term storage</li>
+        <li>
+          Support the needs of a specific business domain (e.g. sales, human
+          resources, logistics, etc.)
+        </li>
+      </ul>
+      <h3 id="olap-has-the-following-properties">
+        OLAP has the following properties:
+      </h3>
+      <ul>
+        <li>
+          Highly denormalized (tables may be &quot;flat&quot; and look more like
+          the result of a specific SQL query)
+        </li>
+        <li>May have calculated and/or derived attributes</li>
+        <li>
+          May have many different &quot;views&quot; of the same underlying data
+        </li>
+        <li>May have historical or archival data</li>
+        <li>Is designed &quot;with the end user in mind&quot;</li>
+      </ul>
+      <p>
+        <em
+          >In OLAP the schema is designed to answer a specific business question
+          (or set of questions).</em
+        >
+      </p>
+      <h1 id="extracting-value-from-data">Extracting Value from Data</h1>
+      <figure>
+        <img
+          src="images/DataLake_DataMart.svg"
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <h2 id="data-lake">Data Lake</h2>
+      <figure>
+        <img
+          src="https://media.striim.com/wp-content/uploads/2021/11/12093415/Data-Lake-pattern.webp"
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <p>
+        A <strong>data lake</strong> is a cheap scalable place for raw or
+        lightly processed copies from many systems.
+      </p>
+      <p>May contain:</p>
+      <ul>
+        <li>
+          Copy of OLTP data (backups, historical, archive data)
+          <ul>
+            <li>Application data</li>
+          </ul>
+        </li>
+        <li>
+          Raw data from non-relational sources (e.g. JSON, XML, CSV, etc.)
+          <ul>
+            <li>Logs, events, etc.</li>
+          </ul>
+        </li>
+        <li>
+          Unstructured data (e.g. images, videos, audio, etc.)
+          <ul>
+            <li>Documents, emails, etc.</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="focusContent note">
         <p>
-          <em
-            >&quot;How did Product X perform by region last quarter, compared to
-            the same quarter last year?&quot;</em
-          >
+          <strong>Schema-on-read</strong> - unlike more refined points that come
+          later in the system, in a data lake the schema is &quot;raw&quot; and
+          not defined in advance. A schema can be created on the fly as data is
+          consumed.
         </p>
-      </blockquote>
+      </div>
+
+      <h2 id="extract-transform-load-etl">Extract, Transform, Load (ETL)</h2>
       <p>
-        Walk through how many joins this requires on a normalized OLTP schema.
-        This motivates everything that follows.
+        An <strong>ETL</strong> process is a way to extract data from a source
+        system and transform it into a format that is suitable for consumption.
       </p>
-      <hr />
-      <h2 id="2-the-architectural-response-data-warehouse">
-        2. The Architectural Response: Data Warehouse
-      </h2>
       <p>
-        <strong
-          >Reframe every characteristic as a deliberate inversion of
-          OLTP.</strong
-        >
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>OLTP</th>
-            <th>Data Warehouse</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Write-optimized</td>
-            <td>Read-optimized</td>
-          </tr>
-          <tr>
-            <td>Current state</td>
-            <td>Time-variant (historical)</td>
-          </tr>
-          <tr>
-            <td>Normalized (3NF)</td>
-            <td>Intentionally denormalized</td>
-          </tr>
-          <tr>
-            <td>Volatile — rows update</td>
-            <td>Nonvolatile — append only</td>
-          </tr>
-          <tr>
-            <td>Application-oriented</td>
-            <td>Subject-oriented</td>
-          </tr>
-          <tr>
-            <td>Row-level transactions</td>
-            <td>Bulk analytical queries</td>
-          </tr>
-        </tbody>
-      </table>
-      <h3 id="key-concepts">Key Concepts</h3>
-      <ul>
-        <li>
-          <p>
-            <strong>ETL (Extract, Transform, Load):</strong> The bridge between
-            operational and analytical systems. Operational data must be
-            extracted, cleaned, and reshaped before it is analytically useful.
-          </p>
-          <ul>
-            <li>
-              Common ETL failure points: dirty data, naming conflicts, unit
-              mismatches, inconsistent encoding of the same entity across source
-              systems.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>
-            <strong>Data Mart:</strong> A scoped, single-subject warehouse
-            subset. Same principles as a warehouse, narrower domain. Useful when
-            a department needs independent decision support without full
-            enterprise warehouse access.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>VLDB Considerations:</strong> At analytical scale,
-            performance techniques become necessary:
-          </p>
-          <ul>
-            <li>
-              <strong>Partitioning</strong> — divide large tables by range or
-              list (e.g., by year)
-            </li>
-            <li>
-              <strong>Replication</strong> — duplicate data to distribute read
-              load
-            </li>
-            <li>
-              <strong>Materialized views</strong> — precomputed query results
-              stored as tables
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <hr />
-      <h2 id="3-the-modeling-response-deliberate-denormalization">
-        3. The Modeling Response: Deliberate Denormalization
-      </h2>
-      <p>
-        <strong
-          >Directly confronts what students know about normalization.</strong
-        >
-      </p>
-      <blockquote>
-        <p>
-          In OLTP, denormalization is a <strong>mistake</strong>. In a data
-          warehouse, it is a <strong>design goal</strong>.
-        </p>
-      </blockquote>
-      <p>
-        Why: joins are expensive at analytical scale. Read performance trumps
-        write efficiency. The schema is designed around how analysts query, not
-        how applications write.
-      </p>
-      <h3 id="facts-and-dimensions">Facts and Dimensions</h3>
-      <p>
-        The mental model shift: from rows-and-transactions to
-        <strong>facts and dimensions</strong>.
+        ETL processes are often used to &quot;pipeline&quot; data from a source
+        system to a data warehouse.
       </p>
       <ul>
-        <li>
-          <p>
-            <strong>Facts:</strong> Numeric measurements — the things you
-            measure.
-          </p>
-          <ul>
-            <li>
-              Examples: sales amount, units sold, call duration, page views
-            </li>
-            <li>
-              Stored in a <strong>fact table</strong>; typically has many rows,
-              few columns
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>
-            <strong>Dimensions:</strong> Categorical context — the things you
-            analyze by.
-          </p>
-          <ul>
-            <li>Examples: time, product, region, customer, sales rep</li>
-            <li>
-              Stored in <strong>dimension tables</strong>; fewer rows, many
-              descriptive columns
-            </li>
-          </ul>
-        </li>
+        <li>External system to data lake</li>
+        <li>Data lake to data warehouse / data mart</li>
       </ul>
-      <h3 id="attribute-hierarchies">Attribute Hierarchies</h3>
-      <p>Dimensions can be organized into hierarchies for navigation:</p>
-      <pre
-        class="shiki shiki-themes one-light one-dark-pro"
-        style="
-          background-color: #fafafa;
-          --shiki-dark-bg: #282c34;
-          color: #383a42;
-          --shiki-dark: #abb2bf;
-        "
-        tabindex="0"
-      ><code><span class="line"><span>Time:     Year → Quarter → Month → Day</span></span>
-<span class="line"><span>Geography: Country → Region → State → Store</span></span>
-<span class="line"><span>Product:  Category → Subcategory → SKU</span></span></code></pre>
       <p>
-        This is <strong>not</strong> a normalization violation in a warehouse
-        context — it is a navigation structure that enables:
+        The end goal of ETL is to make the data specific, useful, and accessible
+        to the people who need it.
       </p>
-      <ul>
-        <li>
-          <strong>Roll-up:</strong> Aggregate from detail to summary (daily →
-          monthly)
-        </li>
-        <li>
-          <strong>Drill-down:</strong> Disaggregate from summary to detail
-          (annual → quarterly)
-        </li>
-      </ul>
-      <h3 id="the-data-cube">The Data Cube</h3>
+      <h2 id="data-mart">Data Mart</h2>
+      <figure>
+        <img
+          src="https://www.altexsoft.com/static/blog-post/2023/11/78d17009-7146-4138-90b0-e86c59666804.jpg"
+          style="width: 80%; height: auto"
+        />
+        <figcaption>
+          Note: I have skipped the explanation of "data warehouse", which is
+          just another intermediate aggregation point in the data pipeline.
+        </figcaption>
+      </figure>
+
       <p>
-        The conceptual model for multidimensional analysis. Instead of thinking
-        in tables, think in <strong>axes of analysis</strong>.
+        A <strong>data mart</strong> is a repository of data that is typically
+        designed for use by a specific audience for analytical purposes.
       </p>
-      <ul>
-        <li>A three-dimensional cube: Product × Region × Time</li>
-        <li>Each cell holds an aggregated fact value (e.g., total sales)</li>
-        <li>
-          <strong>Slice:</strong> Fix one dimension to isolate a 2D subset
-          (e.g., Q3 only)
-        </li>
-        <li>
-          <strong>Dice:</strong> Filter multiple dimensions simultaneously
-        </li>
-      </ul>
-      <h3 id="sparsity">Sparsity</h3>
       <p>
-        Most cells in a real-world cube are empty — not every product sells in
-        every region in every time period. Storage and query architecture must
-        account for this.
+        Data from a larger dataset is &quot;reshaped&quot; to fit the querying
+        needs of a specific audience. This often involves denormalizing the data
+        - shaping the data to answer a specific business question.
       </p>
-      <hr />
-      <h2 id="4-the-query-response-olap-and-sql-extensions">
-        4. The Query Response: OLAP and SQL Extensions
-      </h2>
       <p>
-        <strong
-          >Ground the abstract in syntax students can actually write.</strong
-        >
-      </p>
-      <h3 id="oltp-vs-olap-query-patterns">OLTP vs. OLAP Query Patterns</h3>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>OLTP</th>
-            <th>OLAP</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Access pattern</td>
-            <td>Point lookups by primary key</td>
-            <td>Full or partial table scans</td>
-          </tr>
-          <tr>
-            <td>Operation</td>
-            <td>Insert / Update / Delete</td>
-            <td>Aggregate / Group / Compare</td>
-          </tr>
-          <tr>
-            <td>Rows touched</td>
-            <td>A few</td>
-            <td>Millions</td>
-          </tr>
-          <tr>
-            <td>Joins</td>
-            <td>Many (normalized)</td>
-            <td>Few (denormalized) or none</td>
-          </tr>
-        </tbody>
-      </table>
-      <h3 id="sql-had-to-evolve">SQL Had to Evolve</h3>
-      <p>
-        Standard SQL was not designed for OLAP-type queries. Extensions added:
-      </p>
-      <ul>
-        <li>
-          <strong>Window functions:</strong> <code>OVER()</code>,
-          <code>PARTITION BY</code>, <code>ORDER BY</code> within window
-          <ul>
-            <li>
-              <code>RANK()</code>, <code>DENSE_RANK()</code>,
-              <code>ROW_NUMBER()</code>
-            </li>
-            <li>Running totals, moving averages</li>
-          </ul>
-        </li>
-        <li>
-          <strong><code>ROLLUP</code>:</strong> Hierarchical subtotals along one
-          dimension
-        </li>
-        <li>
-          <strong><code>CUBE</code>:</strong> All possible aggregation
-          combinations across dimensions
-        </li>
-        <li>
-          <strong>Materialized views:</strong> Precomputed aggregations stored
-          as queryable tables
-        </li>
-      </ul>
-      <h3 id="rolap-vs-molap">ROLAP vs. MOLAP</h3>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>ROLAP</th>
-            <th>MOLAP</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Storage</td>
-            <td>Relational database</td>
-            <td>Native multidimensional (MDBMS)</td>
-          </tr>
-          <tr>
-            <td>Scalability</td>
-            <td>High — leverages existing RDBMS</td>
-            <td>Limited by cube size</td>
-          </tr>
-          <tr>
-            <td>Query speed</td>
-            <td>Slower for dense cubes</td>
-            <td>Faster for dense cubes</td>
-          </tr>
-          <tr>
-            <td>Flexibility</td>
-            <td>High</td>
-            <td>Lower</td>
-          </tr>
-          <tr>
-            <td>Best for</td>
-            <td>Sparse data, large volumes</td>
-            <td>Dense cubes, fast query response</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        <strong>Decision basis:</strong> Data volume, query frequency, sparsity,
-        existing infrastructure investment.
-      </p>
-      <hr />
-      <h2 id="5-the-analytics-layer-from-reporting-to-prediction">
-        5. The Analytics Layer: From Reporting to Prediction
-      </h2>
-      <p>
-        <strong
-          >The warehouse is infrastructure. This layer produces
-          knowledge.</strong
-        >
-      </p>
-      <h3 id="explanatory-analytics">Explanatory Analytics</h3>
-      <ul>
-        <li>Describes <strong>what happened</strong></li>
-        <li>Tools: dashboards, KPIs, metrics, reports</li>
-        <li>The data warehouse is the source</li>
-        <li>
-          Goal: reduce the time between a business question and a reliable
-          answer
-        </li>
-      </ul>
-      <h3 id="predictive-analytics">Predictive Analytics</h3>
-      <ul>
-        <li>Models <strong>what will happen</strong></li>
-        <li>
-          Requires historical depth — impossible without a warehouse or
-          equivalent
-        </li>
-        <li>
-          Characteristics: statistical models, machine learning, scored outputs
-        </li>
-        <li>
-          <strong>Big Data impact:</strong> Volume changes what models are
-          trainable and at what cost
-        </li>
-      </ul>
-      <h3 id="data-mining">Data Mining</h3>
-      <p>
-        Automated discovery of previously unknown patterns in data. Contrast
-        with predictive analytics:
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Data Mining</th>
-            <th>Predictive Analytics</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Approach</td>
-            <td>Exploratory, automated</td>
-            <td>Hypothesis-driven, model-based</td>
-          </tr>
-          <tr>
-            <td>Goal</td>
-            <td>Find unknown patterns</td>
-            <td>Forecast known outcomes</td>
-          </tr>
-          <tr>
-            <td>Output</td>
-            <td>Rules, clusters, associations</td>
-            <td>Scored predictions</td>
-          </tr>
-        </tbody>
-      </table>
-      <h4 id="the-four-phases-of-data-mining">
-        The Four Phases of Data Mining
-      </h4>
-      <ol>
-        <li>
-          <strong>Data preparation</strong> — cleaning, transforming, sampling
-        </li>
-        <li>
-          <strong>Data analysis and classification</strong> — pattern detection,
-          algorithm selection
-        </li>
-        <li>
-          <strong>Knowledge acquisition</strong> — extracting rules, clusters,
-          associations
-        </li>
-        <li>
-          <strong>Prognosis</strong> — applying findings to new or future data
-        </li>
-      </ol>
-      <h4 id="example-use-cases">Example Use Cases</h4>
-      <ul>
-        <li>Customer churn prediction</li>
-        <li>Market basket analysis (association rules)</li>
-        <li>Credit risk scoring</li>
-        <li>Anomaly / fraud detection</li>
-      </ul>
-      <hr />
-      <h2 id="6-the-presentation-layer-data-visualization">
-        6. The Presentation Layer: Data Visualization
-      </h2>
-      <p>
-        <strong
-          >Close with the human-facing output. All of the above is
-          infrastructure.</strong
-        >
-      </p>
-      <h3 id="why-tables-fail-at-scale">Why Tables Fail at Scale</h3>
-      <p>
-        Tables fail analytically for the same reason OLTP fails for decision
-        support: humans are not optimized to extract patterns from rows of
-        numbers. Visualization reduces cognitive load and enables pattern
-        recognition.
+        By the time data is used for reporting or exploration, it might be a
+        full copy, a filtered slice, or a blend of sources - depending on who
+        needs it and what they&#39;re doing.
       </p>
       <blockquote>
         <p>
-          Data visualization is useful at <strong>any</strong> data scale — not
-          only with Big Data. Even small datasets benefit from the right visual
-          representation.
+          The tradeoff is introducing redundancy in the data to make it more
+          efficient to query.
         </p>
       </blockquote>
-      <h3 id="data-visualization-as-a-discipline">
-        Data Visualization as a Discipline
-      </h3>
-      <p>Three intersecting fields:</p>
-      <ol>
-        <li>
-          <strong>Graphic design</strong> — composition, hierarchy, layout
-        </li>
-        <li><strong>Statistics</strong> — what to show and why</li>
-        <li>
-          <strong>Perceptual psychology</strong> — how humans actually read
-          visual information
-        </li>
-      </ol>
-      <h3 id="five-graphical-characteristics-used-to-highlight-data">
-        Five Graphical Characteristics Used to Highlight Data
-      </h3>
-      <ol>
-        <li>Position</li>
-        <li>Size</li>
-        <li>Shape</li>
-        <li>Color</li>
-        <li>Texture</li>
-      </ol>
-      <h3 id="matching-visualization-type-to-data-and-question">
-        Matching Visualization Type to Data and Question
-      </h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Data Type / Question</th>
-            <th>Visualization</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Categorical comparison</td>
-            <td>Bar chart, treemap</td>
-          </tr>
-          <tr>
-            <td>Change over time</td>
-            <td>Line chart</td>
-          </tr>
-          <tr>
-            <td>Distribution</td>
-            <td>Histogram, box plot</td>
-          </tr>
-          <tr>
-            <td>Relationships / correlation</td>
-            <td>Scatter plot</td>
-          </tr>
-          <tr>
-            <td>Geographic patterns</td>
-            <td>Choropleth map</td>
-          </tr>
-          <tr>
-            <td>Part-to-whole</td>
-            <td>Pie chart (use sparingly), stacked bar</td>
-          </tr>
-          <tr>
-            <td>Network relationships</td>
-            <td>Network / graph diagram</td>
-          </tr>
-        </tbody>
-      </table>
-      <h3 id="the-delivery-layer">The Delivery Layer</h3>
-      <ul>
-        <li>
-          <strong>Dashboard:</strong> Consolidated view of KPIs and metrics for
-          a role or decision
-        </li>
-        <li>
-          <strong>Portal:</strong> Broader BI delivery mechanism; may aggregate
-          multiple dashboards
-        </li>
-        <li>
-          <strong>Governance:</strong> Who controls what gets displayed, to
-          whom, and how
-        </li>
-      </ul>
-      <hr />
-      <h2 id="7-the-modern-extension-data-lake">
-        7. The Modern Extension: Data Lake
-      </h2>
-      <p><strong>Reframes the warehouse in a contemporary context.</strong></p>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Data Warehouse</th>
-            <th>Data Lake</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Schema</td>
-            <td>Schema-on-write</td>
-            <td>Schema-on-read</td>
-          </tr>
-          <tr>
-            <td>Data types</td>
-            <td>Structured only</td>
-            <td>Structured, semi-structured, unstructured</td>
-          </tr>
-          <tr>
-            <td>Processing</td>
-            <td>ETL (transform before load)</td>
-            <td>ELT (transform after load, if at all)</td>
-          </tr>
-          <tr>
-            <td>Query reliability</td>
-            <td>High — enforced structure</td>
-            <td>Variable — depends on governance</td>
-          </tr>
-          <tr>
-            <td>Best for</td>
-            <td>Known analytical queries</td>
-            <td>Exploratory analysis, ML, raw storage</td>
-          </tr>
-        </tbody>
-      </table>
-      <h3 id="the-failure-mode">The Failure Mode</h3>
-      <p>
-        Without governance, a data lake becomes a <strong>data swamp</strong> —
-        data is stored but not findable, trustable, or usable.
-      </p>
-      <h3 id="governance-and-mdm">Governance and MDM</h3>
-      <ul>
-        <li>
-          <strong>Master Data Management (MDM):</strong> Ensures consistent
-          definitions of key entities (customer, product, location) across
-          systems
-        </li>
-        <li>
-          <strong>Governance:</strong> Policies for data quality, access,
-          lineage, and stewardship
-        </li>
-        <li>
-          Both are required for either a warehouse or a lake to deliver reliable
-          analytical value
-        </li>
-      </ul>
-      <hr />
-      <h2 id="key-terms-reference">Key Terms Reference</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Term</th>
-            <th>Section</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>ETL (Extract, Transform, Load)</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>Data mart</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>Partitioning, replication, materialized view</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>Facts, dimensions, fact table, dimension tables</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>Attribute hierarchy, roll-up, drill-down</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>Data cube, slice, dice, sparsity</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>OLAP, ROLAP, MOLAP, MDBMS</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>Window functions, ROLLUP, CUBE</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>Explanatory analytics, predictive analytics</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>Data mining, KPI, dashboard</td>
-            <td>5–6</td>
-          </tr>
-          <tr>
-            <td>Data visualization, governance</td>
-            <td>6</td>
-          </tr>
-          <tr>
-            <td>Data lake, MDM, schema-on-read</td>
-            <td>7</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </body>
 </html>
