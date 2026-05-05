@@ -54,3 +54,25 @@ Notice what this allows us to do:
 - If we add a `Triangle(Shape)` tomorrow, `print_shape_info(t)` will work with **zero changes** to `print_shape_info` itself, as long as `Triangle` honors the `Shape` contract.
 
 /~
+
+## Example: Extending a Car Class
+
+~.focusContent.demo
+
+**Demo: Rocket Car**
+
+Try running the following code:
+
+[Rocket Car](https://github.com/mpjovanovich-IvyTechDemos/python-oop-rocketcar)
+
+/~
+
+~.focusContent.exercise
+
+**Exercise: Modify the Car Class**
+
+Our car class works, but it currently can't turn. Let's add a `heading` property and a `turn()` method to the `Car` class.
+
+Because `RocketCar` is a `Car`, it should inherit these as well - we only need to add them in one place.
+
+/~

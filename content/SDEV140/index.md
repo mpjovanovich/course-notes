@@ -37,8 +37,6 @@ course: SDEV140
 
 [Module O8: GUI Development and Event Driven Programming](module/gui_development_event_driven_programming.html)
 
-[Module O9: Next Steps](module/next_steps.html)
-
 <!--
 
 ## Module 04: Lists and Dictionaries
