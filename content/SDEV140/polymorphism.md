@@ -71,7 +71,7 @@ Try running the following code:
 
 **In Class Exercise: Modify the Car Class**
 
-Our car class works, but it currently can't turn. Let's add a `heading` property and a `turn()` method to the `Car` class.
+Our car class works, but it currently can't turn. Let's add a `heading` property and a `turn_left()` and `turn_right()` method to the `Car` class.
 
 Because `RocketCar` is a `Car`, it should inherit these as well - we only need to add them in one place.
 
