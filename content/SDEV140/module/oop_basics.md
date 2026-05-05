@@ -46,4 +46,4 @@ Due Sunday.
 
 ### Lab: Rocketcar v2
 
-Due Sunday.
+Due as guided lab in class.
