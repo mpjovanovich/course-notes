@@ -37,13 +37,15 @@ Overview of course
 Part I:
 
 - [Timelines: Digital Evolution](timelines_digital_evolution.html)
-- Discussion: Milestones in the Technology Industry
+- Intro to assignments
+- Pre-course survey
 
 Part II:
 
 - Discussion: Media within the Digital Landscape
 - [The Internet](internet.html)
 - In class assignment: Exploration of Ethical and Legal Tech Practices
+- Intro to assignments
 
 <!-- ## Module 0X: AI in the Tech Industry
 
