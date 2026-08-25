@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../../assets/scripts/focus_content.js" defer></script>
+    <script src="./../../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../../assets/css/bootstrap-icons.css" />
+    <script src="./../../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <h1 id="infm109-course-objective-coverage-map">
+        INFM109 Course Objective Coverage Map
+      </h1>
+      <p>
+        Source: objectives and topical areas as listed in
+        <code>course-objectives.md</code>. Coverage assessed against every other
+        top-level file in this directory (subdirectories <code>demos/</code> and
+        <code>images/</code> excluded). <code>index.md</code> is the course
+        landing page/schedule, not lecture content, but is included since it
+        links out to modules and occasionally to content outside this directory.
+      </p>
+      <h2 id="file-legend">File Legend</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>File</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>idx</td>
+            <td>index.md</td>
+          </tr>
+          <tr>
+            <td>tde</td>
+            <td>timelines_digital_evolution.md</td>
+          </tr>
+          <tr>
+            <td>inet</td>
+            <td>internet.md</td>
+          </tr>
+          <tr>
+            <td>wai</td>
+            <td>what_is_ai.md</td>
+          </tr>
+          <tr>
+            <td>llm</td>
+            <td>large_language_models.md</td>
+          </tr>
+          <tr>
+            <td>pe</td>
+            <td>prompt_engineering.md</td>
+          </tr>
+          <tr>
+            <td>eai</td>
+            <td>embedded_ai.md</td>
+          </tr>
+          <tr>
+            <td>pia</td>
+            <td>professional_impact_of_ai.md</td>
+          </tr>
+          <tr>
+            <td>hw</td>
+            <td>hardware.md</td>
+          </tr>
+          <tr>
+            <td>iot</td>
+            <td>input_output_technologies.md</td>
+          </tr>
+          <tr>
+            <td>app</td>
+            <td>application_software.md</td>
+          </tr>
+          <tr>
+            <td>sso</td>
+            <td>system_software_operating_system.md</td>
+          </tr>
+          <tr>
+            <td>wdo</td>
+            <td>what_does_operating_system_do.md</td>
+          </tr>
+          <tr>
+            <td>tod</td>
+            <td>types_of_data.md</td>
+          </tr>
+          <tr>
+            <td>dhm</td>
+            <td>data_hierarchy_modeling.md</td>
+          </tr>
+          <tr>
+            <td>dbs</td>
+            <td>database_storage.md</td>
+          </tr>
+          <tr>
+            <td>virt</td>
+            <td>virtualization.md</td>
+          </tr>
+          <tr>
+            <td>xaas</td>
+            <td>xaas.md</td>
+          </tr>
+          <tr>
+            <td>ncp</td>
+            <td>networking_communication_patterns.md</td>
+          </tr>
+          <tr>
+            <td>coc</td>
+            <td>cybersecurity_organizational_challenges.md</td>
+          </tr>
+          <tr>
+            <td>cam</td>
+            <td>cyberattack_motivations_impact.md</td>
+          </tr>
+          <tr>
+            <td>ctl</td>
+            <td>cybersecurity_threat_landscape.md</td>
+          </tr>
+          <tr>
+            <td>caa</td>
+            <td>cybersecurity_attacking_with_ai.md</td>
+          </tr>
+          <tr>
+            <td>cds</td>
+            <td>cyberdefense_strategies.md</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <code>C</code> = Covered, <code>P</code> = Partial/tangential,
+        <code>–</code> = No coverage found.
+      </p>
+      <h2 id="coverage-table">Coverage Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Objective</th>
+            <th>idx</th>
+            <th>tde</th>
+            <th>inet</th>
+            <th>wai</th>
+            <th>llm</th>
+            <th>pe</th>
+            <th>eai</th>
+            <th>pia</th>
+            <th>hw</th>
+            <th>iot</th>
+            <th>app</th>
+            <th>sso</th>
+            <th>wdo</th>
+            <th>tod</th>
+            <th>dhm</th>
+            <th>dbs</th>
+            <th>virt</th>
+            <th>xaas</th>
+            <th>ncp</th>
+            <th>coc</th>
+            <th>cam</th>
+            <th>ctl</th>
+            <th>caa</th>
+            <th>cds</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong
+                >1. Meaning of information (human vs. mechanical
+                systems)</strong
+              >
+            </td>
+            <td>–</td>
+            <td>P (info access across eras)</td>
+            <td>–</td>
+            <td>P (AI vs. human cognition)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (bits/bytes as mechanical encoding)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (data vs. information defs)</td>
+            <td>P (models real-world entities)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>2. Hardware components: functions/interactions</strong>
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>C</td>
+            <td>C</td>
+            <td>–</td>
+            <td>P (OS/kernel overview)</td>
+            <td>P (kernel↔hardware, drivers, memory)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (virtualized CPU/RAM/storage/network)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>
+              <strong
+                >3. Engaging presentations w/ visual aids &amp; delivery</strong
+              >
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td><strong>4. Software dev principles &amp; SDLC</strong></td>
+            <td>
+              P (links to <code>../SDEV120/sdlc.html</code>, outside this dir)
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (versioning, licensing models)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (shift-left / secure SDLC)</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>5. Cloud computing, virtualization, Internet</strong>
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>C</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (local vs. cloud storage)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>C</td>
+            <td>C</td>
+            <td>P (underlying comm. patterns)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>
+              <strong
+                >6. Data visualization, statistics, reporting in orgs</strong
+              >
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (AI-generated data viz, mentioned)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (spreadsheet formulas demo)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (data classification basis)</td>
+            <td>P (data modeling, not viz)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>
+              <strong
+                >7. Logical/physical storage, local/cloud, DB structures,
+                SAN</strong
+              >
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (HDD/SSD/NVMe physical storage)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>C (ERD, keys, cardinality)</td>
+            <td>P (DB definition only, mostly TODO)</td>
+            <td>P (storage as shared resource)</td>
+            <td>P (IaaS storage rental)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>
+              <strong
+                >8. Informatics supporting an org (life cycles, info
+                flow)</strong
+              >
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (org data modeling, weak)</td>
+            <td>P (org DB use, weak)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (org IT/security impact, not info flow)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>9. Role of security across computing disciplines</strong>
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (passwords, VPN/proxy)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (memory protection basics)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+          </tr>
+          <tr>
+            <td>
+              <strong
+                >10. Ethical, unbiased, effective dissemination of tech
+                knowledge</strong
+              >
+            </td>
+            <td>P (links to ethics/legal assignment, outside this dir)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (best practices, human oversight)</td>
+            <td>P (critical thinking, verification)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (deepfake ethics case study)</td>
+            <td>–</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="per-module-objective-coverage">Per-Module Objective Coverage</h2>
+      <p>
+        Module layout as listed in <code>index.md</code>. Coverage level for a
+        module is the best level found among its constituent files (<code
+          >C</code
+        >
+        beats <code>P</code> beats <code>–</code>). <code>index.md</code> itself
+        is folded into the module where the relevant link/assignment appears in
+        its schedule (e.g. the SDLC link under Module 04, the ethics/legal
+        assignment under Module 01), rather than treated as a separate column.
+      </p>
+      <h3 id="module-legend">Module Legend</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Module</th>
+            <th>Files in this directory</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>M00</td>
+            <td>Module 00: Course Introduction</td>
+            <td><em>(none — orientation/logistics only)</em></td>
+          </tr>
+          <tr>
+            <td>M01</td>
+            <td>Module 01: Digital Citizenry &amp; The Internet</td>
+            <td>tde, inet</td>
+          </tr>
+          <tr>
+            <td>M0X</td>
+            <td>Module 0X: AI in the Tech Industry</td>
+            <td>wai, llm, pe, eai, pia</td>
+          </tr>
+          <tr>
+            <td>M02</td>
+            <td>Module 02: Hardware</td>
+            <td>hw, iot</td>
+          </tr>
+          <tr>
+            <td>M03</td>
+            <td>Module 03: Software</td>
+            <td>app, sso, wdo</td>
+          </tr>
+          <tr>
+            <td>M04</td>
+            <td>Module 04: Program and Web Development</td>
+            <td>
+              <em
+                >(none in this dir — content is
+                <code>../SDEV120/sdlc.html</code>)</em
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>M05</td>
+            <td>Module 05: Information Systems</td>
+            <td>tod, dhm, dbs</td>
+          </tr>
+          <tr>
+            <td>M06</td>
+            <td>Module 06: Networking and Storage</td>
+            <td>virt, xaas, ncp</td>
+          </tr>
+          <tr>
+            <td>M07</td>
+            <td>Module 07: Cyber and Digital Security</td>
+            <td>coc, cam, ctl, caa, cds</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id="module-coverage-table">Module Coverage Table</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Objective</th>
+            <th>M00</th>
+            <th>M01</th>
+            <th>M0X</th>
+            <th>M02</th>
+            <th>M03</th>
+            <th>M04</th>
+            <th>M05</th>
+            <th>M06</th>
+            <th>M07</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong
+                >1. Meaning of information (human vs. mechanical
+                systems)</strong
+              >
+            </td>
+            <td>–</td>
+            <td>P (tde)</td>
+            <td>P (wai)</td>
+            <td>P (hw)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (tod, dhm)</td>
+            <td>–</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>2. Hardware components: functions/interactions</strong>
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>C (hw, iot)</td>
+            <td>P (sso, wdo)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (virt)</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>
+              <strong
+                >3. Engaging presentations w/ visual aids &amp; delivery</strong
+              >
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td><strong>4. Software dev principles &amp; SDLC</strong></td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (app)</td>
+            <td>P (idx → <code>../SDEV120/sdlc.html</code>)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (cds)</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>5. Cloud computing, virtualization, Internet</strong>
+            </td>
+            <td>–</td>
+            <td>C (inet)</td>
+            <td>–</td>
+            <td>P (hw)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>C (virt, xaas)</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>
+              <strong
+                >6. Data visualization, statistics, reporting in orgs</strong
+              >
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (eai)</td>
+            <td>–</td>
+            <td>P (app)</td>
+            <td>–</td>
+            <td>P (tod, dhm)</td>
+            <td>–</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>
+              <strong
+                >7. Logical/physical storage, local/cloud, DB structures,
+                SAN</strong
+              >
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (hw)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>C (dhm, dbs)</td>
+            <td>P (virt, xaas)</td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>
+              <strong
+                >8. Informatics supporting an org (life cycles, info
+                flow)</strong
+              >
+            </td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (dhm, dbs)</td>
+            <td>–</td>
+            <td>P (coc)</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>9. Role of security across computing disciplines</strong>
+            </td>
+            <td>–</td>
+            <td>P (inet)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (wdo)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>C (coc, cam, ctl, caa, cds)</td>
+          </tr>
+          <tr>
+            <td>
+              <strong
+                >10. Ethical, unbiased, effective dissemination of tech
+                knowledge</strong
+              >
+            </td>
+            <td>–</td>
+            <td>P (idx → ethics/legal assignment)</td>
+            <td>P (eai, pia)</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>–</td>
+            <td>P (caa)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Reading across a row shows where in the course sequence an objective
+        gets picked up (and where it doesn&#39;t); reading down a column shows
+        how much weight a given module carries. Objective 3 has a blank row
+        across every module — confirms the file-level finding above that
+        presentation skills aren&#39;t addressed anywhere in this
+        directory&#39;s lecture content (per the instructor note, it&#39;s
+        covered by the final-presentation deliverables instead, outside of
+        lecture). Module 00 and Module 04 are blank across the board because
+        neither has lecture content living in this directory (M00 is pure
+        orientation; M04&#39;s SDLC content is a cross-course link into
+        <code>SDEV120</code>).
+      </p>
+      <h2 id="files-with-no-mapping-to-any-numbered-objective">
+        Files with no mapping to any numbered objective
+      </h2>
+      <p>
+        These cover useful topical-area material (per README&#39;s &quot;Topical
+        areas&quot; list) but don&#39;t land squarely on a numbered learning
+        objective: <code>large_language_models.md</code>,
+        <code>prompt_engineering.md</code> (LLM mechanics/technique, not tied to
+        an objective), and much of
+        <code>timelines_digital_evolution.md</code> beyond the Obj. 1 tangent.
+      </p>
+      <h2 id="objectives-with-little-or-no-coverage">
+        Objectives with Little or No Coverage
+      </h2>
+      <ul>
+        <li>
+          <p>
+            <strong
+              >Objective 3 (presentations, visual aids, delivery
+              techniques)</strong
+            >
+            — <strong>No coverage anywhere.</strong> Not a single file addresses
+            presentation skills, visual aid design, or delivery technique,
+            despite being a numbered objective and a topical area
+            (&quot;Effective Presentations&quot;). This looks like a real
+            content gap, not just a search miss.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong
+              >Objective 8 (informatics supporting an organization — life
+              cycles, components, flow of information)</strong
+            >
+            — Only weak, incidental coverage from
+            <code>cybersecurity_organizational_challenges.md</code>
+            (organizational risk/impact, not information flow) and thin tangents
+            in the data-modeling/database files. No file directly frames
+            information systems&#39; organizational life cycle or information
+            flow.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong
+              >Objective 1 (meaning of information: human vs. mechanical
+              systems)</strong
+            >
+            — Only tangential treatment (<code>types_of_data.md</code>&#39;s
+            data-vs-information definitions, <code>what_is_ai.md</code>&#39;s
+            AI-vs-human framing, <code>hardware.md</code>&#39;s bits/bytes). No
+            file explicitly contrasts how information is &quot;meaningful&quot;
+            to a human vs. how it&#39;s represented/processed mechanically.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong
+              >Objective 4 (SDLC / software development principles)</strong
+            >
+            — The actual SDLC lecture (<code>sdlc.html</code>) lives in the
+            <code>SDEV120</code> course directory, referenced only via a link in
+            <code>index.md</code>, not in this directory. Within this directory,
+            coverage is limited to
+            <code>application_software.md</code> (versioning/licensing) and
+            <code>cyberdefense_strategies.md</code> (shift-left security in
+            dev). No file walks through SDLC phases themselves.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong
+              >Objective 6 (data visualization, statistics, reporting)</strong
+            >
+            — Scattered and shallow: a spreadsheet formulas demo
+            (<code>application_software.md</code>), data-classification basics
+            (<code>types_of_data.md</code>), and a passing mention of
+            AI-generated visualizations (<code>embedded_ai.md</code>). No
+            dedicated treatment of statistics, reporting practices, or
+            visualization techniques.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Objective 7, SAN specifically</strong> — The objective
+            explicitly names &quot;storage area network (SAN) technology,&quot;
+            and it is <strong>not mentioned in any file</strong>.
+            Logical/physical storage and cloud storage are otherwise reasonably
+            covered (<code>data_hierarchy_modeling.md</code>,
+            <code>hardware.md</code>, <code>virtualization.md</code>,
+            <code>xaas.md</code>), and <code>database_storage.md</code> is
+            largely a stub (its detailed content is commented out as TODO).
+          </p>
+        </li>
+      </ul>
+      <h2 id="well-covered-objectives-for-contrast">
+        Well-Covered Objectives (for contrast)
+      </h2>
+      <ul>
+        <li>
+          <strong>Objective 9 (security)</strong> — Strongest coverage in the
+          set: five dedicated files
+          (<code>cybersecurity_organizational_challenges.md</code>,
+          <code>cyberattack_motivations_impact.md</code>,
+          <code>cybersecurity_threat_landscape.md</code>,
+          <code>cybersecurity_attacking_with_ai.md</code>,
+          <code>cyberdefense_strategies.md</code>) plus supporting mentions in
+          <code>internet.md</code> and
+          <code>what_does_operating_system_do.md</code>.
+        </li>
+        <li>
+          <strong>Objective 5 (cloud, virtualization, Internet)</strong> — Fully
+          covered via <code>internet.md</code>, <code>virtualization.md</code>,
+          and <code>xaas.md</code>, each a dedicated deep-dive.
+        </li>
+      </ul>
+      <h2 id="instructor-notes-on-coverage">Instructor notes on coverage:</h2>
+      <p>
+        There is a final presentation that takes place as a series of
+        deliverables. This teaches office suite competency and presentation
+        skills outside of lecture.
+      </p>
+      <p>
+        SDLC content is taken from another course. You may assume that it is
+        completely covered.
+      </p>
+      <p>
+        The AI notes are an interrim module introduced at my discretion. It was
+        deemed critical to provide exposure to these topics prior to students
+        exiting college in an IT program.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../../assets/scripts/focus_content.js" defer></script>
+    <script src="./../../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../../assets/css/bootstrap-icons.css" />
+    <script src="./../../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <h1 id="infm109-module-by-module-contribution--cohesion">
+        INFM109 Module-by-Module: Contribution & Cohesion
+      </h1>
+      <p>
+        Source: module layout from <code>index.md</code>, objective coverage
+        from <code>coverage-map.md</code>. For each module: what it contributes
+        to the overall course objectives, then an assessment of internal
+        cohesion — does the module hang together as a unit — with suggested
+        additions/removals to tighten it.
+      </p>
+      <p>
+        Cohesion here is a different axis than the coverage map. Coverage asks
+        &quot;is objective N addressed somewhere.&quot; This asks &quot;does
+        everything inside module M belong together, and does it pull its own
+        weight.&quot; A module can score well on coverage and still feel like a
+        grab-bag internally (or vice versa). This file is meant to be the
+        working planning document for course alterations: it takes each gap the
+        coverage map identified and resolves it down to a specific module, so
+        the two documents together tell you both <em>what&#39;s missing</em> and
+        <em>where it should go</em>.
+      </p>
+      <hr />
+      <h2 id="coverage-gaps-recommended-module-placement">
+        Coverage Gaps: Recommended Module Placement
+      </h2>
+      <p>
+        <code>coverage-map.md</code>&#39;s &quot;Objectives with Little or No
+        Coverage&quot; section names six problem areas. Each is resolved below
+        to a best-fit module, chosen by matching the gap to the module whose
+        existing theme and content already lean that direction — so closing the
+        gap reinforces cohesion instead of bolting on unrelated material.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Gap (from coverage-map.md)</th>
+            <th>Best-fit module</th>
+            <th>Why this module</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Obj 1</strong> — meaning of information (human vs.
+              mechanical)
+            </td>
+            <td><strong>Module 05: Information Systems</strong></td>
+            <td>
+              <code>types_of_data.md</code> already draws the
+              data-vs-information distinction as a tangent; making it explicit
+              closes the gap with a small edit to a file that already exists in
+              the right module, rather than new content elsewhere.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Obj 3</strong> — presentations, visual aids, delivery
+            </td>
+            <td><em>No lecture module — stays project-based</em></td>
+            <td>
+              Per the instructor note, this is deliberately taught through the
+              final-presentation deliverables, not lecture. Treat as
+              intentionally out-of-lecture rather than a true gap; at most,
+              Module 03 (Software) could add a brief pointer since it already
+              covers office-suite software.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Obj 4</strong> — SDLC / software dev principles</td>
+            <td><strong>Module 04: Program and Web Development</strong></td>
+            <td>
+              Already the objective&#39;s nominal home via the
+              <code>../SDEV120/sdlc.html</code> link — but see Module 04 below:
+              the fix is bringing native content into this directory, not
+              relocating the objective.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Obj 6</strong> — data visualization, statistics, reporting
+            </td>
+            <td>
+              <strong>Module 0X: AI in the Tech Industry</strong> (primary),
+              Module 03 (secondary)
+            </td>
+            <td>
+              Module 0X already ends in a &quot;Producing a Data-Driven
+              Artifact&quot; assignment with no lecture content backing it —
+              that&#39;s the module&#39;s own internal gap (see below) and this
+              objective&#39;s gap at the same time. Module 03&#39;s spreadsheet
+              demo in
+              <code>app.md</code> is a smaller existing anchor and can stay as
+              supporting material.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Obj 7 (SAN specifically)</strong> — storage area networks
+            </td>
+            <td><strong>Module 06: Networking and Storage</strong></td>
+            <td>
+              The module&#39;s title already promises &quot;Storage,&quot; which
+              is currently underrepresented (see Module 06 below); SAN is
+              infrastructure-level storage and belongs with networking, not with
+              Module 05&#39;s data-modeling take on storage.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Obj 8</strong> — informatics supporting an org (life
+              cycles, info flow)
+            </td>
+            <td><strong>Module 05: Information Systems</strong></td>
+            <td>
+              The module name is a direct match, and <code>dhm</code>/<code
+                >dbs</code
+              >
+              already gesture at organizational data use without framing it as
+              information flow — this is a framing fix to existing content, not
+              a new topic.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Net effect: Module 05 absorbs two of the six gaps (Obj 1, Obj 8) and
+        Module 0X&#39;s assignment/lecture mismatch turns out to double as the
+        fix for a third (Obj 6). Obj 3 is confirmed intentional rather than
+        missing. Obj 4 and Obj 7 stay in their nominal modules, each needing
+        native content rather than relocation.
+      </p>
+      <hr />
+      <h2 id="module-00-course-introduction">Module 00: Course Introduction</h2>
+      <p>
+        <strong>Contributes:</strong> Nothing tied to a numbered objective —
+        pure logistics (course structure, textbook access, computer orientation,
+        icebreaker).
+      </p>
+      <p>
+        <strong>Cohesion:</strong> Fine as-is. An orientation module is expected
+        to be a checklist rather than a themed unit; there&#39;s no content
+        thread to keep taut here. Nothing to add or remove.
+      </p>
+      <hr />
+      <h2 id="module-01-digital-citizenry--the-internet">
+        Module 01: Digital Citizenry & The Internet
+      </h2>
+      <p>
+        <strong>Contributes:</strong> Obj 1 (P, <code>tde</code> — info access
+        across eras), Obj 5 (C, <code>inet</code> — Internet fully covered), Obj
+        9 (P, <code>inet</code> — passwords/VPN/proxy), Obj 10 (P, via the
+        ethics/legal-practices assignment).
+      </p>
+      <p>
+        <strong>Cohesion:</strong> The title promises &quot;digital
+        citizenry&quot; — responsible/informed use of technology — but the two
+        lecture files are a historical timeline (<code>tde</code>) and internet
+        mechanics (<code>inet</code>); citizenship only shows up in the
+        <em>assignment</em> (&quot;Exploration of Ethical and Legal Tech
+        Practices&quot;), not in the lecture content itself. The throughline
+        from &quot;how we got here&quot; to &quot;how the internet works&quot;
+        is reasonable as a sequence, but a student reading only the lecture
+        files would not land on &quot;digital citizenry&quot; as the takeaway.
+      </p>
+      <ul>
+        <li>
+          <strong>Consider adding:</strong> A short section (in
+          <code>internet.md</code> or a new page) on online identity, privacy
+          norms, or acceptable-use expectations — something that actually earns
+          the module name and gives the ethics/legal assignment a lecture-side
+          anchor instead of appearing unprompted.
+        </li>
+        <li>
+          <strong>Consider removing/relocating:</strong> Nothing needs to leave;
+          the gap is additive, not one of clutter.
+        </li>
+      </ul>
+      <hr />
+      <h2 id="module-0x-ai-in-the-tech-industry">
+        Module 0X: AI in the Tech Industry
+      </h2>
+      <p>
+        <strong>Contributes:</strong> Obj 1 (P, <code>wai</code>), Obj 6 (P,
+        <code>eai</code> — AI-generated data viz, mentioned), Obj 10 (P,
+        <code>eai</code> + <code>pia</code> — best practices, human oversight,
+        critical thinking). Per the coverage map,
+        <code>large_language_models.md</code> and
+        <code>prompt_engineering.md</code> map to <strong>no</strong> numbered
+        objective.
+      </p>
+      <p>
+        <strong>Cohesion:</strong> This is the most internally consistent module
+        in the course — every file (<code>wai</code>, <code>llm</code>,
+        <code>pe</code>, <code>eai</code>, <code>pia</code>) is squarely about
+        AI, building from &quot;what is it&quot; → &quot;how do the models
+        work&quot; → &quot;how do you use one&quot; → &quot;where does it show
+        up embedded&quot; → &quot;what does it mean for your career.&quot; The
+        &quot;Producing a Data-Driven Artifact&quot; assignment lands naturally
+        on top of that sequence. The one real issue is external, not internal:
+        per the instructor note this is an interim module added by discretion,
+        and two of its five files (<code>llm</code>, <code>pe</code>) don&#39;t
+        tie to any numbered course objective — so the module is tight on its own
+        terms but loosely anchored to the course&#39;s formal objective list.
+      </p>
+      <ul>
+        <li>
+          <strong>Consider adding:</strong> The module&#39;s own weak point
+          doubles as the fix for coverage-map&#39;s Obj 6 gap (data
+          viz/statistics/reporting): the &quot;Producing a Data-Driven
+          Artifact&quot; assignment currently has no lecture content backing it
+          — <code>eai</code> only mentions AI-generated data viz in passing.
+          Adding a short lecture segment on basic reporting/statistics practice
+          ahead of that assignment closes both problems at once.
+        </li>
+        <li>
+          <strong>Consider removing/relocating:</strong> Nothing to cut;
+          <code>llm</code>/<code>pe</code> earn their place pedagogically even
+          without an objective citation. If the objectives list is ever revised,
+          this module is the natural place to add an explicit AI-literacy
+          objective, since the content already supports one.
+        </li>
+      </ul>
+      <hr />
+      <h2 id="module-02-hardware">Module 02: Hardware</h2>
+      <p>
+        <strong>Contributes:</strong> Obj 2 (C, <code>hw</code> +
+        <code>iot</code>), Obj 1 (P, <code>hw</code> — bits/bytes), Obj 5 (P,
+        <code>hw</code> — local vs. cloud storage), Obj 7 (P, <code>hw</code> —
+        HDD/SSD/NVMe).
+      </p>
+      <p>
+        <strong>Cohesion:</strong> Part I (<code>hardware.md</code>,
+        hardware-trends discussion) is a clean, focused unit. Part II breaks the
+        theme: alongside <code>input_output_technologies.md</code> (skimmed) it
+        also tacks on installing Git, basic shell commands, and a backup-script
+        exercise. None of those are hardware topics — they&#39;re development
+        tooling, and a backup script is arguably more at home next to system
+        software/OS content in Module 03.
+      </p>
+      <ul>
+        <li>
+          <strong>Consider adding:</strong> Hands-on hardware content to replace
+          what moves out — e.g. reading device specs, comparing storage media,
+          or a benchmarking exercise — so Part II stays on-theme instead of
+          pivoting to tooling.
+        </li>
+        <li>
+          <strong>Consider removing/relocating:</strong> Move &quot;Installing
+          Git,&quot; &quot;Basic Shell Commands,&quot; and the backup-script
+          exercise to Module 03 (Software) or Module 04 (Program and Web
+          Development), where they&#39;d sit next to OS/dev-tooling content
+          instead of hardware content.
+        </li>
+      </ul>
+      <hr />
+      <h2 id="module-03-software">Module 03: Software</h2>
+      <p>
+        <strong>Contributes:</strong> Obj 2 (P, <code>sso</code> +
+        <code>wdo</code> — OS/kernel overview), Obj 4 (P, <code>app</code> —
+        versioning/licensing), Obj 6 (P, <code>app</code> — spreadsheet formulas
+        demo), Obj 9 (P, <code>wdo</code> — memory protection basics).
+      </p>
+      <p>
+        <strong>Cohesion:</strong> Good. Application software → system software
+        → &quot;what does the OS do&quot; is a natural progression, and the
+        Location Data Case Studies discussion pairs sensibly with
+        <code>app</code> (mobile apps, location tracking, privacy). This is one
+        of the more coherent modules as structured.
+      </p>
+      <ul>
+        <li>
+          <strong>Consider adding:</strong> If Module 02&#39;s
+          Git/shell/backup-script content moves here (see above), it fits
+          naturally next to system-software content — this would also strengthen
+          Obj 4 (SDLC/dev-principles) coverage, which is currently thin in this
+          module. A brief pointer toward presentation/delivery norms (Obj 3)
+          could also live here alongside the existing office-suite content, if a
+          lecture-side touch is wanted — see the placement table above.
+        </li>
+        <li><strong>Consider removing/relocating:</strong> Nothing to cut.</li>
+      </ul>
+      <hr />
+      <h2 id="module-04-program-and-web-development">
+        Module 04: Program and Web Development
+      </h2>
+      <p>
+        <strong>Contributes:</strong> Obj 4 (P, via the
+        <code>index.md</code> link to <code>../SDEV120/sdlc.html</code>) — the
+        only objective this module touches, and the content lives in a different
+        course&#39;s directory.
+      </p>
+      <p>
+        <strong>Cohesion:</strong> This is the one module with
+        <strong>no lecture markdown file in this directory at all</strong>. Its
+        content is an external SDLC link plus live-coded/in-class material
+        (HTML/CSS/JS overview, one-page-app exercise) that leaves no artifact
+        behind for students to review later, unlike every other module. The
+        pairing of &quot;process&quot; (SDLC) with &quot;execution&quot;
+        (HTML/CSS/JS, static site, GitHub) is conceptually sound, but the module
+        is thin and undocumented relative to its neighbors.
+      </p>
+      <ul>
+        <li>
+          <strong>Consider adding:</strong> A lecture note file for the
+          HTML/CSS/JS overview, matching the format of other modules, so this
+          module has native, reviewable content instead of relying entirely on
+          live demo + an out-of-course link. This would also be the natural
+          place to shore up Obj 4 coverage with material that isn&#39;t borrowed
+          from <code>SDEV120</code> — per the placement table above, the fix for
+          this gap is bringing SDLC content natively into this directory, not
+          moving the objective to a different module.
+        </li>
+        <li>
+          <strong>Consider removing/relocating:</strong> Nothing to cut — the
+          module is under-built, not cluttered.
+        </li>
+      </ul>
+      <hr />
+      <h2 id="module-05-information-systems">Module 05: Information Systems</h2>
+      <p>
+        <strong>Contributes:</strong> Obj 1 (P, <code>tod</code> +
+        <code>dhm</code>), Obj 6 (P, <code>tod</code> + <code>dhm</code>), Obj 7
+        (C, <code>dhm</code> — ERD/keys/cardinality; <code>dbs</code> — largely
+        a stub), Obj 8 (P, <code>dhm</code> + <code>dbs</code>, both flagged as
+        weak in the coverage map).
+      </p>
+      <p>
+        <strong>Cohesion:</strong> Types of data → data hierarchy/modeling →
+        database storage is a clean, logical build, and the guided &quot;Student
+        Study App&quot; assignment gives it a concrete practical payoff. The
+        weak link is <code>database_storage.md</code> itself: the coverage map
+        notes its detailed content is commented out as TODO, so the module&#39;s
+        final lecture step doesn&#39;t yet match the depth of the two that
+        precede it.
+      </p>
+      <ul>
+        <li>
+          <strong>Consider adding:</strong> Finish
+          <code>database_storage.md</code> — it&#39;s the module&#39;s natural
+          capstone before the guided assignment, and right now it&#39;s the
+          thinnest file backing the strongest guided exercise in the course. Per
+          the placement table above, this module is also the recommended landing
+          spot for two coverage-map gaps: make
+          <code>types_of_data.md</code>&#39;s data-vs-information distinction
+          explicit (closes Obj 1), and reframe
+          <code>dhm</code>/<code>dbs</code>&#39;s organizational data-use
+          content as organizational information <em>flow</em> (closes Obj 8).
+          Both are edits to existing files, not new topics.
+        </li>
+        <li><strong>Consider removing/relocating:</strong> Nothing to cut.</li>
+      </ul>
+      <hr />
+      <h2 id="module-06-networking-and-storage">
+        Module 06: Networking and Storage
+      </h2>
+      <p>
+        <strong>Contributes:</strong> Obj 2 (P, <code>virt</code>), Obj 5 (C,
+        <code>virt</code> + <code>xaas</code>, with <code>ncp</code> as a
+        supporting tangent), Obj 7 (P, <code>virt</code> + <code>xaas</code>).
+      </p>
+      <p>
+        <strong>Cohesion:</strong> The title promises &quot;Networking
+        <em>and</em> Storage,&quot; but storage only appears as a side effect of
+        virtualization/cloud content (&quot;storage as a shared resource,&quot;
+        &quot;IaaS storage rental&quot; per the coverage map) — there&#39;s no
+        dedicated storage treatment here, and the coverage map separately flags
+        that SAN (storage area network) technology, explicitly named in
+        Objective 7, appears in <strong>no file anywhere</strong> in the course.
+        Module 05 already owns &quot;Information Systems&quot; storage
+        (<code>database_storage.md</code>); this module is where
+        physical/network storage infrastructure would belong, and right now
+        it&#39;s largely absent, leaving &quot;Storage&quot; in the title
+        underrepresented.
+      </p>
+      <ul>
+        <li>
+          <strong>Consider adding:</strong> A dedicated storage-infrastructure
+          section covering SAN — per the placement table above, this is the
+          recommended fix for coverage-map&#39;s Obj 7 (SAN) gap, since SAN
+          belongs with networking/infrastructure rather than with
+          <code>database_storage.md</code>&#39;s data-modeling focus in Module
+          05.
+        </li>
+        <li>
+          <strong>Consider removing/relocating:</strong> Nothing to cut; the
+          WiFi app/table and AWS discussion both earn their place under
+          networking and cloud, respectively.
+        </li>
+      </ul>
+      <hr />
+      <h2 id="module-07-cyber-and-digital-security">
+        Module 07: Cyber and Digital Security
+      </h2>
+      <p>
+        <strong>Contributes:</strong> Obj 4 (P, <code>cds</code> —
+        shift-left/secure SDLC), Obj 8 (P, <code>coc</code> — org IT/security
+        impact), Obj 9 (C — all five files: <code>coc</code>, <code>cam</code>,
+        <code>ctl</code>, <code>caa</code>, <code>cds</code>), Obj 10 (P,
+        <code>caa</code> — deepfake ethics case study).
+      </p>
+      <p>
+        <strong>Cohesion:</strong> The strongest-organized module in the course.
+        The explicit Part I (attack) / Part II (defense) split gives it a clear
+        internal narrative, all five lecture files are purpose-built for this
+        module (none are shared/reused elsewhere), and the &quot;Have You Been
+        Pwned&quot; intro plus WiFi-table callback both serve as natural hooks
+        into the attack material.
+      </p>
+      <ul>
+        <li>
+          <strong>Consider adding:</strong> Nothing needed — this module can
+          serve as the template for tightening the others.
+        </li>
+        <li><strong>Consider removing/relocating:</strong> Nothing to cut.</li>
+      </ul>
+      <hr />
+      <h2 id="cross-module-observations">Cross-Module Observations</h2>
+      <ul>
+        <li>
+          <strong
+            >Dev-tooling content (Git, shell commands, backup scripts) is
+            currently parked in Module 02 (Hardware)</strong
+          >
+          where it doesn&#39;t thematically belong. Relocating it to Module 03
+          or 04 would sharpen Module 02&#39;s hardware focus and give Module
+          03/04 more native Obj 4 material.
+        </li>
+        <li>
+          <strong
+            >Storage is split awkwardly across two modules with different
+            framings</strong
+          >: Module 05 covers it as a data-modeling concern
+          (<code>database_storage.md</code>, currently a stub) and Module 06
+          covers it only incidentally under virtualization/cloud, with the
+          course-wide SAN gap falling into the seam between them. Resolved
+          above: Module 06 owns infrastructure-level storage (including SAN),
+          Module 05 owns data-modeling-level storage.
+        </li>
+        <li>
+          <strong
+            >Module 0X (AI) is the tightest thematically but the loosest against
+            the formal objectives list</strong
+          >
+          — worth flagging if the objectives are ever revisited, since the
+          content already exists to support an explicit AI-literacy objective.
+          Its lecture/assignment mismatch also turns out to be the best home for
+          the Obj 6 (data viz/reporting) gap, so closing it serves two goals at
+          once.
+        </li>
+        <li>
+          <strong>Every coverage-map gap now has a resolution</strong> except
+          Obj 3, which is confirmed as intentionally project-based rather than
+          missing. See the placement table above for the full reconciliation;
+          the &quot;Consider adding&quot; bullets in each module section below
+          implement it.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
