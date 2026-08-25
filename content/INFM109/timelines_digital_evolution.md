@@ -101,13 +101,10 @@ Notice the pace: it took about 30 years to go from a room-sized computer (1945) 
 
 Technology doesn't just change - the baseline of what an "average" person is expected to know how to operate changes with it. Each generation grows up with a different set of assumed skills.
 
-<figure>
-  <img src="images/caveman-spongebob.jpg" alt="caveman spongebob" style="width: 100%;height: auto;">
-</figure>
-
-<figure>
-  <img src="images/high-tech-spongebob.jpg" alt="high tech spongebob" style="width: 100%;height: auto;">
-</figure>
+<div style="display:flex;gap:1rem;">
+  <img src="images/caveman-spongebob.jpg" alt="caveman spongebob" style="flex:1;min-width:0;aspect-ratio:4/3;object-fit:cover;">
+  <img src="images/high-tech-spongebob.jpg" alt="high tech spongebob" style="flex:1;min-width:0;aspect-ratio:4/3;object-fit:cover;">
+</div>
 
 | Era       | Expected tech literacy for an "average" American                                                                                           |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -158,7 +155,13 @@ Notice how the 1980s bullet is the odd one out - "programming a VCR" became a ru
    - Rise of social media and user-generated content
    - Gaming and interactive entertainment
 
-5. **Privacy and Digital Citizenship**
+5. **Information Access**
+
+   - Libraries and encyclopedias to instant internet searches
+   - Expert gatekeepers to crowd-sourced knowledge
+   - Traditional education to online learning
+
+6. **Privacy and Digital Citizenship**
 
    - Earlier generations grew up with relative anonymity by default - most everyday activity left no record anywhere
    - Digital natives grow up leaving a **digital footprint** by default instead: purchases, searches, locations, and posts are recorded unless someone actively opts out
@@ -170,8 +173,3 @@ Notice how the 1980s bullet is the odd one out - "programming a VCR" became a ru
 Keep this in mind for the assignment later in this course: most of the ethical and legal questions around modern technology use - data privacy, consent, online conduct - only exist _because_ of this shift from "anonymous by default" to "recorded by default." It's a direct consequence of the timeline above, not a separate topic.
 
 /~
-
-6. **Information Access**
-   - Libraries and encyclopedias to instant internet searches
-   - Expert gatekeepers to crowd-sourced knowledge
-   - Traditional education to online learning
