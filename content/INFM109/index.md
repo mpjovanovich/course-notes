@@ -10,13 +10,6 @@ showBreadcrumb: false
   - [Announcements](#announcements)
   - [Module 00: Course Introduction](#module-00-course-introduction)
   - [Module 01: Digital Citizenry \& The Internet](#module-01-digital-citizenry--the-internet)
-  - [Module 0X: AI in the Tech Industry](#module-0x-ai-in-the-tech-industry)
-  - [Module 02: Hardware](#module-02-hardware)
-  - [Module 03: Software](#module-03-software)
-  - [Module 04: Program and Web Development](#module-04-program-and-web-development)
-  - [Module 05: Information Systems](#module-05-information-systems)
-  - [Module 06: Networking and Storage](#module-06-networking-and-storage)
-  - [Module 07: Cyber and Digital Security](#module-07-cyber-and-digital-security)
 
 /~
 
@@ -60,6 +53,14 @@ Part I:
 - [Large Language Models](large_language_models.html)
 
 Part II:
+
+TODO Demos:
+
+- .claude skill from course notes
+  - Show how a skill ban be used to add an image (automate a common task)
+- Claude code:
+  - have it read through one of my index.md files and create a planning/[module name] folder for each one
+  - This demonstrates how it has executive privileges now on the conputer
 
 - [Prompt Engineering](prompt_engineering.html)
 - [Embedded AI](embedded_ai.html)
