@@ -63,6 +63,10 @@ Notice the pace: it took about 30 years to go from a room-sized computer (1945) 
     </span>
 </figure>
 
+<figure>
+  <img src="images/modern-internet-backbone.jpg" alt="modern Internet backbone" style="width: 100%;height: auto;">
+</figure>
+
 | Year      | Milestone                                  | Why it mattered                                                                  |
 | --------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
 | 1969      | ARPANET sends its first message            | The first real computer-to-computer network - the Internet's direct ancestor     |
@@ -76,21 +80,34 @@ Notice the pace: it took about 30 years to go from a room-sized computer (1945) 
 
 ### Personal Computers and Devices
 
-| Year  | Milestone                                            | Why it mattered                                                           |
-| ----- | ---------------------------------------------------- | ------------------------------------------------------------------------- |
-| 1975  | Altair 8800                                          | The first personal computer most hobbyists could actually own             |
-| 1977  | The "1977 Trinity" (Apple II, Commodore PET, TRS-80) | First ready-to-use PCs sold to regular consumers, not just hobbyists      |
-| 1981  | IBM PC                                               | Set the hardware/software standard offices would build around for decades |
-| 1984  | Apple Macintosh                                      | GUI computing goes mainstream                                             |
-| 1990s | Laptops become affordable and common                 | Computing untethers from the desk                                         |
-| 2001  | Apple iPod                                           | Digital media replaces physical formats (CDs, tapes)                      |
-| 2007  | Apple iPhone                                         | The smartphone era begins                                                 |
-| 2010  | Apple iPad                                           | Tablets create a new category between phone and laptop                    |
-| 2014+ | Smart speakers and wearables (Echo, smartwatches)    | Computing moves off the screen and into ambient, always-listening devices |
+<figure>
+  <img src="images/atari.png" alt="atari" style="width: 100%;height: auto;">
+</figure>
+
+| Year  | Milestone                                            | Why it mattered                                                                              |
+| ----- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| 1975  | Altair 8800                                          | The first personal computer most hobbyists could actually own                                |
+| 1977  | The "1977 Trinity" (Apple II, Commodore PET, TRS-80) | First ready-to-use PCs sold to regular consumers, not just hobbyists                         |
+| 1977  | Atari 2600 released                                  | First home video game console to reach mass-market adoption, with interchangeable cartridges |
+| 1981  | IBM PC                                               | Set the hardware/software standard offices would build around for decades                    |
+| 1984  | Apple Macintosh                                      | GUI computing goes mainstream                                                                |
+| 1990s | Laptops become affordable and common                 | Computing untethers from the desk                                                            |
+| 2001  | Apple iPod                                           | Digital media replaces physical formats (CDs, tapes)                                         |
+| 2007  | Apple iPhone                                         | The smartphone era begins                                                                    |
+| 2010  | Apple iPad                                           | Tablets create a new category between phone and laptop                                       |
+| 2014+ | Smart speakers and wearables (Echo, smartwatches)    | Computing moves off the screen and into ambient, always-listening devices                    |
 
 ## Expected Tech Literacy Through the Digital Age
 
 Technology doesn't just change - the baseline of what an "average" person is expected to know how to operate changes with it. Each generation grows up with a different set of assumed skills.
+
+<figure>
+  <img src="images/caveman-spongebob.jpg" alt="caveman spongebob" style="width: 100%;height: auto;">
+</figure>
+
+<figure>
+  <img src="images/high-tech-spongebob.jpg" alt="high tech spongebob" style="width: 100%;height: auto;">
+</figure>
 
 | Era       | Expected tech literacy for an "average" American                                                                                           |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
