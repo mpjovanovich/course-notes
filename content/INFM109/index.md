@@ -43,7 +43,7 @@ Part II:
 
 - Discussion: Media within the Digital Landscape
 - [The Internet](internet.html)
-- Assignment: Exploration of Ethical and Legal Tech Practices
+- In class assignment: Exploration of Ethical and Legal Tech Practices
 
 <!-- ## Module 0X: AI in the Tech Industry
 
@@ -97,6 +97,10 @@ Part II:
 - Intro to Assignments
 
 ## Module 04: Program and Web Development
+
+TODO: What exactly is the browser?
+  - https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg
+  - Layout engine (browser engine) vs JavaScript engine... what does what?
 
 - [Software Development Life Cycle (SDLC)](../SDEV120/sdlc.html?course=INFM109)
 - Brief overview of HTML, CSS, and JavaScript
