@@ -21,14 +21,17 @@ If a URL is given without enough information to identify which placeholder it be
 1. **Locate the placeholder.** Find the exact `<!-- img: alt text -->` comment in the target file. The alt text inside it is the alt text to use — copy it verbatim into the output, only escaping literal `"` as `&quot;` since it sits inside an HTML attribute.
 
 2. **Download the source, don't trust it blindly.**
-   - Use `curl -L --max-time 30 -A "Mozilla/5.0 (compatible; course-notes-bot)" -o <tmpfile> "<url>"` (follow redirects, cap the wait, send a normal-looking User-Agent — plenty of hosts 403 the default curl UA even when the resource is otherwise public).
-   - Check the curl exit code and, if you can get it, the HTTP status. A non-2xx response or curl failure means: **stop, leave the file untouched, and report the specific reason** (403, 404, timeout, connection refused, etc.) so the user can supply an alternate source. Never insert a broken reference.
+
+   - First attempt: `curl -L --max-time 30 -A "Mozilla/5.0 (compatible; course-notes-bot)" -o <tmpfile> "<url>"` (follow redirects, cap the wait, send a normal-looking User-Agent — plenty of hosts 403 the default curl UA even when the resource is otherwise public).
+   - If that attempt fails with a non-2xx status (403 is the common case), retry once with a Referer header set to the image URL's own origin: `curl -L --max-time 30 -A "Mozilla/5.0 (compatible; course-notes-bot)" -e "<scheme>://<host>/" -o <tmpfile> "<url>"`. Some hotlink protection checks Referer specifically and passes once a plausible one is present, even when the User-Agent alone wasn't enough.
+   - Check the curl exit code and, if you can get it, the HTTP status, after each attempt. If both attempts fail: **stop, leave the file untouched, and report the specific reason** (403, 404, timeout, connection refused, etc.) so the user can supply an alternate source. Never insert a broken reference.
    - Confirm it's actually an image: run `file <tmpfile>` and check the reported type rather than trusting the URL's extension or the server's `Content-Type` header — both lie often enough to matter (a 403 page or redirect-to-login served with a 200 and an `image/*` label is a known failure mode).
    - Reject anything implausibly small (a good rule of thumb: under ~500 bytes is almost always an error page, tracking pixel, or placeholder image, not real content). Flag it the same way as a failed download.
 
 3. **Name the file.**
+
    - Derive the base filename from the alt text: lowercase, spaces and punctuation collapsed to single hyphens, trimmed of leading/trailing hyphens, capped around 50 characters.
-   - Determine the extension from the *actual* file type detected in step 2 (jpg, png, gif, webp, svg), not from the URL.
+   - Determine the extension from the _actual_ file type detected in step 2 (jpg, png, gif, webp, svg), not from the URL.
    - If `images/<name>.<ext>` already exists, don't overwrite it silently. Append `-2`, `-3`, etc. until the name is free.
 
 4. **Save it.** Move the validated temp file to `images/<filename>` under the project's working directory.
@@ -37,7 +40,11 @@ If a URL is given without enough information to identify which placeholder it be
 
    ```html
    <figure>
-     <img src="images/[filename]" alt="[alt text]" style="width: 100%;height: auto;">
+     <img
+       src="images/[filename]"
+       alt="[alt text]"
+       style="width: 100%;height: auto;"
+     />
    </figure>
    ```
 

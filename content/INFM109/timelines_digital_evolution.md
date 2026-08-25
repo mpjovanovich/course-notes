@@ -19,11 +19,17 @@ course: INFM109
 
 # Timelines
 
+<figure>
+  <img src="images/software-history.png" alt="software history" style="width: 100%;height: auto;">
+</figure>
+
 ## How our Technology Evolved
 
 Each of the timelines below covers roughly the same window of time from a different angle: the machines themselves, the network connecting them, and the devices that put them in your hands. Same decades, three different stories.
 
-<!-- img: ENIAC -->
+<figure>
+  <img src="images/eniac.jpg" alt="ENIAC" style="width: 100%;height: auto;">
+</figure>
 
 ### General Computing
 
@@ -43,11 +49,19 @@ Each of the timelines below covers roughly the same window of time from a differ
 
 Notice the pace: it took about 30 years to go from a room-sized computer (1945) to a hobbyist kit you could build at home (1975), then only ~30 more years to go from that kit to a computer that fits in your pocket (2007). Each generation of computing has arrived faster than the one before it.
 
-<!-- img: cell phone -->
+<figure>
+  <img src="images/cell-phone.png" alt="cell phone" style="width: 100%;height: auto;">
+</figure>
 
 /~
 
 ### Internet
+
+<figure>
+    <span>
+        <img src="images/arpanet.png" alt="ARPANET" style="width: 100%;height auto;">
+    </span>
+</figure>
 
 | Year      | Milestone                                  | Why it mattered                                                                  |
 | --------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
