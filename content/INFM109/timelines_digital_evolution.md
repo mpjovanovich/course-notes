@@ -6,10 +6,6 @@ course: INFM109
 ~.toc
 
 - [Timelines](#timelines)
-  - [How we Got Here](#how-we-got-here)
-    - [The Universe](#the-universe)
-    - [Earth](#earth)
-    - [Human History](#human-history)
   - [How our Technology Evolved](#how-our-technology-evolved)
     - [General Computing](#general-computing)
     - [Internet](#internet)
@@ -23,109 +19,84 @@ course: INFM109
 
 # Timelines
 
-We will refer to the following timelines throughout this lecture.
-
-## How we Got Here
-
-### The Universe
-
-![Timeline of the Universe](https://assets.science.nasa.gov/dynamicimage/assets/science/astro/universe/internal_resources/497/Universe_History_2.png?w=6667&h=3750&fit=clip&crop=faces%2Cfocalpoint)
-
-### Earth
-
-![Timeline of the Earth](https://ucmp.berkeley.edu/wp-content/uploads/sites/17/2019/09/chronozoom.jpg)
-
-### Human History
-
-![World History Timeline](https://www.islamicity.org/wp-content/uploads/2021/02/timeline-of-world-history-usefulcharts-2020_1080x.png)
-
 ## How our Technology Evolved
+
+Each of the timelines below covers roughly the same window of time from a different angle: the machines themselves, the network connecting them, and the devices that put them in your hands. Same decades, three different stories.
 
 ### General Computing
 
-![General Computing](https://www.stackup.ro/wp-content/uploads/2021/05/date-importante-in-evolutia-calculatoarelor-timeline-en.jpg)
+| Year | Milestone                       | Why it mattered                                                                       |
+| ---- | ------------------------------- | ------------------------------------------------------------------------------------- |
+| 1945 | ENIAC completed                 | First general-purpose electronic digital computer; room-sized, ~18,000 vacuum tubes   |
+| 1947 | Transistor invented (Bell Labs) | Replaced fragile, power-hungry vacuum tubes; made smaller/reliable computers possible |
+| 1958 | Integrated circuit invented     | Put many transistors on a single chip; the foundation of modern electronics           |
+| 1971 | Intel 4004 released             | First commercial microprocessor - a whole CPU on one chip                             |
+| 1975 | Altair 8800 released            | Kit computer that kicked off the personal computer hobbyist movement                  |
+| 1981 | IBM PC released                 | Became the business/office standard and the ancestor of most modern PCs               |
+| 1984 | Apple Macintosh released        | Brought the graphical user interface (windows, icons, mouse) to the mainstream        |
+| 2007 | Apple iPhone released           | Merged the phone, computer, and Internet into one pocket-sized device                 |
+| 2022 | ChatGPT launches                | Brought generative AI to mainstream, everyday use almost overnight                    |
 
-[Timeline – important points in computer history](https://www.stackup.ro/en/timeline-important-points-in-computer-history/)
+~.focusContent.note
+
+Notice the pace: it took about 30 years to go from a room-sized computer (1945) to a hobbyist kit you could build at home (1975), then only ~30 more years to go from that kit to a computer that fits in your pocket (2007). Each generation of computing has arrived faster than the one before it.
+
+/~
 
 ### Internet
 
-![Internet](https://ventcube.com/wp-content/uploads/2019/12/History-of-The-Internet-Timeline.jpg)
+| Year      | Milestone                                  | Why it mattered                                                                  |
+| --------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
+| 1969      | ARPANET sends its first message            | The first real computer-to-computer network - the Internet's direct ancestor     |
+| 1983      | ARPANET adopts TCP/IP                      | The common "language" that let separate networks join into one Internet          |
+| 1989-1991 | Tim Berners-Lee invents the World Wide Web | Gave the Internet pages, links, and browsers - the part most people actually see |
+| 1993      | Mosaic browser released                    | First browser with inline images; made the web visual and approachable           |
+| 1995      | Amazon and eBay founded                    | E-commerce arrives; the "dot-com" boom begins                                    |
+| 2004      | Facebook launches                          | Social media era begins; the web shifts from reading to sharing                  |
+| 2007      | Mobile internet takes off (iPhone)         | The Internet becomes something you carry, not something you sit down for         |
+| 2020      | COVID-19 forces mass remote adoption       | Video calls, remote work, and online learning become everyday defaults           |
 
 ### Personal Computers and Devices
 
-![Personal Computers and Devices](https://www.eedesignit.com/wp-content/uploads/2018/01/technology-milestones-timeline-scaled.jpg)
+| Year  | Milestone                                            | Why it mattered                                                           |
+| ----- | ---------------------------------------------------- | ------------------------------------------------------------------------- |
+| 1975  | Altair 8800                                          | The first personal computer most hobbyists could actually own             |
+| 1977  | The "1977 Trinity" (Apple II, Commodore PET, TRS-80) | First ready-to-use PCs sold to regular consumers, not just hobbyists      |
+| 1981  | IBM PC                                               | Set the hardware/software standard offices would build around for decades |
+| 1984  | Apple Macintosh                                      | GUI computing goes mainstream                                             |
+| 1990s | Laptops become affordable and common                 | Computing untethers from the desk                                         |
+| 2001  | Apple iPod                                           | Digital media replaces physical formats (CDs, tapes)                      |
+| 2007  | Apple iPhone                                         | The smartphone era begins                                                 |
+| 2010  | Apple iPad                                           | Tablets create a new category between phone and laptop                    |
+| 2014+ | Smart speakers and wearables (Echo, smartwatches)    | Computing moves off the screen and into ambient, always-listening devices |
 
 ## Expected Tech Literacy Through the Digital Age
 
-For an "average" American:
+Technology doesn't just change - the baseline of what an "average" person is expected to know how to operate changes with it. Each generation grows up with a different set of assumed skills.
 
-**1950-1970**
+| Era       | Expected tech literacy for an "average" American                                                                                           |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1950s-60s | Basic radio and television operation, rotary telephone usage, typewriters/adding machines, vinyl records                                   |
+| 1970s     | Push-button telephones, basic calculators, early video game consoles (Atari), cassette tapes, early VCRs                                   |
+| 1980s     | Programming a VCR (notoriously difficult for many), touch-tone phones, Walkmans, cable TV, home video game consoles                        |
+| 1990s     | Basic computer use, mouse/keyboard basics, early word processing, first mobile phones, CD players                                          |
+| 2000s     | Email, web browsing, digital cameras, texting, DVD players                                                                                 |
+| 2010s     | Smartphones, texting fluency, social media basics, mobile apps, WiFi setup                                                                 |
+| 2020s     | Smartphone fluency, social media across platforms, video calling, streaming services, mobile payments, password management, AI integration |
 
-- Basic radio operation
-- Television operation (by late 1950s/1960s)
-- Rotary telephone usage
-- Basic office equipment (typewriters, adding machines)
-- Understanding of recorded music (vinyl records)
+~.focusContent.note
 
-**1970s**
+Notice how the 1980s bullet is the odd one out - "programming a VCR" became a running joke because it was one of the first times mainstream consumer technology asked people to _configure_ something instead of just operate it. That's the same skill gap many people feel today with smart-home devices, streaming service settings, or two-factor authentication.
 
-- Push-button telephones
-- Basic calculator usage (though not as widespread early in decade)
-- Early video game consoles (Atari, etc.)
-- Audio cassette operation
-- Early VCR usage (late 1970s)
-
-**1980s**
-
-- VCR programming and operation (though many struggled with this)
-- Video game console familiarity (mainly among youth)
-- Touch-tone phone operation
-- Walkman/portable music players
-- Cable TV operation
-
-**1990s**
-
-- Basic computer usage (becoming common in homes by late 90s)
-- Mouse and keyboard basics
-- Basic word processing (mainly younger generations)
-- Basic mobile phone operation (by late 90s, not widespread)
-- CD player operation
-
-**2000s**
-
-- Basic email usage (becoming widespread)
-- Basic web browsing
-- Digital camera usage (point-and-shoot)
-- Basic texting
-- DVD player operation
-- Basic mobile phone features
-
-**2010s**
-
-- Basic smartphone operation
-- Text messaging proficiency
-- Social media basics (Facebook, etc.)
-- Basic app usage
-- Digital photo taking/sharing
-- WiFi connection basics
-
-**2020s**
-
-- Smartphone proficiency
-- Social media across platforms
-- Video calling
-- Basic streaming service usage
-- Mobile payment basics
-- Basic password management
-- Video conferencing basics (post-COVID)
+/~
 
 ## Paradigm Shifts
 
 ### Terminology
 
-**Digital Immigrants** = Born before widespread computing/internet. Had to learn and adapt to digital technologies later in life.
+**Digital Immigrants** = Born before widespread computing/Internet use. Had to learn and adapt to digital technologies later in life.
 
-**Digital Natives** = Born after 1990s. Never experienced a world without computers / Internet.
+**Digital Natives** = Born after the 1990s. Never experienced a world without computers or the Internet.
 
 ### Key Changes
 
@@ -152,11 +123,18 @@ For an "average" American:
    - Rise of social media and user-generated content
    - Gaming and interactive entertainment
 
-5. **Privacy Evolution**
+5. **Privacy and Digital Citizenship**
 
-   - From relative anonymity to digital footprints
-   - Increasing concerns about data privacy and security
-   - Balance between convenience and privacy protection
+   - Earlier generations grew up with relative anonymity by default - most everyday activity left no record anywhere
+   - Digital natives grow up leaving a **digital footprint** by default instead: purchases, searches, locations, and posts are recorded unless someone actively opts out
+   - What counts as "public" vs. "private" information has shifted generation to generation - a 1980s home address in a phone book felt private in a way a 2020s public social media profile does not, even though both are technically discoverable
+   - This shift is _why_ being a good "digital citizen" - understanding what you share, who can see it, and what it's used for - has become a practical skill rather than an abstract concern
+
+~.focusContent.note
+
+Keep this in mind for the assignment later in this course: most of the ethical and legal questions around modern technology use - data privacy, consent, online conduct - only exist _because_ of this shift from "anonymous by default" to "recorded by default." It's a direct consequence of the timeline above, not a separate topic.
+
+/~
 
 6. **Information Access**
    - Libraries and encyclopedias to instant internet searches

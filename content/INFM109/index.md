@@ -24,7 +24,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Final presentation due Wednesday; review requirements
+- ...
 
 ## Module 00: Course Introduction
 
@@ -32,13 +32,12 @@ Overview of course
 
 - Review course structure and resources
 - Make sure you can access the textbook
-- Check-in: Course Policy Review
 - [Review: Computer Orientation](../common/computer_orientation.html?course=INFM109)
 - Icebreaker:
   - Preferred first name
   - Home campus
+  - Program of study
   - What's something you wish you had more time to do or learn about?
-- Break
 
 ## Module 01: Digital Citizenry & The Internet
 
@@ -49,10 +48,11 @@ Part I:
 
 Part II:
 
+- Discussion: Media within the Digital Landscape
 - [The Internet](internet.html)
 - Assignment: Exploration of Ethical and Legal Tech Practices
 
-## Module 0X: AI in the Tech Industry
+<!-- ## Module 0X: AI in the Tech Industry
 
 Part I:
 
@@ -153,4 +153,4 @@ Review not covered from previous: WiFi app and related table
 
 Part II (defense):
 
-- [Cyber Defense Strategies](cyberdefense_strategies.html)
+- [Cyber Defense Strategies](cyberdefense_strategies.html) -->
