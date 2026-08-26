@@ -39,33 +39,19 @@
             <a href="#the-internet">The Internet</a>
             <ul>
               <li><a href="#urls">URLs</a></li>
-              <li><a href="#client-server-model">Client-Server Model</a></li>
-              <li><a href="#http-and-https">HTTP and HTTPS</a></li>
-              <li><a href="#tcpip">TCP/IP</a></li>
               <li>
                 <a href="#domain-name-system-dns">Domain Name System (DNS)</a>
               </li>
+              <li><a href="#ip-addresses">IP Addresses</a></li>
+              <li><a href="#client-server-model">Client-Server Model</a></li>
+              <li><a href="#tcp">TCP</a></li>
+              <li><a href="#the-physical-path">The Physical Path</a></li>
+              <li><a href="#http-and-https">HTTP and HTTPS</a></li>
               <li>
                 <a href="#putting-it-all-together-a-round-trip"
                   >Putting it All Together: A Round Trip</a
                 >
               </li>
-              <li>
-                <a href="#demo-what-do-websites-look-like-from-the-back-end"
-                  >Demo: What do Websites Look Like from the Back End?</a
-                >
-              </li>
-              <li>
-                <a href="#vpn-proxy-and-private-browsing"
-                  >VPN, Proxy, and Private Browsing</a
-                >
-                <ul>
-                  <li><a href="#private-browsing">Private Browsing</a></li>
-                  <li><a href="#proxy">Proxy</a></li>
-                  <li><a href="#vpn">VPN</a></li>
-                </ul>
-              </li>
-              <li><a href="#password-management">Password Management</a></li>
             </ul>
           </li>
         </ul>
@@ -91,8 +77,9 @@
         <p>
           The <strong>World Wide Web (WWW)</strong> is what most people think of
           when they hear &quot;the Internet&quot; - but it&#39;s actually just
-          one part of the Internet! The WWW is all the websites and web
-          applications that we can access through our web browsers.
+          the &quot;public face&quot; of the Internet. The WWW is all the
+          websites and web applications that we can access through our web
+          browsers.
         </p>
         <p>Some things on the WWW:</p>
         <ul>
@@ -136,190 +123,6 @@
           />
         </span>
       </figure>
-
-      <h2 id="client-server-model">Client-Server Model</h2>
-      <p>
-        A <strong>client server model</strong> is a way of organizing software
-        so that one program (the client) requests services from another program
-        (the server).
-      </p>
-      <figure>
-        <span>
-          <img
-            src="https://www.liquidweb.com/wp-content/uploads/2024/03/client-server-network-1024x653-1.jpg"
-            style="width: 80%; height: auto"
-          />
-        </span>
-      </figure>
-
-      <p>
-        <strong>Client</strong> = Browser or a program that requests data from a
-        server (e.g. an &quot;app&quot; on your phone)
-      </p>
-      <p><strong>Server</strong> = A program that provides data to a client.</p>
-      <div class="focusContent note">
-        <figure>
-          <span>
-            <img
-              src="https://www.trystar.com/wp-content/uploads/slider/cache/9a2123c06651b09966e2f65f7ca99c06/Server-Rack-Extra.jpg"
-              style="width: 50%; height: auto"
-            />
-          </span>
-        </figure>
-
-        <p>The term &quot;server&quot; is used in two main ways:</p>
-        <ol>
-          <li>
-            <p>
-              As software: A <strong>web server</strong> is a program that
-              listens for incoming requests and handles them - just like any
-              other program on a computer.
-            </p>
-          </li>
-          <li>
-            <p>
-              As hardware: A &quot;server&quot; can be the actual physical
-              computer that runs server software. While there are specialized
-              computers built specifically to be servers (like the ones in data
-              centers), technically any computer can act as a server - even your
-              laptop could be one!
-            </p>
-          </li>
-        </ol>
-      </div>
-
-      <h2 id="internet-protocol-suite">Internet Protocol Suite</h2>
-      <figure>
-        <span>
-          <img
-            src="https://miro.medium.com/v2/resize:fit:4800/format:webp/0*7GxX2NC7lEs0pK-_"
-            style="width: 80%; height: auto"
-          />
-        </span>
-      </figure>
-
-      <p>
-        Set of &quot;rules&quot; about how different layers of the Internet
-        communicate.
-      </p>
-      <h2 id="http-and-https">HTTP and HTTPS</h2>
-      <p>
-        HTTP (Hypertext Transfer Protocol) and HTTPS (HTTP Secure) are the main
-        protocols used for communication on the World Wide Web. They define how
-        messages are formatted and transmitted between clients and servers.
-      </p>
-      <p>When you visit a website:</p>
-      <ol>
-        <li>
-          Your browser (the client) sends a <strong>web request</strong> to get
-          information
-        </li>
-        <li>The web server processes this request</li>
-        <li>
-          The server sends back a <strong>web response</strong> with the
-          requested information
-        </li>
-      </ol>
-      <p>
-        The only difference between HTTP and HTTPS is that HTTPS encrypts the
-        data being sent, making it secure from tampering or snooping.
-      </p>
-      <div class="focusContent demo">
-        <p>Want to see HTTP in action? Try this:</p>
-        <ol>
-          <li>Press F12 to open your browser&#39;s developer tools</li>
-          <li>Click the &quot;Network&quot; tab</li>
-          <li>Refresh this page</li>
-        </ol>
-        <p>
-          You&#39;ll see all the requests and responses between your browser and
-          our web server. Each entry shows:
-        </p>
-        <ul>
-          <li>The requested resource (HTML, images, CSS, etc.)</li>
-          <li>Response status</li>
-          <li>Size of the data</li>
-          <li>Time taken</li>
-        </ul>
-        <p>
-          Click any entry to see detailed information about that request and
-          response.
-        </p>
-      </div>
-
-      <h2 id="tcpip">TCP/IP</h2>
-      <p>
-        Imagine you sent a message to a friend using letters through regular
-        post office mail, but you sent it one word at a time. You&#39;d need a
-        way to determine things like:
-      </p>
-      <ul>
-        <li>What&#39;s the address of the recipient?</li>
-        <li>What&#39;s the return address of the sender?</li>
-        <li>How many words are in the overall message?</li>
-        <li>Did any letters get lost in the mail?</li>
-        <li>Was the message corrupted or tampered with in transit?</li>
-      </ul>
-      <p>
-        TCP/IP is the fundamental protocol suite of the Internet, and it helps
-        to address these concerns.
-      </p>
-      <p><strong>TCP (Transmission Control Protocol)</strong></p>
-      <p>Ensures data transmission between devices is reliable:</p>
-      <ul>
-        <li>Breaks large messages into smaller packets</li>
-        <li>Makes sure all packets arrive correctly</li>
-        <li>Puts the packets together in the right order</li>
-        <li>Requests retransmission of any lost packets</li>
-      </ul>
-      <p><strong>IP (Internet Protocol)</strong></p>
-      <p>Handles addressing and routing of data:</p>
-      <ul>
-        <li>
-          Gives every device on the Internet a unique address (IP address)
-        </li>
-        <li>Routes packets from sender to receiver across the network</li>
-      </ul>
-      <p>Every device on the Internet needs an IP address:</p>
-      <ul>
-        <li>
-          Your home network has a <strong>public IP address</strong> visible to
-          the Internet
-        </li>
-        <li>
-          Devices inside your network (phones, laptops) have
-          <strong>private IP addresses</strong>
-        </li>
-      </ul>
-      <div class="focusContent exercise">
-        <p>
-          Try checking your computer&#39;s IP addresses using the commands
-          below:
-        </p>
-        <pre
-          class="shiki shiki-themes one-light one-dark-pro"
-          style="
-            background-color: #fafafa;
-            --shiki-dark-bg: #282c34;
-            color: #383a42;
-            --shiki-dark: #abb2bf;
-          "
-          tabindex="0"
-        ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## BASH</span></span>
-<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ifconfig</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## PowerShell</span></span>
-<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ipconfig</span></span></code></pre>
-        <p>
-          You&#39;ll see both IPv4 (like <code>192.168.1.1</code>) and newer
-          IPv6 (like <code>fe80::215:5dff:fe15:fcaf</code>) addresses.
-        </p>
-        <p>
-          When you make a request to a website, your IP request is included in
-          the request packet. This lets the server know where to send the
-          response.
-        </p>
-      </div>
 
       <h2 id="domain-name-system-dns">Domain Name System (DNS)</h2>
       <p><strong>DNS</strong> converts domain names into IP addresses:</p>
@@ -380,6 +183,220 @@
         </p>
       </div>
 
+      <h2 id="ip-addresses">IP Addresses</h2>
+      <p>
+        <strong>IP (Internet Protocol)</strong> handles addressing and routing
+        of data:
+      </p>
+      <ul>
+        <li>
+          Gives every device on the Internet a unique address (IP address)
+        </li>
+        <li>Routes packets from sender to receiver across the network</li>
+      </ul>
+      <p>Every device on the Internet needs an IP address:</p>
+      <ul>
+        <li>
+          Your home network has a <strong>public IP address</strong> visible to
+          the Internet
+        </li>
+        <li>
+          Devices inside your network (phones, laptops) have
+          <strong>private IP addresses</strong>
+        </li>
+      </ul>
+      <p>
+        There are only about 4 billion IPv4 addresses - fewer than the number of
+        internet-connected devices in the world today. That scarcity is why a
+        home network shares one public address across many private ones instead
+        of giving every device its own.
+      </p>
+      <div class="focusContent exercise">
+        <p>
+          Try checking your computer&#39;s IP addresses using the commands
+          below:
+        </p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## BASH</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ifconfig</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">## PowerShell</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">ipconfig</span></span></code></pre>
+        <p>
+          You&#39;ll see both IPv4 (like <code>192.168.1.1</code>) and newer
+          IPv6 (like <code>fe80::215:5dff:fe15:fcaf</code>) addresses.
+        </p>
+        <p>
+          When you make a request to a website, your IP request is included in
+          the request packet. This lets the server know where to send the
+          response.
+        </p>
+      </div>
+
+      <h2 id="client-server-model">Client-Server Model</h2>
+      <p>
+        A <strong>client server model</strong> is a way of organizing software
+        so that one program (the client) requests services from another program
+        (the server).
+      </p>
+      <figure>
+        <span>
+          <img
+            src="https://www.liquidweb.com/wp-content/uploads/2024/03/client-server-network-1024x653-1.jpg"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        <strong>Client</strong> = Browser or a program that requests data from a
+        server (e.g. an &quot;app&quot; on your phone)
+      </p>
+      <p><strong>Server</strong> = A program that provides data to a client.</p>
+      <div class="focusContent note">
+        <figure>
+          <span>
+            <img
+              src="https://www.trystar.com/wp-content/uploads/slider/cache/9a2123c06651b09966e2f65f7ca99c06/Server-Rack-Extra.jpg"
+              style="width: 50%; height: auto"
+            />
+          </span>
+        </figure>
+
+        <p>The term &quot;server&quot; is used in two main ways:</p>
+        <ol>
+          <li>
+            <p>
+              As software: A <strong>web server</strong> is a program that
+              listens for incoming requests and handles them - just like any
+              other program on a computer.
+            </p>
+          </li>
+          <li>
+            <p>
+              As hardware: A &quot;server&quot; can be the actual physical
+              computer that runs server software. While there are specialized
+              computers built specifically to be servers (like the ones in data
+              centers), technically any computer can act as a server - even your
+              laptop could be one!
+            </p>
+          </li>
+        </ol>
+      </div>
+
+      <h2 id="tcp">TCP</h2>
+      <p>
+        Imagine you sent a message to a friend using letters through regular
+        post office mail, but you sent it one word at a time. You&#39;d need a
+        way to determine things like:
+      </p>
+      <ul>
+        <li>How many words are in the overall message?</li>
+        <li>Did any letters get lost in the mail?</li>
+        <li>Was the message corrupted or tampered with in transit?</li>
+      </ul>
+      <p>
+        <strong>TCP (Transmission Control Protocol)</strong> ensures data
+        transmission between devices is reliable, and helps address these
+        concerns:
+      </p>
+      <ul>
+        <li>Breaks large messages into smaller packets</li>
+        <li>Makes sure all packets arrive correctly</li>
+        <li>Puts the packets together in the right order</li>
+        <li>Requests retransmission of any lost packets</li>
+      </ul>
+      <p>
+        This is called <strong>packet switching</strong> - each packet can take
+        a different route to its destination, which is part of what makes the
+        Internet decentralized. TCP and IP are just two protocols in a much
+        larger stack; we&#39;ll cover the full protocol suite and how its layers
+        fit together in the networking module.
+      </p>
+      <h2 id="the-physical-path">The Physical Path</h2>
+      <p>
+        All of this - addresses, packets, protocols - still has to travel across
+        physical infrastructure:
+      </p>
+      <ul>
+        <li>
+          <strong>ISPs (Internet Service Providers)</strong> connect homes and
+          businesses to the wider Internet
+        </li>
+        <li>
+          <strong>Routers</strong> sit at the intersections, reading each
+          packet&#39;s address and forwarding it toward its destination
+        </li>
+        <li>
+          <strong>Backbone cables</strong> - including massive fiber-optic lines
+          running under the ocean - carry traffic between continents
+        </li>
+      </ul>
+      <figure>
+        <img
+          src="images/modern-internet-backbone.jpg"
+          alt="modern Internet backbone"
+          style="width: 100%; height: auto"
+        />
+      </figure>
+
+      <p>
+        No single company or government owns this infrastructure, which is part
+        of why the Internet has no central off switch.
+      </p>
+      <h2 id="http-and-https">HTTP and HTTPS</h2>
+      <p>
+        HTTP (Hypertext Transfer Protocol) and HTTPS (HTTP Secure) are the main
+        protocols used for communication on the World Wide Web. They define how
+        messages are formatted and transmitted between clients and servers.
+      </p>
+      <p>When you visit a website:</p>
+      <ol>
+        <li>
+          Your browser (the client) sends a <strong>web request</strong> to get
+          information
+        </li>
+        <li>The web server processes this request</li>
+        <li>
+          The server sends back a <strong>web response</strong> with the
+          requested information
+        </li>
+      </ol>
+      <p>
+        The only difference between HTTP and HTTPS is that HTTPS encrypts the
+        data being sent, making it secure from tampering or snooping.
+      </p>
+      <div class="focusContent demo">
+        <p>Want to see HTTP in action? Try this:</p>
+        <ol>
+          <li>Press F12 to open your browser&#39;s developer tools</li>
+          <li>Click the &quot;Network&quot; tab</li>
+          <li>Refresh this page</li>
+        </ol>
+        <p>
+          You&#39;ll see all the requests and responses between your browser and
+          our web server. Each entry shows:
+        </p>
+        <ul>
+          <li>The requested resource (HTML, images, CSS, etc.)</li>
+          <li>Response status</li>
+          <li>Size of the data</li>
+          <li>Time taken</li>
+        </ul>
+        <p>
+          Click any entry to see detailed information about that request and
+          response.
+        </p>
+      </div>
+
       <h2 id="putting-it-all-together-a-round-trip">
         Putting it All Together: A Round Trip
       </h2>
@@ -402,51 +419,6 @@
         packets will be automatically routed through working connections
         instead.
       </p>
-      <h2 id="vpn-proxy-and-private-browsing">
-        VPN, Proxy, and Private Browsing
-      </h2>
-      <h3 id="private-browsing">Private Browsing</h3>
-      <p>
-        Convenience feature in browsers to clear cookies and cache, not save
-        history, etc.
-      </p>
-      <p>
-        Meant to give some degree of privacy to users sharing a single device.
-      </p>
-      <p>Does <strong>not</strong> hide the origin of requests.</p>
-      <h3 id="proxy">Proxy</h3>
-      <p>
-        A proxy server is a server that acts as an intermediary for requests
-        from clients seeking resources from other servers.
-      </p>
-      <p>Meant to hide the origin of requests.</p>
-      <p>
-        When I visit a website through a proxy, the request will go to the proxy
-        server first, and then to the website.
-      </p>
-      <h3 id="vpn">VPN</h3>
-      <p><strong>VPN</strong> = Virtual Private Network</p>
-      <p>
-        You are &quot;inside&quot; a private network, and the VPN creates a
-        secure tunnel to the Internet.
-      </p>
-      <p>
-        Meant to provide access to a private network (private IP addresses).
-        E.g. - none of you can &quot;talk&quot; to my lab machine.
-      </p>
-      <p>
-        When I VPN to Ivy Tech then visit a website, the request will go to the
-        Ivy Tech network first, and then to the website.
-      </p>
-      <h2 id="password-management">Password Management</h2>
-      <p>Practical Password Management Tips:</p>
-      <ul>
-        <li>Use multifactor authentication whenever possible</li>
-        <li>
-          Use a unique password for each site; DO NOT USE THE SAME PASSWORD FOR
-          MULTIPLE SITES
-        </li>
-      </ul>
     </div>
   </body>
 </html>
