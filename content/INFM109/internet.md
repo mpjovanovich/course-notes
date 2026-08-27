@@ -96,18 +96,6 @@ ping google.com
 
 /~
 
-~.focusContent.demo
-
-**Customizing the hosts file**
-
-In Windows you can modify your DNS entries by changing the _hosts_ file at:
-
-`C:\Windows\System32\drivers\etc`
-
-Let's try changing it so that "google.com" takes us to a different website.
-
-/~
-
 ## IP Addresses
 
 **IP (Internet Protocol)** handles addressing and routing of data:

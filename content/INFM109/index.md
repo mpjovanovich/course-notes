@@ -17,7 +17,11 @@ showBreadcrumb: false
 
 ## Announcements
 
-- ...
+- Review assignment completion this far:
+  - What work is outstanding?
+- Rubric added to exploration assignments. How to improve:
+  - Avoid opinion statements unless you back them up with authoritative sources.
+  - Think of these as "mini research projects". Even though they are brief, you're still expected to bring academic rigor to them.
 
 ## Module 00: Course Introduction
 
@@ -38,16 +42,16 @@ Part I:
 
 - [Timelines: Digital Evolution](timelines_digital_evolution.html)
 - Intro to assignments
-- Pre-course survey
 
 Part II:
 
-- Discussion: Media within the Digital Landscape
 - [The Internet](internet.html)
-- In class assignment: Exploration of Ethical and Legal Tech Practices
 - Intro to assignments
 
 <!-- ## Module 0X: AI in the Tech Industry
+
+- Discussion: Media within the Digital Landscape
+We did not do this in Module 01... not sure where it goes now or whether to hold off
 
 Part I:
 
