@@ -46,6 +46,7 @@ Part I:
 Part II:
 
 - [The Internet](internet.html)
+- [Exploration analysis: Media](explorations/media.html)
 - Intro to assignments
 
 <!-- ## Module 0X: AI in the Tech Industry
