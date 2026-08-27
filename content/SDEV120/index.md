@@ -7,7 +7,7 @@ showBreadcrumb: false
 ~.toc
 
 - [SDEV120](#sdev120)
-  - [Common Resources](#common-resources)
+  - [Announcements](#announcements)
   - [M00: Orientation](#m00-orientation)
   - [M01: Algorithms and Structured Programming](#m01-algorithms-and-structured-programming)
   - [M02: Boolean Algebra](#m02-boolean-algebra)
@@ -21,7 +21,6 @@ showBreadcrumb: false
   - [M09: Data Representation and Encoding](#m09-data-representation-and-encoding)
   - [M10: Programming Paradigms](#m10-programming-paradigms)
   - [Final Review](#final-review)
-  - [Overflow Topics](#overflow-topics)
 
 /~
 
@@ -36,13 +35,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Review flowchart assignment solutions
-
-## Common Resources
-
-Here you will find resources for installing course software and supporting resources for course technologies and content:
-
-[Common Resources](../common/index.html)
+- Remote students: Sign up for SmarterProctoring!
 
 ## M00: Orientation
 
@@ -54,18 +47,6 @@ Overview of course
 - Make sure you can access the textbook
 
 Schedule Exams (Remote students only)
-
-Discussion: Computing and Society
-
-[Computer Orientation](../common/computer_orientation.html?course=SDEV120)
-
-Setting up your Coding Environment
-
-- [Installing VS Code](../common/installing_vs_code.html?course=SDEV120)
-
-- [Installing Python](../common/installing_python.html?course=SDEV120)
-
-- [Debugging Python in VS Code](../common/vs_code_debugging.html?course=SDEV120)
 
 ## M01: Algorithms and Structured Programming
 
