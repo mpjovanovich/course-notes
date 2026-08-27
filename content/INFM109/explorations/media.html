@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media within the Digital Landscape</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#0A1E2C; --panel:#1E4E6E; --panel-hi:#2C6690;
+  --line:#5B8FAE; --line-soft:rgba(91,143,174,.32);
+  --ink:#E8F1F7; --ink-dim:#A2BFD2;
+  --flag:#FF5E8A; --amber:#FFC94A;
+  --display:"Saira Condensed",Impact,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--ground);
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 47px,var(--line-soft) 47px 48px),
+    repeating-linear-gradient(90deg,transparent 0 47px,var(--line-soft) 47px 48px);
+  color:var(--ink);font-family:var(--body);
+  font-size:clamp(15px,1.05vw,18px);line-height:1.6;
+  padding:clamp(20px,4vw,56px);
+}
+.sheet{max-width:1500px;margin:0 auto}
+header{border-bottom:2px solid var(--line);padding-bottom:22px;margin-bottom:30px}
+.eyebrow{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--flag);margin:0 0 10px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line);min-width:30px}
+h1{
+  font-family:var(--display);font-weight:700;text-transform:uppercase;
+  letter-spacing:.015em;line-height:.94;font-size:clamp(2.2rem,6.4vw,5.2rem);margin:0;
+}
+.subtitle{color:var(--ink-dim);max-width:62ch;margin:14px 0 0}
+.meta{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-dim);margin-top:18px;display:flex;gap:26px;flex-wrap:wrap;
+}
+.meta b{color:var(--amber);font-weight:500}
+
+.split{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:26px;align-items:start}
+@media(max-width:980px){.split{grid-template-columns:1fr}}
+
+.plot{background:var(--panel);border:1px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.4);padding:8px}
+svg{display:block;width:100%;height:auto}
+.node circle{
+  fill:var(--panel-hi);stroke:var(--line);stroke-width:2;
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.45));
+  transition:fill .18s ease,stroke .18s ease;cursor:pointer;
+}
+.node:hover circle,.node:focus circle{fill:#37749F;stroke:var(--flag)}
+.node.on circle{fill:#37749F;stroke:var(--flag);stroke-width:3}
+.node{cursor:pointer;outline:none}
+.node text{
+  fill:var(--ink);font-family:var(--display);font-weight:700;text-transform:uppercase;
+  text-anchor:middle;pointer-events:none;letter-spacing:.02em;
+}
+.node .cnt{
+  fill:var(--flag);font-family:var(--mono);font-weight:500;letter-spacing:.04em;
+}
+.node.on .cnt{fill:var(--amber)}
+
+.detail{
+  background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--flag);
+  box-shadow:0 6px 24px rgba(0,0,0,.4);
+  padding:24px 26px 28px;position:sticky;top:24px;min-height:300px;
+}
+.detail .tag{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-dim);margin:0 0 8px;
+}
+.detail h2{
+  font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.02em;
+  font-size:clamp(1.6rem,2.7vw,2.5rem);line-height:1.04;margin:0 0 6px;
+}
+.detail .share{
+  font-family:var(--mono);font-size:.8rem;letter-spacing:.08em;color:var(--flag);
+  border-bottom:1px solid var(--line);padding-bottom:16px;margin:0 0 20px;
+}
+.detail ul{list-style:none;margin:0;padding:0}
+.detail li{
+  margin:0 0 15px;padding-left:22px;position:relative;font-size:1.04rem;line-height:1.6;
+}
+.detail li::before{content:"";position:absolute;left:0;top:.62em;width:11px;height:1px;background:var(--amber)}
+.empty{color:var(--ink-dim);font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;line-height:1.8}
+
+footer{
+  margin-top:36px;padding-top:16px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <p class="eyebrow"><span>Exploration synthesis</span></p>
+    <h1 id="hTitle"></h1>
+    <p class="subtitle" id="hSub"></p>
+    <p class="meta">
+      <span><b id="mSubs"></b> submissions</span>
+      <span><b id="mThemes"></b> themes</span>
+      <span id="mDate"></span>
+    </p>
+  </header>
+
+  <div class="split">
+    <div class="plot"><svg id="viz" viewBox="0 0 760 620" role="group" aria-label="Themes sized by number of submissions"></svg></div>
+    <aside class="detail" id="detail">
+      <p class="tag">Selected theme</p>
+      <p class="empty">Select a circle to read the synthesis.<br>Circle size shows how many submissions landed on that theme.</p>
+    </aside>
+  </div>
+
+  <footer>
+    <span>Circle size = submissions per theme</span>
+    <span>Synthesized across all submissions &middot; no attribution</span>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script>
+/* ============================================================
+   DATA — replace this whole object at generation time.
+   ============================================================ */
+const EXPLORATION_DATA = {
+  "title": "Media within the Digital Landscape",
+  "subtitle": "Problems the class identified with today's media environment, and why each still matters.",
+  "submissionCount": 12,
+  "generated": "August 2026",
+  "clusters": [
+    {
+      "name": "Clickbait and the fight for the click",
+      "count": 4,
+      "bullets": [
+        "Students framed clickbait as an economic problem before a moral one: with many outlets competing for a limited pool of attention, sensational headlines and misleading thumbnails become the rational move even for mainstream news sites.",
+        "Several traced a direct line from 19th-century yellow journalism to today's digitally altered thumbnails, arguing the tactic is old but the internet stripped away the friction that once limited its spread.",
+        "There was real disagreement about how harmful it is: some treated it as a mostly harmless annoyance that just leaves viewers disappointed, while others pointed to clickbait as a vehicle for malware, data harvesting, and politically charged rage bait.",
+        "A recurring observation was that audiences now recognize clickbait and say they dislike it, yet it keeps working well enough to persist \u2014 students found that gap between stated attitude and actual behavior striking.",
+        "Almost no one proposed a fix; the submissions stayed on diagnosis, with a note that heavy media consumers seem most resistant and older or less-engaged users most susceptible."
+      ]
+    },
+    {
+      "name": "Misinformation, fake news, and eroding trust",
+      "count": 4,
+      "bullets": [
+        "The shared thesis was that digital platforms have made it hard for an ordinary person to tell true from false, and that this uncertainty itself \u2014 not just any single falsehood \u2014 is the damage.",
+        "Students reached for evidence of scale: research showing false stories spread faster and wider than true ones, survey data on how many adults feel confused by made-up news, and charts tracking decades of declining trust in journalism.",
+        "Health was the most cited concrete harm, especially vaccine myths and the return of preventable disease; a couple of students also linked disinformation to political violence and religious conflict.",
+        "Several noted that misinformation often spreads without malice \u2014 people share false things they believe are true \u2014 which pushed their proposed remedy toward individual habits like verifying a claim before reposting.",
+        "One thread treated stripped or out-of-context images as a low-tech cousin of fake news: no fabrication needed, just a real image paired with a false caption, and harder to debunk because the raw material is genuine."
+      ]
+    },
+    {
+      "name": "Algorithms and the argument culture",
+      "count": 2,
+      "bullets": [
+        "These submissions located the problem in how platforms shape the emotional tone of discussion rather than in any particular false claim: recommendation systems feed people what confirms their existing beliefs, and comment sections reward combat over understanding.",
+        "One argued this pushes vulnerable users toward political extremism, citing reporting on recruiters who pair tailored content with offers of financial help.",
+        "The other contrasted today's anonymous, app-mediated arguments with older word-of-mouth or broadcast news, suggesting distance and speed strip out the compassion that face-to-face disagreement usually carries.",
+        "Both described audiences hardening into fixed teams that attack anyone who tries to see the other side \u2014 a dynamic the students recognized from their own online spaces.",
+        "Neither expected the trend to reverse; both pointed to the incentives of engagement-driven design as the root cause."
+      ]
+    },
+    {
+      "name": "The business of news: consolidation and tabloidization",
+      "count": 2,
+      "bullets": [
+        "This pair looked at the supply side \u2014 who owns the media and what they choose to cover \u2014 rather than at user behavior.",
+        "One focused on ownership: when a few conglomerates absorb studios and outlets, audiences get fewer independent choices and workers lose jobs, with an acquired studio's planned projects simply cancelled.",
+        "The other focused on editorial drift: serious coverage of politics and world events gives way to celebrity and drama because gossip draws a faster, larger audience.",
+        "Both tied the shift to profit motive, and both noted it predates the internet but has accelerated as distribution costs collapsed and the pace of consumption sped up.",
+        "This cluster is a useful bridge for discussion: the structural changes here shape which outlets the other problems \u2014 clickbait, misinformation \u2014 travel through."
+      ]
+    }
+  ]
+};
+/* ========================================================== */
+
+const d = EXPLORATION_DATA;
+document.title = d.title;
+hTitle.textContent = d.title;
+hSub.textContent = d.subtitle || "";
+if (!d.subtitle) hSub.style.display = "none";
+mSubs.textContent = d.submissionCount;
+mThemes.textContent = d.clusters.length;
+mDate.textContent = d.generated || "";
+
+const W = 760, H = 620;
+const root = d3.pack().size([W, H]).padding(8)(
+  d3.hierarchy({ children: d.clusters }).sum(x => x.count)
+);
+
+const svg = d3.select("#viz");
+const nodes = svg.selectAll("g.node").data(root.leaves()).join("g")
+  .attr("class", "node")
+  .attr("transform", n => `translate(${n.x},${n.y})`)
+  .attr("tabindex", 0)
+  .attr("role", "button")
+  .attr("aria-label", n => `${n.data.name}, ${n.data.count} submissions`);
+
+nodes.append("circle").attr("r", n => n.r);
+
+/* wrap the theme name onto as many lines as the circle allows */
+nodes.each(function (n) {
+  const g = d3.select(this);
+  const size = Math.max(11, Math.min(n.r * 0.30, 26));
+  const perLine = Math.max(6, Math.floor(n.r * 2.0 / (size * 0.52)));
+  const words = n.data.name.toUpperCase().split(/\s+/);
+  const lines = [];
+  let cur = "";
+  words.forEach(w => {
+    if ((cur + " " + w).trim().length <= perLine) cur = (cur + " " + w).trim();
+    else { if (cur) lines.push(cur); cur = w; }
+  });
+  if (cur) lines.push(cur);
+  const shown = lines.slice(0, 4);
+  const block = shown.length * size * 1.02;
+  const t = g.append("text").attr("font-size", size);
+  shown.forEach((ln, i) => {
+    t.append("tspan").attr("x", 0)
+      .attr("y", -block / 2 + size * 0.82 + i * size * 1.02)
+      .text(ln);
+  });
+  g.append("text").attr("class", "cnt")
+    .attr("font-size", Math.max(10, size * 0.82))
+    .attr("x", 0).attr("y", block / 2 + size * 0.95)
+    .text(n.data.count);
+});
+
+function select(n, el) {
+  nodes.classed("on", false);
+  d3.select(el).classed("on", true);
+  const pct = Math.round(n.data.count / d.submissionCount * 100);
+  detail.innerHTML = `
+    <p class="tag">Selected theme</p>
+    <h2></h2>
+    <p class="share">${n.data.count} of ${d.submissionCount} submissions &middot; ${pct}%</p>
+    <ul></ul>`;
+  detail.querySelector("h2").textContent = n.data.name;
+  const ul = detail.querySelector("ul");
+  n.data.bullets.forEach(b => {
+    const li = document.createElement("li");
+    li.textContent = b;
+    ul.appendChild(li);
+  });
+}
+
+nodes.on("click", function (e, n) { select(n, this); })
+  .on("keydown", function (e, n) {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(n, this); }
+  });
+</script>
+</body>
+</html>
