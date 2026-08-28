@@ -48,7 +48,7 @@ Each programming language has its own syntax.
 ~.focusContent.example
 
 ```python
-x = 5 # Synactically correct
+x = 5 # Synactically correct - sets value of x to 5
 5 = x # Syntax error - we assign from right to left
 ```
 

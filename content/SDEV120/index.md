@@ -84,13 +84,6 @@ Group Exercise: Logic Gates and Circuits
 
 ## M05: System Modeling
 
-Temp for this term:
-
-- Review AST instructions / example
-- Review Flowchart assignment and grading implementation
-
-Discussion: Data Structures - Choose Your Own Adventure
-
 [Unified Modeling Language (UML)](uml.html)
 
 [Software Development Life Cycle](sdlc.html)
