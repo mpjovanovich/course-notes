@@ -23,6 +23,13 @@ course: SDEV120
 
 # Propositional Logic
 
+<figure>
+  <img src="images/bifurcation-truth.webp" alt="bifurcation of truth" style="width: 100%;height: auto;">
+  <figcaption>
+    Bifurcation of Truth from Falsehood - Douglas Hofstadter: Gödel, Escher, Bach
+  </figcaption>
+</figure>
+
 A **proposition** is a statement with some truth value - either true or false.
 
 They form their own branch of mathematics called **propositional logic**, but we will use them to introduce logical concepts for computing.

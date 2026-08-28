@@ -58,46 +58,17 @@ Schedule Exams (Remote students only)
 
 ## M02: Boolean Algebra
 
-Discussion: Intro to Logic
-
-<!--
-
-SOLUTIONS:
-
-Tips:
-
-- Start by picking a character and assuming they're telling the truth.
-- Eliminate roles as they are taken.
-- If you hit a logical contradiction then try the next character, assuming that he/she is telling the truth.
-- Continue until you find an answer without contradictions.
-
-1)
-
-Assume J = True
-
-J = Kni, B = Spy, G = Kna
-
-If you were to ask G, he would not actually tell you what he told you that he would tell you... he knows he's lying. So this answer is logically consistent.
-
-2)
-
-Assume B = T
-
-J = Kna, B = Kni, G = Spy
-
-3)
-
-Question has changed since last time; not sure...
-
--->
-
 [Intro to Propositional Logic](intro_to_propositional_logic.html)
 
 [Logical Order of Operations](logical_order_of_operations.html)
 
-[Solving Problems with Truth Tables](solving_problems_with_truth_tables.html)
+Exploration: Intro to Logic group exercise
 
 [Decision Trees](decision_tree.html)
+
+Review Day 1 content
+
+[Solving Problems with Truth Tables](solving_problems_with_truth_tables.html)
 
 ## M03: Functional Arithmetic and Expression Parsing
 
