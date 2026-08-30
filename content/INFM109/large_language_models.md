@@ -26,7 +26,7 @@ course: INFM109
 
 <figure>
     <span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/500px-ChatGPT-Logo.svg.png" style="width: 30%;height: auto;">
+        <img src="images/chatgpt-logo.png" style="width: 30%;height: auto;">
     </span>
 </figure>
 

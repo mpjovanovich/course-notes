@@ -22,7 +22,7 @@ course: INFM109
 # What is AI?
 
 <figure>
- <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg" alt="" style="">
+ <img src="images/the-treachery-of-images.jpg" alt="Magritte, The Treachery of Images (&quot;This is not a pipe&quot;)" style="">
  <figcaption>
   <span class="attr">--Magritte, The Treachery of Images ("This is not a pipe")</span>
  </figcaption>
@@ -102,7 +102,7 @@ These are called **expert systems**. These types of systems are still used today
 
 <figure>
     <span>
-        <img src="https://inside-machinelearning.com/wp-content/uploads/2022/09/DecisionTree.jpg" style="width: 80%;height: auto;">
+        <img src="images/decision-tree-example.jpg" alt="Decision tree example" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -143,7 +143,7 @@ This shift from programming to learning is what makes modern AI so powerful and 
 ### Artificial Neural Networks
 
 <figure>
- <img src="https://www.cusabio.com/statics/images/Structure-Neuron.jpg" alt="Structure of a biological neuron" style="">
+ <img src="images/structure-of-a-biological-neuron.jpg" alt="Structure of a biological neuron" style="">
 </figure>
 
 **Artificial Neural Networks** are a type of _supervised learning_ model inspired by the human brain.
@@ -154,7 +154,7 @@ These have been around since the 1950's, but only recently have they become prac
 
 <figure>
     <span>
-        <img src="https://media.licdn.com/dms/image/v2/D5622AQEBHjAgykk3Wg/feedshare-shrink_800/B56ZS_7JGbHQAo-/0/1738386740593?e=2147483647&v=beta&t=DBVDk9YkanakFwUItC8Z1DD-Al2331Uw246sVFhwLdE" style="width: 100%;height: auto;">
+        <img src="images/neural-network-training-process.gif" alt="Neural network training process" style="width: 100%;height: auto;">
     </span>
 </figure>
 
@@ -164,28 +164,30 @@ In this phase the model is given a set of input/output pairs, and it learns to m
 
 After the model has been trained, it is released to the public, e.g. ChatGPT. These models do not learn after this point.
 
+<figure>
+    <span>
+        <img src="images/neural-network-training-process.gif" alt="Neural network training process" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
 ~.focusContent.note
 
 **Key Insights:**
 
 - The model learns by itself through trial and error, using labeled data to adjust its weights until it can make accurate predictions.
 
-~.focusContent.demo
-
 ...refer to excalidraw demo; this hasn't been ported to notes yet...
-
-/~
 
 /~
 
 #### Inference
 
 <figure>
- <img src="https://miro.medium.com/v2/resize:fit:2000/1*ui3IvoiVYBFtaU0auj63ew.gif" alt="" style="width: 80%;height: auto;">
+ <img src="images/neural-network-inference-example.gif" alt="Neural network inference process" style="width: 80%;height: auto;">
 </figure>
 
 <figure>
- <img src="https://www.quantib.com/hs-fs/hubfs/assets/pillar%20pages/The%20ultimate%20guide%20to%20AI%20in%20radiology/images/Pillar%20page%20-%20figure%2010-2.png?width=1022&name=Pillar%20page%20-%20figure%2010-2.png" alt="" style="width: 80%;height: auto;">
+ <img src="images/ai-inference-example-in-radiology.png" alt="AI inference example in radiology" style="width: 80%;height: auto;">
 </figure>
 
 By the time a model is released to the public, it is completely done learning.
@@ -206,3 +208,25 @@ The distinguishing feature of neural networks is the ability to "understand" dat
 This ability to generalize from training data to new situations is what makes neural networks so powerful.
 
 /~
+
+---
+
+TODO: not sure where these belong:
+
+<figure>
+    <span>
+        <img src="images/neural-network-training-custom.svg" alt="neural network training" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
+<figure>
+    <span>
+        <img src="images/neural-network-training-custom.svg" alt="neural network inference" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
+<figure>
+    <span>
+        <img src="images/one-hot-neural-network.svg" alt="one-hot encoding" style="width: 80%;height: auto;">
+    </span>
+</figure>

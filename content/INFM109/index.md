@@ -17,11 +17,14 @@ showBreadcrumb: false
 
 ## Announcements
 
+(Monday section - other section has covered this)
+
 - Review assignment completion this far:
   - What work is outstanding?
 - Rubric added to exploration assignments. How to improve:
   - Avoid opinion statements unless you back them up with authoritative sources.
   - Think of these as "mini research projects". Even though they are brief, you're still expected to bring academic rigor to them.
+- To be covered end of lecture: Ethics assignment
 
 ## Module 00: Course Introduction
 
@@ -46,33 +49,37 @@ Part I:
 Part II:
 
 - [The Internet](internet.html)
-- [Exploration analysis: Media](explorations/media.html)
 - Intro to assignments
 
-<!-- ## Module 0X: AI in the Tech Industry
+## Module 0X: AI in the Tech Industry
 
-- Discussion: Media within the Digital Landscape
-We did not do this in Module 01... not sure where it goes now or whether to hold off
+- Review Exploration: Media within the Digital Landscape
 
 Part I:
 
 - [What is AI?](what_is_ai.html)
 - [Large Language Models](large_language_models.html)
+- [Exploration analysis: Media](explorations/media.html)
 
 Part II:
 
 TODO Demos:
 
-- .claude skill from course notes
-  - Show how a skill ban be used to add an image (automate a common task)
 - Claude code:
   - have it read through one of my index.md files and create a planning/[module name] folder for each one
   - This demonstrates how it has executive privileges now on the conputer
+- .claude skill from course notes
 
-- [Prompt Engineering](prompt_engineering.html)
+  - Show how a skill can be used to add an image (automate a common task)
+  - This shows how skills can be "saved" for repeatable tasks
+
+- [Prompting and Context](prompting_and_context.html)
 - [Embedded AI](embedded_ai.html)
 - [Professional Impact of AI](professional_impact_of_ai.html)
-- Assignment: Producing a Data-Driven Artifacts (Due in class today)
+- Walkthrough assignment: Using AI Tools for Data Workflows
+- Intro assignments
+
+<!--
 
 ## Module 02: Hardware
 

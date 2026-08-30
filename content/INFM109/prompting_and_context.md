@@ -1,5 +1,5 @@
 ---
-title: Prompt Engineering
+title: Prompting and Context
 course: INFM109
 ---
 
@@ -19,9 +19,9 @@ course: INFM109
 
 /~
 
-# Prompt Engineering
+# Prompting and Context
 
-**Prompt Engineering** is the skill of crafting effective instructions for LLMs to get the best possible responses. Since LLMs predict based on patterns, how you ask matters enormously.
+**Prompting** is the skill of crafting effective instructions for LLMs to get the best possible responses. Since LLMs predict based on patterns, how you ask matters significantly.
 
 ## Why Prompts Matter
 
@@ -94,9 +94,7 @@ Tell the LLM exactly how you want the response structured.
 _Example 1)_
 
 ```
-Create a Q&A format study guide in markdown format for the following notes page: https://mpjovanovich.github.io/course-notes/INFM109/hardware.html
-
-Make sure to include questions for all important vocabulary terms and the "takeaways" sections.
+Create a Q&A format study guide in markdown format for the following notes page. Make sure to include questions for all important vocabulary terms and the "takeaways" sections. Put it in a format that I can download: https://mpjovanovich.github.io/course-notes/INFM109/hardware.html
 ```
 
 _Example 2)_
@@ -109,90 +107,6 @@ _Example 3)_
 
 ```
 Create a Mermaid timeline diagram that shows major milestones in the evolution of the Internet.
-```
-
-/~
-
-~.focusContent.exercise
-
-**Check-In: Creating an AI Markdown Document**
-
-Using [Claude](https://claude.ai/): Create a markdown document that summarizes how AI is changing different fields within the tech industry. It should show three domains, each with three bullet points and a summary statement. Upload the document to the assignment.
-
-/~
-
-### Use Examples
-
-Show the LLM what you want by providing examples in your prompt:
-
-~.focusContent.example
-
-**Prompting: Specifying Output Format**
-
-_Example 1: Summarizing Emails)_
-
-```
-I need to extract key information from customer feedback emails. It is important for me to know whether there are unresolved issues that the customer is experiencing. Please label each email as either Resolved, Unresolved, or Unknown.
-
-Here are some examples:
-
-Email:
-  "Hi, I love your product but the shipping was really slow. It took 2 weeks to arrive."
-Label:
-  Resolved
-
-Email:
-  "The app crashed three times yesterday. Very frustrating experience."
-Label:
-  Unresolved
-
-Email:
-  "Great customer service! Sarah helped me resolve my issue quickly."
-Label:
-  Resolved
-
-Now label this email:
-  "I've been using your software for 6 months now. The interface is intuitive but I wish there were more customization options."
-```
-
-_Example 2: Creating a Canvas Quiz)_
-
-Our course software can create a quiz from a file, but that file must be in a specific format. Let's see an example of how to use the LLM to create a multiple choice Canvas quiz based on some uploaded text.
-
-Let's try pasting our notes from the hardware module: https://mpjovanovich.github.io/course-notes/INFM109/hardware.html
-
-```
-The user will upload a file containing text from a textbook. You are to read the file and create multiple choice questions based on the text. Do not produce any code. There should be between 15 and 30 questions overall. Questions should focus on the most relevant and practical points in the readings. For each question, come up with one correct answer and three plausibly false answers. Do not be tricky - adjust difficulty to be appropriate for first year college students. You will fill out a template in CSV file format, with each question as follows:
-
-MC,,1,[Question Text],1,[correct answer],[incorrect answer],[incorrect answer],[incorrect answer]
-
-Where text in brackets is to be substituted. The output must be in CSV format, so you may not use commas in the answers. Do not put extra line breaks between questions; there should be one question per line. When you are finished, review your work and address any issues you see. You may then simply notify the user that you are finished.
-```
-
-/~
-
-### Request Step-by-Step Reasoning
-
-For complex problems, ask the LLM to show its work. It will often be more accurate this way:
-
-~.focusContent.example
-
-**Prompting: Step-by-Step Reasoning**
-
-From: https://mathematicaldonuts.substack.com/p/which-box-has-the-car
-
-```
-Please solve the following riddle. Provide concise step-by-step reasoning for your solution:
-
-There are 3 boxes, exactly one of which has a car. You can keep the car if you pick the correct box!
-
-On each box, there is a statement, exactly one of which is true.
-
-Box 1: The car is in this box.
-Box 2: The car is not in this box.
-Box 3: The car is not in box 1.
-
-Which box has the car?
 ```
 
 /~
@@ -218,16 +132,18 @@ I need to create a SQL script to initialize a sqlite table and some data. I woul
 
 ### Prompt Refinement
 
-If you are working on a non-trivial task, or one that you may repeat, _save your prompt to the side_ (e.g. in a text file).
+If you are working on a non-trivial task, or one that you may repeat, _save your prompt_. This can be as simple as keeping it open in a text file, or you can use built in tools within the coding interface.
 
 As you proceed:
 
 - Refine the prompt if needed.
-- Ask the LLM to help you refine your prompt if you're unsure!
+- _Ask the LLM to help you refine your prompt if you're unsure!_
 
 ```
 I'm getting ready to prompt an LLM to do a complex task. Can you please suggest edits to this prompt that might improve the result?: ...[your prompt]...
 ```
+
+Taking this preliminary step can catch issues early before a long session needs to be thrown out.
 
 **Iterative Process**:
 
@@ -235,4 +151,4 @@ I'm getting ready to prompt an LLM to do a complex task. Can you please suggest 
 2. Evaluate the response
 3. Identify what's missing or incorrect
 4. Refine the prompt
-5. Test again **_in a new chat_**
+5. Test again **_in a new chat_**, unless context from the current chat is needed.
