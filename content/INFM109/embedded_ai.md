@@ -15,17 +15,23 @@ course: INFM109
 
 ## Computer Access and Tool Integration
 
+**File Access**
+
+- Read and analyze documents you upload
+- Create and modify files
+- Work with spreadsheets, PDFs, images, and other media formats
+
 AI is being used more often to produce **artifacts** like code, documents, and presentations.
 
 Additionally, it is being used to **control** other applications and services.
 
 ~.focusContent.demo
 
-**Demo: What a Harness Adds**
+**Using an AI Harness**
 
-An LLM by itself only produces text — it can't touch your computer. A **harness** is the surrounding tool (here, Claude Code) that gives the model the ability to take real actions: reading files, writing files, running commands.
+An LLM by itself only produces text — it can't touch your computer. A **harness** is a tool (e.g. Claude Code) that gives the model the ability to execute actions on a computer: reading files, writing files, running commands.
 
-Live demo: rather than manually creating a batch of folders by hand, we'll hand that busywork to the harness in one instruction and watch what happens before anything actually changes.
+Let's automate a simple task to create ten folders using a given convention:
 
 ```
 Create ten folders named "week-01" through "week-10" in the current directory.
@@ -35,21 +41,13 @@ Notice that the harness stops and asks for **permission** before creating anythi
 
 /~
 
-**File Access**:
+**Office Suite Software**
 
-- Read and analyze documents you upload
-- Create and modify files
-- Work with spreadsheets, PDFs, images, and other media formats
+Office suite software (Word, Google Docs, Excel, etc.) increasingly ships with AI features that can read the file you're currently working in as context, without you copying and pasting anything in yourself.
 
-~.focusContent.example
+This is the same weights-vs-context idea from [Prompting and Context](prompting_and_context.html#context-what-the-model-can-and-cant-know). The AI isn't learning your document, it's just being handed it as context for each request.
 
-**Example: AI in Your Document**
-
-Office suite software (Word, Google Docs, Excel, etc.) increasingly ships with AI features that can read the file you're currently working in as context, without you copying and pasting anything in yourself. This is the same weights-vs-context idea from [Prompting and Context](prompting_and_context.html#context-what-the-model-can-and-cant-know) — the AI isn't learning your document, it's just being handed it as context for this one request.
-
-/~
-
-**Web Integration**:
+**Web Integration**
 
 - Search the internet for current information
 - Use multiple sources to compile a summary
@@ -57,14 +55,14 @@ Office suite software (Word, Google Docs, Excel, etc.) increasingly ships with A
 
 ~.focusContent.example
 
-**Using Current Data to Produce Artifacts**:
+**Using Current Data to Produce Artifacts**
 
 ```
 Given the following website:
 
 - https://www.visualcapitalist.com/which-countries-trust-self-driving-cars-the-most/
 
-Please create a data-driven graphic or table that shows how trust in self-driving cars relates to each contry's production of self-driving cars.
+Please translate the table in the "Data & Discussion" section into a simple but interactive web page that I can download. It does not have to be self contained; you may use CDN content if you choose to use libraries.
 ```
 
 /~
@@ -83,6 +81,8 @@ Please create a data-driven graphic or table that shows how trust in self-drivin
 Let's demo some code editing with AI tools:
 
 https://github.com/mpjovanovich/ai-html-sandbox.git
+
+We will have AI do a job that was previously tedious and slow - converting data from one format to another.
 
 /~
 
