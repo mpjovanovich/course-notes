@@ -12,9 +12,9 @@ course: INFM109
     - [Tokenization](#tokenization)
     - [Context Window](#context-window)
     - [The System Prompt](#the-system-prompt)
-    - [Knowledge Cutoffs](#knowledge-cutoffs)
   - [Training Process](#training-process)
     - [Pre-training](#pre-training)
+    - [Knowledge Cutoffs](#knowledge-cutoffs)
     - [Post-training (Fine-tuning)](#post-training-fine-tuning)
     - [Safety Considerations](#safety-considerations)
 
@@ -95,6 +95,14 @@ You'll see that:
 
 /~
 
+Once text is split into tokens, each token is converted into a numeric form the neural network can actually process. One method for this is **one-hot encoding**, where each token maps to a vector of mostly 0s with a single 1 marking that token's position.
+
+<figure>
+    <span>
+        <img src="images/one-hot-neural-network.svg" alt="one-hot encoding" style="width: 80%;height: auto;">
+    </span>
+</figure>
+
 ### Context Window
 
 <figure>
@@ -122,6 +130,8 @@ It operates like a sliding window that moves through the text as the model gener
 | Llama 3.1 70B     | Meta       | 128,000 tokens      | Open source alternative     |
 | Mixtral 8x22B     | Mistral AI | 65,000 tokens       | Mixture of experts          |
 
+_Newer models with different context window sizes are released regularly — treat this table as illustrating how models differ, not as an up-to-date leaderboard._
+
 **Why This Matters**:
 
 - The model can only reference information within its current context
@@ -142,23 +152,9 @@ Let's build a custom chatbot: [chatbot.py](https://github.com/mpjovanovich-IvyTe
 
 /~
 
-### Knowledge Cutoffs
-
-**Knowledge cutoff**: The date after which the LLM has no information about world events.
-
-For example:
-
-- GPT-4: October 2023
-
-**Why This Matters**:
-
-- LLMs can't tell you about recent events (without tool use)
-- Information about rapidly changing topics may be outdated
-- Always verify recent information from current sources
-
 ## Training Process
 
-LLMs are created through a multi-stage training process:
+This is the same training/inference cycle covered earlier for neural networks in general, applied specifically to text. LLMs are created through a multi-stage training process:
 
 ### Pre-training
 
@@ -181,6 +177,20 @@ LLMs are created through a multi-stage training process:
 **Result**: A model that can complete text but may not be helpful or safe for conversations.
 
 The models from pre-training are not released to the public. These are not the finished product.
+
+### Knowledge Cutoffs
+
+**Knowledge cutoff**: The date after which the LLM has no information about world events, since it can only learn from the text gathered before pre-training ended.
+
+For example:
+
+- GPT-4: October 2023
+
+**Why This Matters**:
+
+- LLMs can't tell you about recent events (without tool use)
+- Information about rapidly changing topics may be outdated
+- Always verify recent information from current sources
 
 ### Post-training (Fine-tuning)
 
