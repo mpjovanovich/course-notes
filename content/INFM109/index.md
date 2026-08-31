@@ -60,23 +60,13 @@ Part I:
 
 - [What is AI?](what_is_ai.html)
 - [Large Language Models](large_language_models.html)
+- [Professional Impact of AI](professional_impact_of_ai.html)
 - [Exploration analysis: Media](explorations/media.html)
 
 Part II:
 
-TODO Demos:
-
-- Claude code:
-  - have it read through one of my index.md files and create a planning/[module name] folder for each one
-  - This demonstrates how it has executive privileges now on the conputer
-- .claude skill from course notes
-
-  - Show how a skill can be used to add an image (automate a common task)
-  - This shows how skills can be "saved" for repeatable tasks
-
+- [Embedded AI](embedded_ai.html) (opens with the harness/permissions demo)
 - [Prompting and Context](prompting_and_context.html)
-- [Embedded AI](embedded_ai.html)
-- [Professional Impact of AI](professional_impact_of_ai.html)
 - Walkthrough assignment: Using AI Tools for Data Workflows
 - Intro assignments
 

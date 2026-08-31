@@ -14,19 +14,19 @@ course: INFM109
 
 # Professional Impact of AI
 
-AI is rapidly changing the technology workforce.
+AI is rapidly changing the technology workforce — this closes out what these models are and how they work by asking what it means for the people using them professionally.
 
 ## Professional Trends
 
-Closest analogy:
+Closest analogy: the Industrial Revolution.
 
-- The Industrial Revolution saw machines replace manual/mechanical tasks that can be automated
-- The AI Revolution will see machines replace repetitive "thinking and computing" tasks that can be automated
+- Machines replaced manual/mechanical labor that could be automated — but the Industrial Revolution also created entire categories of work that hadn't existed before it (factory operation, engineering, logistics)
+- The AI shift is following the same pattern for repetitive "thinking and computing" tasks: automating some existing work while creating new kinds of it
 
 **Job Augmentation**:
 
-- AI will likely augment (assist) rather than replace most jobs, but we will see some job loss during the paradigm shift
-- Humans will continue to drive vocational processes toward their intended goal; AI don't have motivations, they are tools
+- AI will likely augment (assist) rather than replace most jobs, though some job loss is expected during the transition
+- Humans still drive vocational processes toward their intended goal — AI doesn't have motivations of its own; it's a tool being directed
 
 **Industry Changes**:
 
@@ -36,10 +36,14 @@ Closest analogy:
 
 ## AI in a Learning Setting
 
-Recent study (January 2026) shows a _net negative_ impact from AI use for college learning.
+Using AI as a substitute for your own thinking weakens the skills you're in school to build — this is a widely shared concern among educators, not a fringe worry.
 
-- Use human curated (traditional) learning resources as a primary source of information
-- Use AI to ask follow up questions and help fill in the gaps
+Used well, though, AI can strengthen learning instead of replacing it:
+
+- Use human-curated (traditional) learning resources as your primary source of information
+- Use AI to ask follow-up questions and fill in gaps, after you've done the thinking yourself
+
+The difference is whether AI is doing your thinking for you, or helping you think further.
 
 ## Preparing for an AI-Integrated Future
 
