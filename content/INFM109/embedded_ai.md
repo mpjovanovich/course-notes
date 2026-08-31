@@ -8,7 +8,6 @@ course: INFM109
 - [Embedded AI](#embedded-ai)
   - [Computer Access and Tool Integration](#computer-access-and-tool-integration)
   - [Best Practices for Tool Use](#best-practices-for-tool-use)
-  - [Assignment: Using AI to Produce Data-Driven Artifacts](#assignment-using-ai-to-produce-data-driven-artifacts)
 
 /~
 
@@ -20,25 +19,41 @@ AI is being used more often to produce **artifacts** like code, documents, and p
 
 Additionally, it is being used to **control** other applications and services.
 
+~.focusContent.demo
+
+**Demo: What a Harness Adds**
+
+An LLM by itself only produces text — it can't touch your computer. A **harness** is the surrounding tool (here, Claude Code) that gives the model the ability to take real actions: reading files, writing files, running commands.
+
+Live demo: rather than manually creating a batch of folders by hand, we'll hand that busywork to the harness in one instruction and watch what happens before anything actually changes.
+
+```
+Create ten folders named "week-01" through "week-10" in the current directory.
+```
+
+Notice that the harness stops and asks for **permission** before creating anything. That confirmation step — not the model deciding to behave — is what keeps a hands-on AI tool safe to use.
+
+/~
+
 **File Access**:
 
 - Read and analyze documents you upload
 - Create and modify files
 - Work with spreadsheets, PDFs, images, and other media formats
 
+~.focusContent.example
+
+**Example: AI in Your Document**
+
+Office suite software (Word, Google Docs, Excel, etc.) increasingly ships with AI features that can read the file you're currently working in as context, without you copying and pasting anything in yourself. This is the same weights-vs-context idea from [Prompting and Context](prompting_and_context.html#context-what-the-model-can-and-cant-know) — the AI isn't learning your document, it's just being handed it as context for this one request.
+
+/~
+
 **Web Integration**:
 
 - Search the internet for current information
 - Use multiple sources to compile a summary
 - Use user-provided websites as context
-
-~.focusContent.note
-
-**Check Your Sources**:
-
-_When summarizing information, Internet search AIs will provide links to the sources they used. Be sure to check these sources!_
-
-/~
 
 ~.focusContent.example
 
