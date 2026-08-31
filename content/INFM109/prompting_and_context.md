@@ -5,8 +5,9 @@ course: INFM109
 
 ~.toc
 
-- [Prompt Engineering](#prompt-engineering)
+- [Prompting and Context](#prompting-and-context)
   - [Why Prompts Matter](#why-prompts-matter)
+  - [Context: What the Model Can and Can't Know](#context-what-the-model-can-and-cant-know)
   - [Basic Techniques](#basic-techniques)
     - [Start a New Chat for New Tasks](#start-a-new-chat-for-new-tasks)
     - [Ask to Reflect on Previous Responses](#ask-to-reflect-on-previous-responses)
@@ -27,6 +28,23 @@ course: INFM109
 
 LLMs generate responses based on probability distributions learned from training data. The exact wording of your prompt influences which patterns the model draws from.
 
+## Context: What the Model Can and Can't Know
+
+An LLM only "knows" two kinds of things:
+
+- What got baked into its weights during training — general knowledge, up to its [knowledge cutoff](large_language_models.html#knowledge-cutoffs)
+- Whatever you supply in the current [context window](large_language_models.html#context-window) — pasted documents, earlier messages in the chat, search results, tool output
+
+Anything outside those two sources, the model simply cannot use. It isn't being forgetful or withholding — the information was never there for it to draw from in the first place.
+
+~.focusContent.note
+
+**The current trend: connecting models to live data**
+
+Rather than retrain a model every time new information shows up, most AI tools now plug the model into external sources instead — a web search, a company's internal documents, or the file you're currently editing. The model isn't learning anything permanently; it's just being handed more context at the moment you ask. We'll see a concrete example of this in [Embedded AI](embedded_ai.html), where AI features built into everyday software read the document you're actively working in as context.
+
+/~
+
 ## Basic Techniques
 
 ### Start a New Chat for New Tasks
@@ -37,7 +55,7 @@ Start a new chat when:
 
 - Switching topics
 - The current chat is getting too long
-- You want to clear the context (e.g. you're getting halucinations or bad results)
+- You want to clear the context (e.g. you're getting [hallucinations](large_language_models.html#llms-are-not-databases) or bad results)
 
 ### Ask to Reflect on Previous Responses
 
@@ -110,6 +128,26 @@ Create a Mermaid timeline diagram that shows major milestones in the evolution o
 ```
 
 /~
+
+### Use Examples
+
+Show the LLM a couple of examples of exactly the output you want, rather than describing it in words. This is often called "few-shot prompting," and it's frequently faster and more reliable than a long description.
+
+```
+Rewrite each product name in title case:
+
+- "wireless bluetooth headphones" -> "Wireless Bluetooth Headphones"
+- "usb-c charging cable" -> "USB-C Charging Cable"
+- "portable phone charger" ->
+```
+
+### Request Step-by-Step Reasoning
+
+Ask the LLM to reason through a problem before giving a final answer. This tends to catch mistakes on multi-step problems that a direct answer would miss.
+
+```
+Walk through this step by step before giving a final answer: A train leaves the station at 2:00pm traveling 60mph. A second train leaves the same station at 3:00pm traveling 90mph in the same direction. At what time does the second train catch up to the first?
+```
 
 ### Break Large Tasks into Pieces
 
