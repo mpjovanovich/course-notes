@@ -65,7 +65,7 @@ Part I:
 
 Part II:
 
-- [Embedded AI](embedded_ai.html) (opens with the harness/permissions demo)
+- [Embedded AI](embedded_ai.html)
 - [Prompting and Context](prompting_and_context.html)
 - Walkthrough assignment: Using AI Tools for Data Workflows
 - Intro assignments
