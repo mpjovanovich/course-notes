@@ -221,7 +221,7 @@ TODO: not sure where these belong:
 
 <figure>
     <span>
-        <img src="images/neural-network-training-custom.svg" alt="neural network inference" style="width: 100%;height: auto;">
+        <img src="images/neural-network-inference-custom.svg" alt="neural network inference" style="width: 100%;height: auto;">
     </span>
 </figure>
 

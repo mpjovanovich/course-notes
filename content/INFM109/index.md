@@ -10,6 +10,7 @@ showBreadcrumb: false
   - [Announcements](#announcements)
   - [Module 00: Course Introduction](#module-00-course-introduction)
   - [Module 01: Digital Citizenry \& The Internet](#module-01-digital-citizenry--the-internet)
+  - [Module 0X: AI in the Tech Industry](#module-0x-ai-in-the-tech-industry)
 
 /~
 
