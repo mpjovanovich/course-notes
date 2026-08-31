@@ -27,7 +27,7 @@ Additionally, it is being used to **control** other applications and services.
 
 ~.focusContent.demo
 
-**Using an AI Harness**
+**Using an AI Harness: Part I**
 
 An LLM by itself only produces text — it can't touch your computer. A **harness** is a tool (e.g. Claude Code) that gives the model the ability to execute actions on a computer: reading files, writing files, running commands.
 
@@ -38,6 +38,21 @@ Create ten folders named "week-01" through "week-10" in the current directory.
 ```
 
 Notice that the harness stops and asks for **permission** before creating anything. That confirmation step — not the model deciding to behave — is what keeps a hands-on AI tool safe to use.
+
+/~
+
+~.focusContent.demo
+
+**Using Skills to Automate Repeatable Tasks**
+
+An AI **skill** is a saved description of a task that can be used by agents. This keeps the user from needing to write out context related to the task each time it is run.
+
+Let's see an example. I've created a skill that I use when building lecture notes for the course website. I provide the agent with a URL to an image and it will:
+
+- Download an image to the directory that I've specified
+- Replace my placeholder text, `<!-- img: alt text -->`, with an HTML image tag
+- Add alt text to the html image
+- Add styles that I've specified to the image
 
 /~
 

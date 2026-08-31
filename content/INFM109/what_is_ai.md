@@ -209,6 +209,27 @@ This ability to generalize from training data to new situations is what makes ne
 
 /~
 
+~.focusContent.demo
+
+**Walking throuth the Training Process**
+
+In this demo we train the model to learn the truth table for "logical AND".
+
+[Neural Network: Logical AND](https://github.com/mpjovanovich/ivy_tech/blob/main/demos/nn_logical_and_step.py)
+
+This is our training set:
+
+| Input1 | Input2 | Result |
+| ------ | ------ | ------ |
+| T      | T      | T      |
+| T      | F      | F      |
+| F      | T      | F      |
+| F      | F      | F      |
+
+Over many rounds of training, the model will update itself so that it produces the correct answers without that logic being hardcoded anywhere.
+
+/~
+
 ~.focusContent.exercise
 
 **Calculating the Activation Value of a Neuron**
