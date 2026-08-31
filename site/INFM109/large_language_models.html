@@ -52,13 +52,13 @@
                   <li><a href="#tokenization">Tokenization</a></li>
                   <li><a href="#context-window">Context Window</a></li>
                   <li><a href="#the-system-prompt">The System Prompt</a></li>
-                  <li><a href="#knowledge-cutoffs">Knowledge Cutoffs</a></li>
                 </ul>
               </li>
               <li>
                 <a href="#training-process">Training Process</a>
                 <ul>
                   <li><a href="#pre-training">Pre-training</a></li>
+                  <li><a href="#knowledge-cutoffs">Knowledge Cutoffs</a></li>
                   <li>
                     <a href="#post-training-fine-tuning"
                       >Post-training (Fine-tuning)</a
@@ -78,10 +78,7 @@
       <h2 id="what-is-an-llm">What is an LLM?</h2>
       <figure>
         <span>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/500px-ChatGPT-Logo.svg.png"
-            style="width: 30%; height: auto"
-          />
+          <img src="images/chatgpt-logo.png" style="width: 30%; height: auto" />
         </span>
       </figure>
 
@@ -184,6 +181,22 @@
         </figure>
       </div>
 
+      <p>
+        Once text is split into tokens, each token is converted into a numeric
+        form the neural network can actually process. One method for this is
+        <strong>one-hot encoding</strong>, where each token maps to a vector of
+        mostly 0s with a single 1 marking that token&#39;s position.
+      </p>
+      <figure>
+        <span>
+          <img
+            src="images/one-hot-neural-network.svg"
+            alt="one-hot encoding"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
       <h3 id="context-window">Context Window</h3>
       <figure>
         <span>
@@ -276,6 +289,13 @@
           </tr>
         </tbody>
       </table>
+      <p>
+        <em
+          >Newer models with different context window sizes are released
+          regularly — treat this table as illustrating how models differ, not as
+          an up-to-date leaderboard.</em
+        >
+      </p>
       <p><strong>Why This Matters</strong>:</p>
       <ul>
         <li>
@@ -314,23 +334,12 @@
         </p>
       </div>
 
-      <h3 id="knowledge-cutoffs">Knowledge Cutoffs</h3>
-      <p>
-        <strong>Knowledge cutoff</strong>: The date after which the LLM has no
-        information about world events.
-      </p>
-      <p>For example:</p>
-      <ul>
-        <li>GPT-4: October 2023</li>
-      </ul>
-      <p><strong>Why This Matters</strong>:</p>
-      <ul>
-        <li>LLMs can&#39;t tell you about recent events (without tool use)</li>
-        <li>Information about rapidly changing topics may be outdated</li>
-        <li>Always verify recent information from current sources</li>
-      </ul>
       <h2 id="training-process">Training Process</h2>
-      <p>LLMs are created through a multi-stage training process:</p>
+      <p>
+        This is the same training/inference cycle covered earlier for neural
+        networks in general, applied specifically to text. LLMs are created
+        through a multi-stage training process:
+      </p>
       <h3 id="pre-training">Pre-training</h3>
       <p><strong>Goal</strong>: Teach the model to predict the next word</p>
       <p><strong>Process</strong>:</p>
@@ -361,6 +370,22 @@
         The models from pre-training are not released to the public. These are
         not the finished product.
       </p>
+      <h3 id="knowledge-cutoffs">Knowledge Cutoffs</h3>
+      <p>
+        <strong>Knowledge cutoff</strong>: The date after which the LLM has no
+        information about world events, since it can only learn from the text
+        gathered before pre-training ended.
+      </p>
+      <p>For example:</p>
+      <ul>
+        <li>GPT-4: October 2023</li>
+      </ul>
+      <p><strong>Why This Matters</strong>:</p>
+      <ul>
+        <li>LLMs can&#39;t tell you about recent events (without tool use)</li>
+        <li>Information about rapidly changing topics may be outdated</li>
+        <li>Always verify recent information from current sources</li>
+      </ul>
       <h3 id="post-training-fine-tuning">Post-training (Fine-tuning)</h3>
       <p>
         <strong>Goal</strong>: Make the model helpful, harmless, and honest.

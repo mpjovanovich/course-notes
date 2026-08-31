@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../../assets/scripts/focus_content.js" defer></script>
+    <script src="./../../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../../assets/css/bootstrap-icons.css" />
+    <script src="./../../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <h1 id="module-0x-ai-in-the-tech-industry-notes-review-plan">
+        Module 0X (AI in the Tech Industry): Notes Review Plan
+      </h1>
+      <p>
+        Scope: the five lecture files listed under Module 0X Part I/Part II in
+        <code>index.md</code> — <code>what_is_ai.md</code>,
+        <code>large_language_models.md</code>,
+        <code>prompting_and_context.md</code>, <code>embedded_ai.md</code>,
+        <code>professional_impact_of_ai.md</code>. Exploration and assignment
+        pages are out of scope. TOC blocks (<code>~.toc</code>
+        fences) are plugin-generated and not evaluated for accuracy
+        <em>as navigation</em> — but see Finding 4.1/4.2, where a stale TOC is
+        used as <em>evidence</em> that body content went missing, which is a
+        different thing than judging the TOC itself.
+      </p>
+      <p>
+        This is a proposal only — no content has been changed yet. Findings
+        below now carry the instructor&#39;s decisions (approved / dropped /
+        revised). The
+        <strong>Suggested order of work</strong> at the bottom is grouped by
+        file rather than by finding number, since several decisions merged
+        findings that touch the same file.
+      </p>
+      <hr />
+      <h2 id="0-day-1--day-2-split--decided">
+        0. Day 1 / Day 2 split — decided
+      </h2>
+      <p>
+        <strong>Approved:</strong> move
+        <code>professional_impact_of_ai.md</code> to close Day 1 (right after
+        <code>large_language_models.md</code>). Day 2 opens with the
+        harness/permissions demo (see 5.1) →
+        <code>prompting_and_context.md</code> → <code>embedded_ai.md</code> →
+        walkthrough assignment.
+      </p>
+      <p>
+        <strong>New note:</strong>
+        <code>professional_impact_of_ai.md</code> itself is weak and reads with
+        an unintended negative tone — it needs editing and strengthening, and
+        the tone needs balancing while staying truthful (not softened into
+        inaccuracy). This is the same page 2.4 touches (the uncited study), so
+        treat both as one rewrite pass on that file.
+      </p>
+      <hr />
+      <h2 id="1-coherence">1. Coherence</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Issue</th>
+            <th>File(s)</th>
+            <th>Resolution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.1</td>
+            <td>
+              Stale heading/TOC left over from the
+              <code>prompt_engineering.md</code> →
+              <code>prompting_and_context.md</code> rename: the H1 reads
+              &quot;Prompting and Context&quot; but the TOC&#39;s top-level
+              entry still says &quot;Prompt Engineering,&quot; and the page
+              never actually addresses &quot;context&quot; as its own topic.
+            </td>
+            <td><code>prompting_and_context.md</code></td>
+            <td>
+              <strong>Revised.</strong> &quot;Context&quot; does have real
+              content to carry: models can&#39;t act on anything that isn&#39;t
+              baked into their weights <em>unless</em> it&#39;s supplied as
+              context — and hooking models into external knowledge/data (RAG,
+              retrieval, connected tools) is the current major industry trend.
+              Split it: a short conceptual section in
+              <code>prompting_and_context.md</code> (the mechanic — weights vs.
+              supplied context), with a concrete, relatable payoff example in
+              <code>embedded_ai.md</code> (e.g., office-suite AI plugins that
+              read the document you&#39;re currently working in). Fix the TOC
+              once the section headings are final. Merges with 3.2 and 4.4
+              below.
+            </td>
+          </tr>
+          <tr>
+            <td>1.2</td>
+            <td>
+              <code>what_is_ai.md</code>&#39;s Training gif
+              (<code>neural-network-training-process.gif</code>) is embedded
+              twice back-to-back, with the &quot;Key Insights&quot; note
+              sandwiched between two identical images. Reads as a copy/paste
+              duplication, not intentional repetition.
+            </td>
+            <td><code>what_is_ai.md</code></td>
+            <td>
+              <strong>Approved as proposed.</strong> Remove the second
+              occurrence.
+            </td>
+          </tr>
+          <tr>
+            <td>1.3</td>
+            <td>
+              No explicit bridge between <code>what_is_ai.md</code>&#39;s Neural
+              Network Training/Inference section and
+              <code>large_language_models.md</code>&#39;s
+              Pre-training/Post-training section.
+            </td>
+            <td>
+              <code>what_is_ai.md</code>, <code>large_language_models.md</code>
+            </td>
+            <td>
+              <strong>Approved as proposed.</strong> Add one linking sentence at
+              the top of &quot;Training Process&quot; in the LLM page.
+            </td>
+          </tr>
+          <tr>
+            <td>1.4</td>
+            <td>
+              Knowledge Cutoffs sits between &quot;The System Prompt&quot; and
+              &quot;Training Process,&quot; but a cutoff date is a direct
+              consequence of pre-training, not a usage-time concept like context
+              window/system prompt.
+            </td>
+            <td><code>large_language_models.md</code></td>
+            <td>
+              <strong>Approved as proposed.</strong> Move &quot;Knowledge
+              Cutoffs&quot; to immediately follow &quot;Pre-training.&quot;
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <h2 id="2-irrelevant--outdated">2. Irrelevant / outdated</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Issue</th>
+            <th>File(s)</th>
+            <th>Resolution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2.1</td>
+            <td>
+              The Context Window sizes table lists prior-generation models as
+              current.
+            </td>
+            <td><code>large_language_models.md</code></td>
+            <td>
+              <strong>Revised — smaller fix than originally proposed.</strong>
+              The table isn&#39;t trying to be a current leaderboard, just to
+              illustrate &quot;models differ in this regard&quot; — not worth
+              maintaining as a living table. Add one short note that newer
+              models now exist; leave the table itself alone.
+            </td>
+          </tr>
+          <tr>
+            <td>2.2</td>
+            <td>Safety Considerations links a version-specific system card.</td>
+            <td><code>large_language_models.md</code></td>
+            <td><strong>Dropped.</strong> Leave as-is.</td>
+          </tr>
+          <tr>
+            <td>2.3</td>
+            <td>
+              &quot;GPT-4: October 2023&quot; used as the sole knowledge-cutoff
+              example.
+            </td>
+            <td><code>large_language_models.md</code></td>
+            <td><strong>Dropped.</strong> Leave as-is.</td>
+          </tr>
+          <tr>
+            <td>2.4</td>
+            <td>
+              <code>professional_impact_of_ai.md</code> cites &quot;a recent
+              study (January 2026)&quot; with no source, violating the
+              course&#39;s own citation standard.
+            </td>
+            <td><code>professional_impact_of_ai.md</code></td>
+            <td>
+              <strong>Revised.</strong> Don&#39;t source it — remove the study
+              reference entirely. General audiences are already broadly aware
+              that offloading thinking to AI has downsides; the claim
+              doesn&#39;t need a citation crutch to land. Part of the Section 0
+              rewrite pass.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <h2 id="3-missing-but-important">3. Missing but important</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Gap</th>
+            <th>File(s)</th>
+            <th>Resolution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3.1</td>
+            <td>
+              <code>prompting_and_context.md</code>&#39;s TOC lists &quot;Use
+              Examples&quot; and &quot;Request Step-by-Step Reasoning&quot; —
+              neither exists in the body.
+            </td>
+            <td><code>prompting_and_context.md</code></td>
+            <td>
+              <strong>Approved, with a constraint.</strong> Write both sections,
+              but keep the examples short — the instructor had these before and
+              cut them for being too long. Trim, don&#39;t just drop back in
+              verbatim.
+            </td>
+          </tr>
+          <tr>
+            <td>3.2</td>
+            <td>
+              Page title promises &quot;Context&quot; but no section
+              manages/uses context deliberately.
+            </td>
+            <td><code>prompting_and_context.md</code></td>
+            <td>
+              <strong>Merged into 1.1.</strong> This is the home for the
+              &quot;context&quot; material — what the model can/can&#39;t know
+              without being told, tied to the Context Window concept already
+              defined in <code>large_language_models.md</code>.
+            </td>
+          </tr>
+          <tr>
+            <td>3.3</td>
+            <td>
+              <code>embedded_ai.md</code>&#39;s TOC lists an
+              &quot;Assignment&quot; section with no matching body content, and
+              a name that doesn&#39;t match <code>index.md</code>&#39;s.
+            </td>
+            <td><code>embedded_ai.md</code>, <code>index.md</code></td>
+            <td>
+              <strong>Revised — simpler than reconciling names.</strong> Drop
+              the assignment reference from <code>embedded_ai.md</code>&#39;s
+              TOC/body entirely. The assignment stays owned by
+              <code>index.md</code> only.
+            </td>
+          </tr>
+          <tr>
+            <td>3.4</td>
+            <td>
+              <code>what_is_ai.md</code> never explicitly states &quot;an LLM is
+              an ANN trained on text&quot; before the file ends.
+            </td>
+            <td><code>what_is_ai.md</code></td>
+            <td>
+              <strong>Dropped — no action.</strong> Notes don&#39;t need to
+              spell out every segue between lecture files; the instructor
+              bridges this live. Readable, not exhaustive.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <h2 id="4-overlap-between-pages">4. Overlap between pages</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Concept</th>
+            <th>Where it appears</th>
+            <th>Resolution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>4.1</td>
+            <td>Hallucination</td>
+            <td>
+              Defined formally in <code>large_language_models.md</code>;
+              referenced informally (misspelled &quot;halucinations&quot;) in
+              <code>prompting_and_context.md</code>.
+            </td>
+            <td>
+              <strong>Approved as proposed.</strong> Fix the typo; link the
+              second mention back to the formal definition instead of restating
+              it.
+            </td>
+          </tr>
+          <tr>
+            <td>4.2</td>
+            <td>&quot;Check your sources&quot; / verification</td>
+            <td>
+              Stated twice within <code>embedded_ai.md</code> itself, plus once
+              more in <code>professional_impact_of_ai.md</code>.
+            </td>
+            <td>
+              <strong>Approved as proposed.</strong> Within
+              <code>embedded_ai.md</code>, drop the standalone note and keep the
+              Verification Steps bullet. Leave the
+              <code>professional_impact_of_ai.md</code> mention — legitimate
+              end-of-module reinforcement.
+            </td>
+          </tr>
+          <tr>
+            <td>4.3</td>
+            <td>
+              &quot;AI augments, doesn&#39;t replace&quot; / human final
+              authority
+            </td>
+            <td>
+              Stated in <code>embedded_ai.md</code> and again in
+              <code>professional_impact_of_ai.md</code>.
+            </td>
+            <td>
+              <strong>Fine as-is — no action.</strong> Two different framings
+              (tool-use ethics vs. career trend); no &quot;nod back&quot; edit
+              needed.
+            </td>
+          </tr>
+          <tr>
+            <td>4.4</td>
+            <td>Context window</td>
+            <td>
+              Formal in <code>large_language_models.md</code>; implicit
+              (unnamed) in <code>prompting_and_context.md</code>.
+            </td>
+            <td>
+              <strong>Approved — covered by the 1.1/3.2 fix.</strong> Naming the
+              concept in the new context section closes this.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <h2 id="5-todo--temporary-items-to-implement">
+        5. TODO / temporary items to implement
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Location</th>
+            <th>Resolution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5.1</td>
+            <td>
+              &quot;TODO Demos&quot; block: Claude Code reading an
+              <code>index.md</code> and creating planning folders; a
+              <code>.claude</code> skill demo.
+            </td>
+            <td><code>index.md</code> lines 67–76</td>
+            <td>
+              <strong>Revised.</strong> Write it up as a
+              <code>~.focusContent.demo</code> aside in
+              <code>embedded_ai.md</code> (Day 2 opener). It needs to land two
+              concepts, not just show a trick: (a) <strong>harness</strong> —
+              the surrounding tool (Claude Code) that gives a model the ability
+              to act on files/commands, not just produce text; (b)
+              <strong>permissions</strong> — the harness asks before taking
+              file-changing actions, which is the actual safety mechanism, not
+              the model policing itself. Doesn&#39;t have to be the literal
+              <code>index.md</code> folder-creation example — a more relatable
+              framing:
+              <em
+                >&quot;making a dozen folders by hand is tedious busywork; watch
+                the harness do it in one instruction, and notice it asks
+                permission first.&quot;</em
+              >
+              Draft as a proposal below; instructor (using Claude Code for the
+              live demo) can adjust. Also fix the &quot;conputer&quot; typo in
+              the
+              <code>index.md</code> source block regardless of where the demo
+              content ends up.
+            </td>
+          </tr>
+          <tr>
+            <td>5.2</td>
+            <td>
+              Excalidraw placeholder note:
+              <code
+                >...refer to excalidraw demo; this hasn&#39;t been ported to
+                notes yet...</code
+              >
+            </td>
+            <td><code>what_is_ai.md</code> line 179</td>
+            <td>
+              <strong>Resolved on disk, placement pending.</strong> The
+              excalidraw drawings are already ported in as
+              <code>neural-network-training-custom.svg</code> and
+              <code>neural-network-inference-custom.svg</code>. Remaining work
+              is placement, not creation — see 5.3, they&#39;re now the same
+              task.
+            </td>
+          </tr>
+          <tr>
+            <td>5.3</td>
+            <td>
+              &quot;TODO: not sure where these belong&quot; — three orphaned
+              images at the bottom of the file with no surrounding prose.
+            </td>
+            <td><code>what_is_ai.md</code> lines 214–232</td>
+            <td>
+              <strong>Mislabeling fixed on disk</strong> — training and
+              inference now each have their own correctly-named SVG. Remaining:
+              move <code>neural-network-training-custom.svg</code> into the
+              Training subsection (replacing the stale placeholder text from
+              5.2) and <code>neural-network-inference-custom.svg</code> into the
+              Inference subsection.
+              <code>one-hot-neural-network.svg</code> still needs a home —
+              proposed: <code>large_language_models.md</code>&#39;s Tokenization
+              section, where token/encoding is first discussed.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <h2 id="suggested-order-of-work">Suggested order of work</h2>
+      <p>
+        Grouped by file this time, since several decisions above now touch the
+        same file together — doing them in one pass avoids reopening a file
+        twice for unrelated edits. Order also respects the one real dependency:
+        the
+        <code>embedded_ai.md</code> context example (1.1) reads better once the
+        <code>prompting_and_context.md</code> context section it points back to
+        already exists.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <strong><code>what_is_ai.md</code></strong> — fully mechanical, no
+            open decisions left:
+          </p>
+          <ul>
+            <li>Remove the duplicate training gif (1.2)</li>
+            <li>
+              Remove the excalidraw placeholder sentence and move
+              <code>neural-network-training-custom.svg</code> /
+              <code>neural-network-inference-custom.svg</code> into the Training
+              / Inference subsections respectively (5.2 + 5.3)
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong><code>large_language_models.md</code></strong> — also
+            mechanical:
+          </p>
+          <ul>
+            <li>
+              Add the linking sentence to &quot;Training Process&quot; (1.3)
+            </li>
+            <li>
+              Move &quot;Knowledge Cutoffs&quot; to follow
+              &quot;Pre-training&quot; (1.4)
+            </li>
+            <li>
+              Add the one-line &quot;newer models now exist&quot; note to the
+              context window table (2.1)
+            </li>
+            <li>
+              Place <code>one-hot-neural-network.svg</code> in the Tokenization
+              section (finishes 5.3)
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong><code>prompting_and_context.md</code></strong> — the core
+            writing task, do before step 4:
+          </p>
+          <ul>
+            <li>
+              Write the &quot;what the model can/can&#39;t know without
+              context&quot; section (1.1 / 3.2 / 4.4), naming the Context Window
+              concept explicitly
+            </li>
+            <li>
+              Write the trimmed &quot;Use Examples&quot; and &quot;Request
+              Step-by-Step Reasoning&quot; sections (3.1)
+            </li>
+            <li>
+              Fix the &quot;halucinations&quot; typo and link it back to the
+              formal Hallucination definition (4.1)
+            </li>
+            <li>Update the TOC to match the final headings (closes 1.1)</li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong><code>embedded_ai.md</code></strong> — depends on step 3 for
+            the cross-reference:
+          </p>
+          <ul>
+            <li>
+              Add the office-suite-AI-plugin example as the payoff for the
+              context concept from step 3 (1.1)
+            </li>
+            <li>
+              Remove the duplicate &quot;check your sources&quot; note, keep the
+              Verification Steps bullet (4.2)
+            </li>
+            <li>
+              Drop the orphaned &quot;Assignment&quot; TOC/body reference (3.3)
+            </li>
+            <li>
+              Write the harness/permissions demo as a
+              <code>~.focusContent.demo</code> block (5.1)
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong><code>professional_impact_of_ai.md</code></strong> — one
+            rewrite pass:
+          </p>
+          <ul>
+            <li>Remove the uncited study reference (2.4)</li>
+            <li>
+              Strengthen and rebalance the page&#39;s tone per Section 0&#39;s
+              note, while keeping it truthful
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong><code>index.md</code></strong> — last, since it depends on
+            the demo existing (step 4) and the page move being final (step 5):
+          </p>
+          <ul>
+            <li>
+              Move the <code>professional_impact_of_ai.md</code> link to close
+              Day 1
+            </li>
+            <li>
+              Replace the &quot;TODO Demos&quot; block with a pointer to the
+              finished demo in <code>embedded_ai.md</code>, opening Day 2
+            </li>
+            <li>Fix the &quot;conputer&quot; typo</li>
+          </ul>
+        </li>
+      </ol>
+      <p>No action needed: 2.2, 2.3, 3.4, 4.3 (all explicitly left as-is).</p>
+    </div>
+  </body>
+</html>

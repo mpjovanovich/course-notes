@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFM109: Prompting and Context</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#prompting-and-context">Prompting and Context</a>
+            <ul>
+              <li><a href="#why-prompts-matter">Why Prompts Matter</a></li>
+              <li>
+                <a href="#context-what-the-model-can-and-cant-know"
+                  >Context: What the Model Can and Can&#39;t Know</a
+                >
+              </li>
+              <li>
+                <a href="#basic-techniques">Basic Techniques</a>
+                <ul>
+                  <li>
+                    <a href="#start-a-new-chat-for-new-tasks"
+                      >Start a New Chat for New Tasks</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#ask-to-reflect-on-previous-responses"
+                      >Ask to Reflect on Previous Responses</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#set-the-role-or-context"
+                      >Set the Role or Context</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#specify-the-output-format"
+                      >Specify the Output Format</a
+                    >
+                  </li>
+                  <li><a href="#use-examples">Use Examples</a></li>
+                  <li>
+                    <a href="#request-step-by-step-reasoning"
+                      >Request Step-by-Step Reasoning</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#break-large-tasks-into-pieces"
+                      >Break Large Tasks into Pieces</a
+                    >
+                  </li>
+                  <li><a href="#prompt-refinement">Prompt Refinement</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="prompting-and-context">Prompting and Context</h1>
+      <p>
+        <strong>Prompting</strong> is the skill of crafting effective
+        instructions for LLMs to get the best possible responses. Since LLMs
+        predict based on patterns, how you ask matters significantly.
+      </p>
+      <h2 id="why-prompts-matter">Why Prompts Matter</h2>
+      <p>
+        LLMs generate responses based on probability distributions learned from
+        training data. The exact wording of your prompt influences which
+        patterns the model draws from.
+      </p>
+      <h2 id="context-what-the-model-can-and-cant-know">
+        Context: What the Model Can and Can't Know
+      </h2>
+      <p>An LLM only &quot;knows&quot; two kinds of things:</p>
+      <ul>
+        <li>
+          What got baked into its weights during training — general knowledge,
+          up to its
+          <a href="large_language_models.html#knowledge-cutoffs"
+            >knowledge cutoff</a
+          >
+        </li>
+        <li>
+          Whatever you supply in the current
+          <a href="large_language_models.html#context-window">context window</a>
+          — pasted documents, earlier messages in the chat, search results, tool
+          output
+        </li>
+      </ul>
+      <p>
+        Anything outside those two sources, the model simply cannot use. It
+        isn&#39;t being forgetful or withholding — the information was never
+        there for it to draw from in the first place.
+      </p>
+      <div class="focusContent note">
+        <p>
+          <strong>The current trend: connecting models to live data</strong>
+        </p>
+        <p>
+          Rather than retrain a model every time new information shows up, most
+          AI tools now plug the model into external sources instead — a web
+          search, a company&#39;s internal documents, or the file you&#39;re
+          currently editing. The model isn&#39;t learning anything permanently;
+          it&#39;s just being handed more context at the moment you ask.
+          We&#39;ll see a concrete example of this in
+          <a href="embedded_ai.html">Embedded AI</a>, where AI features built
+          into everyday software read the document you&#39;re actively working
+          in as context.
+        </p>
+      </div>
+
+      <h2 id="basic-techniques">Basic Techniques</h2>
+      <h3 id="start-a-new-chat-for-new-tasks">
+        Start a New Chat for New Tasks
+      </h3>
+      <p>
+        Each chat is its own context window. Don&#39;t just use one huge chat
+        for all of your tasks.
+      </p>
+      <p>Start a new chat when:</p>
+      <ul>
+        <li>Switching topics</li>
+        <li>The current chat is getting too long</li>
+        <li>
+          You want to clear the context (e.g. you&#39;re getting
+          <a href="large_language_models.html#llms-are-not-databases"
+            >hallucinations</a
+          >
+          or bad results)
+        </li>
+      </ul>
+      <h3 id="ask-to-reflect-on-previous-responses">
+        Ask to Reflect on Previous Responses
+      </h3>
+      <p>
+        If something looks wrong or is not working, ask the LLM to reflect on
+        its previous responses. It will often notice that it is not following
+        the given instructions, or that it has provided faulty information.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Please review your previous response. Are you confident about the information you provided?</span></span></code></pre>
+      <h3 id="set-the-role-or-context">Set the Role or Context</h3>
+      <p>
+        LLMs are trained to be helpful to the <em>average of all users</em>. If
+        no context is provided, they will default to this behavior.
+      </p>
+      <p>Give the LLM a specific perspective or expertise level.</p>
+      <ul>
+        <li>Tell it which audience you are addressing</li>
+        <li>Tell it what assumptions it can make</li>
+        <li>Optionally, give it style preferences</li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>- "I'm a first year college student taking an introductory course in software development..."</span></span>
+<span class="line"><span>- "Suggest ways to modify the language of this document to be more business friendly for a business audience unfamiliar with technical terms..."</span></span>
+<span class="line"><span>- "Please edit the following email. The person reading this message is very busy and needs the important details presented clearly and concisely: ..."</span></span></code></pre>
+      <div class="focusContent example">
+        <p><strong>Prompting: Targeting an Audience</strong>:</p>
+        <p>Let&#39;s see how targeting an audience can affect the response.</p>
+        <p><em>Example 1)</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>Explain photosynthesis to a 3rd grade student. Relate it to how plants are alive, just like people.</span></span></code></pre>
+        <p><em>Example 2)</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>Explain photosynthesis to a 10th grade biology student using simple but scientifically accurate terms. Include analogies where appropriate, but avoid use of childish analogies.</span></span></code></pre>
+      </div>
+
+      <h3 id="specify-the-output-format">Specify the Output Format</h3>
+      <p>Tell the LLM exactly how you want the response structured.</p>
+      <div class="focusContent example">
+        <p><strong>Prompting: Specifying Output Format</strong></p>
+        <p><em>Example 1)</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>Create a Q&#x26;A format study guide in markdown format for the following notes page. Make sure to include questions for all important vocabulary terms and the "takeaways" sections. Put it in a format that I can download: https://mpjovanovich.github.io/course-notes/INFM109/hardware.html</span></span></code></pre>
+        <p><em>Example 2)</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>Create a table that shows how to print basic output using five major programming languages.</span></span></code></pre>
+        <p><em>Example 3)</em></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>Create a Mermaid timeline diagram that shows major milestones in the evolution of the Internet.</span></span></code></pre>
+      </div>
+
+      <h3 id="use-examples">Use Examples</h3>
+      <p>
+        Show the LLM a couple of examples of exactly the output you want, rather
+        than describing it in words. This is often called &quot;few-shot
+        prompting,&quot; and it&#39;s frequently faster and more reliable than a
+        long description.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Rewrite each product name in title case:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- "wireless bluetooth headphones" -> "Wireless Bluetooth Headphones"</span></span>
+<span class="line"><span>- "usb-c charging cable" -> "USB-C Charging Cable"</span></span>
+<span class="line"><span>- "portable phone charger" -></span></span></code></pre>
+      <h3 id="request-step-by-step-reasoning">
+        Request Step-by-Step Reasoning
+      </h3>
+      <p>
+        Ask the LLM to reason through a problem before giving a final answer.
+        This tends to catch mistakes on multi-step problems that a direct answer
+        would miss.
+      </p>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>Walk through this step by step before giving a final answer: A train leaves the station at 2:00pm traveling 60mph. A second train leaves the same station at 3:00pm traveling 90mph in the same direction. At what time does the second train catch up to the first?</span></span></code></pre>
+      <h3 id="break-large-tasks-into-pieces">Break Large Tasks into Pieces</h3>
+      <p>
+        LLMs will often start creating a long response, assuming they know
+        exactly what you want. This wastes time, money, and energy.
+      </p>
+      <p>If you are expecting a long response:</p>
+      <ul>
+        <li>Break the task into smaller pieces</li>
+        <li>Tell the LLM to check its understanding before proceeding</li>
+      </ul>
+      <div class="focusContent example">
+        <p><strong>Prompting: Breaking up a Task</strong></p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>I need to create a SQL script to initialize a sqlite table and some data. I would like you to write a create table script (without data) for a "flowers" table, focusing on flowers that might be found in North America. Before we do so, please show me which columns you plan to use. We will refine from there.</span></span></code></pre>
+      </div>
+
+      <h3 id="prompt-refinement">Prompt Refinement</h3>
+      <p>
+        If you are working on a non-trivial task, or one that you may repeat,
+        <em>save your prompt</em>. This can be as simple as keeping it open in a
+        text file, or you can use built in tools within the coding interface.
+      </p>
+      <p>As you proceed:</p>
+      <ul>
+        <li>Refine the prompt if needed.</li>
+        <li>
+          <em
+            >Ask the LLM to help you refine your prompt if you&#39;re
+            unsure!</em
+          >
+        </li>
+      </ul>
+      <pre
+        class="shiki shiki-themes one-light one-dark-pro"
+        style="
+          background-color: #fafafa;
+          --shiki-dark-bg: #282c34;
+          color: #383a42;
+          --shiki-dark: #abb2bf;
+        "
+        tabindex="0"
+      ><code><span class="line"><span>I'm getting ready to prompt an LLM to do a complex task. Can you please suggest edits to this prompt that might improve the result?: ...[your prompt]...</span></span></code></pre>
+      <p>
+        Taking this preliminary step can catch issues early before a long
+        session needs to be thrown out.
+      </p>
+      <p><strong>Iterative Process</strong>:</p>
+      <ol>
+        <li>Start with a basic prompt</li>
+        <li>Evaluate the response</li>
+        <li>Identify what&#39;s missing or incorrect</li>
+        <li>Refine the prompt</li>
+        <li>
+          Test again <strong><em>in a new chat</em></strong
+          >, unless context from the current chat is needed.
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
