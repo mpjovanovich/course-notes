@@ -164,19 +164,17 @@ In this phase the model is given a set of input/output pairs, and it learns to m
 
 After the model has been trained, it is released to the public, e.g. ChatGPT. These models do not learn after this point.
 
-<figure>
-    <span>
-        <img src="images/neural-network-training-process.gif" alt="Neural network training process" style="width: 100%;height: auto;">
-    </span>
-</figure>
-
 ~.focusContent.note
 
 **Key Insights:**
 
 - The model learns by itself through trial and error, using labeled data to adjust its weights until it can make accurate predictions.
 
-...refer to excalidraw demo; this hasn't been ported to notes yet...
+<figure>
+    <span>
+        <img src="images/neural-network-training-custom.svg" alt="neural network training" style="width: 100%;height: auto;">
+    </span>
+</figure>
 
 /~
 
@@ -198,6 +196,12 @@ The process of using the model to make predictions is called **inference**.
 
 **Key Insight: Generalization**
 
+<figure>
+    <span>
+        <img src="images/neural-network-inference-custom.svg" alt="neural network inference" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
 The distinguishing feature of neural networks is the ability to "understand" data that it has not seen before.
 
 - Image classification (medical diagnosis, self-driving cars, photo gallery search)
@@ -211,19 +215,7 @@ This ability to generalize from training data to new situations is what makes ne
 
 ---
 
-TODO: not sure where these belong:
-
-<figure>
-    <span>
-        <img src="images/neural-network-training-custom.svg" alt="neural network training" style="width: 100%;height: auto;">
-    </span>
-</figure>
-
-<figure>
-    <span>
-        <img src="images/neural-network-inference-custom.svg" alt="neural network inference" style="width: 100%;height: auto;">
-    </span>
-</figure>
+TODO: not sure where this belongs (likely Tokenization in large_language_models.md):
 
 <figure>
     <span>
