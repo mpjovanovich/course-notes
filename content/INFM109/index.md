@@ -54,7 +54,7 @@ Part II:
 
 ## Module 0X: AI in the Tech Industry
 
-- Review Exploration: Media within the Digital Landscape
+- Review [Exploration: Media within the Digital Landscape](explorations/media.html)
 
 Part I:
 
