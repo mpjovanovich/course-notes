@@ -11,6 +11,7 @@ course: INFM109
   - [Key Concepts Vocabulary](#key-concepts-vocabulary)
     - [Tokenization](#tokenization)
     - [Context Window](#context-window)
+    - [Generative Models](#generative-models)
     - [The System Prompt](#the-system-prompt)
   - [Training Process](#training-process)
     - [Pre-training](#pre-training)
@@ -95,13 +96,7 @@ You'll see that:
 
 /~
 
-Once text is split into tokens, each token is converted into a numeric form the neural network can actually process. One method for this is **one-hot encoding**, where each token maps to a vector of mostly 0s with a single 1 marking that token's position.
-
-<figure>
-    <span>
-        <img src="images/one-hot-neural-network.svg" alt="one-hot encoding" style="width: 80%;height: auto;">
-    </span>
-</figure>
+Once text is split into tokens, each token is converted into a numeric form the neural network can actually process.
 
 ### Context Window
 
@@ -137,6 +132,16 @@ _Newer models with different context window sizes are released regularly — tre
 - The model can only reference information within its current context
 - Larger context windows allow for more complex tasks
 - The more context the model is using, the more computationally expensive it is to generate a response
+
+### Generative Models
+
+Generation is really another form of inference. The model predicts which word is "best" based on its training and the current context window.
+
+<figure>
+    <span>
+        <img src="images/neural-network-inference-custom.svg" alt="neural network inference" style="width: 100%;height: auto;">
+    </span>
+</figure>
 
 ### The System Prompt
 

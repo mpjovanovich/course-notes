@@ -48,6 +48,8 @@ AI struggles with:
 
 ## AI in Daily Life
 
+"Traditional" uses of AI (have been going on for years):
+
 <figure>
     <span>
         <img src="images/dog_search.png" style="width: 100%;height: auto;">
@@ -196,12 +198,6 @@ The process of using the model to make predictions is called **inference**.
 
 **Key Insight: Generalization**
 
-<figure>
-    <span>
-        <img src="images/neural-network-inference-custom.svg" alt="neural network inference" style="width: 100%;height: auto;">
-    </span>
-</figure>
-
 The distinguishing feature of neural networks is the ability to "understand" data that it has not seen before.
 
 - Image classification (medical diagnosis, self-driving cars, photo gallery search)
@@ -213,12 +209,18 @@ This ability to generalize from training data to new situations is what makes ne
 
 /~
 
----
+~.focusContent.exercise
 
-TODO: not sure where this belongs (likely Tokenization in large_language_models.md):
+**Calculating the Activation Value of a Neuron**
+
+The example below shows how one-hot encoding is used in a very basic neural network.
 
 <figure>
     <span>
         <img src="images/one-hot-neural-network.svg" alt="one-hot encoding" style="width: 80%;height: auto;">
     </span>
 </figure>
+
+For today's checkin your instructor will alter the weights and input vector. You must calculate the activation value.
+
+/~
