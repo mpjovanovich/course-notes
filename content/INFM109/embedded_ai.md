@@ -82,7 +82,7 @@ Let's demo some code editing with AI tools:
 
 https://github.com/mpjovanovich/ai-html-sandbox.git
 
-We will have AI do a job that was previously tedious and slow - converting data from one format to another.
+We will use AI within an IDE (code editing software) to have AI do a job that was previously tedious and slow - converting data from one format to another.
 
 /~
 
