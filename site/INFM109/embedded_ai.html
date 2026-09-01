@@ -72,7 +72,20 @@
         applications and services.
       </p>
       <div class="focusContent demo">
-        <p><strong>Using an AI Harness</strong></p>
+        <p><strong>Using an AI Harness: Part I</strong></p>
+        <figure>
+          <span>
+            <img
+              src="images/claude_code_trimmed_video.png"
+              style="width: 100%; height: auto"
+            />
+          </span>
+          <figcaption>
+            Example use of an AI harness to trim a video without the user
+            needing to open a program.
+          </figcaption>
+        </figure>
+
         <p>
           An LLM by itself only produces text — it can&#39;t touch your
           computer. A
@@ -100,6 +113,29 @@
           confirmation step — not the model deciding to behave — is what keeps a
           hands-on AI tool safe to use.
         </p>
+      </div>
+
+      <div class="focusContent demo">
+        <p><strong>Using Skills to Automate Repeatable Tasks</strong></p>
+        <p>
+          An AI <strong>skill</strong> is a saved description of a task that can
+          be used by agents. This keeps the user from needing to write out
+          context related to the task each time it is run.
+        </p>
+        <p>
+          Let&#39;s see an example. I&#39;ve created a skill that I use when
+          building lecture notes for the course website. I provide the agent
+          with a URL to an image and it will:
+        </p>
+        <ul>
+          <li>Download an image to the directory that I&#39;ve specified</li>
+          <li>
+            Replace my placeholder text,
+            <code>&lt;!-- img: alt text --&gt;</code>, with an HTML image tag
+          </li>
+          <li>Add alt text to the html image</li>
+          <li>Add styles that I&#39;ve specified to the image</li>
+        </ul>
       </div>
 
       <p><strong>Office Suite Software</strong></p>
@@ -148,7 +184,7 @@
         <li>Create data visualizations</li>
         <li>Debug and test code</li>
       </ul>
-      <div class="focusContent example">
+      <div class="focusContent demo">
         <p><strong>Editing Code with AI Tools</strong></p>
         <p>Let&#39;s demo some code editing with AI tools:</p>
         <p>
