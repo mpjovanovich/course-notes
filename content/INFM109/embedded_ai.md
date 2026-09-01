@@ -29,6 +29,15 @@ Additionally, it is being used to **control** other applications and services.
 
 **Using an AI Harness: Part I**
 
+<figure>
+    <span>
+        <img src="images/claude_code_trimmed_video.png" style="width: 100%;height: auto;">
+    </span>
+    <figcaption>
+      Example use of an AI harness to trim a video without the user needing to open a program.
+    </figcaption>
+</figure>
+
 An LLM by itself only produces text — it can't touch your computer. A **harness** is a tool (e.g. Claude Code) that gives the model the ability to execute actions on a computer: reading files, writing files, running commands.
 
 Let's automate a simple task to create ten folders using a given convention:
@@ -89,7 +98,7 @@ Please translate the table in the "Data & Discussion" section into a simple but 
 - Create data visualizations
 - Debug and test code
 
-~.focusContent.example
+~.focusContent.demo
 
 **Editing Code with AI Tools**
 
