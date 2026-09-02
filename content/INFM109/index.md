@@ -72,6 +72,8 @@ Part II:
 
 <!--
 
+remove this - adding comment to mark this as changed due to build fail
+
 ## Module 02: Hardware
 
 Part I:
