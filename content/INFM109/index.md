@@ -18,14 +18,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-(Monday section - other section has covered this)
-
-- Review assignment completion this far:
-  - What work is outstanding?
-- Rubric added to exploration assignments. How to improve:
-  - Avoid opinion statements unless you back them up with authoritative sources.
-  - Think of these as "mini research projects". Even though they are brief, you're still expected to bring academic rigor to them.
-- To be covered end of lecture: Ethics assignment
+- ...
 
 ## Module 00: Course Introduction
 
