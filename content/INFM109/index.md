@@ -70,16 +70,11 @@ Part II:
 - Walkthrough assignment: Using AI Tools for Data Workflows
 - Intro assignments
 
-<!--
-
-remove this - adding comment to mark this as changed due to build fail
-
 ## Module 02: Hardware
 
 Part I:
 
 - [Hardware](hardware.html)
-- Discussion: Hardware Trends
 
 Part II:
 
@@ -87,6 +82,8 @@ Part II:
 - [Installing Git](../common/installing_git.html)
 - [Basic Shell Commands](../common/basic_shell_commands.html)
 - Exercise: making a backup script (see markdown)
+
+<!--
 
 ## Module 03: Software
 
