@@ -74,7 +74,8 @@ Part II:
 
 Part I:
 
-- [Hardware](hardware.html)
+- [Hardware Fundamentals](hardware_fundamentals.html)
+- [Hardware Selection & Care](hardware_selection_and_care.html)
 
 Part II:
 
