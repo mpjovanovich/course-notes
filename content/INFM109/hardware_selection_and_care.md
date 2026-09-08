@@ -34,7 +34,7 @@ course: INFM109
 
 <figure>
     <span>
-        <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1720450649-617QVnCqXYL.jpg?crop=1xw:1.00xh;center,top&resize=980:*" style="width: 80%;height: auto;">
+        <img src="images/dedicated-gpu.jpg" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -58,7 +58,7 @@ course: INFM109
 
 <figure>
     <span>
-        <img src="https://www.pcworld.com/wp-content/uploads/2023/04/evga-power-supply-100883513-orig.jpg?quality=50&strip=all" style="width: 80%;height: auto;">
+        <img src="images/power-supply.jpg" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -75,7 +75,7 @@ course: INFM109
 
 <figure>
     <span>
-        <img src="https://www.szapphone.com/wp-content/uploads/2023/09/USB-Connector-Port-Types.webp" style="width: 100%;height: auto;">
+        <img src="images/usb-connector-port-types.webp" style="width: 100%;height: auto;">
     </span>
 </figure>
 
@@ -86,7 +86,7 @@ course: INFM109
 
 <figure>
     <span>
-        <img src="https://goldenmargins.com/wp-content/uploads/2021/07/Numerous-varieties-of-monitor-ports.jpg" style="width: 100%;height: auto;">
+        <img src="images/monitor-ports.jpg" style="width: 100%;height: auto;">
     </span>
 </figure>
 
@@ -97,7 +97,7 @@ course: INFM109
 
 <figure>
     <span>
-        <img src="https://www.fibermall.com/blog/wp-content/uploads/2023/10/Gigabit-Ethernet-1024x605.png" style="width: 80%;height: auto;">
+        <img src="images/gigabit-ethernet.png" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -108,7 +108,7 @@ course: INFM109
 
 <figure>
     <span>
-        <img src="https://pbs-prod.linustechtips.com/monthly_2021_03/1.jpg.29e2f4207953ac1d8dd07114fb2d2531.jpg" style="width: 80%;height: auto;">
+        <img src="images/audio-jacks.jpg" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -120,7 +120,7 @@ course: INFM109
 
 <figure>
     <span>
-        <img src="https://m.media-amazon.com/images/I/51ST6OSwFdL._AC_UF894,1000_QL80_.jpg" style="width: 80%;height: auto;">
+        <img src="images/adapter.jpg" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -195,7 +195,7 @@ Questions:
 
 <figure>
     <span>
-        <img src="https://m.media-amazon.com/images/I/710DLDf3ZQL._AC_UF894,1000_QL80_.jpg" style="width: 80%;height: auto;">
+        <img src="images/surge-protector.jpg" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -206,7 +206,7 @@ Questions:
 
 <figure>
     <span>
-        <img src="https://m.media-amazon.com/images/I/51V6xSCNAlS._AC_UF894,1000_QL80_.jpg" style="width: 80%;height: auto;">
+        <img src="images/ups.jpg" style="width: 80%;height: auto;">
     </span>
 </figure>
 

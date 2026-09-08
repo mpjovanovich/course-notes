@@ -76,7 +76,7 @@ As we move through these notes, we'll talk about **compute** and **I/O** perform
 
 <figure>
     <span>
-        <img src="https://images.saymedia-content.com/.image/t_share/MTc1MDA5NjY4MTc4MjU3NjQw/the-motherboard-components.png" style="width: 100%;height: auto;">
+        <img src="images/motherboard-components.png" style="width: 100%;height: auto;">
     </span>
 </figure>
 
@@ -101,7 +101,7 @@ As we move through these notes, we'll talk about **compute** and **I/O** perform
 
 <figure>
     <span>
-        <img src="https://static1.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/53366612939_4a328f5233_o.jpg" style="width: 80%;height: auto;">
+        <img src="images/cpu.jpg" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -134,7 +134,7 @@ As we move through these notes, we'll talk about **compute** and **I/O** perform
 
 <figure>
     <span>
-        <img src="https://www.learncomputerscienceonline.com/wp-content/uploads/2019/06/Computer-Memory-Hierarchy-.jpg" style="width: 100%;height: auto;">
+        <img src="images/computer-memory-hierarchy.jpg" style="width: 100%;height: auto;">
     </span>
 </figure>
 
@@ -185,7 +185,7 @@ Computers are so fast that it can be difficult to understand the latency of diff
 
 <figure>
     <span>
-        <img src="https://www.minitool.com/images/uploads/lib/2019/06/random-access-memory/random-access-memory-1.jpg" style="width: 100%;height: auto;">
+        <img src="images/random-access-memory.jpg" style="width: 100%;height: auto;">
     </span>
 </figure>
 
