@@ -28,6 +28,16 @@ course: INFM109
 
 IO devices go beyond the keyboard, mouse, and screens. Almost all modern technology has some kind of embedded computer system, which relies on input, and responds with output.
 
+~.focusContent.note
+
+_Why are the Keys this Way?:_
+
+The QWERTY layout was designed in the 1870s to solve a mechanical problem: when typists hit keys too quickly on early typewriters, the type bars would jam together. The solution was to arrange commonly used letter combinations so their type bars were far apart from each other, reducing the likelihood of jamming.
+
+/~
+
+- **Interesting wrinkle:** QWERTY outlived the jamming problem it solved by about 150 years — typewriters don't jam anymore, but switching costs kept it in place
+
 - **Input:** Entering data into the computer system
 - **Processing:** The computer's handling of that data
 - **Output:** The production of usable information
@@ -38,40 +48,31 @@ IO devices go beyond the keyboard, mouse, and screens. Almost all modern technol
 
 <figure>
     <span>
-        <img src="https://techterms.com/img/xl/qwerty_117.jpg" style="width: 80%;height: auto;">
+        <img src="images/qwerty-keyboard-layout.jpg" alt="QWERTY keyboard layout" style="width: 80%;height: auto;">
     </span>
 </figure>
 
-~.focusContent.note
-
-_Why are the Keys this Way?:_
-
-The QWERTY layout was designed in the 1870s to solve a mechanical problem:
-
-When typists hit keys too quickly on early typewriters, the type bars would jam together. The solution was to arrange commonly used letter combinations so their type bars were far apart from each other, reducing the likelihood of jamming.
-
-/~
-
 - One of the first IO devices (before the mouse)
 - **Beyond QWERTY:**
-  - Why QWERTY persists despite more efficient layouts
-  - Dvorak, Colemak, and other alternative layouts
+  - Dvorak, Colemak, and other alternative layouts — measurably faster typing, never displaced QWERTY
+  - Lock-in: retraining cost outweighs the speed gain for almost everyone
 
 <figure>
     <span>
-        <img src="https://m.media-amazon.com/images/I/818nxWlvBeL.jpg" style="width: 80%;height: auto;">
+        <img src="images/alternative-keyboard-layout.jpg" alt="Alternative keyboard layout" style="width: 80%;height: auto;">
     </span>
 </figure>
 
 - **Specialized keyboards:**
   - Ergonomic designs: Split, contoured, vertical
   - Programmable keys and customization potential
+  - Accessibility: one-handed, large-key, and eye-tracking keyboards
 
 ### The Mouse
 
 <figure>
     <span>
-        <img src="https://images.computerhistory.org/revonline/images/102633685p-03-03.jpg?w=600" style="width: 100%;height: auto;">
+        <img src="images/early-computer-mouse.jpg" alt="Early computer mouse" style="width: 100%;height: auto;">
     </span>
 </figure>
 
@@ -90,6 +91,7 @@ The first computer mouse was made of wood in the 1960s.
     - _Warning: Can be dangerous to eyes - keep away from children and pets_
   - **_DPI (Dots Per Inch)_**:
     - Specification that determines mouse cursor movement sensitivity; may want higher DPI for precision editing
+  - Accessibility: trackball and joystick mice serve users with limited dexterity
 
 - **Touchpads**
   - Multi-touch gesture support (scroll, zoom, rotate)
@@ -123,6 +125,7 @@ This is why you can't use a capacitive stylus on a capacitive touchscreen.
   - Long Press (context menu)
   - Multi-finger gestures (pinch to zoom, rotate)
   - ...
+- Accessibility cuts both ways: gloves/moisture block capacitive touch (above), but screen-reader gestures (e.g. VoiceOver) make touch a primary access method for blind users
 
 ~.focusContent.exercise
 
@@ -136,7 +139,7 @@ List one device aside from computers, tables, and phones that uses touch as an i
 
 <figure>
     <span>
-        <img src="https://m.media-amazon.com/images/I/517gyn5FzAL._AC_UF894,1000_QL80_.jpg" style="width: 80%;height: auto;">
+        <img src="images/graphics-tablet-and-stylus.jpg" alt="Graphics tablet and stylus" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -165,9 +168,10 @@ The computer takes into account:
 /~
 
 - **Real-world applications:**
-  - Accessibility and convenience features (e.g. voice control)
+  - Accessibility: often the primary input method for users with motor impairments
   - Transcription (e.g. YouTube captions)
   - Linguistic translation
+  - The AI angle: natural language is becoming the universal input, replacing structured commands and menus
 
 ### Video and Imaging Input
 
@@ -201,7 +205,7 @@ Not according to former FBI Director James Comey.
 
 <figure>
     <span>
-        <img src="https://imgix.ranker.com/user_node_img/67/1336538/original/jurassic-world-photo-u14?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=500" style="width: 70%;height: auto;">
+        <img src="images/motion-capture-velociraptors.jpg" alt="Velociraptors from Jurassic World, an early motion-capture animation example" style="width: 70%;height: auto;">
     </span>
     <figcaption>
         <p>Velociraptors...</p>
@@ -280,6 +284,7 @@ _**Geofencing**_ creates a virtual boundary around a geographic area. When a dev
   - _**LCD (Liquid Crystal Display)**_ and _**LED (Light Emitting Diode)**_: Common in laptops and monitors
   - _**OLED (Organic Light Emitting Diode)**_: Better contrast, used in phones and high-end displays
   - _**E-ink (Electrophoretic Ink)**_: Paper-like display used in e-readers
+  - Accessibility: high-contrast modes, E-ink's paper-like readability, and screen magnification support low-vision users
 
 ~.focusContent.lookout
 
@@ -287,7 +292,7 @@ _Eye Strain Tip:_
 
 <figure>
     <span>
-        <img src="https://biotechhealthcare.com/wp-content/uploads/2025/02/How-Does-the-20-20-20-Rule-Prevent-Eye-Strain-scaled.jpg" style="width: 100%;height: auto;">
+        <img src="images/20-20-20-rule-eye-strain.jpg" alt="20-20-20 rule diagram for reducing eye strain" style="width: 100%;height: auto;">
     </span>
 </figure>
 
@@ -308,6 +313,8 @@ Your health is important!
   - Conferencing
   - Media creation/production
 
+- Accessibility: captions and audio description are output-side accessibility — the counterpart to voice input, above
+
 - **Other interesting applications:**
 
   - Active _**SONAR**_ (Sound Navigation and Ranging)
@@ -321,7 +328,7 @@ Your health is important!
 
 <figure>
     <span>
-        <img src="https://imageio.forbes.com/blogs-images/bernardmarr/files/2018/07/AdobeStock_124464399-1200x800.jpeg?format=jpg&height=900&width=1600&fit=bounds" style="width: 100%;height: auto;">
+        <img src="images/emerging-input-methods.jpg" alt="Emerging input methods such as AR and VR headsets" style="width: 100%;height: auto;">
     </span>
 </figure>
 
