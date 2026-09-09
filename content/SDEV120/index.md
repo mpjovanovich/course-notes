@@ -35,7 +35,7 @@ showBreadcrumb: false
 
 ## Announcements
 
-- Remote students: Sign up for SmarterProctoring!
+- <strong style="color: #b00020; font-size: 3.25em;">🚨 LAST CALL — Remote students: Sign up for SmarterProctoring! 🚨</strong>
 
 ## M00: Orientation
 
