@@ -67,6 +67,8 @@ Part II:
 
 Part I:
 
+<!-- THIS IS A CHANGE! -->
+
 <!-- TODO: first couple sections of "selection and care" describe computer components and belong in "hardware fundamentals" -->
 
 - [Hardware Fundamentals](hardware_fundamentals.html)
