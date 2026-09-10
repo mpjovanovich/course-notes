@@ -28,16 +28,6 @@ course: INFM109
 
 IO devices go beyond the keyboard, mouse, and screens. Almost all modern technology has some kind of embedded computer system, which relies on input, and responds with output.
 
-~.focusContent.note
-
-_Why are the Keys this Way?:_
-
-The QWERTY layout was designed in the 1870s to solve a mechanical problem: when typists hit keys too quickly on early typewriters, the type bars would jam together. The solution was to arrange commonly used letter combinations so their type bars were far apart from each other, reducing the likelihood of jamming.
-
-/~
-
-- **Interesting fact:** QWERTY outlived the jamming problem it solved by about 150 years — typewriters don't jam anymore, but switching costs kept it in place
-
 - **Input:** Entering data into the computer system
 - **Processing:** The computer's handling of that data
 - **Output:** The production of usable information
@@ -68,6 +58,14 @@ The QWERTY layout was designed in the 1870s to solve a mechanical problem: when 
   - Programmable keys and customization potential
   - Accessibility: one-handed, large-key, and eye-tracking keyboards
 
+~.focusContent.note
+
+_Why are the Keys this Way?:_
+
+The QWERTY layout was designed in the 1870s to keep the type bars on early typewriters from jamming together when typists hit keys too quickly. Typewriters haven't jammed in decades, but QWERTY outlived the problem it solved by about 150 years — the cost of retraining everyone has always outweighed the benefit of switching.
+
+/~
+
 ### The Mouse
 
 <figure>
@@ -88,7 +86,6 @@ The first computer mouse was made of wood in the 1960s.
 
   - **_Optical_**: Uses LED light and optical sensor to track movement on most surfaces
   - **_Laser_**: Higher precision tracking using laser technology
-    - _Warning: Can be dangerous to eyes - keep away from children and pets_
   - **_DPI (Dots Per Inch)_**:
     - Specification that determines mouse cursor movement sensitivity; may want higher DPI for precision editing
   - Accessibility: trackball and joystick mice serve users with limited dexterity
@@ -100,32 +97,20 @@ The first computer mouse was made of wood in the 1960s.
 
 ### Touch Technologies
 
+Most modern touchscreens are _**capacitive**_ — rather than responding to pressure, they detect the electrical conductivity of your finger disrupting the screen's electrical field.
+
 ~.focusContent.note
 
-_Capacitive Touchscreens:_
+_Why Touchscreens Sometimes Don't Respond:_
 
-Most modern touch screens do not respond to pressure. They work by detecting the electrical conductivity of our fingers disrupting the electrical field of the screen.
+Capacitive touch relies on conductivity, so anything that insulates your finger breaks the connection:
 
-This kind of screen is called a _**capacitive touchscreen**_.
-
-This explains why your phone doesn't respond well under certain conditions:
-
-- Wearing gloves - gloves insulate the electrical conductivity
-- Hands are wet - water insulates the electrical conductivity
-- Plastic screen protectors - plastic insulates the electrical conductivity
-- Only part of screen works - moisture or pressure around the edges of the screen can disrupt the electrical field
-
-This is why you can't use a capacitive stylus on a capacitive touchscreen.
+- Wearing gloves
+- Wet hands
+- Plastic screen protectors
+- Moisture or pressure around the screen's edges (can disrupt part of the field)
 
 /~
-
-- **Touch interaction techniques:**
-  - Single Tap (select)
-  - Double Tap (open)
-  - Long Press (context menu)
-  - Multi-finger gestures (pinch to zoom, rotate)
-  - ...
-- Accessibility cuts both ways: gloves/moisture block capacitive touch (above), but screen-reader gestures (e.g. VoiceOver) make touch a primary access method for blind users
 
 ~.focusContent.exercise
 
@@ -151,6 +136,8 @@ List one device aside from computers, tables, and phones that uses touch as an i
 
 ### Voice and Audio Input
 
+Voice input lets a device act on spoken language instead of typed or clicked commands.
+
 ~.focusContent.note
 
 _Voice Recognition:_
@@ -171,33 +158,21 @@ The computer takes into account:
   - Accessibility: often the primary input method for users with motor impairments
   - Transcription (e.g. YouTube captions)
   - Linguistic translation
-  - The AI angle: natural language is becoming the universal input, replacing structured commands and menus
 
 ### Video and Imaging Input
 
-~.focusContent.note
-
-_Is it Paranoid to Cover your Webcam?:_
-
-Not according to former FBI Director James Comey.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nThtJj6vTbg?si=h4i8s-8wt8kQiMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-/~
+Cameras and image sensors turn visual information into data a system can act on.
 
 - **Professional applications:**
 
   - Video conferencing
-  - Baby and pet monitoring
   - Security cameras
+  - Quality control (AI-powered manufacturing inspection)
 
 - **Other interesting applications:**
 
-  - Plant health monitoring (cameras detect stress before visible to humans)
-  - Sleep studies (infrared cameras track movement patterns)
-  - Wildlife research (automated species identification)
   - Sports player analysis (facial expressions, movement patterns, stress indicators)
-  - Quality control (AI-powered manufacturing inspection)
+  - Wildlife research (automated species identification)
 
 - **Practical takeaway:** Lighting affects camera quality more than most hardware upgrades. Try adjusting lighting before buying a new webcam.
 
@@ -227,6 +202,8 @@ Motion capture, or "mocap," started as a tool for studying human movement patter
 
 ### Locational Technologies
 
+GPS uses a network of satellites to determine a device's position on Earth.
+
 ~.focusContent.note
 
 _Einstein and GPS:_
@@ -255,19 +232,7 @@ Without compensating for this effect, GPS would cause a position error on Earth 
   - Asset tracking (shipping, fleet tracking, inventory, etc.)
   - Location-based services (recommendations, etc.)
   - Emergency response (search and rescue, COVID-19 contact tracing)
-  - Geofencing
-
-~.focusContent.note
-
-_What is Geofencing?:_
-
-_**Geofencing**_ creates a virtual boundary around a geographic area. When a device enters or leaves this boundary, it can trigger specific actions. For example:
-
-- A store might send you a coupon when you walk nearby
-- Your smart thermostat could adjust the temperature when you get home
-- Parents can get alerts if their child leaves a designated safe zone
-
-/~
+  - _**Geofencing**_ - a virtual boundary around a geographic area that triggers an action when a device enters or leaves it (e.g. an alert when a fleet vehicle leaves its assigned route)
 
 ## Output
 
@@ -275,8 +240,8 @@ _**Geofencing**_ creates a virtual boundary around a geographic area. When a dev
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NM8z7j7yUHE?si=2YvEVFZH036vR3Qp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-- Paper printers
-- 3D printers
+- **Paper printers:** Documents, labels, and receipts remain a standard output in business, healthcare, and retail settings
+- **3D printers:** Convert a digital model directly into a physical object, used for prototyping and increasingly for manufacturing small production runs
 
 ### Display Technologies
 
@@ -301,8 +266,6 @@ Working on a screen can cause:
 - Dry eyes
 - Blurred / unfocused vision
 - Headaches / migraines
-
-Your health is important!
 
 /~
 
