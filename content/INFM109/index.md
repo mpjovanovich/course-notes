@@ -74,8 +74,8 @@ Part I:
 
 Part II:
 
-- [Input and Output Technologies](input_output_technologies.html) (skim)
-- [Installing Git](../common/installing_git.html)
+- [Installing Git](../common/installing_git.html) (install at start of class)
+- [Input and Output Technologies](input_output_technologies.html)
 - [Basic Shell Commands](../common/basic_shell_commands.html)
 - Exercise: making a backup script (see markdown)
 

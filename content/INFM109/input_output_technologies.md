@@ -36,7 +36,7 @@ The QWERTY layout was designed in the 1870s to solve a mechanical problem: when 
 
 /~
 
-- **Interesting wrinkle:** QWERTY outlived the jamming problem it solved by about 150 years — typewriters don't jam anymore, but switching costs kept it in place
+- **Interesting fact:** QWERTY outlived the jamming problem it solved by about 150 years — typewriters don't jam anymore, but switching costs kept it in place
 
 - **Input:** Entering data into the computer system
 - **Processing:** The computer's handling of that data
