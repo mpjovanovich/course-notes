@@ -106,29 +106,6 @@
       <p>
         We will use a <strong>post-order</strong> traversal for syntax trees:
       </p>
-      <!-- ```
-Let VISIT(node) be:
-
-BEGIN
-    IF the current node is a leaf THEN:
-        Return the value
-    ELSE:
-        IF the current node is a unary operator THEN:
-            VISIT(child)
-            Apply the operator
-            Return the value
-        ELSE:
-            VISIT(left child)
-            VISIT(right child)
-            Apply the operator
-            Return the value
-        END IF
-    END IF
-END
-
-VISIT(root)
-``` -->
-
       <p>
         <img
           src="https://files.codingninjas.in/article_images/iterative-postorder-traversal-of-binary-tree-0-1635320121.jpg"
@@ -191,6 +168,12 @@ VISIT(root)
         If a syntax tree includes variables, we treat them just like literals.
       </p>
       <div class="focusContent example">
+        <figure>
+          <span>
+            <img src="images/ast_7_plus_x_time_y_minus_2.svg" style="" />
+          </span>
+        </figure>
+
         <ol>
           <li>Draw the syntax tree for the expression:</li>
         </ol>
@@ -239,11 +222,28 @@ VISIT(root)
             --shiki-dark: #abb2bf;
           "
           tabindex="0"
-        ><code><span class="line"><span>1) 10 * f(4) + 3</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>2) 10 * f(y) + 3</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>3) f(2) * f(3)</span></span></code></pre>
+        ><code><span class="line"><span>1) f(x) + 3</span></span></code></pre>
+        <figure>
+          <span>
+            <img src="images/ast_fx_plus_3.svg" style="" />
+          </span>
+        </figure>
+
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>2) f(x + 1) - 2</span></span></code></pre>
+        <figure>
+          <span>
+            <img src="images/ast_fxplus1_minus_2.svg" style="" />
+          </span>
+        </figure>
       </div>
 
       <h2 id="function-composition">Function Composition</h2>
@@ -273,14 +273,21 @@ VISIT(root)
       </p>
       <figure>
         <span>
-          <img src="images/function_composition_subtrees.png" style="" />
+          <img src="images/ast_fx_gx.svg" style="" />
         </span>
       </figure>
 
       <p>
         With function composition, the &quot;x&quot; in one function will be
-        replaced by a whole function expression.
+        replaced by a whole function expression. In other words: plug in g(x)
+        where the &quot;x&quot; is in f(x).
       </p>
+      <figure>
+        <span>
+          <img src="images/ast_fgx.svg" style="" />
+        </span>
+      </figure>
+
       <div class="focusContent example">
         <p>Given the functions:</p>
         <pre
@@ -359,15 +366,11 @@ VISIT(root)
 <span class="line"><span>3) f( f( f(6) + 1 ) + 2 ) + 3</span></span></code></pre>
       </div>
 
-      <h2 id="functions-with-multiple-arguments">
-        Functions with Multiple Arguments
-      </h2>
-      <p>
-        Functions can take multiple arguments. In this case, we plug in the
-        values for each argument in the order they are given.
-      </p>
-      <div class="focusContent example">
-        <p>Given the function:</p>
+      <div class="focusContent exercise">
+        <p><strong>Extra Practice:</strong></p>
+        <p>Try these on your own for extra practice.</p>
+        <p><em>Set 1:</em></p>
+        <p>Given the functions:</p>
         <pre
           class="shiki shiki-themes one-light one-dark-pro"
           style="
@@ -377,8 +380,9 @@ VISIT(root)
             --shiki-dark: #abb2bf;
           "
           tabindex="0"
-        ><code><span class="line"><span>f(x, y) = x + y + 1</span></span></code></pre>
-        <p>Evaluate the following expressions:</p>
+        ><code><span class="line"><span>f(x) = x * 3</span></span>
+<span class="line"><span>g(x) = x - 4</span></span></code></pre>
+        <p>Evaluate the expressions:</p>
         <pre
           class="shiki shiki-themes one-light one-dark-pro"
           style="
@@ -388,11 +392,98 @@ VISIT(root)
             --shiki-dark: #abb2bf;
           "
           tabindex="0"
-        ><code><span class="line"><span>1) f(3, 4)</span></span>
+        ><code><span class="line"><span>1) f( g(6) )</span></span>
+<span class="line"><span>2) f( g(-1) )</span></span>
+<span class="line"><span>3) g( g(10) )</span></span></code></pre>
+        <details>
+          <summary>Solution</summary>
+          <div>
+            <pre
+              class="shiki shiki-themes one-light one-dark-pro"
+              style="
+                background-color: #fafafa;
+                --shiki-dark-bg: #282c34;
+                color: #383a42;
+                --shiki-dark: #abb2bf;
+              "
+              tabindex="0"
+            ><code><span class="line"><span>1) f( g(6) )</span></span>
+<span class="line"><span>    = f( 6 - 4 )</span></span>
+<span class="line"><span>    = f( 2 )</span></span>
+<span class="line"><span>    = 2 * 3</span></span>
+<span class="line"><span>    = 6</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>2) f(1, 2)</span></span>
+<span class="line"><span>2) f( g(-1) )</span></span>
+<span class="line"><span>    = f( -1 - 4 )</span></span>
+<span class="line"><span>    = f( -5 )</span></span>
+<span class="line"><span>    = -5 * 3</span></span>
+<span class="line"><span>    = -15</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>3) f(3, f(2, 1))</span></span></code></pre>
+<span class="line"><span>3) g( g(10) )</span></span>
+<span class="line"><span>    = g( 10 - 4 )</span></span>
+<span class="line"><span>    = g( 6 )</span></span>
+<span class="line"><span>    = 6 - 4</span></span>
+<span class="line"><span>    = 2</span></span></code></pre>
+          </div>
+        </details>
+
+        <p><em>Set 2:</em></p>
+        <p>Given the functions:</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>f(x) = x - 2</span></span>
+<span class="line"><span>g(x) = x * x</span></span></code></pre>
+        <p>Evaluate the expressions:</p>
+        <pre
+          class="shiki shiki-themes one-light one-dark-pro"
+          style="
+            background-color: #fafafa;
+            --shiki-dark-bg: #282c34;
+            color: #383a42;
+            --shiki-dark: #abb2bf;
+          "
+          tabindex="0"
+        ><code><span class="line"><span>1) f( g(3) )</span></span>
+<span class="line"><span>2) f( g(-1) )</span></span>
+<span class="line"><span>3) g( g(2) )</span></span></code></pre>
+        <details>
+          <summary>Solution</summary>
+          <div>
+            <pre
+              class="shiki shiki-themes one-light one-dark-pro"
+              style="
+                background-color: #fafafa;
+                --shiki-dark-bg: #282c34;
+                color: #383a42;
+                --shiki-dark: #abb2bf;
+              "
+              tabindex="0"
+            ><code><span class="line"><span>1) f( g(3) )</span></span>
+<span class="line"><span>    = f( 3 * 3 )</span></span>
+<span class="line"><span>    = f( 9 )</span></span>
+<span class="line"><span>    = 9 - 2</span></span>
+<span class="line"><span>    = 7</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2) f( g(-1) )</span></span>
+<span class="line"><span>    = f( (-1) * (-1) )</span></span>
+<span class="line"><span>    = f( 1 )</span></span>
+<span class="line"><span>    = 1 - 2</span></span>
+<span class="line"><span>    = -1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3) g( g(2) )</span></span>
+<span class="line"><span>    = g( 2 * 2 )</span></span>
+<span class="line"><span>    = g( 4 )</span></span>
+<span class="line"><span>    = 4 * 4</span></span>
+<span class="line"><span>    = 16</span></span></code></pre>
+          </div>
+        </details>
       </div>
 
       <h2 id="boolean-logic-in-syntax-trees">Boolean Logic in Syntax Trees</h2>
@@ -415,20 +506,22 @@ VISIT(root)
             --shiki-dark: #abb2bf;
           "
           tabindex="0"
-        ><code><span class="line"><span>1) True and False or False</span></span>
+        ><code><span class="line"><span></span></span>
+<span class="line"><span>1. True and False or False</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>2) True and (False or False)</span></span>
+<span class="line"><span>2. True and (False or False)</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>3) not True</span></span></code></pre>
+<span class="line"><span>3. True and not False or False</span></span></code></pre>
+        <p>
+          Here is the #3 syntax tree. Notice that order of operations is
+          respected (not, then and, then or):
+        </p>
+        <figure>
+          <span>
+            <img src="images/ast_boolean.svg" style="" />
+          </span>
+        </figure>
       </div>
-
-      <h2 id="for-the-homework">For the Homework</h2>
-      <ul>
-        <li>Use draw.io to make syntax trees</li>
-        <li>
-          Make sure to double check what the question is asking you to do!
-        </li>
-      </ul>
     </div>
   </body>
 </html>
