@@ -90,7 +90,7 @@ Group Exercise: Logic Gates and Circuits
 
 ## Midterm Review
 
-[Midterm Review](midterm_study_s25.html)
+[Midterm Review](midterm_study_f26.html)
 
 After class: Review Truth Tables solution for those that want to see it
 
