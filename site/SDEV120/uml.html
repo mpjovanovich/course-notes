@@ -104,14 +104,6 @@
         </ul>
       </div>
 
-      <figure>
-        <img
-          src="images/uml_guys.png"
-          alt=""
-          style="width: 80%; height: auto"
-        />
-      </figure>
-
       <h1 id="unified-modeling-language-uml">
         Unified Modeling Language (UML)
       </h1>
@@ -119,6 +111,41 @@
         Reference:
         <a href="https://drawio-app.com/blog/uml-diagrams">UML Diagrams</a>
       </p>
+      <p>Free tools for creating UML diagrams:</p>
+      <table>
+        <thead>
+          <tr>
+            <th align="left">Tool</th>
+            <th align="left">Typical use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="left">
+              <a href="https://excalidraw.com/">Excalidraw</a>
+            </td>
+            <td align="left">Informal sketches / whiteboarding</td>
+          </tr>
+          <tr>
+            <td align="left"><a href="https://drawio-app.com/">Draw.io</a></td>
+            <td align="left">General UML and other diagrams</td>
+          </tr>
+          <tr>
+            <td align="left">
+              <a href="https://www.lucidchart.com/">Lucidchart</a>
+            </td>
+            <td align="left">General UML and other diagrams</td>
+          </tr>
+          <tr>
+            <td align="left"><a href="https://mermaid.js.org/">Mermaid</a></td>
+            <td align="left">Text-based diagrams in Markdown</td>
+          </tr>
+          <tr>
+            <td align="left"><a href="https://dbdiagram.io/">DB Diagram</a></td>
+            <td align="left">Database schemas / ER diagrams only</td>
+          </tr>
+        </tbody>
+      </table>
       <h2 id="background">Background</h2>
       <p>Prior to UML...</p>
       <ul>
@@ -128,13 +155,17 @@
       <p>Now, with UML...</p>
       <ul>
         <li>
-          Created by Grady Booch, Ivar Jacobson, and James Rumbaugh in 1997
+          Can take a diagram to anyone on earth in tech field and they will
+          understand it
         </li>
       </ul>
       <h2 id="what-is-uml">What is UML?</h2>
       <p><em>Not</em> a programming language</p>
       <ul>
-        <li>Set of diagrams and notations used to model software systems.</li>
+        <li>
+          <strong><em>Set of diagrams and notations</em></strong> used to model
+          IT systems.
+        </li>
         <li>Universal, culture invariant, and so much fun!</li>
       </ul>
       <p>
@@ -169,7 +200,7 @@
       <h2 id="diagram-types">Diagram Types</h2>
       <figure>
         <img
-          src="https://drawio-app.com/wp-content/uploads/2018/10/UMLdiagrams.png"
+          src="images/uml_diagram_types.png"
           alt=""
           style="width: 70%; height: auto"
         />
@@ -178,7 +209,7 @@
       <h3 id="use-case-diagram">Use Case Diagram</h3>
       <figure>
         <img
-          src="https://cdn-images.visual-paradigm.com/guide/uml/what-is-use-case-diagram/02-use-case-diagram-annotated.png"
+          src="images/use_case_diagram_example.png"
           alt=""
           style="width: 70%; height: auto"
         />
@@ -211,7 +242,7 @@
       <h3 id="class-diagram">Class Diagram</h3>
       <figure>
         <img
-          src="https://drawio-app.com/wp-content/uploads/2018/01/Class-Diagram-Habit-Tracker-app.png"
+          src="images/class_diagram_habit_tracker.png"
           alt=""
           style="width: 70%; height: auto"
         />
@@ -280,46 +311,52 @@
           </tr>
         </tbody>
       </table>
-      <ul>
-        <li>
-          Entities can be concrete or abstract. From above:
-          <ul>
-            <li>
-              Concrete examples:
-              <ul>
-                <li>Person</li>
-                <li>??? (what else?)</li>
-              </ul>
-            </li>
-            <li>
-              Abstract examples:
-              <ul>
-                <li>Comment</li>
-                <li>??? (what else?)</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <div class="focusContent exercise">
+        <p><strong>Concrete and abstract entities:</strong></p>
+        <ul>
+          <li>
+            Entities can be concrete or abstract. From above:
+            <ul>
+              <li>
+                Concrete examples:
+                <ul>
+                  <li>Person</li>
+                  <li>??? (what else?)</li>
+                </ul>
+              </li>
+              <li>
+                Abstract examples:
+                <ul>
+                  <li>Comment</li>
+                  <li>??? (what else?)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
       <h4 id="key-components">Key components</h4>
       <ul>
         <li>Classes</li>
         <li>Attributes</li>
         <li>Methods</li>
-        <li>
-          Relationships between classes (cardinality)<br />
-          <span class="demo">walkthrough:</span> For dog walking service, how
-          would I show…
-        </li>
-        <li>Dog walker and client (person)?</li>
-        <li>Dogs that he/she is scheduled to walk?</li>
-        <li>Relationships?</li>
-        <li>Any other classes needed?</li>
+        <li>Relationships between classes (cardinality)</li>
       </ul>
+      <div class="focusContent exercise">
+        <p><strong>For dog walking service, how would we show…</strong></p>
+        <ul>
+          <li>Dog walker and client (person)?</li>
+          <li>Dogs that he/she is scheduled to walk?</li>
+          <li>Relationships between classes?</li>
+          <li>Any other classes needed?</li>
+        </ul>
+      </div>
+
       <h3 id="sequence-diagram">Sequence Diagram</h3>
       <figure>
         <img
-          src="https://drawio-app.com/wp-content/uploads/2018/02/drawio-sequence-checkin.png"
+          src="images/sequence_diagram_checkin.png"
           alt=""
           style="width: 70%; height: auto"
         />
@@ -346,7 +383,7 @@
       <h3 id="state-diagram">State Diagram</h3>
       <figure>
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Turnstile_state_machine_colored.svg/1185px-Turnstile_state_machine_colored.svg.png"
+          src="images/state_diagram_turnstile.svg"
           alt=""
           style="width: 70%; height: auto"
         />
@@ -360,7 +397,41 @@
         <li>Transitions</li>
       </ul>
       <div class="focusContent exercise">
-        <p>User signup, registration, and login workflow:</p>
+        <p><strong>Planning a user registration and login workflow:</strong></p>
+        <p>
+          Each page can be modeled as a state, shown here by a set of four
+          variables:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th align="left">Variable</th>
+              <th align="left">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left"><code>uname</code></td>
+              <td align="left">The username of the user</td>
+            </tr>
+            <tr>
+              <td align="left"><code>pwd</code></td>
+              <td align="left">The password of the user</td>
+            </tr>
+            <tr>
+              <td align="left"><code>verified</code></td>
+              <td align="left">Whether the user has verified their email</td>
+            </tr>
+            <tr>
+              <td align="left"><code>token</code></td>
+              <td align="left">
+                The authentication token (a hidden field used for
+                authentication)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Transitions show how users get from one page to another.</p>
         <figure>
           <span>
             <img
@@ -374,7 +445,7 @@
       <h3 id="activity-diagram">Activity Diagram</h3>
       <figure>
         <img
-          src="https://cdn-images.visual-paradigm.com/guide/uml/what-is-activity-diagram/04-activity-diagram-example-process-order.png"
+          src="images/activity_diagram_process_order.png"
           alt=""
           style="width: 100%; height: auto"
         />
@@ -389,14 +460,17 @@
       <ul>
         <li>Activities</li>
         <li>Transitions</li>
-        <li>Branching / merging</li>
-        <li>Forking / joining</li>
+        <li>
+          Branching / merging (indicates processes that may run concurrently,
+          then meet back up)
+        </li>
+        <li>Forking / joining (much like flowchart decision)</li>
       </ul>
       <h3 id="hybrids">Hybrids</h3>
       <h4 id="swimlane-diagram">Swimlane Diagram</h4>
       <figure>
         <img
-          src="https://img.officetimeline.com/website/Content/website/swimlane-diagram/swimlane-process-map-example.svg"
+          src="images/swimlane_diagram_example.svg"
           alt=""
           style="width: 60%; height: auto"
         />
@@ -413,6 +487,9 @@
         time.
       </p>
       <p>Mix and match to suit your needs.</p>
+      <figure>
+        <img src="images/ai_open_server_model.svg" alt="" style="" />
+      </figure>
     </div>
   </body>
 </html>
