@@ -32,13 +32,19 @@ course: SDEV120
 
 /~
 
-<figure>
- <img src="images/uml_guys.png" alt="" style="width: 80%;height: auto;">
-</figure>
-
 # Unified Modeling Language (UML)
 
 Reference: [UML Diagrams](https://drawio-app.com/blog/uml-diagrams)
+
+Free tools for creating UML diagrams:
+
+| Tool                                      | Typical use                         |
+| :---------------------------------------- | :---------------------------------- |
+| [Excalidraw](https://excalidraw.com/)     | Informal sketches / whiteboarding   |
+| [Draw.io](https://drawio-app.com/)        | General UML and other diagrams      |
+| [Lucidchart](https://www.lucidchart.com/) | General UML and other diagrams      |
+| [Mermaid](https://mermaid.js.org/)        | Text-based diagrams in Markdown     |
+| [DB Diagram](https://dbdiagram.io/)       | Database schemas / ER diagrams only |
 
 ## Background
 
@@ -49,13 +55,13 @@ Prior to UML...
 
 Now, with UML...
 
-- Created by Grady Booch, Ivar Jacobson, and James Rumbaugh in 1997
+- Can take a diagram to anyone on earth in tech field and they will understand it
 
 ## What is UML?
 
 _Not_ a programming language
 
-- Set of diagrams and notations used to model software systems.
+- **_Set of diagrams and notations_** used to model IT systems.
 - Universal, culture invariant, and so much fun!
 
 **_Hooray standards!_**
@@ -80,13 +86,13 @@ Different domains use some more than others.
 ## Diagram Types
 
 <figure>
- <img src="https://drawio-app.com/wp-content/uploads/2018/10/UMLdiagrams.png" alt="" style="width: 70%;height: auto;">
+ <img src="images/uml_diagram_types.png" alt="" style="width: 70%;height: auto;">
 </figure>
 
 ### Use Case Diagram
 
 <figure>
- <img src="https://cdn-images.visual-paradigm.com/guide/uml/what-is-use-case-diagram/02-use-case-diagram-annotated.png" alt="" style="width: 70%;height: auto;">
+ <img src="images/use_case_diagram_example.png" alt="" style="width: 70%;height: auto;">
 </figure>
 
 #### Description
@@ -107,7 +113,7 @@ Different domains use some more than others.
 ### Class Diagram
 
 <figure>
- <img src="https://drawio-app.com/wp-content/uploads/2018/01/Class-Diagram-Habit-Tracker-app.png" alt="" style="width: 70%;height: auto;">
+ <img src="images/class_diagram_habit_tracker.png" alt="" style="width: 70%;height: auto;">
 </figure>
 
 #### Description
@@ -128,6 +134,10 @@ Different domains use some more than others.
 | 5..5         | 5      | Exactly 5 instances                     |
 | m..n         |        | At least m but no more than n instances |
 
+~.focusContent.exercise
+
+**Concrete and abstract entities:**
+
 - Entities can be concrete or abstract. From above:
   - Concrete examples:
     - Person
@@ -136,23 +146,30 @@ Different domains use some more than others.
     - Comment
     - ??? (what else?)
 
+/~
+
 #### Key components
 
 - Classes
 - Attributes
 - Methods
 - Relationships between classes (cardinality)
-  <br>
-  <span class="demo">walkthrough:</span> For dog walking service, how would I show…
+
+~.focusContent.exercise
+
+**For dog walking service, how would we show…**
+
 - Dog walker and client (person)?
 - Dogs that he/she is scheduled to walk?
-- Relationships?
+- Relationships between classes?
 - Any other classes needed?
+
+/~
 
 ### Sequence Diagram
 
 <figure>
- <img src="https://drawio-app.com/wp-content/uploads/2018/02/drawio-sequence-checkin.png" alt="" style="width: 70%;height: auto;">
+ <img src="images/sequence_diagram_checkin.png" alt="" style="width: 70%;height: auto;">
 </figure>
 
 #### Description
@@ -173,7 +190,7 @@ What has to happen before another thing happens? Who is involved?
 ### State Diagram
 
 <figure>
- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Turnstile_state_machine_colored.svg/1185px-Turnstile_state_machine_colored.svg.png" alt="" style="width: 70%;height: auto;">
+ <img src="images/state_diagram_turnstile.svg" alt="" style="width: 70%;height: auto;">
 </figure>
 
 #### Description
@@ -187,7 +204,18 @@ Shows states of a system and how it transitions between them.
 
 ~.focusContent.exercise
 
-User signup, registration, and login workflow:
+**Planning a user registration and login workflow:**
+
+Each page can be modeled as a state, shown here by a set of four variables:
+
+| Variable   | Description                                                       |
+| :--------- | :---------------------------------------------------------------- |
+| `uname`    | The username of the user                                          |
+| `pwd`      | The password of the user                                          |
+| `verified` | Whether the user has verified their email                         |
+| `token`    | The authentication token (a hidden field used for authentication) |
+
+Transitions show how users get from one page to another.
 
 <figure>
     <span>
@@ -200,7 +228,7 @@ User signup, registration, and login workflow:
 ### Activity Diagram
 
 <figure>
- <img src="https://cdn-images.visual-paradigm.com/guide/uml/what-is-activity-diagram/04-activity-diagram-example-process-order.png" alt="" style="width: 100%;height: auto;">
+ <img src="images/activity_diagram_process_order.png" alt="" style="width: 100%;height: auto;">
 </figure>
 
 #### Description
@@ -212,15 +240,15 @@ User signup, registration, and login workflow:
 
 - Activities
 - Transitions
-- Branching / merging
-- Forking / joining
+- Branching / merging (indicates processes that may run concurrently, then meet back up)
+- Forking / joining (much like flowchart decision)
 
 ### Hybrids
 
 #### Swimlane Diagram
 
 <figure>
- <img src="https://img.officetimeline.com/website/Content/website/swimlane-diagram/swimlane-process-map-example.svg" alt="" style="width: 60%;height: auto;">
+ <img src="images/swimlane_diagram_example.svg" alt="" style="width: 60%;height: auto;">
 </figure>
 
 - Like an activity diagram... with swimlanes.
@@ -231,3 +259,7 @@ User signup, registration, and login workflow:
 It’s useful to have a baseline knowledge of UML if you work with software at all. Even rough sketches can save valuable communication time.
 
 Mix and match to suit your needs.
+
+<figure>
+ <img src="images/ai_open_server_model.svg" alt="" style="">
+</figure>
