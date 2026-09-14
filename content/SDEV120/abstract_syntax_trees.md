@@ -238,10 +238,9 @@ Evaluate the expressions:
 3) g( g(10) )
 ```
 
-<summary>
 <details>
 <summary>Solution</summary>
-<p>
+<div>
 
 ```
 1) f( g(6) )
@@ -263,6 +262,7 @@ Evaluate the expressions:
     = 2
 ```
 
+</div>
 </details>
 
 _Set 2:_
@@ -282,9 +282,9 @@ Evaluate the expressions:
 3) g( g(2) )
 ```
 
-<summary>
 <details>
 <summary>Solution</summary>
+<div>
 
 ```
 1) f( g(3) )
@@ -306,6 +306,7 @@ Evaluate the expressions:
     = 16
 ```
 
+</div>
 </details>
 
 /~
@@ -327,7 +328,6 @@ Draw the syntax tree for the following expressions, evaluating them as you go:
 2. True and (False or False)
 
 3. True and not False or False
-
 ```
 
 Here is the #3 syntax tree. Notice that order of operations is respected (not, then and, then or):
