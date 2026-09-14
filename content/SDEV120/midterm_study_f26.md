@@ -7,6 +7,8 @@ course: SDEV120
 
 Most missed topics:
 
+- Circuit diagrams: On / off are same as T/F in a boolean expression
+    - "Is the lightbulb on?" = "Does the expression modeled by the diagram evaluate to True?"
 - Nested loops in a flowchart - how to determine the output (work through example today)
 - Evaluate function composition with arguments: f( g( 4) ), f ( f ( 1 ) ), etc.
 - Modulo operator
