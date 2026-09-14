@@ -33,71 +33,23 @@
   </head>
   <body class="bg-light">
     <div class="content-wrapper">
-      <div class="toc">
-        <ul>
-          <li>
-            <a href="#midterm-study-guide">Midterm Study Guide</a>
-            <ul>
-              <li><a href="#not-covered">Not Covered</a></li>
-              <li>
-                <a href="#covered">Covered</a>
-                <ul>
-                  <li>
-                    <a href="#m01">M01</a>
-                    <ul>
-                      <li><a href="#algorithms">Algorithms</a></li>
-                      <li><a href="#pseudocode">Pseudocode</a></li>
-                      <li><a href="#flowcharts">Flowcharts</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#m02">M02</a>
-                    <ul>
-                      <li><a href="#terms">Terms</a></li>
-                      <li>
-                        <a href="#logical-operators">Logical operators</a>
-                      </li>
-                      <li><a href="#truth-tables">Truth tables</a></li>
-                      <li><a href="#misc">Misc</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#m03">M03</a></li>
-                  <li>
-                    <a href="#m05">M05</a>
-                    <ul>
-                      <li><a href="#terms-1">Terms</a></li>
-                      <li><a href="#trees">Trees</a></li>
-                      <li>
-                        <a href="#abstract-syntax-trees"
-                          >Abstract Syntax Trees</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#algebraic-functions">Algebraic Functions</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#m06">M06</a>
-                    <ul>
-                      <li><a href="#sdlc">SDLC</a></li>
-                      <li><a href="#uml">UML</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#final-notes">Final Notes</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
-      <h1 id="midterm-study-guide">Midterm Study Guide</h1>
-      <h2 id="not-covered">Not Covered</h2>
-      <p>M04: Intro to Programming</p>
-      <h2 id="covered">Covered</h2>
-      <p>Everything else.</p>
-      <h3 id="m01">M01</h3>
+      <hr />
+      <p>Most missed topics:</p>
+      <ul>
+        <li>
+          Nested loops in a flowchart - how to determine the output (work
+          through example today)
+        </li>
+        <li>
+          Evaluate function composition with arguments: f( g( 4) ), f ( f ( 1 )
+          ), etc.
+        </li>
+        <li>Modulo operator</li>
+      </ul>
+      <hr />
+      <h3 id="m01-algorithms-and-structured-programming">
+        M01: Algorithms and Structured Programming
+      </h3>
       <h4 id="algorithms">Algorithms</h4>
       <ul>
         <li>What is an algorithm?</li>
@@ -116,7 +68,7 @@
         <li>Know the symbols</li>
         <li>Given a flowchart - follow it and determine the output</li>
       </ul>
-      <h3 id="m02">M02</h3>
+      <h3 id="m02-boolean-algebra">M02: Boolean Algebra</h3>
       <h4 id="terms">Terms</h4>
       <ul>
         <li>Proposition</li>
@@ -160,56 +112,15 @@
           determine the leaf node that is reached
         </li>
       </ul>
-      <h3 id="m03">M03</h3>
-      <ul>
-        <li>What is a logic gate?</li>
-        <li>What is the difference between analog and digital signals?</li>
-        <li>
-          What kinds of things can logic gates and circuits be used for in
-          computing?
-          <ul>
-            <li>
-              <em
-                >Dont have to know specific circuit names and patterns, but
-                should know what they are used for.</em
-              >
-            </li>
-          </ul>
-        </li>
-        <li>What is the computer clock?</li>
-        <li>
-          What is a clock cycle, and how does it relate do the rising and
-          falling edges of a clock signal?
-        </li>
-        <li>
-          Given a circuit consisting of logic gates, be able to determine the
-          output given a set of inputs; will the light turn on?
-          <ul>
-            <li>
-              <em
-                >The gates will be labeled (AND, OR, NOT). You do not have to
-                memorize the symbols for these gates, but you should know what
-                they do.</em
-              >
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <h3 id="m05">M05</h3>
+      <h3 id="m03-functional-arithmetic-and-expression-parsing">
+        M03: Functional Arithmetic and Expression Parsing
+      </h3>
       <h4 id="terms">Terms</h4>
       <ul>
         <li>Syntax</li>
-        <li>Literal</li>
-        <li>Variable</li>
+        <li>Expression</li>
         <li>Operator</li>
         <li>Operand</li>
-      </ul>
-      <p><em>Other:</em></p>
-      <ul>
-        <li>
-          What&#39;s the difference between a statement (it does something) and
-          an expression (it returns something)?
-        </li>
       </ul>
       <h4 id="trees">Trees</h4>
       <ul>
@@ -218,6 +129,7 @@
           How does the post-order traversal algorithm work?
           <ul>
             <li>Given some tree - In what order are nodes visited?</li>
+            <li><em>visitation vs evaluation order</em></li>
           </ul>
         </li>
       </ul>
@@ -236,22 +148,21 @@
       <p>Be able to evaluate:</p>
       <ul>
         <li>Composed functions, e.g. f(g(x))</li>
-        <li>Functions with multiple arguments, e.g. f(x, y)</li>
-        <li>Functions with boolean logic, e.g. f(x, y, z) = x AND y OR z</li>
       </ul>
-      <h3 id="m06">M06</h3>
+      <h3 id="m04-logic-gates-and-circuits">M04: Logic Gates and Circuits</h3>
+      <ul>
+        <li>
+          Given a circuit diagram (image of a logicly diagram), determine the
+          output - is the light on or off given some on / off condition for the
+          inputs.
+        </li>
+        <li>What is the computer clock used for?</li>
+      </ul>
+      <h3 id="m05-system-modeling">M05: System Modeling</h3>
       <h4 id="sdlc">SDLC</h4>
       <ul>
-        <li>What is the software development life cycle?</li>
-        <li>
-          What are three main paradigms for SDLC models, and what is meant by
-          each?
-          <ul>
-            <li>Linear</li>
-            <li>Iterative</li>
-            <li>Continuous</li>
-          </ul>
-        </li>
+        <li>What are the three main paradigms for SDLC models?</li>
+        <li>What are the main advantages of working in small steps?</li>
       </ul>
       <h4 id="uml">UML</h4>
       <ul>
@@ -268,28 +179,6 @@
           </ul>
         </li>
       </ul>
-      <h2 id="final-notes">Final Notes</h2>
-      <ul>
-        <li>
-          <p>
-            For all above: You don&#39;t have to know anything Python specific,
-            just general concepts.
-          </p>
-        </li>
-        <li>
-          <p>
-            You won&#39;t be able to leave the room during the exam, so make
-            sure you prepare accordingly.
-          </p>
-        </li>
-        <li>
-          <p>
-            Bring a pen / pencil. I&#39;ll have paper for in-person. Remote
-            students may use own blank paper.
-          </p>
-        </li>
-      </ul>
-      <p><em>Double check what the question is asking for.</em></p>
     </div>
   </body>
 </html>
