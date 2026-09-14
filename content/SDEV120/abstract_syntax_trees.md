@@ -40,29 +40,6 @@ There are many algorithms for determining the order in which to visit nodes in a
 
 We will use a **post-order** traversal for syntax trees:
 
-<!-- ```
-Let VISIT(node) be:
-
-BEGIN
-    IF the current node is a leaf THEN:
-        Return the value
-    ELSE:
-        IF the current node is a unary operator THEN:
-            VISIT(child)
-            Apply the operator
-            Return the value
-        ELSE:
-            VISIT(left child)
-            VISIT(right child)
-            Apply the operator
-            Return the value
-        END IF
-    END IF
-END
-
-VISIT(root)
-``` -->
-
 ![post-order tree traversal](https://files.codingninjas.in/article_images/iterative-postorder-traversal-of-binary-tree-0-1635320121.jpg)
 
 In the graphic above, visits are shown in blue, evaluations in red.
@@ -109,6 +86,12 @@ If a syntax tree includes variables, we treat them just like literals.
 
 ~.focusContent.example
 
+<figure>
+    <span>
+        <img src="images/ast_7_plus_x_time_y_minus_2.svg" style="">
+    </span>
+</figure>
+
 1. Draw the syntax tree for the expression:
 
 ```
@@ -134,12 +117,24 @@ f(x) = x / 2
 Find the syntax tree for the following expressions:
 
 ```
-1) 10 * f(4) + 3
-
-2) 10 * f(y) + 3
-
-3) f(2) * f(3)
+1) f(x) + 3
 ```
+
+<figure>
+    <span>
+        <img src="images/ast_fx_plus_3.svg" style="">
+    </span>
+</figure>
+
+```
+2) f(x + 1) - 2
+```
+
+<figure>
+    <span>
+        <img src="images/ast_fxplus1_minus_2.svg" style="">
+    </span>
+</figure>
 
 /~
 
@@ -162,11 +157,17 @@ We can use an AST for each function expression, then combine them into larger ex
 
 <figure>
     <span>
-        <img src="images/function_composition_subtrees.png" style="">
+        <img src="images/function_composition_subtrees.svg" style="">
     </span>
 </figure>
 
-With function composition, the "x" in one function will be replaced by a whole function expression.
+With function composition, the "x" in one function will be replaced by a whole function expression. In other words: plug in g(x) where the "x" is in f(x).
+
+<figure>
+    <span>
+        <img src="images/ast_fgx.svg" style="">
+    </span>
+</figure>
 
 ~.focusContent.example
 

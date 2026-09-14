@@ -68,39 +68,6 @@ Code is primarily made up of operators, operands, expressions, and statements.
 
 - `5`, `x`, `True`
 
-### Comparison Operators in Python
-
-A comparison always returns a boolean value, either `True` or `False`.
-
-| Operator | Description              |
-| -------- | ------------------------ |
-| ==       | Equal to                 |
-| !=       | Not equal to             |
-| <        | Less than                |
-| >        | Greater than             |
-| <=       | Less than or equal to    |
-| >=       | Greater than or equal to |
-
-```python
-# Comparing two literals in Python
-print(5 == 5) # True
-print(5 != 5) # False
-```
-
-### Logical Operators in Python
-
-| Operator | Description |
-| -------- | ----------- |
-| and      | conjunction |
-| or       | disjunction |
-| not      | negation    |
-
-```python
-print( True and False ) # False
-print( True or False ) # True
-print( not True ) # False
-```
-
 ## Expressions
 
 Expressions are combinations of literals, variables, and operators that evaluate to a value.
