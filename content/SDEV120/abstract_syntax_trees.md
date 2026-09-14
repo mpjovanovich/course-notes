@@ -157,7 +157,7 @@ We can use an AST for each function expression, then combine them into larger ex
 
 <figure>
     <span>
-        <img src="images/function_composition_subtrees.svg" style="">
+        <img src="images/ast_fx_gx.svg" style="">
     </span>
 </figure>
 
@@ -215,27 +215,98 @@ g(x) = x * 2
 
 /~
 
-## Functions with Multiple Arguments
+~.focusContent.exercise
 
-Functions can take multiple arguments. In this case, we plug in the values for each argument in the order they are given.
+**Extra Practice:**
 
-~.focusContent.example
+Try these on your own for extra practice.
 
-Given the function:
+_Set 1:_
 
-```
-f(x, y) = x + y + 1
-```
-
-Evaluate the following expressions:
+Given the functions:
 
 ```
-1) f(3, 4)
-
-2) f(1, 2)
-
-3) f(3, f(2, 1))
+f(x) = x * 3
+g(x) = x - 4
 ```
+
+Evaluate the expressions:
+
+```
+1) f( g(6) )
+2) f( g(-1) )
+3) g( g(10) )
+```
+
+<summary>
+<details>
+<summary>Solution</summary>
+<p>
+
+```
+1) f( g(6) )
+    = f( 6 - 4 )
+    = f( 2 )
+    = 2 * 3
+    = 6
+
+2) f( g(-1) )
+    = f( -1 - 4 )
+    = f( -5 )
+    = -5 * 3
+    = -15
+
+3) g( g(10) )
+    = g( 10 - 4 )
+    = g( 6 )
+    = 6 - 4
+    = 2
+```
+
+</details>
+
+_Set 2:_
+
+Given the functions:
+
+```
+f(x) = x - 2
+g(x) = x * x
+```
+
+Evaluate the expressions:
+
+```
+1) f( g(3) )
+2) f( g(-1) )
+3) g( g(2) )
+```
+
+<summary>
+<details>
+<summary>Solution</summary>
+
+```
+1) f( g(3) )
+    = f( 3 * 3 )
+    = f( 9 )
+    = 9 - 2
+    = 7
+
+2) f( g(-1) )
+    = f( (-1) * (-1) )
+    = f( 1 )
+    = 1 - 2
+    = -1
+
+3) g( g(2) )
+    = g( 2 * 2 )
+    = g( 4 )
+    = 4 * 4
+    = 16
+```
+
+</details>
 
 /~
 
@@ -250,16 +321,21 @@ They work the same as we've seen so far.
 Draw the syntax tree for the following expressions, evaluating them as you go:
 
 ```
-1) True and False or False
 
-2) True and (False or False)
+1. True and False or False
 
-3) not True
+2. True and (False or False)
+
+3. True and not False or False
+
 ```
 
+Here is the #3 syntax tree. Notice that order of operations is respected (not, then and, then or):
+
+<figure>
+    <span>
+        <img src="images/ast_boolean.svg" style="">
+    </span>
+</figure>
+
 /~
-
-## For the Homework
-
-- Use draw.io to make syntax trees
-- Make sure to double check what the question is asking you to do!
