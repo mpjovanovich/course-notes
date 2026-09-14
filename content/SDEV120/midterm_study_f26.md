@@ -5,14 +5,11 @@ course: SDEV120
 
 ---
 
-Most missed topics, F24:
+Most missed topics:
 
-- Pascal vs camel case
-- There is no "decimal" data type; it's called a "float"
-- Nested loops - how to determine the output
-- De Morgan's law clarification (not always necessary - you can solve inside parentheses then negate)
-- f ( f ( x ) )
-- Modulo (non two case)
+- Nested loops in a flowchart - how to determine the output (work through example today)
+- Evaluate function composition with arguments: f( g( 4) ), f ( f ( 1 ) ), etc.
+- Modulo operator
 
 ---
 
@@ -71,20 +68,16 @@ Most missed topics, F24:
 #### Terms
 
 - Syntax
-- Literal
-- Variable
+- Expression
 - Operator
 - Operand
-
-_Other:_
-
-- What's the difference between a statement (it does something) and an expression (it returns something)?
 
 #### Trees
 
 - Know terms: node, root, leaf, parent, child
 - How does the post-order traversal algorithm work?
   - Given some tree - In what order are nodes visited?
+  - _visitation vs evaluation order_
 
 #### Abstract Syntax Trees
 
@@ -98,19 +91,18 @@ _Other:_
 Be able to evaluate:
 
 - Composed functions, e.g. f(g(x))
-- Functions with multiple arguments, e.g. f(x, y)
-- Functions with boolean logic, e.g. f(x, y, z) = x AND y OR z
 
 ### M04: Logic Gates and Circuits
 
 - Given a circuit diagram (image of a logicly diagram), determine the output - is the light on or off given some on / off condition for the inputs.
-- What is the computer clock used for?... Synchronizing instruction execution and data transfer among components of the computer.
+- What is the computer clock used for?
 
 ### M05: System Modeling
 
 #### SDLC
 
-...
+- What are the three main paradigms for SDLC models?
+- What are the main advantages of working in small steps?
 
 #### UML
 
