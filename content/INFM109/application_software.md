@@ -10,13 +10,13 @@ course: INFM109
     - [Classification of Applications](#classification-of-applications)
       - [Local vs Remote](#local-vs-remote)
       - [Native vs Web](#native-vs-web)
+    - [Design Considerations](#design-considerations)
     - [Productivity Applications](#productivity-applications)
     - [Graphics Technologies](#graphics-technologies)
       - [Bitmap/raster graphics](#bitmapraster-graphics)
       - [Vector graphics](#vector-graphics)
       - [Compression](#compression)
   - [Software Business \& Management](#software-business--management)
-    - [Design Considerations](#design-considerations)
     - [Payment Models](#payment-models)
     - [Target Markets](#target-markets)
     - [Software Updates and Versioning](#software-updates-and-versioning)
@@ -40,22 +40,41 @@ The line between one category and another can be blurry. There are very few appl
 #### Local vs Remote
 
 - **Local**: Applications installed and executed directly on the device's hardware
-- **Remote**: Applications accessed through a web browser without local installation
+- **Remote**: Applications that run on a remote server and are accessed over a network, usually through a web browser
 
 #### Native vs Web
 
-- **Native**: Applications designed specifically for a particular operating system or platform
-- **Web**: Applications accessed through a web browser without local installation
-- **Mobile**: Applications designed for mobile devices (smartphones, tablets)
+- **Native**: Applications built specifically for one operating system or platform, using that platform's own tools and APIs
+- **Web**: Applications built using web technologies (HTML/CSS/JavaScript)
+
+~.focusContent.note
+
+**Local vs Remote** and **Native vs Web** are independent classifications. A web app can be packaged and installed locally as a "hybrid" app (e.g., Spotify's desktop app), or run remotely straight from a browser (e.g., Google Docs).
+
+**Mobile** is not a separate technology - it's a device category. A mobile app can be built natively for iOS/Android, or built with web technologies and wrapped for mobile deployment. The same Local vs Remote and Native vs Web distinctions still apply.
+
+/~
 
 ~.focusContent.exercise
 
 **Real-World Examples:**
 
-- **Local + Native**: Adobe Photoshop, Microsoft Word
+- **Local + Native**: Adobe Photoshop, Microsoft Word (desktop)
 - **Remote + Web**: Google Docs, Netflix in browser
-- **Local + Web**: Spotify desktop app (hybrid)
-- **Mobile Native**: Instagram (app)
+- **Local + Web**: Spotify desktop app, Slack desktop app (hybrid)
+- **Mobile + Native**: Instagram (iOS/Android app)
+
+/~
+
+### Design Considerations
+
+- **Mobile-first design**: Prioritizing mobile device interfaces
+- **Responsive design**: Adapting interfaces to different screen sizes
+- **Cross-platform development**: Tools for building across multiple platforms
+
+~.focusContent.note
+
+We will talk about why applications have different versions for different platforms in the next lecture.
 
 /~
 
@@ -68,6 +87,7 @@ Commonly used office software are called **productivity applications**. These in
 - Presentation software
 - Email
 - Calendar
+- AI-assisted tools (e.g., Copilot in Office, Gemini in Google Workspace) - increasingly built directly into the categories above rather than standing apart as their own product
 
 ~.focusContent.demo
 
@@ -84,6 +104,8 @@ Demo1: Basic Formulas
 | Item 3      | 15.00   | =B5\*$B$1        | =B5+C5         |
 | Item 4      | 50.00   | =B6\*$B$1        | =B6+C6         |
 | Grand Total |         |                  | =SUM(D3:D6)    |
+
+AI tools can now generate formulas like these for you - but you still need to be able to read a formula and verify it's doing what you expect. Treat the walkthrough below as building that "read and verify" skill.
 
 Demo2: [Kaggle CVE 2024 Database: Exploits, CVSS, OS](https://www.kaggle.com/datasets/manavkhambhayata/cve-2024-database-exploits-cvss-os)
 
@@ -208,42 +230,7 @@ If you need to send a high quality image to someone, you should send the origina
 
 /~
 
-~.focusContent.example
-
-**Using GIMP**
-
-Let's try using GIMP to edit and export an image.
-
-<figure>
-    <span>
-        <img src="https://blogs.nasa.gov/spacestation/wp-content/uploads/sites/240/2023/01/nasa-logo-web-rgb.png" style="width:80%;height: auto;">
-    </span>
-</figure>
-
-1. Right click image
-2. Choose "Save Image As..." and save to your machine
-3. Open GIMP
-4. Open the image
-5. Export as JPEG with 100% quality
-6. Export as JPEG with 20% quality
-
-Compare the two file sizes and file qualities. Also note that JPEG does not support transparency like with the original PNG, so the background is filled.
-
-/~
-
 ## Software Business & Management
-
-### Design Considerations
-
-- **Mobile-first design**: Prioritizing mobile device interfaces
-- **Responsive design**: Adapting interfaces to different screen sizes
-- **Cross-platform development**: Tools for building across multiple platforms
-
-~.focusContent.note
-
-We will talk about why applications have different versions for different platforms in the next lecture.
-
-/~
 
 ### Payment Models
 
@@ -253,6 +240,9 @@ We will talk about why applications have different versions for different platfo
 - **Subscription**: Recurring payment for continued access
   - Software as a Service (SaaS)
   - Usually includes continuous updates and cloud features
+- **Freemium**: Core features are free, with paid tiers for advanced features or removing limits
+  - Common in mobile apps and consumer SaaS
+  - May monetize through in-app purchases, ads, or upgrade prompts
 
 ~.focusContent.note
 

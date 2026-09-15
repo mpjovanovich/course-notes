@@ -81,7 +81,6 @@ Part II:
 - [Basic Shell Commands](../common/basic_shell_commands.html)
 - Exercise: making a backup script (see markdown)
 
-<!--
 
 ## Module 03: Software
 
@@ -97,6 +96,8 @@ Part II:
 - [System Software and the Operating System](system_software_operating_system.html)
 - [What does the Operating System Do?](what_does_operating_system_do.html)
 - Intro to Assignments
+
+<!--
 
 ## Module 04: Program and Web Development
 

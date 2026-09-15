@@ -26,7 +26,7 @@ course: INFM109
 
 - Even the computer needs programs that manage its internal activities. These programs are called **system software**.
 
-- The **Operating System (OS)** is a set of programs that coordinates activities among device resources.
+- The **Operating System (OS)** is a set of programs that coordinates activities among device resources. It's the most prominent example of system software, but system software also includes device drivers, firmware, and utility programs.
 
 ## Ownership and Licensing Models
 
@@ -34,9 +34,7 @@ In order to understand the different operating systems, we need to understand th
 
 ### Open Source vs Closed Source
 
-- **Open Source** = Software whose source code is available for public use and modification.
-
-- **Closed Source** = Software whose source code is not publicly available.
+Recall from last class: **open source** software makes its source code publicly available for use and modification; **closed source** software keeps its source code private.
 
 ### Proprietary vs Non-Proprietary
 
@@ -54,6 +52,8 @@ Below are some examples of open source and proprietary software. We will use the
 | Firefox Browser  | Yes          | No           | Free and open source software            |
 | Adobe Reader     | No           | No           | Closed source but free to use            |
 | Red Hat Linux    | Yes          | Yes          | Open source but commercially licensed    |
+
+Red Hat's underlying source code is open (it's licensed under the GPL), but the compiled distribution, trademark, and paid support subscription are commercially controlled by Red Hat - so it counts as both open source _and_ proprietary at the same time.
 
 ## Major OS's in Use Today
 
@@ -95,13 +95,15 @@ Key characteristics:
 - Seamless connection with iDevice ecosystem
 - Strong use in "creative" industries and development
 
-### Linux
+### Unix / Linux
 
 <figure>
     <span>
         <img src="https://media.geeksforgeeks.org/wp-content/uploads/s2-1.jpg" style="width: 80%;height: auto;">
     </span>
 </figure>
+
+Linux is part of the Unix family - it was built as a free, open source alternative to Unix, and follows many of the same design principles.
 
 ~.focusContent.note
 
@@ -142,3 +144,5 @@ The many different operating systems that run on the Linux kernel are called **d
 There is a fun rivalry within the Linux community regarding which distribution is the best.
 
 /~
+
+**Android is a great example of this idea in action.** It's built on top of the Linux kernel, but Google layered its own user interface, app framework, and tools on top - making it look and feel nothing like a typical desktop Linux distro, even though the kernel underneath is the same. This is also why apps often need separate builds for Windows, MacOS, and Linux/Android: each OS provides a different set of tools and APIs on top of its kernel, as we mentioned last class.

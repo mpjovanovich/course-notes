@@ -6,6 +6,7 @@ course: INFM109
 ~.toc
 
 - [What does an Operating System Do?](#what-does-an-operating-system-do)
+  - [Access to Hardware](#access-to-hardware)
   - [Process Management](#process-management)
   - [Memory Management](#memory-management)
     - [Paging](#paging)
@@ -17,6 +18,8 @@ course: INFM109
     - [Interleaved Execution](#interleaved-execution)
     - [Multitasking vs Parallel Processing](#multitasking-vs-parallel-processing)
   - [Input/Output (IO)](#inputoutput-io)
+    - [Buffers](#buffers)
+    - [Device Drivers](#device-drivers)
   - [File Systems](#file-systems)
     - [Disk Partitioning](#disk-partitioning)
 
@@ -27,6 +30,8 @@ course: INFM109
 The programs that we use directly are called **applications**.
 
 In contrast, operating system software runs in the **background** - it is not directly used by the user. The applications that we use can interact with the OS to use the computer's resources.
+
+Recall from last section: the kernel manages memory, CPU time, disk space, and hardware. Today we'll go through each of these OS responsibilities in turn.
 
 ## Access to Hardware
 
@@ -44,7 +49,17 @@ The kernel acts as an intermediary to allocate resources.
 
 ## Process Management
 
-A **process** is a program in execution. We can see the processes that the operating system is running by using system tools:
+A **process** is a program in execution. Each process gets a unique ID (**PID**) that the OS uses to track and manage it.
+
+When a process creates another process, the new one is called a **child process**, and the process that created it is the **parent process**. For example, opening a link in your browser might spawn a new child process for that tab.
+
+At any given moment, a process is in one of a few basic states:
+
+- **Running**: Actively executing on the CPU
+- **Waiting**: Ready to run, but waiting for CPU time or for a resource (like disk or network) to become available
+- **Stopped**: Finished, or terminated before completion
+
+We can see the processes that the operating system is running, along with their state and resource usage, by using system tools:
 
 | OS      | Tool                             |
 | ------- | -------------------------------- |
@@ -183,7 +198,7 @@ All modern operating systems can now handle both multitasking and parallel proce
 
 The OS also manages the input and output devices.
 
-_Buffers_
+### Buffers
 
 <figure>
     <span>
@@ -197,7 +212,7 @@ The OS can allocate **buffers** to store data that is being transferred between 
 - When you move your mouse, the cursor location is stored in a buffer until the computer is ready to update the screen
 - When reading from a hard drive, data is stored in disk buffers to help manage the speed difference between the fast CPU and slower disk
 
-_Device Drivers_
+### Device Drivers
 
 **Device drivers** are specialized programs that form a layer between hardware and the operating system. These drivers _translate_ the OS's commands into hardware-specific instructions, and the other way around.
 
@@ -217,11 +232,15 @@ This is the magic of device drivers! Instead of your OS needing to know about ev
 
 ## File Systems
 
-A **file system** is a way of organizing and storing files on a computer.
+A **file system** is a way of organizing and storing files on a computer. Files are organized into a hierarchy of directories (folders), and each file has a **path** that describes its location in that hierarchy.
 
 When you look at Windows Explorer or MacOS Finder, you are seeing the file system of the computer.
 
-~.focusContent.exercise
+Different operating systems use different file system formats to organize data on disk - for example NTFS (Windows), APFS (MacOS), and ext4 (Linux).
+
+The OS also uses the file system to enforce **permissions**, which control who can read, write, or execute a file. On Windows, this is managed through NTFS permissions; on MacOS and Linux, through a read/write/execute model tied to file ownership (the `chmod` command). Permission errors are one of the most common issues you'll troubleshoot when a program can't access a file it needs.
+
+~.focusContent.note
 
 ### Disk Partitioning
 
@@ -241,10 +260,14 @@ This allows you to:
 
 /~
 
-_Daily Check-in:_
+~.focusContent.exercise
 
-For Windows user, open the Disk Management tool and view the partitions.
+**Daily Check-in:**
 
-For MacOS user, open the Disk Utility tool and view the partitions.
+For Windows users, open the Disk Management tool and view the partitions.
+
+For MacOS users, open the Disk Utility tool and view the partitions.
 
 Submit a screenshot of what you see.
+
+/~
