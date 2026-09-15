@@ -40,6 +40,7 @@
               >What does an Operating System Do?</a
             >
             <ul>
+              <li><a href="#access-to-hardware">Access to Hardware</a></li>
               <li><a href="#process-management">Process Management</a></li>
               <li>
                 <a href="#memory-management">Memory Management</a>
@@ -66,7 +67,13 @@
                   </li>
                 </ul>
               </li>
-              <li><a href="#inputoutput-io">Input/Output (IO)</a></li>
+              <li>
+                <a href="#inputoutput-io">Input/Output (IO)</a>
+                <ul>
+                  <li><a href="#buffers">Buffers</a></li>
+                  <li><a href="#device-drivers">Device Drivers</a></li>
+                </ul>
+              </li>
               <li>
                 <a href="#file-systems">File Systems</a>
                 <ul>
@@ -91,6 +98,11 @@
         applications that we use can interact with the OS to use the
         computer&#39;s resources.
       </p>
+      <p>
+        Recall from last section: the kernel manages memory, CPU time, disk
+        space, and hardware. Today we&#39;ll go through each of these OS
+        responsibilities in turn.
+      </p>
       <h2 id="access-to-hardware">Access to Hardware</h2>
       <figure>
         <span>
@@ -113,8 +125,30 @@
       <p>The kernel acts as an intermediary to allocate resources.</p>
       <h2 id="process-management">Process Management</h2>
       <p>
-        A <strong>process</strong> is a program in execution. We can see the
-        processes that the operating system is running by using system tools:
+        A <strong>process</strong> is a program in execution. Each process gets
+        a unique ID (<strong>PID</strong>) that the OS uses to track and manage
+        it.
+      </p>
+      <p>
+        When a process creates another process, the new one is called a
+        <strong>child process</strong>, and the process that created it is the
+        <strong>parent process</strong>. For example, opening a link in your
+        browser might spawn a new child process for that tab.
+      </p>
+      <p>At any given moment, a process is in one of a few basic states:</p>
+      <ul>
+        <li><strong>Running</strong>: Actively executing on the CPU</li>
+        <li>
+          <strong>Waiting</strong>: Ready to run, but waiting for CPU time or
+          for a resource (like disk or network) to become available
+        </li>
+        <li>
+          <strong>Stopped</strong>: Finished, or terminated before completion
+        </li>
+      </ul>
+      <p>
+        We can see the processes that the operating system is running, along
+        with their state and resource usage, by using system tools:
       </p>
       <table>
         <thead>
@@ -370,7 +404,7 @@
 
       <h2 id="inputoutput-io">Input/Output (IO)</h2>
       <p>The OS also manages the input and output devices.</p>
-      <p><em>Buffers</em></p>
+      <h3 id="buffers">Buffers</h3>
       <figure>
         <span>
           <img
@@ -401,7 +435,7 @@
           manage the speed difference between the fast CPU and slower disk
         </li>
       </ul>
-      <p><em>Device Drivers</em></p>
+      <h3 id="device-drivers">Device Drivers</h3>
       <p>
         <strong>Device drivers</strong> are specialized programs that form a
         layer between hardware and the operating system. These drivers
@@ -434,13 +468,29 @@
       <h2 id="file-systems">File Systems</h2>
       <p>
         A <strong>file system</strong> is a way of organizing and storing files
-        on a computer.
+        on a computer. Files are organized into a hierarchy of directories
+        (folders), and each file has a <strong>path</strong> that describes its
+        location in that hierarchy.
       </p>
       <p>
         When you look at Windows Explorer or MacOS Finder, you are seeing the
         file system of the computer.
       </p>
-      <div class="focusContent exercise">
+      <p>
+        Different operating systems use different file system formats to
+        organize data on disk - for example NTFS (Windows), APFS (MacOS), and
+        ext4 (Linux).
+      </p>
+      <p>
+        The OS also uses the file system to enforce
+        <strong>permissions</strong>, which control who can read, write, or
+        execute a file. On Windows, this is managed through NTFS permissions; on
+        MacOS and Linux, through a read/write/execute model tied to file
+        ownership (the <code>chmod</code> command). Permission errors are one of
+        the most common issues you&#39;ll troubleshoot when a program can&#39;t
+        access a file it needs.
+      </p>
+      <div class="focusContent note">
         <h3 id="disk-partitioning">Disk Partitioning</h3>
         <figure>
           <span>
@@ -466,12 +516,17 @@
         </ul>
       </div>
 
-      <p><em>Daily Check-in:</em></p>
-      <p>
-        For Windows user, open the Disk Management tool and view the partitions.
-      </p>
-      <p>For MacOS user, open the Disk Utility tool and view the partitions.</p>
-      <p>Submit a screenshot of what you see.</p>
+      <div class="focusContent exercise">
+        <p><strong>Daily Check-in:</strong></p>
+        <p>
+          For Windows users, open the Disk Management tool and view the
+          partitions.
+        </p>
+        <p>
+          For MacOS users, open the Disk Utility tool and view the partitions.
+        </p>
+        <p>Submit a screenshot of what you see.</p>
+      </div>
     </div>
   </body>
 </html>

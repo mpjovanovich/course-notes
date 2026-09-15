@@ -53,6 +53,9 @@
                     </ul>
                   </li>
                   <li>
+                    <a href="#design-considerations">Design Considerations</a>
+                  </li>
+                  <li>
                     <a href="#productivity-applications"
                       >Productivity Applications</a
                     >
@@ -76,10 +79,12 @@
                   >Software Business &amp; Management</a
                 >
                 <ul>
-                  <li>
-                    <a href="#design-considerations">Design Considerations</a>
-                  </li>
                   <li><a href="#payment-models">Payment Models</a></li>
+                  <li>
+                    <a href="#software-distribution-channels"
+                      >Software Distribution Channels</a
+                    >
+                  </li>
                   <li><a href="#target-markets">Target Markets</a></li>
                   <li>
                     <a href="#software-updates-and-versioning"
@@ -118,23 +123,20 @@
           on the device&#39;s hardware
         </li>
         <li>
-          <strong>Remote</strong>: Applications accessed through a web browser
-          without local installation
+          <strong>Remote</strong>: Applications that run on a remote server and
+          are accessed over a network, usually through a web browser
         </li>
       </ul>
       <h4 id="native-vs-web">Native vs Web</h4>
       <ul>
         <li>
-          <strong>Native</strong>: Applications designed specifically for a
-          particular operating system or platform
+          <strong>Native</strong>: Applications built specifically for one
+          operating system or platform, using that platform&#39;s own tools and
+          APIs
         </li>
         <li>
-          <strong>Web</strong>: Applications accessed through a web browser
-          without local installation
-        </li>
-        <li>
-          <strong>Mobile</strong>: Applications designed for mobile devices
-          (smartphones, tablets)
+          <strong>Web</strong>: Applications built using web technologies
+          (HTML/CSS/JavaScript)
         </li>
       </ul>
       <div class="focusContent exercise">
@@ -142,13 +144,52 @@
         <ul>
           <li>
             <strong>Local + Native</strong>: Adobe Photoshop, Microsoft Word
+            (desktop)
           </li>
           <li>
             <strong>Remote + Web</strong>: Google Docs, Netflix in browser
           </li>
-          <li><strong>Local + Web</strong>: Spotify desktop app (hybrid)</li>
-          <li><strong>Mobile Native</strong>: Instagram (app)</li>
+          <li>
+            <strong>Local + Web</strong>: Spotify desktop app, Slack desktop app
+            (hybrid)
+          </li>
+          <li><strong>Mobile + Native</strong>: Instagram (iOS/Android app)</li>
         </ul>
+      </div>
+
+      <h3 id="design-considerations">Design Considerations</h3>
+      <ul>
+        <li>
+          <strong>Mobile-first design</strong>: Prioritizing mobile device
+          interfaces
+        </li>
+        <li>
+          <strong>Responsive design</strong>: Adapting interfaces to different
+          screen sizes
+        </li>
+        <li>
+          <strong>Cross-platform development</strong>: Tools for building across
+          multiple platforms
+        </li>
+        <li>
+          <strong>Accessibility (a11y)</strong>: Designing for users with
+          visual, auditory, motor, or cognitive impairments (e.g., screen-reader
+          support, sufficient color contrast, keyboard navigation)
+        </li>
+        <li>
+          <strong>Localization (i18n)</strong>: Adapting software for different
+          languages, regions, and cultural conventions
+        </li>
+      </ul>
+      <div class="focusContent note">
+        <p><strong>Why Accessibility Matters</strong></p>
+        <p>
+          Many organizations are legally required to meet accessibility
+          standards (e.g., WCAG) for their software and websites, similar to
+          physical accessibility requirements for buildings. Ignoring
+          accessibility isn&#39;t just an ethical gap - it&#39;s a compliance
+          risk.
+        </p>
       </div>
 
       <h3 id="productivity-applications">Productivity Applications</h3>
@@ -162,6 +203,18 @@
         <li>Presentation software</li>
         <li>Email</li>
         <li>Calendar</li>
+        <li>
+          Chat &amp; video conferencing (e.g., Slack, Microsoft Teams, Zoom)
+        </li>
+        <li>
+          Cloud storage &amp; real-time collaboration (e.g., shared drives,
+          co-authoring, version history)
+        </li>
+        <li>
+          AI-assisted tools (e.g., Copilot in Office, Gemini in Google
+          Workspace) - increasingly built directly into the categories above
+          rather than standing apart as their own product
+        </li>
       </ul>
       <div class="focusContent demo">
         <p><strong>Spreadsheet Tips and Tricks:</strong></p>
@@ -220,6 +273,12 @@
             </tr>
           </tbody>
         </table>
+        <p>
+          AI tools can now generate formulas like these for you - but you still
+          need to be able to read a formula and verify it&#39;s doing what you
+          expect. Treat the walkthrough below as building that &quot;read and
+          verify&quot; skill.
+        </p>
         <p>
           Demo2:
           <a
@@ -297,32 +356,6 @@
         </table>
       </div>
 
-      <div class="focusContent exercise">
-        <p><strong>Challenge: Keyboard Shortcut Madness!</strong></p>
-        <p>
-          Your instructor will now race through the following challenge, first
-          using only the mouse, then using only keyboard shortcuts.
-        </p>
-        <p>
-          You may ridicule him if he fails to complete the challenge in under 10
-          seconds using shortcuts.
-        </p>
-        <p><em>Preparation:</em></p>
-        <ol>
-          <li>Create a new document in your favorite word processor</li>
-          <li>Type &quot;I love shortcuts.&quot;</li>
-        </ol>
-        <p><em>Challenge:</em></p>
-        <ol>
-          <li>Copy the line and paste it 5 times</li>
-          <li>Undo the latest paste (should now have 4 lines)</li>
-          <li>Select all text</li>
-          <li>Make it bold</li>
-          <li>Save the document</li>
-        </ol>
-        <p>Now you try!</p>
-      </div>
-
       <h3 id="graphics-technologies">Graphics Technologies</h3>
       <h4 id="bitmapraster-graphics">Bitmap/raster graphics</h4>
       <figure>
@@ -344,6 +377,36 @@
         <li>GIF</li>
         <li>WebP</li>
       </ul>
+      <div class="focusContent note">
+        <p><strong>Choosing a Raster Format</strong></p>
+        <table>
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>JPEG</td>
+              <td>Photographs; smaller files, some quality loss</td>
+            </tr>
+            <tr>
+              <td>PNG</td>
+              <td>Images needing transparency; lossless</td>
+            </tr>
+            <tr>
+              <td>GIF</td>
+              <td>Simple animations; limited color palette</td>
+            </tr>
+            <tr>
+              <td>WebP</td>
+              <td>Modern general-purpose format; smaller than JPEG/PNG</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <h4 id="vector-graphics">Vector graphics</h4>
       <figure>
         <span>
@@ -373,6 +436,12 @@
       <p>
         Compression is the process of reducing the size of a file or data. This
         is useful for saving space and for transmitting data more quickly.
+      </p>
+      <p>
+        Compression isn&#39;t limited to images - general-purpose archive
+        formats like ZIP and 7z compress any kind of file losslessly, while
+        formats like MP3 (audio) and MP4/H.264 (video) use lossy compression to
+        shrink media files.
       </p>
       <figure>
         <span>
@@ -433,56 +502,7 @@
         </p>
       </div>
 
-      <div class="focusContent example">
-        <p><strong>Using GIMP</strong></p>
-        <p>Let&#39;s try using GIMP to edit and export an image.</p>
-        <figure>
-          <span>
-            <img
-              src="https://blogs.nasa.gov/spacestation/wp-content/uploads/sites/240/2023/01/nasa-logo-web-rgb.png"
-              style="width: 80%; height: auto"
-            />
-          </span>
-        </figure>
-
-        <ol>
-          <li>Right click image</li>
-          <li>Choose &quot;Save Image As...&quot; and save to your machine</li>
-          <li>Open GIMP</li>
-          <li>Open the image</li>
-          <li>Export as JPEG with 100% quality</li>
-          <li>Export as JPEG with 20% quality</li>
-        </ol>
-        <p>
-          Compare the two file sizes and file qualities. Also note that JPEG
-          does not support transparency like with the original PNG, so the
-          background is filled.
-        </p>
-      </div>
-
       <h2 id="software-business--management">Software Business & Management</h2>
-      <h3 id="design-considerations">Design Considerations</h3>
-      <ul>
-        <li>
-          <strong>Mobile-first design</strong>: Prioritizing mobile device
-          interfaces
-        </li>
-        <li>
-          <strong>Responsive design</strong>: Adapting interfaces to different
-          screen sizes
-        </li>
-        <li>
-          <strong>Cross-platform development</strong>: Tools for building across
-          multiple platforms
-        </li>
-      </ul>
-      <div class="focusContent note">
-        <p>
-          We will talk about why applications have different versions for
-          different platforms in the next lecture.
-        </p>
-      </div>
-
       <h3 id="payment-models">Payment Models</h3>
       <ul>
         <li>
@@ -500,9 +520,43 @@
             <li>Usually includes continuous updates and cloud features</li>
           </ul>
         </li>
+        <li>
+          <strong>Freemium</strong>: Core features are free, with paid tiers for
+          advanced features or removing limits
+          <ul>
+            <li>Common in mobile apps and consumer SaaS</li>
+            <li>
+              May monetize through in-app purchases, ads, or upgrade prompts
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Volume/Enterprise Licensing</strong>: Businesses purchase
+          licenses in bulk, or a flat &quot;site license,&quot; to cover many
+          users at once - often at a discounted per-seat rate
+        </li>
       </ul>
       <div class="focusContent note">
+        <p><strong>Licensing Agreements</strong></p>
+        <p>
+          Agreeing to pay for software is different from agreeing to its
+          <strong>End User License Agreement (EULA)</strong> or
+          <strong>Terms of Service (ToS)</strong>. These agreements govern how
+          you&#39;re allowed to use the software - what data it collects,
+          who&#39;s liable if something goes wrong, and whether you can
+          redistribute or reverse-engineer it. Clicking &quot;I Agree&quot; is a
+          legal commitment, even when no money changes hands.
+        </p>
+      </div>
+
+      <div class="focusContent note">
         <p><strong>Open Source Software</strong></p>
+        <p>
+          Open source vs. closed source is a separate, independent
+          classification from the payment models above - an open source project
+          can still be sold commercially, and a free product isn&#39;t
+          necessarily open source.
+        </p>
         <p>
           Open source software is software who&#39;s source code is available to
           the public, usually online. Although it is often free, it is not
@@ -526,6 +580,31 @@
         <p>Example: <a href="https://github.com/GNOME/gimp">GIMP</a></p>
       </div>
 
+      <h3 id="software-distribution-channels">
+        Software Distribution Channels
+      </h3>
+      <p>How software reaches users varies by platform and audience:</p>
+      <ul>
+        <li>
+          <strong>App Stores</strong>: Centralized marketplaces (Apple App
+          Store, Google Play, Microsoft Store) that handle discovery,
+          installation, and updates
+        </li>
+        <li>
+          <strong>Direct Download</strong>: Downloading an installer directly
+          from the vendor&#39;s website
+        </li>
+        <li>
+          <strong>Enterprise Deployment</strong>: IT departments push software
+          to many devices at once using Mobile Device Management (MDM) or
+          similar tools
+        </li>
+        <li>
+          <strong>Package Managers</strong>: Command-line tools (e.g., apt,
+          Homebrew, npm) that install and manage software and its dependencies,
+          common in open source ecosystems
+        </li>
+      </ul>
       <h3 id="target-markets">Target Markets</h3>
       <ul>
         <li>
@@ -555,7 +634,8 @@
       <ul>
         <li>
           <strong>Major version</strong>: Significant changes to the software.
-          Breaks backward compatibility.
+          Breaks backward compatibility. Other tools that use this software may
+          not be able to use it after updating.
         </li>
         <li>
           <strong>Minor version</strong>: New features or improvements.
@@ -566,6 +646,54 @@
           Compatible with previous version.
         </li>
       </ul>
+      <p>Software is also often labeled by release stage:</p>
+      <ul>
+        <li>
+          <strong>Alpha</strong>: Early, unstable version for internal testing
+        </li>
+        <li>
+          <strong>Beta</strong>: Feature-complete but still being tested; often
+          released to a limited public audience
+        </li>
+        <li>
+          <strong>Release Candidate (RC)</strong>: Believed ready for release,
+          pending final testing
+        </li>
+        <li>
+          <strong>Long-Term Support (LTS)</strong>: A release that receives
+          updates and support for an extended period, favored for stability over
+          having the newest features (e.g., Ubuntu LTS)
+        </li>
+      </ul>
+      <div class="focusContent lookout">
+        <p><strong>End-of-Life (EOL) Software</strong></p>
+        <p>
+          Every version of software eventually stops receiving updates,
+          including security patches. Running EOL software is a common cause of
+          security breaches - if you&#39;re still using something past its
+          support lifecycle, it&#39;s time to upgrade.
+        </p>
+      </div>
+
+      <div class="focusContent exercise">
+        <p><strong>Check-In: Major, Minor, or Patch?</strong></p>
+        <p>
+          Match each change below to the correct type of version bump:
+          <strong>Major</strong>, <strong>Minor</strong>, or
+          <strong>Patch</strong>.
+        </p>
+        <ol>
+          <li>Fixed a typo in a menu label</li>
+          <li>
+            Added a new &quot;dark mode&quot; setting that doesn&#39;t affect
+            existing features
+          </li>
+          <li>
+            Changed a file input format; as a result, older versions of a
+            connected tool can no longer open the old file format.
+          </li>
+        </ol>
+      </div>
     </div>
   </body>
 </html>

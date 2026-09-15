@@ -97,7 +97,9 @@
         <li>
           <p>
             The <strong>Operating System (OS)</strong> is a set of programs that
-            coordinates activities among device resources.
+            coordinates activities among device resources. It&#39;s the most
+            prominent example of system software, but system software also
+            includes device drivers, firmware, and utility programs.
           </p>
         </li>
       </ul>
@@ -109,20 +111,11 @@
         understand the different ownership and licensing models that exist.
       </p>
       <h3 id="open-source-vs-closed-source">Open Source vs Closed Source</h3>
-      <ul>
-        <li>
-          <p>
-            <strong>Open Source</strong> = Software whose source code is
-            available for public use and modification.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Closed Source</strong> = Software whose source code is not
-            publicly available.
-          </p>
-        </li>
-      </ul>
+      <p>
+        Recall from last class: <strong>open source</strong> software makes its
+        source code publicly available for use and modification;
+        <strong>closed source</strong> software keeps its source code private.
+      </p>
       <h3 id="proprietary-vs-non-proprietary">
         Proprietary vs Non-Proprietary
       </h3>
@@ -183,6 +176,13 @@
           </tr>
         </tbody>
       </table>
+      <p>
+        Red Hat&#39;s underlying source code is open (it&#39;s licensed under
+        the GPL), but the compiled distribution, trademark, and paid support
+        subscription are commercially controlled by Red Hat - so it counts as
+        both open source
+        <em>and</em> proprietary at the same time.
+      </p>
       <h2 id="major-oss-in-use-today">Major OS's in Use Today</h2>
       <table>
         <thead>
@@ -248,7 +248,7 @@
         <li>Seamless connection with iDevice ecosystem</li>
         <li>Strong use in &quot;creative&quot; industries and development</li>
       </ul>
-      <h3 id="linux">Linux</h3>
+      <h3 id="unix--linux">Unix / Linux</h3>
       <figure>
         <span>
           <img
@@ -258,6 +258,10 @@
         </span>
       </figure>
 
+      <p>
+        Linux is part of the Unix family - it was built as a free, open source
+        alternative to Unix, and follows many of the same design principles.
+      </p>
       <div class="focusContent note">
         <h4 id="the-kernel">The Kernel</h4>
         <p>
@@ -327,6 +331,16 @@
           distribution is the best.
         </p>
       </div>
+
+      <p>
+        <strong>Android is a great example of this idea in action.</strong>
+        It&#39;s built on top of the Linux kernel, but Google layered its own
+        user interface, app framework, and tools on top - making it look and
+        feel nothing like a typical desktop Linux distro, even though the kernel
+        underneath is the same. This is also why apps often need separate builds
+        for Windows, MacOS, and Linux/Android: each OS provides a different set
+        of tools and APIs on top of its kernel, as we mentioned last class.
+      </p>
     </div>
   </body>
 </html>
