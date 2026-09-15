@@ -142,7 +142,7 @@ Several common keyboard shortcuts are fairly universal, and are essential for pr
 
 <figure>
     <span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/1200px-Sunflower_from_Silesia2.jpg?20091008132228" style="width: 80%;height: auto;">
+        <img src="images/bitmap-raster-example-sunflower.jpg" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -170,7 +170,7 @@ Pixel-based images. Best for smooth gradients and natural images like photograph
 
 <figure>
     <span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Vector-based_example.svg" style="width: 80%;height: auto;">
+        <img src="images/vector-graphics-example.svg" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -194,7 +194,7 @@ Compression isn't limited to images - general-purpose archive formats like ZIP a
 
 <figure>
     <span>
-        <img src="https://bitmovin.com/wp-content/uploads/2020/03/LossyCompressionDoggo.jpeg" style="width: 100%;height: auto;">
+        <img src="images/lossy-compression-example.jpg" style="width: 100%;height: auto;">
     </span>
 </figure>
 
