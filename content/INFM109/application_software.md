@@ -72,12 +72,6 @@ The line between one category and another can be blurry. There are very few appl
 - **Responsive design**: Adapting interfaces to different screen sizes
 - **Cross-platform development**: Tools for building across multiple platforms
 
-~.focusContent.note
-
-We will talk about why applications have different versions for different platforms in the next lecture.
-
-/~
-
 ### Productivity Applications
 
 Commonly used office software are called **productivity applications**. These include:
@@ -134,31 +128,6 @@ Several common keyboard shortcuts are fairly universal, and are essential for pr
 | Ctrl+B   | Bold          |
 | Ctrl++   | Increase zoom |
 | Ctrl+-   | Decrease zoom |
-
-/~
-
-~.focusContent.exercise
-
-**Challenge: Keyboard Shortcut Madness!**
-
-Your instructor will now race through the following challenge, first using only the mouse, then using only keyboard shortcuts.
-
-You may ridicule him if he fails to complete the challenge in under 10 seconds using shortcuts.
-
-_Preparation:_
-
-1. Create a new document in your favorite word processor
-1. Type "I love shortcuts."
-
-_Challenge:_
-
-1. Copy the line and paste it 5 times
-1. Undo the latest paste (should now have 4 lines)
-1. Select all text
-1. Make it bold
-1. Save the document
-
-Now you try!
 
 /~
 
