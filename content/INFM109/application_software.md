@@ -18,6 +18,7 @@ course: INFM109
       - [Compression](#compression)
   - [Software Business \& Management](#software-business--management)
     - [Payment Models](#payment-models)
+    - [Software Distribution Channels](#software-distribution-channels)
     - [Target Markets](#target-markets)
     - [Software Updates and Versioning](#software-updates-and-versioning)
 
@@ -47,14 +48,6 @@ The line between one category and another can be blurry. There are very few appl
 - **Native**: Applications built specifically for one operating system or platform, using that platform's own tools and APIs
 - **Web**: Applications built using web technologies (HTML/CSS/JavaScript)
 
-~.focusContent.note
-
-**Local vs Remote** and **Native vs Web** are independent classifications. A web app can be packaged and installed locally as a "hybrid" app (e.g., Spotify's desktop app), or run remotely straight from a browser (e.g., Google Docs).
-
-**Mobile** is not a separate technology - it's a device category. A mobile app can be built natively for iOS/Android, or built with web technologies and wrapped for mobile deployment. The same Local vs Remote and Native vs Web distinctions still apply.
-
-/~
-
 ~.focusContent.exercise
 
 **Real-World Examples:**
@@ -71,6 +64,16 @@ The line between one category and another can be blurry. There are very few appl
 - **Mobile-first design**: Prioritizing mobile device interfaces
 - **Responsive design**: Adapting interfaces to different screen sizes
 - **Cross-platform development**: Tools for building across multiple platforms
+- **Accessibility (a11y)**: Designing for users with visual, auditory, motor, or cognitive impairments (e.g., screen-reader support, sufficient color contrast, keyboard navigation)
+- **Localization (i18n)**: Adapting software for different languages, regions, and cultural conventions
+
+~.focusContent.note
+
+**Why Accessibility Matters**
+
+Many organizations are legally required to meet accessibility standards (e.g., WCAG) for their software and websites, similar to physical accessibility requirements for buildings. Ignoring accessibility isn't just an ethical gap - it's a compliance risk.
+
+/~
 
 ### Productivity Applications
 
@@ -81,6 +84,8 @@ Commonly used office software are called **productivity applications**. These in
 - Presentation software
 - Email
 - Calendar
+- Chat & video conferencing (e.g., Slack, Microsoft Teams, Zoom)
+- Cloud storage & real-time collaboration (e.g., shared drives, co-authoring, version history)
 - AI-assisted tools (e.g., Copilot in Office, Gemini in Google Workspace) - increasingly built directly into the categories above rather than standing apart as their own product
 
 ~.focusContent.demo
@@ -148,6 +153,19 @@ Pixel-based images. Best for smooth gradients and natural images like photograph
 - GIF
 - WebP
 
+~.focusContent.note
+
+**Choosing a Raster Format**
+
+| Format | Best For                                             |
+| ------ | ---------------------------------------------------- |
+| JPEG   | Photographs; smaller files, some quality loss        |
+| PNG    | Images needing transparency; lossless                |
+| GIF    | Simple animations; limited color palette             |
+| WebP   | Modern general-purpose format; smaller than JPEG/PNG |
+
+/~
+
 #### Vector graphics
 
 <figure>
@@ -171,6 +189,8 @@ Let's try saving the SVG image above and opening it in a text editor to see the 
 #### Compression
 
 Compression is the process of reducing the size of a file or data. This is useful for saving space and for transmitting data more quickly.
+
+Compression isn't limited to images - general-purpose archive formats like ZIP and 7z compress any kind of file losslessly, while formats like MP3 (audio) and MP4/H.264 (video) use lossy compression to shrink media files.
 
 <figure>
     <span>
@@ -212,10 +232,21 @@ If you need to send a high quality image to someone, you should send the origina
 - **Freemium**: Core features are free, with paid tiers for advanced features or removing limits
   - Common in mobile apps and consumer SaaS
   - May monetize through in-app purchases, ads, or upgrade prompts
+- **Volume/Enterprise Licensing**: Businesses purchase licenses in bulk, or a flat "site license," to cover many users at once - often at a discounted per-seat rate
+
+~.focusContent.note
+
+**Licensing Agreements**
+
+Agreeing to pay for software is different from agreeing to its **End User License Agreement (EULA)** or **Terms of Service (ToS)**. These agreements govern how you're allowed to use the software - what data it collects, who's liable if something goes wrong, and whether you can redistribute or reverse-engineer it. Clicking "I Agree" is a legal commitment, even when no money changes hands.
+
+/~
 
 ~.focusContent.note
 
 **Open Source Software**
+
+Open source vs. closed source is a separate, independent classification from the payment models above - an open source project can still be sold commercially, and a free product isn't necessarily open source.
 
 Open source software is software who's source code is available to the public, usually online. Although it is often free, it is not always free.
 
@@ -228,6 +259,15 @@ Some advantages of open source software include:
 Example: [GIMP](https://github.com/GNOME/gimp)
 
 /~
+
+### Software Distribution Channels
+
+How software reaches users varies by platform and audience:
+
+- **App Stores**: Centralized marketplaces (Apple App Store, Google Play, Microsoft Store) that handle discovery, installation, and updates
+- **Direct Download**: Downloading an installer directly from the vendor's website
+- **Enterprise Deployment**: IT departments push software to many devices at once using Mobile Device Management (MDM) or similar tools
+- **Package Managers**: Command-line tools (e.g., apt, Homebrew, npm) that install and manage software and its dependencies, common in open source ecosystems
 
 ### Target Markets
 
@@ -244,6 +284,33 @@ Example: [GIMP](https://github.com/GNOME/gimp)
 
 With **semantic versioning**, software versions are typically written as `MAJOR.MINOR.PATCH`.
 
-- **Major version**: Significant changes to the software. Breaks backward compatibility.
+- **Major version**: Significant changes to the software. Breaks backward compatibility. Other tools that use this software may not be able to use it after updating.
 - **Minor version**: New features or improvements. Compatible with previous version.
 - **Patch version**: Bug fixes and security updates. Compatible with previous version.
+
+Software is also often labeled by release stage:
+
+- **Alpha**: Early, unstable version for internal testing
+- **Beta**: Feature-complete but still being tested; often released to a limited public audience
+- **Release Candidate (RC)**: Believed ready for release, pending final testing
+- **Long-Term Support (LTS)**: A release that receives updates and support for an extended period, favored for stability over having the newest features (e.g., Ubuntu LTS)
+
+~.focusContent.lookout
+
+**End-of-Life (EOL) Software**
+
+Every version of software eventually stops receiving updates, including security patches. Running EOL software is a common cause of security breaches - if you're still using something past its support lifecycle, it's time to upgrade.
+
+/~
+
+~.focusContent.exercise
+
+**Check-In: Major, Minor, or Patch?**
+
+Match each change below to the correct type of version bump: **Major**, **Minor**, or **Patch**.
+
+1. Fixed a typo in a menu label
+2. Added a new "dark mode" setting that doesn't affect existing features
+3. Changed a file input format; as a result, older versions of a connected tool can no longer open the old file format.
+
+/~
