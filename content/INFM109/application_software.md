@@ -43,19 +43,20 @@ The line between one category and another can be blurry. There are very few appl
 - **Local**: Applications installed and executed directly on the device's hardware
 - **Remote**: Applications that run on a remote server and are accessed over a network, usually through a web browser
 
-#### Native vs Web
+#### Native vs Cross Platform
 
 - **Native**: Applications built specifically for one operating system or platform, using that platform's own tools and APIs
-- **Web**: Applications built using web technologies (HTML/CSS/JavaScript)
+- **Cross Platform**: Applications built typically using web technologies (HTML/CSS/JavaScript)
 
 ~.focusContent.exercise
 
 **Real-World Examples:**
 
+Let's look at what aspects of these applications might fall into which parts of each spectrum:
+
 - **Local + Native**: Adobe Photoshop, Microsoft Word (desktop)
-- **Remote + Web**: Google Docs, Netflix in browser
-- **Local + Web**: Spotify desktop app, Slack desktop app (hybrid)
-- **Mobile + Native**: Instagram (iOS/Android app)
+- **Remote + Cross Platform**: Google Docs, Netflix in browser
+- **Mixed**: Spotify desktop app, Slack desktop app (hybrid)
 
 /~
 
@@ -229,34 +230,12 @@ If you need to send a high quality image to someone, you should send the origina
 - **Subscription**: Recurring payment for continued access
   - Software as a Service (SaaS)
   - Usually includes continuous updates and cloud features
-- **Freemium**: Core features are free, with paid tiers for advanced features or removing limits
-  - Common in mobile apps and consumer SaaS
-  - May monetize through in-app purchases, ads, or upgrade prompts
-- **Volume/Enterprise Licensing**: Businesses purchase licenses in bulk, or a flat "site license," to cover many users at once - often at a discounted per-seat rate
 
 ~.focusContent.note
 
 **Licensing Agreements**
 
 Agreeing to pay for software is different from agreeing to its **End User License Agreement (EULA)** or **Terms of Service (ToS)**. These agreements govern how you're allowed to use the software - what data it collects, who's liable if something goes wrong, and whether you can redistribute or reverse-engineer it. Clicking "I Agree" is a legal commitment, even when no money changes hands.
-
-/~
-
-~.focusContent.note
-
-**Open Source Software**
-
-Open source vs. closed source is a separate, independent classification from the payment models above - an open source project can still be sold commercially, and a free product isn't necessarily open source.
-
-Open source software is software who's source code is available to the public, usually online. Although it is often free, it is not always free.
-
-Some advantages of open source software include:
-
-- **Flexibility**: Can be easily modified to meet specific needs
-- **Transparency**: Source code is publicly available for scrutiny. Free testing and development by many people.
-- **Community**: Many open source projects have large communities of users who contribute to the project.
-
-Example: [GIMP](https://github.com/GNOME/gimp)
 
 /~
 
