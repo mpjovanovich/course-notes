@@ -89,7 +89,7 @@ In other words, the OS acts as a middleman between the program and the physical 
 
 <figure>
     <span>
-        <img src="https://ih1.redbubble.net/image.4920882316.2019/raf,360x360,075,t,fafafa:ca443f4786.jpg" style="width: 100%;height: auto;">
+        <img src="images/safe-memory-access-meme.jpg" style="width: 100%;height: auto;">
     </span>
 </figure>
 
@@ -131,7 +131,7 @@ The data from running programs must first be loaded into **memory** (RAM) before
 
 <figure>
     <span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Priv_rings.svg/500px-Priv_rings.svg.png" style="height: auto;">
+        <img src="images/privilege-rings.png" style="height: auto;">
     </span>
 </figure>
 
@@ -145,7 +145,7 @@ The kernel acts as an intermediary to allocate resources.
 
 <figure>
     <span>
-        <img src="https://recoverhdd.com/wp-content/themes/soft/images/blog/swap-file/principle.gif" style="width: 80%;height: auto;">
+        <img src="images/swap-file-principle.gif" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -176,7 +176,7 @@ A large swap file is not a substitute for more RAM!
 
 <figure>
     <span>
-        <img src="https://martin-thoma.com/images/2021/05/parallel-interleaved.png" style="width: 100%;height: auto;">
+        <img src="images/parallel-vs-interleaved-execution.png" style="width: 100%;height: auto;">
     </span>
 </figure>
 
@@ -220,7 +220,7 @@ The OS also manages the input and output devices.
 
 <figure>
     <span>
-        <img src="https://iximiuz.com/nodejs-writable-streams-distilled/kdpv.gif" style="width: 80%;height: auto;">
+        <img src="images/buffer-queue-animation.gif" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -264,7 +264,7 @@ The OS also uses the file system to enforce **permissions**, which control who c
 
 <figure>
     <span>
-        <img src="https://images.wondershare.com/recoverit/article/what-is-partition.jpg" style="width: 100%;height: auto;">
+        <img src="images/disk-partition-diagram.jpg" style="width: 100%;height: auto;">
     </span>
 </figure>
 
