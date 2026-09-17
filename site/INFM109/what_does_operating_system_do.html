@@ -103,26 +103,21 @@
         space, and hardware. Today we&#39;ll go through each of these OS
         responsibilities in turn.
       </p>
-      <h2 id="access-to-hardware">Access to Hardware</h2>
+      <h2 id="resource-brokering">Resource Brokering</h2>
+      <p>
+        The OS is responsible for coordinating access to the resources of the
+        computer. This includes the CPU, memory, disk space, and input/output
+        devices.
+      </p>
       <figure>
         <span>
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Priv_rings.svg/500px-Priv_rings.svg.png"
-            style="height: auto"
+            src="images/OS_resource_broker.svg"
+            style="width: 100%; height: auto"
           />
         </span>
       </figure>
 
-      <p>
-        Programs are said to run in either <strong>user mode</strong> or
-        <strong>kernel mode</strong>.
-      </p>
-      <p>
-        User mode programs have restricted privileges, and must request hardware
-        access via system calls to the kernel. This allows user programs to be
-        ignorant of the hardware on which they are running.
-      </p>
-      <p>The kernel acts as an intermediary to allocate resources.</p>
       <h2 id="process-management">Process Management</h2>
       <p>
         A <strong>process</strong> is a program in execution. Each process gets
@@ -176,6 +171,80 @@
         This will show us both <strong>user processes</strong> (applications)
         and <strong>system processes</strong> (OS components).
       </p>
+      <h3 id="virtual-memory">Virtual Memory</h3>
+      <p>
+        In early computers, programs had to know exactly where their data was
+        physically stored in memory. This was a problem because one program
+        might accidentally overwrite another program&#39;s data.
+      </p>
+      <p>
+        <strong>Virtual memory</strong> creates a simple way for programs to
+        work with memory by separating two things:
+      </p>
+      <ol>
+        <li>
+          The memory addresses that programs use to access data (virtual
+          addresses)
+        </li>
+        <li>
+          The actual physical locations in RAM or on disk (physical addresses)
+        </li>
+      </ol>
+      <p>
+        Each program gets its own set of virtual addresses starting at zero and
+        going up in order. The operating system handles converting these virtual
+        addresses to real physical locations. This system:
+      </p>
+      <ul>
+        <li>
+          Lets programs work with memory without knowing where data actually is
+        </li>
+        <li>Prevents programs from accessing each other&#39;s memory space</li>
+        <li>Allows the OS to move data between RAM and disk as needed</li>
+        <li>Makes it possible to run programs even when RAM is limited</li>
+      </ul>
+      <p>
+        In other words, the OS acts as a middleman between the program and the
+        physical memory.
+      </p>
+      <div class="focusContent example">
+        <h3 id="safe-memory-access">Safe Memory Access</h3>
+        <figure>
+          <span>
+            <img
+              src="images/safe-memory-access-meme.jpg"
+              style="width: 100%; height: auto"
+            />
+          </span>
+        </figure>
+
+        <p>
+          One of the most important jobs of the OS is to protect the memory of
+          one program from another. A user program cannot directly access memory
+          - it must request the OS to access memory on its behalf. This is done
+          through
+          <strong>system calls</strong>.
+        </p>
+        <p>
+          This security system is crucial because malicious programs often try
+          to exploit memory access. For example, many damaging computer viruses
+          work by attempting to bypass these protections to overwrite the memory
+          of other programs with their own code. If successful, they can inject
+          malicious instructions into running programs, potentially taking
+          control of the system.
+        </p>
+      </div>
+
+      <h3 id="process-isolation">Process Isolation</h3>
+      <figure>
+        <span>
+          <img
+            src="images/OS_process_isolation.svg"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
       <h2 id="memory-management">Memory Management</h2>
       <h3 id="paging">Paging</h3>
       <figure>
@@ -211,11 +280,28 @@
         </li>
       </ul>
       <div class="focusContent example">
+        <h3 id="controlling-privileges">Controlling Privileges</h3>
+        <figure>
+          <span>
+            <img src="images/privilege-rings.png" style="height: auto" />
+          </span>
+        </figure>
+
+        <p>
+          Programs are said to run in either <strong>user mode</strong> or
+          <strong>kernel mode</strong>.
+        </p>
+        <p>
+          User mode programs have restricted privileges, and must request
+          hardware access via system calls to the kernel. This allows user
+          programs to be ignorant of the hardware on which they are running.
+        </p>
+        <p>The kernel acts as an intermediary to allocate resources.</p>
         <h3 id="paging-and-swap-space">Paging and Swap Space</h3>
         <figure>
           <span>
             <img
-              src="https://recoverhdd.com/wp-content/themes/soft/images/blog/swap-file/principle.gif"
+              src="images/swap-file-principle.gif"
               style="width: 80%; height: auto"
             />
           </span>
@@ -272,75 +358,11 @@
         <p>A large swap file is not a substitute for more RAM!</p>
       </div>
 
-      <h3 id="virtual-memory">Virtual Memory</h3>
-      <p>
-        In early computers, programs had to know exactly where their data was
-        physically stored in memory. This was a problem because one program
-        might accidentally overwrite another program&#39;s data.
-      </p>
-      <p>
-        <strong>Virtual memory</strong> creates a simple way for programs to
-        work with memory by separating two things:
-      </p>
-      <ol>
-        <li>
-          The memory addresses that programs use to access data (virtual
-          addresses)
-        </li>
-        <li>
-          The actual physical locations in RAM or on disk (physical addresses)
-        </li>
-      </ol>
-      <p>
-        Each program gets its own set of virtual addresses starting at zero and
-        going up in order. The operating system handles converting these virtual
-        addresses to real physical locations. This system:
-      </p>
-      <ul>
-        <li>
-          Lets programs work with memory without knowing where data actually is
-        </li>
-        <li>Prevents programs from accessing each other&#39;s memory space</li>
-        <li>Allows the OS to move data between RAM and disk as needed</li>
-        <li>Makes it possible to run programs even when RAM is limited</li>
-      </ul>
-      <p>
-        In other words, the OS acts as a middleman between the program and the
-        physical memory.
-      </p>
-      <div class="focusContent example">
-        <h3 id="safe-memory-access">Safe Memory Access</h3>
-        <figure>
-          <span>
-            <img
-              src="https://ih1.redbubble.net/image.4920882316.2019/raf,360x360,075,t,fafafa:ca443f4786.jpg"
-              style="width: 100%; height: auto"
-            />
-          </span>
-        </figure>
-
-        <p>
-          One of the most important jobs of the OS is to protect the memory of
-          one program from another. A user program cannot directly access memory
-          - it must request the OS to access memory on its behalf. This is done
-          through
-          <strong>system calls</strong>.
-        </p>
-        <p>
-          This security system is crucial because malicious programs often try
-          to exploit memory access. For example, many damaging computer viruses
-          work by attempting to bypass these protections to overwrite the memory
-          of other programs with their own code. If successful, they can inject
-          malicious instructions into running programs, potentially taking
-          control of the system.
-        </p>
-      </div>
-
       <h2 id="multitasking-os">Multitasking OS</h2>
       <figure>
         <span>
           <img
-            src="https://martin-thoma.com/images/2021/05/parallel-interleaved.png"
+            src="images/parallel-vs-interleaved-execution.png"
             style="width: 100%; height: auto"
           />
         </span>
@@ -408,7 +430,7 @@
       <figure>
         <span>
           <img
-            src="https://iximiuz.com/nodejs-writable-streams-distilled/kdpv.gif"
+            src="images/buffer-queue-animation.gif"
             style="width: 80%; height: auto"
           />
         </span>
@@ -495,7 +517,7 @@
         <figure>
           <span>
             <img
-              src="https://images.wondershare.com/recoverit/article/what-is-partition.jpg"
+              src="images/disk-partition-diagram.jpg"
               style="width: 100%; height: auto"
             />
           </span>
