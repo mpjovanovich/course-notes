@@ -33,19 +33,15 @@ In contrast, operating system software runs in the **background** - it is not di
 
 Recall from last section: the kernel manages memory, CPU time, disk space, and hardware. Today we'll go through each of these OS responsibilities in turn.
 
-## Access to Hardware
+## Resource Brokering
+
+The OS is responsible for coordinating access to the resources of the computer. This includes the CPU, memory, disk space, and input/output devices.
 
 <figure>
     <span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Priv_rings.svg/500px-Priv_rings.svg.png" style="height: auto;">
+        <img src="images/OS_resource_broker.svg" style="width: 100%;height: auto;">
     </span>
 </figure>
-
-Programs are said to run in either **user mode** or **kernel mode**.
-
-User mode programs have restricted privileges, and must request hardware access via system calls to the kernel. This allows user programs to be ignorant of the hardware on which they are running.
-
-The kernel acts as an intermediary to allocate resources.
 
 ## Process Management
 
@@ -68,57 +64,6 @@ We can see the processes that the operating system is running, along with their 
 | Linux   | `top` or `htop`                  |
 
 This will show us both **user processes** (applications) and **system processes** (OS components).
-
-## Memory Management
-
-### Paging
-
-<figure>
-    <span>
-        <img src="images/virtual_memory.svg" style="width: 100%;height: auto;">
-    </span>
-</figure>
-
-The data from running programs must first be loaded into **memory** (RAM) before the CPU can use them, but we don't need to load all of the program into memory at once.
-
-**Paging** is a memory management technique that allows the OS to load parts of a program into memory at different times:
-
-- Programs are split into small, equal-sized chunks called "pages"
-- Only the pages that are actively being used are loaded into memory
-- When a page is not actively being used but still belongs to a running program, it can be moved to disk (called the **page file** or **swap file**)
-
-~.focusContent.example
-
-### Paging and Swap Space
-
-<figure>
-    <span>
-        <img src="https://recoverhdd.com/wp-content/themes/soft/images/blog/swap-file/principle.gif" style="width: 80%;height: auto;">
-    </span>
-</figure>
-
-Paging works much like taking books from a shelf. If your program is an encyclopedia, here's how the different storage components map to real-world objects:
-
-| Computer Component | Real-World Analogy            | Description                                             |
-| ------------------ | ----------------------------- | ------------------------------------------------------- |
-| Hard Drive         | Bookcase                      | Long term storage for everything on the computer        |
-| Swap Space         | Closest shelf within bookcase | Temporary storage for active program, but still on disc |
-| RAM                | Desk                          | Resources at hand for current process                   |
-| CPU                | You                           | Can only read one page at a time                        |
-
-/~
-
-~.focusContent.lookout
-
-### Thrashing
-
-Swapping pages between RAM and the swap file on disc is an expensive operation!
-
-When the program spends more time swapping pages than actually running, it is said to be **thrashing**.
-
-A large swap file is not a substitute for more RAM!
-
-/~
 
 ### Virtual Memory
 
@@ -151,6 +96,79 @@ In other words, the OS acts as a middleman between the program and the physical 
 One of the most important jobs of the OS is to protect the memory of one program from another. A user program cannot directly access memory - it must request the OS to access memory on its behalf. This is done through **system calls**.
 
 This security system is crucial because malicious programs often try to exploit memory access. For example, many damaging computer viruses work by attempting to bypass these protections to overwrite the memory of other programs with their own code. If successful, they can inject malicious instructions into running programs, potentially taking control of the system.
+
+/~
+
+### Process Isolation
+
+<figure>
+    <span>
+        <img src="images/OS_process_isolation.svg" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
+## Memory Management
+
+### Paging
+
+<figure>
+    <span>
+        <img src="images/virtual_memory.svg" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
+The data from running programs must first be loaded into **memory** (RAM) before the CPU can use them, but we don't need to load all of the program into memory at once.
+
+**Paging** is a memory management technique that allows the OS to load parts of a program into memory at different times:
+
+- Programs are split into small, equal-sized chunks called "pages"
+- Only the pages that are actively being used are loaded into memory
+- When a page is not actively being used but still belongs to a running program, it can be moved to disk (called the **page file** or **swap file**)
+
+~.focusContent.example
+
+### Controlling Privileges
+
+<figure>
+    <span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Priv_rings.svg/500px-Priv_rings.svg.png" style="height: auto;">
+    </span>
+</figure>
+
+Programs are said to run in either **user mode** or **kernel mode**.
+
+User mode programs have restricted privileges, and must request hardware access via system calls to the kernel. This allows user programs to be ignorant of the hardware on which they are running.
+
+The kernel acts as an intermediary to allocate resources.
+
+### Paging and Swap Space
+
+<figure>
+    <span>
+        <img src="https://recoverhdd.com/wp-content/themes/soft/images/blog/swap-file/principle.gif" style="width: 80%;height: auto;">
+    </span>
+</figure>
+
+Paging works much like taking books from a shelf. If your program is an encyclopedia, here's how the different storage components map to real-world objects:
+
+| Computer Component | Real-World Analogy            | Description                                             |
+| ------------------ | ----------------------------- | ------------------------------------------------------- |
+| Hard Drive         | Bookcase                      | Long term storage for everything on the computer        |
+| Swap Space         | Closest shelf within bookcase | Temporary storage for active program, but still on disc |
+| RAM                | Desk                          | Resources at hand for current process                   |
+| CPU                | You                           | Can only read one page at a time                        |
+
+/~
+
+~.focusContent.lookout
+
+### Thrashing
+
+Swapping pages between RAM and the swap file on disc is an expensive operation!
+
+When the program spends more time swapping pages than actually running, it is said to be **thrashing**.
+
+A large swap file is not a substitute for more RAM!
 
 /~
 
