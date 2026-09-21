@@ -67,8 +67,6 @@ Part II:
 
 Part I:
 
-<!-- THIS IS A CHANGE! -->
-
 <!-- TODO: first couple sections of "selection and care" describe computer components and belong in "hardware fundamentals" -->
 
 - [Hardware Fundamentals](hardware_fundamentals.html)
@@ -80,7 +78,6 @@ Part II:
 - [Input and Output Technologies](input_output_technologies.html)
 - [Basic Shell Commands](../common/basic_shell_commands.html)
 - Exercise: making a backup script (see markdown)
-
 
 ## Module 03: Software
 

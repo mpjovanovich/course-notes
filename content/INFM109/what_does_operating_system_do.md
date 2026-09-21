@@ -65,6 +65,14 @@ We can see the processes that the operating system is running, along with their 
 
 This will show us both **user processes** (applications) and **system processes** (OS components).
 
+~.focusContent.exercise
+
+**Check-in: Understanding Running Programs**
+
+What is the term for a program that is currently in a state of execution?
+
+/~
+
 ### Virtual Memory
 
 In early computers, programs had to know exactly where their data was physically stored in memory. This was a problem because one program might accidentally overwrite another program's data.
