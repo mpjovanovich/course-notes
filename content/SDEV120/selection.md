@@ -51,7 +51,7 @@ These are most often what appear in the `if` expressions.
 | >=       | Greater than or equal to |
 | <=       | Less than or equal to    |
 
-~/.focusContent.lookout
+~.focusContent.lookout
 
 **Assignment vs Comparison Operators**
 
@@ -100,13 +100,15 @@ if x:
 
 ~.focusContent.demo
 
+**Check if even**
+
 Check if a number is even. (We will do even or odd in a single program shortly.)
 
 /~
 
 ~.focusContent.demo
 
-1.  Order processing logic
+**Order processing logic**
 
 Write a program given the following logic:
 
@@ -165,6 +167,8 @@ else:
 #### Demo Programs
 
 ~.focusContent.demo
+
+**Check if even or odd**
 
 Check if a number is even/odd.
 
