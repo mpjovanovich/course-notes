@@ -5,6 +5,27 @@ course: SDEV120
 
 ~.toc
 
+- [Decision](#decision)
+  - [Comparison Operators in Python](#comparison-operators-in-python)
+  - [Single Alternative](#single-alternative)
+    - [Example Algorithm](#example-algorithm)
+      - [Pseudocode](#pseudocode)
+    - [Python `if` Statement](#python-if-statement)
+      - [Demo Programs](#demo-programs)
+  - [Dual Alternative](#dual-alternative)
+    - [Example Algorithm](#example-algorithm-1)
+      - [Pseudocode](#pseudocode-1)
+    - [Python `if, else` Statement](#python-if-else-statement)
+      - [Demo Programs](#demo-programs-1)
+  - [Nested Decision Structures](#nested-decision-structures)
+    - [Example Algorithm](#example-algorithm-2)
+      - [Pseudocode](#pseudocode-2)
+  - [Fallthrough Decisions](#fallthrough-decisions)
+    - [Example Algorithm](#example-algorithm-3)
+      - [Pseudocode](#pseudocode-3)
+    - [Python `if, elif, else` Statement](#python-if-elif-else-statement)
+      - [Demo Programs](#demo-programs-2)
+
 /~
 
 # Decision
@@ -63,10 +84,6 @@ BEGIN
     Print the amount due
 END
 ```
-
-#### Flowchart
-
-_Do in class. Keep for later._
 
 ### Python `if` Statement
 
@@ -136,10 +153,6 @@ BEGIN
 END
 ```
 
-#### Flowchart
-
-_Do in class._
-
 ### Python `if, else` Statement
 
 ```python
@@ -204,10 +217,6 @@ BEGIN
 END
 ```
 
-#### Flowchart
-
-_Do in class._
-
 ## Fallthrough Decisions
 
 We can chain together arbitrary amounts of decisions to represent “fallback logic” - if, else if, else if, … else.
@@ -245,10 +254,6 @@ BEGIN
     Print the amount due
 END
 ```
-
-#### Flowchart
-
-_Do in class._
 
 ### Python `if, elif, else` Statement
 
