@@ -94,19 +94,16 @@ Part II:
 - [What does the Operating System Do?](what_does_operating_system_do.html)
 - Intro to Assignments
 
-<!--
-
 ## Module 04: Program and Web Development
 
-TODO: What exactly is the browser?
-  - https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg
-  - Layout engine (browser engine) vs JavaScript engine... what does what?
-
 - [Software Development Life Cycle (SDLC)](../SDEV120/sdlc.html?course=INFM109)
-- Brief overview of HTML, CSS, and JavaScript
-  - One page app: create some elements; style them; add text change on mouseover via JavaScript
+
+TODO: What exactly is the browser?
+
+- https://upload.wikimedia.org/wikipedia/commons/7/74/Timeline_of_web_browsers.svg
+- Layout engine (browser engine) vs JavaScript engine... what does what?
+
 - Guided Assignment: Exploring Web Technologies
-- Break: Create a GitHub account if you don't have one
 - Guided Assigment: Creating a Static Website
 - Intro to Assignments
 
@@ -115,8 +112,10 @@ TODO: What exactly is the browser?
 - [Types of Data](types_of_data.html)
 - [Data Hierarchy and Modeling](data_hierarchy_modeling.html)
 - [Database Storage](database_storage.html)
-- Guided Assignment: [Student Study App Software](https://github.com/mpjovanovich-IvyTechDemos/student-study-app)
+- TODO (update!): Guided Assignment: [Student Study App Software](https://github.com/mpjovanovich-IvyTechDemos/student-study-app)
 - Intro to Assignments
+
+<!--
 
 ## Module 06: Networking and Storage
 

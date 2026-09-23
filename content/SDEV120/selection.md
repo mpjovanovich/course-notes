@@ -5,31 +5,6 @@ course: SDEV120
 
 ~.toc
 
-- [Decision](#decision)
-  - [Single Alternative](#single-alternative)
-    - [Example Algorithm](#example-algorithm)
-      - [Pseudocode](#pseudocode)
-      - [Flowchart](#flowchart)
-    - [Python `if` Statement](#python-if-statement)
-      - [Demo Programs](#demo-programs)
-  - [Dual Alternative](#dual-alternative)
-    - [Example Algorithm](#example-algorithm-1)
-      - [Pseudocode](#pseudocode-1)
-      - [Flowchart](#flowchart-1)
-    - [Python `if, else` Statement](#python-if-else-statement)
-      - [Demo Programs](#demo-programs-1)
-  - [Nested Decision Structures](#nested-decision-structures)
-    - [Example Algorithm](#example-algorithm-2)
-      - [Pseudocode](#pseudocode-2)
-      - [Flowchart](#flowchart-2)
-- [SDEV 140 Only](#sdev-140-only)
-  - [Fallthrough Decisions](#fallthrough-decisions)
-    - [Example Algorithm](#example-algorithm-3)
-      - [Pseudocode](#pseudocode-3)
-      - [Flowchart](#flowchart-3)
-    - [Python `if, elif, else` Statement](#python-if-elif-else-statement)
-      - [Demo Programs](#demo-programs-2)
-
 /~
 
 # Decision
@@ -40,6 +15,31 @@ This decision must resolve to a **boolean** value, which is either `true` or `fa
 
 In other words, it must use an **boolean expression** to make the decision.
 
+## Comparison Operators in Python
+
+Comparison operators are used to compare two values and return a boolean value (True or False).
+
+These are most often what appear in the `if` expressions.
+
+| Operator | Description              |
+| -------- | ------------------------ |
+| ==       | Equal to                 |
+| !=       | Not equal to             |
+| >        | Greater than             |
+| <        | Less than                |
+| >=       | Greater than or equal to |
+| <=       | Less than or equal to    |
+
+~/.focusContent.lookout
+
+**Assignment vs Comparison Operators**
+
+A common mistake is to use a single equal sign for comparison rather than a double equal sign.
+
+Be careful to use `==` when comparing!
+
+/~
+
 ## Single Alternative
 
 A **single alternative decision structure** yields control to a process only if some boolean expression is true.
@@ -48,20 +48,19 @@ A **single alternative decision structure** yields control to a process only if 
 
 ### Example Algorithm
 
-Charge Customer for Item - v1
+Price a Pool Day Pass - v1
 
 #### Pseudocode
 
 ```plaintext
 BEGIN
-    Begin point of sales transaction
-    Scan all items
+    Start with the adult day rate
 
-    IF customer is a rewards member:
-        Apply discount
+    IF visitor has a season pass:
+        Waive the day rate
     END IF
 
-    Complete point of sales transaction
+    Print the amount due
 END
 ```
 
@@ -115,27 +114,25 @@ Dual alternative example: Open communication channel with landing aircraft.
 
 ### Example Algorithm
 
-Charge Customer for Item - v2
+Price a Pool Day Pass - v2
 
 #### Pseudocode
 
 ```plaintext
 BEGIN
-    Begin point of sales transaction
-    Scan all items
+    Start with the adult day rate
 
-    IF customer is a rewards member:
-        Apply discount
-
-    Get payment method
-
-    IF payment method is credit card:
-        Swipe card
+    IF session is open swim:
+        Charge the day rate
     ELSE
-        Take cash
+        Charge the day rate plus a lane fee
     END IF
 
-    End point of sales transaction
+    IF visitor has a season pass:
+        Waive the day rate
+    END IF
+
+    Print the amount due
 END
 ```
 
@@ -178,42 +175,38 @@ END
 
 ### Example Algorithm
 
-Charge Customer for Item - v3
+Price a Pool Day Pass - v3
 
 #### Pseudocode
 
 ```plaintext
 BEGIN
-    Begin point of sales transaction
-    Scan all items
-
-    IF customer is a rewards member:
-        Apply discount
-
-    Get payment method
-
-    IF payment method is credit card:
-        Swipe card
-
-        IF payment is declined:
-            Deny payment
-            Shelve items for restocking
+    IF session is open swim:
+        IF visitor is a child:
+            Set the day rate to the child rate
+        ELSE
+            Set the day rate to the adult rate
+        END IF
     ELSE
-        Take cash
+        Set the day rate to the adult rate
+        Add a lane fee
 
-        IF change is due:
-            Give change
+        IF lane is reserved for the full hour:
+            Add a reservation fee
+        END IF
     END IF
 
-    End point of sales transaction
+    IF visitor has a season pass:
+        Waive the day rate
+    END IF
+
+    Print the amount due
 END
 ```
 
 #### Flowchart
 
 _Do in class._
-
-# SDEV 140 Only
 
 ## Fallthrough Decisions
 
@@ -231,30 +224,25 @@ What would the pseudocode look like if we did not have `else if`, and instead ju
 
 ### Example Algorithm
 
-Charge Customer for Item - v3
+Price a Pool Day Pass - v4
 
 #### Pseudocode
 
 ```plaintext
 BEGIN
-    Begin point of sales transaction
-    Scan all items
-
-    IF customer is a rewards member:
-        Apply discount
-
-    Get payment method
-
-    IF payment method is credit card:
-        Swipe card
-    ELSE IF payment method is cash:
-        Take cash
+    IF session is open swim:
+        Charge the day rate
+    ELSE IF session is a lap lane:
+        Charge the day rate plus a lane fee
     ELSE
-        Deny payment
-        Shelve items for restocking
+        Do not admit the visitor
     END IF
 
-    End point of sales transaction
+    IF visitor has a season pass:
+        Waive the day rate
+    END IF
+
+    Print the amount due
 END
 ```
 

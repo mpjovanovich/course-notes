@@ -66,8 +66,6 @@ Exploration: Intro to Logic group exercise
 
 [Decision Trees](decision_tree.html)
 
-Review Day 1 content
-
 [Solving Problems with Truth Tables](solving_problems_with_truth_tables.html)
 
 ## M03: Functional Arithmetic and Expression Parsing
@@ -109,8 +107,6 @@ After class: Review Truth Tables solution for those that want to see it
 ## M07: Selection Structures
 
 [Selection Structures](selection.html)
-
-Discussion: Designing a Smart Music Recommender
 
 ## M08: Loops and Iteration
 

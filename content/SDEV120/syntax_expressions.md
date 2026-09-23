@@ -5,15 +5,13 @@ course: SDEV120
 
 ~.toc
 
+## Table of Contents
+
 - [Syntax and Expressions](#syntax-and-expressions)
   - [Syntax](#syntax)
     - [Natural Language Syntax](#natural-language-syntax)
     - [Programming Language Syntax](#programming-language-syntax)
-  - [Literals and Variables](#literals-and-variables)
   - [Operators](#operators)
-    - [Comparison Operators in Python](#comparison-operators-in-python)
-    - [Logical Operators in Python](#logical-operators-in-python)
-  - [Expressions](#expressions)
 
 /~
 
