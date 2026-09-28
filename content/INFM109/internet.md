@@ -134,7 +134,7 @@ A **client server model** is a way of organizing software so that one program (t
 
 <figure>
     <span>
-        <img src="https://www.liquidweb.com/wp-content/uploads/2024/03/client-server-network-1024x653-1.jpg" style="width: 80%;height: auto;">
+        <img src="images/client-server-network-diagram.jpg" alt="Client-server network diagram" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -146,7 +146,7 @@ A **client server model** is a way of organizing software so that one program (t
 
 <figure>
     <span>
-        <img src="https://www.trystar.com/wp-content/uploads/slider/cache/9a2123c06651b09966e2f65f7ca99c06/Server-Rack-Extra.jpg" style="width: 50%;height: auto;">
+        <img src="images/server-rack.jpg" alt="Server rack" style="width: 50%;height: auto;">
     </span>
 </figure>
 

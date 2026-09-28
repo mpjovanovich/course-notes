@@ -52,7 +52,7 @@ Examples of services offered:
 
 <figure>
     <span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Seal_of_the_United_States_Cyber_Command.svg/500px-Seal_of_the_United_States_Cyber_Command.svg.png" style="">
+        <img src="images/seal-of-the-united-states-cyber-command.png" alt="Seal of the United States Cyber Command" style="">
     </span>
 </figure>
 
@@ -72,7 +72,7 @@ Many governments will also hire out to both legitimate and criminal groups for c
 
 <figure>
     <span>
-        <img src="https://cdn.mos.cms.futurecdn.net/sXPvSsmXFxpMonMEYCjWt9-970-80.jpg.webp" style="">
+        <img src="images/insider-threat-illustration.webp" alt="Insider threat illustration" style="">
     </span>
 </figure>
 
@@ -95,7 +95,7 @@ Why insider threats are particularly dangerous:
 
 <figure>
     <span>
-        <img src="https://uploads.dailydot.com/2024/11/Hackerman_meme_Roboto_Rami.jpg?q=65&auto=format&w=1200&ar=2:1&fit=crop" style="width: 80%;height: auto;">
+        <img src="images/hackerman-meme.jpg" alt="Hackerman meme" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -114,7 +114,7 @@ Characteristics:
 
 <figure>
     <span>
-        <img src="https://imgs.xkcd.com/comics/how_hacking_works_2x.png" style="width: 80%;height: auto;">
+        <img src="images/xkcd-how-hacking-works-comic.png" alt="xkcd How Hacking Works comic" style="width: 80%;height: auto;">
     </span>
 </figure>
 

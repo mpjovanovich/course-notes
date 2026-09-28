@@ -210,7 +210,7 @@ A better question would be: "Who currently has ownership of my data?"
 
 <figure>
     <span>
-        <img src="https://pbs.twimg.com/media/GT7EZwzXUAELtWe?format=jpg&name=4096x4096" style="width: 100%;height: auto;">
+        <img src="images/aws-services-case-study-image.jpg" alt="AWS services case study image" style="width: 100%;height: auto;">
     </span>
 </figure>
 

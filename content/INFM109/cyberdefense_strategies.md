@@ -37,7 +37,7 @@ course: INFM109
 ### Shift Left
 
 <figure>
-  <img src="https://www.softwaretestingmaterial.com/wp-content/uploads/2019/08/Shift-Left-Testing.webp" alt="Shift Left" />
+  <img src="images/shift-left.webp" alt="Shift Left" />
   <figcaption>Note: this image focuses on the term "testing" but we're talking about all types of security activities at each of these stages.</figcaption>
 </figure>
 

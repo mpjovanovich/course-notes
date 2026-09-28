@@ -31,7 +31,7 @@ AI can analyze social media profiles and public information to craft highly pers
 
 <figure>
     <span>
-        <img src="https://i.guim.co.uk/img/media/61f857b39fd48a847fb1f8bce039710b536c4c2f/60_0_1800_1080/master/1800.jpg?width=880&dpr=2&s=none&crop=none" style="width: 80%;height: auto;">
+        <img src="images/deepfake-impersonation-news-photo.jpg" alt="Deepfake impersonation news photo" style="width: 80%;height: auto;">
     </span>
 </figure>
 

@@ -155,13 +155,13 @@ Common scenarios:
 
 <figure>
     <span>
-        <img src="https://imgs.xkcd.com/comics/exploits_of_a_mom_2x.png" style="width: 100%;height: auto;">
+        <img src="images/xkcd-exploits-of-a-mom-comic-about-sql-injection.png" alt="xkcd Exploits of a Mom comic about SQL injection" style="width: 100%;height: auto;">
     </span>
 </figure>
 
 <figure>
     <span>
-        <img src="https://cwe.mitre.org/data/images/CWE-269-Diagram.png" style="width: 100%;height: auto;">
+        <img src="images/cwe-269-improper-privilege-management-diagram.png" alt="CWE-269 improper privilege management diagram" style="width: 100%;height: auto;">
     </span>
 </figure>
 
@@ -209,7 +209,7 @@ Dev should have used parameterized query.
 
 <figure>
     <span>
-        <img src="https://cwe.mitre.org/data/images/CWE-79-Diagram.png" style="width: 100%;height: auto;">
+        <img src="images/cwe-79-cross-site-scripting-diagram.png" alt="CWE-79 cross-site scripting diagram" style="width: 100%;height: auto;">
     </span>
 </figure>
 

@@ -68,7 +68,7 @@ Red Hat's underlying source code is open (it's licensed under the GPL), but the 
 
 <figure>
     <span>
-        <img src="https://pub-d00f534024b04d0e8036586fc78a41fa.r2.dev/sites/2/2021/06/WIN_Start_GenZ_Light_16x10_en-US.png" style="width: 80%;height: auto;">
+        <img src="images/windows-11-start-menu.png" alt="Windows 11 Start menu" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -83,7 +83,7 @@ Key characteristics:
 
 <figure>
     <span>
-        <img src="https://www.apple.com/newsroom/images/product/os/macos/standard/Apple-previews-macOS-Catalina-screen-06032019_big.jpg.medium_2x.jpg" style="width: 80%;height: auto;">
+        <img src="images/macos-catalina-desktop.jpg" alt="macOS Catalina desktop" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -99,7 +99,7 @@ Key characteristics:
 
 <figure>
     <span>
-        <img src="https://media.geeksforgeeks.org/wp-content/uploads/s2-1.jpg" style="width: 80%;height: auto;">
+        <img src="images/unix-linux-operating-system-diagram.jpg" alt="Unix Linux operating system diagram" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -130,7 +130,7 @@ Key characteristics:
 
 <figure>
     <span>
-        <img src="https://www.openlogic.com/sites/default/files/inline-images/image.png" style="width: 80%;height: auto;">
+        <img src="images/linux-distributions-family-tree.png" alt="Linux distributions family tree" style="width: 80%;height: auto;">
     </span>
     <figcaption>
         <p>

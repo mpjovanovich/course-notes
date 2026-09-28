@@ -54,7 +54,7 @@ course: INFM109
 
 <figure>
     <span>
-        <img src="https://lifehacker.com/imagery/articles/01HF2GHSHNMHE0PKCW32DH0BCG/hero-image.jpg" style="width: 60%;height: auto;">
+        <img src="images/synchronous-communication-phone-call.jpg" alt="Synchronous communication phone call" style="width: 60%;height: auto;">
     </span>
 </figure>
 
@@ -77,7 +77,7 @@ A pattern where both parties communicate in real-time with minimal delay.
 
 <figure>
     <span>
-        <img src="https://www.rd.com/wp-content/uploads/2024/06/Scam-Text-Messages-GettyImages-2.png" style="width: 60%;height: auto;">
+        <img src="images/asynchronous-communication-text-messages.png" alt="Asynchronous communication text messages" style="width: 60%;height: auto;">
     </span>
 </figure>
 
@@ -126,7 +126,7 @@ A model where one device (the client) requests resources or services from anothe
 
 <figure>
     <span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/P2P_network.svg" style="width: 80%;height: auto;">
+        <img src="images/peer-to-peer-network-diagram.svg" alt="Peer-to-peer network diagram" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -161,7 +161,7 @@ Assuming the server has some data that the client needs, there are four main pat
 
 <figure>
     <span>
-        <img src="https://images.ctfassets.net/cpumif18y1gd/3eKQDniB5cF9tuAtyRuAfN/3929339d8379f3ebd396452352eba415/wordpress-imported-image-26125.jpg" style="width: 80%;height: auto;">
+        <img src="images/persistent-connection-illustration.jpg" alt="Persistent connection illustration" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -187,7 +187,7 @@ A connection that remains open for the duration of the communication, allowing d
 
 <figure>
     <span>
-        <img src="https://lifehacker.com/imagery/articles/01HF2GNNPXP4RDFPR5J5M7KNEN/hero-image.fill.size_1200x675.png" style="width: 80%;height: auto;">
+        <img src="images/push-notifications-on-a-phone.png" alt="Push notifications on a phone" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -241,7 +241,7 @@ The client requests (pulls) data from the server whenever it needs information.
 
 <figure>
     <span>
-        <img src="https://winblogs.thesourcemediaassets.com/sites/2/2019/04/e72f421e5e0cd1ad79bb4dde65111ba4.jpg" style="width: 80%;height: auto;">
+        <img src="images/polling-for-updates-illustration.jpg" alt="Polling for updates illustration" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -283,7 +283,7 @@ In each of the above patterns, the client / server may send messages back and fo
 
  <figure>
     <span>
-        <img src="https://www.lifewire.com/thmb/irn835md4Hf2FmoEbh1rdAVNjTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/tcp-headers-f2c0881ea4c94e919794b7c0677ab90a.jpg" style="width: 80%;height: auto;">
+        <img src="images/tcp-headers-diagram.jpg" alt="TCP headers diagram" style="width: 80%;height: auto;">
     </span>
 </figure>
 
@@ -369,7 +369,7 @@ in a submarine. ^ENDMESSAGE^
 
 <figure>
     <span>
-        <img src="https://miro.medium.com/v2/resize:fit:1400/1*-hQHFX-UjlruHDf9Je0lXg.png" style="width: 100%;height: auto;">
+        <img src="images/osi-model-layers.png" alt="OSI model layers" style="width: 100%;height: auto;">
     </span>
 </figure>
 

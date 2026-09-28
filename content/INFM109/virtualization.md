@@ -11,7 +11,7 @@ course: INFM109
 
 <figure>
     <span>
-        <img src="https://www.racksolutions.com/news//app/uploads/AdobeStock_87909563.jpg" style="width: 100%;height: auto;">
+        <img src="images/virtualization-concept-illustration.jpg" alt="Virtualization concept illustration" style="width: 100%;height: auto;">
     </span>
 </figure>
 
@@ -77,8 +77,8 @@ Cloud computing can take many forms.
 ### Personal Cloud Use
 
 <div style="display: flex; align-items: center; gap: 20px; flex-wrap: nowrap; width: 80%;">
-    <img src="https://www.icloud.com/icloud_logo/icloud_logo.png" style="flex: 1; height: auto; max-height: 80px; object-fit: contain;">
-    <img src="https://150835488.v2.pressablecdn.com/wp-content/uploads/2025/02/app-page-logo_onedrive.png" style="flex: 1; height: auto; max-height: 80px; object-fit: contain;">
+    <img src="images/icloud-logo.png" alt="iCloud logo" style="flex: 1; height: auto; max-height: 80px; object-fit: contain;">
+    <img src="images/onedrive-logo.png" alt="OneDrive logo" style="flex: 1; height: auto; max-height: 80px; object-fit: contain;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/1200px-Google_Drive_icon_%282020%29.svg.png" style="flex: 1; height: auto; max-height: 80px; object-fit: contain;">
 </div>
 
@@ -107,7 +107,7 @@ IT professionals such as software developers and DevOps engineers use cloud comp
 
 <figure>
     <span>
-        <img src="https://www.cloudkeeper.com/cms-assets/s3fs-public/inline-images/table-02.png" style="width: 100%;height: auto;">
+        <img src="images/cloud-provider-service-comparison-table.png" alt="Cloud provider service comparison table" style="width: 100%;height: auto;">
     </span>
 </figure>
 

@@ -11,6 +11,10 @@ showBreadcrumb: false
   - [Module 00: Course Introduction](#module-00-course-introduction)
   - [Module 01: Digital Citizenry \& The Internet](#module-01-digital-citizenry--the-internet)
   - [Module 0X: AI in the Tech Industry](#module-0x-ai-in-the-tech-industry)
+  - [Module 02: Hardware](#module-02-hardware)
+  - [Module 03: Software](#module-03-software)
+  - [Module 04: Program and Web Development](#module-04-program-and-web-development)
+  - [Module 05: Information Systems](#module-05-information-systems)
 
 /~
 
@@ -115,8 +119,6 @@ TODO: What exactly is the browser?
 - TODO (update!): Guided Assignment: [Student Study App Software](https://github.com/mpjovanovich-IvyTechDemos/student-study-app)
 - Intro to Assignments
 
-<!--
-
 ## Module 06: Networking and Storage
 
 Part I:
@@ -157,4 +159,4 @@ Review not covered from previous: WiFi app and related table
 
 Part II (defense):
 
-- [Cyber Defense Strategies](cyberdefense_strategies.html) -->
+- [Cyber Defense Strategies](cyberdefense_strategies.html)
