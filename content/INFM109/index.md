@@ -90,13 +90,13 @@ Part I:
 - [Application Software](application_software.html)
 - Break and individual source search for discussions
 - Discussion: Location Data Case Studies
-- Intro to Assignments
+- Intro assignments
 
 Part II:
 
 - [System Software and the Operating System](system_software_operating_system.html)
 - [What does the Operating System Do?](what_does_operating_system_do.html)
-- Intro to Assignments
+- Intro assignments
 
 ## Module 04: Program and Web Development
 
@@ -109,7 +109,7 @@ TODO: What exactly is the browser?
 
 - Guided Assignment: Exploring Web Technologies
 - Guided Assigment: Creating a Static Website
-- Intro to Assignments
+- Intro assignments
 
 ## Module 05: Information Systems
 
@@ -117,7 +117,7 @@ TODO: What exactly is the browser?
 - [Data Hierarchy and Modeling](data_hierarchy_modeling.html)
 - [Database Storage](database_storage.html)
 - TODO (update!): Guided Assignment: [Student Study App Software](https://github.com/mpjovanovich-IvyTechDemos/student-study-app)
-- Intro to Assignments
+- Intro assignments
 
 ## Module 06: Networking and Storage
 
@@ -125,18 +125,15 @@ Part I:
 
 - [Virtualization](virtualization.html)
 - [XaaS](xaas.html)
-  - Discussion / Exercise: Amazon Web Services (AWS) Video
+- Intro assignments
 
 Part II:
 
 - Announcements
 - [Networking Communication Patterns](networking_communication_patterns.html)
 - [Networking Protocols](networking_protocols.html)
-- Break
-  - Find a few points individually for WiFi discussion
-  - After break we will all do this together
 - [WiFi App](demos/wifi-interference.html)
-- Intro cloud resource assignment (do as individual assignment this term)
+- Intro assignments
 
 ## Module 07: Cyber and Digital Security
 
