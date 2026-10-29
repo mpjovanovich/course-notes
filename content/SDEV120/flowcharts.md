@@ -138,6 +138,10 @@ _Print every number from 1-3 inclusive (1, 2, 3)_
  <img src="images/flowchart_print_1_to_3.svg" alt="" style="width: 100%;height: auto;">
 </figure>
 
+What is another way that we might have asked "is number > 3" to control entry into the conditional part of the algorithm?
+
+- Could we have used its negation?
+
 /~
 
 ~.focusContent.exercise
