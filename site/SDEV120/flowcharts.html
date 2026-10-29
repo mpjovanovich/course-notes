@@ -246,11 +246,16 @@
           version fail?
         </p>
         <p>
+          Hint: The failure will happen when the number reaches 15. Try walking
+          through them both with 15 as the input.
+        </p>
+        <p>
           <em
             >Print all numbers between 1 and 15 inclusive that are multiples of
-            either three or five (FizzBuzz program)</em
+            either three or five</em
           >
         </p>
+        <p>The output should be: 3, 5, 6, 9, 10, 12, 15</p>
         <p>
           <strong><em>v1</em></strong>
         </p>
@@ -275,14 +280,15 @@
       </div>
 
       <div class="focusContent exercise">
-        <p><em>Flowchart linear search algorithm</em></p>
+        <p><em>Flowchart password validation algorithm</em></p>
         <p>
           We will do this together using
           <a href="https://draw.io">draw.io</a> for the assignment today.
         </p>
+        <p>This algorithm is used to check if a password is correct.</p>
         <p>
-          This algorithm is used to find the position (index) of a target value
-          in a list.
+          To keep things simple, we will assume that the password is hardcoded
+          as &quot;CORRECT&quot;.
         </p>
         <pre
           class="shiki shiki-themes one-light one-dark-pro"
@@ -293,35 +299,26 @@
             --shiki-dark: #abb2bf;
           "
           tabindex="0"
-        ><code><span class="line"><span></span></span>
-<span class="line"><span>START</span></span>
-<span class="line"><span>    // Get the inputs</span></span>
-<span class="line"><span>    // In a realistic example, we may have the list coming from a file or database,</span></span>
-<span class="line"><span>    // and the user entering the target value.</span></span>
-<span class="line"><span>    GET list</span></span>
-<span class="line"><span>    GET target</span></span>
+        ><code><span class="line"><span>START</span></span>
+<span class="line"><span>    GET password</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>    // current_index represents the "spot" within the list that we are currently checking</span></span>
-<span class="line"><span>    SET current_index = 1</span></span>
-<span class="line"><span>    // Start by assuming the target is not found</span></span>
-<span class="line"><span>    SET found = false</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>    WHILE current_index &#x3C;= length of list:</span></span>
-<span class="line"><span>        IF the item at the current index is the target:</span></span>
-<span class="line"><span>            SET found = true</span></span>
+<span class="line"><span>    WHILE password is not "CORRECT":</span></span>
+<span class="line"><span>        IF password is blank:</span></span>
+<span class="line"><span>            PRINT "Password cannot be blank"</span></span>
+<span class="line"><span>        ELSE:</span></span>
+<span class="line"><span>            PRINT "Incorrect, try again"</span></span>
 <span class="line"><span>        END IF</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>        // Move to the next item in the list</span></span>
-<span class="line"><span>        ADD 1 to current_index</span></span>
+<span class="line"><span>        GET password</span></span>
 <span class="line"><span>    END WHILE</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>    // Output the result</span></span>
-<span class="line"><span>    IF found is true:</span></span>
-<span class="line"><span>        PRINT "Found at index", current_index</span></span>
-<span class="line"><span>    ELSE:</span></span>
-<span class="line"><span>        PRINT "Not found"</span></span>
-<span class="line"><span>    END IF</span></span>
+<span class="line"><span>    PRINT "Welcome!"</span></span>
 <span class="line"><span>END</span></span></code></pre>
+        <p>
+          <em>Note:</em> The flowchart for this algorithm does not make use of
+          the &quot;process&quot; symbol, but many algorithms will. Be sure to
+          know the difference between input/output and a process.
+        </p>
       </div>
     </div>
   </body>
