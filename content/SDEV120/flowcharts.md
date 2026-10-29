@@ -172,42 +172,32 @@ The output should be: 3, 5, 6, 9, 10, 12, 15
 
 ~.focusContent.exercise
 
-_Flowchart linear search algorithm_
+_Flowchart password validation algorithm_
 
 We will do this together using [draw.io](https://draw.io) for the assignment today.
 
-This algorithm is used to find the position (index) of a target value in a list.
+This algorithm is used to check if a password is correct.
+
+To keep things simple, we will assume that the password is hardcoded as "CORRECT".
 
 ```
-
 START
-    // Get the inputs
-    // In a realistic example, we may have the list coming from a file or database,
-    // and the user entering the target value.
-    GET list
-    GET target
+    GET password
 
-    // current_index represents the "spot" within the list that we are currently checking
-    SET current_index = 1
-    // Start by assuming the target is not found
-    SET found = false
-
-    WHILE current_index <= length of list:
-        IF the item at the current index is the target:
-            SET found = true
+    WHILE password is not "CORRECT":
+        IF password is blank:
+            PRINT "Password cannot be blank"
+        ELSE:
+            PRINT "Incorrect, try again"
         END IF
 
-        // Move to the next item in the list
-        ADD 1 to current_index
+        GET password
     END WHILE
 
-    // Output the result
-    IF found is true:
-        PRINT "Found at index", current_index
-    ELSE:
-        PRINT "Not found"
-    END IF
+    PRINT "Welcome!"
 END
 ```
+
+_Note:_ The flowchart for this algorithm does not make use of the "process" symbol, but many algorithms will. Be sure to know the difference between input/output and a process.
 
 /~
