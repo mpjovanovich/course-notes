@@ -13,14 +13,14 @@ course: SDEV120
     - [Decision](#decision)
     - [Input / Output](#input--output)
     - [Data Store](#data-store)
-  - [Example](#example)
+  - [Examples and Exercises](#examples-and-exercises)
 
 /~
 
 # Flowcharts
 
 <figure>
-  <img src="https://imgs.xkcd.com/comics/flow_charts.png" alt="" style="width: 100%;height: auto;">
+  <img src="images/xkcd_flow_charts.png" alt="" style="width: 100%;height: auto;">
 </figure>
 
 A flowchart is a visual representation of a process.
@@ -32,7 +32,7 @@ Flowchart symbols are standardized, the way the text is written is not.
 ### Terminator
 
 <figure>
- <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-01.svg" alt="" style="width: 60%;height: auto;">
+ <img src="images/flowchart_symbol_terminator.svg" alt="" style="width: 60%;height: auto;">
 </figure>
 
 - Oval or rounded rectangle.
@@ -41,7 +41,7 @@ Flowchart symbols are standardized, the way the text is written is not.
 ### Flow Arrow
 
 <figure>
- <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-06.svg" alt="" style="width: 60%;height: auto;">
+ <img src="images/flowchart_symbol_flow_arrow.svg" alt="" style="width: 60%;height: auto;">
 </figure>
 
 - Arrow connecting two symbols.
@@ -50,7 +50,7 @@ Flowchart symbols are standardized, the way the text is written is not.
 ### Process
 
 <figure>
- <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-02.svg" alt="" style="width: 60%;height: auto;">
+ <img src="images/flowchart_symbol_process.svg" alt="" style="width: 60%;height: auto;">
 </figure>
 
 - Rectangle.
@@ -68,7 +68,7 @@ Flowchart symbols are standardized, the way the text is written is not.
 ### Decision
 
 <figure>
- <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-11.svg" alt="" style="width: 60%;height: auto;">
+ <img src="images/flowchart_symbol_decision.svg" alt="" style="width: 60%;height: auto;">
 </figure>
 
 - Represents a decision point.
@@ -85,7 +85,7 @@ Flowchart symbols are standardized, the way the text is written is not.
 ### Input / Output
 
 <figure>
- <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-04.svg" alt="" style="width: 60%;height: auto;">
+ <img src="images/flowchart_symbol_input_output.svg" alt="" style="width: 60%;height: auto;">
 </figure>
 
 - Represents input or output.
@@ -110,7 +110,7 @@ _Output Example:_
 ### Data Store
 
 <figure>
- <img src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/seo/flowchart/discovery/flowchart-symbols-05.svg" alt="" style="width: 60%;height: auto;">
+ <img src="images/flowchart_symbol_data_store.svg" alt="" style="width: 60%;height: auto;">
 </figure>
 
 - Cylinder
@@ -124,15 +124,41 @@ _Output Example:_
 
 _Determine if a number is even or odd and print the result_
 
-...
+<figure>
+ <img src="images/flowchart_even_odd.svg" alt="" style="width: 100%;height: auto;">
+</figure>
 
 /~
 
 ~.focusContent.demo
 
-_Print every other number from 2-10 (2, 4, 6, 8, 10)_
+_Print every number from 1-3 inclusive (1, 2, 3)_
 
-...
+<figure>
+ <img src="images/flowchart_print_1_to_3.svg" alt="" style="width: 100%;height: auto;">
+</figure>
+
+/~
+
+~.focusContent.exercise
+
+**Spot the difference**
+
+Only one of these algorithms is correct. How will the incorrect version fail?
+
+_Print all numbers between 1 and 15 inclusive that are multiples of either three or five (FizzBuzz program)_
+
+**_v1_**
+
+<figure>
+ <img src="images/flowchart_fizzbuzz_incorrect.svg" alt="" style="width: 100%;height: auto;">
+</figure>
+
+**_v2_**
+
+<figure>
+ <img src="images/flowchart_fizzbuzz_correct.svg" alt="" style="width: 100%;height: auto;">
+</figure>
 
 /~
 
@@ -141,6 +167,8 @@ _Print every other number from 2-10 (2, 4, 6, 8, 10)_
 _Flowchart linear search algorithm_
 
 We will do this together using [draw.io](https://draw.io) for the assignment today.
+
+This algorithm is used to find the position (index) of a target value in a list.
 
 ```
 
@@ -173,13 +201,5 @@ START
     END IF
 END
 ```
-
-/~
-
-~.focusContent.demo
-
-_Flowchart binary search algorithm_
-
-Instructor challenge... only if time.
 
 /~
