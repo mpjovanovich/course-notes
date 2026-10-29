@@ -150,7 +150,11 @@ What is another way that we might have asked "is number > 3" to control entry in
 
 Only one of these algorithms is correct. How will the incorrect version fail?
 
-_Print all numbers between 1 and 15 inclusive that are multiples of either three or five (FizzBuzz program)_
+Hint: The failure will happen when the number reaches 15. Try walking through them both with 15 as the input.
+
+_Print all numbers between 1 and 15 inclusive that are multiples of either three or five_
+
+The output should be: 3, 5, 6, 9, 10, 12, 15
 
 **_v1_**
 
