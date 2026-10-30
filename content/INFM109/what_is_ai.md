@@ -87,6 +87,12 @@ AI struggles with:
 
 The AI we use today is fundamentally different from earlier AI systems. This represents one of the most significant paradigm shifts in computing history.
 
+<figure>
+    <span>
+        <img src="images/ai-subcategories.svg" alt="AI subcategories" style="width: 100%;height: auto;">
+    </span>
+</figure>
+
 ### Classical AI
 
 **Approach**: Rule-based and heuristic systems
@@ -112,6 +118,26 @@ Here is a "recommender" system that might suggest products based on the current 
 
 /~
 
+~.focusContent.example
+
+**Video Game NPCs**
+
+<figure>
+<img
+    src="images/video-game-npcs.gif"
+    alt="Video Game NPCs"
+    style="width: 100%;height: auto;"
+/>
+</figure>
+
+The ghosts were "programmed" by a human to follow a set of rules based on
+
+- The walls of the maze.
+- The player's position.
+- The position of other ghosts.
+
+/~
+
 ### Modern AI
 
 **Approach**: Data-driven learning systems
@@ -121,6 +147,8 @@ Modern AI systems learn patterns from data rather than following explicit rules.
 ## Machine Learning
 
 **Machine Learning** allows computer systems to learn from data, _without being explicitly programmed_.
+
+Advances in machine learning techniques and technologies are what is driving the recent explosion of AI capabilities.
 
 ~.focusContent.note
 
@@ -135,6 +163,34 @@ This shift from programming to learning is what makes modern AI so powerful and 
 
 /~
 
+### Unsupervised Learning
+
+In unsupervised learning, there are no labeled "solutions" for the problem. These types of algorithms are exploratory in nature.
+
+- Break a set of data points into clusters
+- "Customers like you also bought..."
+
+#### K-Means Clustering
+
+**K-Means Clustering** is a type of unsupervised learning algorithm that clusters data points into related groups.
+
+The algorithm works like this:
+
+- Pick some random starting center points, one for each grouping (cluster).
+- Assign each data point to the nearest center point to make the groups.
+- Update the center points by choosing a new point within each group that minimizes distances of its group members.
+- Repeat until the center points stop moving.
+
+[K-Means++ Example](https://github.com/mpjovanovich/k-means_plus_plus)
+
+<figure>
+<img
+    src="images/k-means-clustering-animation.gif"
+    alt="K-Means Clustering Animation"
+    style="width: 100%;height: auto;"
+/>
+</figure>
+
 ### Supervised Learning
 
 - Supervised learning is a type of machine learning where the model is trained on a labeled dataset
@@ -142,7 +198,7 @@ This shift from programming to learning is what makes modern AI so powerful and 
 - Inputs are called "features" or **parameters**
 - The model is then used to predict the output for new inputs that it has not seen before
 
-### Artificial Neural Networks
+#### Artificial Neural Networks
 
 <figure>
  <img src="images/structure-of-a-biological-neuron.jpg" alt="Structure of a biological neuron" style="">
