@@ -154,6 +154,16 @@
         This represents one of the most significant paradigm shifts in computing
         history.
       </p>
+      <figure>
+        <span>
+          <img
+            src="images/ai-subcategories.svg"
+            alt="AI subcategories"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
       <h3 id="classical-ai">Classical AI</h3>
       <p><strong>Approach</strong>: Rule-based and heuristic systems</p>
       <p>Classical AI systems were programmed with explicit rules:</p>
@@ -192,6 +202,27 @@
         </p>
       </div>
 
+      <div class="focusContent example">
+        <p><strong>Video Game NPCs</strong></p>
+        <figure>
+          <img
+            src="images/video-game-npcs.gif"
+            alt="Video Game NPCs"
+            style="width: 100%; height: auto"
+          />
+        </figure>
+
+        <p>
+          The ghosts were &quot;programmed&quot; by a human to follow a set of
+          rules based on
+        </p>
+        <ul>
+          <li>The walls of the maze.</li>
+          <li>The player&#39;s position.</li>
+          <li>The position of other ghosts.</li>
+        </ul>
+      </div>
+
       <h3 id="modern-ai">Modern AI</h3>
       <p><strong>Approach</strong>: Data-driven learning systems</p>
       <p>
@@ -203,6 +234,10 @@
       <p>
         <strong>Machine Learning</strong> allows computer systems to learn from
         data, <em>without being explicitly programmed</em>.
+      </p>
+      <p>
+        Advances in machine learning techniques and technologies are what is
+        driving the recent explosion of AI capabilities.
       </p>
       <div class="focusContent note">
         <p><strong>Key Insight: Learning vs Programming</strong></p>
@@ -219,6 +254,48 @@
           powerful and flexible.
         </p>
       </div>
+
+      <h3 id="unsupervised-learning">Unsupervised Learning</h3>
+      <p>
+        In unsupervised learning, there are no labeled &quot;solutions&quot; for
+        the problem. These types of algorithms are exploratory in nature.
+      </p>
+      <ul>
+        <li>Break a set of data points into clusters</li>
+        <li>&quot;Customers like you also bought...&quot;</li>
+      </ul>
+      <h4 id="k-means-clustering">K-Means Clustering</h4>
+      <p>
+        <strong>K-Means Clustering</strong> is a type of unsupervised learning
+        algorithm that clusters data points into related groups.
+      </p>
+      <p>The algorithm works like this:</p>
+      <ul>
+        <li>
+          Pick some random starting center points, one for each grouping
+          (cluster).
+        </li>
+        <li>
+          Assign each data point to the nearest center point to make the groups.
+        </li>
+        <li>
+          Update the center points by choosing a new point within each group
+          that minimizes distances of its group members.
+        </li>
+        <li>Repeat until the center points stop moving.</li>
+      </ul>
+      <p>
+        <a href="https://github.com/mpjovanovich/k-means_plus_plus"
+          >K-Means++ Example</a
+        >
+      </p>
+      <figure>
+        <img
+          src="images/k-means-clustering-animation.gif"
+          alt="K-Means Clustering Animation"
+          style="width: 100%; height: auto"
+        />
+      </figure>
 
       <h3 id="supervised-learning">Supervised Learning</h3>
       <ul>
@@ -238,7 +315,7 @@
           has not seen before
         </li>
       </ul>
-      <h3 id="artificial-neural-networks">Artificial Neural Networks</h3>
+      <h4 id="artificial-neural-networks">Artificial Neural Networks</h4>
       <figure>
         <img
           src="images/structure-of-a-biological-neuron.jpg"
