@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFM109: Data in Applications</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#data-in-applications">Data in Applications</a>
+            <ul>
+              <li><a href="#data-capture">Data Capture</a></li>
+              <li><a href="#data-storage">Data Storage</a></li>
+              <li>
+                <a href="#open-vs-proprietary-file-formats"
+                  >Open vs Proprietary File Formats</a
+                >
+              </li>
+              <li><a href="#interoperability">Interoperability</a></li>
+              <li><a href="#vendor-lock-in">Vendor Lock-in</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="data-in-applications">Data in Applications</h1>
+      <p>
+        From an informatics perspective, an application is largely a machine for
+        <strong>capturing</strong>, <strong>storing</strong>, and
+        <strong>exchanging</strong> data.
+      </p>
+      <h2 id="data-capture">Data Capture</h2>
+      <p>How does data get <em>into</em> an application?</p>
+      <ul>
+        <li>
+          <strong>Forms</strong>: A patient intake form, a course registration
+          page
+        </li>
+        <li>
+          <strong>Sensors</strong>: GPS in a phone, a heart-rate monitor, a
+          barcode scanner
+        </li>
+        <li>
+          <strong>Imports</strong>: Uploading a spreadsheet or loading a file
+          exported from another system
+        </li>
+        <li>
+          <strong>User-generated content</strong>: Posts, photos, reviews, and
+          comments
+        </li>
+      </ul>
+      <h2 id="data-storage">Data Storage</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Storage Approach</th>
+            <th>Description</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Local files</td>
+            <td>Data saved as files on the user&#39;s own device</td>
+            <td>A <code>.docx</code> file in your Documents</td>
+          </tr>
+          <tr>
+            <td>Databases</td>
+            <td>
+              Structured data managed by a database system, often on a server
+            </td>
+            <td>A library&#39;s catalog of holdings</td>
+          </tr>
+          <tr>
+            <td>Cloud storage</td>
+            <td>
+              Data stored on a provider&#39;s servers and synced across devices
+            </td>
+            <td>OneDrive, Google Drive, iCloud</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="open-vs-proprietary-file-formats">
+        Open vs Proprietary File Formats
+      </h2>
+      <ul>
+        <li>
+          <strong>Open format</strong>: The specification is published, and
+          anyone may build software that reads or writes it (e.g.,
+          <code>.csv</code>, <code>.txt</code>, <code>.png</code>,
+          <code>.pdf</code>, <code>.odt</code>)
+        </li>
+        <li>
+          <strong>Proprietary format</strong>: The specification is controlled
+          by one company, and may be undocumented or restricted (e.g.,
+          <code>.psd</code> for Photoshop, older <code>.doc</code> files)
+        </li>
+      </ul>
+      <p>Why does this matter?</p>
+      <ul>
+        <li>
+          <strong>Longevity</strong>: Will you still be able to open the file in
+          20 years - after the company is gone?
+        </li>
+        <li>
+          <strong>Choice</strong>: Can you switch to a different application
+          without losing your work?
+        </li>
+        <li>
+          <strong>Fidelity</strong>: Formatting is often lost or garbled when
+          one application &quot;translates&quot; another&#39;s proprietary
+          format.
+        </li>
+      </ul>
+      <div class="focusContent demo">
+        <p><strong>Same File, Different Applications</strong></p>
+        <p>
+          Open the same <code>.docx</code> file in Microsoft Word, Google Docs,
+          and LibreOffice Writer. What changes? Look at fonts, page breaks,
+          comments, and tracked changes.
+        </p>
+        <p>
+          Then open a <code>.csv</code> file in a spreadsheet application
+          <em>and</em> in a plain text editor. Why does the
+          <code>.csv</code> look the same everywhere?
+        </p>
+      </div>
+
+      <h2 id="interoperability">Interoperability</h2>
+      <p>
+        <strong>Interoperability</strong> is the ability of different systems to
+        exchange data and make use of it. This depends on:
+      </p>
+      <ul>
+        <li>
+          <strong>Exchange formats</strong>: Common formats both systems
+          understand (CSV, JSON, XML)
+        </li>
+        <li>
+          <strong>APIs</strong>: Defined ways for one application to request
+          data from another
+        </li>
+        <li>
+          <strong>Standards</strong>: Agreements, often industry-specific, about
+          how data is structured
+          <ul>
+            <li>
+              <strong>HL7 FHIR</strong>: Exchanging electronic health records
+            </li>
+            <li>
+              <strong>MARC 21</strong>: Describing items in library catalogs
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <figure>
+        <span>
+          <img
+            src="images/xkcd-standards-comic.png"
+            alt="xkcd Standards comic"
+            style="width: 80%; height: auto"
+          />
+        </span>
+        <figcaption>
+          <p>
+            Source: <a href="https://xkcd.com/927/">xkcd: Standards</a> (CC
+            BY-NC 2.5)
+          </p>
+        </figcaption>
+      </figure>
+
+      <div class="focusContent example">
+        <p><strong>Moving Records Between Systems</strong></p>
+        <p>
+          A clinic is switching from one electronic health record system to
+          another. Questions to ask:
+        </p>
+        <ul>
+          <li>
+            Can the old system export <em>all</em> of the data, or only some of
+            it?
+          </li>
+          <li>Do both systems support a common standard (e.g., FHIR)?</li>
+          <li>
+            Do fields line up? One system may store &quot;Name&quot; as a single
+            field while the other uses &quot;First&quot; and &quot;Last.&quot;
+          </li>
+          <li>
+            What happens to attachments, scanned documents, and audit history?
+          </li>
+        </ul>
+        <p>
+          The same questions come up when a library moves its catalog from one
+          integrated library system to another.
+        </p>
+      </div>
+
+      <h2 id="vendor-lock-in">Vendor Lock-in</h2>
+      <p>
+        <strong>Vendor lock-in</strong> occurs when switching away from a
+        product is so costly or difficult that an organization is effectively
+        stuck with it.
+      </p>
+      <p>How it arises:</p>
+      <ul>
+        <li>
+          Data stored in proprietary formats, or with limited export options
+        </li>
+        <li>Custom workflows and integrations built around one product</li>
+        <li>Staff training and habits tied to one interface</li>
+        <li>Multi-year contracts and bundled pricing</li>
+      </ul>
+      <div class="focusContent lookout">
+        <p><strong>The Cost of Lock-in</strong></p>
+        <p>
+          A locked-in organization loses its bargaining power. When the vendor
+          raises prices, discontinues a feature, or is acquired by another
+          company, the organization has little choice but to accept it. Ask
+          about data export
+          <strong>before</strong> adopting software, not after.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

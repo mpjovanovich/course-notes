@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFM109: Application Software</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#software-applications-types-uses-and-management"
+              >Software Applications: Types, Uses, and Management</a
+            >
+            <ul>
+              <li>
+                <a href="#types-of-applications">Types of Applications</a>
+                <ul>
+                  <li>
+                    <a href="#classification-of-applications"
+                      >Classification of Applications</a
+                    >
+                    <ul>
+                      <li><a href="#local-vs-remote">Local vs Remote</a></li>
+                      <li><a href="#native-vs-web">Native vs Web</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#design-considerations">Design Considerations</a>
+                  </li>
+                  <li>
+                    <a href="#productivity-applications"
+                      >Productivity Applications</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#graphics-technologies">Graphics Technologies</a>
+                    <ul>
+                      <li>
+                        <a href="#bitmapraster-graphics"
+                          >Bitmap/raster graphics</a
+                        >
+                      </li>
+                      <li><a href="#vector-graphics">Vector graphics</a></li>
+                      <li><a href="#compression">Compression</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#software-business--management"
+                  >Software Business &amp; Management</a
+                >
+                <ul>
+                  <li><a href="#payment-models">Payment Models</a></li>
+                  <li>
+                    <a href="#software-distribution-channels"
+                      >Software Distribution Channels</a
+                    >
+                  </li>
+                  <li><a href="#target-markets">Target Markets</a></li>
+                  <li>
+                    <a href="#software-updates-and-versioning"
+                      >Software Updates and Versioning</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="software-applications-types-uses-and-management">
+        Software Applications: Types, Uses, and Management
+      </h1>
+      <h2 id="types-of-applications">Types of Applications</h2>
+      <h3 id="classification-of-applications">
+        Classification of Applications
+      </h3>
+      <p>
+        Applications may run in a variety of environments, and often it takes
+        multiple machines working together to run a single application.
+      </p>
+      <div class="focusContent note">
+        <p>
+          The line between one category and another can be blurry. There are
+          very few applications that do not use the Internet in some way.
+        </p>
+      </div>
+
+      <h4 id="local-vs-remote">Local vs Remote</h4>
+      <ul>
+        <li>
+          <strong>Local</strong>: Applications installed and executed directly
+          on the device&#39;s hardware
+        </li>
+        <li>
+          <strong>Remote</strong>: Applications that run on a remote server and
+          are accessed over a network, usually through a web browser
+        </li>
+      </ul>
+      <h4 id="native-vs-cross-platform">Native vs Cross Platform</h4>
+      <ul>
+        <li>
+          <strong>Native</strong>: Applications built specifically for one
+          operating system or platform, using that platform&#39;s own tools and
+          APIs
+        </li>
+        <li>
+          <strong>Cross Platform</strong>: Applications built typically using
+          web technologies (HTML/CSS/JavaScript)
+        </li>
+      </ul>
+      <div class="focusContent exercise">
+        <p><strong>Real-World Examples:</strong></p>
+        <p>
+          Let&#39;s look at what aspects of these applications might fall into
+          which parts of each spectrum:
+        </p>
+        <ul>
+          <li>
+            <strong>Local + Native</strong>: Adobe Photoshop, Microsoft Word
+            (desktop)
+          </li>
+          <li>
+            <strong>Remote + Cross Platform</strong>: Google Docs, Netflix in
+            browser
+          </li>
+          <li>
+            <strong>Mixed</strong>: Spotify desktop app, Slack desktop app
+            (hybrid)
+          </li>
+        </ul>
+      </div>
+
+      <h3 id="design-considerations">Design Considerations</h3>
+      <ul>
+        <li>
+          <strong>Mobile-first design</strong>: Prioritizing mobile device
+          interfaces
+        </li>
+        <li>
+          <strong>Responsive design</strong>: Adapting interfaces to different
+          screen sizes
+        </li>
+        <li>
+          <strong>Cross-platform development</strong>: Tools for building across
+          multiple platforms
+        </li>
+        <li>
+          <strong>Accessibility (a11y)</strong>: Designing for users with
+          visual, auditory, motor, or cognitive impairments (e.g., screen-reader
+          support, sufficient color contrast, keyboard navigation)
+        </li>
+        <li>
+          <strong>Localization (i18n)</strong>: Adapting software for different
+          languages, regions, and cultural conventions
+        </li>
+      </ul>
+      <div class="focusContent note">
+        <p><strong>Why Accessibility Matters</strong></p>
+        <p>
+          Many organizations are legally required to meet accessibility
+          standards (e.g., WCAG) for their software and websites, similar to
+          physical accessibility requirements for buildings. Ignoring
+          accessibility isn&#39;t just an ethical gap - it&#39;s a compliance
+          risk.
+        </p>
+      </div>
+
+      <h3 id="productivity-applications">Productivity Applications</h3>
+      <p>
+        Commonly used office software are called
+        <strong>productivity applications</strong>. These include:
+      </p>
+      <ul>
+        <li>Word processing</li>
+        <li>Spreadsheets</li>
+        <li>Presentation software</li>
+        <li>Email</li>
+        <li>Calendar</li>
+        <li>
+          Chat &amp; video conferencing (e.g., Slack, Microsoft Teams, Zoom)
+        </li>
+        <li>
+          Cloud storage &amp; real-time collaboration (e.g., shared drives,
+          co-authoring, version history)
+        </li>
+        <li>
+          AI-assisted tools (e.g., Copilot in Office, Gemini in Google
+          Workspace) - increasingly built directly into the categories above
+          rather than standing apart as their own product
+        </li>
+      </ul>
+      <div class="focusContent demo">
+        <p><strong>Spreadsheet Tips and Tricks:</strong></p>
+        <p>Demo1: Basic Formulas</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Tax Rate:</th>
+              <th>15%</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Item</td>
+              <td>Price</td>
+              <td>Tax Amount</td>
+              <td>Total</td>
+            </tr>
+            <tr>
+              <td>-----------</td>
+              <td>-------</td>
+              <td>----------------</td>
+              <td>--------------</td>
+            </tr>
+            <tr>
+              <td>Item 1</td>
+              <td>10.00</td>
+              <td>=B3*$B$1</td>
+              <td>=B3+C3</td>
+            </tr>
+            <tr>
+              <td>Item 2</td>
+              <td>25.00</td>
+              <td>=B4*$B$1</td>
+              <td>=B4+C4</td>
+            </tr>
+            <tr>
+              <td>Item 3</td>
+              <td>15.00</td>
+              <td>=B5*$B$1</td>
+              <td>=B5+C5</td>
+            </tr>
+            <tr>
+              <td>Item 4</td>
+              <td>50.00</td>
+              <td>=B6*$B$1</td>
+              <td>=B6+C6</td>
+            </tr>
+            <tr>
+              <td>Grand Total</td>
+              <td></td>
+              <td></td>
+              <td>=SUM(D3:D6)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          AI tools can now generate formulas like these for you - but you still
+          need to be able to read a formula and verify it&#39;s doing what you
+          expect. Treat the walkthrough below as building that &quot;read and
+          verify&quot; skill.
+        </p>
+        <p>
+          Demo2:
+          <a
+            href="https://www.kaggle.com/datasets/manavkhambhayata/cve-2024-database-exploits-cvss-os"
+            >Kaggle CVE 2024 Database: Exploits, CVSS, OS</a
+          >
+        </p>
+        <ul>
+          <li>Auto set column widths</li>
+          <li>Bold top row</li>
+          <li>Freeze top row</li>
+          <li>
+            Filter OS to &quot;Google Android 13.0, Google Android 12.0&quot;
+          </li>
+          <li>Sort by CVSS</li>
+          <li>Remove filter</li>
+        </ul>
+      </div>
+
+      <div class="focusContent note">
+        <p>
+          Several common keyboard shortcuts are fairly universal, and are
+          essential for productivity. Here are my recommendations in order of
+          priority:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Shortcut</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ctrl+S</td>
+              <td>Save</td>
+            </tr>
+            <tr>
+              <td>Ctrl+Z</td>
+              <td>Undo</td>
+            </tr>
+            <tr>
+              <td>Ctrl+C</td>
+              <td>Copy</td>
+            </tr>
+            <tr>
+              <td>Ctrl+X</td>
+              <td>Cut</td>
+            </tr>
+            <tr>
+              <td>Ctrl+V</td>
+              <td>Paste</td>
+            </tr>
+            <tr>
+              <td>Ctrl+A</td>
+              <td>Select all</td>
+            </tr>
+            <tr>
+              <td>Ctrl+F</td>
+              <td>Find</td>
+            </tr>
+            <tr>
+              <td>Ctrl+B</td>
+              <td>Bold</td>
+            </tr>
+            <tr>
+              <td>Ctrl++</td>
+              <td>Increase zoom</td>
+            </tr>
+            <tr>
+              <td>Ctrl+-</td>
+              <td>Decrease zoom</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="graphics-technologies">Graphics Technologies</h3>
+      <h4 id="bitmapraster-graphics">Bitmap/raster graphics</h4>
+      <figure>
+        <span>
+          <img
+            src="images/bitmap-raster-example-sunflower.jpg"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        Pixel-based images. Best for smooth gradients and natural images like
+        photographs.
+      </p>
+      <ul>
+        <li>JPEG</li>
+        <li>PNG</li>
+        <li>GIF</li>
+        <li>WebP</li>
+      </ul>
+      <div class="focusContent note">
+        <p><strong>Choosing a Raster Format</strong></p>
+        <table>
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>JPEG</td>
+              <td>Photographs; smaller files, some quality loss</td>
+            </tr>
+            <tr>
+              <td>PNG</td>
+              <td>Images needing transparency; lossless</td>
+            </tr>
+            <tr>
+              <td>GIF</td>
+              <td>Simple animations; limited color palette</td>
+            </tr>
+            <tr>
+              <td>WebP</td>
+              <td>Modern general-purpose format; smaller than JPEG/PNG</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 id="vector-graphics">Vector graphics</h4>
+      <figure>
+        <span>
+          <img
+            src="images/vector-graphics-example.svg"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        Mathematical formula-based images. Best for simple shapes with hard
+        edges (illustrations, logos, diagrams) and text.
+      </p>
+      <ul>
+        <li>SVG</li>
+      </ul>
+      <div class="focusContent exercise">
+        <p><strong>Examining an SVG Image</strong></p>
+        <p>
+          Let&#39;s try saving the SVG image above and opening it in a text
+          editor to see the mathematical formula that defines it!
+        </p>
+      </div>
+
+      <h4 id="compression">Compression</h4>
+      <p>
+        Compression is the process of reducing the size of a file or data. This
+        is useful for saving space and for transmitting data more quickly.
+      </p>
+      <p>
+        Compression isn&#39;t limited to images - general-purpose archive
+        formats like ZIP and 7z compress any kind of file losslessly, while
+        formats like MP3 (audio) and MP4/H.264 (video) use lossy compression to
+        shrink media files.
+      </p>
+      <figure>
+        <span>
+          <img
+            src="images/lossy-compression-example.jpg"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>There are two types of compression:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Compression Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lossless</td>
+            <td>
+              The original data can be perfectly reconstructed from the
+              compressed data.
+            </td>
+          </tr>
+          <tr>
+            <td>Lossy</td>
+            <td>
+              The original data cannot be perfectly reconstructed from the
+              compressed data. Information is discarded during compression.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        It may seem as if we should always use lossless compression, but in many
+        cases, the quality difference is not noticeable, and the file size is
+        significantly reduced.
+      </p>
+      <p>
+        Lossy compression is most visible in JPEG images, where the image can
+        become
+        <em>pixelated</em> at lower quality settings. These out of place pixels
+        are called <em>artifacts</em>.
+      </p>
+      <div class="focusContent lookout">
+        <p><strong>Sending High Quality Images</strong></p>
+        <p>
+          If you&#39;ve ever saved the image from a text message and tried to
+          open it on a computer with a larger screen, you may have noticed that
+          the image is pixelated. This is because the image was compressed using
+          lossy compression for the smaller screen of the phone.
+        </p>
+        <p>
+          If you need to send a high quality image to someone, you should send
+          the original image file, not a compressed version.
+        </p>
+      </div>
+
+      <h2 id="software-business--management">Software Business & Management</h2>
+      <h3 id="payment-models">Payment Models</h3>
+      <ul>
+        <li>
+          <strong>Perpetual License</strong>: One-time purchase for indefinite
+          use
+          <ul>
+            <li>Traditional retail software packages</li>
+            <li>May include optional paid upgrades for new versions</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Subscription</strong>: Recurring payment for continued access
+          <ul>
+            <li>Software as a Service (SaaS)</li>
+            <li>Usually includes continuous updates and cloud features</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="focusContent note">
+        <p><strong>Licensing Agreements</strong></p>
+        <p>
+          Agreeing to pay for software is different from agreeing to its
+          <strong>End User License Agreement (EULA)</strong> or
+          <strong>Terms of Service (ToS)</strong>. These agreements govern how
+          you&#39;re allowed to use the software - what data it collects,
+          who&#39;s liable if something goes wrong, and whether you can
+          redistribute or reverse-engineer it. Clicking &quot;I Agree&quot; is a
+          legal commitment, even when no money changes hands.
+        </p>
+      </div>
+
+      <h3 id="software-distribution-channels">
+        Software Distribution Channels
+      </h3>
+      <p>How software reaches users varies by platform and audience:</p>
+      <ul>
+        <li>
+          <strong>App Stores</strong>: Centralized marketplaces (Apple App
+          Store, Google Play, Microsoft Store) that handle discovery,
+          installation, and updates
+        </li>
+        <li>
+          <strong>Direct Download</strong>: Downloading an installer directly
+          from the vendor&#39;s website
+        </li>
+        <li>
+          <strong>Enterprise Deployment</strong>: IT departments push software
+          to many devices at once using Mobile Device Management (MDM) or
+          similar tools
+        </li>
+        <li>
+          <strong>Package Managers</strong>: Command-line tools (e.g., apt,
+          Homebrew, npm) that install and manage software and its dependencies,
+          common in open source ecosystems
+        </li>
+      </ul>
+      <h3 id="target-markets">Target Markets</h3>
+      <ul>
+        <li>
+          <strong>Business-to-Consumer (B2C)</strong>
+          <ul>
+            <li>Personal productivity tools (e.g., Microsoft 365 Personal)</li>
+            <li>Mobile apps</li>
+            <li>Consumer creative software</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Business-to-Business (B2B)</strong>
+          <ul>
+            <li>Enterprise software solutions</li>
+            <li>Custom-developed applications</li>
+            <li>Professional tools and services</li>
+          </ul>
+        </li>
+      </ul>
+      <h3 id="software-updates-and-versioning">
+        Software Updates and Versioning
+      </h3>
+      <p>
+        With <strong>semantic versioning</strong>, software versions are
+        typically written as <code>MAJOR.MINOR.PATCH</code>.
+      </p>
+      <ul>
+        <li>
+          <strong>Major version</strong>: Significant changes to the software.
+          Breaks backward compatibility. Other tools that use this software may
+          not be able to use it after updating.
+        </li>
+        <li>
+          <strong>Minor version</strong>: New features or improvements.
+          Compatible with previous version.
+        </li>
+        <li>
+          <strong>Patch version</strong>: Bug fixes and security updates.
+          Compatible with previous version.
+        </li>
+      </ul>
+      <p>Software is also often labeled by release stage:</p>
+      <ul>
+        <li>
+          <strong>Alpha</strong>: Early, unstable version for internal testing
+        </li>
+        <li>
+          <strong>Beta</strong>: Feature-complete but still being tested; often
+          released to a limited public audience
+        </li>
+        <li>
+          <strong>Release Candidate (RC)</strong>: Believed ready for release,
+          pending final testing
+        </li>
+        <li>
+          <strong>Long-Term Support (LTS)</strong>: A release that receives
+          updates and support for an extended period, favored for stability over
+          having the newest features (e.g., Ubuntu LTS)
+        </li>
+      </ul>
+      <div class="focusContent lookout">
+        <p><strong>End-of-Life (EOL) Software</strong></p>
+        <p>
+          Every version of software eventually stops receiving updates,
+          including security patches. Running EOL software is a common cause of
+          security breaches - if you&#39;re still using something past its
+          support lifecycle, it&#39;s time to upgrade.
+        </p>
+      </div>
+
+      <div class="focusContent exercise">
+        <p><strong>Check-In: Major, Minor, or Patch?</strong></p>
+        <p>
+          Match each change below to the correct type of version bump:
+          <strong>Major</strong>, <strong>Minor</strong>, or
+          <strong>Patch</strong>.
+        </p>
+        <ol>
+          <li>Fixed a typo in a menu label</li>
+          <li>
+            Added a new &quot;dark mode&quot; setting that doesn&#39;t affect
+            existing features
+          </li>
+          <li>
+            Changed a file input format; as a result, older versions of a
+            connected tool can no longer open the old file format.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>

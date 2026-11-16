@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFM109: Humans and Applications</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#humans-and-applications">Humans and Applications</a>
+            <ul>
+              <li><a href="#usability">Usability</a></li>
+              <li><a href="#accessibility">Accessibility</a></li>
+              <li>
+                <a href="#why-good-software-gets-rejected"
+                  >Why Good Software Gets Rejected</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="humans-and-applications">Humans and Applications</h1>
+      <h2 id="usability">Usability</h2>
+      <p>
+        <strong>Usability</strong> is how easily and effectively people can use
+        an application to reach their goals. Key qualities:
+      </p>
+      <ul>
+        <li>
+          <strong>Learnability</strong>: How quickly can a new user accomplish
+          basic tasks?
+        </li>
+        <li>
+          <strong>Efficiency</strong>: Once learned, how quickly can tasks be
+          performed?
+        </li>
+        <li>
+          <strong>Error prevention</strong>: Does the design make mistakes hard
+          to make, and easy to recover from (e.g., undo, confirmation dialogs)?
+        </li>
+      </ul>
+      <h2 id="accessibility">Accessibility</h2>
+      <figure>
+        <span>
+          <img
+            src="images/refreshable-braille-display.jpg"
+            alt="Refreshable Braille display"
+            style="width: 60%; height: auto"
+          />
+        </span>
+        <figcaption>
+          <p>
+            Source:
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Refreshable_Braille_display.jpg"
+              >Wikimedia Commons</a
+            >
+            (CC BY-SA 3.0)
+          </p>
+        </figcaption>
+      </figure>
+
+      <p>
+        <strong>Accessibility</strong> means that people with disabilities can
+        use the application. Software should work with
+        <strong>assistive technology</strong> such as:
+      </p>
+      <ul>
+        <li>Screen readers (e.g., NVDA, JAWS, VoiceOver)</li>
+        <li>Refreshable braille displays (pictured above)</li>
+        <li>Screen magnifiers and high-contrast modes</li>
+        <li>Voice control and alternative input devices</li>
+      </ul>
+      <p>
+        <strong>Inclusive design</strong> goes further - designing from the
+        start for the full range of people who might use a product, rather than
+        bolting on accessibility at the end.
+      </p>
+      <div class="focusContent note">
+        <p><strong>Legal and Ethical Obligations</strong></p>
+        <p>
+          In the U.S., the Americans with Disabilities Act (ADA) and Section 508
+          of the Rehabilitation Act set accessibility requirements. In 2024, the
+          Department of Justice adopted a rule requiring state and local
+          government web content and mobile apps - including those of public
+          colleges - to meet the <strong>WCAG 2.1 AA</strong> standard.
+        </p>
+        <p>
+          Beyond the law: an inaccessible application excludes people from work,
+          education, and services.
+        </p>
+      </div>
+
+      <h2 id="why-good-software-gets-rejected">
+        Why Good Software Gets Rejected
+      </h2>
+      <figure>
+        <span>
+          <img
+            src="images/xkcd-workflow-comic.png"
+            alt="xkcd Workflow comic"
+            style="width: 40%; height: auto"
+          />
+        </span>
+        <figcaption>
+          <p>
+            Source: <a href="https://xkcd.com/1172/">xkcd: Workflow</a> (CC
+            BY-NC 2.5)
+          </p>
+        </figcaption>
+      </figure>
+
+      <p>
+        Technically excellent software can still fail if people won&#39;t (or
+        can&#39;t) use it. Common reasons:
+      </p>
+      <ul>
+        <li>
+          <strong>Poor fit with workflow</strong>: The software forces people to
+          work in a way that doesn&#39;t match how the job is really done
+        </li>
+        <li>
+          <strong>Training gaps</strong>: Users are given a login, but not the
+          time or support to learn the system
+        </li>
+        <li>
+          <strong>Resistance to change</strong>: People are comfortable with the
+          old way, and the benefits of the new system aren&#39;t obvious to them
+        </li>
+      </ul>
+      <div class="focusContent example">
+        <p><strong>A Technically Sound System, Abandoned</strong></p>
+        <p>
+          In 2003, Cedars-Sinai Medical Center in Los Angeles suspended a
+          multimillion-dollar computerized physician order entry system only
+          months after rollout. The system worked, but physicians objected that
+          it slowed them down, interrupted them with too many alerts, and
+          didn&#39;t match how they actually cared for patients.
+        </p>
+        <p>
+          The lesson: success is measured by whether people use the software to
+          do their jobs - not by whether the software runs.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
