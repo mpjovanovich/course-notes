@@ -38,7 +38,6 @@ course: INFM109
     - [The Subscription Economy](#the-subscription-economy)
     - [Obsolescence and End of Support](#obsolescence-and-end-of-support)
     - [Dark Patterns and Default Settings](#dark-patterns-and-default-settings)
-  - [Case Study and Application Audit](#case-study-and-application-audit)
   - [Summary](#summary)
 
 /~
@@ -467,40 +466,6 @@ When an application harms its users - leaks their data, manipulates them, or mak
 - The **vendor** that built it?
 - The **organization** that chose and deployed it?
 - The **user** who clicked "I Agree"?
-
-/~
-
-## Case Study and Application Audit
-
-<!-- TODO: Choose one activity. Case study candidates: HealthCare.gov launch (2013) or Canada's Phoenix pay system (2016). -->
-
-~.focusContent.exercise
-
-**Option A - Case Study: A Troubled Rollout**
-
-Read the case study handout. Possible cases:
-
-- **HealthCare.gov (2013)**: The U.S. federal health insurance marketplace crashed under load at launch; reportedly only a handful of people managed to enroll on the first day.
-- **Phoenix Pay System (Canada, 2016)**: A new federal government payroll system left tens of thousands of public servants overpaid, underpaid, or not paid at all.
-
-In groups, identify what went wrong in terms of:
-
-- **Data**: Was data migrated, integrated, and validated correctly?
-- **Usability**: Could people actually use the system?
-- **Adoption**: Were users trained and the rollout planned?
-- **Cost**: What did the failure cost, and who paid?
-
-/~
-
-~.focusContent.exercise
-
-**Option B - Application Audit**
-
-In pairs, choose an application you use every day and fill in the worksheet:
-
-| Inputs (what data goes in?) | Outputs (what comes out?) | Stakeholders (who is affected?) | Privacy Concerns |
-| --------------------------- | ------------------------- | ------------------------------- | ---------------- |
-|                             |                           |                                 |                  |
 
 /~
 
