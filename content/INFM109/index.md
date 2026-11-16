@@ -92,6 +92,7 @@ Part I:
 <!-- - [Humans and Applications](humans_and_applications.html) -->
 - [Selecting and Adopting Software](selecting_adopting_software.html)
 <!-- - [Critical Perspectives on Software](software_critical_perspectives.html) -->
+- [Graphics Technologies](graphics_technologies.html)
 - Intro assignments
 
 Part II:
