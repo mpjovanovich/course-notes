@@ -33,7 +33,7 @@ From an informatics point of view, applications are where **people**, **data**, 
 
 Software must support the entire **information system**:
 
-- A hospital's records system isn't just a program - it's also the nurses who use it, the patient data inside it, and the hospital's need to deliver (and bill for) care.
+> A hospital's records system isn't just a program - it's also the nurses who use it, the patient data inside it, and the hospital's need to deliver (and bill for) care.
 
 ## A Taxonomy of Application Software
 
@@ -80,11 +80,22 @@ A **Geographic Information System (GIS)** such as QGIS or ArcGIS combines map da
 
 /~
 
-### By Delivery
+~.focusContent.example
 
-"Delivery" mixes two independent questions. Answer each separately - the same product can sit in more than one cell across the two tables.
+**Communication Software: Email Basics**
 
-#### By Platform
+- **To**: The people the email is for. They are expected to read and respond.
+- **CC (Carbon Copy)**: People who should be kept in the loop, but aren't expected to act. Everyone can see who was CC'd.
+- **BCC (Blind Carbon Copy)**: Recipients hidden from everyone else. Use this when emailing a large group of people who don't know each other.
+- **Reply**: Responds only to the sender.
+- **Reply All**: Responds to the sender _and_ everyone in To and CC. Use sparingly!
+- **Forward**: Sends the email - including the earlier thread below it - to someone new. Check what's in the thread first.
+
+/~
+
+### Delivery Considerations
+
+#### Platform
 
 _Where do you interact with the application?_
 
@@ -96,7 +107,7 @@ _Where do you interact with the application?_
 
 Many products ship on more than one platform. Microsoft Teams, for example, is a desktop app, a mobile app, _and_ a web app - all sharing the same cloud data.
 
-#### By Hosting Model
+#### Hosting Model
 
 _Who runs and maintains the software behind the scenes?_
 
@@ -114,8 +125,6 @@ Platform and hosting are not the same axis. A desktop app can still be SaaS (Out
 With locally installed software, _you_ decide when (or if) to update. With SaaS, the vendor can change features, pricing, or terms of service overnight - and your data lives on their servers. The shift to SaaS has quietly moved control from the user to the provider.
 
 /~
-
-~.focusContent.exercise
 
 **Activity: The Taxonomy Grid**
 
