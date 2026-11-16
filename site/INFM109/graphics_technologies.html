@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INFM109: Graphics Technologies</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/images/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./../assets/scripts/code_snippets.js" defer></script>
+    <script src="./../assets/scripts/focus_content.js" defer></script>
+    <script src="./../assets/scripts/table_of_contents.js" defer></script>
+
+    <!-- Bootstrap / Sass -->
+    <link rel="stylesheet" href="./../assets/css/styles.css" />
+    <link rel="stylesheet" href="./../assets/css/bootstrap-icons.css" />
+    <script src="./../assets/scripts/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="content-wrapper">
+      <div class="toc">
+        <ul>
+          <li>
+            <a href="#graphics-technologies">Graphics Technologies</a>
+            <ul>
+              <li>
+                <a href="#bitmapraster-graphics">Bitmap/raster graphics</a>
+              </li>
+              <li><a href="#vector-graphics">Vector graphics</a></li>
+              <li><a href="#compression">Compression</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <h1 id="graphics-technologies">Graphics Technologies</h1>
+      <h2 id="bitmapraster-graphics">Bitmap/raster graphics</h2>
+      <figure>
+        <span>
+          <img
+            src="images/bitmap-raster-example-sunflower.jpg"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        Pixel-based images. Best for smooth gradients and natural images like
+        photographs.
+      </p>
+      <ul>
+        <li>JPEG</li>
+        <li>PNG</li>
+        <li>GIF</li>
+        <li>WebP</li>
+      </ul>
+      <div class="focusContent note">
+        <p><strong>Choosing a Raster Format</strong></p>
+        <table>
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>JPEG</td>
+              <td>Photographs; smaller files, some quality loss</td>
+            </tr>
+            <tr>
+              <td>PNG</td>
+              <td>Images needing transparency; lossless</td>
+            </tr>
+            <tr>
+              <td>GIF</td>
+              <td>Simple animations; limited color palette</td>
+            </tr>
+            <tr>
+              <td>WebP</td>
+              <td>Modern general-purpose format; smaller than JPEG/PNG</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="vector-graphics">Vector graphics</h2>
+      <figure>
+        <span>
+          <img
+            src="images/vector-graphics-example.svg"
+            style="width: 80%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>
+        Mathematical formula-based images. Best for simple shapes with hard
+        edges (illustrations, logos, diagrams) and text.
+      </p>
+      <ul>
+        <li>SVG</li>
+      </ul>
+      <div class="focusContent exercise">
+        <p><strong>Examining an SVG Image</strong></p>
+        <p>
+          Let&#39;s try saving the SVG image above and opening it in a text
+          editor to see the mathematical formula that defines it!
+        </p>
+      </div>
+
+      <h2 id="compression">Compression</h2>
+      <p>
+        Compression is the process of reducing the size of a file or data. This
+        is useful for saving space and for transmitting data more quickly.
+      </p>
+      <p>
+        Compression isn&#39;t limited to images - general-purpose archive
+        formats like ZIP and 7z compress any kind of file losslessly, while
+        formats like MP3 (audio) and MP4/H.264 (video) use lossy compression to
+        shrink media files.
+      </p>
+      <figure>
+        <span>
+          <img
+            src="images/lossy-compression-example.jpg"
+            style="width: 100%; height: auto"
+          />
+        </span>
+      </figure>
+
+      <p>There are two types of compression:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Compression Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lossless</td>
+            <td>
+              The original data can be perfectly reconstructed from the
+              compressed data.
+            </td>
+          </tr>
+          <tr>
+            <td>Lossy</td>
+            <td>
+              The original data cannot be perfectly reconstructed from the
+              compressed data. Information is discarded during compression.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        It may seem as if we should always use lossless compression, but in many
+        cases, the quality difference is not noticeable, and the file size is
+        significantly reduced.
+      </p>
+      <p>
+        Lossy compression is most visible in JPEG images, where the image can
+        become
+        <em>pixelated</em> at lower quality settings. These out of place pixels
+        are called <em>artifacts</em>.
+      </p>
+      <div class="focusContent lookout">
+        <p><strong>Sending High Quality Images</strong></p>
+        <p>
+          If you&#39;ve ever saved the image from a text message and tried to
+          open it on a computer with a larger screen, you may have noticed that
+          the image is pixelated. This is because the image was compressed using
+          lossy compression for the smaller screen of the phone.
+        </p>
+        <p>
+          If you need to send a high quality image to someone, you should send
+          the original image file, not a compressed version.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
