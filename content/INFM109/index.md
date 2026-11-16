@@ -88,6 +88,10 @@ Part II:
 Part I:
 
 - [Application Software](application_software.html)
+- [Data in Applications](application_data.html)
+- [Humans and Applications](humans_and_applications.html)
+- [Selecting and Adopting Software](selecting_adopting_software.html)
+- [Critical Perspectives on Software](software_critical_perspectives.html)
 - Break and individual source search for discussions
 - Discussion: Location Data Case Studies
 - Intro assignments
