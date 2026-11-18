@@ -15,6 +15,8 @@ showBreadcrumb: false
   - [Module 03: Software](#module-03-software)
   - [Module 04: Program and Web Development](#module-04-program-and-web-development)
   - [Module 05: Information Systems](#module-05-information-systems)
+  - [Module 06: Networking and Storage](#module-06-networking-and-storage)
+  - [Module 07: Cyber and Digital Security](#module-07-cyber-and-digital-security)
 
 /~
 
